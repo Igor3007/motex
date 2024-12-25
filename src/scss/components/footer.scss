@@ -1,0 +1,67 @@
+footer {
+  flex: 0 0 auto;
+
+  .bottom-footer {
+    &__wrapper {
+      padding: 24px 0;
+      border-top: 1px solid #CCCCCC;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      @media screen and (min-width: 767.98px) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    &__copy {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #000;
+      position: relative;
+      padding-left: 28px;
+
+      &:before {
+        content: '';
+        display: block;
+        min-width: 24px;
+        width: 24px;
+        height: 24px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEzLjk4MSAxMy45ODFDMTMuNTg5MyAxNC4zNzIzIDEzLjA5MDQgMTQuNjM4NiAxMi41NDczIDE0Ljc0NjRDMTIuMDA0MiAxNC44NTQyIDExLjQ0MTQgMTQuNzk4NiAxMC45MyAxNC41ODY2QzEwLjQxODUgMTQuMzc0NSA5Ljk4MTQgMTQuMDE1NyA5LjY3Mzg3IDEzLjU1NTNDOS4zNjYzNCAxMy4wOTQ5IDkuMjAyMiAxMi41NTM3IDkuMjAyMiAxMkM5LjIwMjIgMTEuNDQ2MyA5LjM2NjM0IDEwLjkwNTEgOS42NzM4NyAxMC40NDQ3QzkuOTgxNCA5Ljk4NDM0IDEwLjQxODUgOS42MjU0NSAxMC45MyA5LjQxMzQ0QzExLjQ0MTQgOS4yMDE0MiAxMi4wMDQyIDkuMTQ1NzkgMTIuNTQ3MyA5LjI1MzU3QzEzLjA5MDQgOS4zNjEzNiAxMy41ODkzIDkuNjI3NzIgMTMuOTgxIDEwLjAxOU0xOSAxMkMxOSAxNS44NjYgMTUuODY2IDE5IDEyIDE5QzguMTM0MDEgMTkgNSAxNS44NjYgNSAxMkM1IDguMTM0MDEgOC4xMzQwMSA1IDEyIDVDMTUuODY2IDUgMTkgOC4xMzQwMSAxOSAxMloiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K);
+        transition: .1s ease;
+
+        position: absolute;
+        left: 0;
+      }
+    }
+
+    &__payment {
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            object-position: center;
+            object-fit: contain;
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+}
