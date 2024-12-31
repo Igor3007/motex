@@ -3,15 +3,15 @@
 @import 'config/mixins';
 
 @import 'config/reset';
+@import 'config/base';
 
 // @import 'libs/..';
 
-@import 'config/base';
-
-@import 'config/common';
-@import 'config/keyframes';
 
 @import 'components/header';
 @import 'components/main';
 @import 'components/footer';
 
+@import 'base/common';
+@import "base/formated";
+@import 'base/keyframes';
