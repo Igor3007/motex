@@ -1,4 +1,105 @@
 main {
   flex: 1 0 auto;
-
 }
+
+.b-data-search {
+  @media screen and (min-width: 767.98px) {
+    margin: 80px 0 120px;
+  }
+
+  &__heading {
+    margin-bottom: 12px;
+    @media screen and (min-width: 767.98px) {
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      text-align: center;
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+
+    .sub-title {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      text-align: center;
+      color: #8A8C8D;
+      @media screen and (min-width: 767.98px) {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__search {
+    .search-index {
+      &__field {
+        border: 2px solid #19BEFF;
+      }
+
+      &__input {
+        input {
+          padding: 16px 20px;
+
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 24px;
+          color: #15181A;
+
+          &::placeholder {
+            font-family: 'Roboto';
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            color: #5C5E5F;
+          }
+
+          @media screen and (min-width: 767.98px) {
+            padding: 36px;
+
+            font-size: 20px;
+            line-height: 28px;
+
+            &::placeholder {
+              font-size: 20px;
+              line-height: 28px;
+            }
+          }
+
+        }
+      }
+
+      &__btn {
+        flex: 0 0 72px;
+
+        button {
+          height: 56px;
+
+          .icon {
+            min-width: 28px;
+            width: 28px;
+            height: 28px;
+          }
+        }
+
+        @media screen and (min-width: 767.98px) {
+          flex: 0 0 100px;
+
+          button {
+            height: 100px;
+
+            .icon {
+              min-width: 40px;
+              width: 40px;
+              height: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
