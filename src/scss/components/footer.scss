@@ -162,11 +162,16 @@ footer {
   @media screen and (min-width: 767.98px) {
     padding: 28px 0;
   }
+  @media screen and (min-width: 1199.98px) {
+    padding: 0;
+  }
 
   &__wrapper {
     @media screen and (min-width: 1199.98px) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: #D0D1D1;
     }
   }
 
@@ -177,7 +182,8 @@ footer {
       padding-bottom: 28px;
     }
     @media screen and (min-width: 1199.98px) {
-      padding-bottom: 0;
+      padding: 28px 0 28px 0;
+      background: #F3F3F3;
     }
 
     &__wrapper {
@@ -472,8 +478,9 @@ footer {
       padding-top: 28px;
     }
     @media screen and (min-width: 1199.98px) {
-      padding: 0;
+      padding: 28px 0 28px 20px;
       border: none;
+      background: #F3F3F3;
     }
 
 
