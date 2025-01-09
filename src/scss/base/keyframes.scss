@@ -17,3 +17,16 @@
     transform: translateY(0);
   }
 }
+
+@keyframes dropdown-animation {
+  0% {
+    transform: scaleY(0.1) rotateX(90deg);
+    opacity: 0;
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(1) rotateX(0deg);
+    opacity: 1;
+    transform-origin: bottom;
+  }
+}
