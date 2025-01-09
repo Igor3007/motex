@@ -30,3 +30,27 @@
     transform-origin: bottom;
   }
 }
+
+@keyframes dropdown-animation-ttp {
+  0% {
+    transform: scaleY(0.1) rotateX(90deg);
+    opacity: 0;
+    transform-origin: top;
+  }
+  100% {
+    transform: scaleY(1) rotateX(0deg);
+    opacity: 1;
+    transform-origin: top;
+  }
+}
+
+@keyframes reverse-overlay {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
