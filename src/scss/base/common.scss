@@ -41,7 +41,6 @@ section {
   border-color: transparent;
 }
 
-
 .btn-custom_i {
   font-size: 12px;
   font-weight: 400;
@@ -85,6 +84,33 @@ section {
       height: 20px;
     }
 
+  }
+}
+
+.btn-blue {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #FFF;
+
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+
+  padding: 4px 8px;
+  max-height: 48px;
+  width: fit-content;
+  background: #19BEFF;
+  border-radius: 6px;
+  cursor: pointer;
+
+  @media screen and (min-width: 767.98px) {
+    font-size: 16px;
+    line-height: 24px;
+
+    padding: 12px;
+    border-radius: 8px;
   }
 }
 
