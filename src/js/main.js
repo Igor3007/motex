@@ -76,3 +76,40 @@ function setupCardToggle(containerSelector, cardSelector, toggleButtonSelector) 
 }
 
 setupCardToggle('.mx-main-catalog', '.card-mx', '.card-mx__heading-action');
+
+
+if (document.querySelector('[data-slider="splide-numbers"]')) {
+    let sliderSimple = new Splide('[data-slider="splide-numbers"]', {
+        type: 'slide',
+        rewind: true,
+        arrows: false,
+        pagination: false,
+        gap: 12,
+        perPage: 1.4,
+        autoHeight: false,
+        start: 0,
+        updateOnMove: true,
+        drag: true,
+        flickPower: 300,
+        snap: true,
+        focus: 'left',
+        easing: 'ease-out',
+        speed: 400,
+        mediaQuery: 'min',
+        breakpoints: {
+
+            575.98: {
+                gap: 20,
+                perPage: 2.05,
+            },
+            991.98: {
+                perPage: 2.45,
+            },
+            1439.98: {
+                destroy: true,
+            }
+        }
+    });
+
+    sliderSimple.mount();
+}
