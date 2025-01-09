@@ -45,3 +45,34 @@ function toggleTime(triggerSelector, targetSelector, className, closeOnOutsideCl
 
 
 toggleTime('.modal-time .icon', '.modal-time__modal', 'is-active', true);
+
+
+function setupCardToggle(containerSelector, cardSelector, toggleButtonSelector) {
+    const container = document.querySelector(containerSelector);
+
+    if (!container) {
+        console.error(`Container not found`);
+        return;
+    }
+
+    container.addEventListener('click', function (event) {
+        if (event.target.closest(toggleButtonSelector)) {
+            const card = event.target.closest(cardSelector);
+            if (card) {
+                container.querySelectorAll(`${cardSelector}.active`).forEach(activeCard => {
+                    if (activeCard !== card) {
+                        activeCard.classList.remove('is-expanded');
+                    }
+                });
+
+                card.classList.toggle('is-expanded');
+            }
+        } else {
+            container.querySelectorAll(`${cardSelector}.active`).forEach(activeCard => {
+                activeCard.classList.remove('is-expanded');
+            });
+        }
+    });
+}
+
+setupCardToggle('.mx-main-catalog', '.card-mx', '.card-mx__heading-action');
