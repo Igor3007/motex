@@ -79,7 +79,7 @@ setupCardToggle('.mx-main-catalog', '.card-mx', '.card-mx__heading-action');
 
 
 if (document.querySelector('[data-slider="splide-numbers"]')) {
-    let sliderSimple = new Splide('[data-slider="splide-numbers"]', {
+    let sliderNumbers = new Splide('[data-slider="splide-numbers"]', {
         type: 'slide',
         rewind: true,
         arrows: false,
@@ -111,11 +111,11 @@ if (document.querySelector('[data-slider="splide-numbers"]')) {
         }
     });
 
-    sliderSimple.mount();
+    sliderNumbers.mount();
 }
 
 if (document.querySelector('[data-slider="splide-services"]')) {
-    let sliderSimple = new Splide('[data-slider="splide-services"]', {
+    let sliderServices = new Splide('[data-slider="splide-services"]', {
         type: 'slide',
         rewind: true,
         arrows: false,
@@ -146,5 +146,84 @@ if (document.querySelector('[data-slider="splide-services"]')) {
         }
     });
 
-    sliderSimple.mount();
+    sliderServices.mount();
+}
+
+if (document.querySelector('[data-slider="mx-splide-collections"]')) {
+    let sliderServicesMX = new Splide('[data-slider="mx-splide-collections"]', {
+        destroy: true,
+        type: 'slide',
+        rewind: true,
+        arrows: false,
+        pagination: false,
+        autoHeight: false,
+        start: 0,
+        updateOnMove: true,
+        drag: true,
+        flickPower: 300,
+        snap: true,
+        focus: 'left',
+        easing: 'ease-out',
+        speed: 400,
+        mediaQuery: 'min',
+        breakpoints: {
+            767.98: {
+                destroy: false,
+                fixedWidth: '632px',
+                gap: 16,
+            },
+            1439.98: {
+                destroy: true,
+                fixedWidth: '632px',
+                gap: 16,
+            },
+        }
+    });
+
+    sliderServicesMX.mount();
+
+    document.querySelectorAll('[data-slider="splide-collections"]').forEach((sliderElement) => {
+        let sliderInstance = new Splide(sliderElement, {
+            type: 'slide',
+            rewind: true,
+            arrows: false,
+            pagination: false,
+            gap: 8,
+            fixedWidth: '72px',
+            autoHeight: false,
+            start: 0,
+            updateOnMove: true,
+            drag: true,
+            flickPower: 300,
+            snap: true,
+            focus: 'left',
+            easing: 'ease-out',
+            speed: 400,
+            mediaQuery: 'min',
+            breakpoints: {
+                767.98: {
+                    gap: 12,
+                    fixedWidth: '100px',
+                },
+            }
+        });
+
+        sliderInstance.mount();
+
+        sliderElement.addEventListener('pointerenter', () => {
+            sliderServicesMX.options = {drag: false};
+        });
+
+        sliderElement.addEventListener('pointerleave', () => {
+            sliderServicesMX.options = {drag: true};
+        });
+
+        sliderElement.addEventListener('touchstart', () => {
+            sliderServicesMX.options = {drag: false};
+        });
+
+        sliderElement.addEventListener('touchend', () => {
+            sliderServicesMX.options = {drag: true};
+        });
+    });
 }
