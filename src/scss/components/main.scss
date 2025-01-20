@@ -484,6 +484,13 @@ main {
     display: flex;
     flex-direction: column;
     height: 100%;
+    @media screen and (min-width: 991.98px) {
+      &:hover {
+        .mx-services__item-content-info h3 {
+          color: #007AFF;
+        }
+      }
+    }
   }
 
   &__item-img {
@@ -523,6 +530,15 @@ main {
       padding: 20px;
       gap: 12px;
     }
+
+    button {
+      @media screen and (min-width: 991.98px) {
+        &:hover {
+          transition: .1s ease;
+          background: linear-gradient(90deg, #19BEFF 0%, #3C82D2 100%);
+        }
+      }
+    }
   }
 
   &__item-content-info {
@@ -532,6 +548,7 @@ main {
       line-height: 16px;
       color: #15181A;
       margin-bottom: 4px;
+      transition: .1s ease;
       @media screen and (min-width: 767.98px) {
         font-size: 20px;
         line-height: 28px;
@@ -551,6 +568,7 @@ main {
 
       }
     }
+
   }
 }
 
@@ -562,6 +580,9 @@ main {
     @media screen and (min-width: 767.98px) {
       margin-bottom: 28px;
     }
+    @media screen and (min-width: 991.98px) {
+      margin-bottom: 8px;
+    }
   }
 
   .splide {
@@ -569,6 +590,12 @@ main {
       overflow: initial;
       @media screen and (min-width: 1199.98px) {
         overflow: hidden;
+      }
+    }
+
+    &__list {
+      @media screen and (min-width: 991.98px) {
+        padding: 20px 0 !important;
       }
     }
 
@@ -608,6 +635,8 @@ main {
     flex-direction: column;
     gap: 8px;
     height: 100%;
+    transition: .1s ease;
+    position: relative;
 
     &.active {
       .mx-goods__item-content_action {
@@ -699,6 +728,30 @@ main {
               height: 16px;
             }
           }
+        }
+      }
+    }
+
+    @media screen and (min-width: 991.98px) {
+      &:before {
+        opacity: 0;
+        content: '';
+        width: calc(100% + 16px);
+        height: calc(100% + 16px);
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        z-index: -1;
+        border-radius: 8px;
+        box-shadow: 0 0 16px 0 #13131326;
+      }
+      &:hover {
+        &:before {
+          opacity: 1;
+        }
+
+        .mx-goods__item-good {
+          color: #007AFF;
         }
       }
     }
@@ -861,6 +914,7 @@ main {
     font-weight: 400;
     line-height: 16px;
     color: #15181A;
+    transition: .1s ease;
     @media screen and (min-width: 767.98px) {
       font-size: 16px;
       line-height: 24px;
@@ -1059,6 +1113,7 @@ main {
     border: 1px solid #D0D1D1;
     border-radius: 8px;
     background: #F3F3F3;
+    transition: .1s ease;
 
     //display: flex;
     //flex-direction: column;
@@ -1079,10 +1134,23 @@ main {
     button {
       margin-top: 20px;
       border: none;
+      transition: .1s ease;
       @media screen and (min-width: 767.98px) {
         margin-top: 32px;
       }
+      @media screen and (min-width: 991.98px) {
+        &:hover {
+          color: #FFF;
+          background: #19BEFF;
+        }
+      }
 
+    }
+
+    @media screen and (min-width: 991.98px) {
+      &:hover {
+        border-color: #19BEFF;
+      }
     }
   }
 
@@ -1090,8 +1158,17 @@ main {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    transition: .1s ease;
     @media screen and (min-width: 767.98px) {
       gap: 8px;
+    }
+    @media screen and (min-width: 991.98px) {
+      &:hover {
+        picture {
+          border-color: #19BEFF;
+        }
+
+      }
     }
 
     picture {
