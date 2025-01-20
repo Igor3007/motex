@@ -315,3 +315,4 @@ if (document.querySelector('.mx-goods')) {
     initializeCounters('.mx-goods__item-content_action form');
     initializeCardActions('.mx-goods__item');
 }
+

@@ -146,9 +146,15 @@ footer {
           font-weight: 400;
           line-height: 16px;
           color: #15181A;
+          transition: .1s ease;
           @media screen and (min-width: 767.98px) {
             font-size: 16px;
             line-height: 24px;
+          }
+          @media screen and (min-width: 991.98px) {
+            &:hover {
+              color: #007AFF;
+            }
           }
         }
       }
