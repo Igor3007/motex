@@ -316,3 +316,257 @@ if (document.querySelector('.mx-goods')) {
     initializeCardActions('.mx-goods__item');
 }
 
+
+// if (document.querySelector('.mx-stories')) {
+//     const sliderDemoStories = new Splide('[data-slider="demo-stories"]', {
+//         type: 'slide',
+//         rewind: true,
+//         arrows: false,
+//         pagination: false,
+//         gap: 12,
+//         fixedWidth: '156px',
+//         mediaQuery: 'min',
+//         breakpoints: {
+//             767.98: {
+//                 gap: 16,
+//                 fixedWidth: '200px',
+//             },
+//             1439.98: {
+//                 arrows: true,
+//             },
+//         },
+//     }).mount();
+//
+//     const previewSlider = new Splide('[data-slider="preview-stories"]', {
+//         type: 'slide',
+//         rewind: true,
+//         arrows: false,
+//         pagination: false,
+//         gap: 12,
+//         fixedWidth: '180px',
+//         drag: false,
+//     }).mount();
+//
+//     const previewStories = document.querySelector('.stories__preview');
+//     const stories = document.querySelectorAll('.preview-stories__item');
+//     let currentSlide = 0;
+//     let currentItem = 0;
+//     let autoplayTimer;
+//
+//     const initProgressBar = () => {
+//         const progressBarContainer = stories[currentSlide].querySelector('.progress-bar');
+//         const currentSlides = stories[currentSlide].querySelectorAll('.preview-stories__item-slide');
+//         const itemsCount = currentSlides.length;
+//
+//         progressBarContainer.innerHTML = '';
+//
+//         for (let i = 0; i < itemsCount; i++) {
+//             const span = document.createElement('span');
+//             span.classList.add('progress-item');
+//             progressBarContainer.appendChild(span);
+//         }
+//
+//         progressBarContainer.children[0].classList.add('active');
+//     };
+//
+//     const updateProgressBar = () => {
+//         const progressBarContainer = stories[currentSlide].querySelector('.progress-bar');
+//         const progressItems = progressBarContainer.querySelectorAll('.progress-item');
+//
+//         progressItems.forEach(item => item.classList.remove('active'));
+//
+//         if (progressItems[currentItem]) {
+//             progressItems[currentItem].classList.add('active');
+//         }
+//     };
+//
+//     const openPopup = (index) => {
+//         currentSlide = index;
+//         previewStories.classList.add('is-open');
+//
+//         stories.forEach((story) => {
+//             const slides = story.querySelectorAll('.preview-stories__item-slide');
+//             slides.forEach((slide) => slide.classList.remove('active'));
+//         });
+//
+//         const currentSlides = stories[currentSlide].querySelectorAll('.preview-stories__item-slide');
+//         currentSlides[currentItem].classList.add('active');
+//
+//         initProgressBar();
+//         startAutoplay();
+//         previewSlider.go(index);
+//     };
+//
+//     const closePopup = () => {
+//         previewStories.classList.remove('is-open');
+//
+//         stories.forEach((story) => {
+//             const slides = story.querySelectorAll('.preview-stories__item-slide');
+//             slides.forEach((slide) => slide.classList.remove('active'));
+//         });
+//
+//         clearInterval(autoplayTimer);
+//     };
+//
+//     const nextSlide = () => {
+//         const currentSlides = stories[currentSlide].querySelectorAll('.preview-stories__item-slide');
+//         const itemsCount = currentSlides.length;
+//
+//         if (currentItem < itemsCount - 1) {
+//             // Переключаем на следующий слайд в preview-stories
+//             currentSlides[currentItem].classList.remove('active');
+//             currentItem++;
+//             currentSlides[currentItem].classList.add('active');
+//             updateProgressBar();
+//         } else {
+//             currentSlides.forEach((slide) => slide.classList.remove('active'));
+//             currentItem = 0;
+//
+//             currentSlide = (currentSlide + 1) % stories.length;
+//
+//             if (currentSlide === 0) {
+//                 closePopup();
+//                 return;
+//             }
+//
+//             const nextSlides = stories[currentSlide].querySelectorAll('.preview-stories__item-slide');
+//             nextSlides[currentItem].classList.add('active');
+//
+//             initProgressBar();
+//             previewSlider.go(currentSlide);
+//         }
+//     };
+//
+//     const prevSlide = () => {
+//         const currentSlides = stories[currentSlide].querySelectorAll('.preview-stories__item-slide');
+//         const itemsCount = currentSlides.length;
+//
+//         if (currentItem > 0) {
+//             // Переключаем на предыдущий слайд в preview-stories
+//             currentSlides[currentItem].classList.remove('active');
+//             currentItem--;
+//             currentSlides[currentItem].classList.add('active');
+//             updateProgressBar();
+//         } else {
+//             currentSlide = (currentSlide - 1 + stories.length) % stories.length;
+//
+//             closePopup();
+//         }
+//     };
+//
+//     const startAutoplay = () => {
+//         const currentSlides = stories[currentSlide].querySelectorAll('.preview-stories__item-slide');
+//         const itemsCount = currentSlides.length;
+//
+//         if (itemsCount === 0) return;
+//
+//         autoplayTimer = setInterval(() => {
+//             nextSlide();
+//         }, 10000);
+//     };
+//
+//     document.querySelectorAll('.demo-stories__item').forEach((storyItem) => {
+//         storyItem.addEventListener('click', function () {
+//             const index = parseInt(storyItem.getAttribute('data-stories'), 10);
+//             openPopup(index);
+//         });
+//     });
+//
+//     const closeIcon = document.querySelector('.preview-stories__close');
+//     if (closeIcon) {
+//         closeIcon.addEventListener('click', closePopup);
+//     }
+//
+//     document.addEventListener('click', (event) => {
+//         if (!previewStories.contains(event.target) && !event.target.closest('.demo-stories__item')) {
+//             closePopup();
+//         }
+//     });
+//
+// }
+
+
+if (document.querySelector('[data-slider="demo-stories"]')) {
+    const sliderDemoStories = new Splide('[data-slider="demo-stories"]', {
+        type: 'slide',
+        rewind: true,
+        arrows: false,
+        pagination: false,
+        gap: 12,
+        fixedWidth: '156px',
+        mediaQuery: 'min',
+        breakpoints: {
+            767.98: {
+                gap: 16,
+                fixedWidth: '200px',
+            },
+            1439.98: {
+                arrows: true,
+                perPage: 6,
+                perMove: 1,
+            },
+        },
+    })
+    sliderDemoStories.mount();
+
+}
+
+
+
+function initializeVideoBlocks(videoBlocks) {
+    if (videoBlocks.length === 0) return;
+
+    document.addEventListener('DOMContentLoaded', function () {
+        videoBlocks.forEach(function (block) {
+            let wrappers = document.querySelectorAll(block.wrapperClass);
+            if (!wrappers.length) return;
+
+            wrappers.forEach(function (wrapper) {
+                let video = wrapper.querySelector(block.controlClass);
+                let lightboxLink = wrapper.querySelector('a[data-fslightbox]');
+
+                if (!video || !lightboxLink) return;
+
+                lightboxLink.addEventListener('click', function () {
+                    const observer = new MutationObserver(function (mutationsList, observer) {
+                        mutationsList.forEach(function (mutation) {
+                            if (mutation.type === 'childList') {
+                                let lightboxVideo = document.querySelector('.fslightbox-source');
+                                if (lightboxVideo) {
+                                    lightboxVideo.setAttribute('autoplay', 'true');
+                                    lightboxVideo.muted = true;
+                                    lightboxVideo.play().catch(error => {
+                                        console.error('Autoplay failed:', error);
+                                    });
+                                    observer.disconnect();
+                                }
+                            }
+                        });
+                    });
+
+                    observer.observe(document.body, {childList: true, subtree: true});
+                });
+
+                const observer = new MutationObserver(function (mutationsList) {
+                    mutationsList.forEach(function (mutation) {
+                        let lightboxVideo = document.querySelector('.fslightbox-source');
+                        if (!document.querySelector('.fslightbox-container') && lightboxVideo) {
+                            lightboxVideo.pause();
+                            lightboxVideo.currentTime = 0;
+                        }
+                    });
+                });
+
+                observer.observe(document.body, {childList: true, subtree: true});
+            });
+        });
+    });
+}
+
+initializeVideoBlocks([
+    {
+        wrapperClass: '.demo-stories__item',
+        controlClass: '.demo-stories__item video',
+    },
+]);
+
