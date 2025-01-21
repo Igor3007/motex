@@ -1,0 +1,70 @@
+<section class="section-select-region">
+    <div class="_container">
+        <div class="select-region">
+            <div class="select-region__head">
+                <div class="select-region__logo">
+                    <a href="/" aria-label="home">
+                        <i class="icon" style="background-image: url('/images/icons/ic_logo-mtx.svg')"></i>
+                        <span class="c-name">Материалы для любой стройки</span>
+                    </a>
+                </div>
+                <div class="select-region__close">
+                    <i class="icon" style="background-image: url(/images/icons/ic_close.svg)"></i>
+                </div>
+            </div>
+
+            <div class="select-region__find">
+                <input type="text" v-model="searchInput" placeholder="Введите название города">
+                <span class="run-search">
+                    <i class="icon" style="background-image: url(/images/icons/ic_search.svg)"></i>
+                </span>
+            </div>
+
+            <div v-if="cityArray.length" class="select-region__fast">
+                <ul>
+                    <li><span>Челябинск</span></li>
+                    <li><span>Санкт-Петербург</span></li>
+                    <li><span>Воронеж</span></li>
+                    <li><span>Волгоград</span></li>
+                    <li><span>Екатеринбург</span></li>
+                    <li><span>Казань</span></li>
+                    <li><span>Краснодар</span></li>
+                    <li><span>Красноярск</span></li>
+                    <li><span>Новосибирск</span></li>
+                    <li><span>Нижний Новгород</span></li>
+                    <li><span>Омск</span></li>
+                    <li><span>Пермь</span></li>
+                    <li><span>Ростов-на-дону</span></li>
+                    <li><span>Самара</span></li>
+                    <li><span>Уфа</span></li>
+                </ul>
+            </div>
+
+            <div class="select-region__scroll" v-if="cityArray.length">
+                <div class="select-region__cities">
+
+                    <div v-for="item in getArrayCity" :key="item.name" class="select-region__group">
+                        <div class="select-region__symbol">{{item.letter}}</div>
+                        <div class="select-region__list">
+                            <ul>
+                                <li v-for="city in item.city" :key="city.name">{{city.name}}</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="select-region__load" v-else>
+                @@include('spinner.html')
+            </div>
+
+            <div class="select-region__notfound">
+                Не нашли свой город? У нас есть <span>доставка по России</span>
+            </div>
+
+
+
+        </div>
+    </div>
+</section>

@@ -4,9 +4,21 @@ html {
 
 section {
   margin: 60px 0;
+
   @media screen and (min-width: 767.98px) {
     margin: 80px 0;
   }
+}
+
+.icon {
+  display: block;
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.1s ease;
 }
 
 .btn-custom {
@@ -116,9 +128,7 @@ section {
 
 
 .search-index {
-  &__form {
-
-  }
+  &__form {}
 
   &__field {
     background: #19BEFF;
@@ -143,6 +153,12 @@ section {
       font-weight: 400;
       line-height: 16px;
       color: #15181A;
+      height: 100%;
+      border: none;
+
+      &:focus {
+        border: transparent;
+      }
 
       &::placeholder {
         font-family: 'Roboto';
@@ -195,6 +211,7 @@ section {
 
     @media screen and (min-width: 767.98px) {
       flex: 0 0 58px;
+
       button {
         height: 46px;
 
@@ -207,7 +224,3 @@ section {
     }
   }
 }
-
-
-
-
