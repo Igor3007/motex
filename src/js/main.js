@@ -44,7 +44,8 @@ function toggleTime(triggerSelector, targetSelector, className, closeOnOutsideCl
 }
 
 
-toggleTime('.modal-time .icon', '.modal-time__modal', 'is-active', true);
+toggleTime('.modal-time__action', '.modal-time__modal', 'is-active', true);
+toggleTime('.top-header__time', '.modal-time__modal', 'is-active', true);
 
 
 function setupCardToggle(containerSelector, cardSelector, toggleButtonSelector) {
@@ -113,7 +114,6 @@ if (document.querySelector('[data-slider="splide-numbers"]')) {
 
     sliderNumbers.mount();
 }
-
 if (document.querySelector('[data-slider="splide-services"]')) {
     let sliderServices = new Splide('[data-slider="splide-services"]', {
         type: 'slide',
@@ -148,7 +148,6 @@ if (document.querySelector('[data-slider="splide-services"]')) {
 
     sliderServices.mount();
 }
-
 if (document.querySelector('[data-slider="splide-goods"]')) {
     let sliderGoods = new Splide('[data-slider="splide-goods"]', {
         type: 'slide',
@@ -158,14 +157,7 @@ if (document.querySelector('[data-slider="splide-goods"]')) {
         gap: 12,
         fixedWidth: '156px',
         autoHeight: false,
-        // start: 0,
         updateOnMove: true,
-        // drag: true,
-        // flickPower: 300,
-        // snap: true,
-        // focus: 'left',
-        // easing: 'ease-out',
-        // speed: 400,
         mediaQuery: 'min',
         breakpoints: {
 
@@ -183,7 +175,6 @@ if (document.querySelector('[data-slider="splide-goods"]')) {
 
     sliderGoods.mount();
 }
-
 if (document.querySelector('[data-slider="mx-splide-collections"]')) {
     let sliderServicesMX = new Splide('[data-slider="mx-splide-collections"]', {
         destroy: true,
@@ -262,6 +253,30 @@ if (document.querySelector('[data-slider="mx-splide-collections"]')) {
         });
     });
 }
+if (document.querySelector('[data-slider="demo-stories"]')) {
+    const sliderDemoStories = new Splide('[data-slider="demo-stories"]', {
+        type: 'slide',
+        rewind: true,
+        arrows: false,
+        pagination: false,
+        gap: 12,
+        fixedWidth: '156px',
+        mediaQuery: 'min',
+        breakpoints: {
+            767.98: {
+                gap: 16,
+                fixedWidth: '200px',
+            },
+            1439.98: {
+                arrows: true,
+                perPage: 6,
+                perMove: 1,
+            },
+        },
+    })
+    sliderDemoStories.mount();
+
+}
 
 
 function initializeCounters(selector) {
@@ -295,7 +310,6 @@ function initializeCounters(selector) {
         });
     });
 }
-
 function initializeCardActions(selector) {
     const cards = document.querySelectorAll(selector);
 
@@ -311,9 +325,9 @@ function initializeCardActions(selector) {
 }
 
 
-if (document.querySelector('.mx-goods')) {
-    initializeCounters('.mx-goods__item-content_action form');
-    initializeCardActions('.mx-goods__item');
+if (document.querySelector('.main-goods-item')) {
+    initializeCounters('.main-goods-item__item-content_action form');
+    initializeCardActions('.main-goods-item');
 }
 
 
@@ -486,33 +500,6 @@ if (document.querySelector('.mx-goods')) {
 // }
 
 
-if (document.querySelector('[data-slider="demo-stories"]')) {
-    const sliderDemoStories = new Splide('[data-slider="demo-stories"]', {
-        type: 'slide',
-        rewind: true,
-        arrows: false,
-        pagination: false,
-        gap: 12,
-        fixedWidth: '156px',
-        mediaQuery: 'min',
-        breakpoints: {
-            767.98: {
-                gap: 16,
-                fixedWidth: '200px',
-            },
-            1439.98: {
-                arrows: true,
-                perPage: 6,
-                perMove: 1,
-            },
-        },
-    })
-    sliderDemoStories.mount();
-
-}
-
-
-
 function initializeVideoBlocks(videoBlocks) {
     if (videoBlocks.length === 0) return;
 
@@ -570,3 +557,50 @@ initializeVideoBlocks([
     },
 ]);
 
+
+class EmailFormValidator {
+    constructor(selector) {
+        this.forms = document.querySelectorAll(selector);
+        this.init();
+    }
+
+    isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    activateForm(form, button) {
+        button.classList.remove("btn-disabled");
+        button.removeAttribute("disabled");
+        form.classList.add("is--send");
+    }
+
+    deactivateForm(form, button) {
+        button.classList.add("btn-disabled");
+        button.setAttribute("disabled", "disabled");
+        form.classList.remove("is--send");
+    }
+
+    handleInput(event) {
+        const input = event.target;
+        const form = input.closest("form");
+        const submitButton = form.querySelector("button");
+        const email = input.value.trim();
+
+        if (this.isValidEmail(email)) {
+            this.activateForm(form, submitButton);
+        } else {
+            this.deactivateForm(form, submitButton);
+        }
+    }
+
+    init() {
+        this.forms.forEach((form) => {
+            const input = form.querySelector("input[type='text']");
+            if (input) {
+                input.addEventListener("input", (event) => this.handleInput(event));
+            }
+        });
+    }
+}
+
+new EmailFormValidator(".info-footer__sales form");
