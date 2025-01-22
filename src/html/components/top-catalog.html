@@ -1,0 +1,49 @@
+<section class="section-top-catalog">
+    <div class="_container">
+        <div class="top-catalog">
+            <div class="top-catalog__aside">
+                <ul>
+                    <li v-for="item in listcatalog">
+                        <i class="icon" :style=" {backgroundImage: 'url('+item.icon+')'}"></i>
+                        <span>{{ item.name }}</span>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="top-catalog__content">
+                <div class="top-catalog__cathead">
+                    <div class="top-cathead">
+                        <div class="top-cathead__title">Листовые материалы</div>
+                        <div class="top-cathead__prop">10 категорий</div>
+                        <div class="top-cathead__prop">2 394 товара</div>
+                    </div>
+                </div>
+                <div class="top-catalog__subcat">
+                    <div v-for="item in listcatalog[0].sub" class="top-catalog__item">
+                        <div class="card-subcat">
+                            <div class="card-subcat__preview">
+                                <a href="/categoty.html">
+                                    <picture><img :src="item.icon" alt=""></picture>
+                                </a>
+                            </div>
+                            <div class="card-subcat__title">
+                                <a href="/categoty.html">{{ item.name }}</a>
+                            </div>
+
+                            <div class="card-subcat__list">
+                                <ul>
+
+                                    <li v-for="s in item.sub">
+                                        <a href="">{{s.name}}</a>
+                                        <span>{{s.count}}</span>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

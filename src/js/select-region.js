@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
             this.vueApp = new Vue({
                 el: this.$el,
                 data: {
-                    message: 'Hello Vue!',
+                    isOpen: true,
                     cityArray: [],
                     listCity: [],
                     searchInput: ''
@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                 mounted: function () {
                     this.getCityJSON()
+                    this.isPageHidden()
                 },
 
                 methods: {
@@ -39,20 +40,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
                         query
                             .then((response => response.json()))
                             .then((data) => {
-                                this.cityArray = data
+                                this.cityArray = this.sortArrayCity(data)
                             })
                     },
 
-
-                },
-
-                computed: {
-                    getArrayCity: function () {
-                        var complexArr = {};
-                        var firstLetter = '';
-                        var res = null
-
-                        this.cityArray.sort(function (a, b) {
+                    sortArrayCity(arr) {
+                        arr.sort(function (a, b) {
                             if (a.name < b.name) {
                                 return -1;
                             }
@@ -63,26 +56,51 @@ document.addEventListener('DOMContentLoaded', function (event) {
                             return 0;
                         });
 
+                        return arr
+                    },
+
+                    filterArrayCity(res) {
+                        res = res.filter(item => {
+                            return item.name.toLowerCase().indexOf(this.searchInput.toLowerCase()) !== -1
+                        })
+
+                        res.sort((a, b) => {
+                            const startsWithM_a = a.name.toLowerCase().startsWith(this.searchInput.toLowerCase().substr(0, 1));
+                            const startsWithM_b = b.name.toLowerCase().startsWith(this.searchInput.toLowerCase().substr(0, 1));
+
+                            if (startsWithM_a && !startsWithM_b) {
+                                return -1;
+                            }
+                            if (!startsWithM_a && startsWithM_b) {
+                                return 1;
+                            }
+                            return a.name.localeCompare(b.name);
+                        });
+
+                        return res
+                    },
+
+                    closePopup() {
+                        this.isOpen = false
+                    },
+
+                    openPopup() {
+                        this.isOpen = true
+                    },
+
+                    isPageHidden() {
+                        document.body.classList.toggle('page-hidden', this.isOpen)
+                    }
+                },
+
+                computed: {
+                    getArrayCity: function () {
+                        let complexArr = {};
+                        let firstLetter = '';
+                        let res = this.cityArray
+
                         if (this.searchInput.length > 1) {
-                            res = this.cityArray.filter(item => {
-                                return item.name.toLowerCase().indexOf(this.searchInput.toLowerCase()) !== -1
-                            })
-
-                            // res.sort((a, b) => {
-                            //     const startsWithM_a = a.toLowerCase().startsWith(this.searchInput.toLowerCase().substr(0, 1));
-                            //     const startsWithM_b = b.toLowerCase().startsWith(this.searchInput.toLowerCase().substr(0, 1));
-
-                            //     if (startsWithM_a && !startsWithM_b) {
-                            //         return -1;
-                            //     }
-                            //     if (!startsWithM_a && startsWithM_b) {
-                            //         return 1;
-                            //     }
-                            //     return a.localeCompare(b);
-                            // });
-
-                        } else {
-                            res = this.cityArray
+                            res = this.filterArrayCity(res)
                         }
 
                         res.forEach((item, index) => {
@@ -120,24 +138,40 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                         return complexArr;
                     }
+                },
+
+                watch: {
+                    'isOpen': function () {
+                        this.isPageHidden()
+                    }
                 }
+
             })
         }
+
+
     }
 
     document.querySelectorAll('[data-region-select="open"]').forEach(item => {
         item.addEventListener('click', () => {
-            let query = fetch('/_popup-select-region.html', {
-                method: 'GET',
-            })
 
-            query
-                .then((response) => response.text())
-                .then((html) => {
-                    window.SelectRegion = new SelectRegion({
-                        html
-                    })
+            if (!window.SelectRegion) {
+                let query = fetch('/_popup-select-region.html', {
+                    method: 'GET',
                 })
+
+                query
+                    .then((response) => response.text())
+                    .then((html) => {
+                        window.SelectRegion = new SelectRegion({
+                            html
+                        })
+                    })
+            } else {
+                window.SelectRegion.vueApp.openPopup()
+            }
+
+
 
         })
     })

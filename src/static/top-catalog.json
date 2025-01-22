@@ -1,0 +1,294 @@
+[{
+    "name": "Листовые материалы",
+    "icon": "/images/icons/ic_layer.svg",
+    "sub": [{
+        "icon": "https://mottex.ru/pics/catalogtop/89/34352_Thumb.jpg",
+        "name": "Фанера | Все виды",
+        "sub": [{
+            "name": "Фанера ФК березовая",
+            "count": "51"
+        }, {
+            "name": "Фанера ФСФ березовая",
+            "count": "61"
+        }, {
+            "name": "Фанера ФСФ хвойная",
+            "count": "21"
+        }, {
+            "name": "Фанера ФОФ сетчатая",
+            "count": "66"
+        }, {
+            "name": "Фанера ФОФ ламинированная",
+            "count": "60"
+        }, {
+            "name": "Фанера Бакелизированная",
+            "count": "24"
+        }, {
+            "name": "Фанера трудногорючая",
+            "count": "32"
+        }]
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/4d/36093_Thumb.jpg",
+        "name": "Плита OSB",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/e7/36111_Thumb.jpg",
+        "name": "ЦСП",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/5f/36109_Thumb.jpg",
+        "name": "ДСП",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/f4/36097_Thumb.jpg",
+        "name": "ДВП",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/1a/52295_Thumb.jpg",
+        "name": "МДФ",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/69/36175_Thumb.jpg",
+        "name": "ГСП",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/03/37913_Thumb.jpg",
+        "name": "ГКЛ",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/40/36095_Thumb.jpg",
+        "name": "Фибролит",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/f8/55924_Thumb.jpg",
+        "name": "Спецпродукты КНАУФ",
+        "sub": []
+    }]
+}, {
+    "name": "Теплоизоляция",
+    "icon": "/images/icons/ic_layer.svg",
+    "sub": [{
+        "icon": "https://mottex.ru/pics/catalogtop/46/58631_Thumb.jpg",
+        "name": "Knauf",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/f0/35668_Thumb.jpg",
+        "name": "Пеноплэкс",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/dc/53882_Thumb.jpg",
+        "name": "Ecoroll",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/06/54092_Thumb.jpg",
+        "name": "Green Term",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/a9/35670_Thumb.png",
+        "name": "Baswool",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/cc/35678_Thumb.jpg",
+        "name": "Rockwool",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/31/35676_Thumb.jpg",
+        "name": "Isover",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/0e/35684_Thumb.jpg",
+        "name": "Isobox",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/1a/35674_Thumb.jpg",
+        "name": "ТехноНИКОЛЬ",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/d3/35682_Thumb.jpg",
+        "name": "XPS Carbon",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/6b/53226_Thumb.jpg",
+        "name": "Ursa",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/02/35672_Thumb.jpg",
+        "name": "Эковер",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/10/54436_Thumb.jpg",
+        "name": "Tisma",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/62/47979_Thumb.jpg",
+        "name": "Техническая изоляция",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/ed/35694_Thumb.jpg",
+        "name": "Крепеж для теплоизоляции",
+        "sub": []
+    }]
+}, {
+    "name": "Звукоизоляция",
+    "icon": "/images/icons/ic_layer.svg",
+    "sub": [{
+        "icon": "https://mottex.ru/pics/catalogtop/b7/45372_Thumb.jpg",
+        "name": "Knauf",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/3a/45374_Thumb.jpg",
+        "name": "Green Board",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/f7/40589_Thumb.png",
+        "name": "ТехноНиколь",
+        "sub": []
+    }]
+}, {
+    "name": "Кровля/Гидроизоляция",
+    "icon": "/images/icons/ic_layer.svg",
+    "sub": [{
+        "icon": "https://mottex.ru/pics/catalogtop/2b/35714_Thumb.jpg",
+        "name": "Рулонные/Битумные",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/02/35818_Thumb.jpg",
+        "name": "Мастики и Праймеры",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/85/35820_Thumb.png",
+        "name": "Мембраны",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/e7/50683_Thumb.jpg",
+        "name": "Скотч",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/fd/62702_Thumb.jpg",
+        "name": "Скатная кровля",
+        "sub": []
+    }]
+}, {
+    "name": "Метизы",
+    "icon": "/images/icons/ic_layer.svg",
+    "sub": [{
+        "icon": "https://mottex.ru/pics/catalogtop/82/47987_Thumb.jpg",
+        "name": "Саморезы черные",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/45/49834_Thumb.jpg",
+        "name": "Саморезы жёлтые",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/25/47993_Thumb.jpg",
+        "name": "Саморезы белые",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/d2/59836_Thumb.png",
+        "name": "Саморезы кровельные",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/f8/47995_Thumb.jpg",
+        "name": "Гвозди",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/00/48981_Thumb.jpg",
+        "name": "Дюбель",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/8c/55402_Thumb.jpeg",
+        "name": "Анкера",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/5b/55400_Thumb.jpg",
+        "name": "Болты, гайки, винты, шайбы",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/05/49840_Thumb.jpg",
+        "name": "Прочее",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/a9/54892_Thumb.jpg",
+        "name": "Кнауф",
+        "sub": []
+    }]
+}, {
+    "name": "Крепежные элементы",
+    "icon": "/images/icons/ic_layer.svg",
+    "sub": [{
+        "icon": "https://mottex.ru/pics/catalogtop/c6/44382_Thumb.jpeg",
+        "name": "Профиль",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/0a/48001_Thumb.jpg",
+        "name": "Подвесы",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/7f/48003_Thumb.jpg",
+        "name": "Комплектующие",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/48/48005_Thumb.jpg",
+        "name": "Грибы для теплоизоляции",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/e5/54890_Thumb.jpeg",
+        "name": "Кнауф",
+        "sub": []
+    }]
+}, {
+    "name": "Пленки",
+    "icon": "/images/icons/ic_layer.svg",
+    "sub": [{
+        "icon": "https://mottex.ru/pics/catalogtop/2d/52478_Thumb.jpg",
+        "name": "Паро- гидроизоляция",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/78/43760_Thumb.jpg",
+        "name": "ПЭТ",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/8f/46317_Thumb.png",
+        "name": "Скотч",
+        "sub": []
+    }]
+}, {
+    "name": "Сухие смеси, Грунтовка",
+    "icon": "/images/icons/ic_layer.svg",
+    "sub": [{
+        "icon": "https://mottex.ru/pics/catalogtop/45/54316_Thumb.jpg",
+        "name": "Штукатурка",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/8c/54322_Thumb.jpg",
+        "name": "Шпаклёвка",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/69/54320_Thumb.jpg",
+        "name": "Грунтовка",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/e5/54798_Thumb.jpg",
+        "name": "Клей",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/ed/54894_Thumb.jpg",
+        "name": "Спецпродукты",
+        "sub": []
+    }, {
+        "icon": "https://mottex.ru/pics/catalogtop/6a/58633_Thumb.jpg",
+        "name": "Bergauf (Бергауф)",
+        "sub": []
+    }]
+}, {
+    "name": "Лакокрасочные материалы",
+    "icon": "/images/icons/ic_layer.svg",
+    "sub": false
+}, {
+    "name": "Пена строительная",
+    "icon": "/images/icons/ic_layer.svg",
+    "sub": false
+}, {
+    "name": "Уцененные товары",
+    "icon": "/images/icons/ic_layer.svg",
+    "sub": false
+}]
