@@ -31,6 +31,30 @@ header {
           font-weight: 400;
           line-height: 20px;
           color: #5C5E5F;
+
+          position: relative;
+          @media screen and (min-width: 991.98px) {
+            &:before {
+              opacity: 0;
+
+              content: '';
+              width: 100%;
+              height: 1px;
+              background: #5C5E5F;
+
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              transform: translateY(2px);
+              transition: .1s ease;
+            }
+            &:hover {
+              &:before {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+          }
         }
       }
     }
@@ -89,6 +113,11 @@ header {
           top: 50%;
           transform: translateY(-50%);
         }
+        &:hover {
+          a {
+            color: #19BEFF;
+          }
+        }
       }
 
 
@@ -136,6 +165,9 @@ header {
     border: 1px solid #D0D1D1;
     border-radius: 16px;
 
+    cursor: pointer;
+    position: relative;
+
     .time-id {
       min-width: 8px;
       width: 8px;
@@ -150,15 +182,27 @@ header {
         background: #C02400;
       }
     }
+
+    .time-modal {
+      display: none;
+
+      position: absolute;
+      top: calc(100% - 5px);
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+
+      &.is-active {
+        display: block;
+        animation: dropdown-animation-a 0.4s ease forwards;
+      }
+    }
   }
 
   &__time-info {
     font-size: 14px;
     font-weight: 700;
     line-height: 20px;
-
-    span {
-    }
   }
 }
 
@@ -346,6 +390,10 @@ header {
         gap: 8px;
       }
     }
+  }
+
+  &__cart {
+    position: relative;
   }
 
   &__search {

@@ -1,0 +1,15 @@
+.mx-main-catalog {
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    @media screen and (min-width: 767.98px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media screen and (min-width: 1199.98px) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+  }
+}

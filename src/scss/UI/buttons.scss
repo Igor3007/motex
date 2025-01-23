@@ -1,0 +1,129 @@
+.btn-custom {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #15181A;
+
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 12px;
+  max-height: 48px;
+  background: #FFF;
+  border: 1px solid #D0D1D1;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .1s ease;
+
+  @media screen and (min-width: 767.98px) {
+    font-size: 16px;
+    line-height: 24px;
+
+    padding: 12px;
+  }
+  @media screen and (min-width: 991.98px) {
+    &:hover {
+      color: #FFF;
+      background: #19BEFF;
+      border-color: transparent;
+    }
+  }
+}
+
+.btn-custom_i {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #15181A;
+
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  padding: 8px;
+  max-height: 48px;
+  background: none;
+  border: 1px solid #D0D1D1;
+  border-radius: 8px;
+  cursor: pointer;
+
+  .icon {
+    display: block;
+    min-width: 12px;
+    width: 12px;
+    height: 12px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.1s ease;
+  }
+
+  @media screen and (min-width: 767.98px) {
+    font-size: 16px;
+    line-height: 24px;
+
+    gap: 8px;
+    padding: 12px;
+
+    .icon {
+      min-width: 20px;
+      width: 20px;
+      height: 20px;
+    }
+
+  }
+  @media screen and (min-width: 991.98px) {
+    &:hover {
+      border-color: #19BEFF;
+    }
+  }
+}
+
+.btn-blue {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #FFF;
+
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+
+  padding: 4px 8px;
+  max-height: 48px;
+  width: fit-content;
+  background: #19BEFF;
+  border-radius: 6px;
+  cursor: pointer;
+
+  @media screen and (min-width: 767.98px) {
+    font-size: 16px;
+    line-height: 24px;
+
+    padding: 12px;
+    border-radius: 8px;
+  }
+  @media screen and (min-width: 991.98px) {
+    &:hover {
+      background: linear-gradient(90deg, #19BEFF 0%, #3C82D2 100%);
+    }
+  }
+}
+
+.btn-disabled {
+  color: #D0D1D1;
+  background: #8A8C8D;
+  border-color: transparent;
+
+  &:hover {
+    color: #D0D1D1;
+    background: #8A8C8D;
+    border-color: transparent;
+  }
+}
+

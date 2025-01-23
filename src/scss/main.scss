@@ -5,9 +5,6 @@
 @import 'config/reset';
 @import 'config/base';
 
-// @import 'libs/..';
-
-
 @import 'components/header';
 @import 'components/main';
 @import 'components/footer';
@@ -21,3 +18,26 @@
 @import 'base/common';
 @import "base/formated";
 @import 'base/keyframes';
+@import 'base/keyframes';
+
+@import 'UI/buttons';
+
+//index page start
+@import "components/p-index/b-data-search";
+@import "components/p-index/mx-main-catalog";
+@import "components/p-index/mx-numbers";
+@import "components/p-index/mx-services";
+@import "components/p-index/mx-goods";
+@import "components/p-index/mx-collections";
+@import "components/p-index/mx-stories";
+//index page end
+
+@import "components/menu-header-md";
+@import "components/action-panel";
+@import "components/modal-time";
+@import "components/modal-cart";
+@import 'components/mx-catalog-card';
+@import 'components/mx-services-item';
+@import 'components/mx-goods-item';
+@import 'components/search-input';
+
