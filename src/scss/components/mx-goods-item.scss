@@ -207,6 +207,13 @@
 
       @media screen and (min-width: 991.98px) {
         opacity: 0;
+        &:hover {
+          background: #19BEFF;
+
+          .icon {
+            filter: brightness(255);
+          }
+        }
       }
 
       .icon {

@@ -310,6 +310,7 @@ function initializeCounters(selector) {
         });
     });
 }
+
 function initializeCardActions(selector) {
     const cards = document.querySelectorAll(selector);
 
@@ -329,6 +330,47 @@ if (document.querySelector('.main-goods-item')) {
     initializeCounters('.main-goods-item__item-content_action form');
     initializeCardActions('.main-goods-item');
 }
+
+function toggleModal(triggerSelector, modalSelector, activeClass, closeOnOutsideClick = false) {
+    const triggerElements = document.querySelectorAll(triggerSelector);
+
+    if (!triggerElements.length) {
+        return;
+    }
+
+    triggerElements.forEach((triggerElement) => {
+        triggerElement.addEventListener("click", (event) => {
+            event.stopPropagation();
+
+            const modalElement = document.querySelector(modalSelector);
+            if (!modalElement) {
+                return;
+            }
+
+            triggerElement.classList.toggle(activeClass);
+            modalElement.classList.toggle(activeClass);
+        });
+    });
+
+    if (closeOnOutsideClick) {
+        document.addEventListener("click", (event) => {
+            triggerElements.forEach((triggerElement) => {
+                const modalElement = document.querySelector(modalSelector);
+
+                if (
+                    !triggerElement.contains(event.target) &&
+                    modalElement &&
+                    !modalElement.contains(event.target)
+                ) {
+                    triggerElement.classList.remove(activeClass);
+                    modalElement.classList.remove(activeClass);
+                }
+            });
+        });
+    }
+}
+
+toggleModal(".btn-cart", ".cart-header__modal", "is-active", true);
 
 
 // if (document.querySelector('.mx-stories')) {
@@ -604,3 +646,57 @@ class EmailFormValidator {
 }
 
 new EmailFormValidator(".info-footer__sales form");
+
+
+function setupActionPanel(panelSelector, btnSelector, windowSelector, activeClass) {
+    const panel = document.querySelector(panelSelector);
+
+    if (!panel) return;
+
+    const buttons = panel.querySelectorAll(btnSelector);
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+            event.stopPropagation();
+
+            const targetKey = button.dataset.target;
+
+            const targetWindow = document.querySelector(
+                `${windowSelector}[data-window="${targetKey}"]`
+            );
+
+            const isActive = button.classList.contains(activeClass);
+
+            buttons.forEach((btn) => btn.classList.remove(activeClass));
+            document.querySelectorAll(windowSelector).forEach((win) => {
+                win.classList.remove(activeClass);
+            });
+
+            if (!isActive) {
+                button.classList.add(activeClass);
+                targetWindow?.classList.add(activeClass);
+            }
+        });
+    });
+
+    document.addEventListener("click", () => {
+        buttons.forEach((btn) => btn.classList.remove(activeClass));
+        document.querySelectorAll(windowSelector).forEach((win) => {
+            win.classList.remove(activeClass);
+        });
+    });
+}
+
+setupActionPanel(
+    '.action-panel',
+    '.config-menu',
+    '.header__menu',
+    'is-active'
+);
+
+setupActionPanel(
+    '.action-panel',
+    '.config-cart',
+    '.cart-header__modal',
+    'is-active'
+);

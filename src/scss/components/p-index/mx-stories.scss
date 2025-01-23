@@ -46,6 +46,12 @@
         background-color: #FFF;
         background-repeat: no-repeat;
         background-position: center;
+        transition: .1s ease;
+        @media screen and (min-width: 991.98px) {
+          &:hover {
+            border-color: #19BEFF;
+          }
+        }
 
         svg {
           display: none;
@@ -71,18 +77,26 @@
       overflow: hidden;
       border-radius: 8px;
       cursor: pointer;
-
-      picture {
-        img {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 1;
-          object-fit: cover;
-          border-radius: 8px;
+      @media screen and (min-width: 991.98px) {
+        &:hover {
+          video {
+            filter: brightness(1);
+          }
         }
+      }
+
+      video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: .1s ease;
+
+        filter: brightness(.8);
       }
 
       .content-demo-stories {

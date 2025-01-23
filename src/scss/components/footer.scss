@@ -413,6 +413,12 @@ footer {
               background-position: center;
               transition: 0.1s ease;
             }
+
+            @media screen and (min-width: 991.98px) {
+              &:hover {
+                opacity: .8;
+              }
+            }
           }
         }
       }

@@ -28,6 +28,10 @@
       }
     }
 
+    &__slide {
+
+    }
+
     &__arrow {
       opacity: 1;
       min-width: 48px;
@@ -38,6 +42,12 @@
       background-color: #FFF;
       background-repeat: no-repeat;
       background-position: center;
+      transition: .1s ease;
+      @media screen and (min-width: 991.98px) {
+        &:hover {
+          border-color: #19BEFF;
+        }
+      }
 
       svg {
         display: none;
@@ -47,6 +57,7 @@
     &__arrow--prev {
       left: -24px;
       background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyMCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuODU0MTMgMTUuNzVMOS4zOTU3OSAxNC4yMjkyTDQuMjQ5OTYgOS4wODMzM0gxOS44OTU4VjYuOTE2NjdINC4yNDk5Nkw5LjM5NTc5IDEuNzcwODNMNy44NTQxMyAwLjI1TDAuMTA0MTI2IDhMNy44NTQxMyAxNS43NVoiIGZpbGw9IiMxNTE4MUEiLz4KPC9zdmc+Cg==);
+
     }
 
     &__arrow--next {

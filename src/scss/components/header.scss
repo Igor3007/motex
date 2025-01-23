@@ -190,6 +190,7 @@ header {
       top: calc(100% - 5px);
       left: 50%;
       transform: translateX(-50%);
+      z-index: 1;
 
       &.is-active {
         display: block;
@@ -389,6 +390,10 @@ header {
         gap: 8px;
       }
     }
+  }
+
+  &__cart {
+    position: relative;
   }
 
   &__search {
