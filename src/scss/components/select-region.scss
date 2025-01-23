@@ -9,6 +9,7 @@
     display: none;
     overflow-y: auto;
     scrollbar-gutter: stable;
+    z-index: 10;
 
     &.is-open {
         display: block;

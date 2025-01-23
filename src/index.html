@@ -3,107 +3,18 @@
 @@include('html/head.html', {
 'title': 'Главная'
 })
-
 <body>
-    @@include('html/header.html')
+@@include('html/header.html')
 
-    <main class="page">
-        <div data-observ></div>
+<main class="page">
+    <div data-observ></div>
 
-        <section class="b-data-search">
-            <div class="b-data-search__container _container">
-                <div class="b-data-search__heading">
-                    <h1>Я помогу найти нужные материалы</h1>
-                    <div class="sub-title">Более 1,500 товаров для строительства и ремонта в наличии на складе г.
-                        Челябинск
-                    </div>
-                </div>
-                <div class="b-data-search__search">
-                    <div class="search-index" :class="{'is-focus': isFocus}" data-find="container">
-                        <form action="#">
-                            <div class="search-index__form">
-                                <div class="search-index__field">
-                                    <label class="search-index__input">
-                                        <input @focus="focusInput()" @blur="blurInput()" v-model="input" type="text"
-                                            name="q" autocomplete="off" placeholder="Найти в Моттексе…" value="">
-                                    </label>
-                                    <div class="search-index__btn">
-                                        <button class="btn-search">
-                                            <i class="icon"
-                                                style="background-image: url('/images/icons/ic_search.svg')"></i>
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div class="search-index__suggest">
-                                    <div class="search-suggest">
-                                        <div class="search-suggest__left">
-
-
-                                            <div class="search-suggest__similar">
-                                                <div class="search-suggest__label">Подходящие запросы</div>
-                                                <div class="search-suggest__list">
-                                                    <div class="suggest-similar">Фанера</div>
-                                                    <div class="suggest-similar">Фанера</div>
-                                                    <div class="suggest-similar">Фанера</div>
-                                                    <div class="suggest-similar">Фанера</div>
-                                                    <div class="suggest-similar">Фанера</div>
-                                                    <div class="suggest-similar">Фанера</div>
-                                                    <div class="suggest-similar">Фанера</div>
-                                                    <div class="suggest-similar">Фанера</div>
-                                                </div>
-                                            </div>
-
-
-
-
-                                            <div class="search-suggest__category">
-                                                <div class="search-suggest__label">Перейти в разделы</div>
-                                                <div class="search-suggest__list">
-
-                                                    <div class="suggest-category">
-                                                        <div class="suggest-category__image">
-                                                            <span class="bgimage"
-                                                                style="background-iamge: url()"></span>
-                                                        </div>
-                                                        <div class="suggest-category__link">
-                                                            <a href="">Фанера</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="suggest-category">
-                                                        <div class="suggest-category__image">
-                                                            <span class="bgimage"
-                                                                style="background-iamge: url()"></span>
-                                                        </div>
-                                                        <div class="suggest-category__link">
-                                                            <a href="">Фанера</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="search-suggest__right">
-                                            <div class="search-suggest__product">
-                                                <div class="suggest-product" v-for="item in [1,1,1,1,1,1]">
-                                                    <div class="suggest-product__iamge">
-                                                        <span class="bgimage" style="background-iamge: url()"></span>
-                                                    </div>
-                                                    <div class="suggest-product__main">
-                                                        <div class="suggest-product__name">Фанера берёзовая ФК 6мм сорт
-                                                            IV/IV НШ Е1 1525 × 1525мм Свеза</div>
-                                                        <div class="suggest-product__price">741 ₽/шт.</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </form>
-                    </div>
+    <section class="b-data-search">
+        <div class="b-data-search__container _container">
+            <div class="b-data-search__heading">
+                <h1>Я помогу найти нужные материалы</h1>
+                <div class="sub-title">Более 1,500 товаров для строительства и ремонта в наличии на складе г.
+                    Челябинск
                 </div>
             </div>
             <div class="b-data-search__search">
@@ -373,73 +284,77 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div class="mx-services__item-content">
-                                            <div class="mx-services__item-content-info">
-                                                <h3>Распил материалов</h3>
-                                                <p>Выполняем распил плитных материалов с высокой точностью реза</p>
-                                            </div>
-                                            <button class="btn-blue">
-                                                Смотреть прайс
-                                            </button>
+                                    </div>
+                                    <button class="btn-custom">Все товары</button>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="mx-collections__item">
+                                    <h3>Для прицепов</h3>
+                                    <div class="splide" data-slider="splide-collections">
+                                        <div class="splide__track">
+                                            <ul class="splide__list">
+                                                <li class="splide__slide">
+                                                    <a href="#" class="mx-collections__item-el">
+                                                        <picture>
+                                                            <img src="/images/collections/i_collection-a001.png"
+                                                                 alt="mx-collections">
+                                                        </picture>
+                                                        <p>Бикрост ТехноНиколь</p>
+                                                    </a>
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <a href="#" class="mx-collections__item-el">
+                                                        <picture>
+                                                            <img src="/images/collections/i_collection-a002.png"
+                                                                 alt="mx-collections">
+                                                        </picture>
+                                                        <p>Гибкая черепица Sh…</p>
+                                                    </a>
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <a href="#" class="mx-collections__item-el">
+                                                        <picture>
+                                                            <img src="/images/collections/i_collection-a003.png"
+                                                                 alt="mx-collections">
+                                                        </picture>
+                                                        <p>Битумный праймер</p>
+                                                    </a>
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <a href="#" class="mx-collections__item-el">
+                                                        <picture>
+                                                            <img src="/images/collections/i_collection-a004.png"
+                                                                 alt="mx-collections">
+                                                        </picture>
+                                                        <p>КНАУФ Гипсокартон…</p>
+                                                    </a>
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <a href="#" class="mx-collections__item-el">
+                                                        <picture>
+                                                            <img src="/images/collections/i_collection-a004.png"
+                                                                 alt="mx-collections">
+                                                        </picture>
+                                                        <p>КНАУФ Гипсокартон…</p>
+                                                    </a>
+                                                </li>
+                                                <li class="splide__slide">
+                                                    <a href="#" class="mx-collections__item-el">
+                                                        <picture>
+                                                            <img src="/images/collections/i_collection-a004.png"
+                                                                 alt="mx-collections">
+                                                        </picture>
+                                                        <p>КНАУФ Гипсокартон…</p>
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </div>
-                                    </a>
-                                </li>
-                                <li class="splide__slide">
-                                    <a href="#" class="mx-services__item">
-                                        <div class="mx-services__item-img">
-                                            <picture>
-                                                <img src="/images/services/i_services-a002.jpg" alt="mx-services">
-                                            </picture>
-                                        </div>
-                                        <div class="mx-services__item-content">
-                                            <div class="mx-services__item-content-info">
-                                                <h3>Отделочные работы</h3>
-                                                <p>Мы осуществим качественный ремонт с гарантией</p>
-                                            </div>
-                                            <button class="btn-blue">
-                                                Смотреть прайс
-                                            </button>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="splide__slide">
-                                    <a href="#" class="mx-services__item">
-                                        <div class="mx-services__item-img">
-                                            <picture>
-                                                <img src="/images/services/i_services-a003.jpg" alt="mx-services">
-                                            </picture>
-                                        </div>
-                                        <div class="mx-services__item-content">
-                                            <div class="mx-services__item-content-info">
-                                                <h3>Строительство</h3>
-                                                <p>Строим каркасные дома от 1 месяца под ключ</p>
-                                            </div>
-                                            <button class="btn-blue">
-                                                Смотреть прайс
-                                            </button>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="splide__slide">
-                                    <a href="#" class="mx-services__item">
-                                        <div class="mx-services__item-img">
-                                            <picture>
-                                                <img src="/images/services/i_services-a004.jpg" alt="mx-services">
-                                            </picture>
-                                        </div>
-                                        <div class="mx-services__item-content">
-                                            <div class="mx-services__item-content-info">
-                                                <h3>Доставка</h3>
-                                                <p>Доставим ваш заказ в любую точку мира со скоростью света</p>
-                                            </div>
-                                            <button class="btn-blue">
-                                                Смотреть прайс
-                                            </button>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                                    </div>
+                                    <button class="btn-custom">Все товары</button>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -470,744 +385,260 @@
                                             <div class="content-demo-stories__play-counter">524</div>
                                         </div>
                                     </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="mx-goods__item i-goods--order">
-                                        <a href="#" class="mx-goods__item-img">
-                                            <picture>
-                                                <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
-                                            </picture>
-                                            <div class="mx-goods__item-additions-top">
-                                                <div class="mx-popular">Хит продаж</div>
-                                            </div>
-                                        </a>
-                                        <div class="mx-goods__item-content">
-                                            <div class="mx-goods__item-content_info">
-                                                <div class="in-stock">
-                                                    <i class="icon"
-                                                        style="background-image: url('/images/icons/ic_order.svg')"></i>
-                                                    Онлайн-заказ
-                                                </div>
-                                                <a href="#" class="mx-goods__item-good">Фанера берёзовая ФК 6мм сорт
-                                                    IV/IV
-                                                    НШ Е1
-                                                    1525 × 1525мм Свеза</a>
-                                            </div>
-                                            <div class="mx-goods__item-content_action">
-                                                <button class="btn-blue">В корзину</button>
-                                                <form action="#">
-                                                    <button type="button" class="counter__btn decrement">
-                                                        <i class="icon"
-                                                            style="background-image: url('/images/icons/ic_minus.svg')"></i>
-                                                    </button>
-                                                    <input type="text" aria-label="" class="counter__input" value="0">
-                                                    <button type="button" class="counter__btn increment">
-                                                        <i class="icon"
-                                                            style="background-image: url('/images/icons/ic_plus.svg')"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-
+                                </a>
+                            </li>
+                            <li class="splide__slide">
+                                <a href="#" data-fslightbox="demo-stories" class="demo-stories__item" data-stories="1">
+                                    <video loop="" muted="muted"
+                                           poster="/images/stories/i_stories-a002.jpg">
+                                        <source src="#" type="video/mp4">
+                                    </video>
+                                    <div class="demo-stories__item-content content-demo-stories">
+                                        <div class="content-demo-stories__user">
+                                            <i class="icon"
+                                               style="background-image: url('/images/icons/ic_sl-user.svg')"></i>
+                                            <div class="content-demo-stories__user-name">mottex.ru</div>
+                                        </div>
+                                        <div class="content-demo-stories__play">
+                                            <i class="icon"
+                                               style="background-image: url('/images/icons/ic_play.svg')"></i>
+                                            <div class="content-demo-stories__play-counter">524</div>
                                         </div>
                                     </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="mx-goods__item i-goods--in-stock">
-                                        <a href="#" class="mx-goods__item-img">
-                                            <picture>
-                                                <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
-                                            </picture>
-                                            <div class="mx-goods__item-additions-top">
-                                                <div class="mx-popular">Хит продаж</div>
-                                            </div>
-                                        </a>
-                                        <div class="mx-goods__item-content">
-                                            <div class="mx-goods__item-content_info">
-                                                <div class="in-stock">
-                                                    <i class="icon"
-                                                        style="background-image: url('/images/icons/ic_in-stock.svg')"></i>
-                                                    В наличии
-                                                </div>
-                                                <a href="#" class="mx-goods__item-good">Фанера берёзовая ФК 6мм сорт
-                                                    IV/IV
-                                                    НШ Е1
-                                                    1525 × 1525мм Свеза</a>
-                                                <div class="mx-goods__item-pricing">
-                                                    <div class="price">
-                                                        <span><b>741 ₽</b></span>
-                                                        <span>880 ₽</span>
-                                                    </div>
-                                                    <div class="count">за 1 шт.</div>
-                                                </div>
-                                            </div>
-                                            <div class="mx-goods__item-content_action">
-                                                <button class="btn-blue">В корзину</button>
-                                                <form action="#">
-                                                    <button type="button" class="counter__btn decrement">
-                                                        <i class="icon"
-                                                            style="background-image: url('/images/icons/ic_minus.svg')"></i>
-                                                    </button>
-                                                    <input type="text" aria-label="" class="counter__input" value="0">
-                                                    <button type="button" class="counter__btn increment">
-                                                        <i class="icon"
-                                                            style="background-image: url('/images/icons/ic_plus.svg')"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-
+                                </a>
+                            </li>
+                            <li class="splide__slide">
+                                <a href="#" data-fslightbox="demo-stories" class="demo-stories__item" data-stories="2">
+                                    <video loop="" muted="muted"
+                                           poster="/images/stories/i_stories-a003.jpg">
+                                        <source src="#" type="video/mp4">
+                                    </video>
+                                    <div class="demo-stories__item-content content-demo-stories">
+                                        <div class="content-demo-stories__user">
+                                            <i class="icon"
+                                               style="background-image: url('/images/icons/ic_sl-user.svg')"></i>
+                                            <div class="content-demo-stories__user-name">mottex.ru</div>
+                                        </div>
+                                        <div class="content-demo-stories__play">
+                                            <i class="icon"
+                                               style="background-image: url('/images/icons/ic_play.svg')"></i>
+                                            <div class="content-demo-stories__play-counter">524</div>
                                         </div>
                                     </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="mx-goods__item i-goods--in-stock i-goods--sale">
-                                        <a href="#" class="mx-goods__item-img">
-                                            <picture>
-                                                <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
-                                            </picture>
-                                            <div class="mx-goods__item-additions-top">
-                                                <div class="mx-discount">Скидка</div>
-                                                <div class="mx-popular">Хит продаж</div>
-                                            </div>
-                                            <div class="mx-goods__item-additions-bottom">
-                                                <div class="mx-discount-num">
-                                                    <span>-19%</span> до 15 ноября
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <div class="mx-goods__item-content">
-                                            <div class="mx-goods__item-content_info">
-                                                <div class="in-stock">
-                                                    <i class="icon"
-                                                        style="background-image: url('/images/icons/ic_in-stock.svg')"></i>
-                                                    В наличии
-                                                </div>
-                                                <a href="#" class="mx-goods__item-good">Фанера берёзовая ФК 6мм сорт
-                                                    IV/IV
-                                                    НШ Е1
-                                                    1525 × 1525мм Свеза</a>
-                                                <div class="mx-goods__item-pricing">
-                                                    <div class="price">
-                                                        <span><b>741 ₽</b></span>
-                                                        <span>880 ₽</span>
-                                                    </div>
-                                                    <div class="count">за 1 шт.</div>
-                                                </div>
-                                            </div>
-                                            <div class="mx-goods__item-content_action">
-                                                <button class="btn-blue">В корзину</button>
-                                                <form action="#">
-                                                    <button type="button" class="counter__btn decrement">
-                                                        <i class="icon"
-                                                            style="background-image: url('/images/icons/ic_minus.svg')"></i>
-                                                    </button>
-                                                    <input type="text" aria-label="" class="counter__input" value="0">
-                                                    <button type="button" class="counter__btn increment">
-                                                        <i class="icon"
-                                                            style="background-image: url('/images/icons/ic_plus.svg')"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-
+                                </a>
+                            </li>
+                            <li class="splide__slide">
+                                <a href="#" data-fslightbox="demo-stories" class="demo-stories__item" data-stories="3">
+                                    <video loop="" muted="muted"
+                                           poster="/images/stories/i_stories-a004.jpg">
+                                        <source src="#" type="video/mp4">
+                                    </video>
+                                    <div class="demo-stories__item-content content-demo-stories">
+                                        <div class="content-demo-stories__user">
+                                            <i class="icon"
+                                               style="background-image: url('/images/icons/ic_sl-user.svg')"></i>
+                                            <div class="content-demo-stories__user-name">mottex.ru</div>
+                                        </div>
+                                        <div class="content-demo-stories__play">
+                                            <i class="icon"
+                                               style="background-image: url('/images/icons/ic_play.svg')"></i>
+                                            <div class="content-demo-stories__play-counter">524</div>
                                         </div>
                                     </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="mx-goods__item i-goods--order">
-                                        <a href="#" class="mx-goods__item-img">
-                                            <picture>
-                                                <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
-                                            </picture>
-                                            <div class="mx-goods__item-additions-top">
-                                                <div class="mx-popular">Хит продаж</div>
-                                            </div>
-                                        </a>
-                                        <div class="mx-goods__item-content">
-                                            <div class="mx-goods__item-content_info">
-                                                <div class="in-stock">
-                                                    <i class="icon"
-                                                        style="background-image: url('/images/icons/ic_order.svg')"></i>
-                                                    Онлайн-заказ
-                                                </div>
-                                                <a href="#" class="mx-goods__item-good">Фанера берёзовая ФК 6мм сорт
-                                                    IV/IV
-                                                    НШ Е1
-                                                    1525 × 1525мм Свеза</a>
-                                            </div>
-                                            <div class="mx-goods__item-content_action">
-                                                <button class="btn-blue">В корзину</button>
-                                                <form action="#">
-                                                    <button type="button" class="counter__btn decrement">
-                                                        <i class="icon"
-                                                            style="background-image: url('/images/icons/ic_minus.svg')"></i>
-                                                    </button>
-                                                    <input type="text" aria-label="" class="counter__input" value="0">
-                                                    <button type="button" class="counter__btn increment">
-                                                        <i class="icon"
-                                                            style="background-image: url('/images/icons/ic_plus.svg')"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-
+                                </a>
+                            </li>
+                            <li class="splide__slide">
+                                <a href="#" data-fslightbox="demo-stories" class="demo-stories__item" data-stories="4">
+                                    <video loop="" muted="muted"
+                                           poster="/images/stories/i_stories-a005.jpg">
+                                        <source src="#" type="video/mp4">
+                                    </video>
+                                    <div class="demo-stories__item-content content-demo-stories">
+                                        <div class="content-demo-stories__user">
+                                            <i class="icon"
+                                               style="background-image: url('/images/icons/ic_sl-user.svg')"></i>
+                                            <div class="content-demo-stories__user-name">mottex.ru</div>
+                                        </div>
+                                        <div class="content-demo-stories__play">
+                                            <i class="icon"
+                                               style="background-image: url('/images/icons/ic_play.svg')"></i>
+                                            <div class="content-demo-stories__play-counter">524</div>
                                         </div>
                                     </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="mx-goods__item i-goods--in-stock">
-                                        <a href="#" class="mx-goods__item-img">
-                                            <picture>
-                                                <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
-                                            </picture>
-                                            <div class="mx-goods__item-additions-top">
-                                                <div class="mx-popular">Хит продаж</div>
-                                            </div>
-                                        </a>
-                                        <div class="mx-goods__item-content">
-                                            <div class="mx-goods__item-content_info">
-                                                <div class="in-stock">
-                                                    <i class="icon"
-                                                        style="background-image: url('/images/icons/ic_in-stock.svg')"></i>
-                                                    В наличии
-                                                </div>
-                                                <a href="#" class="mx-goods__item-good">Фанера берёзовая ФК 6мм сорт
-                                                    IV/IV
-                                                    НШ Е1
-                                                    1525 × 1525мм Свеза</a>
-                                                <div class="mx-goods__item-pricing">
-                                                    <div class="price">
-                                                        <span><b>741 ₽</b></span>
-                                                        <span>880 ₽</span>
-                                                    </div>
-                                                    <div class="count">за 1 шт.</div>
-                                                </div>
-                                            </div>
-                                            <div class="mx-goods__item-content_action">
-                                                <button class="btn-blue">В корзину</button>
-                                                <form action="#">
-                                                    <button type="button" class="counter__btn decrement">
-                                                        <i class="icon"
-                                                            style="background-image: url('/images/icons/ic_minus.svg')"></i>
-                                                    </button>
-                                                    <input type="text" aria-label="" class="counter__input" value="0">
-                                                    <button type="button" class="counter__btn increment">
-                                                        <i class="icon"
-                                                            style="background-image: url('/images/icons/ic_plus.svg')"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-
+                                </a>
+                            </li>
+                            <li class="splide__slide">
+                                <a href="#" data-fslightbox="demo-stories" class="demo-stories__item" data-stories="5">
+                                    <video loop="" muted="muted"
+                                           poster="/images/stories/i_stories-a006.jpg">
+                                        <source src="#" type="video/mp4">
+                                    </video>
+                                    <div class="demo-stories__item-content content-demo-stories">
+                                        <div class="content-demo-stories__user">
+                                            <i class="icon"
+                                               style="background-image: url('/images/icons/ic_sl-user.svg')"></i>
+                                            <div class="content-demo-stories__user-name">mottex.ru</div>
+                                        </div>
+                                        <div class="content-demo-stories__play">
+                                            <i class="icon"
+                                               style="background-image: url('/images/icons/ic_play.svg')"></i>
+                                            <div class="content-demo-stories__play-counter">524</div>
                                         </div>
                                     </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="mx-goods__item i-goods--in-stock i-goods--sale">
-                                        <a href="#" class="mx-goods__item-img">
-                                            <picture>
-                                                <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
-                                            </picture>
-                                            <div class="mx-goods__item-additions-top">
-                                                <div class="mx-discount">Скидка</div>
-                                                <div class="mx-popular">Хит продаж</div>
-                                            </div>
-                                            <div class="mx-goods__item-additions-bottom">
-                                                <div class="mx-discount-num">
-                                                    <span>-19%</span> до 15 ноября
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <div class="mx-goods__item-content">
-                                            <div class="mx-goods__item-content_info">
-                                                <div class="in-stock">
-                                                    <i class="icon"
-                                                        style="background-image: url('/images/icons/ic_in-stock.svg')"></i>
-                                                    В наличии
-                                                </div>
-                                                <a href="#" class="mx-goods__item-good">Фанера берёзовая ФК 6мм сорт
-                                                    IV/IV
-                                                    НШ Е1
-                                                    1525 × 1525мм Свеза</a>
-                                                <div class="mx-goods__item-pricing">
-                                                    <div class="price">
-                                                        <span><b>741 ₽</b></span>
-                                                        <span>880 ₽</span>
-                                                    </div>
-                                                    <div class="count">за 1 шт.</div>
-                                                </div>
-                                            </div>
-                                            <div class="mx-goods__item-content_action">
-                                                <button class="btn-blue">В корзину</button>
-                                                <form action="#">
-                                                    <button type="button" class="counter__btn decrement">
-                                                        <i class="icon"
-                                                            style="background-image: url('/images/icons/ic_minus.svg')"></i>
-                                                    </button>
-                                                    <input type="text" aria-label="" class="counter__input" value="0">
-                                                    <button type="button" class="counter__btn increment">
-                                                        <i class="icon"
-                                                            style="background-image: url('/images/icons/ic_plus.svg')"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-
+                                </a>
+                            </li>
+                            <li class="splide__slide">
+                                <a href="#" data-fslightbox="demo-stories" class="demo-stories__item" data-stories="0">
+                                    <video loop="" muted="muted"
+                                           poster="/images/stories/i_stories-a001.jpg">
+                                        <source src="#" type="video/mp4">
+                                    </video>
+                                    <div class="demo-stories__item-content content-demo-stories">
+                                        <div class="content-demo-stories__user">
+                                            <i class="icon"
+                                               style="background-image: url('/images/icons/ic_sl-user.svg')"></i>
+                                            <div class="content-demo-stories__user-name">mottex.ru</div>
+                                        </div>
+                                        <div class="content-demo-stories__play">
+                                            <i class="icon"
+                                               style="background-image: url('/images/icons/ic_play.svg')"></i>
+                                            <div class="content-demo-stories__play-counter">524</div>
                                         </div>
                                     </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="mx-goods__item i-goods--order">
-                                        <a href="#" class="mx-goods__item-img">
-                                            <picture>
-                                                <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
-                                            </picture>
-                                            <div class="mx-goods__item-additions-top">
-                                                <div class="mx-popular">Хит продаж</div>
-                                            </div>
-                                        </a>
-                                        <div class="mx-goods__item-content">
-                                            <div class="mx-goods__item-content_info">
-                                                <div class="in-stock">
-                                                    <i class="icon"
-                                                        style="background-image: url('/images/icons/ic_order.svg')"></i>
-                                                    Онлайн-заказ
-                                                </div>
-                                                <a href="#" class="mx-goods__item-good">Фанера берёзовая ФК 6мм сорт
-                                                    IV/IV
-                                                    НШ Е1
-                                                    1525 × 1525мм Свеза</a>
-                                            </div>
-                                            <div class="mx-goods__item-content_action">
-                                                <button class="btn-blue">В корзину</button>
-                                                <form action="#">
-                                                    <button type="button" class="counter__btn decrement">
-                                                        <i class="icon"
-                                                            style="background-image: url('/images/icons/ic_minus.svg')"></i>
-                                                    </button>
-                                                    <input type="text" aria-label="" class="counter__input" value="0">
-                                                    <button type="button" class="counter__btn increment">
-                                                        <i class="icon"
-                                                            style="background-image: url('/images/icons/ic_plus.svg')"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="mx-goods__item i-goods--in-stock">
-                                        <a href="#" class="mx-goods__item-img">
-                                            <picture>
-                                                <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
-                                            </picture>
-                                            <div class="mx-goods__item-additions-top">
-                                                <div class="mx-popular">Хит продаж</div>
-                                            </div>
-                                        </a>
-                                        <div class="mx-goods__item-content">
-                                            <div class="mx-goods__item-content_info">
-                                                <div class="in-stock">
-                                                    <i class="icon"
-                                                        style="background-image: url('/images/icons/ic_in-stock.svg')"></i>
-                                                    В наличии
-                                                </div>
-                                                <a href="#" class="mx-goods__item-good">Фанера берёзовая ФК 6мм сорт
-                                                    IV/IV
-                                                    НШ Е1
-                                                    1525 × 1525мм Свеза</a>
-                                                <div class="mx-goods__item-pricing">
-                                                    <div class="price">
-                                                        <span><b>741 ₽</b></span>
-                                                        <span>880 ₽</span>
-                                                    </div>
-                                                    <div class="count">за 1 шт.</div>
-                                                </div>
-                                            </div>
-                                            <div class="mx-goods__item-content_action">
-                                                <button class="btn-blue">В корзину</button>
-                                                <form action="#">
-                                                    <button type="button" class="counter__btn decrement">
-                                                        <i class="icon"
-                                                            style="background-image: url('/images/icons/ic_minus.svg')"></i>
-                                                    </button>
-                                                    <input type="text" aria-label="" class="counter__input" value="0">
-                                                    <button type="button" class="counter__btn increment">
-                                                        <i class="icon"
-                                                            style="background-image: url('/images/icons/ic_plus.svg')"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="mx-collections">
-            <div class="mx-collections__container _container">
-                <div class="mx-collections__heading">
-                    <h2>Подборки товаров</h2>
-                    <a href="#">Смотреть все</a>
-                </div>
-                <div class="mx-collections__collections">
-                    <div class="splide" data-slider="mx-splide-collections">
-                        <div class="splide__track">
-                            <ul class="splide__list">
-                                <li class="splide__slide">
-                                    <div class="mx-collections__item">
-                                        <h3>Кровля под ключ</h3>
-                                        <div class="splide" data-slider="splide-collections">
-                                            <div class="splide__track">
-                                                <ul class="splide__list">
-                                                    <li class="splide__slide">
-                                                        <a href="#" class="mx-collections__item-el">
-                                                            <picture>
-                                                                <img src="/images/collections/i_collection-a001.png"
-                                                                    alt="mx-collections">
-                                                            </picture>
-                                                            <p>Бикрост ТехноНиколь</p>
-                                                        </a>
-                                                    </li>
-                                                    <li class="splide__slide">
-                                                        <a href="#" class="mx-collections__item-el">
-                                                            <picture>
-                                                                <img src="/images/collections/i_collection-a002.png"
-                                                                    alt="mx-collections">
-                                                            </picture>
-                                                            <p>Гибкая черепица Sh…</p>
-                                                        </a>
-                                                    </li>
-                                                    <li class="splide__slide">
-                                                        <a href="#" class="mx-collections__item-el">
-                                                            <picture>
-                                                                <img src="/images/collections/i_collection-a003.png"
-                                                                    alt="mx-collections">
-                                                            </picture>
-                                                            <p>Битумный праймер</p>
-                                                        </a>
-                                                    </li>
-                                                    <li class="splide__slide">
-                                                        <a href="#" class="mx-collections__item-el">
-                                                            <picture>
-                                                                <img src="/images/collections/i_collection-a004.png"
-                                                                    alt="mx-collections">
-                                                            </picture>
-                                                            <p>КНАУФ Гипсокартон…</p>
-                                                        </a>
-                                                    </li>
-                                                    <li class="splide__slide">
-                                                        <a href="#" class="mx-collections__item-el">
-                                                            <picture>
-                                                                <img src="/images/collections/i_collection-a004.png"
-                                                                    alt="mx-collections">
-                                                            </picture>
-                                                            <p>КНАУФ Гипсокартон…</p>
-                                                        </a>
-                                                    </li>
-                                                    <li class="splide__slide">
-                                                        <a href="#" class="mx-collections__item-el">
-                                                            <picture>
-                                                                <img src="/images/collections/i_collection-a004.png"
-                                                                    alt="mx-collections">
-                                                            </picture>
-                                                            <p>КНАУФ Гипсокартон…</p>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <button class="btn-custom">Все товары</button>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="mx-collections__item">
-                                        <h3>Для прицепов</h3>
-                                        <div class="splide" data-slider="splide-collections">
-                                            <div class="splide__track">
-                                                <ul class="splide__list">
-                                                    <li class="splide__slide">
-                                                        <a href="#" class="mx-collections__item-el">
-                                                            <picture>
-                                                                <img src="/images/collections/i_collection-a001.png"
-                                                                    alt="mx-collections">
-                                                            </picture>
-                                                            <p>Бикрост ТехноНиколь</p>
-                                                        </a>
-                                                    </li>
-                                                    <li class="splide__slide">
-                                                        <a href="#" class="mx-collections__item-el">
-                                                            <picture>
-                                                                <img src="/images/collections/i_collection-a002.png"
-                                                                    alt="mx-collections">
-                                                            </picture>
-                                                            <p>Гибкая черепица Sh…</p>
-                                                        </a>
-                                                    </li>
-                                                    <li class="splide__slide">
-                                                        <a href="#" class="mx-collections__item-el">
-                                                            <picture>
-                                                                <img src="/images/collections/i_collection-a003.png"
-                                                                    alt="mx-collections">
-                                                            </picture>
-                                                            <p>Битумный праймер</p>
-                                                        </a>
-                                                    </li>
-                                                    <li class="splide__slide">
-                                                        <a href="#" class="mx-collections__item-el">
-                                                            <picture>
-                                                                <img src="/images/collections/i_collection-a004.png"
-                                                                    alt="mx-collections">
-                                                            </picture>
-                                                            <p>КНАУФ Гипсокартон…</p>
-                                                        </a>
-                                                    </li>
-                                                    <li class="splide__slide">
-                                                        <a href="#" class="mx-collections__item-el">
-                                                            <picture>
-                                                                <img src="/images/collections/i_collection-a004.png"
-                                                                    alt="mx-collections">
-                                                            </picture>
-                                                            <p>КНАУФ Гипсокартон…</p>
-                                                        </a>
-                                                    </li>
-                                                    <li class="splide__slide">
-                                                        <a href="#" class="mx-collections__item-el">
-                                                            <picture>
-                                                                <img src="/images/collections/i_collection-a004.png"
-                                                                    alt="mx-collections">
-                                                            </picture>
-                                                            <p>КНАУФ Гипсокартон…</p>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <button class="btn-custom">Все товары</button>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    </section>
 
 
-        <section class="mx-stories">
-            <div class="stories__container _container">
-                <h2>Наша жизнь в <i class="icon" style="background-image: url('/images/icons/ic_inst.svg')"></i></h2>
-                <div class="stories__demo demo-stories">
-                    <div class="splide" data-slider="demo-stories">
-                        <div class="splide__track">
-                            <ul class="splide__list">
-                                <li class="splide__slide">
-                                    <a href="#" data-fslightbox="demo-stories" class="demo-stories__item"
-                                        data-stories="0">
-                                        <video loop="" muted="muted" poster="/images/stories/i_stories-a001.jpg">
-                                            <source src="#" type="video/mp4">
-                                        </video>
-                                        <div class="demo-stories__item-content content-demo-stories">
-                                            <div class="content-demo-stories__user">
-                                                <i class="icon"
-                                                    style="background-image: url('/images/icons/ic_sl-user.svg')"></i>
-                                                <div class="content-demo-stories__user-name">mottex.ru</div>
-                                            </div>
-                                            <div class="content-demo-stories__play">
-                                                <i class="icon"
-                                                    style="background-image: url('/images/icons/ic_play.svg')"></i>
-                                                <div class="content-demo-stories__play-counter">524</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="splide__slide">
-                                    <a href="#" data-fslightbox="demo-stories" class="demo-stories__item"
-                                        data-stories="1">
-                                        <video loop="" muted="muted" poster="/images/stories/i_stories-a002.jpg">
-                                            <source src="#" type="video/mp4">
-                                        </video>
-                                        <div class="demo-stories__item-content content-demo-stories">
-                                            <div class="content-demo-stories__user">
-                                                <i class="icon"
-                                                    style="background-image: url('/images/icons/ic_sl-user.svg')"></i>
-                                                <div class="content-demo-stories__user-name">mottex.ru</div>
-                                            </div>
-                                            <div class="content-demo-stories__play">
-                                                <i class="icon"
-                                                    style="background-image: url('/images/icons/ic_play.svg')"></i>
-                                                <div class="content-demo-stories__play-counter">524</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="splide__slide">
-                                    <a href="#" data-fslightbox="demo-stories" class="demo-stories__item"
-                                        data-stories="2">
-                                        <video loop="" muted="muted" poster="/images/stories/i_stories-a003.jpg">
-                                            <source src="#" type="video/mp4">
-                                        </video>
-                                        <div class="demo-stories__item-content content-demo-stories">
-                                            <div class="content-demo-stories__user">
-                                                <i class="icon"
-                                                    style="background-image: url('/images/icons/ic_sl-user.svg')"></i>
-                                                <div class="content-demo-stories__user-name">mottex.ru</div>
-                                            </div>
-                                            <div class="content-demo-stories__play">
-                                                <i class="icon"
-                                                    style="background-image: url('/images/icons/ic_play.svg')"></i>
-                                                <div class="content-demo-stories__play-counter">524</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="splide__slide">
-                                    <a href="#" data-fslightbox="demo-stories" class="demo-stories__item"
-                                        data-stories="3">
-                                        <video loop="" muted="muted" poster="/images/stories/i_stories-a004.jpg">
-                                            <source src="#" type="video/mp4">
-                                        </video>
-                                        <div class="demo-stories__item-content content-demo-stories">
-                                            <div class="content-demo-stories__user">
-                                                <i class="icon"
-                                                    style="background-image: url('/images/icons/ic_sl-user.svg')"></i>
-                                                <div class="content-demo-stories__user-name">mottex.ru</div>
-                                            </div>
-                                            <div class="content-demo-stories__play">
-                                                <i class="icon"
-                                                    style="background-image: url('/images/icons/ic_play.svg')"></i>
-                                                <div class="content-demo-stories__play-counter">524</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="splide__slide">
-                                    <a href="#" data-fslightbox="demo-stories" class="demo-stories__item"
-                                        data-stories="4">
-                                        <video loop="" muted="muted" poster="/images/stories/i_stories-a005.jpg">
-                                            <source src="#" type="video/mp4">
-                                        </video>
-                                        <div class="demo-stories__item-content content-demo-stories">
-                                            <div class="content-demo-stories__user">
-                                                <i class="icon"
-                                                    style="background-image: url('/images/icons/ic_sl-user.svg')"></i>
-                                                <div class="content-demo-stories__user-name">mottex.ru</div>
-                                            </div>
-                                            <div class="content-demo-stories__play">
-                                                <i class="icon"
-                                                    style="background-image: url('/images/icons/ic_play.svg')"></i>
-                                                <div class="content-demo-stories__play-counter">524</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="splide__slide">
-                                    <a href="#" data-fslightbox="demo-stories" class="demo-stories__item"
-                                        data-stories="5">
-                                        <video loop="" muted="muted" poster="/images/stories/i_stories-a006.jpg">
-                                            <source src="#" type="video/mp4">
-                                        </video>
-                                        <div class="demo-stories__item-content content-demo-stories">
-                                            <div class="content-demo-stories__user">
-                                                <i class="icon"
-                                                    style="background-image: url('/images/icons/ic_sl-user.svg')"></i>
-                                                <div class="content-demo-stories__user-name">mottex.ru</div>
-                                            </div>
-                                            <div class="content-demo-stories__play">
-                                                <i class="icon"
-                                                    style="background-image: url('/images/icons/ic_play.svg')"></i>
-                                                <div class="content-demo-stories__play-counter">524</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="splide__slide">
-                                    <a href="#" data-fslightbox="demo-stories" class="demo-stories__item"
-                                        data-stories="0">
-                                        <video loop="" muted="muted" poster="/images/stories/i_stories-a001.jpg">
-                                            <source src="#" type="video/mp4">
-                                        </video>
-                                        <div class="demo-stories__item-content content-demo-stories">
-                                            <div class="content-demo-stories__user">
-                                                <i class="icon"
-                                                    style="background-image: url('/images/icons/ic_sl-user.svg')"></i>
-                                                <div class="content-demo-stories__user-name">mottex.ru</div>
-                                            </div>
-                                            <div class="content-demo-stories__play">
-                                                <i class="icon"
-                                                    style="background-image: url('/images/icons/ic_play.svg')"></i>
-                                                <div class="content-demo-stories__play-counter">524</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!--    <section class="mx-stories">-->
+    <!--        <div class="stories__container _container">-->
+    <!--            <h2>Наша жизнь в <i class="icon" style="background-image: url('/images/icons/ic_inst.svg')"></i></h2>-->
+    <!--            <div class="stories__demo demo-stories">-->
+    <!--                <div class="splide" data-slider="demo-stories">-->
+    <!--                    <div class="splide__track">-->
+    <!--                        <ul class="splide__list">-->
+    <!--                            <li class="splide__slide">-->
+    <!--                                <div class="demo-stories__item" data-stories="0">-->
+    <!--                                    <picture>-->
+    <!--                                        <img src="/images/stories/i_stories-a001.jpg" alt="demo-stories">-->
+    <!--                                    </picture>-->
+    <!--                                    <div class="demo-stories__item-content content-demo-stories">-->
+    <!--                                        <div class="content-demo-stories__user">-->
+    <!--                                            <i class="icon"-->
+    <!--                                               style="background-image: url('/images/icons/ic_sl-user.svg')"></i>-->
+    <!--                                            <div class="content-demo-stories__user-name">mottex.ru</div>-->
+    <!--                                        </div>-->
+    <!--                                        <div class="content-demo-stories__play">-->
+    <!--                                            <i class="icon"-->
+    <!--                                               style="background-image: url('/images/icons/ic_play.svg')"></i>-->
+    <!--                                            <div class="content-demo-stories__play-counter">524</div>-->
+    <!--                                        </div>-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+    <!--                            </li>-->
+    <!--                            <li class="splide__slide">-->
+    <!--                                <div class="demo-stories__item" data-stories="1">-->
+    <!--                                    <picture>-->
+    <!--                                        <img src="/images/stories/i_stories-a002.jpg" alt="demo-stories">-->
+    <!--                                    </picture>-->
+    <!--                                    <div class="demo-stories__item-content content-demo-stories">-->
+    <!--                                        <div class="content-demo-stories__user">-->
+    <!--                                            <i class="icon"-->
+    <!--                                               style="background-image: url('/images/icons/ic_sl-user.svg')"></i>-->
+    <!--                                            <div class="content-demo-stories__user-name">mottex.ru</div>-->
+    <!--                                        </div>-->
+    <!--                                        <div class="content-demo-stories__play">-->
+    <!--                                            <i class="icon"-->
+    <!--                                               style="background-image: url('/images/icons/ic_play.svg')"></i>-->
+    <!--                                            <div class="content-demo-stories__play-counter">524</div>-->
+    <!--                                        </div>-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+    <!--                            </li>-->
+    <!--                        </ul>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
 
-        </section>
+    <!--&lt;!&ndash;        <div class="stories__preview preview-stories">&ndash;&gt;-->
+    <!--&lt;!&ndash;            <div class="preview-stories__close">&ndash;&gt;-->
+    <!--&lt;!&ndash;                <i class="icon" style="background-image: url('/images/icons/ic_close.svg')"></i>&ndash;&gt;-->
+    <!--&lt;!&ndash;            </div>&ndash;&gt;-->
+    <!--&lt;!&ndash;            <div class="splide" data-slider="preview-stories">&ndash;&gt;-->
+    <!--&lt;!&ndash;                <div class="splide__track">&ndash;&gt;-->
+    <!--&lt;!&ndash;                    <ul class="splide__list">&ndash;&gt;-->
+    <!--&lt;!&ndash;                        <li class="splide__slide">&ndash;&gt;-->
+    <!--&lt;!&ndash;                            <div class="preview-stories__item" data-preview-stories="0">&ndash;&gt;-->
+    <!--&lt;!&ndash;                                <div class="preview-stories__item-progress progress-bar"></div>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                <div class="preview-stories__item-slide slide-preview">&ndash;&gt;-->
+    <!--&lt;!&ndash;                                    <div class="slide-preview__user">&ndash;&gt;-->
+    <!--&lt;!&ndash;                                        <i class="icon"&ndash;&gt;-->
+    <!--&lt;!&ndash;                                           style="background-image: url('/images/icons/ic_sl-user.svg')"></i>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                        <div class="slide-preview__user-name">mottex.ru1</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                    <div class="slide-preview__content">&ndash;&gt;-->
+    <!--&lt;!&ndash;                                        <div class="slide-preview__content-img">&ndash;&gt;-->
+    <!--&lt;!&ndash;                                            <img src="https://marketplace.canva.com/EAEUWQiaOcw/1/0/900w/canva-%D1%81%D0%B8%D0%BD%D1%8F%D1%8F-%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%B0%D1%8F-%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%B0%D1%8F-%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81-%D0%B0%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F-%D0%B2-instagram-%D0%BE%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0-x3VqJ6DMWjw.jpg"&ndash;&gt;-->
+    <!--&lt;!&ndash;                                                 alt="preview-stories">&ndash;&gt;-->
+    <!--&lt;!&ndash;                                        </div>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                <div class="preview-stories__item-slide slide-preview">&ndash;&gt;-->
+    <!--&lt;!&ndash;                                    <div class="slide-preview__user">&ndash;&gt;-->
+    <!--&lt;!&ndash;                                        <i class="icon"&ndash;&gt;-->
+    <!--&lt;!&ndash;                                           style="background-image: url('/images/icons/ic_sl-user.svg')"></i>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                        <div class="slide-preview__user-name">mottex.ru1</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                    <div class="slide-preview__content">&ndash;&gt;-->
+    <!--&lt;!&ndash;                                        <div class="slide-preview__content-img">&ndash;&gt;-->
+    <!--&lt;!&ndash;                                            <img src="https://marketplace.canva.com/EAEUXHff-wU/1/0/900w/canva-%D0%B1%D0%B5%D0%B6%D0%B5%D0%B2%D0%B0%D1%8F-%D0%B8-%D1%81%D0%B5%D1%80%D0%B0%D1%8F-%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%B0%D1%8F-%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%B0%D1%8F-%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81-%D0%B0%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F-%D0%B2-instagram-%D0%BE%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0-5P0p665SJcc.jpg"&ndash;&gt;-->
+    <!--&lt;!&ndash;                                                 alt="preview-stories">&ndash;&gt;-->
+    <!--&lt;!&ndash;                                        </div>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+    <!--&lt;!&ndash;                        </li>&ndash;&gt;-->
+    <!--&lt;!&ndash;                        <li class="splide__slide">&ndash;&gt;-->
+    <!--&lt;!&ndash;                            <div class="preview-stories__item" data-preview-stories="1">&ndash;&gt;-->
+    <!--&lt;!&ndash;                                <div class="preview-stories__item-progress progress-bar"></div>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                <div class="preview-stories__item-slide slide-preview">&ndash;&gt;-->
+    <!--&lt;!&ndash;                                    <div class="slide-preview__user">&ndash;&gt;-->
+    <!--&lt;!&ndash;                                        <i class="icon"&ndash;&gt;-->
+    <!--&lt;!&ndash;                                           style="background-image: url('/images/icons/ic_sl-user.svg')"></i>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                        <div class="slide-preview__user-name">mottex.ru2</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                    <div class="slide-preview__content">&ndash;&gt;-->
+    <!--&lt;!&ndash;                                        <div class="slide-preview__content-img">&ndash;&gt;-->
+    <!--&lt;!&ndash;                                            <img src="https://marketplace.canva.com/EAEUWT0Bey0/1/0/900w/canva-%D0%B7%D0%B5%D0%BB%D0%B5%D0%BD%D0%B0%D1%8F-%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%B0%D1%8F-%D0%BC%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%B0%D1%8F-%D0%BB%D0%B8%D1%87%D0%BD%D0%B0%D1%8F-%D0%B0%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F-%D0%B2-instagram-%D0%BE%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0-0g8kDIP8OII.jpg"&ndash;&gt;-->
+    <!--&lt;!&ndash;                                                 alt="preview-stories">&ndash;&gt;-->
+    <!--&lt;!&ndash;                                        </div>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+    <!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+    <!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+    <!--&lt;!&ndash;                        </li>&ndash;&gt;-->
+    <!--&lt;!&ndash;                    </ul>&ndash;&gt;-->
+    <!--&lt;!&ndash;                </div>&ndash;&gt;-->
+    <!--&lt;!&ndash;            </div>&ndash;&gt;-->
+    <!--&lt;!&ndash;        </div>&ndash;&gt;-->
 
+    <!--    </section>-->
 
-        <!--    <section class="mx-stories">-->
-        <!--        <div class="stories__container _container">-->
-        <!--            <h2>Наша жизнь в <i class="icon" style="background-image: url('/images/icons/ic_inst.svg')"></i></h2>-->
-        <!--            <div class="stories__demo demo-stories">-->
-        <!--                <div class="splide" data-slider="demo-stories">-->
-        <!--                    <div class="splide__track">-->
-        <!--                        <ul class="splide__list">-->
-        <!--                            <li class="splide__slide">-->
-        <!--                                <div class="demo-stories__item" data-stories="0">-->
-        <!--                                    <picture>-->
-        <!--                                        <img src="/images/stories/i_stories-a001.jpg" alt="demo-stories">-->
-        <!--                                    </picture>-->
-        <!--                                    <div class="demo-stories__item-content content-demo-stories">-->
-        <!--                                        <div class="content-demo-stories__user">-->
-        <!--                                            <i class="icon"-->
-        <!--                                               style="background-image: url('/images/icons/ic_sl-user.svg')"></i>-->
-        <!--                                            <div class="content-demo-stories__user-name">mottex.ru</div>-->
-        <!--                                        </div>-->
-        <!--                                        <div class="content-demo-stories__play">-->
-        <!--                                            <i class="icon"-->
-        <!--                                               style="background-image: url('/images/icons/ic_play.svg')"></i>-->
-        <!--                                            <div class="content-demo-stories__play-counter">524</div>-->
-        <!--                                        </div>-->
-        <!--                                    </div>-->
-        <!--                                </div>-->
-        <!--                            </li>-->
-        <!--                            <li class="splide__slide">-->
-        <!--                                <div class="demo-stories__item" data-stories="1">-->
-        <!--                                    <picture>-->
-        <!--                                        <img src="/images/stories/i_stories-a002.jpg" alt="demo-stories">-->
-        <!--                                    </picture>-->
-        <!--                                    <div class="demo-stories__item-content content-demo-stories">-->
-        <!--                                        <div class="content-demo-stories__user">-->
-        <!--                                            <i class="icon"-->
-        <!--                                               style="background-image: url('/images/icons/ic_sl-user.svg')"></i>-->
-        <!--                                            <div class="content-demo-stories__user-name">mottex.ru</div>-->
-        <!--                                        </div>-->
-        <!--                                        <div class="content-demo-stories__play">-->
-        <!--                                            <i class="icon"-->
-        <!--                                               style="background-image: url('/images/icons/ic_play.svg')"></i>-->
-        <!--                                            <div class="content-demo-stories__play-counter">524</div>-->
-        <!--                                        </div>-->
-        <!--                                    </div>-->
-        <!--                                </div>-->
-        <!--                            </li>-->
-        <!--                        </ul>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </div>-->
+</main>
 
 @@include('html/footer.html')
 @@include('html/components/action-panel.html')
 
 
+<script src="
+    https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 
 
 </body>
-
 </html>

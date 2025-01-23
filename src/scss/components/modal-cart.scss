@@ -12,6 +12,7 @@
   background: #FFF;
   border-radius: 8px;
   box-shadow: 0 0 20px 0 #00000021;
+  z-index: 10;
 
   &.is-active {
     animation: dropdown-animation-t 0.4s ease forwards;

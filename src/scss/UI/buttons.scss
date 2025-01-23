@@ -32,6 +32,26 @@
   }
 }
 
+.icon {
+  display: block;
+  min-width: 12px;
+  width: 12px;
+  height: 12px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.1s ease;
+
+  @media screen and (min-width: 767.98px) {
+     
+      min-width: 20px;
+      width: 20px;
+      height: 20px;
+     
+
+  }
+}
+
 .btn-custom_i {
   font-size: 12px;
   font-weight: 400;
@@ -51,16 +71,7 @@
   border-radius: 8px;
   cursor: pointer;
 
-  .icon {
-    display: block;
-    min-width: 12px;
-    width: 12px;
-    height: 12px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: 0.1s ease;
-  }
+ 
 
   @media screen and (min-width: 767.98px) {
     font-size: 16px;

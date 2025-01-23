@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                     closePopup() {
                         this.isOpen = false
+                        document.body.classList.toggle('page-hidden', false)
                     },
 
                     openPopup() {

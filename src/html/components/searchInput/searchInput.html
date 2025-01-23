@@ -1,18 +1,85 @@
-<div class="search-index" data-find="container">
+<div class="search-index" :class="{'is-focus': isFocus}" data-find="container">
     <form action="#">
         <div class="search-index__form">
             <div class="search-index__field">
                 <label class="search-index__input">
-                    <input type="text" name="q" autocomplete="off"
-                           placeholder="Найти в Моттексе…" value="">
+                    <input @focus="focusInput()" @blur="blurInput()" v-model="input" type="text"
+                        name="q" autocomplete="off" placeholder="Найти в Моттексе…" value="">
                 </label>
                 <div class="search-index__btn">
                     <button class="btn-search">
                         <i class="icon"
-                           style="background-image: url('/images/icons/ic_search.svg')"></i>
+                            style="background-image: url('/images/icons/ic_search.svg')"></i>
                     </button>
                 </div>
             </div>
+
+            <div class="search-index__suggest">
+                <div class="search-suggest">
+                    <div class="search-suggest__left">
+
+
+                        <div class="search-suggest__similar">
+                            <div class="search-suggest__label">Подходящие запросы</div>
+                            <div class="search-suggest__list">
+                                <div class="suggest-similar">Фанера</div>
+                                <div class="suggest-similar">Фанера</div>
+                                <div class="suggest-similar">Фанера</div>
+                                <div class="suggest-similar">Фанера</div>
+                                <div class="suggest-similar">Фанера</div>
+                                <div class="suggest-similar">Фанера</div>
+                                <div class="suggest-similar">Фанера</div>
+                                <div class="suggest-similar">Фанера</div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="search-suggest__category">
+                            <div class="search-suggest__label">Перейти в разделы</div>
+                            <div class="search-suggest__list">
+
+                                <div class="suggest-category">
+                                    <div class="suggest-category__image">
+                                        <span class="bgimage"
+                                            style="background-iamge: url()"></span>
+                                    </div>
+                                    <div class="suggest-category__link">
+                                        <a href="">Фанера</a>
+                                    </div>
+                                </div>
+                                <div class="suggest-category">
+                                    <div class="suggest-category__image">
+                                        <span class="bgimage"
+                                            style="background-iamge: url()"></span>
+                                    </div>
+                                    <div class="suggest-category__link">
+                                        <a href="">Фанера</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="search-suggest__right">
+                        <div class="search-suggest__product">
+                            <div class="suggest-product" v-for="item in [1,1,1,1,1,1]">
+                                <div class="suggest-product__iamge">
+                                    <span class="bgimage" style="background-iamge: url()"></span>
+                                </div>
+                                <div class="suggest-product__main">
+                                    <div class="suggest-product__name">Фанера берёзовая ФК 6мм сорт
+                                        IV/IV НШ Е1 1525 × 1525мм Свеза</div>
+                                    <div class="suggest-product__price">741 ₽/шт.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </form>
 </div>
