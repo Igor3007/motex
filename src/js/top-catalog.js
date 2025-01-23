@@ -21,7 +21,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 el: this.$el,
                 data: {
                     isOpen: true,
+                    isOpenPane: false,
                     dataJSON: [],
+                    activeCat: 0
                 },
 
                 mounted: function () {
@@ -42,22 +44,61 @@ document.addEventListener('DOMContentLoaded', function (event) {
                             })
                     },
 
+                    declination: function (value, words) {
+                        value = Number(value);
+                        value = Math.abs(value) % 100;
+                        var num = value % 10;
+                        if (value > 10 && value < 20) return words[2];
+                        if (num > 1 && num < 5) return words[1];
+                        if (num == 1) return words[0];
+                        return words[2];
+                    },
+
                     closePopup() {
                         this.isOpen = false
                     },
 
                     openPopup() {
-                        this.isOpen = true
+                        this.isOpen = !this.isOpen
                     },
 
                     isPageHidden() {
-                        //document.body.classList.toggle('page-hidden', this.isOpen)
+                        document.body.classList.toggle('page-hidden', this.isOpen && this.isMobile)
+                    },
+
+                    showHideList(e) {
+                        e.target.closest('.card-subcat__list').classList.toggle('is-hide')
+                    },
+
+                    hoverNav(i) {
+                        if (!this.isMobile) this.activeCat = i
+                    },
+
+                    clickNav(i) {
+                        if (this.isMobile) {
+                            this.activeCat = i
+                            this.isOpenPane = true
+                        }
                     }
+
+
                 },
 
                 computed: {
                     listcatalog() {
                         return this.dataJSON
+                    },
+
+                    subCat() {
+                        return this.dataJSON.length ? this.listcatalog[this.activeCat] : []
+                    },
+
+                    listSubCat() {
+                        return this.dataJSON.length ? this.listcatalog[this.activeCat].sub : []
+                    },
+
+                    isMobile() {
+                        return document.body.clientWidth <= 992
                     }
                 },
 
@@ -85,9 +126,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
             } else {
                 window.TopCatalog.vueApp.openPopup()
             }
-
-
-
         })
     })
 });
