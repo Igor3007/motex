@@ -15,7 +15,7 @@
     input {
       width: 100%;
       padding: 7px 12px;
-      border-radius: 8px;
+      border-radius: 6px;
       background: #FFF;
       outline: none;
 
@@ -26,6 +26,7 @@
 
       height: 100%;
       border: none;
+       
 
       &::placeholder {
         font-family: 'Roboto';
@@ -36,7 +37,7 @@
       }
 
       @media screen and (min-width: 767.98px) {
-        padding: 11px 12px;
+        padding: 14px 12px;
 
         font-size: 16px;
         line-height: 24px;

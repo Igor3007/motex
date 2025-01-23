@@ -481,6 +481,8 @@ new EmailFormValidator(".info-footer__sales form");
 function setupActionPanel(panelSelector, btnSelector, windowSelector, activeClass) {
     const panel = document.querySelector(panelSelector);
 
+    console.log(panel)
+
     if (!panel) return;
 
     const buttons = panel.querySelectorAll(btnSelector);
@@ -517,16 +519,20 @@ function setupActionPanel(panelSelector, btnSelector, windowSelector, activeClas
     });
 }
 
-setupActionPanel(
-    '.action-panel',
-    '.config-menu',
-    '.header__menu',
-    'is-active'
-);
+document.addEventListener('DOMContentLoaded', function(event) {
+    setupActionPanel(
+        '.action-panel',
+        '.config-menu',
+        '.header__menu',
+        'is-active'
+    );
 
-setupActionPanel(
-    '.action-panel',
-    '.config-cart',
-    '.cart-header__modal',
-    'is-active'
-);
+    setupActionPanel(
+        '.action-panel',
+        '.config-cart',
+        '.cart-header__modal',
+        'is-active'
+    );
+
+});
+
