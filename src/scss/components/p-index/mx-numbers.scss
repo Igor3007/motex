@@ -1,0 +1,94 @@
+.mx-numbers {
+  padding: 40px 0;
+  background: #F3F3F3;
+  overflow: hidden;
+  @media screen and (min-width: 767.98px) {
+    padding: 80px 0;
+  }
+
+  .splide {
+    &__track {
+      overflow: initial;
+    }
+
+    &__list {
+      @media screen and (min-width: 1439.98px) {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+    }
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 32px;
+
+    max-width: 580px;
+
+    @media screen and (min-width: 767.98px) {
+      font-size: 24px;
+      line-height: 32px;
+
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item {
+
+  }
+
+  &__item-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #D0D1D1;
+    @media screen and (min-width: 767.98px) {
+      padding-bottom: 20px;
+    }
+
+
+    .icon {
+      display: block;
+      min-width: 40px;
+      width: 40px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: 0.1s ease;
+      @media screen and (min-width: 767.98px) {
+        min-width: 60px;
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    .num {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 40px;
+      @media screen and (min-width: 767.98px) {
+        font-size: 60px;
+        font-weight: 500;
+        line-height: 60px;
+      }
+    }
+  }
+
+  &__item-bottom {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16px;
+    padding-top: 8px;
+    @media screen and (min-width: 767.98px) {
+      font-size: 14px;
+      line-height: 20px;
+
+      padding-top: 12px;
+    }
+  }
+}

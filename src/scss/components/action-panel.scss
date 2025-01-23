@@ -1,0 +1,215 @@
+.action-panel {
+  padding: 12px 0;
+  background: #FFF;
+  box-shadow: 0 0 20px 0 #00000021;
+
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 5;
+  @media screen and (min-width: 991.98px) {
+    display: none;
+  }
+
+
+  .config-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    &__btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      @media screen and (min-width: 767.98px) {
+        flex-direction: row;
+        gap: 12px;
+      }
+
+      &.is-active {
+        .icon {
+          filter: initial;
+          opacity: 1;
+        }
+
+        .config-action__name {
+          color: #19BEFF;
+        }
+      }
+    }
+
+    &__icon {
+      position: relative;
+
+      .icon {
+        display: block;
+        min-width: 14px;
+        width: 14px;
+        height: 14px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: 0.1s ease;
+        filter: brightness(0);
+        opacity: .7;
+
+        @media screen and (min-width: 767.98px) {
+          min-width: 20px;
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .count {
+        min-width: 12px;
+        width: 12px;
+        height: 12px;
+
+        border-radius: 50%;
+        background: #19BEFF;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        top: -7px;
+        right: -7px;
+
+        span {
+          font-size: 8px;
+          font-weight: 400;
+          line-height: 12px;
+          color: #FFF;
+        }
+      }
+    }
+
+    &__name {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      color: #5C5E5F;
+      @media screen and (min-width: 767.98px) {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+
+    .config-menu {
+      .config-action__icon {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        transition: 0.1s ease;
+        cursor: pointer;
+
+        min-width: 14px;
+        width: 14px;
+        height: 14px;
+
+        @media screen and (min-width: 767.98px) {
+          gap: 4px;
+
+          min-width: 18px;
+          width: 18px;
+          height: 18px;
+        }
+
+        span {
+          width: 12px;
+          height: 1.5px;
+          margin: .5px 0;
+          background: #5C5E5F;
+          transition-property: margin, transform;
+          transition-duration: .3s;
+          transition-timing-function: ease, ease;
+          transition-delay: 0s;
+          transform: rotate(0);
+
+          @media screen and (min-width: 767.98px) {
+            min-width: 18px;
+            width: 18px;
+            height: 2px;
+          }
+        }
+      }
+
+      &.is-active {
+        .config-action__icon {
+          transform: rotate(450deg);
+        }
+
+        span {
+          margin: -1.5px -2px -2px -1px;
+          background: #19BEFF;
+          @media screen and (min-width: 767.98px) {
+            margin: -2px -2px -4px -1px;
+          }
+
+          &:nth-of-type(1) {
+            transform: rotate(45deg);
+          }
+
+          &:nth-of-type(2) {
+            transform: rotate(-45deg);
+          }
+
+          &:nth-of-type(3) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .config-catalog {
+      .config-action__icon {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 1px;
+        transition: 0.1s ease;
+        cursor: pointer;
+
+        min-width: 14px;
+        width: 14px;
+        height: 14px;
+        @media screen and (min-width: 767.98px) {
+          min-width: 18px;
+          width: 18px;
+          height: 18px;
+        }
+
+        span {
+          margin: 0;
+          min-width: 6px;
+          width: 6px;
+          height: 6.5px;
+          border-radius: 1px;
+          background: #5C5E5F;
+          @media screen and (min-width: 767.98px) {
+            min-width: 8px;
+            width: 8px;
+            height: 8.5px;
+            border-radius: 2px;
+          }
+        }
+      }
+
+      &.is-active {
+
+        span {
+          background: #19BEFF;
+        }
+      }
+    }
+
+  }
+}
