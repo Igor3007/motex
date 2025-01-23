@@ -1,0 +1,69 @@
+.Spinner__svg {
+    -webkit-animation: rotator 1.4s linear infinite;
+    animation: rotator 1.4s linear infinite;
+}
+
+.Spinner__path {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    stroke-linecap: round;
+    stroke: var(--accent);
+}
+
+@-webkit-keyframes rotator {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+
+.Spinner {
+    width: 100px;
+    height: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+@-webkit-keyframes dashb17a5 {
+    0% {
+        stroke-dashoffset: 101
+    }
+
+    50% {
+        stroke-dashoffset: 25;
+        transform: rotate(135deg)
+    }
+
+    100% {
+        stroke-dashoffset: 101;
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes dashb17a5 {
+    0% {
+        stroke-dashoffset: 101
+    }
+
+    50% {
+        stroke-dashoffset: 25;
+        transform: rotate(135deg)
+    }
+
+    100% {
+        stroke-dashoffset: 101;
+        transform: rotate(360deg)
+    }
+}
