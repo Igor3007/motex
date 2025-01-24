@@ -1,23 +1,32 @@
 .modal-cart {
   display: none;
 
-  position: absolute;
+  position: fixed;
   right: 0;
-  top: calc(100% + 5px);
+  bottom: 60px;
   width: 100%;
   min-width: 310px;
 
   overflow: hidden;
   padding: 20px;
   background: #FFF;
-  border-radius: 8px;
+  border-radius: 8px 8px 0 0;
   box-shadow: 0 0 20px 0 #00000021;
   z-index: 10;
+  @media screen and (min-width: 991.98px) {
+    position: absolute;
+    top: calc(100% + 5px);
+    bottom: initial;
+
+    border-radius: 8px;
+  }
 
   &.is-active {
-    animation: dropdown-animation-t 0.4s ease forwards;
+    animation: dropdown-animation 0.4s ease forwards;
     display: block;
-
+    @media screen and (min-width: 991.98px) {
+      animation: dropdown-animation-t 0.4s ease forwards;
+    }
   }
 
   &__items {
@@ -25,9 +34,12 @@
     flex-direction: column;
     gap: 12px;
 
-    max-height: 310px;
+    max-height: 180px;
     overflow-y: auto;
     padding-bottom: 20px;
+    @media screen and (min-width: 991.98px) {
+      max-height: 310px;
+    }
   }
 
   &__item {

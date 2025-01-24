@@ -1,11 +1,11 @@
-<section class="section-top-catalog" :class="{'is-open': isOpen}">
+<section class="section-top-catalog" :class="{'is-open': isOpen}" data-window="burger">
     <div class="_container">
         <div class="top-catalog" :class="{'is-open-pane':isOpenPane}">
             <div class="top-catalog__head">
                 <div class="topcatalog-head">
                     <div class="topcatalog-head__title">Каталог</div>
                     <div class="topcatalog-head__close" @click="closePopup()">
-                        <i class="icon" style="background-image: url(/images/icons/ic_close.svg)"></i>
+                        <i class="icon" style="background-image: url('./images/icons/ic_close.svg')"></i>
                     </div>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                 <div class="top-catalog__cathead">
                     <div class="top-cathead">
                         <div class="topcatalog-head__back" @click="isOpenPane = false">
-                            <i class="icon" style="background-image: url(/images/icons/ic_arrow-back.svg)"></i>
+                            <i class="icon" style="background-image: url('./images/icons/ic_arrow-back.svg')"></i>
                         </div>
                         <div class="top-cathead__title">{{subCat.name}}</div>
 
@@ -67,6 +67,5 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </section>

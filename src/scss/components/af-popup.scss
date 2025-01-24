@@ -1,0 +1,339 @@
+#status.complete {
+  border-left: 5px solid #62ce54;
+  opacity: 1;
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
+#status.error {
+  border-left: 5px solid #D35351;
+  opacity: 1;
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
+#status {
+  background: rgb(6, 21, 38, 0.9) none repeat scroll 0 0;
+  bottom: 0;
+  border-left: 5px solid #000;
+  color: #ffffff;
+  left: 10px;
+  max-width: 300px;
+  opacity: 0;
+  padding: 15px 25px;
+  position: fixed;
+  transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
+  z-index: 10000000;
+  transform: translatey(100%);
+}
+
+/* popup */
+@keyframes zoomInUpPopup {
+  from {
+    transform: scale(0.97) translate3d(0, 16px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes zoomInUpPopup {
+  from {
+    transform: scale(0.97) translate3d(0, 16px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes load {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.af-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow-x: auto;
+  z-index: 999999;
+  opacity: 0;
+  transition: 0.25s ease;
+}
+
+.af-popup.is-moving .af-popup__bg {
+  pointer-events: none;
+}
+
+.af-popup__bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 101;
+  background: #15181A1A;
+  transition: .3s ease;
+}
+
+.af-popup__wrp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 102;
+  position: relative;
+  min-height: 100%;
+}
+
+.af-popup--visible {
+  opacity: 1;
+}
+
+.af-popup__content {
+  background: #FFF;
+  box-shadow: 0 0 20px 0 #00000021;
+  padding: 20px;
+  border-radius: 8px 8px;
+  position: relative;
+  @media screen and (min-width: 767.98px) {
+    padding: 28px;
+  }
+}
+
+.af-popup__container {
+  width: auto;
+  max-width: 100%;
+  margin: auto;
+  position: relative;
+  -webkit-animation: .2s ease .2s both zoomInUpPopup;
+  animation: .2s ease .2s both zoomInUpPopup;
+  opacity: 0;
+
+  &:has(.popup-form) {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 767.98px) {
+  .af-popup__container {
+    max-width: 424px;
+  }
+}
+
+.af-popup__close {
+  cursor: pointer;
+  z-index: 101;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid #D0D1D1;
+  background: #FFF;
+  @media screen and (min-width: 767.98px) {
+    right: 28px;
+    top: 28px;
+
+    min-width: 32px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.af-popup__close svg {
+  min-width: 12px;
+  width: 12px;
+  height: 12px;
+  fill: #000;
+  stroke: #000;
+  stroke-width: 2px;
+  @media screen and (min-width: 767.98px) {
+    min-width: 16px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.af-popup__close:hover {
+  opacity: .7;
+}
+
+/* =-========================================== */
+#modal-call {
+  display: none !important;
+}
+
+.af-popup--visible #modal-call {
+  display: block !important;
+}
+
+/* =-========================================== */
+/*modals*/
+.popup-call .popup__heading {
+  margin-bottom: 16px;
+  @media screen and (min-width: 767.98px) {
+    margin-bottom: 28px;
+  }
+}
+
+.popup-call .popup__heading h2 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #15181A;
+  @media screen and (min-width: 767.98px) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.popup-call form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  @media screen and (min-width: 767.98px) {
+    gap: 16px;
+  }
+}
+
+.popup-call .popup__form-field {
+}
+
+.popup-call input:not([type="file"]) {
+  padding: 8px 12px;
+  outline: none;
+  background: none;
+  border-radius: 8px;
+  border: 1px solid #D0D1D1;
+  height: initial;
+  width: 100%;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #15181A;
+
+  &::placeholder {
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #8A8C8D;
+  }
+
+  @media screen and (min-width: 767.98px) {
+    padding: 12px;
+    font-size: 16px;
+    line-height: 24px;
+
+    &::placeholder {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
+.popup-call textarea {
+  padding: 8px 12px;
+  outline: none;
+  background: none;
+  border-radius: 8px;
+  border: 1px solid #D0D1D1;
+  height: initial;
+  width: 100%;
+  min-height: 120px;
+  resize: none;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #15181A;
+
+  &::placeholder {
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #8A8C8D;
+  }
+
+  @media screen and (min-width: 767.98px) {
+    padding: 12px;
+    font-size: 16px;
+    line-height: 24px;
+    min-height: 220px;
+
+    &::placeholder {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
+.popup-call button {
+  padding: 6px 12px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  @media screen and (min-width: 767.98px) {
+    padding: 12px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.popup-call .popup__form-field--policy {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #8A8C8D;
+
+  a {
+    color: #15181A;
+    transition: .1s ease;
+    @media screen and (min-height: 991.98px) {
+      &:hover {
+        color: #19BEFF;
+      }
+    }
+  }
+
+  @media screen and (min-width: 767.98px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+
+/*modals*/
+@keyframes fade-drop-filter {
+  from {
+    opacity: 0;
+    transform: translateY(10vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .af-popup--mobile .af-popup__container {
+    max-width: 324px;
+  }
+}
