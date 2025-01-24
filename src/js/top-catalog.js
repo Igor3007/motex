@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     },
 
                     openPopup() {
-                        this.isOpen = true;
+                        this.isOpen = !this.isOpen;
                         document.body.classList.toggle('page-hidden', this.isOpen && this.isMobile);
                     },
 

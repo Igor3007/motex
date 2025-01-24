@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         constructor(el) {
             this.vueApp = null;
             this.$el = el
+            this.input = ''
             this.init()
         }
 
@@ -16,7 +17,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 el: this.$el,
                 data: {
                     isFocus: false,
-                    input: ''
+                    input: '',
+                    dataJSON: false
                 },
 
                 mounted: function () {
@@ -29,13 +31,44 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     },
 
                     blurInput() {
-                        this.isFocus = false
+                        //this.isFocus = false
+                    },
+
+                    fetchData() {
+                        if(this.input.length > 2) {
+
+                            let formData = new FormData()
+                            formData.append('q', this.input)
+
+                            // let query = fetch('../static/search.json', {
+                            //     method: 'POST',
+                            //     body: formData
+                            // })
+
+                             let query = fetch('../static/search.json', {
+                                method: 'GET',
+                            })
+
+                            query
+                                .then((response) => response.json())
+                                .then((data) => this.dataJSON = data)
+                        }else {
+                            this.dataJSON = false
+                        }
                     }
                 },
 
                 computed: {
-
+                    searchResult() {
+                        return this.dataJSON ? this.dataJSON : false
+                    }
                 },
+
+                watch: {
+                    'input': function() {
+                        this.fetchData()
+                    }
+                }
             })
         }
 

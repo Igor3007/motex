@@ -48,7 +48,7 @@
             }
 
             &__suggest {
-                // display: block;
+                display: block;
             }
 
             &__field {
@@ -83,5 +83,59 @@
     &__label {
         font-weight: 600;
         padding-bottom: 22px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+    }
+
+
+}
+
+.suggest-similar {
+
+    display: flex;
+    align-items: center;
+
+    &::before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        background-color: var(--black-10);
+        display: inline-block;
+        border-radius: 8px;
+        margin-right: 12px;
+    }
+}
+
+.suggest-product {
+    padding-bottom: 9px;
+    display: flex;
+
+    &__image {
+        padding-right: 10px;
+
+        & .bgimage {
+            width: 50px;
+            height: 50px;
+            background-color: var(--black-5);
+            display: block;
+            background-size: contain;
+            background-position: center;
+            border-radius: 8px;
+        }
+    }
+
+    &__name {
+        font-size: 14px;
+        padding-bottom: 6px;
+        line-height: 140%;
+    }
+
+    &__price {
+        font-size: 14px;
+        font-weight: bold;
     }
 }

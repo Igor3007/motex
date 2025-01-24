@@ -14,7 +14,7 @@
                 </div>
             </div>
 
-            <div class="search-index__suggest">
+            <div class="search-index__suggest" v-if="searchResult">
                 <div class="search-suggest">
                     <div class="search-suggest__left">
 
@@ -22,14 +22,7 @@
                         <div class="search-suggest__similar">
                             <div class="search-suggest__label">Подходящие запросы</div>
                             <div class="search-suggest__list">
-                                <div class="suggest-similar">Фанера</div>
-                                <div class="suggest-similar">Фанера</div>
-                                <div class="suggest-similar">Фанера</div>
-                                <div class="suggest-similar">Фанера</div>
-                                <div class="suggest-similar">Фанера</div>
-                                <div class="suggest-similar">Фанера</div>
-                                <div class="suggest-similar">Фанера</div>
-                                <div class="suggest-similar">Фанера</div>
+                                <div class="suggest-similar" v-for="item in searchResult.queries">{{item}}</div>
                             </div>
                         </div>
 
@@ -40,24 +33,16 @@
                             <div class="search-suggest__label">Перейти в разделы</div>
                             <div class="search-suggest__list">
 
-                                <div class="suggest-category">
+                                <div class="suggest-category" v-for="item in searchResult.category">
                                     <div class="suggest-category__image">
                                         <span class="bgimage"
-                                            style="background-iamge: url()"></span>
+                                            :style="{backgroundImage: 'url('+item.image+')'}"></span>
                                     </div>
                                     <div class="suggest-category__link">
-                                        <a href="">Фанера</a>
+                                        <a href="">{{item.name}}</a>
                                     </div>
                                 </div>
-                                <div class="suggest-category">
-                                    <div class="suggest-category__image">
-                                        <span class="bgimage"
-                                            style="background-iamge: url()"></span>
-                                    </div>
-                                    <div class="suggest-category__link">
-                                        <a href="">Фанера</a>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -65,14 +50,13 @@
 
                     <div class="search-suggest__right">
                         <div class="search-suggest__product">
-                            <div class="suggest-product" v-for="item in [1,1,1,1,1,1]">
-                                <div class="suggest-product__iamge">
-                                    <span class="bgimage" style="background-iamge: url()"></span>
+                            <div class="suggest-product" v-for="item in searchResult.product">
+                                <div class="suggest-product__image">
+                                    <span class="bgimage" :style="{backgroundImage: 'url('+item.image+')'}"></span>
                                 </div>
                                 <div class="suggest-product__main">
-                                    <div class="suggest-product__name">Фанера берёзовая ФК 6мм сорт
-                                        IV/IV НШ Е1 1525 × 1525мм Свеза</div>
-                                    <div class="suggest-product__price">741 ₽/шт.</div>
+                                    <div class="suggest-product__name">{{item.name}}</div>
+                                    <div class="suggest-product__price">{{item.price}}</div>
                                 </div>
                             </div>
                         </div>
