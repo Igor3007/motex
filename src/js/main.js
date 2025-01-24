@@ -478,61 +478,80 @@ class EmailFormValidator {
 new EmailFormValidator(".info-footer__sales form");
 
 
-function setupActionPanel(panelSelector, btnSelector, windowSelector, activeClass) {
+function setupActionPanel(panelSelector, activeClass) {
     const panel = document.querySelector(panelSelector);
-
-    console.log(panel)
 
     if (!panel) return;
 
-    const buttons = panel.querySelectorAll(btnSelector);
+    const buttons = panel.querySelectorAll(".config-action__btn");
+    const windows = document.querySelectorAll(".header__menu, .section-top-catalog, .cart-header__modal");
 
     buttons.forEach((button) => {
         button.addEventListener("click", (event) => {
             event.stopPropagation();
 
             const targetKey = button.dataset.target;
-
-            const targetWindow = document.querySelector(
-                `${windowSelector}[data-window="${targetKey}"]`
-            );
+            const targetWindow = targetKey
+                ? document.querySelector(`[data-window="${targetKey}"]`)
+                : null;
 
             const isActive = button.classList.contains(activeClass);
 
+            windows.forEach((win) => win.classList.remove(activeClass));
             buttons.forEach((btn) => btn.classList.remove(activeClass));
-            document.querySelectorAll(windowSelector).forEach((win) => {
-                win.classList.remove(activeClass);
-            });
 
-            if (!isActive) {
+            if (isActive) {
+                button.classList.remove(activeClass);
+                if (window.TopCatalog && window.TopCatalog.vueApp && window.TopCatalog.vueApp.isOpen) {
+                    window.TopCatalog.vueApp.closePopup();
+                }
+            } else {
                 button.classList.add(activeClass);
                 targetWindow?.classList.add(activeClass);
+                if (window.TopCatalog && window.TopCatalog.vueApp && window.TopCatalog.vueApp.isOpen) {
+                    window.TopCatalog.vueApp.closePopup();
+                }
+
+                if (button.classList.contains('config-catalog')) {
+                    if (window.TopCatalog) {
+                        window.TopCatalog.vueApp.isOpen = true;
+                        window.TopCatalog.vueApp.openPopup();
+                    }
+                }
             }
         });
     });
 
     document.addEventListener("click", () => {
         buttons.forEach((btn) => btn.classList.remove(activeClass));
-        document.querySelectorAll(windowSelector).forEach((win) => {
-            win.classList.remove(activeClass);
+        windows.forEach((win) => win.classList.remove(activeClass));
+    });
+
+    windows.forEach((win) => {
+        win.addEventListener("click", (event) => {
+            event.stopPropagation();
         });
+
+        const closeButton = win.querySelector(".heading-menu__close");
+        if (closeButton) {
+            closeButton.addEventListener("click", (event) => {
+                event.stopPropagation();
+                win.classList.remove(activeClass);
+                buttons.forEach((btn) => btn.classList.remove(activeClass));
+
+                if (window.TopCatalog && window.TopCatalog.vueApp && window.TopCatalog.vueApp.isOpen) {
+                    window.TopCatalog.vueApp.closePopup();
+                }
+            });
+        }
     });
 }
 
-document.addEventListener('DOMContentLoaded', function(event) {
-    setupActionPanel(
-        '.action-panel',
-        '.config-menu',
-        '.header__menu',
-        'is-active'
-    );
-
-    setupActionPanel(
-        '.action-panel',
-        '.config-cart',
-        '.cart-header__modal',
-        'is-active'
-    );
-
+document.addEventListener("DOMContentLoaded", () => {
+    setupActionPanel(".action-panel", "is-active");
 });
+
+
+
+
 

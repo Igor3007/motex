@@ -1,87 +1,118 @@
-class afLightbox {
-    constructor(opion) {
-
-        this.modal = '';
-        if (opion) {
-            this.mobileBottom = (opion.mobileInBottom ? opion.mobileInBottom : false)
-            this.clases = (opion.clases ? opion.clases : null)
-        }
-    }
-
-    init() {
-        //this.createTemplate()
-    }
-
-    createTemplate() {
-        let template = document.createElement('div')
-        template.innerHTML = `<div class="af-popup ${this.clases} "> <div class="af-popup__bg"></div><div class="af-popup__wrp"><div class="af-popup__container"><div class="af-popup__close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" tabindex="-1"><path d="M20 20L4 4m16 0L4 20"></path></svg></div><div class="af-popup__content"></div></div></div></div>`
-        document.body.append(template)
-        this.instanse = template;
-        return template;
-    }
-
-    open(content, afterShow) {
-
-        let _this = this;
-        this.modal = this.createTemplate();
-
-        if (window.innerWidth <= 480 && this.mobileBottom) {
-            this.modal.querySelector(".af-popup").classList.add("af-popup--mobile")
-        }
-
-        document.body.classList.add('page-hidden')
-
-        this.modal.querySelector('.af-popup__content').innerHTML = content
-        this.modal.querySelector('.af-popup__close').addEventListener('click', function () {
-            _this.close()
-        })
-
-        if (this.modal.querySelector('[data-af-popup="close"]')) {
-            this.modal.querySelector('[data-af-popup="close"]').addEventListener('click', function (e) {
-                _this.close()
-            })
-        }
-
-        if (afterShow) afterShow(this.modal);
-
-        setTimeout(() => {
-            this.modal.querySelector(".af-popup").classList.add("af-popup--visible")
-        }, 10)
-
-        this.createEvent();
-
-    }
-
-    changeContent(content) {
-        this.modal.querySelector('.af-popup__content').innerHTML = content
-    }
-
-    createEvent() {
-
-        let _this = this
-
-        this.instanse.querySelector('.af-popup').addEventListener('click', function (e) {
-            if (!e.target.closest('.af-popup__container')) {
-                _this.close()
+document.addEventListener('DOMContentLoaded', function (event) {
+    class afLightbox {
+        constructor(option) {
+            this.modal = '';
+            if (option) {
+                this.mobileBottom = (option.mobileInBottom ? option.mobileInBottom : false);
             }
-        })
-
-        // this.instanse.querySelector('.af-popup__container').addEventListener('click', function (event) {
-        //     event.stopPropagation(true)
-        // })
-    }
-
-    close() {
-
-
-        if (document.body.classList.contains('page-hidden')) {
-            document.body.classList.remove('page-hidden')
         }
 
-        this.instanse.querySelector('.af-popup').classList.remove('af-popup--visible')
+        init() {
+        }
 
-        setTimeout(() => {
-            this.instanse.remove()
-        }, 300)
+        createTemplate() {
+            let template = document.createElement('div');
+            template.innerHTML = ` <div class="af-popup"> <div class="af-popup__bg"></div> <div class="af-popup__wrp"> <div class="af-popup__container"> <div class="af-popup__content"></div> </div> </div> </div> `;
+            document.body.append(template);
+            this.instanse = template;
+            return template;
+        }
+
+        open(content, afterShow) {
+            let _this = this;
+            this.modal = this.createTemplate();
+            if (window.innerWidth <= 480 && this.mobileBottom) {
+                this.modal.querySelector(".af-popup").classList.add("af-popup--mobile");
+            }
+            document.body.classList.add('page-hidden');
+            this.modal.querySelector('.af-popup__content').innerHTML = content;
+            this.modal.querySelectorAll('.af-popup__close, [data-af-popup="close"]').forEach(element => {
+                element.addEventListener('click', function () {
+                    _this.close();
+                });
+            });
+            if (afterShow) afterShow(this.modal);
+            setTimeout(() => {
+                this.modal.querySelector(".af-popup").classList.add("af-popup--visible");
+            }, 10);
+            this.createEvent();
+            // initMaska();
+        }
+
+        changeContent(content) {
+            this.modal.querySelector('.af-popup__content').innerHTML = content;
+        }
+
+        createEvent() {
+            let container = this.instanse.querySelector('.af-popup');
+            let isMoving = false;
+            container.addEventListener('mousedown', (e) => {
+                isMoving = true;
+            });
+            document.addEventListener('mousemove', (e) => {
+                if (isMoving) container.classList.add('is-moving');
+            });
+            document.addEventListener('mouseup', (e) => {
+                if (isMoving) {
+                    isMoving = false;
+                    setTimeout(() => {
+                        container.classList.remove('is-moving');
+                    }, 100);
+                }
+            });
+            container.addEventListener('click', (e) => {
+                if (!e.target.closest('.af-popup__container') && !container.classList.contains('is-moving')) {
+                    this.close();
+                }
+            });
+            this.instanse.querySelector('.af-popup__container').addEventListener('click', function (event) {
+                event.stopPropagation();
+            });
+        }
+
+        close() {
+            if (window.innerWidth <= 480 && document.body.classList.contains('page-hidden')) {
+                document.body.classList.remove('page-hidden');
+            }
+            this.instanse.querySelector('.af-popup').classList.remove('af-popup--visible');
+            setTimeout(() => {
+                this.instanse.remove();
+                document.body.classList.remove('page-hidden');
+            }, 300);
+        }
     }
-}
+
+    let buttonClickCall = document.querySelectorAll('.get-modal--call');
+    buttonClickCall.forEach(buttonCall => {
+        buttonCall.addEventListener('click', e => popupCall(buttonCall));
+    });
+
+    function popupCall(buttonCall) {
+        const callPopup = new afLightbox({mobileInBottom: true});
+        let htmlCall = document.querySelector('#modal-call').outerHTML;
+        let template = ` <div class="popup-call"> <div class="af-popup__close"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" tabindex="-1"><path d="M20 20L4 4m16 0L4 20"></path></svg> </div> <div class="popup-call__content">${htmlCall}</div> </div> `;
+        callPopup.open(template, function (instance) {
+            if (instance.querySelector('.popup-call')) {
+                console.log('Popup opened with content:', htmlCall);
+            }
+            window.initSendForm(instance, () => {
+                callPopup.close();
+            });
+        });
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

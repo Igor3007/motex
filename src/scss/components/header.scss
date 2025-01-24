@@ -375,7 +375,6 @@ header {
   }
 
   &__panel {
-    display: none;
     @media screen and (min-width: 991.98px) {
       display: flex;
       align-items: center;
@@ -383,8 +382,13 @@ header {
     }
 
     .btn-custom_i {
+      display: none;
+
       font-size: 0;
       gap: 0;
+      @media screen and (min-width: 991.98px) {
+        display: flex;
+      }
       @media screen and (min-width: 1199.98px) {
         font-size: 16px;
         gap: 8px;
