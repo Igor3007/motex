@@ -31,11 +31,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     },
 
                     blurInput() {
-                        //this.isFocus = false
+                        this.isFocus = false
                     },
 
                     fetchData() {
-                        if(this.input.length > 2) {
+                        if (this.input.length > 2) {
 
                             let formData = new FormData()
                             formData.append('q', this.input)
@@ -45,14 +45,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
                             //     body: formData
                             // })
 
-                             let query = fetch('../static/search.json', {
+                            let query = fetch('../static/search.json', {
                                 method: 'GET',
                             })
 
                             query
                                 .then((response) => response.json())
                                 .then((data) => this.dataJSON = data)
-                        }else {
+                        } else {
                             this.dataJSON = false
                         }
                     }
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 },
 
                 watch: {
-                    'input': function() {
+                    'input': function () {
                         this.fetchData()
                     }
                 }

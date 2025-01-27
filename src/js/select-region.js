@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
             this.$el = document.createElement('div')
             this.$el.innerHTML = this.html
             document.body.append(this.$el)
-
             this.startVue()
         }
 

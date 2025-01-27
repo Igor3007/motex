@@ -1,0 +1,25 @@
+@mixin scrollbar() {
+
+    @-moz-document url-prefix() {
+        scrollbar-color: rgba(154, 185, 191, 0.5) var(--color-bg-3);
+        scrollbar-width: thin !important;
+    }
+
+    @media screen and (min-width: $w992) {
+        &::-webkit-scrollbar {
+            width: 5px;
+            border-radius: 4px;
+            height: 5px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: var(--color-bg-2);
+            border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(154, 185, 191, 0.5);
+            border-radius: 4px;
+        }
+    }
+}

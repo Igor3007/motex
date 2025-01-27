@@ -1,18 +1,19 @@
 .section-top-catalog {
   display: none;
-
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   background: #FFF;
-  box-shadow: 0 5px 6px -2px #0000001c;
   margin: 0;
   z-index: 20;
   height: calc(100vh - 60px);
   overflow: hidden;
-  animation: showBlockLtoT 0.3s linear forwards;
+  animation: showBlockLtoT 0.3s ease forwards;
 
+  @media screen and (min-width: $w992) {
+    box-shadow: 0 5px 6px -2px #0000001c;
+  }
 
   @media screen and (min-width: 992px) {
     position: absolute;
@@ -92,6 +93,10 @@
     &__subcat {
       display: flex;
       flex-wrap: wrap;
+      margin: 0 -7px;
+
+      max-height: calc(100vh - 245px);
+      overflow-y: auto;
 
     }
 
@@ -255,6 +260,10 @@
       }
     }
 
+    &__close {
+      display: none;
+    }
+
   }
 
   .topcatalog-head {
@@ -294,6 +303,7 @@
         height: 28px;
 
         border-radius: 8px;
+
         .icon {
           width: 16px;
           height: 16px;
@@ -343,6 +353,37 @@
       display: flex;
       align-items: center;
       padding: 0 16px;
+    }
+
+    &__close {
+      border: 1px solid var(--black-20);
+      border-radius: 8px;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      margin-left: auto;
+
+      @media screen and (min-width: 576px) {
+        width: 32px;
+        height: 32px;
+      }
+
+      &:hover {
+        border-color: var(--accent);
+      }
+
+      & .icon {
+        width: 10px;
+        height: 10px;
+
+        @media screen and (min-width: 576px) {
+          width: 14px;
+          height: 14px;
+        }
+      }
     }
 
 

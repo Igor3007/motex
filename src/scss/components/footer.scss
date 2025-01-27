@@ -4,6 +4,14 @@ footer {
 
 }
 
+.footer {
+	padding-bottom: 60px;
+
+  @media screen and (min-width: $w992) {
+    padding-bottom: 0;
+  }
+}
+
 .base-footer {
   padding-top: 28px;
   @media screen and (min-width: 1199.98px) {
@@ -11,10 +19,12 @@ footer {
   }
 
   &__wrapper {
+    
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1px;
     background: #D0D1D1;
+
     @media screen and (min-width: 1199.98px) {
       grid-template-columns: repeat(4, 1fr);
     }

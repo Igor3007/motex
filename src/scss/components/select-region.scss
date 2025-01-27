@@ -9,7 +9,7 @@
     display: none;
     overflow-y: auto;
     scrollbar-gutter: stable;
-    z-index: 10;
+    z-index: 4;
 
     &.is-open {
         display: block;
@@ -21,10 +21,10 @@
 }
 
 .select-region {
-    padding: 31px 0;
+    padding: 16px 0 76px;
 
-    @media screen and (max-width: 480px) {
-        padding: 16px 0;
+    @media screen and (min-width: $w992) {
+        padding: 32px 0;
     }
 
     &__head {
@@ -247,10 +247,11 @@
 
     &__symbol {
         font-weight: 600;
-        font-size: 18px;
+        font-size: 16px;
         color: var(--black-50);
         position: sticky;
         top: 70px;
+        padding-top: 1px;
     }
 
     &__list {
@@ -283,19 +284,23 @@
 
     &__notfound {
         padding-top: 36px;
-        font-size: 14px;
+        font-size: 12px;
         line-height: 120%;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         gap: 6px;
 
+        @media screen and (min-width: $w480) {
+            font-size: 14px;
+        }
+
         & span {
             background-color: var(--accent);
-            font-size: 14px;
+            font-size: 12px;
             border-radius: 6px;
             height: 32px;
-            padding: 3px 12px;
+            padding: 3px 8px;
             color: #fff;
             cursor: pointer;
             margin-left: 0;
@@ -303,6 +308,11 @@
             white-space: nowrap;
             display: inline-flex;
             align-items: center;
+
+            @media screen and (min-width: $w480) {
+                font-size: 14px;
+                padding: 3px 12px;
+            }
 
             &:hover {
                 background-color: var(--blue-dark);

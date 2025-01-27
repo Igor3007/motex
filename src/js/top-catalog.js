@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     class TopCatalog {
         constructor(params) {
             this.html = params.html;
+            this.button = params.button
             this.vueApp = null;
             this.$el = null;
             this.init();
@@ -14,9 +15,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
             document.body.append(this.$el);
 
             this.startVue();
+
         }
 
         startVue() {
+
+            let btn = this.button
+
             this.vueApp = new Vue({
                 el: this.$el,
                 data: {
@@ -29,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 mounted: function () {
                     this.getCatalogJSON();
                     this.isPageHidden();
+                    
                 },
 
                 methods: {
@@ -57,11 +63,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     closePopup() {
                         this.isOpen = false;
                         document.body.classList.toggle('page-hidden', false);
+                        btn.classList.toggle('is-active', this.isOpen);
                     },
 
                     openPopup() {
                         this.isOpen = !this.isOpen;
                         document.body.classList.toggle('page-hidden', this.isOpen && this.isMobile);
+                        btn.classList.toggle('is-active', this.isOpen);
                     },
 
                     isPageHidden() {
@@ -101,11 +109,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
                         return document.body.clientWidth <= 992;
                     }
                 },
+
+                watch: {
+                    'activeCat': function() {
+                        this.$refs.elsubcat.scrollTop = 0
+                    }
+                }
             });
         }
     }
 
-    document.querySelectorAll('[data-target="burger"]').forEach(item => {
+    document.querySelectorAll('[data-target="topcatalog"]').forEach(item => {
         item.addEventListener('click', () => {
             if (!window.TopCatalog) {
                 let query = fetch('./_popup-top-catalog.html', {
@@ -116,7 +130,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     .then((response) => response.text())
                     .then((html) => {
                         window.TopCatalog = new TopCatalog({
-                            html
+                            html,
+                            button: item
                         });
                         window.TopCatalog.vueApp.openPopup();
                     });

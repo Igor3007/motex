@@ -34,9 +34,13 @@
                             {{ subCat.total }}
                             {{ declination(subCat.total, ['товар','товара','товаров']) }}
                         </div>
+                        <div class="top-cathead__close" @click="closePopup()">
+                            <i class="icon" style="background-image: url('./images/icons/ic_close.svg')"></i>
+                        </div>
                     </div>
                 </div>
-                <div class="top-catalog__subcat">
+
+                <div class="top-catalog__subcat" ref="elsubcat">
                     <div v-for="item in listSubCat" class="top-catalog__item">
                         <div class="card-subcat">
                             <div class="card-subcat__preview">

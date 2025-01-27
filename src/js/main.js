@@ -503,7 +503,6 @@ function setupActionPanel(panelSelector, activeClass) {
             if (isActive) {
                 button.classList.remove(activeClass);
                 if (window.TopCatalog && window.TopCatalog.vueApp && window.TopCatalog.vueApp.isOpen) {
-                    window.TopCatalog.vueApp.closePopup();
                 }
             } else {
                 button.classList.add(activeClass);

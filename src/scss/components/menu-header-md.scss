@@ -10,7 +10,7 @@
 
   background: #FFF;
   overflow: hidden;
-  animation: showBlockLtoT 0.3s linear forwards;
+  animation: showBlockLtoT 0.3s ease forwards;
 
   &.is-active {
     display: block;

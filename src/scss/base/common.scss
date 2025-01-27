@@ -1,5 +1,5 @@
 html {
-  scrollbar-width: thin;
+  @include scrollbar();
 }
 
 section {
@@ -9,7 +9,3 @@ section {
     margin: 80px 0;
   }
 }
-
-
-
-

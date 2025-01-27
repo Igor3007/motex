@@ -2,16 +2,16 @@
   padding: 12px 0;
   background: #FFF;
   box-shadow: 0 0 20px 0 #00000021;
-
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  z-index: 5;
+  z-index: 25;
 
   @media screen and (min-width: 767.98px) {
     padding: 20px 0;
   }
+
   @media screen and (min-width: 991.98px) {
     display: none;
   }
@@ -29,6 +29,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 6px;
+
       @media screen and (min-width: 767.98px) {
         flex-direction: row;
         gap: 12px;
@@ -98,6 +99,7 @@
       font-weight: 400;
       line-height: 16px;
       color: #5C5E5F;
+
       @media screen and (min-width: 767.98px) {
         font-size: 16px;
         line-height: 20px;
@@ -153,6 +155,7 @@
         span {
           margin: -1.5px -2px -2px -1px;
           background: #19BEFF;
+
           @media screen and (min-width: 767.98px) {
             margin: -2px -2px -4px -1px;
           }
@@ -185,6 +188,7 @@
         min-width: 14px;
         width: 14px;
         height: 14px;
+
         @media screen and (min-width: 767.98px) {
           min-width: 18px;
           width: 18px;
@@ -198,6 +202,7 @@
           height: 6.5px;
           border-radius: 1px;
           background: #5C5E5F;
+
           @media screen and (min-width: 767.98px) {
             min-width: 8px;
             width: 8px;
@@ -209,8 +214,12 @@
 
       &.is-active {
 
+        & .config-action__icon {
+          background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0uNzE1IDEyLjAyOEw1Ljc0MyA3IC43MTUgMS45NzIgMS45NzIuNzE1IDcgNS43NDMgMTIuMDMuNzE1bDEuMjU3IDEuMjU3TDguMjU3IDdsNS4wMjkgNS4wMjgtMS4yNTcgMS4yNTdMNyA4LjI1N2wtNS4wMjggNS4wMjgtMS4yNTctMS4yNTd6IiBmaWxsPSIjMTlCRUZGIi8+PC9zdmc+);
+        }
+
         span {
-          background: #19BEFF;
+          display: none;
         }
       }
     }

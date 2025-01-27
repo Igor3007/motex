@@ -5,6 +5,7 @@ header {
 .top-header {
   background: #F3F3F3;
   display: none;
+
   @media screen and (min-width: 575.98px) {
     display: block;
   }
@@ -33,6 +34,7 @@ header {
           color: #5C5E5F;
 
           position: relative;
+
           @media screen and (min-width: 991.98px) {
             &:before {
               opacity: 0;
@@ -48,6 +50,7 @@ header {
               transform: translateY(2px);
               transition: .1s ease;
             }
+
             &:hover {
               &:before {
                 opacity: 1;
@@ -69,6 +72,7 @@ header {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+
     @media screen and (min-width: 991.98px) {
       width: auto;
       gap: 20px;
@@ -113,6 +117,7 @@ header {
           top: 50%;
           transform: translateY(-50%);
         }
+
         &:hover {
           a {
             color: #19BEFF;
@@ -209,6 +214,7 @@ header {
 .main-header {
   border-bottom: 1px solid #E8E8E9;
   padding: 12px 0;
+
   @media screen and (min-width: 767.98px) {
     padding: 24px 0;
   }
@@ -217,6 +223,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 12px;
+
     @media screen and (min-width: 767.98px) {
       flex-direction: row;
       gap: 22px;
@@ -233,6 +240,7 @@ header {
     a {
       display: flex;
       flex-direction: column;
+
       @media screen and (min-width: 767.98px) {
         gap: 4px;
       }
@@ -246,11 +254,13 @@ header {
         background-repeat: no-repeat;
         background-position: left;
         transition: 0.1s ease;
+
         @media screen and (min-width: 767.98px) {
           min-width: 168px;
           width: 168px;
           height: 14px;
         }
+
         @media screen and (min-width: 991.98px) {
           min-width: 200px;
           width: 200px;
@@ -263,9 +273,11 @@ header {
         font-weight: 400;
         line-height: 16px;
         color: #15181A;
+
         @media screen and (min-width: 767.98px) {
           font-size: 12px;
         }
+
         @media screen and (min-width: 991.98px) {
           font-size: 14px;
           line-height: 20px;
@@ -311,6 +323,7 @@ header {
     @media screen and (min-width: 767.98px) {
       flex: 1;
     }
+
     @media screen and (min-width: 991.98px) {
       display: flex;
       align-items: center;
@@ -319,6 +332,7 @@ header {
 
     .burger-btn {
       display: none;
+
       @media screen and (min-width: 991.98px) {
         display: flex;
         align-items: center;
@@ -358,6 +372,18 @@ header {
           }
         }
 
+        &.is-active {
+
+          & .icon {
+            background-size: 16px auto;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0uNzE1IDEyLjAyOEw1Ljc0MyA3IC43MTUgMS45NzIgMS45NzIuNzE1IDcgNS43NDMgMTIuMDMuNzE1bDEuMjU3IDEuMjU3TDguMjU3IDdsNS4wMjkgNS4wMjgtMS4yNTcgMS4yNTdMNyA4LjI1N2wtNS4wMjggNS4wMjgtMS4yNTctMS4yNTd6IiBmaWxsPSIjZmZmIi8+PC9zdmc+);
+          }
+
+          & i {
+            display: none;
+          }
+        }
+
         @media screen and (min-width: 991.98px) {
           &:hover {
             background: linear-gradient(90deg, #19BEFF 0%, #3C82D2 100%);
@@ -386,9 +412,11 @@ header {
 
       font-size: 0;
       gap: 0;
+
       @media screen and (min-width: 991.98px) {
         display: flex;
       }
+
       @media screen and (min-width: 1199.98px) {
         font-size: 16px;
         gap: 8px;
@@ -407,6 +435,7 @@ header {
 
 .bottom-header {
   padding-top: 12px;
+
   @media screen and (min-width: 767.98px) {
     padding-top: 20px;
   }
@@ -425,6 +454,7 @@ header {
     align-items: center;
     flex-wrap: wrap;
     gap: 4px;
+
     @media screen and (min-width: 767.98px) {
       gap: 12px;
     }
@@ -440,6 +470,7 @@ header {
 
   &__location {
     display: none;
+
     @media screen and (min-width: 767.98px) {
       display: block;
     }
