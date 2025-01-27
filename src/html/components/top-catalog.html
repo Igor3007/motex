@@ -40,12 +40,12 @@
                     <div v-for="item in listSubCat" class="top-catalog__item">
                         <div class="card-subcat">
                             <div class="card-subcat__preview">
-                                <a href="/categoty.html">
+                                <a href="./categoty.html">
                                     <picture><img :src="item.icon" alt=""></picture>
                                 </a>
                             </div>
                             <div class="card-subcat__title">
-                                <a href="/categoty.html">{{ item.name }}</a>
+                                <a href="./categoty.html">{{ item.name }}</a>
                             </div>
 
                             <div class="card-subcat__list" :class="{'is-hide': item.sub.length > 5}">
