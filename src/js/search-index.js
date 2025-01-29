@@ -18,11 +18,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 data: {
                     isFocus: false,
                     input: '',
-                    dataJSON: false
+                    dataJSON: false,
+                    isMobile: document.body.clientWidth <= 768
                 },
 
                 mounted: function () {
-                    console.log('ee')
+                    window.addEventListener('resize', () => {
+                        this.isMobile = document.body.clientWidth <= 768
+                    })
                 },
 
                 methods: {
@@ -31,7 +34,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     },
 
                     blurInput() {
-                        this.isFocus = false
+                        if (!this.isMobile) {
+                            this.isFocus = false
+                        }
+                    },
+
+                    selectQuery(item) {
+                        this.input = item
                     },
 
                     fetchData() {
@@ -61,7 +70,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 computed: {
                     searchResult() {
                         return this.dataJSON ? this.dataJSON : false
-                    }
+                    },
+
+
                 },
 
                 watch: {

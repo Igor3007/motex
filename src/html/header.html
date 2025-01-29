@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header header-fixed">
     <div class="header__wrapper">
         <div class="header__top top-header">
             <div class="top-header__container _container">
@@ -105,13 +105,17 @@
                             </button>
                             <button class="btn-custom_i btn-elect">
                                 <i class="icon" style="background-image: url('./images/icons/ic_elect.svg')"></i>
+                                <span class="button-counter">6</span>
                                 Избранное
                             </button>
                             <div class="main-header__cart cart-header">
-                                <button class="btn-custom_i btn-cart">
-                                    <i class="icon" style="background-image: url('./images/icons/ic_cart.svg')"></i>
-                                    Корзина
-                                </button>
+                                <a href="#">
+                                    <button class="btn-custom_i btn-cart">
+                                        <i class="icon" style="background-image: url('./images/icons/ic_cart.svg')"></i>
+                                        <span class="button-counter">4</span>
+                                        Корзина
+                                    </button>
+                                </a>
                                 <div class="cart-header__modal modal-cart" data-window="cart">
                                     <div class="modal-cart__items">
                                         <div class="modal-cart__item">
@@ -233,7 +237,7 @@
                     <div class="content-menu__wrapper">
                         <nav class="content-menu__nav">
                             <ul>
-                                <li data-target="topcatalog" >
+                                <li data-target="topcatalog">
                                     <a href="#">
                                         <i class="icon"
                                             style="background-image: url('./images/icons/ic_catalog-lg.svg')"></i>

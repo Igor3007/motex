@@ -1,3 +1,9 @@
+document.addEventListener("DOMContentLoaded", () => {
+
+/* =========================================
+Time toggle tooltip
+=========================================*/
+
 function toggleTime(triggerSelector, targetSelector, className, closeOnOutsideClick = false) {
     const triggerElements = document.querySelectorAll(triggerSelector);
 
@@ -47,6 +53,9 @@ function toggleTime(triggerSelector, targetSelector, className, closeOnOutsideCl
 toggleTime('.modal-time__action', '.modal-time__modal', 'is-active', true);
 toggleTime('.top-header__time', '.modal-time__modal', 'is-active', true);
 
+/* =========================================
+Time toggle card
+=========================================*/
 
 function setupCardToggle(containerSelector, cardSelector, toggleButtonSelector) {
     const container = document.querySelector(containerSelector);
@@ -78,6 +87,9 @@ function setupCardToggle(containerSelector, cardSelector, toggleButtonSelector) 
 
 setupCardToggle('.mx-main-catalog', '.card-mx', '.card-mx__heading-action');
 
+/* =========================================
+Splide numbers
+=========================================*/
 
 if (document.querySelector('[data-slider="splide-numbers"]')) {
     let sliderNumbers = new Splide('[data-slider="splide-numbers"]', {
@@ -114,6 +126,11 @@ if (document.querySelector('[data-slider="splide-numbers"]')) {
 
     sliderNumbers.mount();
 }
+
+/* =========================================
+Splide services
+=========================================*/
+
 if (document.querySelector('[data-slider="splide-services"]')) {
     let sliderServices = new Splide('[data-slider="splide-services"]', {
         type: 'slide',
@@ -148,6 +165,11 @@ if (document.querySelector('[data-slider="splide-services"]')) {
 
     sliderServices.mount();
 }
+
+/* =========================================
+Splide top products
+=========================================*/
+
 if (document.querySelector('[data-slider="splide-goods"]')) {
     let sliderGoods = new Splide('[data-slider="splide-goods"]', {
         type: 'slide',
@@ -175,6 +197,11 @@ if (document.querySelector('[data-slider="splide-goods"]')) {
 
     sliderGoods.mount();
 }
+
+/* =========================================
+Splide collections
+=========================================*/
+
 if (document.querySelector('[data-slider="mx-splide-collections"]')) {
     let sliderServicesMX = new Splide('[data-slider="mx-splide-collections"]', {
         destroy: true,
@@ -253,6 +280,11 @@ if (document.querySelector('[data-slider="mx-splide-collections"]')) {
         });
     });
 }
+
+/* =========================================
+Splide stories
+=========================================*/
+
 if (document.querySelector('[data-slider="demo-stories"]')) {
     const sliderDemoStories = new Splide('[data-slider="demo-stories"]', {
         type: 'slide',
@@ -278,6 +310,9 @@ if (document.querySelector('[data-slider="demo-stories"]')) {
 
 }
 
+/* =========================================
+Minicard counter
+=========================================*/
 
 function initializeCounters(selector) {
     const counters = document.querySelectorAll(selector);
@@ -331,95 +366,104 @@ if (document.querySelector('.main-goods-item')) {
     initializeCardActions('.main-goods-item');
 }
 
-function toggleModal(triggerSelector, modalSelector, activeClass, closeOnOutsideClick = false) {
-    const triggerElements = document.querySelectorAll(triggerSelector);
+/* =========================================
+toggle modal
+=========================================*/
 
-    if (!triggerElements.length) {
-        return;
-    }
+// function toggleModal(triggerSelector, modalSelector, activeClass, closeOnOutsideClick = false) {
+//     const triggerElements = document.querySelectorAll(triggerSelector);
 
-    triggerElements.forEach((triggerElement) => {
-        triggerElement.addEventListener("click", (event) => {
-            event.stopPropagation();
+//     if (!triggerElements.length) {
+//         return;
+//     }
 
-            const modalElement = document.querySelector(modalSelector);
-            if (!modalElement) {
-                return;
-            }
+//     triggerElements.forEach((triggerElement) => {
+//         triggerElement.addEventListener("click", (event) => {
+//             event.stopPropagation();
 
-            triggerElement.classList.toggle(activeClass);
-            modalElement.classList.toggle(activeClass);
-        });
-    });
+//             const modalElement = document.querySelector(modalSelector);
+//             if (!modalElement) {
+//                 return;
+//             }
 
-    if (closeOnOutsideClick) {
-        document.addEventListener("click", (event) => {
-            triggerElements.forEach((triggerElement) => {
-                const modalElement = document.querySelector(modalSelector);
+//             triggerElement.classList.toggle(activeClass);
+//             modalElement.classList.toggle(activeClass);
+//         });
+//     });
 
-                if (
-                    !triggerElement.contains(event.target) &&
-                    modalElement &&
-                    !modalElement.contains(event.target)
-                ) {
-                    triggerElement.classList.remove(activeClass);
-                    modalElement.classList.remove(activeClass);
-                }
-            });
-        });
-    }
-}
+//     if (closeOnOutsideClick) {
+//         document.addEventListener("click", (event) => {
+//             triggerElements.forEach((triggerElement) => {
+//                 const modalElement = document.querySelector(modalSelector);
 
-toggleModal(".btn-cart", ".cart-header__modal", "is-active", true);
+//                 if (
+//                     !triggerElement.contains(event.target) &&
+//                     modalElement &&
+//                     !modalElement.contains(event.target)
+//                 ) {
+//                     triggerElement.classList.remove(activeClass);
+//                     modalElement.classList.remove(activeClass);
+//                 }
+//             });
+//         });
+//     }
+// }
+
+// toggleModal(".btn-cart", ".cart-header__modal", "is-active", true);
+
+/* =========================================
+VideoBlock
+=========================================*/
+
 
 function initializeVideoBlocks(videoBlocks) {
     if (videoBlocks.length === 0) return;
 
-    document.addEventListener('DOMContentLoaded', function () {
-        videoBlocks.forEach(function (block) {
-            let wrappers = document.querySelectorAll(block.wrapperClass);
-            if (!wrappers.length) return;
+     
+    videoBlocks.forEach(function (block) {
+        let wrappers = document.querySelectorAll(block.wrapperClass);
+        if (!wrappers.length) return;
 
-            wrappers.forEach(function (wrapper) {
-                let video = wrapper.querySelector(block.controlClass);
-                let lightboxLink = wrapper.querySelector('a[data-fslightbox]');
+        wrappers.forEach(function (wrapper) {
+            let video = wrapper.querySelector(block.controlClass);
+            let lightboxLink = wrapper.querySelector('a[data-fslightbox]');
 
-                if (!video || !lightboxLink) return;
+            if (!video || !lightboxLink) return;
 
-                lightboxLink.addEventListener('click', function () {
-                    const observer = new MutationObserver(function (mutationsList, observer) {
-                        mutationsList.forEach(function (mutation) {
-                            if (mutation.type === 'childList') {
-                                let lightboxVideo = document.querySelector('.fslightbox-source');
-                                if (lightboxVideo) {
-                                    lightboxVideo.setAttribute('autoplay', 'true');
-                                    lightboxVideo.muted = true;
-                                    lightboxVideo.play().catch(error => {
-                                        console.error('Autoplay failed:', error);
-                                    });
-                                    observer.disconnect();
-                                }
-                            }
-                        });
-                    });
-
-                    observer.observe(document.body, {childList: true, subtree: true});
-                });
-
-                const observer = new MutationObserver(function (mutationsList) {
+            lightboxLink.addEventListener('click', function () {
+                const observer = new MutationObserver(function (mutationsList, observer) {
                     mutationsList.forEach(function (mutation) {
-                        let lightboxVideo = document.querySelector('.fslightbox-source');
-                        if (!document.querySelector('.fslightbox-container') && lightboxVideo) {
-                            lightboxVideo.pause();
-                            lightboxVideo.currentTime = 0;
+                        if (mutation.type === 'childList') {
+                            let lightboxVideo = document.querySelector('.fslightbox-source');
+                            if (lightboxVideo) {
+                                lightboxVideo.setAttribute('autoplay', 'true');
+                                lightboxVideo.muted = true;
+                                lightboxVideo.play().catch(error => {
+                                    console.error('Autoplay failed:', error);
+                                });
+                                observer.disconnect();
+                            }
                         }
                     });
                 });
 
                 observer.observe(document.body, {childList: true, subtree: true});
             });
+
+            const observer = new MutationObserver(function (mutationsList) {
+                mutationsList.forEach(function (mutation) {
+                    let lightboxVideo = document.querySelector('.fslightbox-source');
+                    if (!document.querySelector('.fslightbox-container') && lightboxVideo) {
+                        lightboxVideo.pause();
+                        lightboxVideo.currentTime = 0;
+                    }
+                });
+            });
+
+            observer.observe(document.body, {childList: true, subtree: true});
         });
     });
+    
 }
 
 initializeVideoBlocks([
@@ -429,6 +473,9 @@ initializeVideoBlocks([
     },
 ]);
 
+/* =========================================
+email validator
+=========================================*/
 
 class EmailFormValidator {
     constructor(selector) {
@@ -478,6 +525,10 @@ class EmailFormValidator {
 new EmailFormValidator(".info-footer__sales form");
 
 
+/* =========================================
+action panel
+=========================================*/
+
 function setupActionPanel(panelSelector, activeClass) {
     const panel = document.querySelector(panelSelector);
 
@@ -502,10 +553,12 @@ function setupActionPanel(panelSelector, activeClass) {
 
             if (isActive) {
                 button.classList.remove(activeClass);
+                document.body.classList.remove('page-hidden')
                 if (window.TopCatalog && window.TopCatalog.vueApp && window.TopCatalog.vueApp.isOpen) {
                 }
             } else {
                 button.classList.add(activeClass);
+                document.body.classList.add('page-hidden')
                 targetWindow?.classList.add(activeClass);
                 if (window.TopCatalog && window.TopCatalog.vueApp && window.TopCatalog.vueApp.isOpen) {
                     window.TopCatalog.vueApp.closePopup();
@@ -546,9 +599,115 @@ function setupActionPanel(panelSelector, activeClass) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    setupActionPanel(".action-panel", "is-active");
-});
+
+setupActionPanel(".action-panel", "is-active");
+
+
+/* =========================================
+Popup question
+=========================================*/
+
+document.querySelectorAll('.get-modal--call').forEach(item => {
+    item.addEventListener('click', (e) => {
+        let popup = new afLightbox({
+            mobileInBottom: true,
+            beforeClose: () => {
+
+                let warn = new afLightbox({
+                    mobileInBottom: true,
+                })
+
+                let html = `<div class="warn-modal">
+                                <div class="warn-modal__heading"><h2>Закрыть окно?</h2></div>
+                                <div class="warn-modal__info">
+                                    <div class="warn-modal__info-text">
+                                        <p>Вопрос не сохранится, <br> если вы закроете окно</p>
+                                    </div>
+                                    <div class="warn-modal__info-actions">
+                                        <button class="btn-blue">Закрыть</button>
+                                        <button class="btn-custom">Остаться</button>
+                                    </div>
+                                </div>
+                            </div>`
+
+                warn.open(html, (content) => {
+                    content.querySelector('.btn-blue').addEventListener('click', () => {
+                        warn.close()
+                        popup.close(true)
+                    })
+                    content.querySelector('.btn-custom').addEventListener('click', () => {
+                        warn.close()
+                    })
+                })
+
+                return true
+            }
+        })
+
+        popup.open('<div class="af-loading" ></div>', (instance) => {
+            let query = fetch('../_popup-question.html', {
+                method: 'GET',
+            })
+
+            query
+                .then((response => response.text()))
+                .then((html) => {
+                    popup.changeContent(html)
+                })
+        })
+    })
+})
+
+/* ====================================
+play video on hover
+====================================*/
+
+
+
+document.querySelectorAll('.demo-stories__item').forEach(thumbnail => {
+    const video = thumbnail.querySelector('video');
+     
+    let timeout;
+    let timerOnHover;
+
+    thumbnail.addEventListener('mouseenter', () => {
+
+        video.src = video.dataset.src
+        
+        timeout = setTimeout(() => {
+            video.pause();
+        }, 5000); 
+
+        timerOnHover = setTimeout(() => {
+            video.play();
+        }, 500);  
+    });
+
+    thumbnail.addEventListener('mouseleave', () => {
+        clearTimeout(timerOnHover);  
+        clearTimeout(timeout);  
+        video.pause();  
+        video.src = video.src;  
+        video.currentTime = 0; 
+    });
+
+    thumbnail.addEventListener('click', (e) => {
+        e.preventDefault()
+        const lightbox = new FsLightbox();
+        lightbox.props.sources.push(video.src);
+
+        lightbox.props.onOpen = function () {
+
+            lightbox.elements.container.querySelector('video').play()
+        }
+
+        lightbox.open();
+    })
+})
+
+}); //DCL
+
+
 
 
 

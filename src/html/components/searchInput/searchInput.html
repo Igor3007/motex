@@ -1,16 +1,21 @@
-<div class="search-index" :class="{'is-focus': isFocus}" data-find="container">
+<div class="search-index" :class="{'is-focus': isFocus, 'is-mobile': isMobile}" data-find="container">
     <form action="#">
         <div class="search-index__form">
-            <div class="search-index__field">
-                <label class="search-index__input">
-                    <input @focus="focusInput()" @blur="blurInput()" v-model="input" type="text"
-                        name="q" autocomplete="off" placeholder="Найти в Моттексе…" value="">
-                </label>
-                <div class="search-index__btn">
-                    <button class="btn-search">
-                        <i class="icon"
-                            style="background-image: url('./images/icons/ic_search.svg')"></i>
-                    </button>
+            <div class="search-index__str">
+                <div class="search-index__field">
+                    <label class="search-index__input">
+                        <input @focus="focusInput()" @blur="blurInput()" v-model="input" type="text" name="q"
+                            autocomplete="off" placeholder="Найти в Моттексе…" value="">
+                    </label>
+                    <div class="search-index__btn">
+                        <button class="btn-search">
+                            <i class="icon" style="background-image: url('./images/icons/ic_search.svg')"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="search-index__cancel" v-if="isMobile">
+                    <span @click="isFocus = false">Отмена</span>
                 </div>
             </div>
 
@@ -18,16 +23,13 @@
                 <div class="search-suggest">
                     <div class="search-suggest__left">
 
-
                         <div class="search-suggest__similar">
                             <div class="search-suggest__label">Подходящие запросы</div>
                             <div class="search-suggest__list">
-                                <div class="suggest-similar" v-for="item in searchResult.queries">{{item}}</div>
+                                <div class="suggest-similar" @click="selectQuery(item)"
+                                    v-for="item in searchResult.queries">{{item}}</div>
                             </div>
                         </div>
-
-
-
 
                         <div class="search-suggest__category">
                             <div class="search-suggest__label">Перейти в разделы</div>
@@ -35,14 +37,13 @@
 
                                 <div class="suggest-category" v-for="item in searchResult.category">
                                     <div class="suggest-category__image">
-                                        <span class="bgimage"
-                                            :style="{backgroundImage: 'url('+item.image+')'}"></span>
+                                        <span class="bgimage" :style="{backgroundImage: 'url('+item.image+')'}"></span>
                                     </div>
                                     <div class="suggest-category__link">
-                                        <a href="">{{item.name}}</a>
+                                        <a href="/category.html">{{item.name}}</a>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -50,20 +51,33 @@
 
                     <div class="search-suggest__right">
                         <div class="search-suggest__product">
-                            <div class="suggest-product" v-for="item in searchResult.product">
-                                <div class="suggest-product__image">
-                                    <span class="bgimage" :style="{backgroundImage: 'url('+item.image+')'}"></span>
+                            <div class="search-suggest__label">Смотреть товары</div>
+                            <div class="search-suggest__wrp">
+                                <div class="suggest-product" v-for="item in searchResult.product">
+                                    <div class="suggest-product__image">
+                                        <a href="/single-product.html">
+                                            <span class="bgimage"
+                                                :style="{backgroundImage: 'url('+item.image+')'}"></span></a>
+                                    </div>
+                                    <div class="suggest-product__main">
+                                        <div class="suggest-product__name">
+                                            <a href="/single-product.html">{{item.name}}</a>
+                                        </div>
+                                        <div class="suggest-product__price">{{item.price}}</div>
+                                    </div>
                                 </div>
-                                <div class="suggest-product__main">
-                                    <div class="suggest-product__name">{{item.name}}</div>
-                                    <div class="suggest-product__price">{{item.price}}</div>
-                                </div>
+                            </div>
+                            <div class="search-suggest__all">
+                                <a href="">Смотреть все товары</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+            <div class="search-index__empty" v-else-if="isMobile && isFocus">
+                Я помогу найти нужные материалы
+                Более 1,500 товаров для строительства и ремонта в наличии на складе!
+            </div>
         </div>
     </form>
 </div>

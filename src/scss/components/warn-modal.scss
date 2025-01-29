@@ -1,39 +1,6 @@
 .warn-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 9999999;
-  transition: 0.25s ease;
 
-  background: #15181A1A;
-
-  &.is-visible {
-    display: block;
-  }
-
-  &__bg {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    max-width: 324px;
-  }
-
-  &__content {
-    width: 100%;
-    background: #FFF;
-    box-shadow: 0 0 20px 0 #00000021;
-    padding: 20px;
-    border-radius: 8px 8px;
-    position: relative;
-    @media screen and (min-width: 767.98px) {
-      padding: 28px;
-    }
-  }
+  min-width: 320px;
 
   &__heading {
     display: flex;
@@ -54,46 +21,7 @@
     }
   }
 
-  &__close {
-    cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    z-index: 101;
-
-    min-width: 24px;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    border: 1px solid #D0D1D1;
-    background: #FFF;
-
-    svg {
-      min-width: 12px;
-      width: 12px;
-      height: 12px;
-      fill: #000;
-      stroke: #000;
-      stroke-width: 2px;
-    }
-
-    @media screen and (min-width: 767.98px) {
-      right: 28px;
-      top: 28px;
-      min-width: 32px;
-      width: 32px;
-      height: 32px;
-      svg {
-        min-width: 16px;
-        width: 16px;
-        height: 16px;
-      }
-    }
-  }
-
+ 
   &__info {
     &-text {
       margin-bottom: 16px;

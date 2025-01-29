@@ -12,7 +12,7 @@
             <div class="top-catalog__aside">
                 <ul>
                     <li v-for="item,i in listcatalog" @mouseenter="hoverNav(i)" @click="clickNav(i)"
-                        :class="{'is-active': activeCat == i}">
+                        :class="{'is-active': activeCat == i && !isMobile}">
                         <i class="icon" :style=" {backgroundImage: 'url('+item.icon+')'}"></i>
                         <span>{{ item.name }}</span>
                     </li>

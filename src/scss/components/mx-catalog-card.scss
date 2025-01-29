@@ -42,11 +42,19 @@
     }
 
     .card-mx__property {
-      animation: rotate-content .4s ease-in-out .1s forwards;
+      //animation: rotate-content .4s ease-in-out .1s forwards;
+
+      opacity: 1;
+      visibility: visible;
+      transform: perspective(600px) rotateY(0deg);
+      z-index: 2;
+
     }
 
     .card-mx__props picture {
-      animation: rotate-image .4s ease-in-out forwards;
+      //animation: rotate-image .4s ease-in-out forwards;
+
+      transform: perspective(600px) rotateY(180deg);
     }
   }
 
@@ -123,22 +131,7 @@
     position: relative;
 
 
-    &:after {
-      display: none;
-
-      content: '';
-      width: calc(100% - 24px);
-      height: 2px;
-      position: absolute;
-      top: 0;
-      left: 12px;
-      z-index: 1;
-      background: #15181A;
-      @media screen and (min-width: 767.98px) {
-        width: calc(100% - 40px);
-        left: 20px;
-      }
-    }
+    
 
 
     picture {
@@ -147,9 +140,14 @@
       padding-bottom: 80.5%;
       height: 0;
       overflow: hidden;
+      background-color: #f3f3f3;
 
       transform-style: preserve-3d;
       backface-visibility: hidden;
+      transform: perspective(600px) rotateY(0deg);
+      transition: 1s ease;
+      z-index: 2;
+
       @media screen and (min-width: 767.98px) {
         padding-bottom: 68%;
       }
@@ -172,22 +170,22 @@
   }
 
   &__property {
-    perspective: 1000px;
-    transform-style: preserve-3d;
-
-    //display: none;
+     
     visibility: hidden;
-
     position: absolute;
     left: 0;
     top: 0;
     z-index: 1;
     width: 100%;
     height: 100%;
-
     padding: 8px 12px;
     background: #F3F3F3;
     overflow-y: auto;
+    transition: 1s ease;
+    transform: perspective(600px) rotateY(-180deg);
+
+    @include scrollbar();
+
     @media screen and (min-width: 767.98px) {
       padding: 12px 20px;
     }
@@ -196,7 +194,7 @@
     }
 
 
-    ul {
+    & ul {
 
       li {
         display: flex;
@@ -254,6 +252,23 @@
             }
           }
         }
+      }
+    }
+
+    &:after {
+       
+
+      content: '';
+      width: calc(100% - 24px);
+      height: 2px;
+      position: absolute;
+      top: 1px;
+      left: 12px;
+      z-index: 1;
+      background: #15181A;
+      @media screen and (min-width: 767.98px) {
+        width: calc(100% - 40px);
+        left: 20px;
       }
     }
   }

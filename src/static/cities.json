@@ -37,7 +37,8 @@
     "district": "Южный",
     "name": "Абинск",
     "population": 39511,
-    "subject": "Краснодарский край"
+    "subject": "Краснодарский край",
+    "current": true
   },
   {
     "coords": {

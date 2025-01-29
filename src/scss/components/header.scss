@@ -2,6 +2,45 @@ header {
   flex: 0 0 auto;
 }
 
+.header {
+  &.header-fixed {
+
+    padding-top: 100px;
+
+    @media screen and (min-width: $w576) {
+      padding-top: 157px;
+    }
+
+    & .header {
+
+      &__top {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: 11;
+
+      }
+
+      &__main {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: 10;
+        background-color: #fff;
+
+        @media screen and (min-width: $w576) {
+          top: 54px;
+        }
+      }
+
+
+    }
+
+  }
+}
+
 .top-header {
   background: #F3F3F3;
   display: none;
@@ -476,3 +515,22 @@ header {
     }
   }
 }
+
+.btn-cart,
+.btn-elect {
+  position: relative;
+}
+
+.button-counter {
+  position: absolute;
+  background-color: var(--accent);
+  left: -1px;
+  display: block;
+  line-height: 100%;
+  top: -1px;
+  padding: 3px 7px;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 8px 0;
+}
+

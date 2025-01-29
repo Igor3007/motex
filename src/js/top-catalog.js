@@ -28,13 +28,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     isOpen: false,
                     isOpenPane: false,
                     dataJSON: [],
-                    activeCat: 0
+                    activeCat: 0,
+                    isMobile: document.body.clientWidth <= 768
                 },
 
                 mounted: function () {
                     this.getCatalogJSON();
                     this.isPageHidden();
-                    
+
+                    window.addEventListener('resize', () => {
+                        this.isMobile = document.body.clientWidth <= 768
+                    })
                 },
 
                 methods: {
@@ -70,6 +74,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
                         this.isOpen = !this.isOpen;
                         document.body.classList.toggle('page-hidden', this.isOpen && this.isMobile);
                         btn.classList.toggle('is-active', this.isOpen);
+
+                        window.scrollTo({
+                            top: 0
+                        })
                     },
 
                     isPageHidden() {
@@ -105,13 +113,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
                         return this.dataJSON.length ? this.listcatalog[this.activeCat].sub : [];
                     },
 
-                    isMobile() {
-                        return document.body.clientWidth <= 992;
-                    }
+
                 },
 
                 watch: {
-                    'activeCat': function() {
+                    'activeCat': function () {
                         this.$refs.elsubcat.scrollTop = 0
                     }
                 }

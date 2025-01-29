@@ -9,7 +9,7 @@
     display: none;
     overflow-y: auto;
     scrollbar-gutter: stable;
-    z-index: 4;
+    z-index: 15;
 
     &.is-open {
         display: block;
@@ -219,7 +219,7 @@
 
     &__cities {
         column-count: 2;
-        column-gap: 7%;
+        column-gap: 10px;
         margin: auto;
 
         @media screen and (min-width: 576px) {
@@ -232,12 +232,13 @@
 
         @media screen and (min-width: 1200px) {
             column-count: 5;
+             
         }
 
     }
 
     &__group {
-        break-inside: avoid-column;
+         
         padding-right: 20px;
         width: 100%;
         display: flex;
@@ -275,6 +276,29 @@
 
                 &:hover {
                     color: var(--accent);
+                }
+
+                &.is-active {
+                    font-weight: bold;
+                    color: var(--black-base);
+                    position: relative;
+
+
+                }
+
+                & .city-selected {
+                    font-size: 0;
+                    background-color: var(--green);
+                    width: 24px;
+                    height: 24px;
+                    display: inline-block;
+                    border-radius: 6px;
+                    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNS41IDEuMjM3TDYuMiAxMS44NDguNSA2LjgzM2wxLjEtMS4yNDEgNC40NSAzLjkwNSA4LjIyLTkuMzMgMS4yMyAxLjA3eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    left: calc(100% + 4px);
+                    top: -2px;
                 }
             }
 

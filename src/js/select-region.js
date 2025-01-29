@@ -44,16 +44,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     },
 
                     sortArrayCity(arr) {
-                        arr.sort(function (a, b) {
-                            if (a.name < b.name) {
-                                return -1;
-                            }
-                            if (a.name > b.name) {
-                                return 1;
-                            }
-                            // если имена равны
-                            return 0;
-                        });
+                        
+                        // arr.sort(function (a, b) {
+                        //     if (a.name < b.name) {
+                        //         return -1;
+                        //     }
+                        //     if (a.name > b.name) {
+                        //         return 1;
+                        //     }
+                        //     // если имена равны
+                        //     return 0;
+                        // });
 
                         return arr
                     },
@@ -111,27 +112,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
                                 complexArr[firstLetter] = {
                                     letter: firstLetter,
                                     name: item.name,
-                                    data: new Set(),
                                     city: [{
-                                        name: item.name,
-                                        count: 1
+                                        ...item
                                     }]
                                 }
 
-                                complexArr[firstLetter]['data'].add(item.name)
-
                             } else {
-                                complexArr[firstLetter]['data'].add(item.name)
-
-                                if (typeof complexArr[firstLetter]['city'].find(c => c.name == item.name) === 'undefined') {
-                                    complexArr[firstLetter]['city'].push({
-                                        name: item.name,
-                                        count: 1
-                                    })
-                                } else {
-                                    complexArr[firstLetter]['city'].find(c => c.name == item.name).count++
-                                }
-
+                                complexArr[firstLetter]['city'].push({
+                                    ...item
+                                })
                             }
                         })
 

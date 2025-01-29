@@ -22,21 +22,21 @@
 
             <div v-if="cityArray.length" class="select-region__fast">
                 <ul>
-                    <li><a href="#">Челябинск</a></li>
-                    <li><a href="#">Санкт-Петербург</a></li>
-                    <li><a href="#">Воронеж</a></li>
-                    <li><a href="#">Волгоград</a></li>
-                    <li><a href="#">Екатеринбург</a></li>
-                    <li><a href="#">Казань</a></li>
-                    <li><a href="#">Краснодар</a></li>
-                    <li><a href="#">Красноярск</a></li>
-                    <li><a href="#">Новосибирск</a></li>
-                    <li><a href="#">Нижний Новгород</a></li>
-                    <li><a href="#">Омск</a></li>
-                    <li><a href="#">Пермь</a></li>
-                    <li><a href="#">Ростов-на-дону</a></li>
-                    <li><a href="#">Самара</a></li>
-                    <li><a href="#">Уфа</a></li>
+                    <li><a href="/">Челябинск</a></li>
+                    <li><a href="/">Санкт-Петербург</a></li>
+                    <li><a href="/">Воронеж</a></li>
+                    <li><a href="/">Волгоград</a></li>
+                    <li><a href="/">Екатеринбург</a></li>
+                    <li><a href="/">Казань</a></li>
+                    <li><a href="/">Краснодар</a></li>
+                    <li><a href="/">Красноярск</a></li>
+                    <li><a href="/">Новосибирск</a></li>
+                    <li><a href="/">Нижний Новгород</a></li>
+                    <li><a href="/">Омск</a></li>
+                    <li><a href="/">Пермь</a></li>
+                    <li><a href="/">Ростов-на-дону</a></li>
+                    <li><a href="/">Самара</a></li>
+                    <li><a href="/">Уфа</a></li>
                 </ul>
             </div>
 
@@ -47,8 +47,8 @@
                         <div class="select-region__symbol">{{item.letter}}</div>
                         <div class="select-region__list">
                             <ul>
-                                <li v-for="city in item.city" :key="city.name">
-                                    <a href="#">{{city.name}}</a>
+                                <li  v-for="city,i in item.city" :key="city.name + i">
+                                    <a :class="{'is-active':city.current}" href="/">{{city.name}} <span v-if="city.current" class="city-selected" ></span> </a>
                                 </li>
                             </ul>
                         </div>
