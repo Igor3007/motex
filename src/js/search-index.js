@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                             //     body: formData
                             // })
 
-                            let query = fetch('../static/search.json', {
+                            let query = fetch('./static/search.json', {
                                 method: 'GET',
                             })
 

@@ -13,12 +13,14 @@
                 <ul>
                     <li v-for="item,i in listcatalog" @mouseenter="hoverNav(i)" @click="clickNav(i)"
                         :class="{'is-active': activeCat == i && !isMobile}">
+
                         <i class="icon" :style=" {backgroundImage: 'url('+item.icon+')'}"></i>
                         <span>{{ item.name }}</span>
                     </li>
 
                 </ul>
             </div>
+
             <div class="top-catalog__content" :class="{'open-as-pane':isOpenPane}">
                 <div class="top-catalog__cathead">
                     <div class="top-cathead">
@@ -69,6 +71,8 @@
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
     </div>

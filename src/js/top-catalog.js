@@ -39,6 +39,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     window.addEventListener('resize', () => {
                         this.isMobile = document.body.clientWidth <= 768
                     })
+
+                    document.addEventListener('click', e => {
+                        if (!e.target.closest('.section-top-catalog, [data-target="topcatalog"]')) {
+                            this.closePopup()
+                        }
+                    })
                 },
 
                 methods: {

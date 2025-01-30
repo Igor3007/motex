@@ -21,7 +21,7 @@
 }
 
 .select-region {
-    padding: 16px 0 76px;
+    padding: 12px 0 76px;
 
     @media screen and (min-width: $w992) {
         padding: 32px 0;
@@ -232,13 +232,13 @@
 
         @media screen and (min-width: 1200px) {
             column-count: 5;
-             
+
         }
 
     }
 
     &__group {
-         
+
         padding-right: 20px;
         width: 100%;
         display: flex;
