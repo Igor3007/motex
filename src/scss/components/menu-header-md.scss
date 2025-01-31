@@ -6,7 +6,7 @@
   top: 0;
   z-index: 15;
   width: 100%;
-  height: calc(100vh - 60px);
+  height: calc((var(--vh, 1vh) * 100) - 60px);
 
   background: #FFF;
   overflow: hidden;
@@ -92,7 +92,7 @@
     overflow-y: auto;
     overflow-x: hidden;
 
-    height: calc(100vh - 120px);
+    height: calc((var(--vh, 1vh) * 100) - 120px);
 
     &__wrapper {}
 

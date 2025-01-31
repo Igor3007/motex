@@ -27,9 +27,9 @@
   }
 
   &.is-active {
-    animation: dropdown-animation 0.4s ease forwards;
+    animation: fadeInMax 0.3s ease forwards;
     display: block;
-    opacity: 1;
+     
     visibility: visible;
     @media screen and (min-width: 991.98px) {
       animation: dropdown-animation-t 0.4s ease forwards;
@@ -41,7 +41,7 @@
     flex-direction: column;
     gap: 12px;
 
-    max-height: 180px;
+    max-height: 40vh;
     overflow-y: auto;
     padding-bottom: 20px;
     @media screen and (min-width: 991.98px) {

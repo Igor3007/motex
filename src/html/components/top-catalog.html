@@ -45,11 +45,13 @@
                 <div class="top-catalog__subcat" ref="elsubcat">
                     <div v-for="item in listSubCat" class="top-catalog__item">
                         <div class="card-subcat">
+
                             <div class="card-subcat__preview">
                                 <a href="./categoty.html">
                                     <picture><img :src="item.icon" alt=""></picture>
                                 </a>
                             </div>
+
                             <div class="card-subcat__title">
                                 <a href="./categoty.html">{{ item.name }}</a>
                             </div>
@@ -65,7 +67,6 @@
                                 <div v-if="item.sub.length > 5" class="show-more-catalog" @click="showHideList($event)">
                                     Еще <span>{{ item.sub.length - 5 }}</span>
                                 </div>
-
                             </div>
 
                         </div>

@@ -7,7 +7,7 @@
   background: #FFF;
   margin: 0;
   z-index: 20;
-  height: calc(100vh - 60px);
+  height: calc((var(--vh, 1vh) * 100) - 60px);
   overflow: hidden;
   animation: showBlockLtoT 0.3s ease forwards;
 
@@ -95,7 +95,7 @@
       flex-wrap: wrap;
       margin: 0 -7px;
 
-      max-height: calc(100vh - 245px);
+      max-height: calc((var(--vh, 1vh) * 100) - 245px);
       overflow-y: auto;
 
     }
@@ -140,7 +140,7 @@
 
     &__aside {
 
-      max-height: calc(100vh - 120px);
+      max-height: calc((var(--vh, 1vh) * 100) - 120px);
       overflow-y: auto;
       overflow-x: hidden;
 

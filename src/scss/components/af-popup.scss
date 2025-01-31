@@ -322,7 +322,7 @@
 @keyframes fade-drop-filter {
   from {
     opacity: 0;
-    transform: translateY(10vh);
+    transform: translateY(calc(var(--vh, 1vh) * 10));
   }
   to {
     opacity: 1;

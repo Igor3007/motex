@@ -345,7 +345,7 @@
     }
 
     &__load {
-        min-height: 50vh;
+        min-height: calc(var(--vh, 1vh) * 50);
         display: flex;
         justify-content: center;
         align-items: center;

@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     isFocus: false,
                     input: '',
                     dataJSON: false,
-                    isMobile: document.body.clientWidth <= 768
+                    isMobile: document.body.clientWidth <= 768,
+                     
                 },
 
                 mounted: function () {
@@ -29,14 +30,49 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 },
 
                 methods: {
+
+                    lockScroll(val) {
+                        if (val) {
+                            //fix iOS body scroll
+                            if (this.isiOS) {
+                                document.documentElement.classList.add('safari-fixed')
+                                document.body.style.marginTop = `-${ window.scrollY }px`
+                            }
+                            document.body.classList.add('page-hidden')
+                        } else {
+        
+                            //fix iOS body scroll
+                            let documentBody = document.body
+        
+                            if (this.isiOS) {
+                                if (document.documentElement.classList.contains('safari-fixed')) document.documentElement.classList.remove('safari-fixed')
+                                const bodyMarginTop = parseInt(documentBody.style.marginTop, 10)
+                                documentBody.style.marginTop = ''
+                                if (bodyMarginTop || bodyMarginTop === 0) window.scrollTo(0, -bodyMarginTop)
+                            }
+        
+                            documentBody.classList.remove('page-hidden')
+                        }
+                    },
+
                     focusInput() {
+                        
+                        if(!this.isFocus && this.isiOS) {
+                            this.$refs.searchInput.blur()
+                        }
+
                         this.isFocus = true
+                        this.lockScroll(true)
+                        
+                        
                     },
 
                     blurInput() {
                         if (!this.isMobile) {
                             this.isFocus = false
                         }
+
+                        this.lockScroll(false)
                     },
 
                     selectQuery(item) {
@@ -72,7 +108,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
                         return this.dataJSON ? this.dataJSON : false
                     },
 
-
+                    isiOS() {
+                        return /iPad|iPhone|iPod/.test(navigator.platform) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+                    }
                 },
 
                 watch: {

@@ -1,5 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+/* =================================================
+css variable
+=================================================*/
+
+    function css_variable() {
+        let vh = window.innerHeight * 0.01;
+        let hgtheader = document.querySelector('.header') ? document.querySelector('.header').clientHeight : 64
+
+        document.documentElement.style.setProperty('--vh', vh + 'px');
+        document.documentElement.style.setProperty('--hgt-header', hgtheader + 'px');
+    }
+
+    window.addEventListener('load', css_variable)
+    window.addEventListener('resize', css_variable)
+
 /* =========================================
 Time toggle tooltip
 =========================================*/
@@ -587,6 +602,7 @@ function setupActionPanel(panelSelector, activeClass) {
         const closeButton = win.querySelector(".heading-menu__close");
         if (closeButton) {
             closeButton.addEventListener("click", (event) => {
+                document.body.classList.toggle('page-hidden', false)
                 event.stopPropagation();
                 win.classList.remove(activeClass);
                 buttons.forEach((btn) => btn.classList.remove(activeClass));
@@ -645,7 +661,7 @@ document.querySelectorAll('.get-modal--call').forEach(item => {
         })
 
         popup.open('<div class="af-loading" ></div>', (instance) => {
-            let query = fetch('../_popup-question.html', {
+            let query = fetch('./_popup-question.html', {
                 method: 'GET',
             })
 
