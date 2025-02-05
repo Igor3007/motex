@@ -73,7 +73,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     closePopup() {
                         this.isOpen = false;
                         document.body.classList.toggle('page-hidden', false);
-                        btn.classList.toggle('is-active', this.isOpen);
+                        btn.classList.toggle('is-active', false);
+                        this.isOpenPane = false
                     },
 
                     openPopup() {
@@ -150,6 +151,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
             } else {
                 window.TopCatalog.vueApp.openPopup();
             }
+             
         });
     });
 });

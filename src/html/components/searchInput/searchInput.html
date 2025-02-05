@@ -4,8 +4,8 @@
             <div class="search-index__str">
                 <div class="search-index__field">
                     <label class="search-index__input">
-                        <input @focus="focusInput()" @blur="blurInput()" ref="searchInput" v-model="input" type="text" name="q"
-                            autocomplete="off" placeholder="Найти в Моттексе…" value="">
+                        <input @focus="focusInput()" @blur="blurInput()" ref="searchInput" v-model="input" type="text"
+                            name="q" autocomplete="off" placeholder="Найти в Моттексе…" value="">
                     </label>
                     <div class="search-index__btn">
                         <button class="btn-search">
@@ -15,7 +15,7 @@
 
                 </div>
                 <div class="search-index__cancel" v-if="isMobile">
-                    <span @click="isFocus = false">Отмена</span>
+                    <span @click="closePopup()">Отмена</span>
                 </div>
             </div>
 

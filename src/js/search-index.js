@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     input: '',
                     dataJSON: false,
                     isMobile: document.body.clientWidth <= 768,
-                     
+
                 },
 
                 mounted: function () {
@@ -40,31 +40,31 @@ document.addEventListener('DOMContentLoaded', function (event) {
                             }
                             document.body.classList.add('page-hidden')
                         } else {
-        
+
                             //fix iOS body scroll
                             let documentBody = document.body
-        
+
                             if (this.isiOS) {
                                 if (document.documentElement.classList.contains('safari-fixed')) document.documentElement.classList.remove('safari-fixed')
                                 const bodyMarginTop = parseInt(documentBody.style.marginTop, 10)
                                 documentBody.style.marginTop = ''
                                 if (bodyMarginTop || bodyMarginTop === 0) window.scrollTo(0, -bodyMarginTop)
                             }
-        
+
                             documentBody.classList.remove('page-hidden')
                         }
                     },
 
                     focusInput() {
-                        
-                        if(!this.isFocus && this.isiOS) {
+
+                        if (!this.isFocus && this.isiOS) {
                             this.$refs.searchInput.blur()
                         }
 
                         this.isFocus = true
                         this.lockScroll(true)
-                        
-                        
+
+
                     },
 
                     blurInput() {
@@ -72,6 +72,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
                             this.isFocus = false
                         }
 
+                        this.lockScroll(false)
+                    },
+
+                    closePopup() {
+                        this.isFocus = false
                         this.lockScroll(false)
                     },
 
