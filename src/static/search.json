@@ -12,41 +12,41 @@
     ],
 
     "category": [{
-            "image": "./images/goods/i_goods-a001.png",
+            "image": "/images/goods/i_goods-a001.png",
             "name": "Фанера"
         },
         {
-            "image": "./images/goods/i_goods-a001.png",
+            "image": "/images/goods/i_goods-a001.png",
             "name": "Фанера ФК"
         },
         {
-            "image": "./images/goods/i_goods-a001.png",
+            "image": "/images/goods/i_goods-a001.png",
             "name": "Фанера ФСФ"
         }
     ],
 
     "product": [{
-            "image": "./images/goods/i_goods-a001.png",
+            "image": "/images/goods/i_goods-a001.png",
             "name": "Фанера берёзовая ФК 6мм сорт IV/IV НШ Е1 1525 × 1525мм Свеза",
             "price": "741 ₽/шт."
         },
         {
-            "image": "./images/goods/i_goods-a001.png",
+            "image": "/images/goods/i_goods-a001.png",
             "name": "Фанера берёзовая ФК 6мм сорт IV/IV НШ Е1 1525 × 1525мм Свеза",
             "price": "741 ₽/шт."
         },
         {
-            "image": "./images/goods/i_goods-a001.png",
+            "image": "/images/goods/i_goods-a001.png",
             "name": "Фанера берёзовая ФК 6мм сорт IV/IV НШ Е1 1525 × 1525мм Свеза",
             "price": "741 ₽/шт."
         },
         {
-            "image": "./images/goods/i_goods-a001.png",
+            "image": "/images/goods/i_goods-a001.png",
             "name": "Фанера берёзовая ФК 6мм сорт IV/IV НШ Е1 1525 × 1525мм Свеза",
             "price": "741 ₽/шт."
         },
         {
-            "image": "./images/goods/i_goods-a001.png",
+            "image": "/images/goods/i_goods-a001.png",
             "name": "Фанера берёзовая ФК 6мм сорт IV/IV НШ Е1 1525 × 1525мм Свеза",
             "price": "741 ₽/шт."
         }

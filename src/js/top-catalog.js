@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                 methods: {
                     getCatalogJSON: function () {
-                        let query = fetch('./static/top-catalog.json', {
+                        let query = fetch('/static/top-catalog.json', {
                             method: 'GET',
                         });
 
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     document.querySelectorAll('[data-target="topcatalog"]').forEach(item => {
         item.addEventListener('click', () => {
             if (!window.TopCatalog) {
-                let query = fetch('./_popup-top-catalog.html', {
+                let query = fetch('/pages/_popup-top-catalog.html', {
                     method: 'GET',
                 });
 

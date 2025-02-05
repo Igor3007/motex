@@ -5,7 +5,7 @@
                 <div class="topcatalog-head">
                     <div class="topcatalog-head__title">Каталог</div>
                     <div class="topcatalog-head__close" @click="closePopup()">
-                        <i class="icon" style="background-image: url('./images/icons/ic_close.svg')"></i>
+                        <i class="icon" style="background-image: url('/images/icons/ic_close.svg')"></i>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                 <div class="top-catalog__cathead">
                     <div class="top-cathead">
                         <div class="topcatalog-head__back" @click="isOpenPane = false">
-                            <i class="icon" style="background-image: url('./images/icons/ic_arrow-back.svg')"></i>
+                            <i class="icon" style="background-image: url('/images/icons/ic_arrow-back.svg')"></i>
                         </div>
                         <div class="top-cathead__title">{{subCat.name}}</div>
 
@@ -37,7 +37,7 @@
                             {{ declination(subCat.total, ['товар','товара','товаров']) }}
                         </div>
                         <div class="top-cathead__close" @click="closePopup()">
-                            <i class="icon" style="background-image: url('./images/icons/ic_close.svg')"></i>
+                            <i class="icon" style="background-image: url('/images/icons/ic_close.svg')"></i>
                         </div>
                     </div>
                 </div>
@@ -47,13 +47,13 @@
                         <div class="card-subcat">
 
                             <div class="card-subcat__preview">
-                                <a href="./categoty.html">
+                                <a href="/categoty.html">
                                     <picture><img :src="item.icon" alt=""></picture>
                                 </a>
                             </div>
 
                             <div class="card-subcat__title">
-                                <a href="./categoty.html">{{ item.name }}</a>
+                                <a href="/categoty.html">{{ item.name }}</a>
                             </div>
 
                             <div class="card-subcat__list" :class="{'is-hide': item.sub.length > 5}">

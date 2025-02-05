@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                 methods: {
                     getCityJSON: function () {
-                        let query = fetch('./static/cities.json', {
+                        let query = fetch('/static/cities.json', {
                             method: 'GET',
                         })
 
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         item.addEventListener('click', () => {
 
             if (!window.SelectRegion) {
-                let query = fetch('./_popup-select-region.html', {
+                let query = fetch('/pages/_popup-select-region.html', {
                     method: 'GET',
                 })
 

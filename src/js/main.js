@@ -677,7 +677,7 @@ document.addEventListener("DOMContentLoaded", () => {
             })
 
             popup.open('<div class="af-loading" ></div>', (instance) => {
-                let query = fetch('./_popup-question.html', {
+                let query = fetch('/pages/_popup-question.html', {
                     method: 'GET',
                 })
 
@@ -693,8 +693,6 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ====================================
     play video on hover
     ====================================*/
-
-
 
     document.querySelectorAll('.demo-stories__item').forEach(thumbnail => {
         const video = thumbnail.querySelector('video');

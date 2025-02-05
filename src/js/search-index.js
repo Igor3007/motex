@@ -90,12 +90,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
                             let formData = new FormData()
                             formData.append('q', this.input)
 
-                            // let query = fetch('../static/search.json', {
+                            // let query = fetch('/static/search.json', {
                             //     method: 'POST',
                             //     body: formData
                             // })
 
-                            let query = fetch('./static/search.json', {
+                            let query = fetch('/static/search.json', {
                                 method: 'GET',
                             })
 
