@@ -582,9 +582,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     button.classList.remove(activeClass);
                     document.body.classList.remove('page-hidden')
 
-                    if (window.TopCatalog && window.TopCatalog.vueApp && window.TopCatalog.vueApp.isOpen) {
-                        window.TopCatalog.vueApp.closePopup();
-                    }
+                    setTimeout(() => {
+                        if (window.TopCatalog && window.TopCatalog.vueApp && window.TopCatalog.vueApp.isOpen) {
+                            window.TopCatalog.vueApp.closePopup();
+                        }
+                    }, 100)
+
+
 
                 } else {
                     button.classList.add(activeClass);

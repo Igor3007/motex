@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     isOpenPane: false,
                     dataJSON: [],
                     activeCat: 0,
+                    buttonOpen: btn,
                     isMobile: document.body.clientWidth <= 768
                 },
 
@@ -73,14 +74,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     closePopup() {
                         this.isOpen = false;
                         document.body.classList.toggle('page-hidden', false);
-                        btn.classList.toggle('is-active', false);
+                        this.buttonOpen.classList.toggle('is-active', false);
                         this.isOpenPane = false
                     },
 
                     openPopup() {
                         this.isOpen = !this.isOpen;
                         document.body.classList.toggle('page-hidden', this.isOpen && this.isMobile);
-                        btn.classList.toggle('is-active', this.isOpen);
+                        this.buttonOpen.classList.toggle('is-active', this.isOpen);
 
                         window.scrollTo({
                             top: 0
@@ -149,9 +150,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
                         window.TopCatalog.vueApp.openPopup();
                     });
             } else {
+                window.TopCatalog.vueApp.buttonOpen = item
                 window.TopCatalog.vueApp.openPopup();
             }
-             
+
+            //document.querySelectorAll('[data-target="menu"], [data-window="menu"]').forEach(el => el.classList.toggle('is-active', false))
+
         });
     });
 });

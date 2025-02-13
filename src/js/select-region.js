@@ -44,17 +44,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     },
 
                     sortArrayCity(arr) {
-                        
-                        // arr.sort(function (a, b) {
-                        //     if (a.name < b.name) {
-                        //         return -1;
-                        //     }
-                        //     if (a.name > b.name) {
-                        //         return 1;
-                        //     }
-                        //     // если имена равны
-                        //     return 0;
-                        // });
+
+                        arr.sort(function (a, b) {
+                            if (a.name < b.name) {
+                                return -1;
+                            }
+                            if (a.name > b.name) {
+                                return 1;
+                            }
+                            // если имена равны
+                            return 0;
+                        });
 
                         return arr
                     },
