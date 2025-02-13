@@ -182,6 +182,45 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =========================================
+    Splide simple-collections
+    =========================================*/
+
+    if (document.querySelector('[data-slider="splide-simple-collections"]')) {
+        let sliderSimpleCollections = new Splide('[data-slider="splide-simple-collections"]', {
+            type: 'slide',
+            rewind: true,
+            arrows: false,
+            pagination: false,
+            gap: 12,
+            fixedWidth: '324px',
+            autoHeight: false,
+            start: 0,
+            updateOnMove: true,
+            drag: true,
+            flickPower: 300,
+            snap: true,
+            focus: 'left',
+            easing: 'ease-out',
+            speed: 400,
+            mediaQuery: 'min',
+            breakpoints: {
+
+                575.98: {
+                    gap: 16,
+                },
+                767.98: {
+                    fixedWidth: '632px',
+                },
+                1439.98: {
+                    destroy: true,
+                }
+            }
+        });
+
+        sliderSimpleCollections.mount();
+    }
+
+    /* =========================================
     Splide top products
     =========================================*/
 
@@ -389,50 +428,6 @@ document.addEventListener("DOMContentLoaded", () => {
         initializeCardActions('.main-goods-item');
     }
 
-    /* =========================================
-    toggle modal
-    =========================================*/
-
-    // function toggleModal(triggerSelector, modalSelector, activeClass, closeOnOutsideClick = false) {
-    //     const triggerElements = document.querySelectorAll(triggerSelector);
-
-    //     if (!triggerElements.length) {
-    //         return;
-    //     }
-
-    //     triggerElements.forEach((triggerElement) => {
-    //         triggerElement.addEventListener("click", (event) => {
-    //             event.stopPropagation();
-
-    //             const modalElement = document.querySelector(modalSelector);
-    //             if (!modalElement) {
-    //                 return;
-    //             }
-
-    //             triggerElement.classList.toggle(activeClass);
-    //             modalElement.classList.toggle(activeClass);
-    //         });
-    //     });
-
-    //     if (closeOnOutsideClick) {
-    //         document.addEventListener("click", (event) => {
-    //             triggerElements.forEach((triggerElement) => {
-    //                 const modalElement = document.querySelector(modalSelector);
-
-    //                 if (
-    //                     !triggerElement.contains(event.target) &&
-    //                     modalElement &&
-    //                     !modalElement.contains(event.target)
-    //                 ) {
-    //                     triggerElement.classList.remove(activeClass);
-    //                     modalElement.classList.remove(activeClass);
-    //                 }
-    //             });
-    //         });
-    //     }
-    // }
-
-    // toggleModal(".btn-cart", ".cart-header__modal", "is-active", true);
 
     /* =========================================
     VideoBlock
@@ -498,7 +493,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeVideoBlocks([{
         wrapperClass: '.demo-stories__item',
         controlClass: '.demo-stories__item video',
-    }, ]);
+    },]);
 
     /* =========================================
     email validator
@@ -739,3 +734,258 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
 }); //DCL
+
+
+if (document.querySelector('.mx-simple-collections')) {
+    document.querySelectorAll('.splide__slide').forEach((slide) => {
+        slide.addEventListener('mouseenter', () => {
+            document.querySelectorAll('.splide__slide').forEach((el) => {
+                el.classList.add('is--hover');
+            });
+            slide.classList.add('is--active');
+        });
+
+        slide.addEventListener('mouseleave', () => {
+            document.querySelectorAll('.splide__slide').forEach((el) => {
+                el.classList.remove('is--hover', 'is--active');
+            });
+        });
+    });
+
+}
+
+
+if (document.querySelector('.dropdown')) {
+    document.addEventListener("DOMContentLoaded", function () {
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        dropdowns.forEach((dropdown) => {
+            const toggle = dropdown.querySelector('.dropdown__toggle');
+            const toggleText = toggle.querySelector('span');
+            const menu = dropdown.querySelector('.dropdown__menu');
+            const items = menu.querySelectorAll('.dropdown__item');
+
+            function setActiveItem(selectedText) {
+                items.forEach((item) => {
+                    item.classList.toggle('is-active', item.textContent.trim() === selectedText.trim());
+                });
+            }
+
+            setActiveItem(toggleText.textContent);
+
+            toggle.addEventListener('click', (event) => {
+                event.stopPropagation();
+                const isOpen = dropdown.classList.contains('is-open');
+
+                dropdowns.forEach((d) => d.classList.remove('is-open'));
+
+                dropdown.classList.toggle('is-open', !isOpen);
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!dropdown.contains(event.target)) {
+                    dropdown.classList.remove('is-open');
+                }
+            });
+
+            items.forEach((item) => {
+                item.addEventListener('click', () => {
+                    toggleText.textContent = item.textContent;
+                    setActiveItem(item.textContent);
+                    dropdown.classList.remove('is-open');
+                });
+            });
+        });
+    });
+}
+
+
+if (document.querySelector('.mx-bd-catalog')) {
+    document.addEventListener('DOMContentLoaded', () => {
+        const container = document.querySelector('.mx-bd-catalog__catalog-list');
+        const buttons = document.querySelectorAll('.catalog-views__btn');
+
+        const setView = (view) => {
+            container.classList.toggle('grid--view', view === 'grid');
+            container.classList.toggle('list--view', view === 'list');
+
+            buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.view === view));
+
+            localStorage.setItem('viewMode', view);
+        };
+
+        const savedView = localStorage.getItem('viewMode') || 'grid';
+        setView(savedView);
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => setView(button.dataset.view));
+        });
+    });
+}
+
+if (document.querySelector('.mx-bd-catalog__aside-dropdown')) {
+    document.addEventListener("DOMContentLoaded", function () {
+        const dropdownItems = document.querySelectorAll('.mx-bd-catalog__aside-dropdown-list .item');
+
+        dropdownItems.forEach(item => {
+            const arrow = item.querySelector('.icon');
+
+            if (!arrow) return;
+
+            arrow.addEventListener('click', function (event) {
+                event.stopPropagation();
+
+                const parentLi = item.closest('li');
+                const submenu = parentLi.querySelector('ul');
+
+                if (!submenu) return;
+
+                const isOpen = parentLi.classList.contains("is-open");
+
+                document.querySelectorAll('.mx-bd-catalog__aside-dropdown-list li.is-open').forEach(openItem => {
+                    openItem.classList.remove('is-open');
+                });
+
+                if (!isOpen) {
+                    parentLi.classList.add('is-open');
+                }
+            });
+        });
+
+        document.addEventListener('click', function () {
+            document.querySelectorAll('.mx-bd-catalog__aside-dropdown-list li.is-open').forEach(openItem => {
+                openItem.classList.remove('is-open');
+            });
+        });
+    });
+}
+
+
+if (document.querySelector('.filter-properties__head')) {
+    const items = document.querySelectorAll('.filter-properties__head')
+
+    items.forEach(item => {
+        item.addEventListener('click', e => {
+            item.closest('.filter-properties').classList.toggle('is-hide')
+        })
+    })
+}
+
+
+if (document.querySelector('.filter-properties')) {
+    document.addEventListener("DOMContentLoaded", function () {
+        const container = document.querySelector('.category-filter');
+        if (container) {
+            const subMenus = container.querySelectorAll('.filter-properties__list ul');
+
+            subMenus.forEach(ul => {
+                const items = ul.querySelectorAll('li');
+
+                if (items.length > 5) {
+                    items.forEach((item, index) => {
+                        if (index >= 5) item.classList.add('hidden');
+                    });
+
+                    const hiddenCount = items.length - 5;
+                    const toggleBtn = document.createElement('div');
+                    toggleBtn.classList.add('sub-menu-toggle');
+                    toggleBtn.innerHTML = `Ещё <span>${hiddenCount}</span> <i class="icon"></i>`;
+
+                    toggleBtn.addEventListener('click', () => {
+                        ul.classList.toggle('is-open');
+                        toggleBtn.classList.toggle('is-open');
+
+                        const isOpen = ul.classList.contains('is-open');
+
+                        items.forEach((item, index) => {
+                            if (index >= 5) {
+                                item.classList.toggle('hidden', !isOpen);
+                            }
+                        });
+
+                        if (isOpen) {
+                            toggleBtn.innerHTML = `Свернуть <i class="icon"></i>`;
+                        } else {
+                            toggleBtn.innerHTML = `Ещё <span>${hiddenCount}</span> <i class="icon"></i>`;
+                        }
+                    });
+
+                    ul.after(toggleBtn);
+                }
+            });
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    let newRangeSlider = null;
+
+    const initPriceRange = () => {
+        const slider = document.getElementById('price-slider');
+        if (!slider) {
+            console.error('Слайдер не найден');
+            return;
+        }
+
+        if (newRangeSlider) {
+            newRangeSlider = null;
+        }
+
+        newRangeSlider = new ZBRangeSlider('price-slider');
+
+        const inputMax = document.querySelector('[data-price-range="max"]');
+        const inputMin = document.querySelector('[data-price-range="min"]');
+
+        const priceMax = slider.getAttribute('se-max') || 10000;
+        const priceMin = slider.getAttribute('se-min') || 0;
+
+        const form = inputMax.closest('form');
+        const entity = form?.dataset.filter;
+
+        newRangeSlider.didChanged = (min, max) => {
+            inputMax.value = max;
+            inputMin.value = min;
+
+            if (entity && window.Filter?.[entity]) {
+                window.Filter[entity].submit();
+            }
+        };
+
+        inputMax.addEventListener('keyup', (e) => {
+            let int = e.target.value.replace(/\D/g, '');
+            int = Math.min(Number(int), Number(priceMax));
+            e.target.value = int;
+            newRangeSlider.setMaxValue(int);
+        });
+
+        inputMin.addEventListener('keyup', (e) => {
+            let int = e.target.value.replace(/\D/g, '');
+            int = Math.max(Number(int), Number(priceMin));
+            e.target.value = int;
+            newRangeSlider.setMinValue(int);
+        });
+    };
+
+    const filterTrigger = document.querySelector('[data-filter-trigger="filter"]');
+    const filterContainer = document.querySelector('[data-filter-container="filter"]');
+    const closeButton = document.querySelector('[data-filter-close="close"]');
+
+    if (document.querySelector('.filter-properties__range')) {
+        initPriceRange();
+    }
+
+    if (filterTrigger && filterContainer && closeButton) {
+        filterTrigger.addEventListener('click', () => {
+            filterContainer.classList.add('fixed');
+            setTimeout(initPriceRange, 100);
+        });
+
+        closeButton.addEventListener('click', () => {
+            filterContainer.classList.remove('fixed');
+        });
+    }
+
+    window.addEventListener('resize', () => {
+        setTimeout(initPriceRange, 200);
+    });
+});

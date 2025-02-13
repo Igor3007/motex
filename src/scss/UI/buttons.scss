@@ -32,6 +32,40 @@
   }
 }
 
+.btn-gray {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #15181A;
+
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 12px;
+  max-height: 48px;
+  background: #F3F3F3;
+  border: 1px solid #D0D1D1;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .1s ease;
+
+  @media screen and (min-width: 767.98px) {
+    font-size: 16px;
+    line-height: 24px;
+
+    padding: 12px;
+  }
+  @media screen and (min-width: 991.98px) {
+    &:hover {
+      color: #FFF;
+      background: #19BEFF;
+      border-color: transparent;
+    }
+  }
+}
+
 .icon {
   display: block;
   min-width: 12px;

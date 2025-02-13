@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html', {
+'title': 'Каталог'
+})
+
+<body>
+@@include('html/header.html')
+
+<main class="page">
+    <div data-observ></div>
+
+    @@include('html/components/breadcrumbs/breadcrumbs-catalog-lvl-2.html')
+
+    <section class="mx-catalog-goods">
+        <div class="mx-main-catalog__container _container">
+            <div class="mx-catalog-goods__heading">
+                <h1>Листовые материалы</h1>
+                <div class="mx-catalog-goods__heading-count">
+                    <span>2 394 Товара</span>
+                </div>
+            </div>
+            <div class="mx-catalog-goods__cards">
+                @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
+                "link": "/pages/catalog-lvl-3.html",
+                "title": "Фанера, все виды",
+                "image": "/images/mx-catalog/i_catalog-item-a001.png",
+                })
+                @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
+                "link": "#",
+                "title": "Плита OSB",
+                "image": "/images/mx-catalog/i_catalog-item-a001.png",
+                })
+                @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
+                "link": "#",
+                "title": "ЦСП",
+                "image": "/images/mx-catalog/i_catalog-item-a001.png",
+                })
+                @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
+                "link": "#",
+                "title": "ДСП",
+                "image": "/images/mx-catalog/i_catalog-item-a001.png",
+                })
+                @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
+                "link": "#",
+                "title": "ДВП",
+                "image": "/images/mx-catalog/i_catalog-item-a001.png",
+                })
+                @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
+                "link": "#",
+                "title": "МДФ",
+                "image": "/images/mx-catalog/i_catalog-item-a001.png",
+                })
+                @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
+                "link": "#",
+                "title": "ГСП",
+                "image": "/images/mx-catalog/i_catalog-item-a001.png",
+                })
+                @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
+                "link": "#",
+                "title": "ГКЛ",
+                "image": "/images/mx-catalog/i_catalog-item-a001.png",
+                })
+                @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
+                "link": "#",
+                "title": "Фибролит",
+                "image": "/images/mx-catalog/i_catalog-item-a001.png",
+                })
+            </div>
+        </div>
+    </section>
+    <section class="mx-simple-collections">
+        <div class="mx-simple-collections__container _container">
+            <div class="mx-simple-collections__heading">
+                <h2>Вечная классика строительства</h2>
+                <a href="#">Смотреть все</a>
+            </div>
+            <div class="mx-simple-collections__collections">
+                <div class="splide" data-slider="splide-simple-collections">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                @@include('html/components/mx-simple-collections/mx-simple-collections-item.html', {
+                                "image": "/images/simple-collections/i_simple-collections-a001.jpg",
+                                "info": "Подборка товаров",
+                                "icon": "/images/icons/ic_simple-collections-1.svg",
+                                "text": "Этим материалам <br> более 10 лет"
+                                })
+                            </li>
+                            <li class="splide__slide">
+                                @@include('html/components/mx-simple-collections/mx-simple-collections-item.html', {
+                                "image": "/images/simple-collections/i_simple-collections-a002.jpg",
+                                "info": "Подборка товаров",
+                                "icon": "/images/icons/ic_simple-collections-2.svg",
+                                "text": "Эти материалы <br> только по ГОСТ"
+                                })
+                            </li>
+                            <li class="splide__slide">
+                                @@include('html/components/mx-simple-collections/mx-simple-collections-item.html', {
+                                "image": "/images/simple-collections/i_simple-collections-a003.jpg",
+                                "info": "Подборка товаров",
+                                "icon": "/images/icons/ic_simple-collections-3.svg",
+                                "text": "ТОП 10 товаров, <br> покупаемых у нас"
+                                })
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mx-bd-catalog">
+        <div class="mx-bd-catalog__container _container">
+            <div class="mx-bd-catalog__wrapper">
+                <div class="mx-bd-catalog__aside">
+                    <div class="category-filter" data-filter-container="filter">
+
+                        <div class="category-filter__heading">
+                            <div class="category-filter__container _container">
+                                <div class="category-filter__heading-wrapper">
+                                    <div class="category-filter__heading-title">Фильтры</div>
+                                    <div class="category-filter__heading-close" data-filter-close="close">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="category-filter__body">
+                            <div class="category-filter__container _container">
+                                <div class="category-filter__head">
+                                    <div class="category-filter__head-title">Листовые материалы</div>
+                                </div>
+                                <div class="category-filter__filter">
+                                    <form action="#" method="GET">
+                                        <div class="category-filter__props">
+                                            <div class="category-filter__item">
+                                                <div class="filter-properties">
+                                                    <div class="filter-properties__head">
+                                                        <div class="filter-properties__title">Способы получения</div>
+                                                        <div class="filter-properties__cross">
+                                                            <i class="icon"
+                                                               style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="filter-properties__list" data-filter="waystoget">
+                                                        <ul>
+                                                            <li>
+                                                                <label class="checkbox">
+                                                                    <input id="waystoget_stock" type="checkbox"
+                                                                           name="filter[waystoget][]" value="stock">
+                                                                    <span class="checkbox__elem"></span>
+                                                                    <span class="checkbox__text">В наличии (524)</span>
+                                                                </label>
+                                                            </li>
+                                                            <li>
+                                                                <label class="checkbox">
+                                                                    <input id="waystoget_deliver" type="checkbox"
+                                                                           name="filter[waystoget][]" value="deliver">
+                                                                    <span class="checkbox__elem"></span>
+                                                                    <span class="checkbox__text">Доставка курьером (1 870)</span>
+                                                                </label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="category-filter__item">
+                                                <div class="filter-properties">
+                                                    <div class="filter-properties__head">
+                                                        <div class="filter-properties__title">Цена</div>
+                                                        <div class="filter-properties__cross">
+                                                            <i class="icon"
+                                                               style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="filter-properties__list">
+                                                        <div class="filter-properties__range">
+                                                            <div class="filter-properties__row">
+                                                                <div class="filter-properties__input">
+                                                                    <span>от</span>
+                                                                    <input type="text" name="filter[price][min]"
+                                                                           placeholder=""
+                                                                           value="550" data-price-range="min"
+                                                                           aria-label="">
+                                                                    <span>₽</span>
+                                                                </div>
+                                                                <div class="filter-properties__input">
+                                                                    <span>до</span>
+                                                                    <input type="text" name="filter[price][max]"
+                                                                           placeholder=""
+                                                                           value="15550" data-price-range="max"
+                                                                           aria-label="">
+                                                                    <span>₽</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="filter-properties__slider">
+                                                                <div class="slider" id="price-slider" se-min="550"
+                                                                     se-step="1"
+                                                                     se-min-value="550" se-max-value="15550"
+                                                                     se-max="20550">
+                                                                    <div class="slider-touch-left">
+                                                                        <span></span>
+                                                                    </div>
+                                                                    <div class="slider-touch-right">
+                                                                        <span></span>
+                                                                    </div>
+                                                                    <div class="slider-line">
+                                                                        <span></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="category-filter__item">
+                                                <div class="filter-properties">
+                                                    <div class="filter-properties__head">
+                                                        <div class="filter-properties__title">Тип продукта</div>
+                                                        <div class="filter-properties__cross">
+                                                            <i class="icon"
+                                                               style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="filter-properties__list" data-filter="producttype">
+                                                        <ul>
+                                                            <li>
+                                                                <label class="checkbox">
+                                                                    <input id="producttype_gkl" type="checkbox"
+                                                                           name="filter[producttype][]" value="gkl">
+                                                                    <span class="checkbox__elem"></span>
+                                                                    <span class="checkbox__text">Гипоскартоновый лист ГКЛ (54)</span>
+                                                                </label>
+                                                            </li>
+                                                            <li>
+                                                                <label class="checkbox">
+                                                                    <input id="producttype_gsp" type="checkbox"
+                                                                           name="filter[producttype][]" value="gsp">
+                                                                    <span class="checkbox__elem"></span>
+                                                                    <span class="checkbox__text">Гипостружечная плита ГСП (153)</span>
+                                                                </label>
+                                                            </li>
+                                                            <li>
+                                                                <label class="checkbox">
+                                                                    <input id="producttype_dvp" type="checkbox"
+                                                                           name="filter[producttype][]" value="dvp">
+                                                                    <span class="checkbox__elem"></span>
+                                                                    <span class="checkbox__text">Древесно-волокнистая плита ДВП (97)</span>
+                                                                </label>
+                                                            </li>
+                                                            <li>
+                                                                <label class="checkbox">
+                                                                    <input id="producttype_dsp" type="checkbox"
+                                                                           name="filter[producttype][]" value="dsp">
+                                                                    <span class="checkbox__elem"></span>
+                                                                    <span class="checkbox__text">Древесно-стружечная плита ДСП (97)</span>
+                                                                </label>
+                                                            </li>
+                                                            <li>
+                                                                <label class="checkbox">
+                                                                    <input id="producttype_osb" type="checkbox"
+                                                                           name="filter[producttype][]" value="osb">
+                                                                    <span class="checkbox__elem"></span>
+                                                                    <span class="checkbox__text">Плита OSB (547)</span>
+                                                                </label>
+                                                            </li>
+                                                            <li>
+                                                                <label class="checkbox">
+                                                                    <input id="producttype_el1" type="checkbox"
+                                                                           name="filter[producttype][]" value="el1">
+                                                                    <span class="checkbox__elem"></span>
+                                                                    <span class="checkbox__text">el1</span>
+                                                                </label>
+                                                            </li>
+                                                            <li>
+                                                                <label class="checkbox">
+                                                                    <input id="producttype_el2" type="checkbox"
+                                                                           name="filter[producttype][]" value="el2">
+                                                                    <span class="checkbox__elem"></span>
+                                                                    <span class="checkbox__text">el2</span>
+                                                                </label>
+                                                            </li>
+                                                            <li>
+                                                                <label class="checkbox">
+                                                                    <input id="producttype_el3" type="checkbox"
+                                                                           name="filter[producttype][]" value="el3">
+                                                                    <span class="checkbox__elem"></span>
+                                                                    <span class="checkbox__text">el3</span>
+                                                                </label>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="mx-bd-catalog__catalog">
+                    <div class="mx-bd-catalog__catalog-heading">
+                        <div class="mx-bd-catalog__catalog-heading-filter" data-filter-trigger="filter">
+                            <i class="icon" style="background-image: url('/images/icons/ic_filter.svg')"></i>
+                            Фильтры
+                        </div>
+                        @@include('html/components/dropdown.html')
+                        <div class="mx-bd-catalog__catalog-heading-views catalog-views">
+                            <div class="catalog-views__btn" data-view="list">
+                                <i class="icon"
+                                   style="background-image: url('/images/icons/ic_catalog-views-list.svg')"></i>
+                            </div>
+                            <div class="catalog-views__btn" data-view="grid">
+                                <i class="icon"
+                                   style="background-image: url('/images/icons/ic_catalog-views-catalog.svg')"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mx-bd-catalog__catalog-list grid--view">
+                        @@include('html/components/mx-goods/mx-goods-item-1.html')
+                        @@include('html/components/mx-goods/mx-goods-item-2.html')
+                        @@include('html/components/mx-goods/mx-goods-item-3.html')
+                        @@include('html/components/mx-goods/mx-goods-item-1.html')
+                        @@include('html/components/mx-goods/mx-goods-item-2.html')
+                        @@include('html/components/mx-goods/mx-goods-item-3.html')
+                        @@include('html/components/mx-goods/mx-goods-item-1.html')
+                        @@include('html/components/mx-goods/mx-goods-item-2.html')
+                        @@include('html/components/mx-goods/mx-goods-item-3.html')
+                    </div>
+                    <div class="mx-bd-catalog__catalog-pagination">
+                        <div class="mx-bd-catalog__catalog-pagination-more">
+                            <button class="btn-gray">Показать ещё</button>
+                        </div>
+                        <div class="mx-bd-catalog__catalog-pagination-page">
+                            <div class="pagination">
+                                <div class="pagination__page">
+                                    <ul>
+                                        <li class="active"><span>1</span></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><span>...</span></li>
+                                        <li><a href="#">18</a></li>
+                                        <li><a href="#">19</a></li>
+                                        <li><a href="#">20</a></li>
+                                        <li class="next">
+                                            <a href="#">
+                                                <i class="icon"
+                                                   style="background-image: url('/images/icons/ic_arrow-rt-black.svg')"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mx-bd-catalog__catalog-seo">
+                        <div class="seo">
+                            <h1>СЕО заголовок 1</h1>
+                            <p>это текст-"рыба», часто используемый в печати и вэб-дизайне. Lorem Ipsum является
+                                стандартной «рыбой»
+                                для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал
+                                большую коллекцию
+                                размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum
+                                не только успешно
+                                пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.
+                                Его популяризации
+                                в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах
+                                и, в более
+                                недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых
+                                используется
+                                Lorem Ipsum.</p>
+                            <h2>СЕО заголовок 2</h2>
+                            <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
+                                сосредоточиться. Lorem Ipsum
+                                используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона,
+                                а также реальное
+                                распределение букв и пробелов в абзацах, которое не получается при простой дубликации
+                                «Здесь
+                                ваш текст.</p>
+                            <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
+                                сосредоточиться;
+                                lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное
+                                заполнение шаблона,
+                                а также реальное распределение букв и пробелов в абзацах, которое не получается
+                                при простой дубликации
+                                „Здесь ваш текст;
+                                здесь ваш текст. Здесь ваш текст“. Многие программы электронной вёрстки и редакторы HTML
+                                используют
+                                Lorem Ipsum в качестве текста по умолчанию.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+@@include('html/footer.html')
+@@include('html/components/action-panel.html')
+
+
+</body>
+
+</html>
