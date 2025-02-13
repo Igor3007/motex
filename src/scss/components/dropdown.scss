@@ -1,0 +1,103 @@
+.dropdown {
+  position: relative;
+  display: flex;
+  width: 100%;
+  @media screen and (min-width: 991.98px) {
+    max-width: 310px;
+  }
+
+  &.is-open {
+    .icon {
+      transform: rotateX(180deg);
+    }
+  }
+
+  &__toggle {
+    flex: 1;
+    padding: 6px 8px;
+    border-radius: 8px;
+    border: 1px solid #D0D1D1;
+    background: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    cursor: pointer;
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #15181A;
+    @media screen and (min-width: 767.98px) {
+      padding: 12px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .icon {
+      min-width: 20px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 100%;
+    z-index: 4;
+
+    padding: 12px;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0 0 20px 0 #00000021;
+
+    flex-direction: column;
+    display: none;
+  }
+
+  &__item {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #15181A;
+    @media screen and (min-width: 767.98px) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+
+    &:hover {
+      color: #19BEFF;
+    }
+
+    &.is-active {
+
+      &::after {
+        content: '';
+        display: block;
+        min-width: 16px;
+        width: 16px;
+        height: 16px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNy41IDUuMjM3NTJMOC4yIDE1Ljg0ODRMMi41IDEwLjgzMzRMMy41OTkxNyA5LjU5MTY5TDguMDUgMTMuNDk2N0wxNi4yNzA4IDQuMTY2NjlMMTcuNSA1LjIzNzUyWiIgZmlsbD0iIzI2QjAwMCIvPgo8L3N2Zz4K);
+        transition: 0.1s ease;
+      }
+    }
+  }
+
+  &.is-open &__menu {
+    display: flex;
+  }
+}

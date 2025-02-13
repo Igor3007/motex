@@ -229,6 +229,10 @@
     }
   }
 
+  .item-additions-bottom--list-view {
+    display: none;
+  }
+
   &__item-additions-bottom {
     position: absolute;
     bottom: 4px;
@@ -342,6 +346,29 @@
       font-size: 16px;
       line-height: 24px;
     }
+  }
+
+  &__item-info {
+    display: none;
+
+    ul {
+      li {
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 16px;
+        color: #8A8C8D;
+        @media screen and (min-width: 767.98px) {
+          font-size: 14px;
+          line-height: 20px;
+
+          &:not(:last-child) {
+            margin-bottom: 4px;
+          }
+        }
+      }
+    }
+
+
   }
 
   &__item-pricing {
