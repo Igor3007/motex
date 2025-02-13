@@ -73,6 +73,7 @@
     font-size: 12px;
     font-weight: 700;
     line-height: 16px;
+    color: #15181A;
     @media screen and (min-width: 767.98px) {
       font-size: 16px;
       line-height: 20px;
@@ -131,9 +132,6 @@
     position: relative;
 
 
-    
-
-
     picture {
       position: relative;
       display: block;
@@ -170,7 +168,7 @@
   }
 
   &__property {
-     
+
     visibility: hidden;
     position: absolute;
     left: 0;
@@ -256,7 +254,7 @@
     }
 
     &:after {
-       
+
 
       content: '';
       width: calc(100% - 24px);

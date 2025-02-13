@@ -33,8 +33,16 @@
 @import "components/p-index/mx-stories";
 //index page end
 
+//catalog page start
+@import "components/catalog/mx-catalog-goods";
+@import "components/catalog/mx-simple-collections";
+@import "components/catalog/mx-bd-catalog";
+//catalog page end
+
 @import "components/af-popup";
 @import "components/warn-modal";
+
+@import "components/seo";
 
 @import "components/menu-header-md";
 @import "components/action-panel";
@@ -44,4 +52,9 @@
 @import 'components/mx-services-item';
 @import 'components/mx-goods-item';
 @import 'components/search-input';
+@import 'components/breadcrumbs';
+@import 'components/mx-simple-collections-item';
+@import 'components/dropdown';
+@import 'components/category-filter';
+@import 'components/pagination';
 
