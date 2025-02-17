@@ -15,6 +15,7 @@
     li {
       display: inline-flex;
       align-items: center;
+      white-space: nowrap;
       position: relative;
 
       &:not(:last-child) {
@@ -40,6 +41,12 @@
 
         a {
           color: #8A8C8D;
+        }
+      }
+
+      &:last-child {
+        a {
+          pointer-events: none;
         }
       }
 
