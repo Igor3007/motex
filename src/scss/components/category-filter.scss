@@ -149,8 +149,11 @@
   }
 
   &__item {
-    padding: 20px 0;
+    padding: 16px 0;
     position: relative;
+    @media screen and (min-width: 767.98px) {
+      padding: 20px 0;
+    }
 
     &:not(:last-child) {
       &:before {
@@ -190,9 +193,13 @@
 
       &__title {
         font-weight: 700;
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 14px;
+        line-height: 20px;
         color: #15181A;
+        @media screen and (min-width: 767.98px) {
+          font-size: 16px;
+          line-height: 24px;
+        }
       }
 
       &__cross {
@@ -205,7 +212,10 @@
       }
 
       &__list {
-        margin-top: 20px;
+        margin-top: 12px;
+        @media screen and (min-width: 767.98px) {
+          margin-top: 20px;
+        }
 
         ul {
           &.is-open {
@@ -267,10 +277,10 @@
 
               .checkbox__elem {
                 position: relative;
-                min-width: 28px;
-                width: 28px;
-                height: 28px;
-                border-radius: 8px;
+                min-width: 20px;
+                width: 20px;
+                height: 20px;
+                border-radius: 6px;
                 border: 1px solid #D0D1D1;
                 background: #FFF;
 
@@ -278,16 +288,15 @@
                 margin-right: 8px;
                 transition: .1s ease;
 
-
                 &:after {
                   opacity: 0;
                   content: '';
                   position: absolute;
-                  left: 5px;
-                  top: 7px;
-                  min-width: 16px;
-                  width: 16px;
-                  height: 12px;
+                  left: 4px;
+                  top: 4px;
+                  min-width: 12px;
+                  width: 12px;
+                  height: 10px;
                   transform: rotate(90deg);
                   background-size: contain;
                   background-repeat: no-repeat;
@@ -295,14 +304,35 @@
                   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxNiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNS41IDEuMjM3MzRMNi4yIDExLjg0ODJMMC41IDYuODMzMTdMMS41OTkxNyA1LjU5MTVMNi4wNSA5LjQ5NjVMMTQuMjcwOCAwLjE2NjUwNEwxNS41IDEuMjM3MzRaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K);
                   transition: 0.5s cubic-bezier(0.08, 0.8, 0.16, 1);
                 }
+
+                @media screen and (min-width: 767.98px) {
+                  min-width: 28px;
+                  width: 28px;
+                  height: 28px;
+                  border-radius: 8px;
+                  &:after {
+                    @media screen and (min-width: 767.98px) {
+                      min-width: 16px;
+                      width: 16px;
+                      height: 12px;
+
+                      left: 5px;
+                      top: 7px;
+                    }
+                  }
+                }
               }
 
               .checkbox__text {
                 font-weight: 400;
-                font-size: 16px;
-                line-height: 24px;
+                font-size: 12px;
+                line-height: 16px;
                 color: #15181A;
                 transition: .1s ease;
+                @media screen and (min-width: 767.98px) {
+                  font-size: 16px;
+                  line-height: 24px;
+                }
               }
             }
           }
@@ -315,12 +345,16 @@
           margin-top: 20px;
 
           font-weight: 400;
-          font-size: 16px;
-          line-height: 24px;
+          font-size: 14px;
+          line-height: 20px;
           color: #15181A;
 
           cursor: pointer;
           transition: .1s ease;
+          @media screen and (min-width: 767.98px) {
+            font-size: 16px;
+            line-height: 24px;
+          }
 
           @media screen and (min-width: 991.98px) {
             &:hover {
@@ -338,15 +372,21 @@
           }
 
           .icon {
-            min-width: 28px;
-            width: 28px;
-            height: 28px;
-            background-size: 12px;
+            min-width: 20px;
+            width: 20px;
+            height: 20px;
+            background-size: 8px;
             background-repeat: no-repeat;
             background-position: center;
             border-radius: 8px;
             background-color: #F3F3F3;
             background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDE0IDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0wLjYwMDM5MSAxLjUwOTMzTDIuMTA5MTkgLTQuOTM1NTRlLTA3TDcuMDAyNTIgNC45ODA4TDExLjg5MTYgLTYuNTk1MTdlLTA4TDEzLjQwMDQgMS41MDkzM0w3LjAwMjUyIDhMMC42MDAzOTEgMS41MDkzM1oiIGZpbGw9IiM1QzVFNUYiLz4KPC9zdmc+Cg==);
+            @media screen and (min-width: 767.98px) {
+              min-width: 28px;
+              width: 28px;
+              height: 28px;
+              background-size: 12px;
+            }
           }
         }
       }
@@ -372,19 +412,31 @@
 
         span {
           font-weight: 400;
-          font-size: 16px;
-          line-height: 24px;
+          font-size: 12px;
+          line-height: 16px;
           color: #8A8C8D;
+          @media screen and (min-width: 767.98px) {
+            font-size: 16px;
+            line-height: 24px;
+          }
         }
 
         input {
+          height: 32px;
           padding: 0 4px;
           border: none;
 
           font-weight: 400;
-          font-size: 16px;
-          line-height: 24px;
+          font-size: 12px;
+          line-height: 16px;
           color: #8A8C8D;
+
+          @media screen and (min-width: 767.98px) {
+            height: 48px;
+
+            font-size: 16px;
+            line-height: 24px;
+          }
         }
       }
 
@@ -448,6 +500,60 @@
               background: #19BEFF;
             }
           }
+        }
+      }
+    }
+  }
+
+  &__submit {
+    margin: 20px 0;
+  }
+
+  &__clear {
+    padding: 6px 12px;
+    max-height: 48px;
+    border-radius: 8px;
+    background: #F3F3F3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #15181A;
+    transition: 0.1s ease;
+    cursor: pointer;
+
+
+    .icon-cross {
+      display: block;
+      min-width: 12px;
+      width: 12px;
+      height: 12px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0uMjkzLjI5M2ExIDEgMCAwMTEuNDE0IDBMNyA1LjU4NiAxMi4yOTMuMjkzYTEgMSAwIDExMS40MTQgMS40MTRMOC40MTQgN2w1LjI5MyA1LjI5M2ExIDEgMCAwMS0xLjQxNCAxLjQxNEw3IDguNDE0bC01LjI5MyA1LjI5M2ExIDEgMCAwMS0xLjQxNC0xLjQxNEw1LjU4NiA3IC4yOTMgMS43MDdhMSAxIDAgMDEwLTEuNDE0eiIgZmlsbD0iIzIyMiIvPjwvc3ZnPg==);
+      transition: 0.1s ease;
+    }
+
+    @media screen and (min-width: 767.98px) {
+      font-size: 16px;
+      line-height: 24px;
+
+      gap: 8px;
+      padding: 12px;
+    }
+    @media screen and (min-width: 991.98px) {
+      &:hover {
+        background: #19BEFF;
+        color: #FFF;
+
+        .icon-cross {
+          filter: brightness(255);
         }
       }
     }
