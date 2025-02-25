@@ -182,7 +182,7 @@
 
       @media screen and (min-width: 1439.98px) {
         flex: 1;
-        width: 45% !important;
+        min-width: 45%;
       }
     }
   }
@@ -202,12 +202,15 @@
     }
 
     .splide__slide {
+
       &:not(:last-child) {
         margin-bottom: 0;
       }
 
       @media screen and (min-width: 1439.98px) {
+        flex: 0;
         width: 100px !important;
+        max-width: 100%;
         min-width: 100px;
       }
     }
