@@ -180,8 +180,13 @@
         margin-bottom: 12px;
       }
 
+      @media screen and (min-width: 767.98px) {
+        &:not(:last-child) {
+          margin-bottom: 0;
+        }
+      }
       @media screen and (min-width: 1439.98px) {
-        flex: 1;
+        flex: 0 0 calc(50% - 8px);
         min-width: 45%;
       }
     }
