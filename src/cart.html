@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html', {
+'title': 'Каталог'
+})
+
+<body>
+    @@include('html/header.html')
+
+    <main class="page">
+        <section class="breadcrumbs">
+            <div class="breadcrumbs__container _container">
+                <ul>
+                    <li>
+                        <a href="/pages/">Главная</a>
+                    </li>
+                    <li>
+                        <a href="/pages/catalog-lvl-1.html">Корзина</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+
+        <section class="cart" id="vuecart">
+            <div class="_container">
+                <div class="cart__title">
+                    <h1>Корзина</h1>
+                </div>
+                <div class="cart__wrp">
+                    <div class="cart__content">
+                        <div class="cart__topbar">
+                            <div class="cart__selectall">
+                                <label class="checkbox">
+                                    <input type="checkbox" name="" value="stock">
+                                    <span class="checkbox__elem"></span>
+                                    <span class="checkbox__text">В наличии (524)</span>
+                                </label>
+                            </div>
+                            <div class="cart__removeselected">
+                                Удалить выбранное
+                            </div>
+                        </div>
+
+                        <div class="cart__list">
+
+                            <div class="cart__item">
+                                <div class="cart__item">
+                                    <div class="cart-item">
+                                        <div class="cart-item"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="cart__aside"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    @@include('html/footer.html')
+    @@include('html/components/action-panel.html')
+
+    <script src="/js/cart.js"></script>
+
+</body>
+
+</html>

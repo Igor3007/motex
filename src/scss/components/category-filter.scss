@@ -18,6 +18,7 @@
 
     border-radius: 0;
     padding: 0;
+
     @media screen and (min-width: 991.98px) {
       padding: 20px;
       border-radius: 8px;
@@ -27,6 +28,7 @@
       overflow-y: auto;
       overflow-x: hidden;
       height: calc(var(--vh, 1vh) * 100 - 120px);
+
       @media screen and (min-width: 991.98px) {
         overflow: initial;
         height: initial;
@@ -145,12 +147,12 @@
     }
   }
 
-  &__props {
-  }
+  &__props {}
 
   &__item {
     padding: 16px 0;
     position: relative;
+
     @media screen and (min-width: 767.98px) {
       padding: 20px 0;
     }
@@ -196,6 +198,7 @@
         font-size: 14px;
         line-height: 20px;
         color: #15181A;
+
         @media screen and (min-width: 767.98px) {
           font-size: 16px;
           line-height: 24px;
@@ -213,6 +216,7 @@
 
       &__list {
         margin-top: 12px;
+
         @media screen and (min-width: 767.98px) {
           margin-top: 20px;
         }
@@ -241,6 +245,7 @@
 
               position: relative;
               cursor: pointer;
+
               @media screen and (min-width: 991.98px) {
                 &:hover {
                   .checkbox__elem {
@@ -261,7 +266,7 @@
                 width: 0;
 
                 &:checked {
-                  ~ .checkbox__elem {
+                  ~.checkbox__elem {
                     background-color: #19BEFF;
                     border-color: #19BEFF;
                     z-index: 2;
@@ -310,6 +315,7 @@
                   width: 28px;
                   height: 28px;
                   border-radius: 8px;
+
                   &:after {
                     @media screen and (min-width: 767.98px) {
                       min-width: 16px;
@@ -329,6 +335,7 @@
                 line-height: 16px;
                 color: #15181A;
                 transition: .1s ease;
+
                 @media screen and (min-width: 767.98px) {
                   font-size: 16px;
                   line-height: 24px;
@@ -351,6 +358,7 @@
 
           cursor: pointer;
           transition: .1s ease;
+
           @media screen and (min-width: 767.98px) {
             font-size: 16px;
             line-height: 24px;
@@ -368,8 +376,7 @@
             }
           }
 
-          span {
-          }
+          span {}
 
           .icon {
             min-width: 20px;
@@ -381,6 +388,7 @@
             border-radius: 8px;
             background-color: #F3F3F3;
             background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDE0IDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0wLjYwMDM5MSAxLjUwOTMzTDIuMTA5MTkgLTQuOTM1NTRlLTA3TDcuMDAyNTIgNC45ODA4TDExLjg5MTYgLTYuNTk1MTdlLTA4TDEzLjQwMDQgMS41MDkzM0w3LjAwMjUyIDhMMC42MDAzOTEgMS41MDkzM1oiIGZpbGw9IiM1QzVFNUYiLz4KPC9zdmc+Cg==);
+
             @media screen and (min-width: 767.98px) {
               min-width: 28px;
               width: 28px;
@@ -415,6 +423,7 @@
           font-size: 12px;
           line-height: 16px;
           color: #8A8C8D;
+
           @media screen and (min-width: 767.98px) {
             font-size: 16px;
             line-height: 24px;
@@ -547,6 +556,7 @@
       gap: 8px;
       padding: 12px;
     }
+
     @media screen and (min-width: 991.98px) {
       &:hover {
         background: #19BEFF;
