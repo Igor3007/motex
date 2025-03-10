@@ -45,17 +45,113 @@
 
                         <div class="cart__list">
 
-                            <div class="cart__item">
+                            <div v-for="product in productList" class="cart__item">
                                 <div class="cart__item">
                                     <div class="cart-item">
-                                        <div class="cart-item"></div>
+                                        <div class="cart-item__image">
+                                            <picture><img :src="product.image" alt=""></picture>
+                                        </div>
+                                        <div class="cart-item__main">
+                                            <div class="cart-item__left">
+                                                <div class="cart-item__title">{{product.title}}</div>
+                                                <div class="cart-item__sale">
+                                                    <div class="cart-item__sale-percent">-{{product.sale.percent}}%
+                                                    </div>
+                                                    <div class="cart-item__sale-date">{{product.sale.date}}</div>
+                                                </div>
+                                                <div class="cart-item__action">
+                                                    <div class="cart-item__wishlist">icon-wishlist</div>
+                                                    <div class="cart-item__remove">icon-remove</div>
+                                                </div>
+                                            </div>
+                                            <div class="cart-item__right">
+                                                <div class="cart-item__price">{{getPrice(product)}}</div>
+                                                <div class="cart-item__oldprice">{{getPriceSale(product)}}</div>
+                                                <div class="cart-item__count">
+                                                    <div class="counter">
+                                                        <div class="counter__dec">-</div>
+                                                        <div class="counter__input">
+                                                            <input type="text" placeholder="1" v-model="product.total">
+                                                        </div>
+                                                        <div class="counter__inc">+</div>
+                                                    </div>
+                                                </div>
+                                                <div class="cart-item__cost-unit">780р.шт</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                    <div class="cart__aside"></div>
+                    <div class="cart__aside">
+                        <div class="cart-aside">
+                            <div class="cart-aside__btn">
+                                <a href="/"><button class="btn">Перейти к оформлению</button></a>
+                            </div>
+                            <div class="cart-aside__text">Доступные способы оплаты и доставки можно выбрать
+                                при оформлении заказа.</div>
+                            <div class="cart-aside__oneclick">
+                                <button class="btn-gray">Купить в 1 клик</button>
+                            </div>
+                            <div class="cart-aside__details">
+                                <div class="cart-details">
+                                    <div class="cart-details__title">Ваша корзина</div>
+                                    <div class="cart-details__prop">
+                                        <div class="cart-details__item">
+                                            <div class="cart-details__name">Товары (86)</div>
+                                            <div class="cart-details__value">119 809 ₽</div>
+                                        </div>
+                                        <div class="cart-details__item">
+                                            <div class="cart-details__name">Услуги (1)</div>
+                                            <div class="cart-details__value">после расчёта</div>
+                                        </div>
+                                        <div class="cart-details__item">
+                                            <div class="cart-details__name">Вес</div>
+                                            <div class="cart-details__value">1 110 кг</div>
+                                        </div>
+                                        <div class="cart-details__item">
+                                            <div class="cart-details__name">Скидки</div>
+                                            <div class="cart-details__value">4 392 ₽</div>
+                                        </div>
+                                        <div class="sale-dropdown">
+                                            <div class="sale-dropdown__item">
+                                                <div class="sale-dropdown__name">Акция</div>
+                                                <div class="sale-dropdown__value">— 4 392 ₽</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="cart-details__input">
+                                        <input type="text" placeholder="Промокод">
+                                    </div>
+
+                                    <div class="cart-details__output">
+                                        <div class="cart-output">
+                                            <div class="cart-output__title">Итог</div>
+                                            <div class="cart-output__value">115 470 ₽</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="cart-aside__cutter">
+                                <div class="cart-cutter">
+                                    <div class="cart-cutter__head">
+                                        <div class="cart-cutter__title">Нужен распил?</div>
+                                        <div class="cart-cutter__title">toggle</div>
+                                    </div>
+                                    <div class="cart-cutter__title">
+                                        У вас в корзине есть товары, для которых мы можем произвести распил.
+                                        <a href="#">Смотреть цены.</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
