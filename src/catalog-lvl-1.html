@@ -5,347 +5,384 @@
 })
 
 <body>
-@@include('html/header.html')
+    @@include('html/header.html')
 
-<main class="page">
-    <div data-observ></div>
+    <main class="page">
+        <div data-observ></div>
 
-    @@include('html/components/breadcrumbs/breadcrumbs-catalog-lvl-1.html')
+        @@include('html/components/breadcrumbs/breadcrumbs-catalog-lvl-1.html')
 
-    <section class="mx-catalog-goods">
-        <div class="mx-main-catalog__container _container">
-            <div class="mx-catalog-goods__heading">
-                <h1>Каталог</h1>
-                <div class="mx-catalog-goods__heading-count">
-                    <span>15 570 Товаров</span>
-                </div>
-            </div>
-            <div class="mx-catalog-goods__cards">
-                @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
-                "link": "/pages/catalog-lvl-2.html",
-                "title": "Листовые материалы",
-                "image": "/images/mx-catalog/i_catalog-item-a001.png",
-                })
-                @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
-                "link": "#",
-                "title": "Теплоизоляция",
-                "image": "/images/mx-catalog/i_catalog-item-a002.png",
-                })
-                @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
-                "link": "#",
-                "title": "Звукоизоляция",
-                "image": "/images/mx-catalog/i_catalog-item-a003.png",
-                })
-                @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
-                "link": "#",
-                "title": "Кровля и кидроизоляция",
-                "image": "/images/mx-catalog/i_catalog-item-a004.png",
-                })
-                @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
-                "link": "#",
-                "title": "Метизы",
-                "image": "/images/mx-catalog/i_catalog-item-a005.png",
-                })
-                @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
-                "link": "#",
-                "title": "Крепёжные элементы",
-                "image": "/images/mx-catalog/i_catalog-item-a006.png",
-                })
-                @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
-                "link": "#",
-                "title": "Лакокрасочные материалы",
-                "image": "/images/mx-catalog/i_catalog-item-a007.png",
-                })
-                @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
-                "link": "#",
-                "title": "Плёнки",
-                "image": "/images/mx-catalog/i_catalog-item-a008.png",
-                })
-                @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
-                "link": "#",
-                "title": "Уценённые товары",
-                "image": "/images/mx-catalog/i_catalog-item-a009.png",
-                })
-            </div>
-        </div>
-    </section>
-    <section class="mx-simple-collections">
-        <div class="mx-simple-collections__container _container">
-            <div class="mx-simple-collections__heading">
-                <h2>Вечная классика строительства</h2>
-                <a href="#">Смотреть все</a>
-            </div>
-            <div class="mx-simple-collections__collections">
-                <div class="splide" data-slider="splide-simple-collections">
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            <li class="splide__slide">
-                                @@include('html/components/mx-simple-collections/mx-simple-collections-item.html', {
-                                "image": "/images/simple-collections/i_simple-collections-a001.jpg",
-                                "info": "Подборка товаров",
-                                "icon": "/images/icons/ic_simple-collections-1.svg",
-                                "text": "Этим материалам <br> более 10 лет"
-                                })
-                            </li>
-                            <li class="splide__slide">
-                                @@include('html/components/mx-simple-collections/mx-simple-collections-item.html', {
-                                "image": "/images/simple-collections/i_simple-collections-a002.jpg",
-                                "info": "Подборка товаров",
-                                "icon": "/images/icons/ic_simple-collections-2.svg",
-                                "text": "Эти материалы <br> только по ГОСТ"
-                                })
-                            </li>
-                            <li class="splide__slide">
-                                @@include('html/components/mx-simple-collections/mx-simple-collections-item.html', {
-                                "image": "/images/simple-collections/i_simple-collections-a003.jpg",
-                                "info": "Подборка товаров",
-                                "icon": "/images/icons/ic_simple-collections-3.svg",
-                                "text": "ТОП 10 товаров, <br> покупаемых у нас"
-                                })
-                            </li>
-                        </ul>
+        <section class="mx-catalog-goods">
+            <div class="mx-main-catalog__container _container">
+                <div class="mx-catalog-goods__heading">
+                    <h1>Каталог</h1>
+                    <div class="mx-catalog-goods__heading-count">
+                        <span>15 570 Товаров</span>
                     </div>
                 </div>
+                <div class="mx-catalog-goods__cards">
+                    @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
+                    "link": "/pages/catalog-lvl-2.html",
+                    "title": "Листовые материалы",
+                    "image": "/images/mx-catalog/i_catalog-item-a001.png",
+                    })
+                    @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
+                    "link": "#",
+                    "title": "Теплоизоляция",
+                    "image": "/images/mx-catalog/i_catalog-item-a002.png",
+                    })
+                    @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
+                    "link": "#",
+                    "title": "Звукоизоляция",
+                    "image": "/images/mx-catalog/i_catalog-item-a003.png",
+                    })
+                    @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
+                    "link": "#",
+                    "title": "Кровля и кидроизоляция",
+                    "image": "/images/mx-catalog/i_catalog-item-a004.png",
+                    })
+                    @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
+                    "link": "#",
+                    "title": "Метизы",
+                    "image": "/images/mx-catalog/i_catalog-item-a005.png",
+                    })
+                    @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
+                    "link": "#",
+                    "title": "Крепёжные элементы",
+                    "image": "/images/mx-catalog/i_catalog-item-a006.png",
+                    })
+                    @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
+                    "link": "#",
+                    "title": "Лакокрасочные материалы",
+                    "image": "/images/mx-catalog/i_catalog-item-a007.png",
+                    })
+                    @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
+                    "link": "#",
+                    "title": "Плёнки",
+                    "image": "/images/mx-catalog/i_catalog-item-a008.png",
+                    })
+                    @@include('html/components/mx-catalog-card/mx-catalog-card-simple.html', {
+                    "link": "#",
+                    "title": "Уценённые товары",
+                    "image": "/images/mx-catalog/i_catalog-item-a009.png",
+                    })
+                </div>
             </div>
-        </div>
-    </section>
-
-    <section class="mx-bd-catalog">
-        <div class="mx-bd-catalog__container _container">
-            <div class="mx-bd-catalog__wrapper">
-                <div class="mx-bd-catalog__aside">
-                    <div class="mx-bd-catalog__aside-dropdown">
-                        <div class="mx-bd-catalog__aside-dropdown-title">
-                            Все товары
-                        </div>
-                        <div class="mx-bd-catalog__aside-dropdown-list">
-                            <ul>
-                                <li>
-                                    <div class="item">
-                                        <span><i class="icon"
-                                                 style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i></span>
-                                        <a href="/pages/catalog-lvl-2.html">Листовые материалы</a>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#">Фанера, все виды</a></li>
-                                        <li><a href="#">Плита OSB</a></li>
-                                        <li><a href="#">ЦСП</a></li>
-                                        <li><a href="#">ДСП</a></li>
-                                        <li><a href="#">ДВП</a></li>
-                                        <li><a href="#">МДФ</a></li>
-                                        <li><a href="#">ГСП</a></li>
-                                        <li><a href="#">ГКЛ</a></li>
-                                        <li><a href="#">Фибролит</a></li>
-                                    </ul>
+        </section>
+        <section class="mx-simple-collections">
+            <div class="mx-simple-collections__container _container">
+                <div class="mx-simple-collections__heading">
+                    <h2>Вечная классика строительства</h2>
+                    <a href="#">Смотреть все</a>
+                </div>
+                <div class="mx-simple-collections__collections">
+                    <div class="splide" data-slider="splide-simple-collections">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    @@include('html/components/mx-simple-collections/mx-simple-collections-item.html', {
+                                    "image": "/images/simple-collections/i_simple-collections-a001.jpg",
+                                    "info": "Подборка товаров",
+                                    "icon": "/images/icons/ic_simple-collections-1.svg",
+                                    "text": "Этим материалам <br> более 10 лет"
+                                    })
                                 </li>
-
-                                <li>
-                                    <div class="item">
-                                        <span><i class="icon"
-                                                 style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i></span>
-                                        <a href="#">Теплоизоляция</a>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#">el1</a></li>
-                                        <li><a href="#">el2</a></li>
-                                    </ul>
+                                <li class="splide__slide">
+                                    @@include('html/components/mx-simple-collections/mx-simple-collections-item.html', {
+                                    "image": "/images/simple-collections/i_simple-collections-a002.jpg",
+                                    "info": "Подборка товаров",
+                                    "icon": "/images/icons/ic_simple-collections-2.svg",
+                                    "text": "Эти материалы <br> только по ГОСТ"
+                                    })
                                 </li>
-
-                                <li>
-                                    <div class="item">
-                                        <span><i class="icon"
-                                                 style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i></span>
-                                        <a href="#">Звукоизоляция</a>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#">el1</a></li>
-                                        <li><a href="#">el2</a></li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <div class="item">
-                                        <span><i class="icon"
-                                                 style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i></span>
-                                        <a href="#">Кровля и гидроизоляция</a>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#">el1</a></li>
-                                        <li><a href="#">el2</a></li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <div class="item">
-                                        <span><i class="icon"
-                                                 style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i></span>
-                                        <a href="#">Метизы</a>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#">el1</a></li>
-                                        <li><a href="#">el2</a></li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <div class="item">
-                                        <span><i class="icon"
-                                                 style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i></span>
-                                        <a href="#">Крепёжные элементы</a>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#">el1</a></li>
-                                        <li><a href="#">el2</a></li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <div class="item">
-                                        <span><i class="icon"
-                                                 style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i></span>
-                                        <a href="#">Лакокрасочные материалы</a>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#">el1</a></li>
-                                        <li><a href="#">el2</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <div class="item">
-                                        <span><i class="icon"
-                                                 style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i></span>
-                                        <a href="#">Метизы</a>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#">el1</a></li>
-                                        <li><a href="#">el2</a></li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <div class="item">
-                                        <span><i class="icon"
-                                                 style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i></span>
-                                        <a href="#">Плёнки</a>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#">el1</a></li>
-                                        <li><a href="#">el2</a></li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <div class="item">
-                                        <span><i class="icon"
-                                                 style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i></span>
-                                        <a href="#">Уценённые товары</a>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#">el1</a></li>
-                                        <li><a href="#">el2</a></li>
-                                    </ul>
+                                <li class="splide__slide">
+                                    @@include('html/components/mx-simple-collections/mx-simple-collections-item.html', {
+                                    "image": "/images/simple-collections/i_simple-collections-a003.jpg",
+                                    "info": "Подборка товаров",
+                                    "icon": "/images/icons/ic_simple-collections-3.svg",
+                                    "text": "ТОП 10 товаров, <br> покупаемых у нас"
+                                    })
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="mx-bd-catalog__catalog">
-                    <div class="mx-bd-catalog__catalog-heading">
-                        @@include('html/components/dropdown.html')
-                        <div class="mx-bd-catalog__catalog-heading-views catalog-views">
-                            <div class="catalog-views__btn" data-view="list">
-                                <i class="icon"
-                                   style="background-image: url('/images/icons/ic_catalog-views-list.svg')"></i>
+            </div>
+        </section>
+
+        <section class="mx-bd-catalog">
+            <div class="mx-bd-catalog__container _container">
+                <div class="mx-bd-catalog__wrapper">
+                    <div class="mx-bd-catalog__aside">
+                        <div class="mx-bd-catalog__aside-dropdown">
+                            <div class="mx-bd-catalog__aside-dropdown-title">
+                                Все товары
                             </div>
-                            <div class="catalog-views__btn" data-view="grid">
-                                <i class="icon"
-                                   style="background-image: url('/images/icons/ic_catalog-views-catalog.svg')"></i>
+                            <div class="mx-bd-catalog__aside-dropdown-list">
+                                <ul>
+                                    <li>
+                                        <div class="item">
+                                            <span><i class="icon"
+                                                    style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i></span>
+                                            <a href="/pages/catalog-lvl-2.html">Листовые материалы</a>
+                                        </div>
+                                        <ul>
+                                            <li><a href="#">Фанера, все виды</a></li>
+                                            <li><a href="#">Плита OSB</a></li>
+                                            <li><a href="#">ЦСП</a></li>
+                                            <li><a href="#">ДСП</a></li>
+                                            <li><a href="#">ДВП</a></li>
+                                            <li><a href="#">МДФ</a></li>
+                                            <li><a href="#">ГСП</a></li>
+                                            <li><a href="#">ГКЛ</a></li>
+                                            <li><a href="#">Фибролит</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <div class="item">
+                                            <span><i class="icon"
+                                                    style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i></span>
+                                            <a href="#">Теплоизоляция</a>
+                                        </div>
+                                        <ul>
+                                            <li><a href="#">el1</a></li>
+                                            <li><a href="#">el2</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <div class="item">
+                                            <span><i class="icon"
+                                                    style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i></span>
+                                            <a href="#">Звукоизоляция</a>
+                                        </div>
+                                        <ul>
+                                            <li><a href="#">el1</a></li>
+                                            <li><a href="#">el2</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <div class="item">
+                                            <span><i class="icon"
+                                                    style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i></span>
+                                            <a href="#">Кровля и гидроизоляция</a>
+                                        </div>
+                                        <ul>
+                                            <li><a href="#">el1</a></li>
+                                            <li><a href="#">el2</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <div class="item">
+                                            <span><i class="icon"
+                                                    style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i></span>
+                                            <a href="#">Метизы</a>
+                                        </div>
+                                        <ul>
+                                            <li><a href="#">el1</a></li>
+                                            <li><a href="#">el2</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <div class="item">
+                                            <span><i class="icon"
+                                                    style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i></span>
+                                            <a href="#">Крепёжные элементы</a>
+                                        </div>
+                                        <ul>
+                                            <li><a href="#">el1</a></li>
+                                            <li><a href="#">el2</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <div class="item">
+                                            <span><i class="icon"
+                                                    style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i></span>
+                                            <a href="#">Лакокрасочные материалы</a>
+                                        </div>
+                                        <ul>
+                                            <li><a href="#">el1</a></li>
+                                            <li><a href="#">el2</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div class="item">
+                                            <span><i class="icon"
+                                                    style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i></span>
+                                            <a href="#">Метизы</a>
+                                        </div>
+                                        <ul>
+                                            <li><a href="#">el1</a></li>
+                                            <li><a href="#">el2</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <div class="item">
+                                            <span><i class="icon"
+                                                    style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i></span>
+                                            <a href="#">Плёнки</a>
+                                        </div>
+                                        <ul>
+                                            <li><a href="#">el1</a></li>
+                                            <li><a href="#">el2</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <div class="item">
+                                            <span><i class="icon"
+                                                    style="background-image: url('/images/icons/ic_arrow-as-rt.svg')"></i></span>
+                                            <a href="#">Уценённые товары</a>
+                                        </div>
+                                        <ul>
+                                            <li><a href="#">el1</a></li>
+                                            <li><a href="#">el2</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="mx-bd-catalog__catalog-list grid--view">
-                        @@include('html/components/mx-goods/mx-goods-item-1.html')
-                        @@include('html/components/mx-goods/mx-goods-item-2.html')
-                        @@include('html/components/mx-goods/mx-goods-item-3.html')
-                        @@include('html/components/mx-goods/mx-goods-item-1.html')
-                        @@include('html/components/mx-goods/mx-goods-item-2.html')
-                        @@include('html/components/mx-goods/mx-goods-item-3.html')
-                        @@include('html/components/mx-goods/mx-goods-item-1.html')
-                        @@include('html/components/mx-goods/mx-goods-item-2.html')
-                        @@include('html/components/mx-goods/mx-goods-item-3.html')
-                    </div>
-                    <div class="mx-bd-catalog__catalog-pagination">
-                        <div class="mx-bd-catalog__catalog-pagination-more">
-                            <button class="btn-gray">Показать ещё</button>
-                        </div>
-                        <div class="mx-bd-catalog__catalog-pagination-page">
-                            <div class="pagination">
-                                <div class="pagination__page">
-                                    <ul>
-                                        <li class="active"><span>1</span></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><span>...</span></li>
-                                        <li><a href="#">18</a></li>
-                                        <li><a href="#">19</a></li>
-                                        <li><a href="#">20</a></li>
-                                        <li class="next">
-                                            <a href="#">
-                                                <i class="icon"
-                                                   style="background-image: url('/images/icons/ic_arrow-rt-black.svg')"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
+                    <div class="mx-bd-catalog__catalog">
+                        <div class="mx-bd-catalog__catalog-heading">
+                            @@include('html/components/dropdown.html')
+                            <div class="mx-bd-catalog__catalog-heading-views catalog-views">
+                                <div class="catalog-views__btn" data-view="list">
+                                    <i class="icon"
+                                        style="background-image: url('/images/icons/ic_catalog-views-list.svg')"></i>
+                                </div>
+                                <div class="catalog-views__btn" data-view="grid">
+                                    <i class="icon"
+                                        style="background-image: url('/images/icons/ic_catalog-views-catalog.svg')"></i>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="mx-bd-catalog__catalog-seo">
-                        <div class="seo">
-                            <h1>СЕО заголовок 1</h1>
-                            <p>это текст-"рыба», часто используемый в печати и вэб-дизайне. Lorem Ipsum является
-                                стандартной «рыбой»
-                                для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал
-                                большую коллекцию
-                                размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum
-                                не только успешно
-                                пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.
-                                Его популяризации
-                                в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах
-                                и, в более
-                                недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых
-                                используется
-                                Lorem Ipsum.</p>
-                            <h2>СЕО заголовок 2</h2>
-                            <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
-                                сосредоточиться. Lorem Ipsum
-                                используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона,
-                                а также реальное
-                                распределение букв и пробелов в абзацах, которое не получается при простой дубликации
-                                «Здесь
-                                ваш текст.</p>
-                            <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
-                                сосредоточиться;
-                                lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное
-                                заполнение шаблона,
-                                а также реальное распределение букв и пробелов в абзацах, которое не получается
-                                при простой дубликации
-                                „Здесь ваш текст;
-                                здесь ваш текст. Здесь ваш текст“. Многие программы электронной вёрстки и редакторы HTML
-                                используют
-                                Lorem Ipsum в качестве текста по умолчанию.</p>
+                        <div class="mx-bd-catalog__catalog-list grid--view">
+                            @@include('html/components/mx-goods/mx-goods-item-1.html')
+                            @@include('html/components/mx-goods/mx-goods-item-2.html')
+                            @@include('html/components/mx-goods/mx-goods-item-3.html')
+                            @@include('html/components/mx-goods/mx-goods-item-1.html')
+                            @@include('html/components/mx-goods/mx-goods-item-2.html')
+                            @@include('html/components/mx-goods/mx-goods-item-3.html')
+                            @@include('html/components/mx-goods/mx-goods-item-1.html')
+                            @@include('html/components/mx-goods/mx-goods-item-2.html')
+                            @@include('html/components/mx-goods/mx-goods-item-3.html')
+                        </div>
+                        <div class="mx-bd-catalog__catalog-pagination">
+                            <div class="mx-bd-catalog__catalog-pagination-more">
+                                <button class="btn-gray">Показать ещё</button>
+                            </div>
+                            <div class="mx-bd-catalog__catalog-pagination-page">
+                                <div class="pagination">
+                                    <div class="pagination__page">
+                                        <ul>
+                                            <li class="active"><span>1</span></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><span>...</span></li>
+                                            <li><a href="#">18</a></li>
+                                            <li><a href="#">19</a></li>
+                                            <li><a href="#">20</a></li>
+                                            <li class="next">
+                                                <a href="#">
+                                                    <i class="icon"
+                                                        style="background-image: url('/images/icons/ic_arrow-rt-black.svg')"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mx-bd-catalog__catalog-seo">
+                            <div class="seo formated-text">
+                                <h4>СЕО заголовок 1</h4>
+                                <p>это текст-"рыба», часто используемый в печати и вэб-дизайне. Lorem Ipsum является
+                                    стандартной «рыбой»
+                                    для текстов на латинице с начала XVI века. В то время некий безымянный печатник
+                                    создал
+                                    большую коллекцию
+                                    размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum
+                                    не только успешно
+                                    пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.
+                                    Его популяризации
+                                    в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х
+                                    годах
+                                    и, в более
+                                    недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах
+                                    которых
+                                    используется
+                                    Lorem Ipsum.</p>
+                                <h4>СЕО заголовок 2</h4>
+                                <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
+                                    сосредоточиться. Lorem Ipsum
+                                    используют потому, что тот обеспечивает более или менее стандартное заполнение
+                                    шаблона,
+                                    а также реальное
+                                    распределение букв и пробелов в абзацах, которое не получается при простой
+                                    дубликации
+                                    «Здесь
+                                    ваш текст.</p>
+                                <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
+                                    сосредоточиться;
+                                    lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное
+                                    заполнение шаблона,
+                                    а также реальное распределение букв и пробелов в абзацах, которое не получается
+                                    при простой дубликации
+                                    „Здесь ваш текст;
+                                    здесь ваш текст. Здесь ваш текст“. Многие программы электронной вёрстки и редакторы
+                                    HTML
+                                    используют
+                                    Lorem Ipsum в качестве текста по умолчанию.</p>
+
+                                <h1>Заголовок H1</h1>
+                                <h2>Заголовок H2</h2>
+                                <h3>Заголовок H3</h3>
+                                <h4>Заголовок H4</h4>
+                                <h5>Заголовок H5</h5>
+
+                                <strong>Жирный</strong>
+
+                                <ul>
+                                    <li>Список маркированный</li>
+                                    <li>Список маркированный</li>
+                                    <li>Список маркированный</li>
+                                    <li>Список маркированный</li>
+                                    <li>Список маркированный</li>
+                                    <li>Список маркированный</li>
+                                </ul>
+
+                                <ol>
+                                    <li>Список нумированный</li>
+                                    <li>Список нумированный</li>
+                                    <li>Список нумированный</li>
+                                    <li>Список нумированный</li>
+                                    <li>Список нумированный</li>
+                                    <li>Список нумированный</li>
+                                    <li>Список нумированный</li>
+                                    <li>Список нумированный</li>
+                                </ol>
+
+                                <a href="http://">Ссылка</a>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-</main>
+    </main>
 
-@@include('html/footer.html')
-@@include('html/components/action-panel.html')
+    @@include('html/footer.html')
+    @@include('html/components/action-panel.html')
 
 
 </body>

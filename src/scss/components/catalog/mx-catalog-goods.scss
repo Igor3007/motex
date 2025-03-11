@@ -3,6 +3,7 @@
 
   &.mx-catalog-goods--heading {
     margin-bottom: 28px;
+
     @media screen and (min-width: 767.98px) {
       margin-bottom: 40px;
     }
@@ -12,7 +13,7 @@
     }
   }
 
-  + .mx-bd-catalog--last-lvl {
+  +.mx-bd-catalog--last-lvl {
     margin: 0;
   }
 
@@ -25,6 +26,7 @@
     align-items: center;
     gap: 12px;
     margin-bottom: 28px;
+
     @media screen and (min-width: 767.98px) {
       gap: 16px;
       margin-bottom: 40px;
@@ -32,6 +34,7 @@
 
     h1 {
       max-width: 140px;
+
       @media screen and (min-width: 479.98px) {
         max-width: initial;
       }
@@ -43,6 +46,7 @@
         font-size: 12px;
         line-height: 16px;
         color: #8A8C8D;
+
         @media screen and (min-width: 767.98px) {
           font-weight: 500;
           font-size: 16px;
@@ -56,12 +60,18 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+
     @media screen and (min-width: 767.98px) {
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
     }
+
     @media screen and (min-width: 1199.98px) {
       grid-template-columns: repeat(6, 1fr);
     }
   }
+}
+
+.mx-catalog-goods+.mx-bd-catalog {
+  margin-top: -60px
 }

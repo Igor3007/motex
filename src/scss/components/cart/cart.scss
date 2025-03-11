@@ -103,5 +103,22 @@
         }
     }
 
+    &__wrp {
+        @media screen and (min-width: $w992) {
+            display: flex;
+        }
+    }
 
+    &__content {
+        width: calc(100% - 340px);
+        padding-right: 32px;
+    }
+
+    &__aside {
+        width: 340px;
+    }
+}
+
+.cart-item {
+    display: flex;
 }

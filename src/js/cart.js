@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 },
 
                 getPrice: function (item) {
+
+
+
                     return (Number(item.total) * Number(item.price.rub.unit)).toFixed(0)
                 },
 

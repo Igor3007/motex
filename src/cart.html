@@ -48,6 +48,12 @@
                             <div v-for="product in productList" class="cart__item">
                                 <div class="cart__item">
                                     <div class="cart-item">
+                                        <div class="cart-item__check">
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="" value="stock">
+                                                <span class="checkbox__elem"></span>
+                                            </label>
+                                        </div>
                                         <div class="cart-item__image">
                                             <picture><img :src="product.image" alt=""></picture>
                                         </div>
