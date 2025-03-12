@@ -2,9 +2,9 @@
 
     {
         "id": "1",
-        "image": "/images/goods/i_goods-a001.png",
+        "image": "/images/goods/g2.jpg",
         "title": "Фанера берёзовая ФК 6мм сорт IV/IV НШ Е1 1525 × 1525мм Свеза",
-        "total": "55",
+        "total": "3",
         "price": {
             "rub": {
                 "unit": "740",
@@ -19,26 +19,23 @@
 
     {
         "id": "2",
-        "image": "/images/goods/i_goods-a001.png",
+        "image": "/images/goods/g2.jpg",
         "title": "Фанера берёзовая ФК 8мм сорт IV/IV НШ Е1 1525 × 1525мм Свеза",
-        "total": "55",
+        "total": "1",
         "price": {
             "rub": {
                 "unit": "740",
                 "currency": "₽"
             }
         },
-        "sale": {
-            "percent": "19",
-            "date": "15.10.2025"
-        }
+        "sale": false
     },
 
     {
         "id": "3",
-        "image": "/images/goods/i_goods-a001.png",
+        "image": "/images/goods/g2.jpg",
         "title": "Фанера берёзовая ФК 8мм сорт IV/IV НШ Е1 1525 × 1525мм Свеза",
-        "total": "55",
+        "total": "1",
         "price": {
             "rub": {
                 "unit": "740",
@@ -52,9 +49,9 @@
     },
     {
         "id": "4",
-        "image": "/images/goods/i_goods-a001.png",
+        "image": "/images/goods/g2.jpg",
         "title": "Фанера берёзовая ФК 8мм сорт IV/IV НШ Е1 1525 × 1525мм Свеза",
-        "total": "55",
+        "total": "4",
         "price": {
             "rub": {
                 "unit": "740",
@@ -68,9 +65,9 @@
     },
     {
         "id": "5",
-        "image": "/images/goods/i_goods-a001.png",
+        "image": "/images/goods/g2.jpg",
         "title": "Фанера берёзовая ФК 8мм сорт IV/IV НШ Е1 1525 × 1525мм Свеза",
-        "total": "55",
+        "total": "2",
         "price": {
             "rub": {
                 "unit": "740",
@@ -84,9 +81,9 @@
     },
     {
         "id": "6",
-        "image": "/images/goods/i_goods-a001.png",
+        "image": "/images/goods/g2.jpg",
         "title": "Фанера берёзовая ФК 8мм сорт IV/IV НШ Е1 1525 × 1525мм Свеза",
-        "total": "55",
+        "total": "2",
         "price": {
             "rub": {
                 "unit": "740",
@@ -100,9 +97,9 @@
     },
     {
         "id": "7",
-        "image": "/images/goods/i_goods-a001.png",
+        "image": "/images/goods/g2.jpg",
         "title": "Фанера берёзовая ФК 8мм сорт IV/IV НШ Е1 1525 × 1525мм Свеза",
-        "total": "55",
+        "total": "1",
         "price": {
             "rub": {
                 "unit": "740",

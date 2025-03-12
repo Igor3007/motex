@@ -20,9 +20,9 @@
 @import 'base/common';
 @import "base/formated";
 @import 'base/keyframes';
-@import 'base/keyframes';
 
 @import 'UI/buttons';
+@import 'UI/checkbox';
 
 //index page start
 @import "components/p-index/b-data-search";
@@ -62,3 +62,5 @@
 
 
 @import 'components/cart/cart.scss';
+@import 'components/cart/cart-aside.scss';
+@import 'components/cart/cart-cutter.scss';

@@ -23,6 +23,7 @@
 
     padding: 12px;
   }
+
   @media screen and (min-width: 991.98px) {
     &:hover {
       color: #FFF;
@@ -57,6 +58,7 @@
 
     padding: 12px;
   }
+
   @media screen and (min-width: 991.98px) {
     &:hover {
       color: #FFF;
@@ -64,6 +66,7 @@
       border-color: transparent;
     }
   }
+
 }
 
 .icon {
@@ -120,6 +123,7 @@
     }
 
   }
+
   @media screen and (min-width: 991.98px) {
     &:hover {
       border-color: #19BEFF;
@@ -152,6 +156,7 @@
     padding: 12px;
     border-radius: 8px;
   }
+
   @media screen and (min-width: 991.98px) {
     &:hover {
       background: linear-gradient(90deg, #19BEFF 0%, #3C82D2 100%);
@@ -170,4 +175,3 @@
     border-color: transparent;
   }
 }
-

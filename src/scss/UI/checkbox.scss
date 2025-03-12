@@ -1,0 +1,198 @@
+ /* radio */
+
+ .radio {
+     display: inline-flex;
+     position: relative;
+     cursor: pointer;
+     font-size: 14px;
+     line-height: 140%;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+     align-items: flex-start;
+
+     &__title,
+     &__desc {
+         display: block;
+     }
+
+     &__title {
+         color: #000;
+         font-size: 14px;
+     }
+
+     &__desc {
+         font-size: 12px;
+         color: #959595;
+     }
+
+     & input {
+         position: absolute;
+         opacity: 0;
+         cursor: pointer;
+         height: 0;
+         width: 0;
+         display: none;
+     }
+
+     &__text {
+         line-height: 140%;
+         font-size: 15px;
+         color: #222;
+         font-weight: 500;
+         padding-top: 1px;
+         transition: 0.3s ease;
+     }
+
+     &__elem {
+         top: 1px;
+         position: relative;
+         height: 20px;
+         width: 20px;
+         min-width: 20px;
+         background-color: transparent;
+         display: inline-block;
+         margin-right: 10px;
+         border-radius: 50%;
+         transition: 0.15s linear;
+         border: 1px solid #2F3030;
+
+         &::after {
+             content: '';
+             width: 12px;
+             height: 12px;
+             background-color: transparent;
+             border-radius: 50%;
+             display: inline-block;
+             position: absolute;
+             left: calc(50% - 6px);
+             top: calc(50% - 6px);
+             transition: 0.3s ease;
+             transform: scale(0);
+         }
+     }
+
+     & input {
+         &:hover~.radio__elem {
+             border-color: var(--accent);
+         }
+
+         &:checked~.radio__elem {
+
+             background-color: #fff;
+
+             &::after {
+                 content: '';
+                 transform: scale(1);
+                 background-color: var(--accent);
+
+             }
+
+             &:hover {
+                 border-color: var(--accent);
+             }
+         }
+
+     }
+
+     &:hover {
+         & .radio {
+             &__elem {
+                 border-color: var(--accent);
+             }
+
+             &__text {
+                 color: var(--accent);
+
+             }
+         }
+     }
+
+ }
+
+
+
+ .toggle {
+     display: flex;
+     align-items: center;
+     cursor: pointer;
+     font-size: 13px;
+     font-weight: 400;
+
+     @media screen and (min-width: $w992) {
+         font-size: 14px;
+     }
+
+
+
+
+     & div {
+         display: flex;
+         align-items: center;
+
+         & .toggle-slide {
+             width: 60px;
+             height: 32px;
+             display: inline-block;
+             background: #ccc;
+             border-radius: 50px 50px;
+             position: relative;
+             margin-right: 10px;
+             transition: 0.3s ease;
+
+             &:hover {
+                 background: #ADADAD;
+             }
+
+             &::before {
+                 content: '';
+                 width: 24px;
+                 height: 24px;
+                 background: #fff;
+                 border-radius: 50%;
+                 position: absolute;
+                 left: 4px;
+                 top: 4px;
+                 display: block;
+                 transition: 0.3s ease;
+
+             }
+         }
+     }
+
+     & input {
+         display: none;
+
+         &:checked~div .toggle-slide {
+             background: var(--accent);
+
+             &:hover {
+                 background: var(--accent);
+             }
+
+
+             &::before {
+                 left: calc(100% - 28px);
+
+             }
+         }
+
+     }
+
+     & .toggle-active {
+         display: none;
+     }
+
+     & input:checked~div .toggle-active {
+         display: block;
+         color: var(--accent);
+
+     }
+
+     & input:checked~div .toggle-deactive {
+         display: none;
+         color: var(--black-20);
+
+     }
+ }
