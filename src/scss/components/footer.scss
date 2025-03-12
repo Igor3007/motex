@@ -5,7 +5,7 @@ footer {
 }
 
 .footer {
-	padding-bottom: 60px;
+  padding-bottom: 60px;
 
   @media screen and (min-width: $w992) {
     padding-bottom: 0;
@@ -14,12 +14,13 @@ footer {
 
 .base-footer {
   padding-top: 28px;
+
   @media screen and (min-width: 1199.98px) {
     padding-top: 80px;
   }
 
   &__wrapper {
-    
+
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1px;
@@ -33,15 +34,18 @@ footer {
   &__item {
     background: #F3F3F3;
     padding-bottom: 20px;
+
     @media screen and (min-width: 767.98px) {
       padding-bottom: 28px;
     }
 
     &:nth-child(n+3) {
       padding: 20px 0;
+
       @media screen and (min-width: 767.98px) {
         padding: 28px 0;
       }
+
       @media screen and (min-width: 1199.98px) {
         padding: 0 0 28px;
       }
@@ -49,9 +53,11 @@ footer {
 
     &:not(:nth-of-type(even)) {
       padding-right: 12px;
+
       @media screen and (min-width: 767.98px) {
         padding-right: 20px;
       }
+
       @media screen and (min-width: 1199.98px) {
         padding-right: 0;
       }
@@ -59,9 +65,11 @@ footer {
 
     &:not(:nth-of-type(odd)) {
       padding-left: 12px;
+
       @media screen and (min-width: 767.98px) {
         padding-left: 20px;
       }
+
       @media screen and (min-width: 1199.98px) {
         padding-left: 0;
       }
@@ -92,6 +100,7 @@ footer {
       line-height: 28px;
 
       max-width: 140px;
+
       @media screen and (min-width: 767.98px) {
         font-size: 28px;
         line-height: 36px;
@@ -133,6 +142,7 @@ footer {
       font-weight: 700;
       line-height: 20px;
       margin-bottom: 8px;
+
       @media screen and (min-width: 767.98px) {
         font-size: 20px;
         line-height: 28px;
@@ -146,6 +156,7 @@ footer {
 
         &:not(:last-child) {
           margin-bottom: 6px;
+
           @media screen and (min-width: 767.98px) {
             margin-bottom: 8px;
           }
@@ -157,10 +168,12 @@ footer {
           line-height: 16px;
           color: #15181A;
           transition: .1s ease;
+
           @media screen and (min-width: 767.98px) {
             font-size: 16px;
             line-height: 24px;
           }
+
           @media screen and (min-width: 991.98px) {
             &:hover {
               color: #007AFF;
@@ -175,9 +188,11 @@ footer {
 .info-footer {
   padding: 20px 0;
   border-top: 1px solid #D0D1D1;
+
   @media screen and (min-width: 767.98px) {
     padding: 28px 0;
   }
+
   @media screen and (min-width: 1199.98px) {
     padding: 0;
   }
@@ -194,9 +209,11 @@ footer {
 
   .f-data-contact {
     padding-bottom: 20px;
+
     @media screen and (min-width: 767.98px) {
       padding-bottom: 28px;
     }
+
     @media screen and (min-width: 1199.98px) {
       padding: 28px 0 28px 0;
       background: #F3F3F3;
@@ -206,6 +223,7 @@ footer {
       display: inline-flex;
       flex-direction: column;
       gap: 20px;
+
       @media screen and (min-width: 767.98px) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -218,6 +236,7 @@ footer {
       display: inline-flex;
       flex-direction: column;
       gap: 8px;
+
       @media screen and (min-width: 767.98px) {
         gap: 4px;
       }
@@ -250,6 +269,7 @@ footer {
 
           margin-bottom: 16px;
         }
+
         @media screen and (min-width: 991.98px) {
           &:hover {
             color: #007AFF;
@@ -264,10 +284,12 @@ footer {
         line-height: 16px;
         color: #15181A;
         transition: .1s ease;
+
         @media screen and (min-width: 767.98px) {
           font-size: 16px;
           line-height: 24px;
         }
+
         @media screen and (min-width: 991.98px) {
           &:hover {
             color: #007AFF;
@@ -278,6 +300,7 @@ footer {
       button {
         max-width: fit-content;
         margin-top: 4px;
+
         @media screen and (min-width: 767.98px) {
           margin-top: 16px;
         }
@@ -321,6 +344,7 @@ footer {
       font-size: 12px;
       font-weight: 500;
       line-height: 16px;
+
       @media screen and (min-width: 767.98px) {
         font-size: 16px;
         line-height: 24px;
@@ -334,6 +358,7 @@ footer {
         font-size: 12px;
         font-weight: 700;
         line-height: 16px;
+
         @media screen and (min-width: 767.98px) {
           font-size: 16px;
           line-height: 24px;
@@ -400,6 +425,7 @@ footer {
 
     &__socials {
       margin-top: 12px;
+
       @media screen and (min-width: 767.98px) {
         margin-top: 36px;
       }
@@ -442,10 +468,12 @@ footer {
 
     padding-top: 20px;
     border-top: 1px solid #D0D1D1;
+
     @media screen and (min-width: 767.98px) {
       gap: 12px;
       padding-top: 28px;
     }
+
     @media screen and (min-width: 1199.98px) {
       padding: 28px 0 28px 20px;
       border: none;
@@ -459,6 +487,7 @@ footer {
       line-height: 20px;
 
       max-width: 240px;
+
       @media screen and (min-width: 767.98px) {
         font-size: 20px;
         line-height: 28px;
@@ -469,14 +498,14 @@ footer {
       display: flex;
       align-items: center;
       gap: 4px;
+
       @media screen and (min-width: 1199.98px) {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
       }
 
-      label {
-      }
+      label {}
 
       input {
         width: 100%;
@@ -504,6 +533,7 @@ footer {
           padding: 12px;
           font-size: 16px;
           line-height: 24px;
+
           &::placeholder {
             font-size: 16px;
             line-height: 24px;
@@ -519,6 +549,7 @@ footer {
 
   &__sales-field {
     flex: 1;
+
     @media screen and (min-width: 1199.98px) {
       min-width: 540px;
     }
@@ -533,6 +564,7 @@ footer {
     a {
       color: #15181A;
       transition: .1s ease;
+
       @media screen and (min-width: 991.98px) {
         &:hover {
           color: #007AFF;
@@ -550,6 +582,7 @@ footer {
 .bottom-footer {
   padding: 20px 0;
   border-top: 1px solid #D0D1D1;
+
   @media screen and (min-width: 767.98px) {
     padding: 28px 0;
   }
@@ -558,6 +591,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 20px;
+
     @media screen and (min-width: 767.98px) {
       flex-wrap: wrap;
       flex-direction: row;
@@ -592,6 +626,7 @@ footer {
     @media screen and (min-width: 767.98px) {
       width: 100%;
     }
+
     @media screen and (min-width: 1199.98px) {
       order: 1;
       width: auto;
@@ -602,6 +637,7 @@ footer {
       display: flex;
       flex-direction: column;
       gap: 4px;
+
       @media screen and (min-width: 767.98px) {
         flex-direction: row;
         gap: 20px;
@@ -611,6 +647,7 @@ footer {
         font-size: 10px;
         font-weight: 400;
         line-height: 16px;
+
         @media screen and (min-width: 767.98px) {
           font-size: 14px;
           line-height: 20px;
@@ -619,6 +656,7 @@ footer {
         a {
           color: #8A8C8D;
           transition: .1s ease;
+
           @media screen and (min-width: 991.98px) {
             &:hover {
               color: #007AFF;
@@ -633,13 +671,58 @@ footer {
     font-size: 10px;
     font-weight: 400;
     line-height: 16px;
+
     @media screen and (min-width: 767.98px) {
       font-size: 14px;
       line-height: 20px;
     }
+
     @media screen and (min-width: 1199.98px) {
       order: 2;
       margin-left: 5%;
+    }
+  }
+}
+
+.footer-min {
+  padding: 40px 0;
+  color: var(--black);
+
+  &__wrp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__social {
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      li {
+        display: flex;
+
+        a {
+          i {
+            display: block;
+            min-width: 28px;
+            width: 28px;
+            height: 28px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: 0.1s ease;
+          }
+
+          @media screen and (min-width: 991.98px) {
+            &:hover {
+              opacity: .8;
+            }
+          }
+        }
+      }
     }
   }
 }

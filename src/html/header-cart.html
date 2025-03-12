@@ -1,351 +1,59 @@
-<header class="header header-fixed">
-    <div class="header__wrapper">
-        <div class="header__top top-header">
-            <div class="top-header__container _container">
-                <div class="top-header__wrapper">
-                    <nav class="top-header__nav">
-                        <ul>
-                            <li><a href="#">О компании</a></li>
-                            <li><a href="#">Контакты</a></li>
-                        </ul>
-                    </nav>
-                    <div class="top-header__actions">
-                        <ul class="top-header__socials">
-                            <li>
-                                <a href="tel:+73512170000">
-                                    <i class="icon" style="background-image: url('/images/icons/ic_phone.svg')"></i>
-                                    +7 351 217-00-00
-                                </a>
-                            </li>
-                            <li>
-                                <a href="mailto:info@mottex.ru">
-                                    <i class="icon" style="background-image: url('/images/icons/ic_mail.svg')"></i>
-                                    info@mottex.ru
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="top-header__time modal-time">
-                            <div class="top-header__time-info">
-                                Мы открыты до <span>18:00</span>
-                            </div>
-                            <i class="time-id i--open"></i>
-                            <!--<i class="time-id i--close"></i>-->
+<header class="header-min">
 
-                            <div class="modal-time__modal time-modal">
-                                <div class="modal-time__modal-content">
-                                    <div class="modal-time__modal-item">
-                                        <div class="modal-time__modal-item-day">Пн-Пт</div>
-                                        <div class="modal-time__modal-item-time">
-                                            <span>08:30</span>
-                                            <span>18:00</span>
-                                        </div>
-                                    </div>
-                                    <div class="modal-time__modal-item">
-                                        <div class="modal-time__modal-item-day">Вс, Сб</div>
-                                        <div class="modal-time__modal-item-time">
-                                            <span>09:00</span>
-                                            <span>15:00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
+    <div class="header-min__top">
+        <div class="_container">
+            <div class="header-min__wrp">
+                <div class="header-min__sl">Оформление заказа</div>
+                <div class="header-min__back">
+                    <a href="/pages/cart.html">
+                        <i class="icon" style="background-image: url('/images/icons/ic_arrow-back.svg')"></i>
+                        Вернуться в корзину
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="header__main main-header">
-            <div class="main-header__container _container">
-                <div class="main-header__wrapper">
-                    <div class="main-header__heading">
-                        <div class="main-header__logo">
-                            <a href="/" aria-label="home">
-                                <i class="icon" style="background-image: url('/images/icons/ic_logo-mtx.svg')"></i>
-                                <span class="c-name">Материалы для любой стройки</span>
-                            </a>
-                        </div>
-                        <button class="main-header__country btn-country" data-region-select="open">
-                            <i class="icon" style="background-image: url('/images/icons/ic_location.svg')"></i>
-                            <span class="m-country">Челябинск</span>
-                        </button>
-                    </div>
-                    <div class="main-header__actions">
-                        <div class="main-header__burger burger-btn">
-                            <div class="burger-btn__btn" data-target="topcatalog">
-                                <span class="icon"><i></i><i></i><i></i><i></i></span>
-                                <div class="burger-btn__name">Каталог</div>
-                            </div>
-                        </div>
-                        <div class="main-header__search">
-                            <div class="search-index">
-                                <form action="#">
-                                    <div class="search-index__form">
-                                        <div class="search-index__field">
-                                            <label class="search-index__input">
-                                                <input type="text" name="q" autocomplete="off"
-                                                    placeholder="Найти в Моттексе…" value="">
-                                            </label>
-                                            <div class="search-index__btn">
-                                                <button class="btn-search">
-                                                    <i class="icon"
-                                                        style="background-image: url('/images/icons/ic_search.svg')"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="main-header__panel">
-                            <button class="btn-custom_i btn-login">
-                                <i class="icon" style="background-image: url('/images/icons/ic_user.svg')"></i>
-                                Вход
-                            </button>
-                            <button class="btn-custom_i btn-elect">
-                                <i class="icon" style="background-image: url('/images/icons/ic_elect.svg')"></i>
-                                <span class="button-counter">6</span>
-                                Избранное
-                            </button>
-                            <div class="main-header__cart cart-header">
-                                <a href="./cart.html">
-                                    <button class="btn-custom_i btn-cart">
-                                        <i class="icon" style="background-image: url('/images/icons/ic_cart.svg')"></i>
-                                        <span class="button-counter">4</span>
-                                        Корзина
-                                    </button>
-                                </a>
-                                <div class="cart-header__modal modal-cart" data-window="cart">
-                                    <div class="modal-cart__items">
-                                        <div class="modal-cart__item">
-                                            <div class="modal-cart__item-img">
-                                                <picture>
-                                                    <img src="/images/i_cart-img-a001.jpg" alt="cart-item">
-                                                </picture>
-                                                <div class="count">
-                                                    <span>37</span>
-                                                </div>
-                                            </div>
-                                            <a href="#" class="modal-cart__item-link">Фанера берёзовая ФК 6мм сорт IV/IV
-                                                НШ Е1 1525×1525мм Свеза</a>
-                                        </div>
-                                        <div class="modal-cart__item">
-                                            <div class="modal-cart__item-img">
-                                                <picture>
-                                                    <img src="/images/i_cart-img-a001.jpg" alt="cart-item">
-                                                </picture>
-                                                <div class="count">
-                                                    <span>37</span>
-                                                </div>
-                                            </div>
-                                            <a href="#" class="modal-cart__item-link">Фанера берёзовая ФК 6мм сорт IV/IV
-                                                НШ Е1 1525×1525мм Свеза</a>
-                                        </div>
-                                        <div class="modal-cart__item">
-                                            <div class="modal-cart__item-img">
-                                                <picture>
-                                                    <img src="/images/i_cart-img-a001.jpg" alt="cart-item">
-                                                </picture>
-                                                <div class="count">
-                                                    <span>37</span>
-                                                </div>
-                                            </div>
-                                            <a href="#" class="modal-cart__item-link">Фанера берёзовая ФК 6мм сорт IV/IV
-                                                НШ Е1 1525×1525мм Свеза</a>
-                                        </div>
-                                        <div class="modal-cart__item">
-                                            <div class="modal-cart__item-img">
-                                                <picture>
-                                                    <img src="/images/i_cart-img-a001.jpg" alt="cart-item">
-                                                </picture>
-                                                <div class="count">
-                                                    <span>37</span>
-                                                </div>
-                                            </div>
-                                            <a href="#" class="modal-cart__item-link">Фанера берёзовая ФК 6мм сорт IV/IV
-                                                НШ Е1 1525×1525мм Свеза</a>
-                                        </div>
-                                        <div class="modal-cart__item">
-                                            <div class="modal-cart__item-img">
-                                                <picture>
-                                                    <img src="/images/i_cart-img-a001.jpg" alt="cart-item">
-                                                </picture>
-                                                <div class="count">
-                                                    <span>37</span>
-                                                </div>
-                                            </div>
-                                            <a href="#" class="modal-cart__item-link">Фанера берёзовая ФК 6мм сорт IV/IV
-                                                НШ Е1 1525×1525мм Свеза</a>
-                                        </div>
-                                    </div>
-                                    <div class="modal-cart__action">
-                                        <button class="btn-blue">В корзину</button>
-                                    </div>
+    </div>
+    <div class="header-min__main">
+        <div class="_container">
+            <div class="header-min__row">
+                <div class="header-min__logo">
+                    <a href="/" aria-label="home">
+                        <i class="icon" style="background-image: url('/images/icons/ic_logo-mtx.svg')"></i>
+                        <span class="c-name">Материалы для любой стройки</span>
+                    </a>
+                </div>
+                <div class="header-min__adv">
+                    <div class="checkout-adv">
+                        <div class="checkout-adv__list">
+                            <div class="checkout-adv__item">
+                                <div class="checkout-adv__icon">
+                                    <span class="bgimage"
+                                        style="background-image: url('/images/icons/ic_reload.svg')"></span>
+                                </div>
+                                <div class="checkout-adv__text">
+                                    <strong>Возврат излишков</strong>
+                                    <p>Принимаем обратно остатки товара</p>
                                 </div>
                             </div>
 
+                            <div class="checkout-adv__item">
+                                <div class="checkout-adv__icon">
+                                    <span class="bgimage"
+                                        style="background-image:url('/images/icons/ic_car.svg')"></span>
+                                </div>
+                                <div class="checkout-adv__text">
+                                    <strong>Доставка</strong>
+                                    <p>Оплата по факту получения товара</p>
+                                </div>
+                            </div>
+
+
+
                         </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-        <div class="header__bottom bottom-header">
-            <div class="bottom-header__container _container">
-                <div class="bottom-header__wrapper">
-                    <div class="bottom-header__actions">
-                        <button class="btn-custom_i btn-sales">
-                            <i class="icon" style="background-image: url('/images/icons/ic_sales.svg')"></i>
-                            Акции
-                        </button>
-                        <button class="btn-custom_i btn-collections">
-                            <i class="icon" style="background-image: url('/images/icons/ic_collections.svg')"></i>
-                            Подборки товаров
-                        </button>
-                        <button class="btn-custom_i btn-services">
-                            <i class="icon" style="background-image: url('/images/icons/ic_services.svg')"></i>
-                            Услуги
-                        </button>
-                    </div>
-                    <div class="bottom-header__location">
-                        <button class="btn-custom_i btn-country" data-region-select="open">
-                            <i class="icon" style="background-image: url('/images/icons/ic_location.svg')"></i>
-                            <span class="d-country">Челябинск</span>
-                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="header__menu menu-header" data-window="menu">
-        <div class="menu-header__wrapper">
-            <div class="menu-header__heading heading-menu">
-                <div class="heading-menu__container _container">
-                    <div class="heading-menu__wrapper">
-                        <div class="heading-menu__title">Меню</div>
-                        <div class="heading-menu__close">
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="menu-header__content content-menu">
-                <div class="content-menu__container _container">
-                    <div class="content-menu__wrapper">
-                        <nav class="content-menu__nav">
-                            <ul>
-                                <li data-target="topcatalog">
-                                    <a href="#">
-                                        <i class="icon"
-                                            style="background-image: url('/images/icons/ic_catalog-lg.svg')"></i>
-                                        Каталог
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="icon"
-                                            style="background-image: url('/images/icons/ic_services-lg.svg')"></i>
-                                        Услуги
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="icon"
-                                            style="background-image: url('/images/icons/ic_about-lg.svg')"></i>
-                                        О компании
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="icon"
-                                            style="background-image: url('/images/icons/ic_news-lg.svg')"></i>
-                                        Новости и статьи
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="icon"
-                                            style="background-image: url('/images/icons/ic_faq-lg.svg')"></i>
-                                        FAQ
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="icon"
-                                            style="background-image: url('/images/icons/ic_contacts-lg.svg')"></i>
-                                        Контакты
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div class="content-menu__location">
-                            <button class="btn-custom_i btn-country" data-region-select="open">
-                                <i class="icon" style="background-image: url('/images/icons/ic_location.svg')"></i>
-                                <span class="d-country">Челябинск</span>
-                            </button>
-                        </div>
-                        <div class="content-menu__info">
-                            <a href="tel:+73512170000" class="num">+7 351 217-00-00</a>
-                            <a href="mailto:info@mottex.ru" class="mail">info@mottex.ru</a>
-                            <a href="#" class="street" target="_blank">г. Челябинск, Троицкий тракт 17</a>
-                            <div class="content-menu__time">
-                                <div class="content-menu__time-info">
-                                    Сейчас мы открыты
-                                </div>
-                                <i class="i--open time-id"></i>
-                                <!--                                    <i class="i--close time-id"></i>-->
-                            </div>
-                            <div class="modal-time">
-                                <div class="modal-time__info">
-                                    Сегодня, понедельник
-                                    <div class="modal-time__action">
-                                        <span>08:30</span>
-                                        <span>18:00</span>
-                                        <i class="icon"
-                                            style="background-image: url('/images/icons/ic_m-arrow.svg')"></i>
-                                    </div>
-                                </div>
-                                <div class="modal-time__modal">
-                                    <div class="modal-time__modal-content">
-                                        <div class="modal-time__modal-item">
-                                            <div class="modal-time__modal-item-day">Пн-Пт</div>
-                                            <div class="modal-time__modal-item-time">
-                                                <span>08:30</span>
-                                                <span>18:00</span>
-                                            </div>
-                                        </div>
-                                        <div class="modal-time__modal-item">
-                                            <div class="modal-time__modal-item-day">Вс, Сб</div>
-                                            <div class="modal-time__modal-item-time">
-                                                <span>09:00</span>
-                                                <span>15:00</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content-menu__socials">
-                                <ul>
-                                    <li><a href="#"><i style="background-image: url('/images/icons/ic_vk.svg')"></i></a>
-                                    </li>
-                                    <li><a href="#"><i
-                                                style="background-image: url('/images/icons/ic_inst.svg')"></i></a>
-                                    </li>
-                                    <li><a href="#"><i
-                                                style="background-image: url('/images/icons/ic_youtube.svg')"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
     </div>
 </header>
