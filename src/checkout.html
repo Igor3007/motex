@@ -19,8 +19,9 @@
                                 <div class="cart-receipt__title">Способ получения</div>
                                 <div class="cart-receipt__select">
                                     <div class="cart-receipt__tabs">
-                                        <label for="">
-                                            <input type="checkbox">
+                                        <label>
+                                            <input type="radio" name="receipt-type" v-model="receipt_type"
+                                                value="delivery">
                                             <div class="receipt-item">
                                                 <div class="receipt-item__title">Доставка</div>
                                                 <div class="receipt-item__bottom">
@@ -28,21 +29,33 @@
                                                     <div class="receipt-item__check"></div>
                                                 </div>
                                             </div>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="receipt-type" v-model="receipt_type"
+                                                value="pickup">
                                             <div class="receipt-item">
                                                 <div class="receipt-item__title">Самовывоз</div>
                                                 <div class="receipt-item__bottom">
-                                                    <div class="receipt-item__text">Сегодня, бесплатно</div>
+                                                    <div class="receipt-item__text">Сегодня, <span>бесплатно</span>
+                                                    </div>
                                                     <div class="receipt-item__check"></div>
                                                 </div>
                                             </div>
                                         </label>
                                     </div>
-                                    <div class="cart-receipt__note">Наш водитель привезёт ваш заказ на объект по всей
-                                        России, домой или дачу. Окончательная стоимость станет известна после расчёта
-                                        логистом после оформления заказа.</div>
+                                    <div class="cart-receipt__note">
+                                        <span v-if="receipt_type=='delivery'">Наш водитель привезёт ваш заказ на объект
+                                            по всей
+                                            России, домой или дачу. Окончательная стоимость станет известна
+                                            после расчёта
+                                            логистом после оформления заказа.</span>
+                                        <span v-if="receipt_type=='pickup'">Заказ можно забрать самовывозом в день
+                                            оформления, если он был оформлен
+                                            за 1 час до конца рабочего дня.</span>
+                                    </div>
                                 </div>
 
-                                <div class="cart-receipt__tabcontent">
+                                <div class="cart-receipt__tabcontent" v-if="receipt_type=='pickup'">
                                     <div class="store-item">
                                         <div class="store-item__left">
                                             <div class="store-item__label">
@@ -70,21 +83,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="cart-receipt__tabcontent">
+                                <div class="cart-receipt__tabcontent" v-if="receipt_type=='delivery'">
                                     <div class="cart-receipt__selectmap">
-                                        <button class="btn-gray">
-                                            <i class="icon" style="background-image: url('/images/icons/ct1.svg')"></i>
-                                            Указать на карте
+                                        <button class="btn-gray" @click="select_in_map = !select_in_map">
+                                            <i class="icon"
+                                                style="background-image: url('/images/icons/ic_map.svg')"></i>
+                                            {{ !select_in_map ? 'Указать на карте' : 'Скрыть карту'}}
                                         </button>
                                     </div>
-                                    <div class="cart-receipt__map-container">map-cotainer</div>
+                                    <div class="cart-receipt__map-container" v-if="select_in_map">map-cotainer</div>
                                     <div class="cart-receipt__form">
                                         <div class="form">
                                             <div class="form__item">
                                                 <div class="form__subitem"><input type="text" placeholder="Улица, дом*">
                                                 </div>
                                             </div>
-                                            <div class="form__item">
+                                            <div class="form__item form__item--four">
                                                 <div class="form__subitem"><input type="text" placeholder="Подъезд">
                                                 </div>
                                                 <div class="form__subitem"><input type="text" placeholder="Кв./офис">
@@ -95,7 +109,7 @@
                                             </div>
                                             <div class="form__item">
                                                 <div class="form__subitem">
-                                                    <textarea placeholder="Домофон">Комментарий</textarea>
+                                                    <textarea placeholder="Комментарий"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -110,9 +124,11 @@
                                 <div class="cart-customer__form">
                                     <div class="form">
                                         <div class="form__item">
-                                            <div class="form__subitem"><input type="text" placeholder="Имя получателя*">
+                                            <div class="form__subitem"><input type="text" placeholder="Имя получателя"
+                                                    required>
                                             </div>
-                                            <div class="form__subitem"><input type="text" placeholder="Номер телефона*">
+                                            <div class="form__subitem"><input type="text" placeholder="Номер телефона"
+                                                    required>
                                             </div>
                                         </div>
                                         <div class="form__item">

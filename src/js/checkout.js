@@ -6,11 +6,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
             data: {
 
                 json: [],
-                need_cutter: false
+                need_cutter: false,
+                select_in_map: false,
+                receipt_type: 'delivery',
 
             },
             created: function () {
-                this.fetchData()
+                //this.fetchData()
             },
 
             methods: {},

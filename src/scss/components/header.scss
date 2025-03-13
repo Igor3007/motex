@@ -542,6 +542,8 @@ header {
   }
 
   &__logo {
+    white-space: nowrap;
+
     @media screen and (min-width: $w760) {
       margin-bottom: 24px;
     }
@@ -667,12 +669,13 @@ header {
   &__list {
     display: flex;
     gap: 12px;
-    margin-bottom: 20px;
+
     overflow-x: auto;
     flex-wrap: nowrap;
 
     @media screen and (min-width: $w1200) {
       gap: 32px;
+      margin-bottom: 20px;
     }
   }
 

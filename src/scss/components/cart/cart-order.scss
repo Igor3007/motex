@@ -1,0 +1,33 @@
+.cart-order {
+    background: var(--black-5);
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+
+    @media screen and (min-width: $w576) {
+        padding: 27px;
+    }
+
+    &__title {
+        margin-bottom: 16px;
+        font-size: 14px;
+        font-weight: 600;
+
+        @media screen and (min-width: $w576) {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        margin: 24px 0;
+    }
+
+    &__item {
+        margin-right: 12px;
+    }
+}
