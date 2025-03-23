@@ -23,22 +23,23 @@
 
 
 
-        <section class="cart" id="vuecart">
+        <section class="cart" id="vuecart" v-cloak>
             <div class="_container">
                 <div class="cart__title">
                     <h1>Корзина</h1>
                 </div>
-                <div class="cart__wrp">
+                <div class="cart__wrp" v-if="json.length ">
                     <div class="cart__content">
                         <div class="cart__topbar">
                             <div class="cart__selectall">
                                 <label class="checkbox">
-                                    <input type="checkbox" name="" value="stock">
+                                    <input type="checkbox" name="" value="stock" v-model="isSelectAllCheckbox"
+                                        value="1">
                                     <span class="checkbox__elem"></span>
                                     <span class="checkbox__text">Выбрать всё</span>
                                 </label>
                             </div>
-                            <div class="cart__removeselected">
+                            <div class="cart__removeselected" v-if="removeList.length" @click="removeSelected()">
                                 <i class="icon" style="background-image: url('/images/icons/ic_close.svg')"></i> Удалить
                                 выбранное
                             </div>
@@ -51,7 +52,7 @@
                                     <div class="cart-item">
                                         <div class="cart-item__check">
                                             <label class="checkbox">
-                                                <input type="checkbox" name="" value="stock">
+                                                <input type="checkbox" v-model="removeList" name="" :value="index">
                                                 <span class="checkbox__elem"></span>
                                             </label>
                                         </div>
@@ -74,7 +75,7 @@
                                                         <i class="icon"
                                                             style="background-image: url('/images/icons/ic_elect.svg')"></i>
                                                     </div>
-                                                    <div class="cart-item__remove">
+                                                    <div class="cart-item__remove" @click="removeItem(index)">
                                                         <i class="icon"
                                                             style="background-image: url('/images/icons/ic_trash.svg')"></i>
                                                     </div>
@@ -164,10 +165,20 @@
                                             <textarea
                                                 placeholder="Опишите требования к распилу в свободной форме"></textarea>
                                         </div>
+                                        <div class="file-formbar">
+                                            <div v-for="file,i in fileArray" :key="file.size+file.name"
+                                                class="file-preview">
+                                                <div class="file-preview__icon">{{file.name.split('.').pop()}}</div>
+                                                <div class="file-preview__text">{{file.name}}</div>
+                                                <div class="file-preview__remove icon-cross"
+                                                    @click="removeAttachFile(i)"></div>
+                                            </div>
+                                        </div>
                                         <div class="cart-cut__attach">
                                             <div class="cart-cut__file">
                                                 <label>
-                                                    <input type="file" name="">
+                                                    <input type="file" name="cutterFiles" multiple
+                                                        @change="changeFileInput($event)" ref="fileInput">
                                                     <div class="btn-gray">
                                                         <i class="icon"
                                                             style="background-image: url('/images/icons/ic_chain.svg')"></i>
@@ -189,21 +200,23 @@
                         <div class="cart-aside">
                             <div class="cart-aside__make">
                                 <div class="cart-aside__btn">
-                                    <a href="/"><button class="btn-blue">Перейти к оформлению</button></a>
+                                    <a href="/pages/checkout.html"><button class="btn-blue">Перейти к
+                                            оформлению</button></a>
                                 </div>
                                 <div class="cart-aside__text">Доступные способы оплаты и доставки можно выбрать
                                     при оформлении заказа.</div>
                             </div>
                             <div class="cart-aside__oneclick">
-                                <button class="btn-gray">Купить в 1 клик</button>
+                                <button class="btn-gray" @click="openPopupOneClick()">Купить в 1 клик</button>
                             </div>
                             <div class="cart-aside__details">
                                 <div class="cart-details">
                                     <div class="cart-details__title">Ваша корзина</div>
                                     <div class="cart-details__prop">
                                         <div class="cart-details__item">
-                                            <div class="cart-details__name">Товары (86)</div>
-                                            <div class="cart-details__value">119 809 ₽</div>
+                                            <div class="cart-details__name">Товары ({{json.length}})</div>
+                                            <div class="cart-details__value">{{getCostProducts|numberWithSpaces}} ₽
+                                            </div>
                                         </div>
                                         <div class="cart-details__item">
                                             <div class="cart-details__name">Услуги (1)</div>
@@ -211,28 +224,35 @@
                                         </div>
                                         <div class="cart-details__item">
                                             <div class="cart-details__name">Вес</div>
-                                            <div class="cart-details__value">1 110 кг</div>
+                                            <div class="cart-details__value">{{getTotalWeight|convertWeight}}</div>
                                         </div>
-                                        <div class="cart-details__item cart-details__item--dropdown">
+                                        <div class="cart-details__item cart-details__item--dropdown"
+                                            @click="isOpenSaleDropdown = !isOpenSaleDropdown"
+                                            :class="{'is-open':isOpenSaleDropdown}">
                                             <div class="cart-details__name">Скидки</div>
-                                            <div class="cart-details__value">4 392 ₽</div>
+                                            <div class="cart-details__value">{{getTotalDiscount|numberWithSpaces}} ₽
+                                            </div>
                                         </div>
-                                        <div class="sale-dropdown">
-                                            <div class="sale-dropdown__item">
-                                                <div class="sale-dropdown__name">Акция</div>
-                                                <div class="sale-dropdown__value">— 4 392 ₽</div>
+                                        <div class="sale-dropdown" :class="{'is-open':isOpenSaleDropdown}">
+                                            <div v-for="dsc in discounts" class="sale-dropdown__item">
+                                                <div class="sale-dropdown__name">{{dsc.name}}</div>
+                                                <div class="sale-dropdown__value">— {{dsc.sale|numberWithSpaces}} ₽
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="cart-details__input">
-                                        <input type="text" placeholder="Промокод">
+                                        <input type="text" v-model="promocode" placeholder="Промокод">
+                                        <span class="icon" v-if="promocode" :class="{'is-loading':isLoadPromodode}"
+                                            @click="addPromocode()"
+                                            style="background-image: url('/images/icons/ic_in-stock.svg')"></span>
                                     </div>
 
                                     <div class="cart-details__output">
                                         <div class="cart-output">
                                             <div class="cart-output__title">Итог</div>
-                                            <div class="cart-output__value">115 470 ₽</div>
+                                            <div class="cart-output__value">{{getTotalPriceOrder}} ₽</div>
                                         </div>
                                     </div>
 
@@ -254,7 +274,7 @@
                                     </div>
                                     <div class="cart-cutter__text">
                                         У вас в корзине есть товары, для которых мы можем произвести распил.
-                                        <a href="#">Смотреть цены.</a>
+                                        <a href="#" @click="openPopupPrice()">Смотреть цены.</a>
                                     </div>
                                 </div>
                             </div>
@@ -262,6 +282,79 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="cart__empty" v-if="!isPageLoading && !json.length">
+                    <div class="cart-empty">
+                        <div class="cart-empty__image">
+                            <span class="bgimage" style="background-image: url(/images/dog.jpg)"></span>
+                        </div>
+                        <div class="cart-empty__title">Пока пусто</div>
+                        <div class="cart-empty__desc"> Для поиска товаров воспользуйтесь</div>
+                        <div class="cart-empty__buttons">
+                            <a href="/pages/catalog-lvl-1.html"><button class="btn-blue">каталогом</button></a>
+                            <span>или</span>
+                            <a href="/pages/"><button class="btn-gray">поиском</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cart__load" :class="{'is-loading': isPageLoading}">
+                    @@include('./html/components/spinner.html')
+                </div>
+
+                <af-lightbox ref="popup">
+                    <div class="pricelist-cutter">
+                        <div class="pricelist-cutter__wrp">
+                            <div v-for="item in pricelist" :key="item.groupTitle" class="pricelist-cutter__group">
+                                <div class="pricelist-cutter__title">{{item.groupTitle}}</div>
+                                <div class="pricelist-cutter__list">
+                                    <div v-for="prop in item.group" :key="prop.title" class="pricelist-cutter__gr">
+                                        <div class="pricelist-cutter__label">{{prop.title}}</div>
+                                        <div class="pricelist-cutter__items">
+                                            <div v-for="row in prop.items" class="pricelist-cutter__row">
+                                                <div class="pricelist-cutter__name">{{row.name}}</div>
+                                                <div class="pricelist-cutter__value">
+                                                    <span>{{row.value}}</span>{{row.unit}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </af-lightbox>
+
+                <af-lightbox ref="oneclick">
+                    <div class="popup-call">
+                        <div class="popup-call__modal" id="modal-call">
+                            <div class="popup__wrapper">
+                                <div class="popup__body">
+                                    <div class="popup__heading">
+                                        <h2>Быстрая покупка</h2>
+                                    </div>
+                                    <div class="popup__desc">
+                                        Укажите номер телефона и наш менеджер <br> перезвонит для составления заказа
+                                    </div>
+                                    <form action="#" method="POST">
+                                        <div class="popup__form-field">
+                                            <input type="text" id="NAME" required="" placeholder="Имя*">
+                                            <label for="NAME"></label>
+                                        </div>
+
+                                        <button class="btn-blue">Отправить</button>
+
+                                        <div class="popup__form-field--policy"> Нажимая кнопку «Отправить», я даю
+                                            согласие на <a href="#">получение
+                                                рекламной рассылки</a> и <a href="#">обработку персональных данных</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </af-lightbox>
+
             </div>
         </section>
 
@@ -305,6 +398,8 @@
                 </div>
             </div>
         </section>
+
+
 
     </main>
 
