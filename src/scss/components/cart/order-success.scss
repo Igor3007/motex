@@ -1,0 +1,37 @@
+.os-details {
+    padding: 27px;
+    background-color: var(--black-5);
+    margin-bottom: 12px;
+    border-radius: 8px;
+}
+
+.os-review {
+    padding: 27px;
+    background-color: var(--black-5);
+    margin-bottom: 12px;
+    border-radius: 8px;
+}
+
+.order-success {
+
+    max-width: 632px;
+    margin: 0 auto;
+
+    &__buttons {
+        padding: 27px;
+        background-color: var(--black-5);
+        margin-bottom: 12px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+
+        & a {
+            width: 50%;
+
+            & button {
+                width: 100%;
+            }
+        }
+    }
+}

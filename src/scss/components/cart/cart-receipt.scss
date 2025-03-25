@@ -2,10 +2,14 @@
     background: var(--black-5);
     padding: 16px;
     border-radius: 8px;
-    margin-bottom: 30px;
+    margin-bottom: 12px;
 
     @media screen and (min-width: $w576) {
         padding: 27px;
+    }
+
+    @media screen and (min-width: $w1440) {
+        padding: 32px 27px;
     }
 
     &__title {
@@ -17,10 +21,18 @@
             font-size: 20px;
             margin-bottom: 30px;
         }
+
+        @media screen and (min-width: $w1440) {
+            margin-bottom: 24px;
+        }
     }
 
     &__select {
         margin-bottom: 16px;
+
+        @media screen and (min-width: $w1440) {
+            margin-bottom: -5px;
+        }
 
         @media screen and (min-width: $w992) {
             display: flex;
@@ -112,7 +124,17 @@
         background-color: var(--black-20);
         border-radius: 8px;
         margin-bottom: 16px;
+        position: relative;
 
+        &>div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
     }
 
     &__form {

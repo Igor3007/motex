@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html', {
+'title': 'Каталог'
+})
+
+<body>
+    @@include('html/header-cart.html')
+
+    <main class="page">
+        <section class="order-success">
+            <div class="_container">
+                <div class="order-success__details">
+                    <div class="os-details">
+                        <div class="os-details__icon"></div>
+                        <div class="os-details__main">
+                            <div class="os-details__title">Ваш заказ № 4896 успешно оформлен!</div>
+                            <div class="os-details__desc">В течении 5 минут мы свяжемся с вами по телефону <br>
+                                +7 951 777-82-88 для уточнения деталей заказа и доставки.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-success__products">
+                    <div class="cart-order">
+                        <div class="cart-order__wrp">
+                            <div class="cart-order__title">В Вашем заказе</div>
+                            <div class="cart-order__desc"> 86 товаров • 1110 кг • 15 м3 </div>
+                            <div class="cart-order__list">
+                                <div class="cart-order__item">
+                                    <div class="cart-order__picture">
+                                        <a href="/pages/single-product.html">
+                                            <picture><img src="/images/goods/g2.jpg" alt=""></picture>
+                                        </a>
+                                    </div>
+                                    <div class="cart-order__cost">27 417 ₽</div>
+                                </div>
+                                <div class="cart-order__item">
+                                    <div class="cart-order__picture">
+                                        <a href="/pages/single-product.html">
+                                            <picture><img src="/images/goods/g2.jpg" alt=""></picture>
+                                        </a>
+                                    </div>
+                                    <div class="cart-order__cost">27 417 ₽</div>
+                                </div>
+                                <div class="cart-order__item">
+                                    <div class="cart-order__picture">
+                                        <a href="/pages/single-product.html">
+                                            <picture><img src="/images/goods/g2.jpg" alt=""></picture>
+                                        </a>
+                                    </div>
+                                    <div class="cart-order__cost">27 417 ₽</div>
+                                </div>
+                                <div class="cart-order__item">
+                                    <div class="cart-order__picture">
+                                        <a href="/pages/single-product.html">
+                                            <picture><img src="/images/goods/g2.jpg" alt=""></picture>
+                                        </a>
+                                    </div>
+                                    <div class="cart-order__cost">27 417 ₽</div>
+                                </div>
+                                <div class="cart-order__item">
+                                    <div class="cart-order__picture">
+                                        <a href="/pages/single-product.html">
+                                            <picture><img src="/images/goods/g2.jpg" alt=""></picture>
+                                        </a>
+                                    </div>
+                                    <div class="cart-order__cost">27 417 ₽</div>
+                                </div>
+                                <div class="cart-order__item">
+                                    <div class="cart-order__picture">
+                                        <a href="/pages/single-product.html">
+                                            <picture><img src="/images/goods/g2.jpg" alt=""></picture>
+                                        </a>
+                                    </div>
+                                    <div class="cart-order__cost">27 417 ₽</div>
+                                </div>
+                            </div>
+                            <div class="cart-order__note">Способ получения: Самовывоз</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-success__review">
+                    <div class="os-review">
+                        <div class="os-review__title">Помогите нам стать лучше!</div>
+                        <div class="os-review__question">
+                            <div class="os-review__text"></div>
+                            <div class="os-review__stars"></div>
+                        </div>
+                        <div class="os-review__question">
+                            <div class="os-review__text">Насколько удобен был процесс покупки?</div>
+                            <div class="os-review__stars">Были ли у вас трудности при выборе товара?</div>
+                        </div>
+                        <div class="os-review__question">
+                            <div class="os-review__text">Какие товары/услуги вы хотели бы видеть в нашем ассортименте?
+                            </div>
+                            <div class="os-review__input">
+                                <div class="form"><input type="text" placeholder="">Перечислите товары</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-success__buttons">
+                        <a href="/pages/"><button class="btn-blue">На главную</button></a>
+                        <a href="/pages/"><button class="btn-custom">Контакты</button></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    @@include('html/footer-cart.html')
+    @@include('html/components/action-panel.html')
+
+    <script src="/js/checkout.js"></script>
+
+</body>
+
+</html>

@@ -10,7 +10,6 @@
     <main class="page">
         <section class="cart cart--checkout" id="vuecheckout">
             <div class="_container">
-
                 <div class="cart__wrp">
                     <div class="cart__content">
 
@@ -75,11 +74,13 @@
                                                 <p>+7 351 217-00-00</p>
                                             </div>
                                             <div class="store-item__change">
-                                                <button class="btn-line">Выбрать другой склад</button>
+                                                <button class="btn-custom">Выбрать другой склад</button>
                                             </div>
                                         </div>
                                         <div class="store-item__right">
-                                            <div class="store-item__mapcontainer"></div>
+                                            <div class="store-item__mapcontainer">
+                                                <div class="store-in-map" id="store-in-map"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +92,9 @@
                                             {{ !select_in_map ? 'Указать на карте' : 'Скрыть карту'}}
                                         </button>
                                     </div>
-                                    <div class="cart-receipt__map-container" v-if="select_in_map">map-cotainer</div>
+                                    <div class="cart-receipt__map-container" v-if="select_in_map">
+                                        <div id="map-select-address"></div>
+                                    </div>
                                     <div class="cart-receipt__form">
                                         <div class="form">
                                             <div class="form__item">
@@ -150,23 +153,7 @@
                             </div>
                         </div>
 
-                        <div class="cart__order">
-                            <div class="cart-order">
-                                <div class="cart-order__wrp">
-                                    <div class="cart-order__title">В Вашем заказе</div>
-                                    <div class="cart-order__desc"> 86 товаров • 1110 кг • 15 м3 </div>
-                                    <div class="cart-order__list">
-                                        <div v-for="iten in [1,1,1,11,1,1,1,1]" class="cart-order__item">
-                                            <div class="cart-order__picture">
-                                                <picture><img src="/images/goods/g2.jpg" alt=""></picture>
-                                            </div>
-                                            <div class="cart-order__cost">27 417 ₽</div>
-                                        </div>
-                                    </div>
-                                    <div class="cart-order__note">Способ получения: Самовывоз</div>
-                                </div>
-                            </div>
-                        </div>
+
 
                         <div class="cart__cutter">
                             <div class="cart-cut">
@@ -245,6 +232,27 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="cart__order">
+                            <div class="cart-order">
+                                <div class="cart-order__wrp">
+                                    <div class="cart-order__title">В Вашем заказе</div>
+                                    <div class="cart-order__desc"> 86 товаров • 1110 кг • 15 м3 </div>
+                                    <div class="cart-order__list">
+                                        <div v-for="iten in [1,1,1,11,1,1,1,1,1,1,1]" class="cart-order__item">
+                                            <div class="cart-order__picture">
+                                                <a href="/pages/single-product.html">
+                                                    <picture><img src="/images/goods/g2.jpg" alt=""></picture>
+                                                </a>
+                                            </div>
+                                            <div class="cart-order__cost">27 417 ₽</div>
+                                        </div>
+                                    </div>
+                                    <div class="cart-order__note">Способ получения: Самовывоз</div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <div class="cart__aside">
                         <div class="cart-aside">

@@ -560,13 +560,20 @@ header {
   }
 
   &__adv {
-    margin-left: auto;
+    @media screen and (min-width: $w992) {
+      margin-left: auto;
+    }
   }
 
   &__row {
     display: flex;
     gap: 24px;
     align-items: center;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: $w992) {
+      flex-wrap: nowrap;
+    }
   }
 
   &__wrp {

@@ -2,10 +2,14 @@
     background: var(--black-5);
     padding: 16px;
     border-radius: 8px;
-    margin-bottom: 30px;
+    margin-bottom: 12px;
 
     @media screen and (min-width: $w576) {
         padding: 27px;
+    }
+
+    @media screen and (min-width: $w1440) {
+        padding: 32px 27px;
     }
 
     &__title {
@@ -16,6 +20,10 @@
         @media screen and (min-width: $w576) {
             font-size: 20px;
             margin-bottom: 30px;
+        }
+
+        @media screen and (min-width: $w1440) {
+            margin-bottom: 15px;
         }
     }
 
@@ -29,5 +37,28 @@
 
     &__item {
         margin-right: 12px;
+        width: 100px;
+        min-width: 100px;
+
+    }
+
+    &__picture {
+        border: 1px solid var(--black-20);
+        border-radius: 8px;
+        overflow: hidden;
+
+        & picture {
+            @include picture(100%, contain);
+        }
+
+        &:hover {
+            border-color: var(--accent)
+        }
+    }
+
+    &__cost {
+        font-size: 12px;
+        text-align: center;
+        padding-top: 8px;
     }
 }
