@@ -827,7 +827,7 @@ if (document.querySelector('.mx-bd-catalog__aside-dropdown')) {
         const dropdownItems = document.querySelectorAll('.mx-bd-catalog__aside-dropdown-list .item');
 
         dropdownItems.forEach(item => {
-            const arrow = item.querySelector('.icon');
+            const arrow = item.querySelector('span');
 
             if (!arrow) return;
 
