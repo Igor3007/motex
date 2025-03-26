@@ -653,6 +653,8 @@ section.cart {
 
 .pricelist-cutter {
 
+    display: none;
+
     &__title {
         padding-bottom: 24px;
         font-size: 18px;
@@ -746,4 +748,8 @@ section.cart {
             padding-bottom: 26px;
         }
     }
+}
+
+.af-popup .pricelist-cutter {
+    display: block;
 }
