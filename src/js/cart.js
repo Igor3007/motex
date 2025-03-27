@@ -355,6 +355,27 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                 openPopupOneClick() {
                     this.$refs.oneclick.open()
+                },
+
+                product_towishlist(e) {
+                    /* fetch('/endpoint', {
+                                method: 'POST',
+                                body: JSON.stringify(data),
+                                headers: {
+                                    'Content-type': 'application/json; charset=UTF-8',
+                                },
+                            })
+                            .then((response) => response.json())
+                            .then((data) => {
+                                 
+                                if(data.status) {
+                                    e.target.closest('div').classList.toggle('is-active', true)
+                                }else{
+                                
+                                }
+                            }) */
+
+                    e.target.closest('div').classList.toggle('is-active', true)
                 }
 
 
