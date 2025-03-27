@@ -98,7 +98,22 @@
                                     <div class="cart-receipt__form">
                                         <div class="form">
                                             <div class="form__item">
-                                                <div class="form__subitem"><input type="text" placeholder="Улица, дом*">
+                                                <div class="form__subitem">
+                                                    <div class="input--suggest">
+                                                        <input @keyup="getSuggestFromYmaps($event)"
+                                                            @blur="blurSuggest($event)" @focus="focusSuggest($event)"
+                                                            type="text" placeholder="Улица, дом*"
+                                                            v-model="addressDelivery">
+
+                                                        <ul class="suggest-list"
+                                                            v-if="isOpenSuggest && suggestArray.length">
+                                                            <li v-for="item in suggestArray" :rel="item.value"
+                                                                @click="selectedSuggest(item)">
+                                                                {{item.text}}</li>
+                                                        </ul>
+
+                                                    </div>
+
                                                 </div>
                                             </div>
                                             <div class="form__item form__item--four">
@@ -177,8 +192,7 @@
                                                         <span class="bgimage"
                                                             style="background-image: url('/images/icons/ct1.svg')"></span>
                                                     </div>
-                                                    <div class="cutter-adv__text">Высокая точность распила,
-                                                        погрешность
+                                                    <div class="cutter-adv__text">Высокая точность распила, погрешность
                                                         ±1 см</div>
                                                 </div>
 
@@ -196,8 +210,7 @@
                                                         <span class="bgimage"
                                                             style="background-image:url('/images/icons/ct3.svg')"></span>
                                                     </div>
-                                                    <div class="cutter-adv__text">Дополнительные скидки за объём
-                                                        работ
+                                                    <div class="cutter-adv__text">Дополнительные скидки за объём работ
                                                     </div>
                                                 </div>
 
@@ -209,23 +222,30 @@
                                             <textarea
                                                 placeholder="Опишите требования к распилу в свободной форме"></textarea>
                                         </div>
+                                        <div class="file-formbar">
+                                            <div v-for="file,i in fileArray" :key="file.size+file.name"
+                                                class="file-preview">
+                                                <div class="file-preview__icon">{{file.name.split('.').pop()}}</div>
+                                                <div class="file-preview__text">{{file.name}}</div>
+                                                <div class="file-preview__remove icon-cross"
+                                                    @click="removeAttachFile(i)"></div>
+                                            </div>
+                                        </div>
                                         <div class="cart-cut__attach">
                                             <div class="cart-cut__file">
                                                 <label>
-                                                    <input type="file" name="">
+                                                    <input type="file" name="cutterFiles" multiple
+                                                        @change="changeFileInput($event)" ref="fileInput">
                                                     <div class="btn-gray">
                                                         <i class="icon"
                                                             style="background-image: url('/images/icons/ic_chain.svg')"></i>
                                                         Прикрепить чертёж
                                                     </div>
-                                                    <span class="input-file-note">Фотографии и файлы не более
-                                                        10</span>
+                                                    <span class="input-file-note">Фотографии и файлы не более 10</span>
                                                 </label>
                                             </div>
-                                            <div class="cart-cut__note">Точную стоимость услуги охвучит менеджер
-                                                <br>
-                                                после расчёта стоимости
-                                            </div>
+                                            <div class="cart-cut__note">Точную стоимость услуги охвучит менеджер <br>
+                                                после расчёта стоимости</div>
                                         </div>
                                     </div>
 
@@ -239,13 +259,15 @@
                                     <div class="cart-order__title">В Вашем заказе</div>
                                     <div class="cart-order__desc"> 86 товаров • 1110 кг • 15 м3 </div>
                                     <div class="cart-order__list">
-                                        <div v-for="iten in [1,1,1,11,1,1,1,1,1,1,1]" class="cart-order__item">
+                                        <div v-for="item in products" class="cart-order__item">
                                             <div class="cart-order__picture">
                                                 <a href="/pages/single-product.html">
-                                                    <picture><img src="/images/goods/g2.jpg" alt=""></picture>
+                                                    <picture><img :src="item.image" alt=""></picture>
                                                 </a>
                                             </div>
-                                            <div class="cart-order__cost">27 417 ₽</div>
+                                            <div class="cart-order__cost">
+                                                {{item.price.rub.unit}}{{item.price.rub.currency}}
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="cart-order__note">Способ получения: Самовывоз</div>
@@ -258,7 +280,7 @@
                         <div class="cart-aside">
                             <div class="cart-aside__make">
                                 <div class="cart-aside__btn">
-                                    <a href="/"><button class="btn-blue">Перейти к оформлению</button></a>
+                                    <a href="/"><button class="btn-blue" disabled>Оформить заказ</button></a>
                                 </div>
                                 <div class="cart-aside__text">Доступные способы оплаты и доставки можно выбрать
                                     при оформлении заказа.</div>
@@ -338,7 +360,8 @@
     @@include('html/footer-cart.html')
     @@include('html/components/action-panel.html')
 
-    <script src="/js/checkout.js"></script>
+    <script src="/js/cart/vue-aflightbox.js"></script>
+    <script src="/js/cart/checkout.js"></script>
 
 </body>
 

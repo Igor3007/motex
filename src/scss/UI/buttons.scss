@@ -162,6 +162,19 @@
       background: linear-gradient(90deg, #19BEFF 0%, #3C82D2 100%);
     }
   }
+
+  &[disabled] {
+    color: #D0D1D1;
+    background: #8A8C8D;
+    border-color: transparent;
+
+    &:hover {
+      color: #D0D1D1;
+      background: #8A8C8D;
+      border-color: transparent;
+      cursor: not-allowed;
+    }
+  }
 }
 
 .btn-disabled {

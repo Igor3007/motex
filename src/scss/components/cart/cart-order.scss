@@ -27,6 +27,15 @@
         }
     }
 
+    &__note,
+    &__desc {
+        font-size: 12px;
+
+        @media screen and (min-width: $w576) {
+            font-size: 16px;
+        }
+    }
+
     &__list {
         display: flex;
         overflow-x: auto;

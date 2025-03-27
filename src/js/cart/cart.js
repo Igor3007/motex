@@ -1,50 +1,6 @@
 document.addEventListener('DOMContentLoaded', function (event) {
 
-    const aflightbox = Vue.component('afLightbox', {
 
-        template: `
-            <div class = "af-popup"
-            @click = "closeOnWindow" :class = "{'af-popup--visible' : isopen, 'af-popup--mobile': deviceWidth <= 480} " >
-                <div class="af-popup__bg" ></div>
-                <div class="af-popup__wrp">
-                    <div class="af-popup__container">
-                        <div class="af-popup__close" @click="close()">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" tabindex="-1"><path d="M20 20L4 4m16 0L4 20"></path></svg>
-                        </div>
-                        <div class = "af-popup__content"> 
-                            <slot><div>sllooottt</div></slot>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `,
-
-        name: 'aflightbox',
-
-        data: function () {
-            return {
-                isopen: false,
-                deviceWidth: document.body.clientWidth
-            }
-        },
-
-        methods: {
-
-            closeOnWindow(e) {
-                if (!e.target.closest('.af-popup__content')) {
-                    this.close()
-                }
-            },
-
-            open() {
-                this.isopen = true
-            },
-
-            close() {
-                this.isopen = false
-            }
-        }
-    })
 
     if (document.querySelector('#vuecart')) {
 
@@ -62,95 +18,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 removeList: [],
                 fileArray: [],
                 isSelectAllCheckbox: false,
-
-                pricelist: [{
-                        groupTitle: 'Прайс на услуги распила',
-                        group: [{
-                            title: 'Фанера, ОСП, ДВП, ДСП, МДФ, ХДФ',
-                            items: [{
-                                    name: 'Толщина от 3мм до 10мм, включительно',
-                                    value: '120',
-                                    unit: '₽/м.п.'
-                                },
-                                {
-                                    name: 'Толщина от 11мм до 15мм, включительно',
-                                    value: '160',
-                                    unit: '₽/м.п.'
-                                },
-                                {
-                                    name: 'Толщина от 16мм до 20мм, включительно',
-                                    value: '200',
-                                    unit: '₽/м.п.'
-                                },
-                                {
-                                    name: 'Толщина от 21мм до 29мм, включительно',
-                                    value: '300',
-                                    unit: '₽/м.п.'
-                                },
-                            ]
-                        }, {
-                            title: 'ГСП, ЦСП, Green Board',
-                            items: [{
-                                name: 'Толщина от 30мм до 40мм, включительно',
-                                value: '400',
-                                unit: '₽/м.п.'
-                            }, ]
-                        }, {
-                            title: 'Снять фаску 45 градус, диаметр до 5мм',
-                            items: [{
-                                name: 'Любая толщина',
-                                value: '400',
-                                unit: '₽/м.п.'
-                            }, ]
-                        }]
-                    },
-                    {
-                        groupTitle: 'Прайс на услуги распила',
-                        group: [{
-                            title: 'Фанера, ОСП, ДВП, ДСП, МДФ, ХДФ',
-                            items: [{
-                                    name: 'Толщина от 3мм до 10мм, включительно | 1 поддон',
-                                    value: '120',
-                                    unit: '₽/м.п.'
-                                },
-                                {
-                                    name: 'Толщина от 11мм до 15мм, включительно | 1 поддон',
-                                    value: '160',
-                                    unit: '₽/м.п.'
-                                },
-                                {
-                                    name: 'Толщина от 16мм до 20мм, включительно | 1 поддон',
-                                    value: '200',
-                                    unit: '₽/м.п.'
-                                },
-                                {
-                                    name: 'Толщина от 21мм до 29мм, включительно | 1 поддон',
-                                    value: '300',
-                                    unit: '₽/м.п.'
-                                },
-                            ]
-                        }, {
-                            title: 'ГСП, ЦСП, Green Board',
-                            items: [{
-                                name: 'Толщина от 30мм до 40мм, включительно',
-                                value: '400',
-                                unit: '₽/м.п.'
-                            }, ]
-                        }, {
-                            title: 'Снять фаску 45 градус, диаметр до 5мм',
-                            items: [{
-                                name: 'Любая толщина',
-                                value: '400',
-                                unit: '₽/м.п.'
-                            }, ]
-                        }]
-                    },
-                ]
-
+                pricelist: []
             },
 
             components: {
-                aflightbox
+                vueAflightbox
             },
 
             created: function () {
@@ -194,7 +66,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
                         })
                         .then((response) => response.json())
                         .then((data) => {
-                            this.json = data
+                            this.json = data.products
+                            this.pricelist = data.services
                             this.getPromotion()
                             this.isPageLoading = false
                         })

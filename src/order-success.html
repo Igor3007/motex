@@ -12,7 +12,9 @@
             <div class="_container">
                 <div class="order-success__details">
                     <div class="os-details">
-                        <div class="os-details__icon"></div>
+                        <div class="os-details__icon">
+                            <i class="icon" style="background-image: url(/images/icons/ic_success.svg);"></i>
+                        </div>
                         <div class="os-details__main">
                             <div class="os-details__title">Ваш заказ № 4896 успешно оформлен!</div>
                             <div class="os-details__desc">В течении 5 минут мы свяжемся с вами по телефону <br>
@@ -83,13 +85,41 @@
                     <div class="os-review">
                         <div class="os-review__title">Помогите нам стать лучше!</div>
                         <div class="os-review__question">
-                            <div class="os-review__text"></div>
-                            <div class="os-review__stars"></div>
+                            <div class="os-review__text">Насколько удобен был процесс покупки?</div>
+                            <div class="os-review__stars">
+                                <div class="star-rating">
+                                    <input type="radio" id="star-5" name="rating" value="5" />
+                                    <label for="star-5" title="Оценка «5»"></label>
+                                    <input type="radio" id="star-4" name="rating" value="4" />
+                                    <label for="star-4" title="Оценка «4»"></label>
+                                    <input type="radio" id="star-3" name="rating" value="3" />
+                                    <label for="star-3" title="Оценка «3»"></label>
+                                    <input type="radio" id="star-2" name="rating" value="2" />
+                                    <label for="star-2" title="Оценка «2»"></label>
+                                    <input type="radio" id="star-1" name="rating" value="1" />
+                                    <label for="star-1" title="Оценка «1»"></label>
+                                </div>
+                            </div>
                         </div>
                         <div class="os-review__question">
-                            <div class="os-review__text">Насколько удобен был процесс покупки?</div>
-                            <div class="os-review__stars">Были ли у вас трудности при выборе товара?</div>
+                            <div class="os-review__text">Были ли у вас трудности при выборе товара?</div>
+                            <div class="os-review__stars">
+                                <div class="star-rating">
+                                    <input type="radio" id="star-5" name="rating" value="5" />
+                                    <label for="star-5" title="Оценка «5»"></label>
+                                    <input type="radio" id="star-4" name="rating" value="4" />
+                                    <label for="star-4" title="Оценка «4»"></label>
+                                    <input type="radio" id="star-3" name="rating" value="3" />
+                                    <label for="star-3" title="Оценка «3»"></label>
+                                    <input type="radio" id="star-2" name="rating" value="2" />
+                                    <label for="star-2" title="Оценка «2»"></label>
+                                    <input type="radio" id="star-1" name="rating" value="1" />
+                                    <label for="star-1" title="Оценка «1»"></label>
+                                </div>
+                            </div>
                         </div>
+
+
                         <div class="os-review__question">
                             <div class="os-review__text">Какие товары/услуги вы хотели бы видеть в нашем ассортименте?
                             </div>
@@ -111,7 +141,7 @@
     @@include('html/footer-cart.html')
     @@include('html/components/action-panel.html')
 
-    <script src="/js/checkout.js"></script>
+
 
 </body>
 
