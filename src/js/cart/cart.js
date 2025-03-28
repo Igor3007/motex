@@ -13,10 +13,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 json: [],
                 isPageLoading: true,
                 need_cutter: false,
+                cutter_desc: '',
                 isOpenSaleDropdown: false,
                 discounts: [],
                 promocode: '',
                 isLoadPromodode: false,
+                isLoadOrder: false,
                 removeList: [],
                 fileArray: [],
                 isSelectAllCheckbox: false,
@@ -82,6 +84,57 @@ document.addEventListener('DOMContentLoaded', function (event) {
                             this.isPageLoading = false
                         })
                 },
+
+                sendOrder() {
+                    let formData = new FormData()
+
+                    formData.append('products', JSON.stringify(this.json))
+                    formData.append('weight', this.$options.filters.convertWeight(this.getTotalWeight))
+                    formData.append('discounts', JSON.stringify(this.discounts))
+                    formData.append('discountsCost', this.$options.filters.numberWithSpaces(this.getTotalDiscount))
+                    formData.append('totalPrice', this.$options.filters.numberWithSpaces(this.getTotalPriceOrder))
+                     
+
+                    if(this.need_cutter) {
+                         let data = [
+                            {
+                                services: 'Нужен распил',
+                                services_desc: this.cutter_desc
+                            }
+                         ]
+
+                         formData.append('services', JSON.stringify(data))
+                    }
+
+                    if(this.fileArray.length) {
+                        this.fileArray.forEach(file => {
+                            formData.append('files[]', file)
+                        })
+                    }
+
+                    console.log(formData)
+
+                    let xhr = new XMLHttpRequest();
+
+                    // отслеживаем процесс отправки
+                    xhr.upload.onprogress = function(event) {
+                      console.log(`Отправлено ${event.loaded} из ${event.total}`);
+                    };
+                  
+                    // Ждём завершения: неважно, успешного или нет
+                    xhr.onloadend = function() {
+                      if (xhr.status == 200) {
+                        console.log("Успех");
+                      } else {
+                        console.log("Ошибка " + this.status);
+                      }
+                    };
+                  
+                    xhr.open("POST", "/article/xmlhttprequest/post/upload");
+                    xhr.send(formData);
+
+                },
+
 
                 getPrice: function (item) {
                     let totalPrice = this.getPriceTotal(item)

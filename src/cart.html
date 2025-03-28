@@ -198,7 +198,7 @@
                                     </div>
                                     <div class="cart-cut__form">
                                         <div class="cart-cut__text">
-                                            <textarea placeholder="Опишите требования к распилу в свободной форме"
+                                            <textarea v-model="cutter_desc" placeholder="Опишите требования к распилу в свободной форме"
                                                 maxlength="300"></textarea>
                                         </div>
                                         <div class="file-formbar">
@@ -224,7 +224,7 @@
                                                         10</span>
                                                 </label>
                                             </div>
-                                            <div class="cart-cut__note">Точную стоимость услуги охвучит менеджер
+                                            <div class="cart-cut__note">Точную стоимость услуги озвучит менеджер
                                                 <br>
                                                 после расчёта стоимости</div>
                                         </div>
@@ -241,9 +241,8 @@
                     <div class="cart__aside">
                         <div class="cart-aside">
                             <div class="cart-aside__make">
-                                <div class="cart-aside__btn">
-                                    <a href="/pages/checkout.html"><button class="btn-blue">Перейти к
-                                            оформлению</button></a>
+                                <div class="cart-aside__btn"> 
+                                    <button @click="sendOrder()" :class="{'is-loading': isLoadOrder}" class="btn-blue">Перейти к оформлению</button>
                                 </div>
                                 <div class="cart-aside__text">Доступные способы оплаты и доставки можно выбрать
                                     при оформлении заказа.</div>
@@ -254,7 +253,7 @@
                                     <div class="mobile-make-total">{{json.length}}
                                         {{ declination(json.length, ['товар','товара','товаров']) }} •
                                         {{getTotalWeight|convertWeight}}</div>
-                                    <div class="mobile-make-checkot">К оформлению</div>
+                                    <div class="mobile-make-checkot" :class="{'is-loading': isLoadOrder}" @click="sendOrder()">К оформлению</div>
                                     <div class="mobile-make-cost">
                                         <strong>{{getTotalPriceOrder|numberWithSpaces}} ₽</strong>
                                         <span>{{getCostProducts|numberWithSpaces}} ₽</span> </div>
