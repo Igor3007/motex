@@ -7,7 +7,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
         let vueApp = new Vue({
             el: '#vuecart',
             data: {
-
+                config: {
+                    timer: 10000
+                },
                 json: [],
                 isPageLoading: true,
                 need_cutter: false,
@@ -33,8 +35,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
             filters: {
                 numberWithSpaces: function (value) {
                     if (!value) return '';
+                    value = Number(value).toFixed(2)
                     value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
-                    return value.toString(2)
+                    return value
                 },
                 formatDate: function (value) {
                     if (!value) return '';
@@ -66,6 +69,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
                         })
                         .then((response) => response.json())
                         .then((data) => {
+
+                            data.products.forEach(item => {
+                                item['timer'] = false;
+                                item['interval'] = false;
+                                item['timerMS'] = Number(this.config.timer);
+                            })
+
                             this.json = data.products
                             this.pricelist = data.services
                             this.getPromotion()
@@ -102,10 +112,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     let total = e.target.value;
                     total = Number(total.replace(/\D/g, ''));
 
-                    if (total == 0 && total <= 1) total = 1
+                    //if (total == 0 && total <= 1) total = 1
                     if (total > 999) total = 999
 
-                    return this.json[index].total = total;
+                    if (total) {
+                        this.json[index].total = total;
+                    }
+
+
                 },
 
                 counter_blur(index, e) {
@@ -123,9 +137,32 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                 },
 
+                declination: function (value, words) {
+                    value = Number(value);
+                    value = Math.abs(value) % 100;
+                    var num = value % 10;
+                    if (value > 10 && value < 20) return words[2];
+                    if (num > 1 && num < 5) return words[1];
+                    if (num == 1) return words[0];
+                    return words[2];
+                },
+
+                toggleDotsMenu(event) {
+                    event.target.closest('.dots-menu').classList.toggle('is-open')
+                    const clickOnOut = (e) => {
+                        if(!e.target.closest('.dots-menu')){
+                            event.target.closest('.dots-menu').classList.toggle('is-open', false)
+                            document.removeEventListener('click', clickOnOut)
+                        }
+                    }
+
+                    document.addEventListener('click', clickOnOut)
+                },
+
                 addPromocode() {
                     if (this.promocode) {
-                        if (this.discounts.find(item => item.name == this.promocode)) {
+
+                        if (this.discounts.find(item => item.name == this.promocode) || this.isLoadPromodode) {
                             return alert('Такой промокод уже добавлен')
                         }
 
@@ -146,20 +183,25 @@ document.addEventListener('DOMContentLoaded', function (event) {
                                 this.isLoadPromodode = false;
                                 this.isOpenSaleDropdown = true;
                                 if(data.status) {
+                                    this.isLoadPromodode = false;
+                                    this.isOpenSaleDropdown = true;
                                     this.discounts.push({
                                         name: this.promocode,
-                                        sale: data.sale,
+                                        sale: 2500,
                                     })
+                                    this.promocode = ''
                                 }
                             }) */
 
                         setTimeout(() => {
+
                             this.isLoadPromodode = false;
                             this.isOpenSaleDropdown = true;
                             this.discounts.push({
                                 name: this.promocode,
                                 sale: 2500,
                             })
+                            this.promocode = ''
                         }, 2000)
                     }
                 },
@@ -169,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                         for (let i = this.json.length - 1; i >= 0; i--) {
                             if (this.removeList.includes(i)) {
-                                this.json.splice(i, 1);
+                                this.removeItem(i, this.json[i])
                             }
                         }
 
@@ -178,10 +220,50 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     }
                 },
 
-                removeItem(i) {
-                    if (confirm('Удалить товар ?')) {
-                        this.json.splice(i, 1);
+                removeItem(index, item) {
+
+                    const removeQuery = (item) => {
+                        /* fetch('/endpoint', {
+                                method: 'POST',
+                                body: JSON.stringify({id: item.id}),
+                                headers: {
+                                    'Content-type': 'application/json; charset=UTF-8',
+                                },
+                            })
+                            .then((response) => response.json())
+                            .then((data) => {
+                                if (data.status) console.log('product remove success')
+                            }) */
                     }
+
+                    item['timer'] = setTimeout(() => {
+                        clearTimeout(item.timer)
+                        clearTimeout(item.interval)
+
+                        this.json.forEach((el, i) => {
+                            if (el.id == item.id) {
+                                this.json.splice(i, 1);
+                                removeQuery(item)
+                            }
+                        })
+
+                    }, this.config.timer)
+
+                    item['interval'] = setInterval(() => {
+                        item['timerMS'] -= 1000
+                    }, 1000)
+
+                },
+
+                revertRemoveProduct(id) {
+                    this.json.forEach((item, index) => {
+                        if (item.id == id) {
+                            clearTimeout(this.json[index].timer)
+                            clearTimeout(this.json[index].interval)
+                            this.json[index].timer = false
+                            this.json[index].timerMS = this.config.timer
+                        }
+                    })
                 },
 
                 changeFileInput(e) {
@@ -200,6 +282,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                     for (let key in files) {
 
+                        let errlog = [];
+
                         if (!mimeType.includes(files[key].type)) {
                             alert('Не поддерживаемый тип файла ' + files[key].name)
                             break;
@@ -210,7 +294,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
                             break;
                         }
 
-                        if (this.fileArray.length < 10) {
+                        for (let fileKey in this.fileArray) {
+                            if (this.fileArray[fileKey].size == files[key].size) {
+                                alert('Такой файл уже добавлен')
+                                errlog.push(files[key].name)
+                                break;
+                            }
+                        }
+
+                        if (this.fileArray.length < 10 && !errlog.length) {
                             this.fileArray.push(files[key])
                         }
 
@@ -230,7 +322,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     this.$refs.oneclick.open()
                 },
 
-                product_towishlist(e) {
+                product_towishlist(index, product) {
+
+                    let data = {
+                        id: product.id
+                    }
+
+                    this.json[index]['wishlist'] = !this.json[index]['wishlist']
+
                     /* fetch('/endpoint', {
                                 method: 'POST',
                                 body: JSON.stringify(data),
@@ -242,15 +341,26 @@ document.addEventListener('DOMContentLoaded', function (event) {
                             .then((data) => {
                                  
                                 if(data.status) {
-                                    e.target.closest('div').classList.toggle('is-active', true)
+                                   this.json[index]['wishlist'] = true
                                 }else{
-                                
+                                   this.json[index]['wishlist'] = false
                                 }
                             }) */
+                },
 
-                    e.target.closest('div').classList.toggle('is-active', true)
+                formatMillisecondsToMMSS(ms) {
+                    const milliseconds = Number(ms);
+                    const totalSeconds = Math.floor(milliseconds / 1000);
+                    const minutes = Math.floor(totalSeconds / 60);
+                    const seconds = totalSeconds % 60;
+                    const formattedMinutes = String(minutes).padStart(2, '0');
+                    const formattedSeconds = String(seconds).padStart(2, '0');
+                    return `${formattedMinutes}:${formattedSeconds}`;
+                },
+
+                addPromocodeOnEnter(e) {
+                    if (e.code == 'Enter') this.addPromocode()
                 }
-
 
             },
 
@@ -289,8 +399,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 },
 
                 getTotalPriceOrder() {
-                    return this.getCostProducts - this.getTotalDiscount
-                }
+
+                    let total = Number(this.getCostProducts - this.getTotalDiscount).toFixed(2)
+
+                    return total > 0 ? total : '0'
+                },
+
+
             },
 
             watch: {
@@ -308,7 +423,18 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     } else {
                         this.removeList = []
                     }
+                },
+
+                need_cutter() {
+                    if (this.need_cutter) {
+                        window.scrollToTargetAdjusted({
+                            elem: this.$el.querySelector('.cart__cutter'),
+                            offset: window.globalConfig.hgtheader
+                        })
+                    }
                 }
+
+
             }
         })
 

@@ -45,8 +45,8 @@
 
                         <div class="cart__list">
 
-                            <div v-for="(product,index) in productList" class="cart__item">
-                                <div class="cart__item">
+                            <div v-for="(product,index) in productList" :key="product.id" class="cart__item">
+                                <div class="cart__item" :class="{'is-timer': product.timer}">
                                     <div class="cart-item">
                                         <div class="cart-item__check">
                                             <label class="checkbox">
@@ -70,11 +70,12 @@
                                                 </div>
                                                 <div class="cart-item__action">
                                                     <div class="cart-item__wishlist"
-                                                        @click="product_towishlist($event)">
+                                                        :class="{'is-active': product.wishlist}"
+                                                        @click="product_towishlist(index, product)">
                                                         <i class="icon"
                                                             style="background-image: url('/images/icons/ic_elect.svg')"></i>
                                                     </div>
-                                                    <div class="cart-item__remove" @click="removeItem(index)">
+                                                    <div class="cart-item__remove" @click="removeItem(index, product)">
                                                         <i class="icon"
                                                             style="background-image: url('/images/icons/ic_trash.svg')"></i>
                                                     </div>
@@ -106,6 +107,38 @@
                                                 <div class="cart-item__cost-unit">780р.шт</div>
                                             </div>
                                         </div>
+                                        <div class="cart-item__remove-timer">
+                                            <div class="remove-timer" v-if="product.timer"
+                                                @click="revertRemoveProduct(product.id)">
+                                                <div class="remove-timer__icon"> <svg class="lh-gauge"
+                                                        viewBox="0 0 120 120">
+                                                        <circle class="lh-gauge-base" r="56" cx="60" cy="60"
+                                                            stroke-width="5">
+                                                        </circle>
+                                                        <circle class="lh-gauge-arc" r="56" cx="60" cy="60"
+                                                            stroke-width="5"
+                                                            style="transform: rotate(-87.9537deg); stroke-dasharray: 351.154px, 351.858px;">
+                                                        </circle>
+                                                    </svg></div>
+                                                <div class="remove-timer__text">
+                                                    Отменить удаление
+                                                    (<span>{{ formatMillisecondsToMMSS(product.timerMS) }}</span>)
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="cart-item__dotmenu">
+                                            <div class="dots-menu" @click="toggleDotsMenu($event)">
+                                                <div class="dots-menu__ic"></div>
+                                                <div class="dots-menu__list">
+                                                    <ul>
+                                                        <li @click="removeItem(index, product)" >Удалить</li>
+                                                        <li @click="product_towishlist(index, product)" > {{product.wishlist ? 'В избранном' : 'В избранное'}} </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -127,7 +160,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="cart-cut__content" v-if="need_cutter">
+                                <div class="cart-cut__content" v-show="need_cutter">
                                     <div class="cart-cut__adv">
                                         <div class="cutter-adv">
                                             <div class="cutter-adv__list">
@@ -165,8 +198,8 @@
                                     </div>
                                     <div class="cart-cut__form">
                                         <div class="cart-cut__text">
-                                            <textarea
-                                                placeholder="Опишите требования к распилу в свободной форме"></textarea>
+                                            <textarea placeholder="Опишите требования к распилу в свободной форме"
+                                                maxlength="300"></textarea>
                                         </div>
                                         <div class="file-formbar">
                                             <div v-for="file,i in fileArray" :key="file.size+file.name"
@@ -215,6 +248,19 @@
                                 <div class="cart-aside__text">Доступные способы оплаты и доставки можно выбрать
                                     при оформлении заказа.</div>
                             </div>
+
+                            <div class="cart-aside__make-mobile">
+                                <div class="mobile-make">
+                                    <div class="mobile-make-total">{{json.length}}
+                                        {{ declination(json.length, ['товар','товара','товаров']) }} •
+                                        {{getTotalWeight|convertWeight}}</div>
+                                    <div class="mobile-make-checkot">К оформлению</div>
+                                    <div class="mobile-make-cost">
+                                        <strong>{{getTotalPriceOrder|numberWithSpaces}} ₽</strong>
+                                        <span>{{getCostProducts|numberWithSpaces}} ₽</span> </div>
+                                </div>
+                            </div>
+
                             <div class="cart-aside__oneclick">
                                 <button class="btn-gray" @click="openPopupOneClick()">Купить в 1 клик</button>
                             </div>
@@ -227,7 +273,7 @@
                                             <div class="cart-details__value">{{getCostProducts|numberWithSpaces}} ₽
                                             </div>
                                         </div>
-                                        <div class="cart-details__item">
+                                        <div class="cart-details__item" v-if="need_cutter">
                                             <div class="cart-details__name">Услуги (1)</div>
                                             <div class="cart-details__value">после расчёта</div>
                                         </div>
@@ -235,7 +281,8 @@
                                             <div class="cart-details__name">Вес</div>
                                             <div class="cart-details__value">{{getTotalWeight|convertWeight}}</div>
                                         </div>
-                                        <div class="cart-details__item cart-details__item--dropdown"
+                                        <div v-if="getTotalDiscount"
+                                            class="cart-details__item cart-details__item--dropdown"
                                             @click="isOpenSaleDropdown = !isOpenSaleDropdown"
                                             :class="{'is-open':isOpenSaleDropdown}">
                                             <div class="cart-details__name">Скидки</div>
@@ -243,7 +290,7 @@
                                             </div>
                                         </div>
                                         <div class="sale-dropdown" :class="{'is-open':isOpenSaleDropdown}">
-                                            <div v-for="dsc in discounts" class="sale-dropdown__item">
+                                            <div v-for="dsc in discounts" :key="dsc.name" class="sale-dropdown__item">
                                                 <div class="sale-dropdown__name">{{dsc.name}}</div>
                                                 <div class="sale-dropdown__value">— {{dsc.sale|numberWithSpaces}} ₽
                                                 </div>
@@ -252,7 +299,8 @@
                                     </div>
 
                                     <div class="cart-details__input">
-                                        <input type="text" v-model="promocode" placeholder="Промокод">
+                                        <input type="text" v-model="promocode" placeholder="Промокод"
+                                            @keyup="addPromocodeOnEnter($event)">
                                         <span class="icon" v-if="promocode" :class="{'is-loading':isLoadPromodode}"
                                             @click="addPromocode()"
                                             style="background-image: url('/images/icons/ic_in-stock.svg')"></span>
@@ -261,7 +309,8 @@
                                     <div class="cart-details__output">
                                         <div class="cart-output">
                                             <div class="cart-output__title">Итог</div>
-                                            <div class="cart-output__value">{{getTotalPriceOrder}} ₽</div>
+                                            <div class="cart-output__value">{{getTotalPriceOrder|numberWithSpaces}} ₽
+                                            </div>
                                         </div>
                                     </div>
 
@@ -347,16 +396,16 @@
                                     </div>
                                     <form action="#" method="POST">
                                         <div class="popup__form-field">
-                                            <input type="text" id="NAME" required="" placeholder="Имя*">
-                                            <label for="NAME"></label>
+                                            <div class="form">
+                                                <input type="tel" required="" placeholder="Номер телефона">
+                                            </div>
+
                                         </div>
 
                                         <button class="btn-blue">Отправить</button>
 
-                                        <div class="popup__form-field--policy"> Нажимая кнопку «Отправить», я даю
-                                            согласие на <a href="#">получение
-                                                рекламной рассылки</a> и <a href="#">обработку персональных данных</a>
-                                        </div>
+                                        <div class="popup__form-field--policy">Нажимая кнопк «Отправить», я даю согласие
+                                            на обработку персональных данных и согласен с публичной офертой</div>
                                     </form>
                                 </div>
                             </div>
