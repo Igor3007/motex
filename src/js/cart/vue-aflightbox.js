@@ -35,11 +35,13 @@
          },
 
          open() {
-             this.isopen = true
+             this.isopen = true;
+             document.body.classList.toggle('page-hidden', this.isopen)
          },
 
          close() {
              this.isopen = false
+             document.body.classList.toggle('page-hidden', this.isopen)
          }
      }
  })

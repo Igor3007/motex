@@ -1,20 +1,59 @@
 .cart-aside {
 
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+
+    @media screen and (min-width: $w480) {
+        font-size: 16px;
+    }
+
     @media screen and (min-width: $w992) {
         margin-top: -70px;
+    }
+
+    &__cutter {
+        @media screen and (max-width: $w992) {
+            display: none;
+        }
     }
 
     &__cutter,
     &__details,
     &__make {
-        padding: 27px;
+        padding: 26px 16px;
         border: 1px solid var(--black-10);
         box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.13);
         border-radius: 8px;
         margin-bottom: 12px;
+
+        @media screen and (min-width: $w480) {
+            padding: 27px;
+        }
+    }
+
+    &__make {
+        @media screen and (max-width: $w992) {
+            display: none;
+        }
+
+        &-mobile {
+            @media screen and (min-width: $w992) {
+                display: none;
+            }
+
+
+
+        }
     }
 
     &__details {
+
+        @media screen and (max-width: $w992) {
+            order: -1;
+            margin-top: 30px;
+        }
+
         @media screen and (min-width: $w1200) {
             padding-top: 31px;
             padding-bottom: 31px;
@@ -51,10 +90,97 @@
     }
 
     &__title {
-        font-size: 20px;
+        font-size: 14px;
         font-weight: 600;
         padding-bottom: 16px;
 
+        @media screen and (min-width: $w480) {
+            font-size: 20px;
+        }
+
+    }
+}
+
+$offset: calc((100vw - 704px)/2);
+$offset2: calc((100vw - 540px)/2);
+$offset3: calc((100vw - 444px)/2);
+
+.mobile-make {
+    background: linear-gradient(90deg, #19BEFF 0%, #19BEFF 100%);
+    position: fixed;
+    bottom: 80px;
+    z-index: 5;
+    left: 16px;
+    right: 16px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    align-items: center;
+    padding: 5px 1em;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+
+    &>div {
+        flex-grow: 1;
+    }
+
+    @media screen and (min-width: $w480) {
+        left: $offset3;
+        right: $offset3;
+        height: 48px;
+    }
+
+    @media screen and (min-width: $w576) {
+        left: $offset2;
+        right: $offset2;
+        font-size: 14px;
+    }
+
+    @media screen and (min-width: $w760) {
+        left: $offset;
+        right: $offset;
+        font-size: 16px;
+
+    }
+
+    & strong {
+        font-weight: 500;
+    }
+
+    &:hover {
+        background: linear-gradient(90deg, #19BEFF 0%, #3C82D2 100%);
+    }
+
+}
+
+.mobile-make-total {
+    @media screen and (max-width: $w480) {
+        font-size: 10px;
+    }
+}
+
+.mobile-make-cost {
+    text-align: right;
+
+    @media screen and (max-width: $w480) {
+        font-size: 10px;
+    }
+
+    & span {
+        text-decoration: line-through;
+        margin-left: 1em;
+        color: var(--black-10);
+    }
+}
+
+.mobile-make-checkot {
+    text-align: center;
+    font-weight: 500;
+
+    @media screen and (max-width: $w480) {
+        font-size: 12px;
     }
 }
 
@@ -63,15 +189,23 @@
 
 
     &__title {
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 600;
         padding-bottom: 11px;
+
+        @media screen and (min-width: $w480) {
+            font-size: 20px;
+        }
     }
 
     &__item {
         display: flex;
         justify-content: space-between;
+        padding: 8px 0;
+
+        @media screen and (min-width: $w480) {
         padding: 10px 0;
+        }
     }
 
     &__value {
@@ -194,12 +328,16 @@
 .cart-cutter {
 
     &__head {
-        font-size: 20px;
+        font-size: 14px;
         font-weight: 600;
         display: flex;
         align-items: center;
         gap: 10px;
         margin-bottom: 10px;
+
+        @media screen and (min-width: $w480) {
+            font-size: 20px;
+        }
     }
 
     &__text {

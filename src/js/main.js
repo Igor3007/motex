@@ -10,10 +10,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.documentElement.style.setProperty('--vh', vh + 'px');
         document.documentElement.style.setProperty('--hgt-header', hgtheader + 'px');
+
+        window.globalConfig = {
+            vh,
+            hgtheader
+        }
     }
+
+    
 
     window.addEventListener('load', css_variable)
     window.addEventListener('resize', css_variable)
+
+    /* =================================================
+    smooth scroll
+    ================================================= */
+
+    window.scrollToTargetAdjusted = function (params) {
+
+        let element = typeof params.elem == 'string' ? document.querySelector(params.elem) : params.elem
+        let elementPosition = element.getBoundingClientRect().top + window.scrollY
+
+        let offsetPosition = elementPosition
+        offsetPosition -= (params.offset ? params.offset : 0)
+
+        window.scrollTo({
+            top: Number(offsetPosition),
+            behavior: "smooth"
+        });
+    }
 
     /* =========================================
     Time toggle tooltip
@@ -240,9 +265,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 767.98: {
                     gap: 16,
                     fixedWidth: '200px',
+                    arrows: true,
                 },
                 1439.98: {
-                    arrows: true,
+                    
                     perPage: 6,
                     perMove: 1,
                 },
