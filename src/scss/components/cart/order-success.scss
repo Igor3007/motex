@@ -1,5 +1,5 @@
 .os-details {
-    padding: 16px;
+    padding: 22px 16px;
     background-color: var(--black-5);
     margin-bottom: 12px;
     border-radius: 8px;
@@ -11,12 +11,21 @@
 
     &__main {
         padding-left: 16px;
+
+        @media screen and (min-width: $w992) {
+            padding-left: 20px;
+        }
     }
 
     &__title {
         font-size: 14px;
         font-weight: 700;
         padding-bottom: 8px;
+
+        @media screen and (min-width: $w992) {
+            padding-bottom: 24px;
+            padding-top: 8px;
+        }
 
         @media screen and (min-width: $w576) {
             font-size: 20px;
@@ -38,6 +47,10 @@
 
         margin-top: 6px;
 
+        @media screen and (min-width: $w992) {
+            margin-top: 0;
+        }
+
         & i {
             width: 24px;
             height: 24px;
@@ -54,17 +67,25 @@
 
 .order-success {
 
-    max-width: 632px;
+    max-width: 712px;
     margin: 0 auto;
 
+    @media screen and (min-width: $w1200) {
+        margin-top: -70px;
+    }
+
     &__buttons {
-        padding: 27px;
+        padding: 22px 16px;
         background-color: var(--black-5);
         margin-bottom: 12px;
         border-radius: 8px;
         display: flex;
         justify-content: space-between;
         gap: 12px;
+
+        @media screen and (min-width: $w576) {
+            padding: 27px;
+        }
 
         & a {
             width: 50%;
@@ -77,10 +98,14 @@
 }
 
 .os-review {
-    padding: 27px;
+    padding: 22px 16px;
     background-color: var(--black-5);
     margin-bottom: 12px;
     border-radius: 8px;
+
+    @media screen and (min-width: $w576) {
+        padding: 27px;
+    }
 
     &__title {
         font-size: 14px;
@@ -89,6 +114,7 @@
 
         @media screen and (min-width: $w576) {
             font-size: 20px;
+            padding-bottom: 30px;
         }
 
     }
@@ -96,12 +122,60 @@
     &__question {
         font-size: 10px;
         padding-bottom: 12px;
+        display: flex;
+        gap: 12px;
+
 
         @media screen and (min-width: $w576) {
             font-size: 14px;
             line-height: 142%;
             color: var(--black-base)
         }
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+
+        &--input {
+            @media screen and (max-width: $w576) {
+                flex-wrap: wrap;
+
+                & .os-review {
+                    &__input {
+                        width: 100%;
+
+                        & input {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__text {
+        width: 70%;
+        line-height: 160%;
+
+        @media screen and (min-width: $w760) {
+            line-height: 140%;
+        }
+
+        @media screen and (min-width: $w576) {
+            width: 50%;
+        }
+    }
+
+    &__stars {
+        width: 30%;
+
+        @media screen and (min-width: $w576) {
+            width: 50%;
+        }
+    }
+
+    &__input {
+        flex-grow: 1;
     }
 }
 
@@ -116,7 +190,7 @@
 
     & label {
 
-        padding-right: 5px;
+        padding-right: 8px;
         cursor: pointer;
 
         &:nth-child(2) {
@@ -138,6 +212,22 @@
         &:nth-child(10) {
             order: 1;
         }
+
+        & span {
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+            filter: grayscale(1);
+            background-size: contain;
+            opacity: 0.4;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEwLjcyNiAxLjA2MmwyLjQxIDQuODg2YS44MDguODA4IDAgMDAuNjEuNDQybDUuMzkyLjc4NGEuODA5LjgwOSAwIDAxLjQ0OSAxLjM3OGwtMy45MDIgMy44MDMtLjAwMS4wMDFhLjgwNy44MDcgMCAwMC0uMjMyLjcxNWwuOTIyIDUuMzdhLjgwOS44MDkgMCAwMS0xLjE3NC44NTJsLTQuODIzLTIuNTM0di0uMDAxYS44MTIuODEyIDAgMDAtLjc1MiAwbC00LjgyMyAyLjUzNmEuODA5LjgwOSAwIDAxLTEuMTczLS44NTJsLjkyMi01LjM3MWEuODA4LjgwOCAwIDAwLS4yMzMtLjcxNUwuNDE2IDguNTUyYS44MDguODA4IDAgMDEuNDQ4LTEuMzc4bDUuMzkyLS43ODRhLjgwNy44MDcgMCAwMC42MDktLjQ0MmwyLjQxLTQuODg2YS44MDguODA4IDAgMDExLjQ1IDB6IiBmaWxsPSIjMTlCRUZGIi8+PC9zdmc+);
+
+            @media screen and (min-width: $w576) {
+                width: 20px;
+                height: 20px;
+            }
+
+        }
     }
 
     &:not(:checked)>label svg {
@@ -148,21 +238,24 @@
 
         display: none;
 
-        &:checked~label svg {
-            fill: var(--red)
+        &:checked~label span {
+            filter: grayscale(0);
+            opacity: 1;
         }
 
-        &:checked+label:hover svg,
-        &:checked+label:hover~label svg,
-        &:checked~label:hover svg,
-        &:checked~label:hover~label svg {
-            fill: var(--red);
+        &:checked+label:hover span,
+        &:checked+label:hover~label span,
+        &:checked~label:hover span,
+        &:checked~label:hover~label span {
+            filter: grayscale(0);
+            opacity: 1;
         }
     }
 
-    &:not(:checked)>label:hover svg,
-    &:not(:checked)>label:hover~label svg {
-        fill: var(--red);
+    &:not(:checked)>label:hover span,
+    &:not(:checked)>label:hover~label span {
+        filter: grayscale(0);
+        opacity: 1;
     }
 
 }

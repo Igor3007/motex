@@ -8,7 +8,7 @@
     @@include('html/header-cart.html')
 
     <main class="page">
-        <section class="cart cart--checkout" id="vuecheckout">
+        <section class="cart cart--checkout" id="vuecheckout" v-cloak>
             <div class="_container">
                 <div class="cart__wrp">
                     <div class="cart__content">
@@ -102,8 +102,8 @@
                                                     <div class="input--suggest">
                                                         <input @keyup="getSuggestFromYmaps($event)"
                                                             @blur="blurSuggest($event)" @focus="focusSuggest($event)"
-                                                            type="text" placeholder="Улица, дом*"
-                                                            v-model="addressDelivery">
+                                                            type="text" placeholder="Улица, дом"
+                                                            v-model="addressDelivery" required maxlength="60">
 
                                                         <ul class="suggest-list"
                                                             v-if="isOpenSuggest && suggestArray.length">
@@ -117,12 +117,20 @@
                                                 </div>
                                             </div>
                                             <div class="form__item form__item--four">
-                                                <div class="form__subitem"><input type="text" placeholder="Подъезд">
+                                                <div class="form__subitem">
+                                                    <input v-model="entranceDelivery" type="text" placeholder="Подъезд"
+                                                        maxlength="60">
                                                 </div>
-                                                <div class="form__subitem"><input type="text" placeholder="Кв./офис">
+                                                <div class="form__subitem">
+                                                    <input v-model="officeDelivery" type="text" placeholder="Кв./офис"
+                                                        maxlength="60">
                                                 </div>
-                                                <div class="form__subitem"><input type="text" placeholder="Этаж"></div>
-                                                <div class="form__subitem"><input type="text" placeholder="Домофон">
+                                                <div class="form__subitem">
+                                                    <input v-model="floorDelivery" type="text" placeholder="Этаж"
+                                                        maxlength="60"></div>
+                                                <div class="form__subitem">
+                                                    <input v-model="intercomDelivery" type="text" placeholder="Домофон"
+                                                        maxlength="60">
                                                 </div>
                                             </div>
                                             <div class="form__item">
@@ -142,15 +150,18 @@
                                 <div class="cart-customer__form">
                                     <div class="form">
                                         <div class="form__item">
-                                            <div class="form__subitem"><input type="text" placeholder="Имя получателя"
-                                                    required>
+                                            <div class="form__subitem">
+                                                <input type="text" v-model="recipient_name" placeholder="Имя получателя"
+                                                    required maxlength="60">
                                             </div>
-                                            <div class="form__subitem"><input type="text" placeholder="Номер телефона"
-                                                    required>
+                                            <div class="form__subitem">
+                                                <input type="text" v-model="recipient_phone"
+                                                    placeholder="Номер телефона" required maxlength="60">
                                             </div>
                                         </div>
                                         <div class="form__item">
-                                            <div class="form__subitem"><input type="email" placeholder="Email @">
+                                            <div class="form__subitem"><input type="email" placeholder="Email @"
+                                                    maxlength="60">
                                             </div>
                                         </div>
                                         <div class="form__note">
@@ -257,7 +268,8 @@
                             <div class="cart-order">
                                 <div class="cart-order__wrp">
                                     <div class="cart-order__title">В Вашем заказе</div>
-                                    <div class="cart-order__desc"> 86 товаров • 1110 кг • 15 м3 </div>
+                                    <div class="cart-order__desc"> {{products.length}} товаров •
+                                        {{getTotalWeight|convertWeight}} • 15 м3 </div>
                                     <div class="cart-order__list">
                                         <div v-for="item in products" class="cart-order__item">
                                             <div class="cart-order__picture">
@@ -266,11 +278,11 @@
                                                 </a>
                                             </div>
                                             <div class="cart-order__cost">
-                                                {{item.price.rub.unit}}{{item.price.rub.currency}}
+                                                {{item.price.rub.unit*item.total}}{{item.price.rub.currency}}
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="cart-order__note">Способ получения: Самовывоз</div>
+                                    <div class="cart-order__note">Способ получения: {{deliveryType[receipt_type]}}</div>
                                 </div>
                             </div>
                         </div>
@@ -278,52 +290,88 @@
                     </div>
                     <div class="cart__aside">
                         <div class="cart-aside">
-                            <div class="cart-aside__make">
+                            <div class="cart-aside__make cart-aside__make--checkout">
                                 <div class="cart-aside__btn">
-                                    <a href="/"><button class="btn-blue" disabled>Оформить заказ</button></a>
+                                    <button @click="sendOrder()" type="button" :disabled="isValidationOrder"
+                                        :class="{'is-loading': isLoadOrder}" class="btn-blue">Оформить заказ</button>
                                 </div>
-                                <div class="cart-aside__text">Доступные способы оплаты и доставки можно выбрать
-                                    при оформлении заказа.</div>
+                                <div class="cart-aside__text" v-if="isValidationOrder">
+                                    <div v-html="errorLog"></div>
+                                </div>
                             </div>
+
+                            <div class="cart-aside__make-mobile">
+                                <div class="mobile-make">
+                                    <div class="mobile-make-total">{{products.length}}
+                                        {{ declination(products.length, ['товар','товара','товаров']) }}
+                                        •
+                                        {{getTotalWeight|convertWeight}}</div>
+                                    <div class="mobile-make-checkot" :class="{'is-loading': isLoadOrder}"
+                                        @click="sendOrder()">
+                                        К оформлению</div>
+                                    <div class="mobile-make-cost">
+                                        <strong>{{getTotalPriceOrder|numberWithSpaces}} ₽</strong>
+                                        <span>{{getCostProducts|numberWithSpaces}} ₽</span> </div>
+                                </div>
+                            </div>
+
                             <div class="cart-aside__oneclick">
-                                <button class="btn-gray">Купить в 1 клик</button>
+                                <button class="btn-gray" @click="openPopupOneClick()">Купить в 1
+                                    клик</button>
                             </div>
                             <div class="cart-aside__details">
                                 <div class="cart-details">
                                     <div class="cart-details__title">Ваша корзина</div>
                                     <div class="cart-details__prop">
                                         <div class="cart-details__item">
-                                            <div class="cart-details__name">Товары (86)</div>
-                                            <div class="cart-details__value">119 809 ₽</div>
+                                            <div class="cart-details__name">Товары
+                                                ({{products.length}})</div>
+                                            <div class="cart-details__value">
+                                                {{getCostProducts|numberWithSpaces}} ₽
+                                            </div>
                                         </div>
-                                        <div class="cart-details__item">
+                                        <div class="cart-details__item" v-if="need_cutter">
                                             <div class="cart-details__name">Услуги (1)</div>
                                             <div class="cart-details__value">после расчёта</div>
                                         </div>
                                         <div class="cart-details__item">
                                             <div class="cart-details__name">Вес</div>
-                                            <div class="cart-details__value">1 110 кг</div>
+                                            <div class="cart-details__value">
+                                                {{getTotalWeight|convertWeight}}</div>
                                         </div>
-                                        <div class="cart-details__item cart-details__item--dropdown">
+                                        <div v-if="getTotalDiscount"
+                                            class="cart-details__item cart-details__item--dropdown"
+                                            @click="isOpenSaleDropdown = !isOpenSaleDropdown"
+                                            :class="{'is-open':isOpenSaleDropdown}">
                                             <div class="cart-details__name">Скидки</div>
-                                            <div class="cart-details__value">4 392 ₽</div>
+                                            <div class="cart-details__value">
+                                                {{getTotalDiscount|numberWithSpaces}} ₽
+                                            </div>
                                         </div>
-                                        <div class="sale-dropdown">
-                                            <div class="sale-dropdown__item">
-                                                <div class="sale-dropdown__name">Акция</div>
-                                                <div class="sale-dropdown__value">— 4 392 ₽</div>
+                                        <div class="sale-dropdown" :class="{'is-open':isOpenSaleDropdown}">
+                                            <div v-for="dsc in discounts" :key="dsc.name" class="sale-dropdown__item">
+                                                <div class="sale-dropdown__name">{{dsc.name}}</div>
+                                                <div class="sale-dropdown__value">—
+                                                    {{dsc.sale|numberWithSpaces}} ₽
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="cart-details__input">
-                                        <input type="text" placeholder="Промокод">
+                                        <input type="text" v-model="promocode" placeholder="Промокод"
+                                            @keyup="addPromocodeOnEnter($event)" maxlength="20">
+                                        <span class="icon" v-if="promocode" :class="{'is-loading':isLoadPromocode}"
+                                            @click="addPromocode()"
+                                            style="background-image: url('/images/icons/ic_in-stock.svg')"></span>
                                     </div>
 
                                     <div class="cart-details__output">
                                         <div class="cart-output">
                                             <div class="cart-output__title">Итог</div>
-                                            <div class="cart-output__value">115 470 ₽</div>
+                                            <div class="cart-output__value">
+                                                {{getTotalPriceOrder|numberWithSpaces}} ₽
+                                            </div>
                                         </div>
                                     </div>
 
@@ -344,8 +392,9 @@
                                         </div>
                                     </div>
                                     <div class="cart-cutter__text">
-                                        У вас в корзине есть товары, для которых мы можем произвести распил.
-                                        <a href="#">Смотреть цены.</a>
+                                        У вас в корзине есть товары, для которых мы можем
+                                        произвести распил.
+                                        <a href="#" @click="openPopupPrice()">Смотреть цены.</a>
                                     </div>
                                 </div>
                             </div>
@@ -353,7 +402,66 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="cart__load" :class="{'is-loading': isPageLoading}">
+                    @@include('./html/components/spinner.html')
+                </div>
             </div>
+
+
+
+            <af-lightbox ref="popup">
+                <div class="pricelist-cutter">
+                    <div class="pricelist-cutter__wrp">
+                        <div v-for="item in pricelist" :key="item.groupTitle" class="pricelist-cutter__group">
+                            <div class="pricelist-cutter__title">{{item.groupTitle}}</div>
+                            <div class="pricelist-cutter__list">
+                                <div v-for="prop in item.group" :key="prop.title" class="pricelist-cutter__gr">
+                                    <div class="pricelist-cutter__label">{{prop.title}}</div>
+                                    <div class="pricelist-cutter__items">
+                                        <div v-for="row in prop.items" class="pricelist-cutter__row">
+                                            <div class="pricelist-cutter__name">{{row.name}}</div>
+                                            <div class="pricelist-cutter__value">
+                                                <span>{{row.value}}</span>{{row.unit}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </af-lightbox>
+
+            <af-lightbox ref="oneclick">
+                <div class="popup-call">
+                    <div class="popup-call__modal" id="modal-call">
+                        <div class="popup__wrapper">
+                            <div class="popup__body">
+                                <div class="popup__heading">
+                                    <h2>Быстрая покупка</h2>
+                                </div>
+                                <div class="popup__desc">
+                                    Укажите номер телефона и наш менеджер <br> перезвонит для составления заказа
+                                </div>
+                                <form action="#" method="POST">
+                                    <div class="popup__form-field">
+                                        <div class="form">
+                                            <input type="tel" required="" placeholder="Номер телефона" maxlength="40">
+                                        </div>
+
+                                    </div>
+
+                                    <button class="btn-blue">Отправить</button>
+
+                                    <div class="popup__form-field--policy">Нажимая кнопк «Отправить», я даю согласие
+                                        на обработку персональных данных и согласен с публичной офертой</div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </af-lightbox>
         </section>
     </main>
 

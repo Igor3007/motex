@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 isOpenSaleDropdown: false,
                 discounts: [],
                 promocode: '',
-                isLoadPromodode: false,
+                isLoadPromocode: false,
                 isLoadOrder: false,
                 removeList: [],
                 fileArray: [],
@@ -93,20 +93,18 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     formData.append('discounts', JSON.stringify(this.discounts))
                     formData.append('discountsCost', this.$options.filters.numberWithSpaces(this.getTotalDiscount))
                     formData.append('totalPrice', this.$options.filters.numberWithSpaces(this.getTotalPriceOrder))
-                     
 
-                    if(this.need_cutter) {
-                         let data = [
-                            {
-                                services: 'Нужен распил',
-                                services_desc: this.cutter_desc
-                            }
-                         ]
 
-                         formData.append('services', JSON.stringify(data))
+                    if (this.need_cutter) {
+                        let data = [{
+                            services: 'Нужен распил',
+                            services_desc: this.cutter_desc
+                        }]
+
+                        formData.append('services', JSON.stringify(data))
                     }
 
-                    if(this.fileArray.length) {
+                    if (this.fileArray.length) {
                         this.fileArray.forEach(file => {
                             formData.append('files[]', file)
                         })
@@ -117,21 +115,23 @@ document.addEventListener('DOMContentLoaded', function (event) {
                     let xhr = new XMLHttpRequest();
 
                     // отслеживаем процесс отправки
-                    xhr.upload.onprogress = function(event) {
-                      console.log(`Отправлено ${event.loaded} из ${event.total}`);
+                    xhr.upload.onprogress = function (event) {
+                        console.log(`Отправлено ${event.loaded} из ${event.total}`);
                     };
-                  
+
                     // Ждём завершения: неважно, успешного или нет
-                    xhr.onloadend = function() {
-                      if (xhr.status == 200) {
-                        console.log("Успех");
-                      } else {
-                        console.log("Ошибка " + this.status);
-                      }
+                    xhr.onloadend = function () {
+                        if (xhr.status == 200) {
+                            console.log("Успех");
+                        } else {
+                            console.log("Ошибка " + this.status);
+                        }
                     };
-                  
+
                     xhr.open("POST", "/article/xmlhttprequest/post/upload");
                     xhr.send(formData);
+
+                    window.location.href = '/pages/checkout.html'
 
                 },
 
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 toggleDotsMenu(event) {
                     event.target.closest('.dots-menu').classList.toggle('is-open')
                     const clickOnOut = (e) => {
-                        if(!e.target.closest('.dots-menu')){
+                        if (!e.target.closest('.dots-menu')) {
                             event.target.closest('.dots-menu').classList.toggle('is-open', false)
                             document.removeEventListener('click', clickOnOut)
                         }
@@ -215,11 +215,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 addPromocode() {
                     if (this.promocode) {
 
-                        if (this.discounts.find(item => item.name == this.promocode) || this.isLoadPromodode) {
+                        if (this.discounts.find(item => item.name == this.promocode) || this.isLoadPromocode) {
                             return alert('Такой промокод уже добавлен')
                         }
 
-                        this.isLoadPromodode = true;
+                        this.isLoadPromocode = true;
                         let data = {
                             code: this.promocode
                         }
@@ -233,10 +233,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
                             })
                             .then((response) => response.json())
                             .then((data) => {
-                                this.isLoadPromodode = false;
+                                this.isLoadPromocode = false;
                                 this.isOpenSaleDropdown = true;
                                 if(data.status) {
-                                    this.isLoadPromodode = false;
+                                    this.isLoadPromocode = false;
                                     this.isOpenSaleDropdown = true;
                                     this.discounts.push({
                                         name: this.promocode,
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                         setTimeout(() => {
 
-                            this.isLoadPromodode = false;
+                            this.isLoadPromocode = false;
                             this.isOpenSaleDropdown = true;
                             this.discounts.push({
                                 name: this.promocode,

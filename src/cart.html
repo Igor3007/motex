@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 @@include('html/head.html', {
-'title': 'Каталог'
+'title': 'Корзина'
 })
 
 <body>
@@ -133,8 +133,9 @@
                                                 <div class="dots-menu__ic"></div>
                                                 <div class="dots-menu__list">
                                                     <ul>
-                                                        <li @click="removeItem(index, product)" >Удалить</li>
-                                                        <li @click="product_towishlist(index, product)" > {{product.wishlist ? 'В избранном' : 'В избранное'}} </li>
+                                                        <li @click="removeItem(index, product)">Удалить</li>
+                                                        <li @click="product_towishlist(index, product)">
+                                                            {{product.wishlist ? 'В избранном' : 'В избранное'}} </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -198,7 +199,8 @@
                                     </div>
                                     <div class="cart-cut__form">
                                         <div class="cart-cut__text">
-                                            <textarea v-model="cutter_desc" placeholder="Опишите требования к распилу в свободной форме"
+                                            <textarea v-model="cutter_desc"
+                                                placeholder="Опишите требования к распилу в свободной форме"
                                                 maxlength="300"></textarea>
                                         </div>
                                         <div class="file-formbar">
@@ -241,8 +243,9 @@
                     <div class="cart__aside">
                         <div class="cart-aside">
                             <div class="cart-aside__make">
-                                <div class="cart-aside__btn"> 
-                                    <button @click="sendOrder()" :class="{'is-loading': isLoadOrder}" class="btn-blue">Перейти к оформлению</button>
+                                <div class="cart-aside__btn">
+                                    <button @click="sendOrder()" :class="{'is-loading': isLoadOrder}"
+                                        class="btn-blue">Перейти к оформлению</button>
                                 </div>
                                 <div class="cart-aside__text">Доступные способы оплаты и доставки можно выбрать
                                     при оформлении заказа.</div>
@@ -253,7 +256,8 @@
                                     <div class="mobile-make-total">{{json.length}}
                                         {{ declination(json.length, ['товар','товара','товаров']) }} •
                                         {{getTotalWeight|convertWeight}}</div>
-                                    <div class="mobile-make-checkot" :class="{'is-loading': isLoadOrder}" @click="sendOrder()">К оформлению</div>
+                                    <div class="mobile-make-checkot" :class="{'is-loading': isLoadOrder}"
+                                        @click="sendOrder()">К оформлению</div>
                                     <div class="mobile-make-cost">
                                         <strong>{{getTotalPriceOrder|numberWithSpaces}} ₽</strong>
                                         <span>{{getCostProducts|numberWithSpaces}} ₽</span> </div>
@@ -300,7 +304,7 @@
                                     <div class="cart-details__input">
                                         <input type="text" v-model="promocode" placeholder="Промокод"
                                             @keyup="addPromocodeOnEnter($event)">
-                                        <span class="icon" v-if="promocode" :class="{'is-loading':isLoadPromodode}"
+                                        <span class="icon" v-if="promocode" :class="{'is-loading':isLoadPromocode}"
                                             @click="addPromocode()"
                                             style="background-image: url('/images/icons/ic_in-stock.svg')"></span>
                                     </div>

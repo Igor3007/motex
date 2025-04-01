@@ -5,7 +5,36 @@
 })
 
 <body>
-    @@include('html/header-cart.html')
+    <header class="header-min">
+
+        <div class="header-min__top">
+            <div class="_container">
+                <div class="header-min__wrp">
+                    <div class="header-min__sl">Оформление заказа</div>
+                    <div class="header-min__back">
+                        <a href="/pages/">
+                            <i class="icon" style="background-image: url('/images/icons/ic_arrow-back.svg')"></i>
+                            Вернуться на главную
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-min__main">
+            <div class="_container">
+                <div class="header-min__row">
+                    <div class="header-min__logo">
+                        <a href="/" aria-label="home">
+                            <i class="icon" style="background-image: url('/images/icons/ic_logo-mtx.svg')"></i>
+                            <span class="c-name">Материалы для любой стройки</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </header>
 
     <main class="page">
         <section class="order-success">
@@ -88,16 +117,16 @@
                             <div class="os-review__text">Насколько удобен был процесс покупки?</div>
                             <div class="os-review__stars">
                                 <div class="star-rating">
-                                    <input type="radio" id="star-5" name="rating" value="5" />
-                                    <label for="star-5" title="Оценка «5»"></label>
-                                    <input type="radio" id="star-4" name="rating" value="4" />
-                                    <label for="star-4" title="Оценка «4»"></label>
-                                    <input type="radio" id="star-3" name="rating" value="3" />
-                                    <label for="star-3" title="Оценка «3»"></label>
-                                    <input type="radio" id="star-2" name="rating" value="2" />
-                                    <label for="star-2" title="Оценка «2»"></label>
-                                    <input type="radio" id="star-1" name="rating" value="1" />
-                                    <label for="star-1" title="Оценка «1»"></label>
+                                    <input type="radio" id="rating-shop-5" name="rating-shop" value="5" />
+                                    <label for="rating-shop-5" title="Оценка «5»"><span></span></label>
+                                    <input type="radio" id="rating-shop-4" name="rating-shop" value="4" />
+                                    <label for="rating-shop-4" title="Оценка «4»"><span></span></label>
+                                    <input type="radio" id="rating-shop-3" name="rating-shop" value="3" />
+                                    <label for="rating-shop-3" title="Оценка «3»"><span></span></label>
+                                    <input type="radio" id="rating-shop-2" name="rating-shop" value="2" />
+                                    <label for="rating-shop-2" title="Оценка «2»"><span></span></label>
+                                    <input type="radio" id="rating-shop-1" name="rating-shop" value="1" />
+                                    <label for="rating-shop-1" title="Оценка «1»"><span></span></label>
                                 </div>
                             </div>
                         </div>
@@ -105,26 +134,26 @@
                             <div class="os-review__text">Были ли у вас трудности при выборе товара?</div>
                             <div class="os-review__stars">
                                 <div class="star-rating">
-                                    <input type="radio" id="star-5" name="rating" value="5" />
-                                    <label for="star-5" title="Оценка «5»"></label>
-                                    <input type="radio" id="star-4" name="rating" value="4" />
-                                    <label for="star-4" title="Оценка «4»"></label>
-                                    <input type="radio" id="star-3" name="rating" value="3" />
-                                    <label for="star-3" title="Оценка «3»"></label>
-                                    <input type="radio" id="star-2" name="rating" value="2" />
-                                    <label for="star-2" title="Оценка «2»"></label>
-                                    <input type="radio" id="star-1" name="rating" value="1" />
-                                    <label for="star-1" title="Оценка «1»"></label>
+                                    <input type="radio" id="star-5" name="rating-selected" value="5" />
+                                    <label for="star-5" title="Оценка «5»"><span></span></label>
+                                    <input type="radio" id="star-4" name="rating-selected" value="4" />
+                                    <label for="star-4" title="Оценка «4»"><span></span></label>
+                                    <input type="radio" id="star-3" name="rating-selected" value="3" />
+                                    <label for="star-3" title="Оценка «3»"><span></span></label>
+                                    <input type="radio" id="star-2" name="rating-selected" value="2" />
+                                    <label for="star-2" title="Оценка «2»"><span></span></label>
+                                    <input type="radio" id="star-1" name="rating-selected" value="1" />
+                                    <label for="star-1" title="Оценка «1»"><span></span></label>
                                 </div>
                             </div>
                         </div>
 
 
-                        <div class="os-review__question">
-                            <div class="os-review__text">Какие товары/услуги вы хотели бы видеть в нашем ассортименте?
+                        <div class="os-review__question os-review__question--input">
+                            <div class="os-review__text">Какие товары/услуги <br> вы хотели бы видеть в нашем ассортименте?
                             </div>
                             <div class="os-review__input">
-                                <div class="form"><input type="text" placeholder="">Перечислите товары</div>
+                                <div class="form"><input type="text" placeholder="Перечислите товары"></div>
                             </div>
                         </div>
                     </div>

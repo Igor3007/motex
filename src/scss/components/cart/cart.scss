@@ -155,7 +155,7 @@ section.cart {
             background: #FFF;
             user-select: none;
             display: inline-block;
-            
+
             transition: .1s ease;
 
             &:after {
@@ -228,12 +228,12 @@ section.cart {
 
         @media screen and (min-width: $w992) {
             width: calc(100% - 320px);
-            padding-right: 32px;
+            padding-right: 16px;
         }
 
         @media screen and (min-width: $w1376) {
             width: calc(100% - 415px);
-            padding-right: 32px;
+            padding-right: 16px;
         }
 
 
@@ -291,9 +291,17 @@ section.cart {
         margin-top: 20px;
 
         @media screen and (min-width: $w480) {
-        margin-top: 30px;
+            margin-top: 30px;
         }
 
+    }
+}
+
+.cart--checkout {
+    & .cart-aside {
+        &__details {
+            margin-top: 0;
+        }
     }
 }
 
@@ -901,31 +909,31 @@ section.cart {
     }
 }
 
-.dots-menu{
+.dots-menu {
     position: relative;
 
     @media screen and (min-width: $w760) {
         display: none;
-    }  
+    }
 
-    &__ic{
-    width: 10px;
-    height: 20px;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    background-position: center;
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMiIgaGVpZ2h0PSIxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMiAxYTEgMSAwIDExLTIgMCAxIDEgMCAwMTIgMHpNMiA2YTEgMSAwIDExLTIgMCAxIDEgMCAwMTIgMHpNMiAxMWExIDEgMCAxMS0yIDAgMSAxIDAgMDEyIDB6IiBmaWxsPSIjMTUxODFBIi8+PC9zdmc+);
+    &__ic {
+        width: 10px;
+        height: 20px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        background-position: center;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMiIgaGVpZ2h0PSIxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMiAxYTEgMSAwIDExLTIgMCAxIDEgMCAwMTIgMHpNMiA2YTEgMSAwIDExLTIgMCAxIDEgMCAwMTIgMHpNMiAxMWExIDEgMCAxMS0yIDAgMSAxIDAgMDEyIDB6IiBmaWxsPSIjMTUxODFBIi8+PC9zdmc+);
     }
 
     &__list {
-         position: absolute;
-         top: 100%;
-         right: 0;
-         background-color: #fff;
-         box-shadow: 0 0 5px 0 #0000002b;
-         display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0 0 5px 0 #0000002b;
+        display: none;
 
-         & li {
+        & li {
             padding: 8px 10px;
             font-size: 13px;
             white-space: nowrap;
@@ -934,13 +942,13 @@ section.cart {
                 background-color: #eee;
                 cursor: pointer;
             }
-         }
+        }
     }
 
     &.is-open {
         & .dots-menu {
-            &__list{
-            display: block;
+            &__list {
+                display: block;
             }
         }
     }

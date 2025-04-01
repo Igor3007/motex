@@ -27,6 +27,10 @@
         }
     }
 
+    &__note {
+        color: var(--black-50);
+    }
+
     &__note,
     &__desc {
         font-size: 12px;

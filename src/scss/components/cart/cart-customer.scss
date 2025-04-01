@@ -13,11 +13,10 @@
     }
 
     &__title {
-        margin-bottom: 16px;
+
         font-size: 14px;
         font-weight: 600;
-
-
+        margin-bottom: 30px;
 
         @media screen and (min-width: $w576) {
             font-size: 20px;
@@ -34,16 +33,35 @@
 
         & .form {
             &__note {
-                padding-top: 24px;
+                padding-top: 0;
+
+                @media screen and (min-width: $w576) {
+                    padding-top: 24px;
+                }
+
+                @media screen and (min-width: $w992) {
+                    padding-top: 13px;
+                }
+
+                & .checkbox {
+                    align-items: flex-start;
+                }
             }
         }
 
         & label.checkbox {
             & .checkbox {
+
+
+
                 &__text {
                     color: var(--black-50);
                     font-size: 14px;
                     line-height: 140%;
+
+                    @media screen and (min-width: $w576) {
+                        font-size: 16px;
+                    }
                 }
 
                 &__elem {

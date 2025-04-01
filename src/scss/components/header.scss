@@ -539,6 +539,10 @@ header {
 
   &__sl {
     font-weight: 600;
+
+    @media screen and (min-width: $w576) {
+      font-size: 16px;
+    }
   }
 
   &__logo {
@@ -560,8 +564,12 @@ header {
   }
 
   &__adv {
+
+    width: 100%;
+
     @media screen and (min-width: $w992) {
       margin-left: auto;
+      width: auto;
     }
   }
 
@@ -600,6 +608,12 @@ header {
     & a {
       display: flex;
       align-items: center;
+      color: var(--black-base);
+
+      @media screen and (min-width: $w576) {
+        font-size: 16px;
+      }
+
 
       &:hover {
         color: var(--accent);
@@ -734,9 +748,17 @@ header {
       color: var(--black-50);
     }
 
+
+
     @media screen and (min-width: $w576) {
       font-size: 14px;
     }
+
+    @media screen and (min-width: $w992) {
+      font-size: 16px;
+    }
+
+
   }
 
 
