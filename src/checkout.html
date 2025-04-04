@@ -135,7 +135,7 @@
                                             </div>
                                             <div class="form__item">
                                                 <div class="form__subitem">
-                                                    <textarea placeholder="Комментарий"></textarea>
+                                                    <textarea placeholder="Комментарий" maxlength="600"></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -301,14 +301,14 @@
                             </div>
 
                             <div class="cart-aside__make-mobile">
-                                <div class="mobile-make">
+                                <div class="mobile-make" :disabled="isValidationOrder">
                                     <div class="mobile-make-total">{{products.length}}
                                         {{ declination(products.length, ['товар','товара','товаров']) }}
                                         •
                                         {{getTotalWeight|convertWeight}}</div>
-                                    <div class="mobile-make-checkot" :class="{'is-loading': isLoadOrder}"
+                                    <div class="mobile-make-checkout" :class="{'is-loading': isLoadOrder}"
                                         @click="sendOrder()">
-                                        К оформлению</div>
+                                        Оформить заказ</div>
                                     <div class="mobile-make-cost">
                                         <strong>{{getTotalPriceOrder|numberWithSpaces}} ₽</strong>
                                         <span>{{getCostProducts|numberWithSpaces}} ₽</span> </div>
@@ -468,6 +468,8 @@
     @@include('html/footer-cart.html')
     @@include('html/components/action-panel.html')
 
+    <script src="/js/top-catalog.js"></script>
+    <script src="/js/main.js"></script>
     <script src="/js/cart/vue-aflightbox.js"></script>
     <script src="/js/cart/checkout.js"></script>
 

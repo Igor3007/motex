@@ -29,9 +29,12 @@ body {
   bottom: 0;
 }
 
+
+
 ._container {
   padding: 0 18px;
   margin: 0 auto;
+
   @media screen and (min-width: 479.98px) {
     max-width: 480px;
   }

@@ -2,15 +2,13 @@
     background: var(--black-5);
     padding: 16px;
     border-radius: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 
     @media screen and (min-width: $w576) {
-        padding: 27px;
+        padding: 32px 27px 27px;
     }
 
-    @media screen and (min-width: $w1440) {
-        padding: 32px 27px;
-    }
+
 
     &__title {
 
@@ -20,7 +18,7 @@
 
         @media screen and (min-width: $w576) {
             font-size: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 24px;
         }
 
         @media screen and (min-width: $w1440) {
@@ -36,7 +34,7 @@
                 padding-top: 0;
 
                 @media screen and (min-width: $w576) {
-                    padding-top: 24px;
+                    padding-top: 17px;
                 }
 
                 @media screen and (min-width: $w992) {

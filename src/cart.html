@@ -256,7 +256,7 @@
                                     <div class="mobile-make-total">{{json.length}}
                                         {{ declination(json.length, ['товар','товара','товаров']) }} •
                                         {{getTotalWeight|convertWeight}}</div>
-                                    <div class="mobile-make-checkot" :class="{'is-loading': isLoadOrder}"
+                                    <div class="mobile-make-checkout" :class="{'is-loading': isLoadOrder}"
                                         @click="sendOrder()">К оформлению</div>
                                     <div class="mobile-make-cost">
                                         <strong>{{getTotalPriceOrder|numberWithSpaces}} ₽</strong>

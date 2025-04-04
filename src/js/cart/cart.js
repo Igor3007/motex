@@ -289,6 +289,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
                             }) */
                     }
 
+                    if (item['timer']) return false
+
                     item['timer'] = setTimeout(() => {
                         clearTimeout(item.timer)
                         clearTimeout(item.interval)
@@ -360,6 +362,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
                         }
 
                     }
+
+                    //очищаем поле после выбора
+                    e.target.value = '';
 
                 },
 

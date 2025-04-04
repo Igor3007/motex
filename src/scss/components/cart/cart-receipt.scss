@@ -2,10 +2,10 @@
     background: var(--black-5);
     padding: 16px;
     border-radius: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 
     @media screen and (min-width: $w576) {
-        padding: 27px;
+        padding: 32px 27px 27px;
     }
 
     @media screen and (min-width: $w1440) {
@@ -19,7 +19,7 @@
 
         @media screen and (min-width: $w576) {
             font-size: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 24px;
         }
 
         @media screen and (min-width: $w1440) {
@@ -28,7 +28,7 @@
     }
 
     &__select {
-        margin-bottom: 16px;
+        margin-bottom: 20px;
 
         @media screen and (min-width: $w1440) {
             margin-bottom: -5px;
@@ -37,6 +37,7 @@
         @media screen and (min-width: $w992) {
             display: flex;
             gap: 16px;
+
         }
     }
 
@@ -58,10 +59,11 @@
 
         display: flex;
         gap: 12px;
-        margin-bottom: 24px;
+        margin-bottom: 20px;
 
         @media screen and (min-width: $w992) {
             width: 64%;
+            margin-bottom: 24px;
         }
 
         & label {
@@ -140,9 +142,16 @@
     &__form {
         & .form {
             &__item {
+
+                @media screen and (max-width: 768px) {
+                    & .form__subitem {
+                        margin-bottom: 15px;
+                    }
+                }
+
                 &--four {
 
-                    @media screen and (max-width: $w760) {
+                    @media screen and (max-width: 768px) {
                         flex-direction: row;
                         flex-wrap: wrap;
                         margin: 0 -8px;
@@ -152,6 +161,7 @@
                         & .form__subitem {
                             width: calc(50% + 0px);
                             padding: 0 8px;
+                            margin-bottom: 15px;
                         }
                     }
                 }

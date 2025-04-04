@@ -7,6 +7,7 @@
 
     @media screen and (min-width: $w576) {
         padding: 27px;
+        margin-bottom: 16px;
     }
 
     &__main {
@@ -21,8 +22,9 @@
         font-size: 14px;
         font-weight: 700;
         padding-bottom: 8px;
+        line-height: 140%;
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: $w760) {
             padding-bottom: 24px;
             padding-top: 8px;
         }
@@ -30,6 +32,7 @@
         @media screen and (min-width: $w576) {
             font-size: 20px;
             font-weight: bold;
+
         }
     }
 
@@ -47,7 +50,7 @@
 
         margin-top: 6px;
 
-        @media screen and (min-width: $w992) {
+        @media screen and (min-width: $w760) {
             margin-top: 0;
         }
 
@@ -67,8 +70,13 @@
 
 .order-success {
 
-    max-width: 712px;
     margin: 0 auto;
+
+
+    @media screen and (min-width: $w992) {
+        max-width: 712px;
+    }
+
 
     @media screen and (min-width: $w1200) {
         margin-top: -70px;
@@ -92,6 +100,13 @@
 
             & button {
                 width: 100%;
+
+                @media screen and (max-width: $w480) {
+                    font-size: 14px;
+                    padding: 9px inherit;
+                    height: 32px;
+                }
+
             }
         }
     }
@@ -100,17 +115,18 @@
 .os-review {
     padding: 22px 16px;
     background-color: var(--black-5);
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     border-radius: 8px;
 
     @media screen and (min-width: $w576) {
         padding: 27px;
+        margin-bottom: 12px;
     }
 
     &__title {
         font-size: 14px;
         font-weight: 700;
-        padding-bottom: 8px;
+        padding-bottom: 18px;
 
         @media screen and (min-width: $w576) {
             font-size: 20px;
@@ -176,6 +192,10 @@
 
     &__input {
         flex-grow: 1;
+
+        @media screen and (min-width: $w576) {
+            width: 50%;
+        }
     }
 }
 
