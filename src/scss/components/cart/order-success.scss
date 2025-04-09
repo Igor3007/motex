@@ -25,7 +25,7 @@
         line-height: 140%;
 
         @media screen and (min-width: $w760) {
-            padding-bottom: 24px;
+            padding-bottom: 19px;
             padding-top: 8px;
         }
 
@@ -83,7 +83,7 @@
     }
 
     &__buttons {
-        padding: 22px 16px;
+        padding: 16px 16px;
         background-color: var(--black-5);
         margin-bottom: 12px;
         border-radius: 8px;
@@ -91,8 +91,12 @@
         justify-content: space-between;
         gap: 12px;
 
-        @media screen and (min-width: $w576) {
+        @media screen and (min-width: $w992) {
             padding: 27px;
+        }
+
+        @media screen and (min-width: $w576) {
+            padding: 22px 16px;
         }
 
         & a {
@@ -115,11 +119,16 @@
 .os-review {
     padding: 22px 16px;
     background-color: var(--black-5);
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     border-radius: 8px;
 
     @media screen and (min-width: $w576) {
         padding: 27px;
+        margin-bottom: 16px;
+    }
+
+    @media screen and (min-width: $w992) {
+        padding: 32px 27px;
         margin-bottom: 12px;
     }
 

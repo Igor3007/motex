@@ -26,6 +26,7 @@
 
          @media screen and (min-width: $w576) {
              height: 48px;
+             font-size: 16px;
          }
 
 
@@ -224,12 +225,16 @@
 
      &__subitem {
          flex-grow: 1;
-         margin-bottom: 15px;
+         margin-bottom: 8px;
          margin-right: 0;
          width: 100%;
          display: flex;
          flex-wrap: wrap;
          position: relative;
+
+         @media screen and (min-width: $w576) {
+             margin-bottom: 15px;
+         }
 
          &--leftlabel {
              max-width: 240px;
@@ -259,7 +264,7 @@
          }
 
          @media screen and (min-width: $w760) {
-             padding: 12px 10px;
+             padding: 13px 8px;
              margin-bottom: 0;
          }
      }

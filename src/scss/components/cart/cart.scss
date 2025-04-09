@@ -17,12 +17,20 @@ section.cart {
         }
 
         & .cart-order {
-            margin-bottom: 62px;
+            margin-bottom: 12px;
+
+            @media screen and (min-width: $w576) {
+                margin-bottom: 62px;
+            }
         }
 
         & .cart-aside__oneclick {
             @media screen and (max-width: 768px) {
                 order: -1;
+            }
+
+            @media screen and (max-width: 576px) {
+                order: 2;
             }
         }
     }
@@ -750,6 +758,13 @@ section.cart {
 
         & .btn-gray {
             font-weight: 500;
+        }
+
+        & button {
+            @media screen and (max-width: $w480) {
+                font-size: 14px;
+                font-weight: 500;
+            }
         }
     }
 

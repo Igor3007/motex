@@ -61,20 +61,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
             },
             created: function () {
                 this.fetchData();
-                window.loadApiYmaps(() => {
-                    return false
-                })
+
             },
 
             mounted: function () {
 
-
-
-                if (this.receipt_type == 'pickup') {
-                    setTimeout(() => {
+                window.loadApiYmaps(() => {
+                    if (this.receipt_type == 'pickup') {
                         this.initStroreInMap()
-                    }, 300)
-                }
+                    }
+                })
+
             },
 
             methods: {
@@ -131,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                         (res) => {
                             const addressLine = res.geoObjects.get(0).getAddressLine()
                             this.addressDelivery = addressLine
+                            this.placemark.properties.set('balloonContent', addressLine);
                         },
 
                         (err) => {
@@ -150,6 +148,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                         (res) => {
                             this.coordinatesDelivery = res.geoObjects.get(0).geometry.getCoordinates()
                             this.placemark.geometry.setCoordinates(this.coordinatesDelivery);
+                            this.placemark.properties.set('balloonContent', this.coordinatesDelivery);
                             this.ymapSelectAddress.setCenter(this.coordinatesDelivery)
                         },
 
@@ -435,7 +434,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
                             });
 
                             this.placemark = new ymaps.Placemark(coordinates, {
-                                balloonContent: 'Челябинск, Троицкий Тракт, д. 17'
+                                balloonContent: ''
                             }, {
                                 preset: 'islands#blueShoppingIcon',
                                 iconColor: '#19beff',

@@ -685,18 +685,30 @@ footer {
 }
 
 .footer-min {
-  padding: 40px 0;
+
+
+
   color: var(--black);
+  padding-top: 32px;
+  padding-bottom: 92px;
 
+  @media screen and (min-width: $w992) {
+    padding: 40px 0;
+  }
 
-  @media screen and (max-width: $w992) {
+  &--cart {
 
-    padding-top: 22px;
-    padding-bottom: 22px;
+    padding-top: 32px;
+    padding-bottom: 142px;
 
-    & ._container {
-      margin-bottom: 60px;
+    @media screen and (min-width: $w576) {
+      padding-top: 45px;
+      padding-bottom: 165px;
 
+    }
+
+    @media screen and (min-width: $w992) {
+      padding: 40px 0;
     }
   }
 

@@ -18,10 +18,11 @@
 
         @media screen and (min-width: $w576) {
             margin-bottom: 15px;
+            font-size: 20px;
         }
 
         @media screen and (min-width: $w992) {
-            font-size: 20px;
+
             margin-bottom: 15px;
         }
 
@@ -57,8 +58,14 @@
 
     &__item {
         margin-right: 12px;
-        width: 100px;
-        min-width: 100px;
+        width: 72px;
+        min-width: 72px;
+
+        @media screen and (min-width: $w576) {
+            width: 100px;
+            min-width: 100px;
+
+        }
 
     }
 

@@ -2,10 +2,11 @@
     background: var(--black-5);
     padding: 16px;
     border-radius: 8px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 
     @media screen and (min-width: $w576) {
         padding: 32px 27px 27px;
+        margin-bottom: 16px;
     }
 
     @media screen and (min-width: $w1440) {
@@ -149,6 +150,12 @@
                     }
                 }
 
+                @media screen and (max-width: $w576) {
+                    & .form__subitem {
+                        margin-bottom: 8px;
+                    }
+                }
+
                 &--four {
 
                     @media screen and (max-width: 768px) {
@@ -162,6 +169,17 @@
                             width: calc(50% + 0px);
                             padding: 0 8px;
                             margin-bottom: 15px;
+                        }
+                    }
+
+                    @media screen and (max-width: $w576) {
+
+                        margin: 0 -4px;
+                        width: calc(100% + 8px);
+
+                        & .form__subitem {
+                            padding: 0 4px;
+                            margin-bottom: 8px;
                         }
                     }
                 }

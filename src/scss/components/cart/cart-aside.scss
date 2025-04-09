@@ -21,7 +21,7 @@
     &__cutter,
     &__details,
     &__make {
-        padding: 26px 16px;
+        padding: 20px 16px;
         border: 1px solid var(--black-10);
         box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.13);
         border-radius: 8px;
@@ -207,17 +207,18 @@ $offset3: calc((100vw - 444px)/2);
     &__title {
         font-size: 16px;
         font-weight: 600;
-        padding-bottom: 11px;
+        padding-bottom: 8px;
 
         @media screen and (min-width: $w480) {
             font-size: 20px;
+            padding-bottom: 11px;
         }
     }
 
     &__item {
         display: flex;
         justify-content: space-between;
-        padding: 8px 0;
+        padding: 6px 0;
 
         @media screen and (min-width: $w480) {
             padding: 10px 0;
@@ -229,11 +230,21 @@ $offset3: calc((100vw - 444px)/2);
     }
 
     &__prop {
-        margin-bottom: 6px;
+        margin-bottom: 0px;
+
+        @media screen and (min-width: $w576) {
+            margin-bottom: 6px;
+        }
     }
 
     &__input {
         margin-bottom: 28px;
+
+        & input {
+            @media screen and (max-width: $w576) {
+                height: 32px;
+            }
+        }
     }
 
     &__output {}
@@ -243,19 +254,30 @@ $offset3: calc((100vw - 444px)/2);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     position: relative;
-    padding: 32px 0 0 0;
+    padding-top: 6px;
+
+    @media screen and (min-width: $w576) {
+        padding: 32px 0 0 0;
+        font-size: 20px;
+    }
 
     &::before {
         content: '';
         height: 1px;
         background-color: var(--black-10);
         position: absolute;
-        left: -27px;
-        right: -27px;
-        top: 0;
+        left: -16px;
+        right: -16px;
+        top: -12px;
+
+        @media screen and (min-width: $w576) {
+            left: -27px;
+            right: -27px;
+            top: 0;
+        }
     }
 }
 
@@ -318,8 +340,12 @@ $offset3: calc((100vw - 444px)/2);
     &__item {
         display: flex;
         justify-content: space-between;
-        padding: 10px 0;
+        padding: 6px 0;
         align-items: center;
+
+        @media screen and (min-width: $w576) {
+            padding: 10px 0;
+        }
     }
 
     &__name {
