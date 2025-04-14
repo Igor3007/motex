@@ -18,6 +18,8 @@
         }
     }
 
+    
+
     &__cutter,
     &__details,
     &__make {
@@ -71,14 +73,22 @@
     }
 
     &__text {
-        font-size: 14px;
+        font-size: 12px;
         color: var(--black-50);
         line-height: 153%;
         padding-top: 9px;
 
+        @media screen and (min-width: $w576) {
+            font-size: 12px;
+        }
+
         & span {
             display: block;
             color: var(--black-base);
+
+            &:first-child {
+                padding-top: 5px
+              }
         }
 
     }
@@ -230,7 +240,7 @@ $offset3: calc((100vw - 444px)/2);
     }
 
     &__prop {
-        margin-bottom: 0px;
+        margin-bottom: 7px;
 
         @media screen and (min-width: $w576) {
             margin-bottom: 6px;
@@ -305,7 +315,7 @@ $offset3: calc((100vw - 444px)/2);
             &::after {
                 content: '';
                 width: 14px;
-                height: 14px;
+                height: 10px;
                 background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOS42IDEuMTMyTDguNDY4IDBsLTMuNjcgMy43MzZMMS4xMzIgMCAwIDEuMTMyIDQuNzk4IDYgOS42IDEuMTMyeiIgZmlsbD0iIzAwMCIvPjwvc3ZnPg==);
                 display: inline-block;
                 background-position: center;
@@ -314,6 +324,10 @@ $offset3: calc((100vw - 444px)/2);
                 top: 2px;
                 left: 2px;
                 transition: 0.3s ease;
+
+                @media screen and (min-width: $w576) {
+                    height: 14px;
+                }
 
 
             }
@@ -408,12 +422,18 @@ $offset3: calc((100vw - 444px)/2);
         height: 28px;
         background-color: var(--black-10);
         background-size: 16px;
-        border-radius: 20px;
+        border-radius: 10px;
         min-width: 28px;
         position: absolute;
-        right: 11px;
-        top: 9px;
+        right: 2px;
+        top: 2px;
         cursor: pointer;
+
+        @media screen and (min-width: $w576) {
+            top: 9px;
+            right: 11px;
+            border-radius: 20px;
+        }
 
         &:hover {
             background-color: var(--accent-20);

@@ -10,11 +10,7 @@ section.cart {
     &--checkout {
         margin-top: 16px;
 
-        & .cart__cutter {
-            @media screen and (max-width: $w992) {
-                display: none;
-            }
-        }
+        
 
         & .cart-order {
             margin-bottom: 12px;
