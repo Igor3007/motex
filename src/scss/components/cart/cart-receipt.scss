@@ -116,7 +116,9 @@
 
             &:hover {
                 & i {
+                   @media screen and (min-width: $w991) {
                     filter: invert(1);
+                   }
                 }
             }
         }
