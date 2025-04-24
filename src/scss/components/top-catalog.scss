@@ -65,6 +65,7 @@
           line-height: 150%;
 
           & .icon {
+            min-width: 24px;
             width: 24px;
             height: 24px;
             display: inline-block;
@@ -405,12 +406,16 @@
   }
 
   &:hover {
-    border-color: var(--blue-dark);
+    border-color: var(--black-50);
   }
 
   &__preview {
 
     padding-bottom: 24px;
+
+    & a {
+      display: inline-block;
+    }
 
     & picture {
       width: 60px;

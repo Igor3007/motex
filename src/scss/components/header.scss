@@ -263,9 +263,15 @@ header {
     flex-direction: column;
     gap: 12px;
 
+
     @media screen and (min-width: 767.98px) {
       flex-direction: row;
       gap: 22px;
+      position: relative;
+
+      & .search-index__form {
+        position: static;
+      }
     }
   }
 

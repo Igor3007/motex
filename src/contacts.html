@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html', {
+'title': 'Каталог'
+})
+
+<body>
+    @@include('html/header.html')
+
+    <main class="page">
+        <div data-observ></div>
+
+        @@include('html/components/breadcrumbs/breadcrumbs-contacts.html')
+
+        <section class="section-mx-contacts">
+            <div class="_container">
+                <div class="mx-contacts">
+                    <div class="mx-contacts__h1">
+                        <h1>Контакты</h1>
+                    </div>
+
+                    <div class="mx-contacts__row">
+                        <div class="mx-contacts__left">
+                            <div class="mx-contacts__map">
+                                <div id="map-container"></div>
+                            </div>
+                        </div>
+                        <div class="mx-contacts__right">
+                            <div class="mx-contacts__requisite">
+                                <div class="mx-contacts__label">Наши реквизиты</div>
+                                <div class="mx-contacts__text">
+                                    <p>ООО «Моттекс»</p>
+                                    <p>Юридический адрес: 454000, Челябинская область, город Челябинск, Троицкий тракт, д. 17, помещение 2 офис 202</p>
+                                    <p>ИНН 7449096910</p>
+                                    <p>КПП 745101001</p>
+                                    <p>ОГРН 1107449002935</p>
+                                </div>
+                                <div class="mx-contacts__dl">Скачать реквизиты, PDF (0.226mb)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mx-contacts__row">
+                        <div class="mx-contacts__left">
+                            <div class="mx-contacts__city">г. Челябинск, троицкий Тракт 17</div>
+                            <div class="mx-contacts__select">
+                                <select name="" id="">
+                                    <option value="">Челябинск</option>
+                                    <option value="">Екатеринбург</option>
+                                </select>
+                            </div>
+                            <div class="mx-contacts__onmap">
+                                <i class="icon" style="" ></i>
+                            </div>
+                        </div>
+                        <div class="mx-contacts__right">
+                            <div class="f-data-contact__socials">
+                                <ul>
+                                    <li><a href="#"><i style="background-image: url('/images/icons/ic_vk.svg')"></i></a>
+                                    </li>
+                                    <li><a href="#"><i style="background-image: url('/images/icons/ic_inst.svg')"></i></a>
+                                    </li>
+                                    <li><a href="#"><i style="background-image: url('/images/icons/ic_youtube.svg')"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mx-contacts__row">
+                        <div class="mx-contacts__left"></div>
+                        <div class="mx-contacts__right"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+
+
+    </main>
+
+    @@include('html/footer.html')
+    @@include('html/components/action-panel.html')
+
+
+</body>
+
+</html>

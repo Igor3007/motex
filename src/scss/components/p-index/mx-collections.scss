@@ -67,6 +67,7 @@
     border-radius: 8px;
     background: #F3F3F3;
     transition: .1s ease;
+    height: 100%;
 
     //display: flex;
     //flex-direction: column;
@@ -143,6 +144,8 @@
         height: 100%;
         z-index: 1;
         object-fit: cover;
+        color: transparent;
+        font-size: 12px;
       }
     }
 
@@ -154,6 +157,14 @@
       @media screen and (min-width: 767.98px) {
         font-size: 12px;
       }
+      
+        letter-spacing: normal;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+     
+
     }
   }
 
