@@ -12,6 +12,7 @@
 @import 'components/form';
 @import 'components/spiner';
 @import 'components/libs/splide.scss';
+@import 'components/libs/af-select.scss';
 
 @import 'components/select-region';
 @import 'components/top-catalog';
@@ -70,3 +71,7 @@
 @import 'components/cart/cart-customer.scss';
 @import 'components/cart/cart-order.scss';
 @import 'components/cart/order-success.scss';
+
+@import 'components/contacts/contacts.scss';
+@import 'components/contacts/our-team.scss';
+@import 'components/contacts/form-image.scss';

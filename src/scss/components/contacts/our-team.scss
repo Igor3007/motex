@@ -1,0 +1,64 @@
+.mx-our-team {
+    &__title {
+        font-size: 20px;
+        font-weight: 700;
+        padding-bottom: 24px;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -6px;
+
+        @media screen and (min-width: $w992) {
+            padding: -8px;
+        }
+    }
+
+    &__item {
+        padding: 6px;
+        width: 50%;
+
+        @media screen and (min-width: $w576) {
+            width: 33.33%;
+        }
+
+        @media screen and (min-width: $w992) {
+            width: 25%;
+            padding: 8px;
+        }
+    }
+}
+
+.mx-cart-member {
+
+    font-size: 12px;
+    line-height: 140%;
+
+
+
+    &__image {
+        & picture {
+            @include picture(100%, cover)
+        }
+
+        border-radius: 8px 8px 0 0;
+        overflow: hidden;
+    }
+
+    &__main {
+        padding: 10px;
+        border: 1px solid var(--black-20);
+        border-radius: 0 0 8px 8px;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 12px;
+    }
+
+    &__post {
+        color: var(--black-50);
+        padding-bottom: 5px;
+    }
+}

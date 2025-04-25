@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    const API_YMAPS = 'https://api-maps.yandex.ru/2.1/?apikey=0e2d85e0-7f40-4425-aab6-ff6d922bb371&suggest_apikey=ad5015b5-5f39-4ba3-9731-a83afcecb740&lang=ru_RU&mode=debug';
+
+
     /* =================================================
     css variable
     =================================================*/
@@ -17,7 +20,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    
+    /* ========================================
+    ymaps api
+    ========================================*/
+
+    window.loadYmapsApi = function (callback) {
+
+        if (window.ymaps == undefined) {
+            const script = document.createElement('script')
+            script.src = API_YMAPS
+            script.onload = () => {
+                callback(window.ymaps)
+            }
+            document.head.append(script)
+        } else {
+            callback(window.ymaps)
+        }
+
+    }
+
 
     window.addEventListener('load', css_variable)
     window.addEventListener('resize', css_variable)
@@ -268,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     arrows: true,
                 },
                 1439.98: {
-                    
+
                     perPage: 6,
                     perMove: 1,
                 },
@@ -519,7 +540,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeVideoBlocks([{
         wrapperClass: '.demo-stories__item',
         controlClass: '.demo-stories__item video',
-    },]);
+    }, ]);
 
     /* =========================================
     email validator
@@ -758,6 +779,54 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     })
 
+    /* ===================================
+    map-container-contacts
+    ===================================*/
+
+    if (document.querySelector('#map-container-contacts')) {
+
+        window.loadYmapsApi((ymaps) => {
+            ymaps.ready(() => {
+                const myMap = new ymaps.Map('map-container-contacts', {
+                    center: [55.76, 37.64],
+                    zoom: 16,
+                    type: 'yandex#map',
+                    controls: [],
+                }, {
+                    searchControlProvider: 'yandex#search',
+                    suppressMapOpenBlock: true,
+                    zoomControlPosition: {
+                        right: 32,
+                        top: 32
+                    },
+                });
+
+                myMap.geoObjects
+                    .add(new ymaps.Placemark([55.76, 37.64], {
+                        balloonContent: 'Челябинск, Троицкий Тракт, д. 17'
+                    }, {
+                        preset: 'islands#blueShoppingIcon',
+                        iconColor: '#19beff'
+                    }))
+
+            });
+        })
+
+
+    }
+
+    /* ===========================================
+    af-select
+    ===========================================*/
+
+    if (document.querySelector('select')) {
+        let select = new afSelect({
+            selector: 'select'
+        })
+
+        select.init()
+    }
+
 }); //DCL
 
 
@@ -968,13 +1037,13 @@ if (document.querySelector('.category-filter')) {
             const priceMin = slider.getAttribute('se-min') || 0;
 
             const form = inputMax.closest('form');
-            const entity = form?.dataset.filter;
+            const entity = form ? form.dataset.filter : '';
 
             newRangeSlider.didChanged = (min, max) => {
                 inputMax.value = max;
                 inputMin.value = min;
 
-                if (entity && window.Filter?.[entity]) {
+                if (entity && window.Filter ? window.Filter[entity] : '') {
                     window.Filter[entity].submit();
                 }
             };
@@ -1037,13 +1106,11 @@ if (document.querySelector('.category-filter')) {
                 }
 
                 const form = document.querySelector('.category-filter__item form');
-                const entity = form?.dataset.filter;
-                if (entity && window.Filter?.[entity]) {
+                const entity = form ? form.dataset.filter : '';
+                if (entity && window.Filter ? window.Filter[entity] : '') {
                     window.Filter[entity].submit();
                 }
             });
         }
     });
 }
-
-

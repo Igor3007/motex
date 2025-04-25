@@ -20,62 +20,266 @@
                     </div>
 
                     <div class="mx-contacts__row">
-                        <div class="mx-contacts__left">
+                        <div class="mx-contacts__left mx-contacts__left--no-border">
                             <div class="mx-contacts__map">
-                                <div id="map-container"></div>
+                                <div id="map-container-contacts"></div>
                             </div>
                         </div>
+
                         <div class="mx-contacts__right">
                             <div class="mx-contacts__requisite">
                                 <div class="mx-contacts__label">Наши реквизиты</div>
                                 <div class="mx-contacts__text">
                                     <p>ООО «Моттекс»</p>
-                                    <p>Юридический адрес: 454000, Челябинская область, город Челябинск, Троицкий тракт, д. 17, помещение 2 офис 202</p>
+                                    <p>Юридический адрес: 454000, Челябинская область, город Челябинск, Троицкий тракт,
+                                        д. 17, помещение 2 офис 202</p>
                                     <p>ИНН 7449096910</p>
                                     <p>КПП 745101001</p>
                                     <p>ОГРН 1107449002935</p>
                                 </div>
-                                <div class="mx-contacts__dl">Скачать реквизиты, PDF (0.226mb)</div>
+                                <div class="mx-contacts__dl">
+                                    <button class="btn-custom_i">
+                                        <i style="background-image: url('/images/icons/ic_file-dl.svg')"></i>
+                                        Скачать реквизиты, <span>PDF (0.226mb)</span></button>
+                                </div>
                             </div>
                         </div>
+
                     </div>
 
                     <div class="mx-contacts__row">
                         <div class="mx-contacts__left">
-                            <div class="mx-contacts__city">г. Челябинск, троицкий Тракт 17</div>
-                            <div class="mx-contacts__select">
-                                <select name="" id="">
-                                    <option value="">Челябинск</option>
-                                    <option value="">Екатеринбург</option>
-                                </select>
-                            </div>
-                            <div class="mx-contacts__onmap">
-                                <i class="icon" style="" ></i>
+                            <div class="mx-contacts__label">г. Челябинск, троицкий Тракт 17</div>
+                            <div class="mx-contacts__wrp-select">
+                                <div class="mx-contacts__select">
+                                    <select name="" id="">
+                                        <option value="">Челябинск</option>
+                                        <option value="">Екатеринбург</option>
+                                    </select>
+                                </div>
+                                <div class="mx-contacts__onmap">
+                                    <i style="background-image: url('/images/icons/ic_loc.svg')"></i>
+                                </div>
                             </div>
                         </div>
                         <div class="mx-contacts__right">
-                            <div class="f-data-contact__socials">
-                                <ul>
-                                    <li><a href="#"><i style="background-image: url('/images/icons/ic_vk.svg')"></i></a>
-                                    </li>
-                                    <li><a href="#"><i style="background-image: url('/images/icons/ic_inst.svg')"></i></a>
-                                    </li>
-                                    <li><a href="#"><i style="background-image: url('/images/icons/ic_youtube.svg')"></i></a>
-                                    </li>
-                                </ul>
+                            <div class="mx-contacts__we-socials">
+                                <div class="mx-contacts__label">Мы в соцсетях</div>
+                                <div class="mx-contacts__socials">
+                                    <ul>
+                                        <li><a href="#"><i
+                                                    style="background-image: url('/images/icons/ic_vk.svg')"></i></a>
+                                        </li>
+                                        <li><a href="#"><i
+                                                    style="background-image: url('/images/icons/ic_inst.svg')"></i></a>
+                                        </li>
+                                        <li><a href="#"><i
+                                                    style="background-image: url('/images/icons/ic_youtube.svg')"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="mx-contacts__row">
-                        <div class="mx-contacts__left"></div>
-                        <div class="mx-contacts__right"></div>
+
+                        <div class="mx-contacts__item">
+                            <div class="mx-contacts-card">
+                                <div class="mx-contacts-card__head">
+                                    <div class="mx-contacts-card__label">Звоните нам</div>
+                                    <div class="mx-contacts-card__link">
+                                        <a href="mailto:info@mottex.ru">info@mottex.ru</a>
+                                    </div>
+                                </div>
+                                <div class="mx-contacts-card__bottom">
+                                    <div class="mx-contacts-card__bottom-left">
+                                        <button class="btn btn-custom">Перезвоните мне</button>
+                                    </div>
+                                    <div class="mx-contacts-card__bottom-icon">
+                                        <i style="background-image: url('/images/icons/ic_phone.svg')"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mx-contacts__item">
+                            <div class="mx-contacts-card">
+                                <div class="mx-contacts-card__head">
+                                    <div class="mx-contacts-card__label">Пишите нам</div>
+                                    <div class="mx-contacts-card__link">
+                                        <a href="tel:+73512170000">+7 351 217-00-00</a>
+                                        <a href="tel:2207286">220–72–86</a>
+                                    </div>
+                                </div>
+                                <div class="mx-contacts-card__bottom">
+                                    <div class="mx-contacts-card__bottom-left">
+                                        <button class="btn btn-custom">Написать</button>
+                                    </div>
+                                    <div class="mx-contacts-card__bottom-icon">
+                                        <i style="background-image: url('/images/icons/ic_mail.svg')"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mx-contacts__item">
+                            <div class="mx-contacts-card">
+                                <div class="mx-contacts-card__head">
+                                    <div class="mx-contacts-card__label">Время работы</div>
+                                    <div class="mx-contacts-card__link">
+                                        <span class="worktime-status worktime-status--open">Мы открыты</span>
+                                    </div>
+                                </div>
+                                <div class="mx-contacts-card__bottom">
+                                    <div class="mx-contacts-card__bottom-left">
+
+                                        <div class="worktime-by-days">
+                                            <ul>
+                                                <li>Пн-Пт с 8:30 до 18:00</li>
+                                                <li>Сб-Вс с 9:00 до 15:00</li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <div class="mx-contacts-card__bottom-icon">
+                                        <i style="background-image: url('/images/icons/ic_time.svg')"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
+
+
 
                 </div>
             </div>
         </section>
-        
+
+        <section class="section-mx-our-team">
+            <div class="_container">
+                <div class="mx-our-team">
+                    <div class="mx-our-team__title">
+                        Наша команда
+                    </div>
+                    <div class="mx-our-team__list">
+                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-mx-form-image">
+            <div class="_container">
+                <div class="mx-form-image">
+                    <div class="mx-form-image__picture">
+                        <picture>
+                            <img src="/images/other/image-form.jpg" alt="">
+                        </picture>
+                    </div>
+                    <div class="mx-form-image__form">
+                        <div class="mx-form-image__title"></div>
+                        <div class="mx-form-image__desc"></div>
+                        <div class="mx-form-image__fields">
+                            <form action="">
+                                <div class="form">
+                                    <div class="form__item">
+                                        <div class="form__subitem">
+                                            <div class="input-material">
+                                                <input type="text">
+                                                <label>Ваше имя</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__subitem">
+                                            <div class="input-material">
+                                                <input type="tel">
+                                                <label>Телефон</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__subitem">
+                                            <div class="input-material">
+                                                <textarea name=""></textarea>
+                                                <label>Вопрос</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__subitem">
+                                            <button class="btn">Отправить</button>
+                                        </div>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__note">
+                                            Нажимая кнопк «Отправить», я даю согласие
+                                            <a href="/pages/subscibe.html">на получение рекламной рассылки и </a>
+                                            <a href="/pages/policy.html">обработку персональных данных</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mx-goods mx-goods--viewed">
+            <div class="mx-goods__container _container">
+                <h2>Вы смотрели</h2>
+                <div class="mx-goods__goods">
+                    <div class="splide" data-slider="splide-goods">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    @@include('html/components/mx-goods/mx-goods-item-1.html')
+                                </li>
+                                <li class="splide__slide">
+                                    @@include('html/components/mx-goods/mx-goods-item-2.html')
+                                </li>
+                                <li class="splide__slide">
+                                    @@include('html/components/mx-goods/mx-goods-item-3.html')
+                                </li>
+                                <li class="splide__slide">
+                                    @@include('html/components/mx-goods/mx-goods-item-1.html')
+                                </li>
+                                <li class="splide__slide">
+                                    @@include('html/components/mx-goods/mx-goods-item-2.html')
+                                </li>
+                                <li class="splide__slide">
+                                    @@include('html/components/mx-goods/mx-goods-item-3.html')
+                                </li>
+                                <li class="splide__slide">
+                                    @@include('html/components/mx-goods/mx-goods-item-1.html')
+                                </li>
+                                <li class="splide__slide">
+                                    @@include('html/components/mx-goods/mx-goods-item-2.html')
+                                </li>
+                                <li class="splide__slide">
+                                    @@include('html/components/mx-goods/mx-goods-item-3.html')
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
 
     </main>
