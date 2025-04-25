@@ -6,16 +6,6 @@ $select-height: 48px;
 $bg-gray: #ECF0F5;
 $main: var(--accent);
 
-// .af-select-open {
-
-//     @media screen and (max-width: $w480) {
-//         overflow: hidden;
-//     }
-
-
-// }
-
-
 select {
     opacity: 0;
 }
@@ -35,6 +25,10 @@ select {
     width: $select-width;
     min-width: 150px;
     height: 32px;
+
+    @media screen and (min-width: $w760) {
+        height: 48px;
+    }
 
     &--selected {
         & .select-styled span {
@@ -61,9 +55,16 @@ select {
     border-radius: 8px;
     font-size: 12px;
 
+    @media screen and (min-width: $w760) {
+        font-size: 16px;
+    }
 
     @media screen and (min-width: $w480) {
         padding: 8px 15px;
+    }
+
+    &:hover {
+        border-color: var(--accent);
     }
 
     & span {
@@ -176,6 +177,10 @@ select {
         text-overflow: ellipsis;
         overflow: hidden;
         position: relative;
+
+        @media screen and (min-width: $w760) {
+            font-size: 16px;
+        }
 
         @media screen and (min-width: $w480) {
             padding: 0.75rem 15px;

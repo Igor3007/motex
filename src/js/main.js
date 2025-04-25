@@ -827,6 +827,58 @@ document.addEventListener("DOMContentLoaded", () => {
         select.init()
     }
 
+
+
+    /* ===========================================
+    input material
+    =========================================== */
+
+    function materialInput() {
+        this.init = function () {
+
+            let _this = this
+
+            document.querySelectorAll('.input-material input, .input-material textarea').forEach(function (input) {
+
+                if (input.value.length) {
+                    input.setAttribute('area-valid', true)
+                } else {
+                    input.removeAttribute('area-valid')
+                }
+
+                _this.addEvent(input)
+            })
+        }
+
+        this.reset = function () {
+            document.querySelectorAll('.input-material input, .input-material textarea').forEach(function (input) {
+                input.removeAttribute('area-valid')
+            })
+
+            document.querySelectorAll('.input-material, .multi-mask').forEach(function (im) {
+                im.classList.toggle('err', false)
+            })
+
+            this.init()
+        }
+
+        this.addEvent = function (input) {
+            input.addEventListener('keyup', function (event) {
+                if (event.target.value.length) {
+                    event.target.setAttribute('area-valid', 'true')
+                } else {
+                    event.target.removeAttribute('area-valid')
+                }
+            })
+        }
+
+
+    }
+
+    const MATERIAL_INPUT = new materialInput()
+    MATERIAL_INPUT.init()
+
+
 }); //DCL
 
 
