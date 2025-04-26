@@ -735,6 +735,30 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     })
 
+    /* =========================================
+    Popup ajax
+    =========================================*/
+
+    document.querySelectorAll('[data-modal]').forEach(item => {
+        item.addEventListener('click', (e) => {
+            let popup = new afLightbox({
+                mobileInBottom: true,
+            })
+
+            popup.open('<div class="af-loading" ></div>', (instance) => {
+                let query = fetch(item.dataset.url, {
+                    method: 'GET',
+                })
+
+                query
+                    .then((response => response.text()))
+                    .then((html) => {
+                        popup.changeContent(html)
+                    })
+            })
+        })
+    })
+
     /* ====================================
     play video on hover
     ====================================*/
@@ -825,6 +849,17 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
         select.init()
+    }
+
+    /* =============================================
+    select contacts
+    =============================================*/
+
+    if (document.querySelector('[data-select="contacts"]')) {
+        const select = document.querySelector('[data-select="contacts"]')
+        select.addEventListener('change', (e) => {
+            window.location.href = '/pages/contacts.html?shop=' + e.target.value
+        })
     }
 
 }); //DCL

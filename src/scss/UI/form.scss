@@ -411,9 +411,11 @@
              &::placeholder {
                  color: transparent;
              }
+
+             &:required {
+                 background-position: calc(100% - 8px) 2px;
+             }
          }
-
-
 
          & input:focus {
              outline: none;

@@ -96,7 +96,8 @@
                                 </div>
                                 <div class="mx-contacts-card__bottom">
                                     <div class="mx-contacts-card__bottom-left">
-                                        <button class="btn btn-custom">Перезвоните мне</button>
+                                        <button data-modal="popup" data-url="/pages/_popup-callback.html"
+                                            class="btn btn-custom">Перезвоните мне</button>
                                     </div>
                                     <div class="mx-contacts-card__bottom-icon">
                                         <i style="background-image: url('/images/icons/ic_phone.svg')"></i>
@@ -115,7 +116,7 @@
                                 </div>
                                 <div class="mx-contacts-card__bottom">
                                     <div class="mx-contacts-card__bottom-left">
-                                        <button class="btn btn-custom">Написать</button>
+                                        <button class="btn btn-custom get-modal--call">Написать</button>
                                     </div>
                                     <div class="mx-contacts-card__bottom-icon">
                                         <i style="background-image: url('/images/icons/ic_mail.svg')"></i>
@@ -207,7 +208,7 @@
 
                                         <div class="form__subitem">
                                             <div class="input-material">
-                                                <input type="tel" placeholder="Телефон" maxlength="60">
+                                                <input type="tel" required placeholder="Телефон" maxlength="60">
                                                 <label>Телефон</label>
                                             </div>
                                         </div>
