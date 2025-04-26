@@ -827,8 +827,6 @@ document.addEventListener("DOMContentLoaded", () => {
         select.init()
     }
 
-
-
 }); //DCL
 
 

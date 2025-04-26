@@ -1,9 +1,41 @@
+.section-mx-form-image {
+    margin: 60px 0 85px;
+
+    @media screen and (min-width: $w760) {
+        margin: 120px 0 115px;
+    }
+
+    @media screen and (min-width: $w992) {
+        margin: 40px 0 40px;
+    }
+}
+
 .mx-form-image {
 
     border-radius: 8px;
     overflow: hidden;
 
+    @media screen and (min-width: $w992) {
+        display: flex;
+    }
+
     &__picture {
+
+        background-color: #ddd;
+
+        @media screen and (min-width: $w992) {
+            width: 66.66%;
+        }
+
+        & picture {
+            @include picture(65%, cover);
+
+            @media screen and (min-width: $w992) {
+                padding: 0;
+                height: 100%;
+            }
+        }
+
         & img {
             width: 100%;
         }
@@ -12,5 +44,112 @@
     &__form {
         background-color: var(--black-5);
         padding: 20px;
+
+        @media screen and (min-width: $w760) {
+            padding: 30px;
+        }
+
+        @media screen and (min-width: $w992) {
+            width: 33.33%;
+            padding: 26px 24px;
+        }
+
+
+        & textarea,
+        & input {
+            @media screen and (max-width: $w480) {
+                font-size: 12px !important;
+            }
+        }
+
+        & .btn {
+            width: 100%;
+            font-size: 16px;
+            height: 48px;
+        }
+
+        & .form {
+            &__note {
+                font-size: 10px;
+
+                @media screen and (min-width: $w760) {
+                    font-size: 14px;
+                }
+
+                @media screen and (min-width: $w992) {
+                    margin-top: -6px;
+                    line-height: 142%;
+                }
+            }
+
+            & textarea {
+                min-height: 100px;
+
+                @media screen and (min-width: $w760) {
+                    min-height: 90px;
+                }
+            }
+
+            &__item {
+                @media screen and (min-width: $w992) {
+                    flex-direction: column;
+                    margin-bottom: 14px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            &__subitem {
+
+                @media screen and (min-width: $w992) {
+                    padding-top: 7px;
+                    padding-bottom: 7px;
+                }
+
+                &--submit {
+                    @media screen and (min-width: $w760) {
+                        width: 140px;
+                    }
+
+                    @media screen and (min-width: $w992) {
+                        margin-right: auto;
+                        width: 125px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    &__title {
+        font-size: 20px;
+        line-height: 142%;
+        font-weight: 700;
+        padding-bottom: 8px;
+
+        @media screen and (min-width: $w760) {
+            font-size: 28px;
+        }
+
+        @media screen and (min-width: $w992) {
+            line-height: 136%;
+        }
+    }
+
+    &__desc {
+        font-size: 10px;
+        line-height: 160%;
+        padding-bottom: 12px;
+        color: var(--black-70);
+
+        @media screen and (min-width: $w760) {
+            font-size: 14px;
+        }
+
+        @media screen and (min-width: $w992) {
+            padding-bottom: 20px;
+        }
     }
 }
