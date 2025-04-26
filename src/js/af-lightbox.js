@@ -98,8 +98,12 @@ class afLightbox {
 
     close(state) {
 
-        if(this.beforeClose && !state ) {
-            return this.beforeClose()
+        if (this.beforeClose && !state) {
+
+            if (this.beforeClose()) {
+                return false
+            }
+
         }
 
         if (document.body.classList.contains('page-hidden')) {

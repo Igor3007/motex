@@ -1,6 +1,5 @@
 .mx-bd-catalog {
 
-
   &__wrapper {
     @media screen and (min-width: 991.98px) {
       display: flex;
@@ -12,6 +11,7 @@
     @media screen and (min-width: 991.98px) {
       flex: 0 0 320px;
     }
+
     @media screen and (min-width: 1199.98px) {
       flex: 0 0 400px;
     }
@@ -21,6 +21,7 @@
       padding: 20px;
       border-radius: 8px;
       border: 1px solid #D0D1D1;
+
       @media screen and (min-width: 991.98px) {
         display: block;
       }
@@ -108,6 +109,7 @@
                   line-height: 24px;
                   color: #15181A;
                   transition: .1s ease;
+
                   @media screen and (min-width: 991.98px) {
                     &:hover {
                       background-image: linear-gradient(90deg, #19BEFF 0%, #3C82D2 100%);
@@ -135,6 +137,7 @@
       gap: 8px;
       padding-bottom: 24px;
       border-bottom: 1px solid #D0D1D1;
+
       @media screen and (min-width: 767.98px) {
         gap: 12px;
         padding-bottom: 20px;
@@ -148,6 +151,7 @@
 
         font-size: 0;
         color: #15181A;
+
         @media screen and (min-width: 767.98px) {
           display: flex;
           align-items: center;
@@ -157,12 +161,14 @@
           font-weight: 400;
           font-size: 16px;
           line-height: 24px;
+
           .icon {
             min-width: 20px;
             width: 20px;
             height: 20px;
           }
         }
+
         @media screen and (min-width: 991.98px) {
           display: none;
         }
@@ -195,6 +201,7 @@
           background: #FFF;
           cursor: pointer;
           transition: .1s ease;
+
           @media screen and (min-width: 767.98px) {
             width: 40px;
             min-width: 40px;
@@ -218,7 +225,7 @@
             background-repeat: no-repeat;
             background-position: center;
             transition: 0.2s ease;
-             
+
             @media screen and (min-width: 767.98px) {
               width: 20px;
               min-width: 20px;
@@ -283,9 +290,11 @@
             @media screen and (min-width: 767.98px) {
               flex: 0 0 200px;
             }
+
             @media screen and (min-width: 991.98px) {
               flex: 0 0 140px;
             }
+
             @media screen and (min-width: 1199.98px) {
               flex: 0 0 200px;
             }
@@ -302,6 +311,7 @@
 
           &__item-img {
             flex: 0 0 80px;
+
             @media screen and (min-width: 767.98px) {
               flex: 0 0 200px;
             }
@@ -314,6 +324,7 @@
           &__item-additions-top {
             position: static;
             margin-top: 10px;
+
             @media screen and (min-width: 767.98px) {
               position: absolute;
               margin-top: 0;
@@ -332,6 +343,7 @@
 
             position: static;
             margin: 10px 0;
+
             @media screen and (min-width: 767.98px) {
               margin: 0;
             }
@@ -378,6 +390,7 @@
         gap: 16px;
         padding-top: 20px;
       }
+
       @media screen and (min-width: 1199.98px) {
         grid-template-columns: repeat(4, 1fr);
       }
@@ -386,6 +399,7 @@
     &-pagination {
       &-more {
         margin-top: 28px;
+
         @media screen and (min-width: 767.98px) {
           margin-top: 40px;
         }

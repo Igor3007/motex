@@ -690,11 +690,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 mobileInBottom: true,
                 beforeClose: () => {
 
-                    let warn = new afLightbox({
-                        mobileInBottom: true,
-                    })
+                    let inputs = Array.from(popup.modal.querySelectorAll('input, textarea'));
 
-                    let html = `<div class="warn-modal">
+                    if (inputs.find(item => item.value)) {
+                        let warn = new afLightbox({
+                            mobileInBottom: true,
+                        })
+
+                        let html = `<div class="warn-modal">
                                 <div class="warn-modal__heading"><h2>Закрыть окно?</h2></div>
                                 <div class="warn-modal__info">
                                     <div class="warn-modal__info-text">
@@ -707,17 +710,20 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </div>
                             </div>`
 
-                    warn.open(html, (content) => {
-                        content.querySelector('.btn-blue').addEventListener('click', () => {
-                            warn.close()
-                            popup.close(true)
+                        warn.open(html, (content) => {
+                            content.querySelector('.btn-blue').addEventListener('click', () => {
+                                warn.close()
+                                popup.close(true)
+                            })
+                            content.querySelector('.btn-custom').addEventListener('click', () => {
+                                warn.close()
+                            })
                         })
-                        content.querySelector('.btn-custom').addEventListener('click', () => {
-                            warn.close()
-                        })
-                    })
 
-                    return true
+                        return true
+                    }
+
+
                 }
             })
 
@@ -851,16 +857,59 @@ document.addEventListener("DOMContentLoaded", () => {
         select.init()
     }
 
-    /* =============================================
-    select contacts
-    =============================================*/
+    /* ===========================================
+    input material
+    =========================================== */
 
-    if (document.querySelector('[data-select="contacts"]')) {
-        const select = document.querySelector('[data-select="contacts"]')
-        select.addEventListener('change', (e) => {
-            window.location.href = '/pages/contacts.html?shop=' + e.target.value
-        })
+    function materialInput() {
+        this.init = function () {
+
+            let _this = this
+
+            document.querySelectorAll('.input-material input, .input-material textarea').forEach(function (input) {
+
+                if (input.value.length) {
+                    input.setAttribute('area-valid', true)
+                } else {
+                    input.removeAttribute('area-valid')
+                }
+
+                _this.addEvent(input)
+            })
+        }
+
+        this.reset = function () {
+            document.querySelectorAll('.input-material input, .input-material textarea').forEach(function (input) {
+                input.removeAttribute('area-valid')
+            })
+
+            document.querySelectorAll('.input-material, .multi-mask').forEach(function (im) {
+                im.classList.toggle('err', false)
+            })
+
+            this.init()
+        }
+
+        this.addEvent = function (input) {
+            input.addEventListener('keyup', function (event) {
+                if (event.target.value.length) {
+                    event.target.setAttribute('area-valid', 'true')
+                } else {
+                    event.target.removeAttribute('area-valid')
+                }
+            })
+        }
+
+
     }
+
+    const MATERIAL_INPUT = new materialInput()
+    MATERIAL_INPUT.init()
+
+
+
+
+
 
 }); //DCL
 
@@ -991,7 +1040,6 @@ if (document.querySelector('.mx-bd-catalog__aside-dropdown')) {
     });
 }
 
-
 if (document.querySelector('.filter-properties__head')) {
     const items = document.querySelectorAll('.filter-properties__head')
 
@@ -1001,7 +1049,6 @@ if (document.querySelector('.filter-properties__head')) {
         })
     })
 }
-
 
 if (document.querySelector('.filter-properties')) {
     document.addEventListener("DOMContentLoaded", function () {

@@ -1,6 +1,12 @@
 .warn-modal {
 
-  min-width: 320px;
+  width: calc(100vw - 84px);
+  max-width: 280px;
+
+  @media screen and (min-width: $w480) {
+    width: 280px;
+    max-width: none;
+  }
 
   &__heading {
     display: flex;
@@ -21,10 +27,11 @@
     }
   }
 
- 
+
   &__info {
     &-text {
       margin-bottom: 16px;
+
       @media screen and (min-width: 767.98px) {
         margin-bottom: 18px;
       }
@@ -34,6 +41,7 @@
         font-weight: 400;
         line-height: 16px;
         color: #15181A;
+
         @media screen and (min-width: 767.98px) {
           font-size: 14px;
           line-height: 20px;
@@ -45,6 +53,7 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+
       @media screen and (min-width: 767.98px) {
         gap: 12px;
       }
