@@ -43,6 +43,16 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('load', css_variable)
     window.addEventListener('resize', css_variable)
 
+    /* ===================================
+    init mask
+    ===================================*/
+
+    const {
+        MaskInput,
+    } = Maska
+
+    new MaskInput("[data-maska]")
+
     /* =================================================
     smooth scroll
     ================================================= */
@@ -736,6 +746,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     .then((response => response.text()))
                     .then((html) => {
                         popup.changeContent(html)
+                        new MaskInput("[data-maska]")
                     })
             })
         })
@@ -760,6 +771,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     .then((response => response.text()))
                     .then((html) => {
                         popup.changeContent(html)
+                        new MaskInput("[data-maska]")
                     })
             })
         })
@@ -905,9 +917,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const MATERIAL_INPUT = new materialInput()
     MATERIAL_INPUT.init()
-
-
-
 
 
 

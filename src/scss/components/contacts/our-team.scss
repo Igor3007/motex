@@ -163,6 +163,8 @@
 
     color: var(--black-base);
 
+    max-width: 400px;
+
     @media screen and (min-width: $w760) {
         max-width: 680px;
     }
@@ -181,6 +183,8 @@
             gap: 30px;
         }
     }
+
+
 
     &__image {
         width: 62%;
@@ -304,6 +308,7 @@
 
         @media screen and (min-width: $w992) {
             padding-bottom: 12px;
+            gap: 12px;
         }
 
         & a {
