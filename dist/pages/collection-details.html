@@ -1,19 +1,23 @@
+<!--
+.mx-collection-details
+-->
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
+    <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <title>Каталог</title>
+    <title>Подборка</title>
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/main.min.css">
 
 
 </head>
-
+</head>
 <body>
-    <header class="header header-fixed">
+<header class="header header-fixed">
     <div class="header__wrapper">
         <div class="header__top top-header">
             <div class="_container top-header__container">
@@ -353,457 +357,45 @@
         </div>
     </div>
 </header>
-
-    <main class="page">
-        <div data-observ></div>
-
-        <section class="breadcrumbs">
-    <div class="_container breadcrumbs__container">
-        <ul>
-            <li>
-                <a href="/pages/">Главная</a>
-            </li>
-            <li>
-                <a href="/pages/catalog-lvl-1.html">Контакты</a>
-            </li>
-        </ul>
-    </div>
+<main class="page">
+    <section class="breadcrumbs">
+  <div class="_container breadcrumbs__container">
+    <ul>
+      <li>
+        <a href="/pages/">Главная</a>
+      </li>
+      <li>
+        <a href="/pages/collections.html">Подборки товаров</a>
+      </li>
+      <li><a href="/pages/collection-details">Эти материалы только по ГОСТ</a></li>
+    </ul>
+  </div>
 </section>
 
-
-        <section class="section-mx-contacts">
-            <div class="_container">
-                <div class="mx-contacts">
-                    <div class="mx-contacts__h1">
-                        <h1>Контакты</h1>
+    <section class="mx-collection-details">
+        <div class="_container">
+            <div class="mx-collection-details__banner" style="background-image: url('/images/collection-details/collection-details-a001.jpg')">
+                <div class="mx-collection-details__banner-content" style="background-image: url('/images/collection-details/banner-content-bg.svg')">
+                    <div class="mx-collection-details__banner-badges">
+            <span class="mx-collection-details__banner-badge">
+              Подборка товаров
+            </span>
                     </div>
-
-                    <div class="mx-contacts__row mx-contacts__row--map">
-                        <div class="mx-contacts__left mx-contacts__left--no-border">
-                            <div class="mx-contacts__map">
-                                <div id="map-container-contacts"></div>
-                            </div>
+                    <div class="mx-collection-details__banner-text">
+                        <div class="mx-collection-details__banner-title">
+                            Эти материалы<br> только по ГОСТ
                         </div>
-
-                        <div class="mx-contacts__right">
-                            <div class="mx-contacts__requisite">
-                                <div class="mx-contacts__label">Наши реквизиты</div>
-                                <div class="mx-contacts__text">
-                                    <p>ООО «Моттекс»</p>
-                                    <p>Юридический адрес: 454000, Челябинская область, город Челябинск, Троицкий тракт,
-                                        д. 17, помещение 2 офис 202</p>
-                                    <p>ИНН 7449096910</p>
-                                    <p>КПП 745101001</p>
-                                    <p>ОГРН 1107449002935</p>
-                                </div>
-                                <div class="mx-contacts__dl">
-                                    <a href="#dl">
-                                        <button class="btn-custom_i">
-                                            <i style="background-image: url('/images/icons/ic_file-dl.svg')"></i>
-                                            Скачать реквизиты, <span>PDF (0.226mb)</span></button></a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="mx-contacts__row">
-                        <div class="mx-contacts__left mx-contacts__left--city">
-                            <div class="mx-contacts__label">г. Челябинск, троицкий Тракт 17</div>
-                            <div class="mx-contacts__wrp-select">
-                                <div class="mx-contacts__select">
-                                    <div class="af-select" data-region-select="open">
-                                        <div class="select-styled">
-                                            <span> Челябинск</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mx-contacts__onmap">
-                                    <i style="background-image: url('/images/icons/ic_loc.svg')"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mx-contacts__right">
-                            <div class="mx-contacts__we-socials">
-                                <div class="mx-contacts__label">Мы в соцсетях</div>
-                                <div class="mx-contacts__socials">
-                                    <ul>
-                                        <li><a href="#"><i style="background-image: url('/images/icons/ic_vk.svg')"></i></a>
-                                        </li>
-                                        <li><a href="#"><i style="background-image: url('/images/icons/ic_inst.svg')"></i></a>
-                                        </li>
-                                        <li><a href="#"><i style="background-image: url('/images/icons/ic_youtube.svg')"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="mx-collection-details__banner-subtitle">
+                            Собрали на одной странице все материалы,<br>выпускаемые мо ГОСТ.
                         </div>
                     </div>
-
-                    <div class="mx-contacts__row">
-
-                        <div class="mx-contacts__item">
-                            <div class="mx-contacts-card">
-                                <div class="mx-contacts-card__head">
-                                    <div class="mx-contacts-card__label">Звоните нам</div>
-                                    <div class="mx-contacts-card__link">
-                                        <a href="tel:+73512170000">+7 351 217-00-00</a>
-                                        <a href="tel:2207286">220–72–86</a>
-                                    </div>
-
-                                </div>
-                                <div class="mx-contacts-card__bottom">
-                                    <div class="mx-contacts-card__bottom-left">
-                                        <button data-modal="popup" data-url="/pages/_popup-callback.html" class="btn-custom btn">Перезвоните мне</button>
-                                    </div>
-                                    <div class="mx-contacts-card__bottom-icon">
-                                        <i style="background-image: url('/images/icons/ic_phone.svg')"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mx-contacts__item">
-                            <div class="mx-contacts-card">
-                                <div class="mx-contacts-card__head">
-                                    <div class="mx-contacts-card__label">Пишите нам</div>
-                                    <div class="mx-contacts-card__link">
-                                        <a href="mailto:info@mottex.ru">info@mottex.ru</a>
-                                    </div>
-                                </div>
-                                <div class="mx-contacts-card__bottom">
-                                    <div class="mx-contacts-card__bottom-left">
-                                        <button class="btn-custom btn get-modal--call">Написать</button>
-                                    </div>
-                                    <div class="mx-contacts-card__bottom-icon">
-                                        <i style="background-image: url('/images/icons/ic_mail.svg')"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mx-contacts__item">
-                            <div class="mx-contacts-card">
-                                <div class="mx-contacts-card__head">
-                                    <div class="mx-contacts-card__label">Время работы</div>
-                                    <div class="mx-contacts-card__link">
-                                        <span class="worktime-status worktime-status--open">Мы открыты</span>
-                                    </div>
-                                </div>
-                                <div class="mx-contacts-card__bottom">
-                                    <div class="mx-contacts-card__bottom-left">
-
-                                        <div class="worktime-by-days">
-                                            <ul>
-                                                <li>Пн-Пт с 8:30 до 18:00</li>
-                                                <li>Сб-Вс с 9:00 до 15:00</li>
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                    <div class="mx-contacts-card__bottom-icon">
-                                        <i style="background-image: url('/images/icons/ic_time.svg')"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-
+                    <div class="mx-collection-details-banner-footer"></div>
                 </div>
             </div>
-        </section>
-
-        <section class="section-mx-our-team">
-            <div class="_container">
-                <div class="mx-our-team">
-                    <div class="mx-our-team__title">
-                        Наша команда
-                    </div>
-                    <div class="mx-our-team__list">
-                        <div class="mx-our-team__item"> <div class="mx-cart-member">
-    <div class="mx-cart-member__image">
-        <picture>
-            <img src="/images/numbers/member.jpg" alt="">
-        </picture>
-        <a data-modal="popup" data-url="/pages/_popup-member-details.html">
-            <i style="background-image: url('/images/icons/ic_eye.svg')"></i>
-        </a>
-    </div>
-    <div class="mx-cart-member__main">
-        <div class="mx-cart-member__title">Ирина Кузнецова</div>
-        <div class="mx-cart-member__post">Руководитель отдела</div>
-        <div class="mx-cart-member__contact">
-            <a href="mailto:ikuznecova@mottex.ru">ikuznecova@mottex.ru</a>
-        </div>
-    </div>
-</div> </div>
-                        <div class="mx-our-team__item"> <div class="mx-cart-member">
-    <div class="mx-cart-member__image">
-        <picture>
-            <img src="/images/numbers/member.jpg" alt="">
-        </picture>
-        <a data-modal="popup" data-url="/pages/_popup-member-details.html">
-            <i style="background-image: url('/images/icons/ic_eye.svg')"></i>
-        </a>
-    </div>
-    <div class="mx-cart-member__main">
-        <div class="mx-cart-member__title">Ирина Кузнецова</div>
-        <div class="mx-cart-member__post">Руководитель отдела</div>
-        <div class="mx-cart-member__contact">
-            <a href="mailto:ikuznecova@mottex.ru">ikuznecova@mottex.ru</a>
-        </div>
-    </div>
-</div> </div>
-                        <div class="mx-our-team__item"> <div class="mx-cart-member">
-    <div class="mx-cart-member__image">
-        <picture>
-            <img src="/images/numbers/member.jpg" alt="">
-        </picture>
-        <a data-modal="popup" data-url="/pages/_popup-member-details.html">
-            <i style="background-image: url('/images/icons/ic_eye.svg')"></i>
-        </a>
-    </div>
-    <div class="mx-cart-member__main">
-        <div class="mx-cart-member__title">Ирина Кузнецова</div>
-        <div class="mx-cart-member__post">Руководитель отдела</div>
-        <div class="mx-cart-member__contact">
-            <a href="mailto:ikuznecova@mottex.ru">ikuznecova@mottex.ru</a>
-        </div>
-    </div>
-</div> </div>
-                        <div class="mx-our-team__item"> <div class="mx-cart-member">
-    <div class="mx-cart-member__image">
-        <picture>
-            <img src="/images/numbers/member.jpg" alt="">
-        </picture>
-        <a data-modal="popup" data-url="/pages/_popup-member-details.html">
-            <i style="background-image: url('/images/icons/ic_eye.svg')"></i>
-        </a>
-    </div>
-    <div class="mx-cart-member__main">
-        <div class="mx-cart-member__title">Ирина Кузнецова</div>
-        <div class="mx-cart-member__post">Руководитель отдела</div>
-        <div class="mx-cart-member__contact">
-            <a href="mailto:ikuznecova@mottex.ru">ikuznecova@mottex.ru</a>
-        </div>
-    </div>
-</div> </div>
-                        <div class="mx-our-team__item"> <div class="mx-cart-member">
-    <div class="mx-cart-member__image">
-        <picture>
-            <img src="/images/numbers/member.jpg" alt="">
-        </picture>
-        <a data-modal="popup" data-url="/pages/_popup-member-details.html">
-            <i style="background-image: url('/images/icons/ic_eye.svg')"></i>
-        </a>
-    </div>
-    <div class="mx-cart-member__main">
-        <div class="mx-cart-member__title">Ирина Кузнецова</div>
-        <div class="mx-cart-member__post">Руководитель отдела</div>
-        <div class="mx-cart-member__contact">
-            <a href="mailto:ikuznecova@mottex.ru">ikuznecova@mottex.ru</a>
-        </div>
-    </div>
-</div> </div>
-                        <div class="mx-our-team__item"> <div class="mx-cart-member">
-    <div class="mx-cart-member__image">
-        <picture>
-            <img src="/images/numbers/member.jpg" alt="">
-        </picture>
-        <a data-modal="popup" data-url="/pages/_popup-member-details.html">
-            <i style="background-image: url('/images/icons/ic_eye.svg')"></i>
-        </a>
-    </div>
-    <div class="mx-cart-member__main">
-        <div class="mx-cart-member__title">Ирина Кузнецова</div>
-        <div class="mx-cart-member__post">Руководитель отдела</div>
-        <div class="mx-cart-member__contact">
-            <a href="mailto:ikuznecova@mottex.ru">ikuznecova@mottex.ru</a>
-        </div>
-    </div>
-</div> </div>
-                        <div class="mx-our-team__item"> <div class="mx-cart-member">
-    <div class="mx-cart-member__image">
-        <picture>
-            <img src="/images/numbers/member.jpg" alt="">
-        </picture>
-        <a data-modal="popup" data-url="/pages/_popup-member-details.html">
-            <i style="background-image: url('/images/icons/ic_eye.svg')"></i>
-        </a>
-    </div>
-    <div class="mx-cart-member__main">
-        <div class="mx-cart-member__title">Ирина Кузнецова</div>
-        <div class="mx-cart-member__post">Руководитель отдела</div>
-        <div class="mx-cart-member__contact">
-            <a href="mailto:ikuznecova@mottex.ru">ikuznecova@mottex.ru</a>
-        </div>
-    </div>
-</div> </div>
-                        <div class="mx-our-team__item"> <div class="mx-cart-member">
-    <div class="mx-cart-member__image">
-        <picture>
-            <img src="/images/numbers/member.jpg" alt="">
-        </picture>
-        <a data-modal="popup" data-url="/pages/_popup-member-details.html">
-            <i style="background-image: url('/images/icons/ic_eye.svg')"></i>
-        </a>
-    </div>
-    <div class="mx-cart-member__main">
-        <div class="mx-cart-member__title">Ирина Кузнецова</div>
-        <div class="mx-cart-member__post">Руководитель отдела</div>
-        <div class="mx-cart-member__contact">
-            <a href="mailto:ikuznecova@mottex.ru">ikuznecova@mottex.ru</a>
-        </div>
-    </div>
-</div> </div>
-                        <div class="mx-our-team__item"> <div class="mx-cart-member">
-    <div class="mx-cart-member__image">
-        <picture>
-            <img src="/images/numbers/member.jpg" alt="">
-        </picture>
-        <a data-modal="popup" data-url="/pages/_popup-member-details.html">
-            <i style="background-image: url('/images/icons/ic_eye.svg')"></i>
-        </a>
-    </div>
-    <div class="mx-cart-member__main">
-        <div class="mx-cart-member__title">Ирина Кузнецова</div>
-        <div class="mx-cart-member__post">Руководитель отдела</div>
-        <div class="mx-cart-member__contact">
-            <a href="mailto:ikuznecova@mottex.ru">ikuznecova@mottex.ru</a>
-        </div>
-    </div>
-</div> </div>
-                        <div class="mx-our-team__item"> <div class="mx-cart-member">
-    <div class="mx-cart-member__image">
-        <picture>
-            <img src="/images/numbers/member.jpg" alt="">
-        </picture>
-        <a data-modal="popup" data-url="/pages/_popup-member-details.html">
-            <i style="background-image: url('/images/icons/ic_eye.svg')"></i>
-        </a>
-    </div>
-    <div class="mx-cart-member__main">
-        <div class="mx-cart-member__title">Ирина Кузнецова</div>
-        <div class="mx-cart-member__post">Руководитель отдела</div>
-        <div class="mx-cart-member__contact">
-            <a href="mailto:ikuznecova@mottex.ru">ikuznecova@mottex.ru</a>
-        </div>
-    </div>
-</div> </div>
-                        <div class="mx-our-team__item"> <div class="mx-cart-member">
-    <div class="mx-cart-member__image">
-        <picture>
-            <img src="/images/numbers/member.jpg" alt="">
-        </picture>
-        <a data-modal="popup" data-url="/pages/_popup-member-details.html">
-            <i style="background-image: url('/images/icons/ic_eye.svg')"></i>
-        </a>
-    </div>
-    <div class="mx-cart-member__main">
-        <div class="mx-cart-member__title">Ирина Кузнецова</div>
-        <div class="mx-cart-member__post">Руководитель отдела</div>
-        <div class="mx-cart-member__contact">
-            <a href="mailto:ikuznecova@mottex.ru">ikuznecova@mottex.ru</a>
-        </div>
-    </div>
-</div> </div>
-                        <div class="mx-our-team__item"> <div class="mx-cart-member">
-    <div class="mx-cart-member__image">
-        <picture>
-            <img src="/images/numbers/member.jpg" alt="">
-        </picture>
-        <a data-modal="popup" data-url="/pages/_popup-member-details.html">
-            <i style="background-image: url('/images/icons/ic_eye.svg')"></i>
-        </a>
-    </div>
-    <div class="mx-cart-member__main">
-        <div class="mx-cart-member__title">Ирина Кузнецова</div>
-        <div class="mx-cart-member__post">Руководитель отдела</div>
-        <div class="mx-cart-member__contact">
-            <a href="mailto:ikuznecova@mottex.ru">ikuznecova@mottex.ru</a>
-        </div>
-    </div>
-</div> </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-mx-form-image">
-            <div class="_container">
-                <div class="mx-form-image">
-                    <div class="mx-form-image__picture">
-                        <picture>
-                            <img src="/images/other/image-form.jpg" alt="">
-                        </picture>
-                    </div>
-                    <div class="mx-form-image__form">
-                        <div class="mx-form-image__title">Нужна помощь или консультация?</div>
-                        <div class="mx-form-image__desc">Напиши свой вопрос в свободной форме и мы свяжемся с вами
-                            в самое ближайшее время</div>
-                        <div class="mx-form-image__fields">
-                            <form action="">
-                                <div class="form">
-                                    <div class="form__item">
-                                        <div class="form__subitem">
-                                            <div class="input-material">
-                                                <input type="text" placeholder="Ваше имя" maxlength="60">
-                                                <label>Ваше имя</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="form__subitem">
-                                            <div class="input-material">
-                                                <input type="tel" data-maska="+7(###)###-##-##" required placeholder="Телефон" maxlength="60">
-                                                <label>Телефон</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form__item">
-                                        <div class="form__subitem">
-                                            <div class="input-material input-material--textarea">
-                                                <textarea name="" placeholder="Ваш вопрос" maxlength="300"></textarea>
-                                                <label>Ваш вопрос</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form__item">
-                                        <div class="form__subitem form__subitem--submit">
-                                            <button class="btn-blue btn">Отправить</button>
-                                        </div>
-
-                                        <div class="form__subitem form__subitem--note">
-                                            <div class="form__note">
-                                                Нажимая кнопку «Отправить», я даю согласие на <a href="#">получение
-                                                    рекламной рассылки</a> и <a href="#">обработку персональных
-                                                    данных</a>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mx-goods mx-goods--viewed">
-            <div class="_container mx-goods__container">
-                <h2>Вы смотрели</h2>
-                <div class="mx-goods__goods">
-                    <div class="splide" data-slider="splide-goods">
-                        <div class="splide__track">
-                            <ul class="splide__list">
-                                <li class="splide__slide">
-                                    <!--i-goods sale селектор скидки-->
+            <div class="mx-collection-details__goods">
+                <h3 class="mx-collection-details__goods-title">Фанера</h3>
+                <div class="mx-collection-details__goods-grid">
+                    <!--i-goods sale селектор скидки-->
 <div class="main-goods-item mx-goods__item i-goods--sale">
     <a href="#" class="main-goods-item__item-img">
         <picture>
@@ -870,60 +462,7 @@
 
     </div>
 </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <!--i-goods order карточка заказа-->
-<div class="main-goods-item mx-goods__item i-goods--order">
-    <a href="#" class="main-goods-item__item-img">
-        <picture>
-            <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
-        </picture>
-        <div class="main-goods-item__item-additions-like">
-            <div class="mx-like">
-                <i class="icon" style="background-image: url('/images/icons/ic_like.svg')"></i>
-            </div>
-        </div>
-        <div class="main-goods-item__item-additions-top">
-            <div class="mx-popular">Хит продаж</div>
-        </div>
-    </a>
-    <div class="main-goods-item__item-content">
-        <div class="main-goods-item__item-content_info">
-            <div class="in-stock">
-                <i class="icon" style="background-image: url('/images/icons/ic_order.svg')"></i>
-                Онлайн-заказ
-            </div>
-            <a href="#" class="main-goods-item__item-good">Фанера берёзовая ФК 6мм сорт IV/IV
-                НШ Е1
-                1525 × 1525мм Свеза</a>
-            <div class="main-goods-item__item-info">
-                <ul>
-                    <li>Длина (мм): <span>1525</span></li>
-                    <li>Ширина (мм): <span>1525</span></li>
-                    <li>Толщина (мм): <span>6</span></li>
-                    <li>Сорт: <span>1/2</span></li>
-                </ul>
-            </div>
-        </div>
-        <div class="main-goods-item__item-content_action">
-            <button class="btn-blue">В корзину</button>
-            <form action="#">
-                <button type="button" class="counter__btn decrement">
-                    <i class="icon" style="background-image: url('/images/icons/ic_minus.svg')"></i>
-                </button>
-                <input type="text" aria-label="" class="counter__input" value="0">
-                <button type="button" class="counter__btn increment">
-                    <i class="icon" style="background-image: url('/images/icons/ic_plus.svg')"></i>
-                </button>
-            </form>
-        </div>
-
-    </div>
-</div>
-
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="main-goods-item mx-goods__item">
+                    <div class="main-goods-item mx-goods__item">
     <a href="#" class="main-goods-item__item-img">
         <picture>
             <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
@@ -978,9 +517,117 @@
     </div>
 </div>
 
-                                </li>
-                                <li class="splide__slide">
-                                    <!--i-goods sale селектор скидки-->
+                    <div class="main-goods-item mx-goods__item">
+    <a href="#" class="main-goods-item__item-img">
+        <picture>
+            <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
+        </picture>
+        <div class="main-goods-item__item-additions-like">
+            <div class="mx-like">
+                <i class="icon" style="background-image: url('/images/icons/ic_like.svg')"></i>
+            </div>
+        </div>
+        <div class="main-goods-item__item-additions-top">
+            <div class="mx-popular">Хит продаж</div>
+        </div>
+    </a>
+    <div class="main-goods-item__item-content">
+        <div class="main-goods-item__item-content_info">
+            <div class="in-stock">
+                <i class="icon" style="background-image: url('/images/icons/ic_in-stock.svg')"></i>
+                В наличии
+            </div>
+            <a href="#" class="main-goods-item__item-good">Фанера берёзовая ФК 6мм сорт IV/IV
+                НШ Е1
+                1525 × 1525мм Свеза</a>
+            <div class="main-goods-item__item-info">
+                <ul>
+                    <li>Длина (мм): <span>1525</span></li>
+                    <li>Ширина (мм): <span>1525</span></li>
+                    <li>Толщина (мм): <span>6</span></li>
+                    <li>Сорт: <span>1/2</span></li>
+                </ul>
+            </div>
+            <div class="main-goods-item__item-pricing">
+                <div class="price">
+                    <span><b>741 ₽</b></span>
+                    <span>880 ₽</span>
+                </div>
+                <div class="count">за 1 шт.</div>
+            </div>
+        </div>
+        <div class="main-goods-item__item-content_action">
+            <button class="btn-blue">В корзину</button>
+            <form action="#">
+                <button type="button" class="counter__btn decrement">
+                    <i class="icon" style="background-image: url('/images/icons/ic_minus.svg')"></i>
+                </button>
+                <input type="text" aria-label="" class="counter__input" value="0">
+                <button type="button" class="counter__btn increment">
+                    <i class="icon" style="background-image: url('/images/icons/ic_plus.svg')"></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+                    <div class="main-goods-item mx-goods__item">
+    <a href="#" class="main-goods-item__item-img">
+        <picture>
+            <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
+        </picture>
+        <div class="main-goods-item__item-additions-like">
+            <div class="mx-like">
+                <i class="icon" style="background-image: url('/images/icons/ic_like.svg')"></i>
+            </div>
+        </div>
+        <div class="main-goods-item__item-additions-top">
+            <div class="mx-popular">Хит продаж</div>
+        </div>
+    </a>
+    <div class="main-goods-item__item-content">
+        <div class="main-goods-item__item-content_info">
+            <div class="in-stock">
+                <i class="icon" style="background-image: url('/images/icons/ic_in-stock.svg')"></i>
+                В наличии
+            </div>
+            <a href="#" class="main-goods-item__item-good">Фанера берёзовая ФК 6мм сорт IV/IV
+                НШ Е1
+                1525 × 1525мм Свеза</a>
+            <div class="main-goods-item__item-info">
+                <ul>
+                    <li>Длина (мм): <span>1525</span></li>
+                    <li>Ширина (мм): <span>1525</span></li>
+                    <li>Толщина (мм): <span>6</span></li>
+                    <li>Сорт: <span>1/2</span></li>
+                </ul>
+            </div>
+            <div class="main-goods-item__item-pricing">
+                <div class="price">
+                    <span><b>741 ₽</b></span>
+                    <span>880 ₽</span>
+                </div>
+                <div class="count">за 1 шт.</div>
+            </div>
+        </div>
+        <div class="main-goods-item__item-content_action">
+            <button class="btn-blue">В корзину</button>
+            <form action="#">
+                <button type="button" class="counter__btn decrement">
+                    <i class="icon" style="background-image: url('/images/icons/ic_minus.svg')"></i>
+                </button>
+                <input type="text" aria-label="" class="counter__input" value="0">
+                <button type="button" class="counter__btn increment">
+                    <i class="icon" style="background-image: url('/images/icons/ic_plus.svg')"></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+                    <!--i-goods sale селектор скидки-->
 <div class="main-goods-item mx-goods__item i-goods--sale">
     <a href="#" class="main-goods-item__item-img">
         <picture>
@@ -1047,60 +694,7 @@
 
     </div>
 </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <!--i-goods order карточка заказа-->
-<div class="main-goods-item mx-goods__item i-goods--order">
-    <a href="#" class="main-goods-item__item-img">
-        <picture>
-            <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
-        </picture>
-        <div class="main-goods-item__item-additions-like">
-            <div class="mx-like">
-                <i class="icon" style="background-image: url('/images/icons/ic_like.svg')"></i>
-            </div>
-        </div>
-        <div class="main-goods-item__item-additions-top">
-            <div class="mx-popular">Хит продаж</div>
-        </div>
-    </a>
-    <div class="main-goods-item__item-content">
-        <div class="main-goods-item__item-content_info">
-            <div class="in-stock">
-                <i class="icon" style="background-image: url('/images/icons/ic_order.svg')"></i>
-                Онлайн-заказ
-            </div>
-            <a href="#" class="main-goods-item__item-good">Фанера берёзовая ФК 6мм сорт IV/IV
-                НШ Е1
-                1525 × 1525мм Свеза</a>
-            <div class="main-goods-item__item-info">
-                <ul>
-                    <li>Длина (мм): <span>1525</span></li>
-                    <li>Ширина (мм): <span>1525</span></li>
-                    <li>Толщина (мм): <span>6</span></li>
-                    <li>Сорт: <span>1/2</span></li>
-                </ul>
-            </div>
-        </div>
-        <div class="main-goods-item__item-content_action">
-            <button class="btn-blue">В корзину</button>
-            <form action="#">
-                <button type="button" class="counter__btn decrement">
-                    <i class="icon" style="background-image: url('/images/icons/ic_minus.svg')"></i>
-                </button>
-                <input type="text" aria-label="" class="counter__input" value="0">
-                <button type="button" class="counter__btn increment">
-                    <i class="icon" style="background-image: url('/images/icons/ic_plus.svg')"></i>
-                </button>
-            </form>
-        </div>
-
-    </div>
-</div>
-
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="main-goods-item mx-goods__item">
+                    <div class="main-goods-item mx-goods__item">
     <a href="#" class="main-goods-item__item-img">
         <picture>
             <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
@@ -1155,9 +749,7 @@
     </div>
 </div>
 
-                                </li>
-                                <li class="splide__slide">
-                                    <!--i-goods sale селектор скидки-->
+                    <!--i-goods sale селектор скидки-->
 <div class="main-goods-item mx-goods__item i-goods--sale">
     <a href="#" class="main-goods-item__item-img">
         <picture>
@@ -1224,60 +816,7 @@
 
     </div>
 </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <!--i-goods order карточка заказа-->
-<div class="main-goods-item mx-goods__item i-goods--order">
-    <a href="#" class="main-goods-item__item-img">
-        <picture>
-            <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
-        </picture>
-        <div class="main-goods-item__item-additions-like">
-            <div class="mx-like">
-                <i class="icon" style="background-image: url('/images/icons/ic_like.svg')"></i>
-            </div>
-        </div>
-        <div class="main-goods-item__item-additions-top">
-            <div class="mx-popular">Хит продаж</div>
-        </div>
-    </a>
-    <div class="main-goods-item__item-content">
-        <div class="main-goods-item__item-content_info">
-            <div class="in-stock">
-                <i class="icon" style="background-image: url('/images/icons/ic_order.svg')"></i>
-                Онлайн-заказ
-            </div>
-            <a href="#" class="main-goods-item__item-good">Фанера берёзовая ФК 6мм сорт IV/IV
-                НШ Е1
-                1525 × 1525мм Свеза</a>
-            <div class="main-goods-item__item-info">
-                <ul>
-                    <li>Длина (мм): <span>1525</span></li>
-                    <li>Ширина (мм): <span>1525</span></li>
-                    <li>Толщина (мм): <span>6</span></li>
-                    <li>Сорт: <span>1/2</span></li>
-                </ul>
-            </div>
-        </div>
-        <div class="main-goods-item__item-content_action">
-            <button class="btn-blue">В корзину</button>
-            <form action="#">
-                <button type="button" class="counter__btn decrement">
-                    <i class="icon" style="background-image: url('/images/icons/ic_minus.svg')"></i>
-                </button>
-                <input type="text" aria-label="" class="counter__input" value="0">
-                <button type="button" class="counter__btn increment">
-                    <i class="icon" style="background-image: url('/images/icons/ic_plus.svg')"></i>
-                </button>
-            </form>
-        </div>
-
-    </div>
-</div>
-
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="main-goods-item mx-goods__item">
+                    <div class="main-goods-item mx-goods__item">
     <a href="#" class="main-goods-item__item-img">
         <picture>
             <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
@@ -1332,19 +871,835 @@
     </div>
 </div>
 
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    <div class="main-goods-item mx-goods__item">
+    <a href="#" class="main-goods-item__item-img">
+        <picture>
+            <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
+        </picture>
+        <div class="main-goods-item__item-additions-like">
+            <div class="mx-like">
+                <i class="icon" style="background-image: url('/images/icons/ic_like.svg')"></i>
+            </div>
+        </div>
+        <div class="main-goods-item__item-additions-top">
+            <div class="mx-popular">Хит продаж</div>
+        </div>
+    </a>
+    <div class="main-goods-item__item-content">
+        <div class="main-goods-item__item-content_info">
+            <div class="in-stock">
+                <i class="icon" style="background-image: url('/images/icons/ic_in-stock.svg')"></i>
+                В наличии
+            </div>
+            <a href="#" class="main-goods-item__item-good">Фанера берёзовая ФК 6мм сорт IV/IV
+                НШ Е1
+                1525 × 1525мм Свеза</a>
+            <div class="main-goods-item__item-info">
+                <ul>
+                    <li>Длина (мм): <span>1525</span></li>
+                    <li>Ширина (мм): <span>1525</span></li>
+                    <li>Толщина (мм): <span>6</span></li>
+                    <li>Сорт: <span>1/2</span></li>
+                </ul>
+            </div>
+            <div class="main-goods-item__item-pricing">
+                <div class="price">
+                    <span><b>741 ₽</b></span>
+                    <span>880 ₽</span>
+                </div>
+                <div class="count">за 1 шт.</div>
+            </div>
+        </div>
+        <div class="main-goods-item__item-content_action">
+            <button class="btn-blue">В корзину</button>
+            <form action="#">
+                <button type="button" class="counter__btn decrement">
+                    <i class="icon" style="background-image: url('/images/icons/ic_minus.svg')"></i>
+                </button>
+                <input type="text" aria-label="" class="counter__input" value="0">
+                <button type="button" class="counter__btn increment">
+                    <i class="icon" style="background-image: url('/images/icons/ic_plus.svg')"></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+                    <div class="main-goods-item mx-goods__item">
+    <a href="#" class="main-goods-item__item-img">
+        <picture>
+            <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
+        </picture>
+        <div class="main-goods-item__item-additions-like">
+            <div class="mx-like">
+                <i class="icon" style="background-image: url('/images/icons/ic_like.svg')"></i>
+            </div>
+        </div>
+        <div class="main-goods-item__item-additions-top">
+            <div class="mx-popular">Хит продаж</div>
+        </div>
+    </a>
+    <div class="main-goods-item__item-content">
+        <div class="main-goods-item__item-content_info">
+            <div class="in-stock">
+                <i class="icon" style="background-image: url('/images/icons/ic_in-stock.svg')"></i>
+                В наличии
+            </div>
+            <a href="#" class="main-goods-item__item-good">Фанера берёзовая ФК 6мм сорт IV/IV
+                НШ Е1
+                1525 × 1525мм Свеза</a>
+            <div class="main-goods-item__item-info">
+                <ul>
+                    <li>Длина (мм): <span>1525</span></li>
+                    <li>Ширина (мм): <span>1525</span></li>
+                    <li>Толщина (мм): <span>6</span></li>
+                    <li>Сорт: <span>1/2</span></li>
+                </ul>
+            </div>
+            <div class="main-goods-item__item-pricing">
+                <div class="price">
+                    <span><b>741 ₽</b></span>
+                    <span>880 ₽</span>
+                </div>
+                <div class="count">за 1 шт.</div>
+            </div>
+        </div>
+        <div class="main-goods-item__item-content_action">
+            <button class="btn-blue">В корзину</button>
+            <form action="#">
+                <button type="button" class="counter__btn decrement">
+                    <i class="icon" style="background-image: url('/images/icons/ic_minus.svg')"></i>
+                </button>
+                <input type="text" aria-label="" class="counter__input" value="0">
+                <button type="button" class="counter__btn increment">
+                    <i class="icon" style="background-image: url('/images/icons/ic_plus.svg')"></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+                    <!--i-goods sale селектор скидки-->
+<div class="main-goods-item mx-goods__item i-goods--sale">
+    <a href="#" class="main-goods-item__item-img">
+        <picture>
+            <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
+        </picture>
+        <div class="main-goods-item__item-additions-like">
+            <div class="mx-like">
+                <i class="icon" style="background-image: url('/images/icons/ic_like.svg')"></i>
+            </div>
+        </div>
+        <div class="main-goods-item__item-additions-top">
+            <div class="mx-discount">Скидка</div>
+            <div class="mx-popular">Хит продаж</div>
+        </div>
+        <div class="main-goods-item__item-additions-bottom">
+            <div class="mx-discount-num">
+                <span>-19%</span> до 15 ноября
+            </div>
+        </div>
+    </a>
+    <div class="main-goods-item__item-content">
+        <div class="main-goods-item__item-content_info">
+            <div class="in-stock">
+                <i class="icon" style="background-image: url('/images/icons/ic_in-stock.svg')"></i>
+                В наличии
+            </div>
+            <a href="#" class="main-goods-item__item-good">Фанера берёзовая ФК 6мм сорт IV/IV
+                НШ Е1
+                1525 × 1525мм Свеза</a>
+            <div class="main-goods-item__item-info">
+                <ul>
+                    <li>Длина (мм): <span>1525</span></li>
+                    <li>Ширина (мм): <span>1525</span></li>
+                    <li>Толщина (мм): <span>6</span></li>
+                    <li>Сорт: <span>1/2</span></li>
+                </ul>
+            </div>
+
+            <div class="main-goods-item__item-pricing">
+                <div class="price">
+                    <span><b>741 ₽</b></span>
+                    <span>880 ₽</span>
+                </div>
+                <div class="count">за 1 шт.</div>
+            </div>
+        </div>
+        <div class="main-goods-item__item-content_action">
+            <div class="main-goods-item__item-additions-bottom item-additions-bottom--list-view">
+                <div class="mx-discount-num">
+                    <span>-19%</span> до 15 ноября
                 </div>
             </div>
-        </section>
+            <button class="btn-blue">В корзину</button>
+            <form action="#">
+                <button type="button" class="counter__btn decrement">
+                    <i class="icon" style="background-image: url('/images/icons/ic_minus.svg')"></i>
+                </button>
+                <input type="text" aria-label="" class="counter__input" value="0">
+                <button type="button" class="counter__btn increment">
+                    <i class="icon" style="background-image: url('/images/icons/ic_plus.svg')"></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+                </div>
+            </div>
+            <div class="mx-collection-details__goods">
+                <h3 class="mx-collection-details__goods-title">Теплоизоляция</h3>
+                <div class="mx-collection-details__goods-grid">
+                    <div class="main-goods-item mx-goods__item">
+    <a href="#" class="main-goods-item__item-img">
+        <picture>
+            <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
+        </picture>
+        <div class="main-goods-item__item-additions-like">
+            <div class="mx-like">
+                <i class="icon" style="background-image: url('/images/icons/ic_like.svg')"></i>
+            </div>
+        </div>
+        <div class="main-goods-item__item-additions-top">
+            <div class="mx-popular">Хит продаж</div>
+        </div>
+    </a>
+    <div class="main-goods-item__item-content">
+        <div class="main-goods-item__item-content_info">
+            <div class="in-stock">
+                <i class="icon" style="background-image: url('/images/icons/ic_in-stock.svg')"></i>
+                В наличии
+            </div>
+            <a href="#" class="main-goods-item__item-good">Фанера берёзовая ФК 6мм сорт IV/IV
+                НШ Е1
+                1525 × 1525мм Свеза</a>
+            <div class="main-goods-item__item-info">
+                <ul>
+                    <li>Длина (мм): <span>1525</span></li>
+                    <li>Ширина (мм): <span>1525</span></li>
+                    <li>Толщина (мм): <span>6</span></li>
+                    <li>Сорт: <span>1/2</span></li>
+                </ul>
+            </div>
+            <div class="main-goods-item__item-pricing">
+                <div class="price">
+                    <span><b>741 ₽</b></span>
+                    <span>880 ₽</span>
+                </div>
+                <div class="count">за 1 шт.</div>
+            </div>
+        </div>
+        <div class="main-goods-item__item-content_action">
+            <button class="btn-blue">В корзину</button>
+            <form action="#">
+                <button type="button" class="counter__btn decrement">
+                    <i class="icon" style="background-image: url('/images/icons/ic_minus.svg')"></i>
+                </button>
+                <input type="text" aria-label="" class="counter__input" value="0">
+                <button type="button" class="counter__btn increment">
+                    <i class="icon" style="background-image: url('/images/icons/ic_plus.svg')"></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+                    <div class="main-goods-item mx-goods__item">
+    <a href="#" class="main-goods-item__item-img">
+        <picture>
+            <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
+        </picture>
+        <div class="main-goods-item__item-additions-like">
+            <div class="mx-like">
+                <i class="icon" style="background-image: url('/images/icons/ic_like.svg')"></i>
+            </div>
+        </div>
+        <div class="main-goods-item__item-additions-top">
+            <div class="mx-popular">Хит продаж</div>
+        </div>
+    </a>
+    <div class="main-goods-item__item-content">
+        <div class="main-goods-item__item-content_info">
+            <div class="in-stock">
+                <i class="icon" style="background-image: url('/images/icons/ic_in-stock.svg')"></i>
+                В наличии
+            </div>
+            <a href="#" class="main-goods-item__item-good">Фанера берёзовая ФК 6мм сорт IV/IV
+                НШ Е1
+                1525 × 1525мм Свеза</a>
+            <div class="main-goods-item__item-info">
+                <ul>
+                    <li>Длина (мм): <span>1525</span></li>
+                    <li>Ширина (мм): <span>1525</span></li>
+                    <li>Толщина (мм): <span>6</span></li>
+                    <li>Сорт: <span>1/2</span></li>
+                </ul>
+            </div>
+            <div class="main-goods-item__item-pricing">
+                <div class="price">
+                    <span><b>741 ₽</b></span>
+                    <span>880 ₽</span>
+                </div>
+                <div class="count">за 1 шт.</div>
+            </div>
+        </div>
+        <div class="main-goods-item__item-content_action">
+            <button class="btn-blue">В корзину</button>
+            <form action="#">
+                <button type="button" class="counter__btn decrement">
+                    <i class="icon" style="background-image: url('/images/icons/ic_minus.svg')"></i>
+                </button>
+                <input type="text" aria-label="" class="counter__input" value="0">
+                <button type="button" class="counter__btn increment">
+                    <i class="icon" style="background-image: url('/images/icons/ic_plus.svg')"></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+                    <div class="main-goods-item mx-goods__item">
+    <a href="#" class="main-goods-item__item-img">
+        <picture>
+            <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
+        </picture>
+        <div class="main-goods-item__item-additions-like">
+            <div class="mx-like">
+                <i class="icon" style="background-image: url('/images/icons/ic_like.svg')"></i>
+            </div>
+        </div>
+        <div class="main-goods-item__item-additions-top">
+            <div class="mx-popular">Хит продаж</div>
+        </div>
+    </a>
+    <div class="main-goods-item__item-content">
+        <div class="main-goods-item__item-content_info">
+            <div class="in-stock">
+                <i class="icon" style="background-image: url('/images/icons/ic_in-stock.svg')"></i>
+                В наличии
+            </div>
+            <a href="#" class="main-goods-item__item-good">Фанера берёзовая ФК 6мм сорт IV/IV
+                НШ Е1
+                1525 × 1525мм Свеза</a>
+            <div class="main-goods-item__item-info">
+                <ul>
+                    <li>Длина (мм): <span>1525</span></li>
+                    <li>Ширина (мм): <span>1525</span></li>
+                    <li>Толщина (мм): <span>6</span></li>
+                    <li>Сорт: <span>1/2</span></li>
+                </ul>
+            </div>
+            <div class="main-goods-item__item-pricing">
+                <div class="price">
+                    <span><b>741 ₽</b></span>
+                    <span>880 ₽</span>
+                </div>
+                <div class="count">за 1 шт.</div>
+            </div>
+        </div>
+        <div class="main-goods-item__item-content_action">
+            <button class="btn-blue">В корзину</button>
+            <form action="#">
+                <button type="button" class="counter__btn decrement">
+                    <i class="icon" style="background-image: url('/images/icons/ic_minus.svg')"></i>
+                </button>
+                <input type="text" aria-label="" class="counter__input" value="0">
+                <button type="button" class="counter__btn increment">
+                    <i class="icon" style="background-image: url('/images/icons/ic_plus.svg')"></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+                    <div class="main-goods-item mx-goods__item">
+    <a href="#" class="main-goods-item__item-img">
+        <picture>
+            <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
+        </picture>
+        <div class="main-goods-item__item-additions-like">
+            <div class="mx-like">
+                <i class="icon" style="background-image: url('/images/icons/ic_like.svg')"></i>
+            </div>
+        </div>
+        <div class="main-goods-item__item-additions-top">
+            <div class="mx-popular">Хит продаж</div>
+        </div>
+    </a>
+    <div class="main-goods-item__item-content">
+        <div class="main-goods-item__item-content_info">
+            <div class="in-stock">
+                <i class="icon" style="background-image: url('/images/icons/ic_in-stock.svg')"></i>
+                В наличии
+            </div>
+            <a href="#" class="main-goods-item__item-good">Фанера берёзовая ФК 6мм сорт IV/IV
+                НШ Е1
+                1525 × 1525мм Свеза</a>
+            <div class="main-goods-item__item-info">
+                <ul>
+                    <li>Длина (мм): <span>1525</span></li>
+                    <li>Ширина (мм): <span>1525</span></li>
+                    <li>Толщина (мм): <span>6</span></li>
+                    <li>Сорт: <span>1/2</span></li>
+                </ul>
+            </div>
+            <div class="main-goods-item__item-pricing">
+                <div class="price">
+                    <span><b>741 ₽</b></span>
+                    <span>880 ₽</span>
+                </div>
+                <div class="count">за 1 шт.</div>
+            </div>
+        </div>
+        <div class="main-goods-item__item-content_action">
+            <button class="btn-blue">В корзину</button>
+            <form action="#">
+                <button type="button" class="counter__btn decrement">
+                    <i class="icon" style="background-image: url('/images/icons/ic_minus.svg')"></i>
+                </button>
+                <input type="text" aria-label="" class="counter__input" value="0">
+                <button type="button" class="counter__btn increment">
+                    <i class="icon" style="background-image: url('/images/icons/ic_plus.svg')"></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+                </div>
+            </div>
+            <div class="mx-collection-details__goods">
+                <h3 class="mx-collection-details__goods-title">Плёнки</h3>
+                <div class="mx-collection-details__goods-grid">
+                    <div class="main-goods-item mx-goods__item">
+    <a href="#" class="main-goods-item__item-img">
+        <picture>
+            <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
+        </picture>
+        <div class="main-goods-item__item-additions-like">
+            <div class="mx-like">
+                <i class="icon" style="background-image: url('/images/icons/ic_like.svg')"></i>
+            </div>
+        </div>
+        <div class="main-goods-item__item-additions-top">
+            <div class="mx-popular">Хит продаж</div>
+        </div>
+    </a>
+    <div class="main-goods-item__item-content">
+        <div class="main-goods-item__item-content_info">
+            <div class="in-stock">
+                <i class="icon" style="background-image: url('/images/icons/ic_in-stock.svg')"></i>
+                В наличии
+            </div>
+            <a href="#" class="main-goods-item__item-good">Фанера берёзовая ФК 6мм сорт IV/IV
+                НШ Е1
+                1525 × 1525мм Свеза</a>
+            <div class="main-goods-item__item-info">
+                <ul>
+                    <li>Длина (мм): <span>1525</span></li>
+                    <li>Ширина (мм): <span>1525</span></li>
+                    <li>Толщина (мм): <span>6</span></li>
+                    <li>Сорт: <span>1/2</span></li>
+                </ul>
+            </div>
+            <div class="main-goods-item__item-pricing">
+                <div class="price">
+                    <span><b>741 ₽</b></span>
+                    <span>880 ₽</span>
+                </div>
+                <div class="count">за 1 шт.</div>
+            </div>
+        </div>
+        <div class="main-goods-item__item-content_action">
+            <button class="btn-blue">В корзину</button>
+            <form action="#">
+                <button type="button" class="counter__btn decrement">
+                    <i class="icon" style="background-image: url('/images/icons/ic_minus.svg')"></i>
+                </button>
+                <input type="text" aria-label="" class="counter__input" value="0">
+                <button type="button" class="counter__btn increment">
+                    <i class="icon" style="background-image: url('/images/icons/ic_plus.svg')"></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+                    <div class="main-goods-item mx-goods__item">
+    <a href="#" class="main-goods-item__item-img">
+        <picture>
+            <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
+        </picture>
+        <div class="main-goods-item__item-additions-like">
+            <div class="mx-like">
+                <i class="icon" style="background-image: url('/images/icons/ic_like.svg')"></i>
+            </div>
+        </div>
+        <div class="main-goods-item__item-additions-top">
+            <div class="mx-popular">Хит продаж</div>
+        </div>
+    </a>
+    <div class="main-goods-item__item-content">
+        <div class="main-goods-item__item-content_info">
+            <div class="in-stock">
+                <i class="icon" style="background-image: url('/images/icons/ic_in-stock.svg')"></i>
+                В наличии
+            </div>
+            <a href="#" class="main-goods-item__item-good">Фанера берёзовая ФК 6мм сорт IV/IV
+                НШ Е1
+                1525 × 1525мм Свеза</a>
+            <div class="main-goods-item__item-info">
+                <ul>
+                    <li>Длина (мм): <span>1525</span></li>
+                    <li>Ширина (мм): <span>1525</span></li>
+                    <li>Толщина (мм): <span>6</span></li>
+                    <li>Сорт: <span>1/2</span></li>
+                </ul>
+            </div>
+            <div class="main-goods-item__item-pricing">
+                <div class="price">
+                    <span><b>741 ₽</b></span>
+                    <span>880 ₽</span>
+                </div>
+                <div class="count">за 1 шт.</div>
+            </div>
+        </div>
+        <div class="main-goods-item__item-content_action">
+            <button class="btn-blue">В корзину</button>
+            <form action="#">
+                <button type="button" class="counter__btn decrement">
+                    <i class="icon" style="background-image: url('/images/icons/ic_minus.svg')"></i>
+                </button>
+                <input type="text" aria-label="" class="counter__input" value="0">
+                <button type="button" class="counter__btn increment">
+                    <i class="icon" style="background-image: url('/images/icons/ic_plus.svg')"></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+                    <div class="main-goods-item mx-goods__item">
+    <a href="#" class="main-goods-item__item-img">
+        <picture>
+            <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
+        </picture>
+        <div class="main-goods-item__item-additions-like">
+            <div class="mx-like">
+                <i class="icon" style="background-image: url('/images/icons/ic_like.svg')"></i>
+            </div>
+        </div>
+        <div class="main-goods-item__item-additions-top">
+            <div class="mx-popular">Хит продаж</div>
+        </div>
+    </a>
+    <div class="main-goods-item__item-content">
+        <div class="main-goods-item__item-content_info">
+            <div class="in-stock">
+                <i class="icon" style="background-image: url('/images/icons/ic_in-stock.svg')"></i>
+                В наличии
+            </div>
+            <a href="#" class="main-goods-item__item-good">Фанера берёзовая ФК 6мм сорт IV/IV
+                НШ Е1
+                1525 × 1525мм Свеза</a>
+            <div class="main-goods-item__item-info">
+                <ul>
+                    <li>Длина (мм): <span>1525</span></li>
+                    <li>Ширина (мм): <span>1525</span></li>
+                    <li>Толщина (мм): <span>6</span></li>
+                    <li>Сорт: <span>1/2</span></li>
+                </ul>
+            </div>
+            <div class="main-goods-item__item-pricing">
+                <div class="price">
+                    <span><b>741 ₽</b></span>
+                    <span>880 ₽</span>
+                </div>
+                <div class="count">за 1 шт.</div>
+            </div>
+        </div>
+        <div class="main-goods-item__item-content_action">
+            <button class="btn-blue">В корзину</button>
+            <form action="#">
+                <button type="button" class="counter__btn decrement">
+                    <i class="icon" style="background-image: url('/images/icons/ic_minus.svg')"></i>
+                </button>
+                <input type="text" aria-label="" class="counter__input" value="0">
+                <button type="button" class="counter__btn increment">
+                    <i class="icon" style="background-image: url('/images/icons/ic_plus.svg')"></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+                    <div class="main-goods-item mx-goods__item">
+    <a href="#" class="main-goods-item__item-img">
+        <picture>
+            <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
+        </picture>
+        <div class="main-goods-item__item-additions-like">
+            <div class="mx-like">
+                <i class="icon" style="background-image: url('/images/icons/ic_like.svg')"></i>
+            </div>
+        </div>
+        <div class="main-goods-item__item-additions-top">
+            <div class="mx-popular">Хит продаж</div>
+        </div>
+    </a>
+    <div class="main-goods-item__item-content">
+        <div class="main-goods-item__item-content_info">
+            <div class="in-stock">
+                <i class="icon" style="background-image: url('/images/icons/ic_in-stock.svg')"></i>
+                В наличии
+            </div>
+            <a href="#" class="main-goods-item__item-good">Фанера берёзовая ФК 6мм сорт IV/IV
+                НШ Е1
+                1525 × 1525мм Свеза</a>
+            <div class="main-goods-item__item-info">
+                <ul>
+                    <li>Длина (мм): <span>1525</span></li>
+                    <li>Ширина (мм): <span>1525</span></li>
+                    <li>Толщина (мм): <span>6</span></li>
+                    <li>Сорт: <span>1/2</span></li>
+                </ul>
+            </div>
+            <div class="main-goods-item__item-pricing">
+                <div class="price">
+                    <span><b>741 ₽</b></span>
+                    <span>880 ₽</span>
+                </div>
+                <div class="count">за 1 шт.</div>
+            </div>
+        </div>
+        <div class="main-goods-item__item-content_action">
+            <button class="btn-blue">В корзину</button>
+            <form action="#">
+                <button type="button" class="counter__btn decrement">
+                    <i class="icon" style="background-image: url('/images/icons/ic_minus.svg')"></i>
+                </button>
+                <input type="text" aria-label="" class="counter__input" value="0">
+                <button type="button" class="counter__btn increment">
+                    <i class="icon" style="background-image: url('/images/icons/ic_plus.svg')"></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+                    <div class="main-goods-item mx-goods__item">
+    <a href="#" class="main-goods-item__item-img">
+        <picture>
+            <img src="/images/goods/i_goods-a001.png" alt="mx-goods">
+        </picture>
+        <div class="main-goods-item__item-additions-like">
+            <div class="mx-like">
+                <i class="icon" style="background-image: url('/images/icons/ic_like.svg')"></i>
+            </div>
+        </div>
+        <div class="main-goods-item__item-additions-top">
+            <div class="mx-popular">Хит продаж</div>
+        </div>
+    </a>
+    <div class="main-goods-item__item-content">
+        <div class="main-goods-item__item-content_info">
+            <div class="in-stock">
+                <i class="icon" style="background-image: url('/images/icons/ic_in-stock.svg')"></i>
+                В наличии
+            </div>
+            <a href="#" class="main-goods-item__item-good">Фанера берёзовая ФК 6мм сорт IV/IV
+                НШ Е1
+                1525 × 1525мм Свеза</a>
+            <div class="main-goods-item__item-info">
+                <ul>
+                    <li>Длина (мм): <span>1525</span></li>
+                    <li>Ширина (мм): <span>1525</span></li>
+                    <li>Толщина (мм): <span>6</span></li>
+                    <li>Сорт: <span>1/2</span></li>
+                </ul>
+            </div>
+            <div class="main-goods-item__item-pricing">
+                <div class="price">
+                    <span><b>741 ₽</b></span>
+                    <span>880 ₽</span>
+                </div>
+                <div class="count">за 1 шт.</div>
+            </div>
+        </div>
+        <div class="main-goods-item__item-content_action">
+            <button class="btn-blue">В корзину</button>
+            <form action="#">
+                <button type="button" class="counter__btn decrement">
+                    <i class="icon" style="background-image: url('/images/icons/ic_minus.svg')"></i>
+                </button>
+                <input type="text" aria-label="" class="counter__input" value="0">
+                <button type="button" class="counter__btn increment">
+                    <i class="icon" style="background-image: url('/images/icons/ic_plus.svg')"></i>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="_container">
+        <div class="mx-collection-details__seo">
+            <div class="formated-text seo">
+                <h1>СЕО заголовок 1</h1>
+                <p>это текст-"рыба», часто используемый в печати и вэб-дизайне. Lorem Ipsum является
+                    стандартной «рыбой»
+                    для текстов на латинице с начала XVI века. В то время некий безымянный печатник
+                    создал
+                    большую коллекцию
+                    размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum
+                    не только успешно
+                    пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.
+                    Его популяризации
+                    в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х
+                    годах
+                    и, в более
+                    недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах
+                    которых
+                    используется
+                    Lorem Ipsum.</p>
+                <h2>СЕО заголовок 2</h2>
+                <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
+                    сосредоточиться. Lorem Ipsum
+                    используют потому, что тот обеспечивает более или менее стандартное заполнение
+                    шаблона,
+                    а также реальное
+                    распределение букв и пробелов в абзацах, которое не получается при простой
+                    дубликации
+                    «Здесь
+                    ваш текст.</p>
+                <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
+                    сосредоточиться;
+                    lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное
+                    заполнение шаблона,
+                    а также реальное распределение букв и пробелов в абзацах, которое не получается
+                    при простой дубликации
+                    „Здесь ваш текст;
+                    здесь ваш текст. Здесь ваш текст“. Многие программы электронной вёрстки и редакторы
+                    HTML
+                    используют
+                    Lorem Ipsum в качестве текста по умолчанию.</p>
+            </div>
+        </div>
+    </div>
+    <section class="mx-simple-collections">
+    <div class="_container mx-simple-collections__container">
+        <div class="mx-simple-collections__heading">
+            <h2>Другие подборки</h2>
+            <a href="collections.html">Смотреть все</a>
+        </div>
+        <div class="mx-simple-collections__collections">
+            <div class="splide" data-slider="splide-simple-collections">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <a href="#" class="mx-simple-collections-item">
+    <div class="mx-simple-collections-item__img">
+        <picture>
+            <img src="/images/simple-collections/i_simple-collections-a001.jpg" alt="/images/simple-collections/i_simple-collections-a001.jpg">
+        </picture>
+    </div>
+
+    <div class="mx-simple-collections-item__content">
+        <div class="mx-simple-collections-item__content-top">
+            <span>Подборка товаров</span>
+        </div>
+        <div class="mx-simple-collections-item__content-bottom">
+            <div class="mx-simple-collections-item__content-bottom-icon">
+                <span>
+                    <i class="icon" style="background-image: url('/images/icons/ic_simple-collections-1.svg')"></i>
+                </span>
+            </div>
+            <div class="mx-simple-collections-item__content-bottom-text">
+                <p>Этим материалам <br> более 10 лет</p>
+            </div>
+        </div>
+    </div>
 
 
+</a>
+                        </li>
+                        <li class="splide__slide">
+                            <a href="#" class="mx-simple-collections-item">
+    <div class="mx-simple-collections-item__img">
+        <picture>
+            <img src="/images/simple-collections/i_simple-collections-a002.jpg" alt="/images/simple-collections/i_simple-collections-a002.jpg">
+        </picture>
+    </div>
 
-    </main>
+    <div class="mx-simple-collections-item__content">
+        <div class="mx-simple-collections-item__content-top">
+            <span>Подборка товаров</span>
+        </div>
+        <div class="mx-simple-collections-item__content-bottom">
+            <div class="mx-simple-collections-item__content-bottom-icon">
+                <span>
+                    <i class="icon" style="background-image: url('/images/icons/ic_simple-collections-2.svg')"></i>
+                </span>
+            </div>
+            <div class="mx-simple-collections-item__content-bottom-text">
+                <p>Эти материалы <br> только по ГОСТ</p>
+            </div>
+        </div>
+    </div>
 
-    <footer class="footer">
+
+</a>
+                        </li>
+                        <li class="splide__slide">
+                            <a href="#" class="mx-simple-collections-item">
+    <div class="mx-simple-collections-item__img">
+        <picture>
+            <img src="/images/simple-collections/i_simple-collections-a003.jpg" alt="/images/simple-collections/i_simple-collections-a003.jpg">
+        </picture>
+    </div>
+
+    <div class="mx-simple-collections-item__content">
+        <div class="mx-simple-collections-item__content-top">
+            <span>Подборка товаров</span>
+        </div>
+        <div class="mx-simple-collections-item__content-bottom">
+            <div class="mx-simple-collections-item__content-bottom-icon">
+                <span>
+                    <i class="icon" style="background-image: url('/images/icons/ic_simple-collections-3.svg')"></i>
+                </span>
+            </div>
+            <div class="mx-simple-collections-item__content-bottom-text">
+                <p>ТОП 10 товаров, <br> покупаемых у нас</p>
+            </div>
+        </div>
+    </div>
+
+
+</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+<footer class="footer">
     <div class="_container footer__container">
         <div class="footer__wrapper">
             <div class="base-footer footer__base">
@@ -1505,7 +1860,7 @@
 <script src="/js/search-index.js"></script>
 <script src="/js/select-region.js"></script>
 <script src="/js/top-catalog.js"></script>
-    <div class="action-panel">
+<div class="action-panel">
     <div class="_container action-panel__container">
         <div class="action-panel__config config-action">
             <div class="config-action__btn config-menu" data-target="menu">
@@ -1552,8 +1907,5 @@
         </div>
     </div>
 </div>
-
-
 </body>
-
 </html>

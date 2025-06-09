@@ -1,0 +1,125 @@
+<!--
+.mx-collection-details
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include('html/head.html', {
+    'title': 'Подборка'
+    })
+</head>
+<body>
+@@include('html/header.html')
+<main class="page">
+    @@include('html/components/breadcrumbs/breadcrumbs-collection-details.html')
+    <section class="mx-collection-details">
+        <div class="_container">
+            <div class="mx-collection-details__banner"
+                 style="background-image: url('/images/collection-details/collection-details-a001.jpg')">
+                <div class="mx-collection-details__banner-content"
+                     style="background-image: url('/images/collection-details/banner-content-bg.svg')">
+                    <div class="mx-collection-details__banner-badges">
+            <span class="mx-collection-details__banner-badge">
+              Подборка товаров
+            </span>
+                    </div>
+                    <div class="mx-collection-details__banner-text">
+                        <div class="mx-collection-details__banner-title">
+                            Эти материалы<br/> только по ГОСТ
+                        </div>
+                        <div class="mx-collection-details__banner-subtitle">
+                            Собрали на одной странице все материалы,<br/>выпускаемые мо ГОСТ.
+                        </div>
+                    </div>
+                    <div class="mx-collection-details-banner-footer"></div>
+                </div>
+            </div>
+            <div class="mx-collection-details__goods">
+                <h3 class="mx-collection-details__goods-title">Фанера</h3>
+                <div class="mx-collection-details__goods-grid">
+                    @@include('html/components/mx-goods/mx-goods-item-1.html')
+                    @@include('html/components/mx-goods/mx-goods-item-3.html')
+                    @@include('html/components/mx-goods/mx-goods-item-3.html')
+                    @@include('html/components/mx-goods/mx-goods-item-3.html')
+                    @@include('html/components/mx-goods/mx-goods-item-1.html')
+                    @@include('html/components/mx-goods/mx-goods-item-3.html')
+                    @@include('html/components/mx-goods/mx-goods-item-1.html')
+                    @@include('html/components/mx-goods/mx-goods-item-3.html')
+                    @@include('html/components/mx-goods/mx-goods-item-3.html')
+                    @@include('html/components/mx-goods/mx-goods-item-3.html')
+                    @@include('html/components/mx-goods/mx-goods-item-1.html')
+                </div>
+            </div>
+            <div class="mx-collection-details__goods">
+                <h3 class="mx-collection-details__goods-title">Теплоизоляция</h3>
+                <div class="mx-collection-details__goods-grid">
+                    @@include('html/components/mx-goods/mx-goods-item-3.html')
+                    @@include('html/components/mx-goods/mx-goods-item-3.html')
+                    @@include('html/components/mx-goods/mx-goods-item-3.html')
+                    @@include('html/components/mx-goods/mx-goods-item-3.html')
+                </div>
+            </div>
+            <div class="mx-collection-details__goods">
+                <h3 class="mx-collection-details__goods-title">Плёнки</h3>
+                <div class="mx-collection-details__goods-grid">
+                    @@include('html/components/mx-goods/mx-goods-item-3.html')
+                    @@include('html/components/mx-goods/mx-goods-item-3.html')
+                    @@include('html/components/mx-goods/mx-goods-item-3.html')
+                    @@include('html/components/mx-goods/mx-goods-item-3.html')
+                    @@include('html/components/mx-goods/mx-goods-item-3.html')
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="_container">
+        <div class="mx-collection-details__seo">
+            <div class="seo formated-text">
+                <h1>СЕО заголовок 1</h1>
+                <p>это текст-"рыба», часто используемый в печати и вэб-дизайне. Lorem Ipsum является
+                    стандартной «рыбой»
+                    для текстов на латинице с начала XVI века. В то время некий безымянный печатник
+                    создал
+                    большую коллекцию
+                    размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum
+                    не только успешно
+                    пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.
+                    Его популяризации
+                    в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х
+                    годах
+                    и, в более
+                    недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах
+                    которых
+                    используется
+                    Lorem Ipsum.</p>
+                <h2>СЕО заголовок 2</h2>
+                <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
+                    сосредоточиться. Lorem Ipsum
+                    используют потому, что тот обеспечивает более или менее стандартное заполнение
+                    шаблона,
+                    а также реальное
+                    распределение букв и пробелов в абзацах, которое не получается при простой
+                    дубликации
+                    «Здесь
+                    ваш текст.</p>
+                <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
+                    сосредоточиться;
+                    lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное
+                    заполнение шаблона,
+                    а также реальное распределение букв и пробелов в абзацах, которое не получается
+                    при простой дубликации
+                    „Здесь ваш текст;
+                    здесь ваш текст. Здесь ваш текст“. Многие программы электронной вёрстки и редакторы
+                    HTML
+                    используют
+                    Lorem Ipsum в качестве текста по умолчанию.</p>
+            </div>
+        </div>
+    </div>
+    @@include('html/components/mx-simple-collections/mx-simple-collections.html', {
+    "title": "Другие подборки"
+    })
+</main>
+@@include('html/footer.html')
+@@include('html/components/action-panel.html')
+</body>
+</html>

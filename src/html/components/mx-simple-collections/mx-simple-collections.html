@@ -1,0 +1,40 @@
+<section class="mx-simple-collections">
+    <div class="mx-simple-collections__container _container">
+        <div class="mx-simple-collections__heading">
+            <h2>@@title</h2>
+            <a href="collections.html">Смотреть все</a>
+        </div>
+        <div class="mx-simple-collections__collections">
+            <div class="splide" data-slider="splide-simple-collections">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            @@include('./mx-simple-collections-item.html', {
+                            "image": "/images/simple-collections/i_simple-collections-a001.jpg",
+                            "info": "Подборка товаров",
+                            "icon": "/images/icons/ic_simple-collections-1.svg",
+                            "text": "Этим материалам <br> более 10 лет"
+                            })
+                        </li>
+                        <li class="splide__slide">
+                            @@include('./mx-simple-collections-item.html', {
+                            "image": "/images/simple-collections/i_simple-collections-a002.jpg",
+                            "info": "Подборка товаров",
+                            "icon": "/images/icons/ic_simple-collections-2.svg",
+                            "text": "Эти материалы <br> только по ГОСТ"
+                            })
+                        </li>
+                        <li class="splide__slide">
+                            @@include('./mx-simple-collections-item.html', {
+                            "image": "/images/simple-collections/i_simple-collections-a003.jpg",
+                            "info": "Подборка товаров",
+                            "icon": "/images/icons/ic_simple-collections-3.svg",
+                            "text": "ТОП 10 товаров, <br> покупаемых у нас"
+                            })
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
