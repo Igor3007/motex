@@ -1,0 +1,325 @@
+[{
+    "name": "Листовые материалы",
+    "icon": "/images/icons/ic_layer.svg",
+    "total": "248",
+    "sub": [{
+        "icon": "/images/topcatalog/34352_Thumb.jpg",
+        "name": "Фанера | Все виды",
+        "sub": [{
+            "name": "Фанера ФК березовая",
+            "count": "51"
+        }, {
+            "name": "Фанера ФСФ березовая",
+            "count": "61"
+        }, {
+            "name": "Фанера ФСФ хвойная",
+            "count": "21"
+        }, {
+            "name": "Фанера ФОФ сетчатая",
+            "count": "66"
+        }, {
+            "name": "Фанера ФОФ ламинированная",
+            "count": "60"
+        }, {
+            "name": "Фанера Бакелизированная",
+            "count": "24"
+        }, {
+            "name": "Фанера трудногорючая",
+            "count": "32"
+        }]
+    }, {
+        "icon": "/images/topcatalog/36093_Thumb.jpg",
+        "name": "Плита OSB",
+
+        "sub": [{
+                "name": "2440× 1220 мм",
+                "count": "324"
+            },
+            {
+                "name": "2500× 1250 мм",
+                "count": "271"
+            },
+            {
+                "name": "2800× 1250 мм",
+                "count": "186"
+            }
+
+        ]
+    }, {
+        "icon": "/images/topcatalog/36111_Thumb.jpg",
+        "name": "ЦСП",
+        "sub": [{
+                "name": "2440× 1220 мм",
+                "count": "324"
+            },
+            {
+                "name": "2500× 1250 мм",
+                "count": "271"
+            },
+            {
+                "name": "2800× 1250 мм",
+                "count": "186"
+            },
+            {
+                "name": "2500× 1250 мм",
+                "count": "94"
+            }
+        ]
+    }, {
+        "icon": "/images/topcatalog/36109_Thumb.jpg",
+        "name": "ДСП",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/36097_Thumb.jpg",
+        "name": "ДВП",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/52295_Thumb.jpg",
+        "name": "МДФ",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/36175_Thumb.jpg",
+        "name": "ГСП",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/37913_Thumb.jpg",
+        "name": "ГКЛ",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/36095_Thumb.jpg",
+        "name": "Фибролит",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/55924_Thumb.jpg",
+        "name": "Спецпродукты КНАУФ",
+        "sub": []
+    }]
+}, {
+    "name": "Теплоизоляция",
+    "icon": "/images/icons/ic_house.svg",
+    "total": "1289",
+    "sub": [{
+        "icon": "/images/topcatalog/58631_Thumb.jpg",
+        "name": "Knauf",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/35668_Thumb.jpg",
+        "name": "Пеноплэкс",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/53882_Thumb.jpg",
+        "name": "Ecoroll",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/54092_Thumb.jpg",
+        "name": "Green Term",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/35670_Thumb.png",
+        "name": "Baswool",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/35678_Thumb.jpg",
+        "name": "Rockwool",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/35676_Thumb.jpg",
+        "name": "Isover",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/35684_Thumb.jpg",
+        "name": "Isobox",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/35674_Thumb.jpg",
+        "name": "ТехноНИКОЛЬ",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/35682_Thumb.jpg",
+        "name": "XPS Carbon",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/53226_Thumb.jpg",
+        "name": "Ursa",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/35672_Thumb.jpg",
+        "name": "Эковер",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/54436_Thumb.jpg",
+        "name": "Tisma",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/47979_Thumb.jpg",
+        "name": "Техническая изоляция",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/35694_Thumb.jpg",
+        "name": "Крепеж для теплоизоляции",
+        "sub": []
+    }]
+}, {
+    "name": "Звукоизоляция",
+    "icon": "/images/icons/ic_nosound.svg",
+    "total": "3987",
+    "sub": [{
+        "icon": "/images/topcatalog/45372_Thumb.jpg",
+        "name": "Knauf",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/45374_Thumb.jpg",
+        "name": "Green Board",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/40589_Thumb.png",
+        "name": "ТехноНиколь",
+        "sub": []
+    }]
+}, {
+    "name": "Кровля/Гидроизоляция",
+    "icon": "/images/icons/ic_rullon.svg",
+    "total": "622",
+    "sub": [{
+        "icon": "/images/topcatalog/35714_Thumb.jpg",
+        "name": "Рулонные/Битумные",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/35818_Thumb.jpg",
+        "name": "Мастики и Праймеры",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/35820_Thumb.png",
+        "name": "Мембраны",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/50683_Thumb.jpg",
+        "name": "Скотч",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/62702_Thumb.jpg",
+        "name": "Скатная кровля",
+        "sub": []
+    }]
+}, {
+    "name": "Метизы",
+    "icon": "/images/icons/ic_screw.svg",
+    "total": "789",
+    "sub": [{
+        "icon": "/images/topcatalog/47987_Thumb.jpg",
+        "name": "Саморезы черные",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/49834_Thumb.jpg",
+        "name": "Саморезы жёлтые",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/47993_Thumb.jpg",
+        "name": "Саморезы белые",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/59836_Thumb.png",
+        "name": "Саморезы кровельные",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/47995_Thumb.jpg",
+        "name": "Гвозди",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/48981_Thumb.jpg",
+        "name": "Дюбель",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/55402_Thumb.jpeg",
+        "name": "Анкера",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/55400_Thumb.jpg",
+        "name": "Болты, гайки, винты, шайбы",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/49840_Thumb.jpg",
+        "name": "Прочее",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/54892_Thumb.jpg",
+        "name": "Кнауф",
+        "sub": []
+    }]
+}, {
+    "name": "Крепежные элементы",
+    "icon": "/images/icons/ic_talrep.svg",
+    "total": "4589",
+    "sub": [{
+        "icon": "/images/topcatalog/44382_Thumb.jpeg",
+        "name": "Профиль",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/48001_Thumb.jpg",
+        "name": "Подвесы",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/48003_Thumb.jpg",
+        "name": "Комплектующие",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/48005_Thumb.jpg",
+        "name": "Грибы для теплоизоляции",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/54890_Thumb.jpeg",
+        "name": "Кнауф",
+        "sub": []
+    }]
+}, {
+    "name": "Пленки",
+    "icon": "/images/icons/ic_rullon.svg",
+    "total": "585",
+    "sub": [{
+        "icon": "/images/topcatalog/52478_Thumb.jpg",
+        "name": "Паро- гидроизоляция",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/43760_Thumb.jpg",
+        "name": "ПЭТ",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/46317_Thumb.png",
+        "name": "Скотч",
+        "sub": []
+    }]
+}, {
+    "name": "Сухие смеси, Грунтовка",
+    "icon": "/images/icons/ic_paint.svg",
+    "total": "712",
+    "sub": [{
+        "icon": "/images/topcatalog/54316_Thumb.jpg",
+        "name": "Штукатурка",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/54322_Thumb.jpg",
+        "name": "Шпаклёвка",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/54320_Thumb.jpg",
+        "name": "Грунтовка",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/54798_Thumb.jpg",
+        "name": "Клей",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/54894_Thumb.jpg",
+        "name": "Спецпродукты",
+        "sub": []
+    }, {
+        "icon": "/images/topcatalog/58633_Thumb.jpg",
+        "name": "Bergauf (Бергауф)",
+        "sub": []
+    }]
+}, {
+    "name": "Уцененные товары",
+    "icon": "/images/icons/ic_sale.svg",
+    "total": "1289",
+    "sub": false
+}]
