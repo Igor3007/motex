@@ -43,6 +43,71 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('load', css_variable)
     window.addEventListener('resize', css_variable)
 
+    /* ==============================================
+    Status
+    ============================================== */
+
+    function Status() {
+
+        this.containerElem = '#status'
+        this.headerElem = '#status_header'
+        this.msgElem = '#status_msg'
+        this.btnElem = '#status_btn'
+        this.timeOut = 10000,
+            this.autoHide = true
+
+        this.init = function () {
+            let elem = document.createElement('div')
+            elem.setAttribute('id', 'status')
+            elem.innerHTML = '<div id="status_header"></div> <div id="status_msg"></div><div id="status_btn"></div>'
+            document.body.append(elem)
+
+            document.querySelector(this.btnElem).addEventListener('click', function () {
+                this.parentNode.setAttribute('class', '')
+            })
+        }
+
+        this.msg = function (_msg, _header) {
+            _header = (_header ? _header : '')
+            this.onShow('complete', _header, _msg)
+            if (this.autoHide) {
+                this.onHide();
+            }
+        }
+        this.err = function (_msg, _header) {
+            _header = (_header ? _header : '')
+            this.onShow('error', _header, _msg)
+            if (this.autoHide) {
+                this.onHide();
+            }
+        }
+        this.wrn = function (_msg, _header) {
+            _header = (_header ? _header : '')
+            this.onShow('warning', _header, _msg)
+            if (this.autoHide) {
+                this.onHide();
+            }
+        }
+
+        this.onShow = function (_type, _header, _msg) {
+            document.querySelector(this.headerElem).innerText = _header
+            document.querySelector(this.msgElem).innerText = _msg
+            document.querySelector(this.containerElem).classList.add(_type)
+        }
+
+        this.onHide = function () {
+            setTimeout(() => {
+                document.querySelector(this.containerElem).setAttribute('class', '')
+            }, this.timeOut);
+        }
+
+    }
+
+    window.STATUS = new Status();
+    const STATUS = window.STATUS;
+    STATUS.init();
+
+
     /* ===================================
     init mask
     ===================================*/
@@ -917,6 +982,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const MATERIAL_INPUT = new materialInput()
     MATERIAL_INPUT.init()
+
+
+    /* =======================================
+    rating order
+    =======================================*/
+
+    document.querySelectorAll('[name="rating-shop"], [name="rating-selected"]').forEach(item => {
+        item.addEventListener('change', e => {
+            window.STATUS.msg('Спасибо за обратную связь!')
+        })
+    })
 
 
 
