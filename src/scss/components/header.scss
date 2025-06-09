@@ -698,6 +698,7 @@ header {
 
     overflow-x: auto;
     flex-wrap: nowrap;
+    padding-bottom: 6px;
 
     @media screen and (min-width: $w1200) {
       gap: 32px;

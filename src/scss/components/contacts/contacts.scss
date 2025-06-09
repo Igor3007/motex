@@ -53,6 +53,42 @@
             margin-bottom: 16px;
             gap: 16px;
         }
+
+        &--map {
+            @media screen and (max-width: $w576) {
+                flex-direction: column-reverse;
+
+                & .mx-contacts {
+
+                    &__left,
+                    &__right {
+                        flex-basis: unset;
+                    }
+
+                    &__right {
+                        padding-left: 0;
+                        background-color: transparent;
+                        padding-top: 5px;
+                        padding-bottom: 5px;
+                    }
+
+                    &__map {
+                        padding-top: 0;
+                        height: calc(54vw - 32px);
+                    }
+
+                    &__requisite {
+                        & .mx-contacts {
+
+                            &__label,
+                            &__text {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     &__item,
@@ -78,7 +114,14 @@
         }
 
         &--city {
-            @media screen and (min-width: $w1200) {
+
+            @media screen and (min-width: $w760) {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            @media screen and (min-width: $w760) {
                 & .mx-contacts {
                     &__label {
                         padding-bottom: 0;
@@ -282,7 +325,7 @@
         & .mx-contacts {
             &__label {
                 padding-bottom: 0;
-                font-size: 12px;
+
 
                 @media screen and (min-width: $w760) {
                     font-size: 16px;

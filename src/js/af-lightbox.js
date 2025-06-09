@@ -48,11 +48,17 @@ class afLightbox {
             _this.close()
         })
 
-        if (this.modal.querySelector('[data-af-popup="close"]')) {
-            this.modal.querySelector('[data-af-popup="close"]').addEventListener('click', function (e) {
-                _this.close()
-            })
-        }
+
+
+        setTimeout(() => {
+            this.modal.querySelectorAll('[data-af-popup="close"]').forEach(item => {
+                item.addEventListener('click', () => {
+                    this.close()
+                })
+            });
+        }, 1000)
+
+
 
         if (afterShow) afterShow(this.modal);
 
