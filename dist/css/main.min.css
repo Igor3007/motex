@@ -6201,6 +6201,96 @@ h2 {
   }
 }
 
+.mx-collection-details {
+  margin-top: 40px;
+}
+.mx-collection-details h3 {
+  font: normal 700 24px/32px "Roboto", sans-serif;
+  color: var(--black-base);
+  margin-block: 28px;
+}
+.mx-collection-details__banner {
+  height: 464px;
+  position: relative;
+  border-radius: 8px;
+  background-size: cover;
+  margin-bottom: 80px;
+  margin-top: 40px;
+}
+.mx-collection-details__banner-content {
+  height: 100%;
+  width: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left top;
+  padding: 40px 12% 40px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mx-collection-details__banner-badges {
+  display: flex;
+  gap: 4px;
+}
+.mx-collection-details__banner-badge {
+  background: var(--white);
+  color: var(--black-85);
+  font: normal 400 14px/20px "Roboto", sans-serif;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+.mx-collection-details__banner-text {
+  color: var(--white);
+}
+.mx-collection-details__banner-title {
+  font: normal 700 44px/48px "Roboto", sans-serif;
+  margin-bottom: 20px;
+}
+.mx-collection-details__banner-subtitle {
+  font: normal 400 20px/1.4 "Roboto", sans-serif;
+  color: var(--white);
+}
+.mx-collection-details__goods-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.mx-collection-details__seo .seo.formated-text h1 {
+  font: normal 500 20px/1.4 "Roboto", sans-serif;
+}
+@media screen and (max-width: 767px) {
+  .mx-collection-details__seo .seo.formated-text h1 {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+.mx-collection-details__seo .seo.formated-text h2 {
+  font: normal 500 20px/1.4 "Roboto", sans-serif;
+  margin-top: 48px;
+}
+@media screen and (max-width: 992.98px) {
+  .mx-collection-details__seo .seo.formated-text h2 {
+    margin-top: 28px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .mx-collection-details__seo .seo.formated-text h2 {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+.mx-collection-details__seo .seo.formated-text p {
+  font: normal 400 14px/20px "Roboto", sans-serif;
+  color: var(--black-70);
+  margin-block: 20px;
+}
+@media screen and (max-width: 767px) {
+  .mx-collection-details__seo .seo.formated-text p {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+}
+
 /* popup */
 @keyframes zoomInUpPopup {
   from {
