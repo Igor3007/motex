@@ -66,6 +66,7 @@
   }
 
   h2 {
+    font: normal 700 28px/36px Roboto, sans-serif;
     @media screen and (max-width: $w360) {
       font: normal 700 24px/32px Roboto, sans-serif;
     }

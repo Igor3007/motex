@@ -22,11 +22,19 @@ details {
     align-items: center;
     padding-right: 48px;
     font: normal 700 16px/1.5 "Roboto", sans-serif;
+    cursor: pointer;
 
     @media screen and (max-width: $w375) {
       font-size: 12px;
       line-height: 16px;
       min-height: 28px;
+    }
+
+    &:hover {
+      &::before {
+        background-color: var(--black-20);
+        transition: background-color .15s ease-in-out;
+      }
     }
 
     &::before {
@@ -41,7 +49,6 @@ details {
       width: 32px;
       height: 32px;
       border-radius: 8px;
-      cursor: pointer;
       @media screen and (max-width: $w375) {
         width: 28px;
         height: 28px;
@@ -56,6 +63,12 @@ details {
     summary {
       &::before {
         background: var(--white) url("/images/icons/ic_minus_details.svg") no-repeat center;
+      }
+      &:hover {
+        &::before {
+          background-color: var(--black-20);
+          transition: background-color .15s ease-in-out;
+        }
       }
       & ~ * {
         max-height: none;
