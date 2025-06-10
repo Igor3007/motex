@@ -14,17 +14,17 @@ const images = (isBuild) => {
     .pipe(plugins.if(isBuild, gulp.dest(filePaths.build.images)))
     .pipe(plugins.if(isBuild, gulp.src(filePaths.src.images)))
     .pipe(plugins.if(isBuild, plugins.newer(filePaths.build.images)))
-    .pipe(
-      plugins.if(
-        isBuild,
-        imageMin({
-          progressive: true,
-          svgoPlugins: [{ removeViewBox: false }],
-          interlaced: true,
-          optimizationLevel: 3, // 0 to 7
-        })
-      )
-    )
+    // .pipe(
+    //   plugins.if(
+    //     isBuild,
+    //     imageMin({
+    //       progressive: true,
+    //       svgoPlugins: [{ removeViewBox: false }],
+    //       interlaced: true,
+    //       optimizationLevel: 3, // 0 to 7
+    //     })
+    //   )
+    // )
     .pipe(gulp.dest(filePaths.build.images))
     .pipe(gulp.src(filePaths.src.svg))
     .pipe(gulp.dest(filePaths.build.images))
