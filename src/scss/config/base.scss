@@ -1,3 +1,5 @@
+@import "vars";
+
 $fontFamily: "Roboto";
 
 $fontSize: "";
@@ -57,4 +59,16 @@ body {
     padding: 0 40px;
   }
 
+}
+
+.hidden-mobile {
+  @media screen and (max-width: $w360) {
+    display: none !important;
+  }
+}
+
+.block-mobile {
+  @media screen and (max-width: $w360) {
+    display: block !important;
+  }
 }

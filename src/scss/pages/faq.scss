@@ -1,0 +1,108 @@
+@import "../config/vars";
+
+.faq {
+  margin-top: 0;
+  margin-bottom: 120px;
+
+  @media screen and (max-width: $w375) {
+    margin-top: -3px;
+    margin-bottom: 80px;
+  }
+
+  &__heading {
+    margin-bottom: 40px;
+    @media screen and (max-width: $w375) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 16px;
+    font: normal 400 16px/1.25 "Roboto", sans-serif;
+    @media screen and (max-width: $w375) {
+      gap: 12px;
+      font-size: 10px;
+      line-height: 1.6;
+    }
+  }
+
+  &__answer {
+    margin-top: 20px;
+    @media screen and (max-width: $w375) {
+      margin-top: 16px;
+    }
+
+    & > * + * {
+      margin-top: 20px;
+      @media screen and (max-width: $w375) {
+        margin-top: 16px;
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: 40px;
+    @media screen and (max-width: $w992) {
+      line-height: 2;
+      margin-top: 36px;
+    }
+    @media screen and (max-width: $w375) {
+      font-size: 12px;
+      line-height: 16px;
+      margin-top: 27px;
+
+      .btn-blue {
+        margin-top: 4px;
+      }
+    }
+    @media screen and (min-width: $w992) {
+      .btn-blue {
+        margin-inline: 5px ;
+      }
+    }
+  }
+
+  h2 {
+    @media screen and (max-width: $w360) {
+      font: normal 700 24px/32px Roboto, sans-serif;
+    }
+  }
+
+  ol {
+    counter-reset: o-list;
+
+    & > li {
+      display: flex;
+
+      &:before {
+        content: counter(o-list) ".";
+        counter-increment: o-list;
+        margin-inline: .25em;
+      }
+    }
+  }
+
+  picture {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    width: fit-content;
+    max-width: 100%;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  a {
+    color: var(--blue-link);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+}

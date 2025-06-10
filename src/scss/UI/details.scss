@@ -1,0 +1,58 @@
+@import "../config/vars";
+
+details {
+  background: var(--black-5);
+  padding: 20px;
+  border-radius: 8px;
+
+  @media screen and (max-width: $w992) and (min-width: $w375) {
+    margin-inline: -20px;
+  }
+
+  @media screen and (max-width: $w375) {
+    padding: 16px;
+  }
+
+  & > summary {
+    position: relative;
+    list-style: none;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    padding-right: 48px;
+    font: normal 700 16px/1.5 "Roboto", sans-serif;
+
+    @media screen and (max-width: $w375) {
+      font-size: 12px;
+      line-height: 16px;
+      min-height: 28px;
+    }
+
+    &::before {
+      content: url("/images/icons/ic_plus_details.svg");
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      cursor: pointer;
+      @media screen and (max-width: $w375) {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+
+  &[open] {
+    summary {
+      &::before {
+        content: url("/images/icons/ic_minus_details.svg");
+      }
+    }
+  }
+}
