@@ -1,3 +1,5 @@
+@import "../config/vars";
+
 .btn-custom {
   font-size: 14px;
   font-weight: 400;
@@ -175,6 +177,16 @@
       cursor: not-allowed;
     }
   }
+
+  &.btn-small {
+    padding: 6px 12px;
+    font: normal 500 14px/20px "Roboto", sans-serif;
+    @media screen and (max-width: $w360) {
+      padding: 4px 8px;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
 }
 
 .btn-disabled {
@@ -187,4 +199,8 @@
     background: #8A8C8D;
     border-color: transparent;
   }
+}
+
+.btn-inline {
+  display: inline-flex;
 }

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include('html/head.html', {
+    'title': 'ЧаВо'
+    })
+</head>
+<body>
+@@include('html/header.html')
+<main class="page">
+    @@include('html/components/breadcrumbs/breadcrumbs-faq.html')
+    <section class="faq">
+        <div class="faq__container _container">
+            <div class="faq__heading">
+                <h2>Есть вопросы? Сейчас на них ответим!</h2>
+            </div>
+            <div class="faq__content">
+                <details>
+                    <summary>Как мне получить товар и расплатиться?</summary>
+                    <div class="faq__answer">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque eaque fugiat magnam nam
+                            voluptatibus. Aperiam assumenda eaque eveniet inventore neque perferendis quaerat
+                            reprehenderit rerum sequi voluptatum. Cum doloribus iure numquam.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Вы осуществляете разгрузку и подъём?</summary>
+                    <div class="faq__answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam est
+                        excepturi illo laboriosam libero maiores maxime necessitatibus nobis, numquam obcaecati quos
+                        sunt tempora temporibus tenetur vero! Eaque necessitatibus vitae voluptates.
+                    </div>
+                </details>
+                <details>
+                    <summary>Вы осуществляете колеровку красок?</summary>
+                    <div class="faq__answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam
+                        beatae consequuntur, dolore eos eum exercitationem hic itaque laborum, modi mollitia nobis non
+                        numquam, praesentium ratione repellendus reprehenderit tempora voluptatum.
+                    </div>
+                </details>
+                <details>
+                    <summary>В каком формате передавать Техническое задание на распил?</summary>
+                    <div class="faq__answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam dolore
+                        doloribus et illo impedit, ipsa ipsam iste magnam maiores necessitatibus nostrum numquam quae,
+                        quos, soluta tempore velit veniam voluptatum!
+                    </div>
+                </details>
+                <details>
+                    <summary>Как мне вернуть товар?</summary>
+                    <div class="faq__answer">
+                        <ol>
+                            <li>Вам необходимо принести товар и чек (или любой документ, подтверждающий факт покупки)
+                                в любой из магазинов сети;
+                            </li>
+                            <li>обратиться с просьбой к сотруднику магазина;</li>
+                            <li>мы подберём для вас товар на замену или вернём деньги.</li>
+                        </ol>
+                        <p>
+                            Товары, имеющие сроки годности, могут быть возвращены не менее чем за 1 месяц
+                            до его истечения. В некоторых случаях мы оставляем за собой право не осуществлять обмен
+                            или возврат товаров. <a href="#">Подробнее</a>
+                        </p>
+                        <picture>
+                            <img src="/images/faq/faq-01.jpg" width="612" alt="faq-01">
+                        </picture>
+                    </div>
+                </details>
+                <details>
+                    <summary>Какие преимущества даёт программа лояльности?</summary>
+                    <div class="faq__answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque
+                        doloribus eius fuga harum id nemo neque optio ratione repudiandae rerum! Aliquam dolorem earum
+                        explicabo sint! Dignissimos explicabo inventore minima qui!
+                    </div>
+                </details>
+                <details>
+                    <summary>Я не знаю какие материалы выбрать, можете проконсультировать?</summary>
+                    <div class="faq__answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam et
+                        eveniet perspiciatis repudiandae tenetur. At dolore maxime omnis quos suscipit! Cumque inventore
+                        laudantium maiores maxime mollitia, quo repellendus reprehenderit sit.
+                    </div>
+                </details>
+            </div>
+            <div class="faq__footer">
+                Не нашли ответ на свой вопрос? Позвоните нам по номеру +7 351 217-00-00
+                <button class="btn-blue btn-inline btn-small hidden-mobile get-modal--call">Заказать звонок</button>
+                или напишите на почту info@mail.ru
+                <button class="btn-blue btn-inline btn-small block-mobile get-modal--call">Написать</button>
+            </div>
+        </div>
+    </section>
+</main>
+@@include('html/footer.html')
+@@include('html/components/action-panel.html')
+</body>
+</html>
