@@ -58,7 +58,7 @@ details {
         content: url("/images/icons/ic_minus_details.svg");
       }
       & ~ * {
-        max-height: 100vh;
+        max-height: none;
         animation: details-animation;
         animation-duration: 1s;
       }
@@ -72,8 +72,12 @@ details {
     opacity: 0;
   }
 
-  100% {
+  95% {
     max-height: 100vh;
     opacity: 1;
+  }
+
+  100% {
+    max-height: none !important;
   }
 }
