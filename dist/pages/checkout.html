@@ -7,7 +7,7 @@
     <title>Каталог</title>
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/main.min.css?_v=20250610070552">
+    <link rel="stylesheet" href="/css/main.min.css">
 
 
 </head>
@@ -142,7 +142,7 @@
                                 Сейчас мы открыты
                             </div>
                             <i class="i--open time-id"></i>
-                            
+                            <!--                                    <i class="i--close time-id"></i>-->
                         </div>
                         <div class="modal-time">
                             <div class="modal-time__info">
@@ -436,7 +436,7 @@
                                         <div v-for="item in products" class="cart-order__item">
                                             <div class="cart-order__picture">
                                                 <a href="/pages/single-product.html">
-                                                    <picture><picture><source srcset="item.image" type="image/webp"><img :src="item.image" alt=""></picture></picture>
+                                                    <picture><img :src="item.image" alt=""></picture>
                                                 </a>
                                             </div>
                                             <div class="cart-order__cost">
@@ -644,7 +644,7 @@
 </footer>
 
 
-<script src="/js/vue.js?_v=20250610070552"></script>
+<script src="/js/vue.js"></script>
     <div class="action-panel">
     <div class="_container action-panel__container">
         <div class="action-panel__config config-action">
@@ -693,10 +693,10 @@
     </div>
 </div>
 
-    <script src="/js/top-catalog.js?_v=20250610070552"></script>
-    <script src="/js/main.js?_v=20250610070552"></script>
-    <script src="/js/cart/vue-aflightbox.js?_v=20250610070552"></script>
-    <script src="/js/cart/checkout.js?_v=20250610070552"></script>
+    <script src="/js/top-catalog.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/cart/vue-aflightbox.js"></script>
+    <script src="/js/cart/checkout.js"></script>
 
 </body>
 
