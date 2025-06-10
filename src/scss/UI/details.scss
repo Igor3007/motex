@@ -30,8 +30,8 @@ details {
     }
 
     &::before {
-      content: url("/images/icons/ic_plus_details.svg");
-      background: var(--white);
+      content: "";
+      background: var(--white) url("/images/icons/ic_plus_details.svg") no-repeat center;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -55,7 +55,7 @@ details {
   &[open] {
     summary {
       &::before {
-        content: url("/images/icons/ic_minus_details.svg");
+        background: var(--white) url("/images/icons/ic_minus_details.svg") no-repeat center;
       }
       & ~ * {
         max-height: none;
