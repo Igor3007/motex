@@ -7,11 +7,11 @@ details {
   border-radius: 8px;
   overflow: hidden;
 
-  @media screen and (max-width: $w992) and (min-width: $w375) {
+  @media screen and (max-width: $w992) and (min-width: $w576) {
     margin-inline: -20px;
   }
 
-  @media screen and (max-width: $w375) {
+  @media screen and (max-width: $w576) {
     --details-padding: 16px;
   }
 
@@ -57,7 +57,13 @@ details {
     }
   }
 
-  &:hover, &:active, &[open] {
+  &:focus-within {
+    @media screen and (min-width: $w760) {
+      outline: 1px solid var(--accent);
+    }
+  }
+
+  &:hover, &[open] {
     outline: 1px solid var(--accent);
   }
 
