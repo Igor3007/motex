@@ -384,42 +384,27 @@
 
                         <div class="single-product__slider">
                             <div class="single-product__slider-main">
-                                <div class="splide">
+                                <div class="splide" data-slider="preview-product-main">
                                     <div class="splide__track">
                                         <div class="splide__list">
                                             <div class="splide__slide">
-                                                <picture>
-                                                    <img src="/images/other/fanera.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="splide__slide">
-                                                <picture>
-                                                    <img src="/images/other/fanera.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="splide__slide">
-                                                <picture>
-                                                    <img src="/images/other/fanera.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                            <div class="splide__slide">
-                                                <picture>
-                                                    <img src="/images/other/fanera.jpg" alt="">
-                                                </picture>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="single-product__slider-thumb">
-                                <div class="splide">
-                                    <div class="splide__track">
-                                        <div class="splide__list">
-                                            <div class="splide__slide">
-                                                <div class="slide-video" data-url="">
-                                                    <picture>
-                                                        <img src="/images/other/fanera.jpg" alt="">
-                                                    </picture>
+                                                <div class="video-slide">
+                                                    <div class="video">
+                                                        <div class="video__preview">
+                                                            <picture>
+                                                                <img src="/images/other/fanera.jpg" loading="lazy" alt="image">
+                                                            </picture>
+                                                        </div>
+                                                        <div class="video__action">
+                                                            <div class="video__button"></div>
+                                                        </div>
+                                                        <div class="video__source">
+                                                            <video preload="true" controls="">
+                                                                <source src="/files/slider.webm" type="video/webm">
+                                                                <source src="/static/mx-video_test.mp4" type="video/mp4">
+                                                            </video>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="splide__slide">
@@ -437,6 +422,39 @@
                                                     <img src="/images/other/fanera.jpg" alt="">
                                                 </picture>
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="single-product__slider-thumb">
+                                <div class="splide" data-slider="preview-product-thumb">
+                                    <div class="splide__track">
+                                        <div class="splide__list">
+                                            <div class="splide__slide">
+
+                                                <div class="video-slide-thumb">
+                                                    <picture>
+                                                        <img src="/images/other/fanera.jpg" loading="lazy" alt="image">
+                                                    </picture>
+                                                </div>
+
+                                            </div>
+                                            <div class="splide__slide">
+                                                <picture>
+                                                    <img src="/images/other/fanera.jpg" alt="">
+                                                </picture>
+                                            </div>
+                                            <div class="splide__slide">
+                                                <picture>
+                                                    <img src="/images/other/fanera.jpg" alt="">
+                                                </picture>
+                                            </div>
+                                            <div class="splide__slide">
+                                                <picture>
+                                                    <img src="/images/other/fanera.jpg" alt="">
+                                                </picture>
+                                            </div>
                                             <div class="splide__slide">
                                                 <picture>
                                                     <img src="/images/other/fanera.jpg" alt="">
@@ -446,6 +464,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
 
@@ -456,15 +475,15 @@
 
                         <div class="single-product__actions">
                             <div class="single-product__tofav">
-                                <i class="icon"></i>
+                                <i class="ic_28" style="background-image: url(/images/icons/ic_like.svg);"></i>
                                 <span>В избранное</span>
                             </div>
-                            <div class="single-product__tofav">
-                                <i class="icon"></i>
+                            <div class="single-product__compare">
+                                <i class="ic_28" style="background-image: url(/images/icons/ic_compare.svg);"></i>
                                 <span>В сравнение</span>
                             </div>
-                            <div class="single-product__tofav">
-                                <i class="icon"></i>
+                            <div class="single-product__share">
+                                <i class="ic_28" style="background-image: url(/images/icons/ic_share.svg);"></i>
                                 <span>Поделиться</span>
                             </div>
                         </div>
@@ -475,14 +494,14 @@
                                 <ul>
                                     <li><a href="">3</a></li>
                                     <li><a href="">4</a></li>
-                                    <li><a href="">5</a></li>
+                                    <li class="is-active"><a href="">5</a></li>
                                     <li><a href="">6</a></li>
                                     <li><a href="">7</a></li>
                                     <li><a href="">8</a></li>
                                     <li><a href="">9</a></li>
                                 </ul>
                             </div>
-                            <div class="single-product__all">Все 15 товаров</div>
+                            <div class="single-product__all"><span>Все 15 товаров</span></div>
                         </div>
 
                         <div class="single-product__props">
@@ -518,7 +537,7 @@
                             <div class="block-addition">
                                 <div class="block-addition__image">
                                     <picture>
-                                        <img src="/" alt="">
+                                        <img src="/images/other/brand.jpg" alt="">
                                     </picture>
                                 </div>
                                 <div class="block-addition__main">
@@ -526,7 +545,7 @@
                                     <div class="block-addition__desc">Добавить к заказу</div>
                                 </div>
                                 <div class="block-addition__icon">
-                                    <i class="" style=""></i>
+                                    <i class="" style="background-image: url(/images/icons/ic_plus.svg)"></i>
                                 </div>
                             </div>
                         </div>
@@ -535,15 +554,16 @@
                             <div class="block-addition">
                                 <div class="block-addition__image">
                                     <picture>
-                                        <img src="/" alt="">
+                                        <img src="/images/other/sveza.jpg" alt="">
                                     </picture>
                                 </div>
                                 <div class="block-addition__main">
-                                    <div class="block-addition__title">Распил по чертежу, 5 ₽/м.п.</div>
-                                    <div class="block-addition__desc">Добавить к заказу</div>
+                                    <div class="block-addition__title">SVEZA <span data-tooltip="sdsd" style="background-image: url(/images/icons/ic_about-dark.svg)"></span>
+                                    </div>
+                                    <div class="block-addition__desc">Все товары этого бренда</div>
                                 </div>
                                 <div class="block-addition__icon">
-                                    <i class="" style=""></i>
+                                    <i class="" style="background-image: url(/images/icons/ic_arrow-as-rt.svg)"></i>
                                 </div>
                             </div>
                         </div>
@@ -555,7 +575,7 @@
                         <div class="single-product__sku">
                             <div class="sp-sku">
                                 <div class="sp-sku__icon">
-                                    <i class="ic_24"></i>
+                                    <i class="ic_28" style="background-image: url(/images/icons/ic_copy.svg)"></i>
                                 </div>
                                 <div class="sp-sku__text">Арт: <span>УТ-00010464</span></div>
                             </div>
@@ -565,7 +585,7 @@
                             <div class="sp-profit">
                                 <div class="sp-profit__image">
                                     <picture>
-                                        <img src="./" alt="">
+                                        <img src="/images/other/profit.jpg" alt="">
                                     </picture>
                                 </div>
                                 <div class="sp-profit__main">
@@ -575,14 +595,105 @@
                                     </div>
                                 </div>
                                 <div class="sp-profit__tooltip">
-                                    <i class="ic_16"></i>
+                                    <i class="ic_16" style="background-image: url(/images/icons/ic_about-dark.svg)"></i>
                                 </div>
                             </div>
                         </div>
 
                         <div class="single-product__configurate">
                             <div class="sp-configurate">
-                                <div class="sp-configurate__price"></div>
+                                <div class="sp-configurate__price">
+                                    <div class="sp-configurate__price-current">741 ₽/шт</div>
+                                    <div class="sp-configurate__price-right">
+                                        <div class="sp-configurate__price-old">880 ₽</div>
+                                        <div class="sp-configurate__price-desc">цена без скидки</div>
+                                    </div>
+                                </div>
+                                <div class="sp-configurate__tags">
+                                    <ul>
+                                        <li>108 ₽/м2</li>
+                                        <li>3 705 ₽/м3</li>
+                                    </ul>
+                                </div>
+                                <div class="sp-configurate__instock">
+                                    <span>В наличии, 589 шт.</span>
+                                </div>
+                                <div class="sp-configurate__calc">
+                                    <div class="sp-configurate__field">
+                                        <label>Кол-во, шт</label>
+                                        <div class="counter">
+                                            <div class="counter__inc">+</div>
+                                            <div class="counter__input">
+                                                <input type="text" value="1">
+                                            </div>
+                                            <div class="counter__dec">-</div>
+                                        </div>
+                                    </div>
+                                    <div class="sp-configurate__field">
+                                        <label>Площадь, м2</label>
+                                        <div class="counter">
+                                            <div class="counter__inc">+</div>
+                                            <div class="counter__input">
+                                                <input type="text" value="1">
+                                            </div>
+                                            <div class="counter__dec">-</div>
+                                        </div>
+                                    </div>
+                                    <div class="sp-configurate__field">
+                                        <label>Объём, м3</label>
+                                        <div class="counter">
+                                            <div class="counter__inc">+</div>
+                                            <div class="counter__input">
+                                                <input type="text" value="1">
+                                            </div>
+                                            <div class="counter__dec">-</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sp-configurate__tocart">
+                                    <button class="btn-blue">В корзину</button>
+                                </div>
+
+                                <div class="sp-configurate__sale-offer">
+                                    Нашли дешевле? Сделаем скидку!
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="single-product__oneclick">
+                            <button class="btn">Купить в 1 клик</button>
+                        </div>
+
+                        <div class="single-product__h2">Способ получения</div>
+
+                        <div class="single-product__shiping">
+                            <div class="card-icon-text">
+                                <div class="card-icon-text__icon"></div>
+                                <div class="card-icon-text__main">
+                                    <div class="card-icon-text__title">Доставка</div>
+                                    <div class="card-icon-text__desc">от 0 ₽</div>
+                                </div>
+                            </div>
+                            <div class="card-icon-text">
+                                <div class="card-icon-text__icon"></div>
+                                <div class="card-icon-text__main">
+                                    <div class="card-icon-text__title">Самовывоз</div>
+                                    <div class="card-icon-text__desc">Сегодня, в Челябинске, до 18:00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="single-product__h2">Способы оплаты</div>
+
+                        <div class="single-product__payment">
+                            <div class="card-icon-text">
+                                <div class="card-icon-text__icon"></div>
+                                <div class="card-icon-text__main">
+                                    <div class="card-icon-text__title">Наличными или картой</div>
+                                    <div class="card-icon-text__desc">Возможна оплата при получении</div>
+                                </div>
                             </div>
                         </div>
 
@@ -1295,12 +1406,12 @@
 <script src="/js/af-lightbox.js"></script>
 <script src="/js/range-slider.js"></script>
 <script src="/js/maska.js"></script>
-<script src="/js/form.js"></script>
 <script src="/js/vue.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/search-index.js"></script>
 <script src="/js/select-region.js"></script>
 <script src="/js/top-catalog.js"></script>
+<script src="/js/single-product.js"></script>
     <div class="action-panel">
     <div class="_container action-panel__container">
         <div class="action-panel__config config-action">

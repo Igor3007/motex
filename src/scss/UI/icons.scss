@@ -1,0 +1,30 @@
+.ic_16 {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    @include bgimage-contain;
+}
+
+.ic_24 {
+    display: inline-block;
+    border-radius: 8px;
+    width: 24px;
+    height: 24px;
+    @include bgimage-contain;
+}
+
+.ic_28 {
+    display: inline-block;
+    border-radius: 8px;
+    width: 28px;
+    height: 28px;
+    @include bgimage-contain;
+}
+
+.ic_32 {
+    display: inline-block;
+    border-radius: 8px;
+    width: 32px;
+    height: 32px;
+    @include bgimage-contain;
+}

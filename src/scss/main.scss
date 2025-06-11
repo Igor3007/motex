@@ -25,6 +25,8 @@
 @import 'UI/buttons';
 @import 'UI/checkbox';
 @import 'UI/form';
+@import 'UI/video';
+@import 'UI/icons';
 
 //index page start
 @import "components/p-index/b-data-search";
@@ -70,3 +72,5 @@
 @import 'components/contacts/contacts.scss';
 @import 'components/contacts/our-team.scss';
 @import 'components/contacts/form-image.scss';
+
+@import 'components/single-product/single-product.scss';
