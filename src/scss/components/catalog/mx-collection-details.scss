@@ -186,8 +186,5 @@
 .page-collection-details {
   .mx-simple-collections {
     margin-block: 120px;
-    @media screen and (max-width: $w992) {
-      display: none;
-    }
   }
 }

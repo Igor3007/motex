@@ -33,12 +33,6 @@ details {
       min-height: 28px;
     }
 
-    &:hover {
-      &::before {
-        border-color: var(--accent);
-      }
-    }
-
     &::before {
       content: "";
       background: var(--white) url("/images/icons/ic_plus_details.svg") no-repeat center;
@@ -63,15 +57,14 @@ details {
     }
   }
 
+  &:hover, &:active, &[open] {
+    outline: 1px solid var(--accent);
+  }
+
   &[open] {
     summary {
       &::before {
         background: var(--white) url("/images/icons/ic_minus_details.svg") no-repeat center;
-      }
-      &:hover {
-        &::before {
-          border-color: var(--accent);
-        }
       }
       & ~ * {
         max-height: none;
