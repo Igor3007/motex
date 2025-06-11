@@ -1,8 +1,9 @@
 @import "../config/vars";
 
 details {
+  --details-padding: 20px;
   background: var(--black-5);
-  padding: 20px;
+  padding: var(--details-padding);
   border-radius: 8px;
   overflow: hidden;
 
@@ -11,7 +12,7 @@ details {
   }
 
   @media screen and (max-width: $w375) {
-    padding: 16px;
+    --details-padding: 16px;
   }
 
   & > summary {
@@ -19,10 +20,12 @@ details {
     list-style: none;
     min-height: 32px;
     display: flex;
+    box-sizing: content-box;
     align-items: center;
-    padding-right: 48px;
     font: normal 700 16px/1.5 "Roboto", sans-serif;
     cursor: pointer;
+    padding: var(--details-padding) 48px var(--details-padding) var(--details-padding);
+    margin: calc(-1 * var(--details-padding));
 
     @media screen and (max-width: $w375) {
       font-size: 12px;
@@ -32,8 +35,7 @@ details {
 
     &:hover {
       &::before {
-        background-color: var(--black-20);
-        transition: background-color .15s ease-in-out;
+        border-color: var(--accent);
       }
     }
 
@@ -44,11 +46,13 @@ details {
       align-items: center;
       justify-content: center;
       position: absolute;
-      top: 0;
-      right: 0;
+      top: var(--details-padding);
+      right: var(--details-padding);
       width: 32px;
       height: 32px;
       border-radius: 8px;
+      border: 1px solid transparent;
+      transition: border-color .15s ease-in-out;
       @media screen and (max-width: $w375) {
         width: 28px;
         height: 28px;
@@ -66,14 +70,13 @@ details {
       }
       &:hover {
         &::before {
-          background-color: var(--black-20);
-          transition: background-color .15s ease-in-out;
+          border-color: var(--accent);
         }
       }
       & ~ * {
         max-height: none;
         animation: details-animation;
-        animation-duration: 1s;
+        animation-duration: .5s;
       }
     }
   }
@@ -85,7 +88,7 @@ details {
     opacity: 0;
   }
 
-  95% {
+  99% {
     max-height: 100vh;
     opacity: 1;
   }
