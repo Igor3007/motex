@@ -5,7 +5,6 @@ details {
   background: var(--black-5);
   padding: var(--details-padding);
   border-radius: 8px;
-  overflow: hidden;
 
   @media screen and (max-width: $w992) and (min-width: $w576) {
     margin-inline: -20px;
@@ -57,8 +56,8 @@ details {
     }
   }
 
-  &:hover, &:focus-within {
-    @include tablet {
+  &:hover {
+    @include desktop {
       outline: 1px solid var(--accent);
     }
   }
