@@ -1,3 +1,5 @@
+@import "../../config/vars";
+
 .mx-simple-collections {
   overflow: hidden;
 
@@ -24,21 +26,22 @@
     }
 
     a {
-      font: normal 400 16px/24px "Roboto", sans-serif;
-      color: var(--blue-link);
+      font: normal 700 12px/16px "Roboto", sans-serif;
+      color: var(--black-base);
+      text-decoration: underline;
 
-      @media screen and (min-width: 767.98px) {
+      @include tablet {
         font-size: 16px;
         line-height: 24px;
-        display: inline-block;
       }
-      @media screen and (min-width: 991.98px) {
-        &:hover {
-          color: #007AFF;
 
-          &:before {
-            background: #007AFF;
-          }
+      @include desktop {
+        color: var(--blue-link);
+        text-decoration: none;
+        font-weight: 400;
+
+        &:hover {
+          text-decoration: underline;
         }
       }
     }

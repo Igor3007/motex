@@ -1,4 +1,4 @@
-@import "../config/vars";
+@import "../config/mixins";
 
 details {
   --details-padding: 20px;
@@ -57,13 +57,13 @@ details {
     }
   }
 
-  &:focus-within {
-    @media screen and (min-width: $w760) {
+  &:hover, &:focus-within {
+    @include tablet {
       outline: 1px solid var(--accent);
     }
   }
 
-  &:hover, &[open] {
+  &[open] {
     outline: 1px solid var(--accent);
   }
 

@@ -1,3 +1,5 @@
+@import "vars";
+
 @mixin scrollbar() {
 
     @-moz-document url-prefix() {
@@ -122,5 +124,21 @@
 
     @media screen and (max-width: $w1376) {
         font-size: 22px;
+    }
+}
+
+/*
+    RESPONSIVE
+ */
+
+@mixin desktop {
+    @media screen and (min-width: $w1024) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: $w576) {
+        @content;
     }
 }

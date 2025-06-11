@@ -22,9 +22,16 @@
     height: 464px;
     position: relative;
     border-radius: 8px;
-    background-size: cover;
+    background-size: 72%;
+    background-position: 100% 5%;
     margin-bottom: 80px;
     margin-top: 40px;
+    overflow: hidden;
+
+    @media (max-width: $w1200) {
+      background-size: 100%;
+      background-position: 75px 5%;
+    }
 
     @media (max-width: $w992) {
       height: 360px;
@@ -35,24 +42,13 @@
       height: auto;
       aspect-ratio: 324 /184;
       margin-block: 28px 40px;
-    }
-
-    &-image {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-
-      img {
-        height: 100%;
-      }
+      background-position: 55px 5%;
     }
 
     &-content {
       height: 100%;
-      width: 50%;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: left top;
+      width: 45%;
+      min-width: 576px;
       padding: 40px;
       padding-right: 12% !important;
       display: flex;
@@ -60,15 +56,20 @@
       justify-content: space-between;
       position: relative;
       z-index: 2;
+      background-image: url("/images/collection-details/banner-content-bg.svg");
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: right;
 
       @media (max-width: $w992) {
         padding: 28px;
-        width: 65%;
+        width: 62%;
+        min-width: auto;
       }
 
       @media (max-width: $w576) {
         padding: 12px;
-        width: 70%;
+        width: 65%;
       }
     }
 
@@ -96,6 +97,11 @@
 
     &-text {
       color: var(--white);
+      margin-bottom: 20px;
+
+      @include tablet {
+        margin-bottom: 0;
+      }
     }
 
     &-title {
@@ -137,6 +143,7 @@
 
       @media (max-width: $w576) {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 12px;
       }
     }
   }
