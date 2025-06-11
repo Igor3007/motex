@@ -1,10 +1,21 @@
+@import "../../config/vars";
+
 .mx-collection-details {
   margin-top: 40px;
+
+  @media (max-width: $w576) {
+    margin-top: 28px;
+  }
 
   h3 {
     font: normal 700 24px/32px "Roboto", sans-serif;
     color: var(--black-base);
-    margin-block: 28px;
+    margin-block: 40px 28px;
+    @media screen and (max-width: $w576) {
+      font-size: 16px !important;
+      line-height: 24px !important;
+      margin-bottom: 16px !important;
+    }
   }
 
   &__banner {
@@ -15,16 +26,50 @@
     margin-bottom: 80px;
     margin-top: 40px;
 
+    @media (max-width: $w992) {
+      height: 360px;
+      margin-bottom: 46px;
+    }
+    
+    @media (max-width: $w576) {
+      height: auto;
+      aspect-ratio: 324 /184;
+      margin-block: 28px 40px;
+    }
+
+    &-image {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+
+      img {
+        height: 100%;
+      }
+    }
+
     &-content {
       height: 100%;
       width: 50%;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: left top;
-      padding: 40px 12% 40px 40px;
+      padding: 40px;
+      padding-right: 12% !important;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      position: relative;
+      z-index: 2;
+
+      @media (max-width: $w992) {
+        padding: 28px;
+        width: 65%;
+      }
+
+      @media (max-width: $w576) {
+        padding: 12px;
+        width: 70%;
+      }
     }
 
     &-badges {
@@ -38,6 +83,15 @@
       font: normal 400 14px/20px "Roboto", sans-serif;
       padding: 4px 8px;
       border-radius: 8px;
+
+      @media (max-width: $w992) {
+        font-size: 10px;
+        line-height: 1.6;
+      }
+
+      @media (max-width: $w576) {
+        padding: 2px 4px;
+      }
     }
 
     &-text {
@@ -47,11 +101,31 @@
     &-title {
       font: normal 700 44px/48px "Roboto", sans-serif;
       margin-bottom: 20px;
+
+      @media (max-width: $w992) {
+        font-size: 32px;
+        line-height: 1.25;
+        margin-bottom: 12px;
+      }
+
+      @media (max-width: $w576) {
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
     }
 
     &-subtitle {
       font: normal 400 20px/1.4 "Roboto", sans-serif;
-      color: var(--white);
+
+      @media (max-width: $w992) {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      @media (max-width: $w576) {
+        font-size: 10px;
+        line-height: 1.6;
+      }
     }
   }
 
@@ -60,14 +134,21 @@
       display: grid;
       gap: 16px;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+      @media (max-width: $w576) {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      }
     }
   }
 
   &__seo {
-    .seo.formated-text {
 
+    @media screen and (max-width: $w576) {
+      margin-bottom: 80px;
+    }
+    .seo.formated-text {
       h1 {
-        font: normal 500 20px/1.4 "Roboto", sans-serif;
+        font: normal 700 20px/1.4 "Roboto", sans-serif;
 
         @media screen and (max-width: $w760) {
           font-size: 14px;
@@ -76,7 +157,7 @@
       }
 
       h2 {
-        font: normal 500 20px/1.4 "Roboto", sans-serif;
+        font: normal 700 20px/1.4 "Roboto", sans-serif;
         margin-top: 48px ;
         @media screen and (max-width: $w992) {
           margin-top: 28px;
@@ -98,6 +179,15 @@
           line-height: 1.6;
         }
       }
+    }
+  }
+}
+
+.page-collection-details {
+  .mx-simple-collections {
+    margin-block: 120px;
+    @media screen and (max-width: $w992) {
+      display: none;
     }
   }
 }

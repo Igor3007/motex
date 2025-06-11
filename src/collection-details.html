@@ -10,14 +10,16 @@
 </head>
 <body>
 @@include('html/header.html')
-<main class="page">
+<main class="page page-collection-details">
     @@include('html/components/breadcrumbs/breadcrumbs-collection-details.html')
     <section class="mx-collection-details">
         <div class="_container">
             <div class="mx-collection-details__banner"
                  style="background-image: url('/images/collection-details/collection-details-a001.jpg')">
-                <div class="mx-collection-details__banner-content"
-                     style="background-image: url('/images/collection-details/banner-content-bg.svg')">
+                <div class="mx-collection-details__banner-image">
+                    <img src="/images/collection-details/banner-content-bg.svg" alt="">
+                </div>
+                <div class="mx-collection-details__banner-content">
                     <div class="mx-collection-details__banner-badges">
             <span class="mx-collection-details__banner-badge">
               Подборка товаров
@@ -28,7 +30,7 @@
                             Эти материалы<br/> только по ГОСТ
                         </div>
                         <div class="mx-collection-details__banner-subtitle">
-                            Собрали на одной странице все материалы,<br/>выпускаемые мо ГОСТ.
+                            Собрали на одной странице все материалы,<br/>выпускаемые по ГОСТ.
                         </div>
                     </div>
                     <div class="mx-collection-details-banner-footer"></div>
