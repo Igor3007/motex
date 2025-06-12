@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include('html/head.html', {
+    'title': 'Подборка'
+    })
+</head>
+<body>
+@@include('html/header.html')
+<main class="page page-about-company">
+    @@include('html/components/breadcrumbs/breadcrumbs.html',{
+    "links":[
+    {"href": "/pages/about_company.html", "title" : "О компании"}
+    ]})
+    <section class="about-company">
+        <div>
+            Video
+        </div>
+        <div>
+            Text Block
+        </div>
+        <div>
+            Personal
+        </div>
+        <div>
+            Success
+        </div>
+        <div>
+            History
+        </div>
+        <div>
+            Personal
+        </div>
+
+    </section>
+</main>
+@@include('html/footer.html')
+@@include('html/components/action-panel.html')
+</body>
+</html>

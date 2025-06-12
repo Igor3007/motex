@@ -1,0 +1,10 @@
+<section class="breadcrumbs">
+    <div class="breadcrumbs__container _container">
+        <ul>
+            <li><a href="/pages/">Главная</a></li>
+            @@for (var i = 0; i< links.length; i=i+1) {
+                <li><a href="`+links[i].href+`">`+links[i].title+`</a></li>
+            }
+        </ul>
+    </div>
+</section>
