@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     @@include('html/head.html', {
     'title': 'Подборка'
@@ -8,27 +8,48 @@
 <body>
 @@include('html/header.html')
 <main class="page page-about-company">
-    @@include('html/components/breadcrumbs/breadcrumbs.html',{
+    @@include('html/components/breadcrumbs.html',{
     "links":[
     {"href": "/pages/about_company.html", "title" : "О компании"}
     ]})
     <section class="about-company">
-        <div>
+        <div class="_container">
             Video
         </div>
-        <div>
-            Text Block
+        <div class="about-company__text _container formated-text">
+            <h2>Одним из основополагающих факторов успешного строительства является выбор качественных строительных материалов.</h2>
+            <p>Все больше исследований подчёркивают важность использования высококачественных компонентов для повышения прочности и долговечности конструкций. Наша компания стремится использовать эти замечательные научные открытия, предлагая широкий ассортимент строительных материалов как оптом, так и в розницу, чтобы обеспечить надёжность и устойчивость ваших проектов.</p>
         </div>
-        <div>
-            Personal
+        <div class="about-company__persons _container">
+            @@include('html/components/card-person.html', {
+            "name": "Мотовилов Станислав",
+            "job": "Руководитель торгового направления",
+            "title": "Безупречность в деталях определяет нашу сущность во всём",
+            "subtitle": "На сегодняшний день надёжную работу с нами оценили крупнейшие региональные производственные предприятия, торговые сети, строительные компании и частные лица.",
+            "image": "/images/about/person1.jpg"
+            })
+            @@include('html/components/card-person.html', {
+            "name": "Евгений Михайлович",
+            "job": "Руководитель строительного направления",
+            "title": "Внедряем инновации строительной индустрии на отечественный рынок",
+            "subtitle": "На сегодняшний день надёжную работу с нами оценили крупнейшие региональные производственные предприятия, торговые сети, строительные компании и частные лица.",
+            "image": "/images/about/person2.jpg"
+            })
+            @@include('html/components/card-person.html', {
+            "name": "Мотовилов Станислав",
+            "job": "Руководитель торгового направления",
+            "title": "Безупречность в деталях определяет нашу сущность во всём",
+            "subtitle": "На сегодняшний день надёжную работу с нами оценили крупнейшие региональные производственные предприятия, торговые сети, строительные компании и частные лица.",
+            "image": "/images/about/person1.jpg"
+            })
         </div>
-        <div>
+        <div class="_container">
             Success
         </div>
-        <div>
+        <div class="_container">
             History
         </div>
-        <div>
+        <div class="_container">
             Personal
         </div>
 

@@ -1,6 +1,6 @@
+@import "config";
+
 @import 'config/fonts';
-@import 'config/vars';
-@import 'config/mixins';
 
 @import 'config/reset';
 @import 'config/base';
@@ -24,19 +24,7 @@
 
 @import 'UI';
 
-//index page start
-@import "components/p-index/b-data-search";
-@import "components/p-index/mx-main-catalog";
-@import "components/p-index/mx-numbers";
-@import "components/p-index/mx-services";
-@import "components/p-index/mx-goods";
-@import "components/p-index/mx-collections";
-@import "components/p-index/mx-stories";
-//index page end
-
-//catalog page start
-@import "components/catalog";
-//catalog page end
+@import "components";
 
 @import "components/af-popup";
 @import "components/warn-modal";
@@ -56,17 +44,8 @@
 @import 'components/category-filter';
 @import 'components/pagination';
 
-@import 'components/cart/cart.scss';
-@import 'components/cart/cart-aside.scss';
-@import 'components/cart/cart-cutter.scss';
-@import 'components/cart/cart-checkout.scss';
-@import 'components/cart/cart-receipt.scss';
-@import 'components/cart/cart-customer.scss';
-@import 'components/cart/cart-order.scss';
-@import 'components/cart/order-success.scss';
+@import 'components/cart';
 
-@import 'components/contacts/contacts.scss';
-@import 'components/contacts/our-team.scss';
-@import 'components/contacts/form-image.scss';
+@import 'components/contacts';
 
 @import 'pages';
