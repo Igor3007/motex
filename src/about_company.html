@@ -13,15 +13,19 @@
     {"href": "/pages/about_company.html", "title" : "О компании"}
     ]})
     <section class="about-company__video _container">
-        Video
+        <div class="video">
+            <img src="/images/about/about-video.jpg" alt="">
+        </div>
     </section>
-    <section class="about-company__text _container formated-text">
-        <h2>Одним из основополагающих факторов успешного строительства является выбор качественных строительных
-            материалов.</h2>
-        <p>Все больше исследований подчёркивают важность использования высококачественных компонентов для повышения
-            прочности и долговечности конструкций. Наша компания стремится использовать эти замечательные научные
-            открытия, предлагая широкий ассортимент строительных материалов как оптом, так и в розницу, чтобы обеспечить
-            надёжность и устойчивость ваших проектов.</p>
+    <section class="about-company__text _container">
+        <div class="formated-text">
+            <h2>Одним из основополагающих факторов успешного строительства является выбор качественных строительных
+                материалов.</h2>
+            <p>Все больше исследований подчёркивают важность использования высококачественных компонентов для повышения
+                прочности и долговечности конструкций. Наша компания стремится использовать эти замечательные научные
+                открытия, предлагая широкий ассортимент строительных материалов как оптом, так и в розницу, чтобы обеспечить
+                надёжность и устойчивость ваших проектов.</p>
+        </div>
     </section>
     <section class="about-company__persons _container">
         @@include('html/components/card-person.html', {
@@ -72,10 +76,14 @@
     <div class="_container">
         History
     </div>
-    <div class="_container">
-        Personal
-    </div>
-
+    <section class="about-company__team _container">
+        @@include('html/components/team-department.html', {"title": "Производственный отдел"})
+        @@include('html/components/team-department.html', {"title": "Бухгалтерия"})
+        @@include('html/components/team-department.html', {"title": "IT отдел"})
+        @@include('html/components/team-department.html', {"title": "Строительный отдел"})
+        @@include('html/components/team-department.html', {"title": "Тендерный отдел"})
+        @@include('html/components/team-department.html', {"title": "Отдел снабжения"})
+        @@include('html/components/team-department.html', {"title": "Отдел логистики"})
     </section>
 </main>
 @@include('html/footer.html')

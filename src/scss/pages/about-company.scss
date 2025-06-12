@@ -1,6 +1,28 @@
 @import "../config";
 
 .about-company {
+  &__video {
+    margin-bottom: 120px;
+  }
+
+  &__text {
+    .formated-text {
+      @include tablet {
+        width: 65%;
+      }
+      @include desktop {
+        margin-bottom: 120px;
+        h2 {
+          line-height: 36px;
+        }
+        p {
+          font-size: 16px;
+          line-height: 1.5;
+          margin-block: 28px ;
+        }
+      }
+    }
+  }
 
   &__persons {
     display: flex;
@@ -35,7 +57,37 @@
       flex-wrap: wrap;
       gap: 16px;
       justify-content: center;
-      //grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
+  }
+
+  &__team {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 20px;
+      @include tablet {
+        margin-top: 28px;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include desktop {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+
+  .video {
+    background: var(--black-5);
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
   }
 }
