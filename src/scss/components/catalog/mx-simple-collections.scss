@@ -1,4 +1,5 @@
 @import "../../config/vars";
+@import "../../config/mixins";
 
 .mx-simple-collections {
   overflow: hidden;
@@ -7,19 +8,19 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-
     margin-bottom: 12px;
+
     @media screen and (min-width: 767.98px) {
       flex-direction: row;
-      align-items: center;
+      align-items: flex-end;
       justify-content: space-between;
 
       margin-bottom: 20px;
     }
 
     h2 {
-      font: normal 700 24px/32px "Roboto", sans-serif;
-      @media screen and (min-width: 767.98px) {
+      font: normal 700 16px/1.5 "Roboto", sans-serif;
+      @include tablet {
         font-size: 24px;
         line-height: 32px;
       }
