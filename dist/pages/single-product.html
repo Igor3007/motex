@@ -485,6 +485,32 @@
                             <div class="single-product__share">
                                 <i class="ic_28" style="background-image: url(/images/icons/ic_share.svg);"></i>
                                 <span>Поделиться</span>
+
+                                <div class="share-list">
+                                    <ul>
+                                        <li><a href="">
+                                                <i class="ic_24" style="background-image: url(/images/icons/ic_tg.svg);"></i>
+                                                <span>Telegram</span>
+                                            </a>
+                                        </li>
+                                        <li><a href="">
+                                                <i class="ic_24" style="background-image: url(/images/icons/ic_wa.svg);"></i>
+                                                <span>WhatsApp</span>
+                                            </a>
+                                        </li>
+                                        <li><a href="">
+                                                <i class="ic_24" style="background-image: url(/images/icons/ic_vk-sm.svg);"></i>
+                                                <span>Вконтакте</span>
+                                            </a>
+                                        </li>
+                                        <li><a href="">
+                                                <i class="ic_24" style="background-image: url(/images/icons/ic_chain-sm.svg);"></i>
+                                                <span>Скопировать ссылку</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
                             </div>
                         </div>
 
@@ -570,12 +596,11 @@
 
                     </div>
 
-
                     <div class="single-product__aside">
                         <div class="single-product__sku">
                             <div class="sp-sku">
                                 <div class="sp-sku__icon">
-                                    <i class="ic_28" style="background-image: url(/images/icons/ic_copy.svg)"></i>
+                                    <i data-copy="УТ-00010464" class="ic_28" style="background-image: url(/images/icons/ic_copy.svg)"></i>
                                 </div>
                                 <div class="sp-sku__text">Арт: <span>УТ-00010464</span></div>
                             </div>
@@ -616,37 +641,37 @@
                                     </ul>
                                 </div>
                                 <div class="sp-configurate__instock">
-                                    <span>В наличии, 589 шт.</span>
+                                    <span class="status--green">В наличии, 589 шт.</span>
                                 </div>
                                 <div class="sp-configurate__calc">
                                     <div class="sp-configurate__field">
                                         <label>Кол-во, шт</label>
                                         <div class="counter">
-                                            <div class="counter__inc">+</div>
-                                            <div class="counter__input">
-                                                <input type="text" value="1">
-                                            </div>
                                             <div class="counter__dec">-</div>
+                                            <div class="counter__input">
+                                                <input data-total="1" type="text" value="1">
+                                            </div>
+                                            <div class="counter__inc">+</div>
                                         </div>
                                     </div>
                                     <div class="sp-configurate__field">
                                         <label>Площадь, м2</label>
                                         <div class="counter">
-                                            <div class="counter__inc">+</div>
-                                            <div class="counter__input">
-                                                <input type="text" value="1">
-                                            </div>
                                             <div class="counter__dec">-</div>
+                                            <div class="counter__input">
+                                                <input data-area="0.75" type="text" value="0.75">
+                                            </div>
+                                            <div class="counter__inc">+</div>
                                         </div>
                                     </div>
                                     <div class="sp-configurate__field">
                                         <label>Объём, м3</label>
                                         <div class="counter">
-                                            <div class="counter__inc">+</div>
-                                            <div class="counter__input">
-                                                <input type="text" value="1">
-                                            </div>
                                             <div class="counter__dec">-</div>
+                                            <div class="counter__input">
+                                                <input data-volume="0.02" type="text" value="0.02">
+                                            </div>
+                                            <div class="counter__inc">+</div>
                                         </div>
                                     </div>
                                 </div>
@@ -656,6 +681,7 @@
                                 </div>
 
                                 <div class="sp-configurate__sale-offer">
+                                    <i class="ic_16" style="background-image: url(/images/icons/ic_sale.svg);"></i>
                                     Нашли дешевле? Сделаем скидку!
                                 </div>
 
@@ -663,21 +689,25 @@
                         </div>
 
                         <div class="single-product__oneclick">
-                            <button class="btn">Купить в 1 клик</button>
+                            <button class="btn-gray">Купить в 1 клик</button>
                         </div>
 
                         <div class="single-product__h2">Способ получения</div>
 
                         <div class="single-product__shiping">
                             <div class="card-icon-text">
-                                <div class="card-icon-text__icon"></div>
+                                <div class="card-icon-text__icon">
+                                    <span class="ic_20" style="background-image: url(/images/icons/ic_truck.svg);"></span>
+                                </div>
                                 <div class="card-icon-text__main">
                                     <div class="card-icon-text__title">Доставка</div>
                                     <div class="card-icon-text__desc">от 0 ₽</div>
                                 </div>
                             </div>
                             <div class="card-icon-text">
-                                <div class="card-icon-text__icon"></div>
+                                <div class="card-icon-text__icon">
+                                    <span class="ic_20" style="background-image: url(/images/icons/ic_user-box.svg);"></span>
+                                </div>
                                 <div class="card-icon-text__main">
                                     <div class="card-icon-text__title">Самовывоз</div>
                                     <div class="card-icon-text__desc">Сегодня, в Челябинске, до 18:00</div>
@@ -689,7 +719,9 @@
 
                         <div class="single-product__payment">
                             <div class="card-icon-text">
-                                <div class="card-icon-text__icon"></div>
+                                <div class="card-icon-text__icon">
+                                    <span class="ic_20" style="background-image: url(/images/icons/ic_money.svg);"></span>
+                                </div>
                                 <div class="card-icon-text__main">
                                     <div class="card-icon-text__title">Наличными или картой</div>
                                     <div class="card-icon-text__desc">Возможна оплата при получении</div>
@@ -698,6 +730,234 @@
                         </div>
 
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-details-product">
+            <div class="_container">
+                <div class="details-product">
+                    <div class="details-product__sticky"></div>
+
+                    <div class="details-product__group">
+                        <div class="details-product__label">Описание</div>
+                        <div class="details-product__content">
+                            <div class="formated-text">
+                                <p>Берёзовая фанера ФК легко поддаётся обработке и прекрасно сочетается с отделочными
+                                    материалами. Она выдерживает воздействие влаги, однако, не рекомендуется
+                                    использовать её для внешних работ. Оптимальная сфера применения фанеры ФК — внутри
+                                    помещений, для изготовления деталей мебели и детских игрушек. </p>
+                                <p>Фанера от компании «Свеза» отличается премиальным внешним видом, приятной на ощупь
+                                    поверхностью и натуральной текстурой.</p>
+                                <p><strong>Особенности</strong></p>
+                                <ul>
+                                    <li>Твёрдость поверхности</li>
+                                    <li>Привлекательный натуральный вид</li>
+                                    <li>Прочность и износостойкость</li>
+                                    <li>Широкий выбор толщин и размеров</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="details-product__group">
+                        <div class="details-product__label">Характеристики</div>
+                        <div class="details-product__content">
+                            <div class="details-product__table">
+                                <table>
+                                    <tr>
+                                        <td>Тип продукта</td>
+                                        <td>Фанера</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Длина (мм)</td>
+                                        <td>1525</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ширина (мм)</td>
+                                        <td>1525</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Толщина (мм)</td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Страна производства</td>
+                                        <td>Россия</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Содержит древесину</td>
+                                        <td>Да</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Основной материал</td>
+                                        <td>Дерево</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Вес, кг</td>
+                                        <td>9.07</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Порода древесины</td>
+                                        <td>Берёза</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Форма</td>
+                                        <td>Квадрат</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Тип соединения деталей</td>
+                                        <td>С зазором</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Размер (Д х Ш х В) (мм)</td>
+                                        <td>1525 × 1525 × 6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Площадь (м²)</td>
+                                        <td>2.33</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Назначение</td>
+                                        <td>Стена, Потолок, Пол, Полы по лагам</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Полезная площадь (м²)</td>
+                                        <td>2.33</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Покрытие</td>
+                                        <td>Нешлифованный</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Допустимое отклонения длины (мм)</td>
+                                        <td>4</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Допустимое отклонение толщины (мм)</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Модуль упругости (МПа)</td>
+                                        <td>5000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Предел прочности при изгибе, главная ось (МПа), не менее</td>
+                                        <td>45</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Предел прочности при изгибе, второстепенная ось (МПа), не менее</td>
+                                        <td>30</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Класс эмиссии формальдегида</td>
+                                        <td>E1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Плотность (кг/м³)</td>
+                                        <td>700</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Влагостойкий</td>
+                                        <td>Да</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Рейтинг товара</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Тип упаковки</td>
+                                        <td>Без упаковки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Вес товара в индивидуальной упаковке (кг)</td>
+                                        <td>9.07</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ширина товара в индивидуальной упаковке (см)</td>
+                                        <td>152.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Высота товара в индивидуальной упаковке (см)</td>
+                                        <td>0.6</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Глубина товара в индивидуальной упаковке (см)</td>
+                                        <td>152.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Тип продажи</td>
+                                        <td>Поштучно</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="details-product__group">
+                        <div class="details-product__label">Документация</div>
+                        <div class="details-product__content">
+                            <div class="details-product__filelist">
+                                <div class="details-product__file">
+                                    <a href="#dl">
+    <div class="mx-card-file">
+        <div class="mx-card-file__icon">
+            <span class="ic_20" style="background-image: url(/images/icons/ic_file-dl.svg);"></span>
+        </div>
+        <div class="mx-card-file__main">
+            <div class="mx-card-file__title">СТО фанера берёзовая общего назначения,
+            </div>
+            <div class="mx-card-file__ext">PDF (1.24mb)</div>
+        </div>
+    </div>
+</a>
+                                </div>
+                                <div class="details-product__file">
+                                    <a href="#dl">
+    <div class="mx-card-file">
+        <div class="mx-card-file__icon">
+            <span class="ic_20" style="background-image: url(/images/icons/ic_file-dl.svg);"></span>
+        </div>
+        <div class="mx-card-file__main">
+            <div class="mx-card-file__title">Краткое описание сортов фанеры,
+            </div>
+            <div class="mx-card-file__ext">PDF (1.24mb)</div>
+        </div>
+    </div>
+</a>
+                                </div>
+                                <div class="details-product__file">
+                                    <a href="#dl">
+    <div class="mx-card-file">
+        <div class="mx-card-file__icon">
+            <span class="ic_20" style="background-image: url(/images/icons/ic_file-dl.svg);"></span>
+        </div>
+        <div class="mx-card-file__main">
+            <div class="mx-card-file__title">Справочник по сортам и дефектам фанеры,
+            </div>
+            <div class="mx-card-file__ext">PDF (1.24mb)</div>
+        </div>
+    </div>
+</a>
+                                </div>
+                                <div class="details-product__file">
+                                    <a href="#dl">
+    <div class="mx-card-file">
+        <div class="mx-card-file__icon">
+            <span class="ic_20" style="background-image: url(/images/icons/ic_file-dl.svg);"></span>
+        </div>
+        <div class="mx-card-file__main">
+            <div class="mx-card-file__title">Каталог продукции,
+            </div>
+            <div class="mx-card-file__ext">PDF (1.24mb)</div>
+        </div>
+    </div>
+</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
