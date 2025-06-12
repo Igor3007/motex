@@ -1,0 +1,38 @@
+@import "../../config";
+
+.card-achieve {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 8px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-basis: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  @include tablet {
+    flex-basis: calc((100% - 16px) / 2);
+  }
+  @include desktop {
+    flex-basis: calc((100% - 32px) / 3);
+  }
+
+  &__icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--black-5) url("/images/icons/ic_home.svg") no-repeat center;
+  }
+
+  &__title {
+    font: normal 500 60px/1 "Roboto", sans-serif;
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    font: normal 400 14px/20px "Roboto", sans-serif;
+    padding-top: 20px;
+    border-top: 1px solid var(--black-5);
+  }
+}

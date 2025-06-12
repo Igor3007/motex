@@ -2,56 +2,79 @@
 <html lang="ru">
 <head>
     @@include('html/head.html', {
-    'title': 'Подборка'
+    'title': 'О Компании'
     })
 </head>
 <body>
 @@include('html/header.html')
-<main class="page page-about-company">
+<main class="page about-company">
     @@include('html/components/breadcrumbs.html',{
     "links":[
     {"href": "/pages/about_company.html", "title" : "О компании"}
     ]})
-    <section class="about-company">
+    <section class="about-company__video _container">
+        Video
+    </section>
+    <section class="about-company__text _container formated-text">
+        <h2>Одним из основополагающих факторов успешного строительства является выбор качественных строительных
+            материалов.</h2>
+        <p>Все больше исследований подчёркивают важность использования высококачественных компонентов для повышения
+            прочности и долговечности конструкций. Наша компания стремится использовать эти замечательные научные
+            открытия, предлагая широкий ассортимент строительных материалов как оптом, так и в розницу, чтобы обеспечить
+            надёжность и устойчивость ваших проектов.</p>
+    </section>
+    <section class="about-company__persons _container">
+        @@include('html/components/card-person.html', {
+        "name": "Мотовилов Станислав",
+        "job": "Руководитель торгового направления",
+        "title": "Безупречность в деталях определяет нашу сущность во всём",
+        "subtitle": "На сегодняшний день надёжную работу с нами оценили крупнейшие региональные производственные предприятия, торговые сети, строительные компании и частные лица.",
+        "image": "/images/about/person1.jpg"
+        })
+        @@include('html/components/card-person.html', {
+        "name": "Евгений Михайлович",
+        "job": "Руководитель строительного направления",
+        "title": "Внедряем инновации строительной индустрии на отечественный рынок",
+        "subtitle": "На сегодняшний день надёжную работу с нами оценили крупнейшие региональные производственные предприятия, торговые сети, строительные компании и частные лица.",
+        "image": "/images/about/person2.jpg"
+        })
+        @@include('html/components/card-person.html', {
+        "name": "Мотовилов Станислав",
+        "job": "Руководитель торгового направления",
+        "title": "Безупречность в деталях определяет нашу сущность во всём",
+        "subtitle": "На сегодняшний день надёжную работу с нами оценили крупнейшие региональные производственные предприятия, торговые сети, строительные компании и частные лица.",
+        "image": "/images/about/person1.jpg"
+        })
+    </section>
+    <section class="about-company__success">
         <div class="_container">
-            Video
+            <h2>Наши успехи за 2023 год</h2>
+            <div class="about-company__success-grid">
+                @@include('html/components/card-achieve.html', {
+                "title":"879", "subtitle": "Поставок товара на ИЖС<br/>по всей России"
+                })
+                @@include('html/components/card-achieve.html', {
+                "title":"15 289", "subtitle": "Поставок товара на ИЖС<br/>по всей России"
+                })
+                @@include('html/components/card-achieve.html', {
+                "title":"879", "subtitle": "Поставок товара на ИЖС<br/>по всей России"
+                })
+                @@include('html/components/card-achieve.html', {
+                "title":"879", "subtitle": "Поставок товара на ИЖС<br/>по всей России"
+                })
+                @@include('html/components/card-achieve.html', {
+                "title":">99%", "subtitle": "Поставок товара на ИЖС<br/>по всей России"
+                })
+            </div>
         </div>
-        <div class="about-company__text _container formated-text">
-            <h2>Одним из основополагающих факторов успешного строительства является выбор качественных строительных материалов.</h2>
-            <p>Все больше исследований подчёркивают важность использования высококачественных компонентов для повышения прочности и долговечности конструкций. Наша компания стремится использовать эти замечательные научные открытия, предлагая широкий ассортимент строительных материалов как оптом, так и в розницу, чтобы обеспечить надёжность и устойчивость ваших проектов.</p>
-        </div>
-        <div class="about-company__persons _container">
-            @@include('html/components/card-person.html', {
-            "name": "Мотовилов Станислав",
-            "job": "Руководитель торгового направления",
-            "title": "Безупречность в деталях определяет нашу сущность во всём",
-            "subtitle": "На сегодняшний день надёжную работу с нами оценили крупнейшие региональные производственные предприятия, торговые сети, строительные компании и частные лица.",
-            "image": "/images/about/person1.jpg"
-            })
-            @@include('html/components/card-person.html', {
-            "name": "Евгений Михайлович",
-            "job": "Руководитель строительного направления",
-            "title": "Внедряем инновации строительной индустрии на отечественный рынок",
-            "subtitle": "На сегодняшний день надёжную работу с нами оценили крупнейшие региональные производственные предприятия, торговые сети, строительные компании и частные лица.",
-            "image": "/images/about/person2.jpg"
-            })
-            @@include('html/components/card-person.html', {
-            "name": "Мотовилов Станислав",
-            "job": "Руководитель торгового направления",
-            "title": "Безупречность в деталях определяет нашу сущность во всём",
-            "subtitle": "На сегодняшний день надёжную работу с нами оценили крупнейшие региональные производственные предприятия, торговые сети, строительные компании и частные лица.",
-            "image": "/images/about/person1.jpg"
-            })
-        </div>
-        <div class="_container">
-            Success
-        </div>
-        <div class="_container">
-            History
-        </div>
-        <div class="_container">
-            Personal
-        </div>
+    </section>
+
+    <div class="_container">
+        History
+    </div>
+    <div class="_container">
+        Personal
+    </div>
 
     </section>
 </main>
