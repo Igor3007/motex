@@ -3,6 +3,7 @@
 .about-company {
   &__video {
     margin-bottom: 120px;
+    --play-button-icon: url('/images/icons/ic_play_round.svg');
   }
 
   &__text {
@@ -29,6 +30,9 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
+    @include desktop {
+      margin-bottom: 120px;
+    }
   }
 
   &__success {

@@ -53,6 +53,7 @@
     font: normal 400 10px/20px "Roboto", sans-serif;
     @include tablet {
       font-size: 12px;
+      margin-top: 4px;
     }
   }
 
