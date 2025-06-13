@@ -1,36 +1,5 @@
 @import "config";
-
-@import 'config/fonts';
-
 @import "base";
-@import 'config/base';
-@import 'config/formated-text.scss';
-
-@import 'components/form';
-@import 'components/spiner';
-@import 'components/libs/splide.scss';
-@import 'components/libs/af-select.scss';
-
-@import 'components/select-region';
-@import 'components/top-catalog';
-@import 'components/search.scss';
-
-@import 'UI';
-
 @import "components";
-
-@import "components/warn-modal";
-
-@import "components/menu-header-md";
-@import "components/action-panel";
-@import "components/modal-time";
-@import "components/modal-cart";
-@import 'components/mx-catalog-card';
-@import 'components/mx-services-item';
-@import 'components/mx-goods-item';
-@import 'components/mx-simple-collections-item';
-@import 'components/dropdown';
-@import 'components/category-filter';
-@import 'components/pagination';
-
+@import 'UI';
 @import 'pages';
