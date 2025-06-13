@@ -1,11 +1,11 @@
 .section-single-product {
-    margin: 24px;
+    margin: 30px 0;
 }
 
 .single-product {
     @media screen and (min-width: $w992) {
         display: flex;
-        margin: 0 -20px;
+        margin: 0 -16px;
     }
 
     &__details,
@@ -13,13 +13,26 @@
     &__gallery {
         @media screen and (min-width: $w992) {
             width: 33.33%;
-            padding: 0 20px;
+            padding: 0 16px;
         }
+    }
+
+    &__gallery {
+        max-width: 432px;
+    }
+
+    &__details {
+        max-width: 432px;
+    }
+
+    &__aside {
+        width: 34%;
     }
 
     &__stickers {
 
-        padding-bottom: 12px;
+        padding-bottom: 4px;
+
 
         & ul {
             display: flex;
@@ -32,11 +45,12 @@
 
                 & span {
                     background-color: #ccc;
-                    height: 32px;
+                    height: 24px;
                     display: inline-flex;
                     align-items: center;
-                    padding: 5px 12px;
-                    border-radius: 8px;
+                    padding: 5px 8px;
+                    border-radius: 4px;
+                    cursor: default;
                 }
             }
         }
@@ -45,7 +59,7 @@
     &__slider {
         &-main {
 
-            padding-bottom: 16px;
+            padding-bottom: 12px;
 
             & picture {
                 @include picture(100%, contain);
@@ -58,12 +72,16 @@
                 }
 
                 &__pagination {
+
+                    bottom: 17px;
+
                     &__page {
 
                         background-color: #fff;
                         border: 1px solid var(--black-20);
                         width: 12px;
                         height: 12px;
+                        margin-inline: 6px;
 
                         &.is-active {
                             transform: scale(1);
@@ -109,7 +127,7 @@
 
     &__h1 {
 
-        padding-bottom: 16px;
+        padding-bottom: 9px;
 
         & h1 {
             font-size: 32px;
@@ -122,7 +140,7 @@
     &__actions {
         display: flex;
         gap: 8px;
-        padding-bottom: 20px;
+        padding-bottom: 30px;
     }
 
     &__tofav {
@@ -165,24 +183,26 @@
         padding-bottom: 12px;
     }
 
-
+    &__variations {
+        padding-bottom: 18px;
+    }
 
     &__list {
 
-        padding-bottom: 6px;
+        padding-bottom: 12px;
 
         & ul {
             display: flex;
-            margin: 3px;
+            margin: -4px;
 
             & li {
-                padding: 3px;
+                padding: 4px;
 
                 & a {
                     display: flex;
-                    min-width: 36px;
+                    min-width: 33px;
                     height: 48px;
-                    padding: 10px 10px;
+                    padding: 10px 8px;
                     border: 1px solid #ccc;
                     align-items: center;
                     justify-content: center;
@@ -230,6 +250,7 @@
     &__label {
         font-size: 14px;
         color: var(--black-50);
+        padding-bottom: 15px;
     }
 
     &__table {
@@ -247,12 +268,13 @@
                 & span {
                     display: table-cell;
                     width: 50%;
-                    padding: 10px 8px;
+                    padding: 11px 8px;
                     border-bottom: 1px solid var(--black-10);
                 }
 
                 & small {
                     color: var(--black-50);
+                    padding-left: 0;
                 }
             }
         }
@@ -265,6 +287,7 @@
         gap: 8px;
         cursor: pointer;
         color: var(--black-base);
+        font-size: 16px;
 
 
 
@@ -290,11 +313,11 @@
     }
 
     &__props {
-        padding-bottom: 30px;
+        padding-bottom: 29px;
     }
 
     &__cutter {
-        padding-bottom: 24px;
+        padding-bottom: 30px;
     }
 
     &__brand {
@@ -312,16 +335,16 @@
     }
 
     &__info {
-        padding-bottom: 27px;
+        padding-bottom: 14px;
     }
 
     &__configurate {
-        padding-bottom: 24px;
+        padding-bottom: 20px;
     }
 
     &__oneclick {
 
-        padding-bottom: 24px;
+        padding-bottom: 32px;
 
         & button {
             width: 100%;
@@ -331,9 +354,14 @@
     }
 
     &__shiping {
-        padding-bottom: 24px;
+        padding-bottom: 31px;
+        padding-top: 13px;
     }
 
+
+    &__payment {
+        padding-top: 14px;
+    }
 
 
 }
@@ -390,7 +418,7 @@
 }
 
 .block-addition {
-    padding: 16px;
+    padding: 18px;
     border: 1px solid var(--black-5);
     border-radius: 8px;
     display: flex;
@@ -403,8 +431,8 @@
     }
 
     &__image {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
 
         & picture {
             @include picture(100%, contain);
@@ -412,14 +440,14 @@
     }
 
     &__main {
-        padding-left: 16px;
+        padding-left: 14px;
         flex-grow: 1;
     }
 
     &__title {
 
         font-weight: 600;
-        padding-bottom: 5px;
+        padding-bottom: 9px;
 
 
         & span {
@@ -481,7 +509,7 @@
     display: flex;
     align-items: center;
     border: 1px solid var(--black-10);
-    padding: 16px;
+    padding: 11px 26px;
     border-radius: 8px;
 
     &__image {
@@ -494,7 +522,7 @@
     }
 
     &__main {
-        padding-left: 20px;
+        padding-left: 14px;
         flex-grow: 1;
     }
 
@@ -567,7 +595,7 @@
             color: #fff;
             font-weight: 700;
             font-size: 32px;
-            padding: 4px 9px;
+            padding: 8px 9px;
             border-radius: 8px;
         }
 
@@ -576,7 +604,7 @@
             color: #fff;
             background-color: var(--black-base);
             display: inline-flex;
-            padding: 4px 8px;
+            padding: 7px 6px;
             border-radius: 4px;
             text-decoration: line-through;
             margin-bottom: 5px;
@@ -589,7 +617,7 @@
     }
 
     &__tags {
-        padding-bottom: 12px;
+        padding-bottom: 19px;
 
         & ul {
             display: flex;
@@ -606,10 +634,10 @@
     }
 
     &__instock {
-        padding-bottom: 12px;
+        padding-bottom: 24px;
 
         & span {
-            padding: 8px 16px;
+            padding: 8px 20px;
             border: 1px solid var(--black-20);
             border-radius: 30px;
             font-size: 16px;
@@ -659,7 +687,7 @@
     }
 
     &__tocart {
-        padding-bottom: 12px;
+        padding-bottom: 20px;
 
         & .btn-blue {
             width: 100%;
@@ -687,7 +715,7 @@
 
 .card-icon-text {
     display: flex;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
 
     &:last-child {
         margin-bottom: 0;
@@ -704,7 +732,7 @@
     }
 
     &__main {
-        padding-left: 16px;
+        padding-left: 12px;
         flex-grow: 1;
     }
 
@@ -775,6 +803,7 @@
     transform: translateY(-15px);
     opacity: 0;
     visibility: hidden;
+    transition: 0.3s ease;
 
     & ul {
         padding: 8px 0;
@@ -798,3 +827,5 @@
         min-width: 24px;
     }
 }
+
+@import './sticky-bar-product.scss';

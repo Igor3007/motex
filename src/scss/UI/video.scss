@@ -3,7 +3,6 @@
     position: relative;
     background: #ccc;
     overflow: hidden;
-    overflow: hidden;
 
     &.is-play {
         & .video {
@@ -136,7 +135,6 @@
 
         @media screen and (min-width: $w760) {
             padding: 24px;
-
         }
 
 
@@ -155,7 +153,6 @@
         @media screen and (min-width: $w760) {
             font-size: 28px;
         }
-
 
     }
 
@@ -184,8 +181,6 @@
             justify-content: center;
             align-items: center;
         }
-
-
 
         & span {
             color: #FFFFFF;

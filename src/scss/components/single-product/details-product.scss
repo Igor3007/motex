@@ -1,5 +1,11 @@
 .details-product {
 
+    &__sticky {
+        border-top: 1px solid var(--black-10);
+        border-bottom: 1px solid var(--black-10);
+        padding: 6px 0;
+    }
+
     &__group {
         max-width: 850px;
         margin: 0 auto;

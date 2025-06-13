@@ -1,7 +1,5 @@
  .form {
 
-
-
      & input[type="text"],
      & input[type="date"],
      & input[type="number"],
@@ -137,10 +135,7 @@
 
          &:focus {
              outline: none;
-
          }
-
-
      }
 
      &.is-validate {
@@ -149,9 +144,6 @@
 
          }
      }
-
-
-
 
      & div.error {
          color: #F94258;
