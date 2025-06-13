@@ -2,13 +2,10 @@
 
 @import 'config/fonts';
 
-@import 'config/reset';
+@import "base";
 @import 'config/base';
 @import 'config/formated-text.scss';
 
-@import 'components/header';
-@import 'components/main';
-@import 'components/footer';
 @import 'components/form';
 @import 'components/spiner';
 @import 'components/libs/splide.scss';
@@ -18,17 +15,11 @@
 @import 'components/top-catalog';
 @import 'components/search.scss';
 
-@import 'base/common';
-@import "base/formated";
-@import 'base/keyframes';
-
 @import 'UI';
 
 @import "components";
 
-@import "components/af-popup";
 @import "components/warn-modal";
-@import "components/seo";
 
 @import "components/menu-header-md";
 @import "components/action-panel";
@@ -37,15 +28,9 @@
 @import 'components/mx-catalog-card';
 @import 'components/mx-services-item';
 @import 'components/mx-goods-item';
-@import 'components/search-input';
-@import 'components/breadcrumbs';
 @import 'components/mx-simple-collections-item';
 @import 'components/dropdown';
 @import 'components/category-filter';
 @import 'components/pagination';
-
-@import 'components/cart';
-
-@import 'components/contacts';
 
 @import 'pages';
