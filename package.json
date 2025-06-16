@@ -12,7 +12,8 @@
     "sprite": "gulp createSvgSprite",
     "deploy": "gh-pages -d dist",
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,json,html,css,md,yaml,yml}\"",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build",
+    "sftp-deploy": "gulp build --build && node --env-file=./.env ./scripts/sftp_deploy.js"
   },
   "repository": {
     "type": "git",
@@ -65,6 +66,7 @@
     "gulp-webp-html-nosvg": "^1.0.1",
     "gulp-webpcss": "^1.1.1",
     "gulp-zip": "^5.1.0",
+    "node-ssh": "13.2.1",
     "postcss-preset-env": "^8.5.0",
     "prettier": "2.8.8",
     "sass": "*1.62.1",

@@ -1,0 +1,97 @@
+@import "../config/mixins";
+
+details {
+  --details-padding: 20px;
+  background: var(--black-5);
+  padding: var(--details-padding);
+  border-radius: 8px;
+
+  @media screen and (max-width: $w992) and (min-width: $w576) {
+    margin-inline: -20px;
+  }
+
+  @media screen and (max-width: $w576) {
+    --details-padding: 16px;
+  }
+
+  & > summary {
+    position: relative;
+    list-style: none;
+    min-height: 32px;
+    display: flex;
+    box-sizing: content-box;
+    align-items: center;
+    font: normal 700 16px/1.5 "Roboto", sans-serif;
+    cursor: pointer;
+    padding: var(--details-padding) 48px var(--details-padding) var(--details-padding);
+    margin: calc(-1 * var(--details-padding));
+
+    @media screen and (max-width: $w375) {
+      font-size: 12px;
+      line-height: 16px;
+      min-height: 28px;
+    }
+
+    &::before {
+      content: "";
+      background: var(--white) url("/images/icons/ic_plus_details.svg") no-repeat center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: var(--details-padding);
+      right: var(--details-padding);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      transition: border-color .15s ease-in-out;
+      @media screen and (max-width: $w375) {
+        width: 28px;
+        height: 28px;
+      }
+    }
+    & ~ * {
+      max-height: 0;
+    }
+  }
+
+  &:hover {
+    @include desktop {
+      outline: 1px solid var(--accent);
+    }
+  }
+
+  &[open] {
+    outline: 1px solid var(--accent);
+  }
+
+  &[open] {
+    summary {
+      &::before {
+        background: var(--white) url("/images/icons/ic_minus_details.svg") no-repeat center;
+      }
+      & ~ * {
+        max-height: none;
+        animation: details-animation;
+        animation-duration: .5s;
+      }
+    }
+  }
+}
+
+@keyframes details-animation {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  99% {
+    max-height: 100vh;
+    opacity: 1;
+  }
+
+  100% {
+    max-height: none !important;
+  }
+}

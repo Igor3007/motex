@@ -24,3 +24,5 @@ yarn-error.log*
 package-lock.json
 gulp/version.json
 dist/index.php
+/dist/
+/.env

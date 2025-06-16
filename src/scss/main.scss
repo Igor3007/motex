@@ -27,6 +27,7 @@
 @import 'UI/form';
 @import 'UI/video';
 @import 'UI/icons';
+@import 'UI';
 
 //index page start
 @import "components/p-index/b-data-search";
@@ -75,3 +76,4 @@
 
 @import 'components/single-product/single-product.scss';
 @import 'components/single-product/details-product.scss';
+@import 'pages';
