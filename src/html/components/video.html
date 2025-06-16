@@ -1,0 +1,18 @@
+<div class="video">
+  <div class="video__preview">
+    <picture>
+      <img src="@@preview" loading="lazy"
+           alt="preview">
+    </picture>
+  </div>
+  <div class="video__action">
+    <div class="video__button"></div>
+  </div>
+  <div class="video__source">
+    <video preload="true" controls="">
+      @@for (var i = 0; i< sources.length; i=i+1) {
+      <source src="`+sources[i].link+`" type="`+sources[i].type+`">
+      }
+    </video>
+  </div>
+</div>

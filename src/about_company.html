@@ -13,24 +13,13 @@
     {"href": "/pages/about_company.html", "title" : "О компании"}
     ]})
     <section class="about-company__video _container">
-        <div class="video">
-            <div class="video__preview">
-                <picture>
-                    <img src="/images/about/about-video.jpg" loading="lazy"
-                         alt="image">
-                </picture>
-            </div>
-            <div class="video__action">
-                <div class="video__button"></div>
-            </div>
-            <div class="video__source">
-                <video preload="true" controls="">
-                    <source src="/files/slider.webm" type="video/webm">
-                    <source src="/static/mx-video_test.mp4"
-                            type="video/mp4">
-                </video>
-            </div>
-        </div>
+        @@include('html/components/video.html',{
+        "sources":[
+            {"link": "/files/slider.webm", "type": "video/webm"},
+            {"link": "/static/mx-video_test.mp4", "type": "video/mp4"}
+        ],
+        "preview":"/images/about/about-video.jpg"
+        })
     </section>
     <section class="about-company__text _container">
         <div class="formated-text">
