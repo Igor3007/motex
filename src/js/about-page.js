@@ -22,5 +22,5 @@ if (window) {
 const timeline = document.getElementById('slider-timeline');
 
 splide_about.on('mounted move', function(newIndex) {
-    timeline.style.backgroundPositionX = `${-newIndex*200}px`;
+    timeline.style.backgroundPositionX = `${-newIndex*120}px`;
 });
