@@ -1,6 +1,79 @@
+@import 'config/fonts';
+@import 'config/vars';
+@import 'config/mixins';
+
+@import 'components/header';
+@import 'components/main';
+@import 'components/footer';
+@import 'components/form';
+@import 'components/spiner';
+@import 'components/libs/splide.scss';
+@import 'components/libs/af-select.scss';
+
+@import 'components/select-region';
+@import 'components/top-catalog';
+@import 'components/search.scss';
+
+@import 'base/common';
+@import "base/formated";
+@import 'base/keyframes';
+
+@import 'UI/buttons';
+@import 'UI/checkbox';
+@import 'UI/form';
+@import 'UI/video';
+@import 'UI/icons';
 @import "config";
 @import "config/css-vars";
 @import "base";
 @import "components";
 @import 'UI';
+
+//index page start
+@import "components/p-index/b-data-search";
+@import "components/p-index/mx-main-catalog";
+@import "components/p-index/mx-numbers";
+@import "components/p-index/mx-services";
+@import "components/p-index/mx-goods";
+@import "components/p-index/mx-collections";
+@import "components/p-index/mx-stories";
+//index page end
+
+//catalog page start
+@import "components/catalog";
+//catalog page end
+
+@import "components/af-popup";
+@import "components/warn-modal";
+@import "components/seo";
+
+@import "components/menu-header-md";
+@import "components/action-panel";
+@import "components/modal-time";
+@import "components/modal-cart";
+@import 'components/mx-catalog-card';
+@import 'components/mx-services-item';
+@import 'components/mx-goods-item';
+@import 'components/search-input';
+@import 'components/breadcrumbs';
+@import 'components/mx-simple-collections-item';
+@import 'components/dropdown';
+@import 'components/category-filter';
+@import 'components/pagination';
+
+@import 'components/cart/cart.scss';
+@import 'components/cart/cart-aside.scss';
+@import 'components/cart/cart-cutter.scss';
+@import 'components/cart/cart-checkout.scss';
+@import 'components/cart/cart-receipt.scss';
+@import 'components/cart/cart-customer.scss';
+@import 'components/cart/cart-order.scss';
+@import 'components/cart/order-success.scss';
+
+@import 'components/contacts/contacts.scss';
+@import 'components/contacts/our-team.scss';
+@import 'components/contacts/form-image.scss';
+
+@import 'components/single-product/single-product.scss';
+@import 'components/single-product/details-product.scss';
 @import 'pages';
