@@ -36,7 +36,8 @@ fs.readdir(imagesDir, (err, files) => {
             </head>
             <body>
                 <h1>Icons</h1>
-                <input type="checkbox" />
+                <label for="invert">Invert</label>
+                <input type="checkbox" id="invert"/>
                 <div style="display:flex; flex-wrap:wrap;">
                     ${imagesHtml}
                 </div>
