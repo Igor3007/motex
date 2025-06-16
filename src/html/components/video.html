@@ -9,7 +9,7 @@
     <div class="video__button"></div>
   </div>
   <div class="video__source">
-    <video preload="true" controls="">
+    <video preload="true">
       @@for (var i = 0; i< sources.length; i=i+1) {
       <source src="`+sources[i].link+`" type="`+sources[i].type+`">
       }
