@@ -88,9 +88,44 @@
         </div>
     </section>
 
-    <div class="_container">
-        History
-    </div>
+    <section class="about-company__history">
+        <div class="_container">
+            <h2>Наша история</h2>
+
+            <div class="about-company__slider splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            @@include('html/components/slide-history.html', {
+                            "year":"2010", "title":"Бизнес идея двух основателей", "image":"/images/about/slide01.jpg",
+                            "description":"Компания МОТТЕКС берет своё начало с бизнес-идеи двух основателей о создании производственного предприятия по вторичной переработке строительных отходов и производства новых материалов, отвечающих всем требованиям завтрашнего дня по внешнему виду, экологичности и техническим показателям."
+                            })
+                        </li>
+                        <li class="splide__slide">
+                            @@include('html/components/slide-history.html', {
+                            "year":"2010", "title":"Бизнес идея двух основателей", "image":"/images/about/slide02.jpg",
+                            "description":"Компания МОТТЕКС берет своё начало с бизнес-идеи двух основателей о создании производственного предприятия по вторичной переработке строительных отходов и производства новых материалов, отвечающих всем требованиям завтрашнего дня по внешнему виду, экологичности и техническим показателям."
+                            })
+                        </li>
+                        <li class="splide__slide">
+                            @@include('html/components/slide-history.html', {
+                            "year":"2010", "title":"Бизнес идея двух основателей", "image":"/images/about/slide03.jpg",
+                            "description":"Компания МОТТЕКС берет своё начало с бизнес-идеи двух основателей о создании производственного предприятия по вторичной переработке строительных отходов и производства новых материалов, отвечающих всем требованиям завтрашнего дня по внешнему виду, экологичности и техническим показателям."
+                            })
+                        </li>
+                        <li class="splide__slide">
+                            @@include('html/components/slide-history.html', {
+                            "year":"2010", "title":"Бизнес идея двух основателей", "image":"/images/about/slide04.jpg",
+                            "description":"Компания МОТТЕКС берет своё начало с бизнес-идеи двух основателей о создании производственного предприятия по вторичной переработке строительных отходов и производства новых материалов, отвечающих всем требованиям завтрашнего дня по внешнему виду, экологичности и техническим показателям."
+                            })
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="about-company__slider-timeline" id="slider-timeline"></div>
+        </div>
+    </section>
+
     <section class="about-company__team _container">
         @@include('html/components/team-department.html', {"title": "Производственный отдел"})
         @@include('html/components/team-department.html', {"title": "Бухгалтерия"})

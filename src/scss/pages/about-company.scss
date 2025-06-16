@@ -1,26 +1,46 @@
 @import "../config";
 
+:root {
+  --about-slider-delay: 0.4s;
+}
+
 .about-company {
   &__video {
-    margin-bottom: 120px;
     --play-button-icon: url('/images/icons/ic_play_round.svg');
+    @include tablet {
+      margin-bottom: 40px;
+    }
   }
 
   &__text {
+    margin-block: 40px;
+    @include tablet {
+      margin-block: 80px;
+    }
+    @include desktop {
+      margin-block: 120px;
+    }
+
     .formated-text {
-      @include tablet {
-        width: 65%;
-      }
-      @include desktop {
-        margin-bottom: 120px;
-        h2 {
-          line-height: 36px;
+      h2 {
+        font: 700 20px/26px "Roboto", sans-serif;
+        @include tablet {
+          font: 28px/36px "Roboto", sans-serif;
+          margin-bottom: 1em;
         }
-        p {
+      }
+
+      p {
+        @include tablet {
           font-size: 16px;
           line-height: 1.5;
-          margin-block: 28px ;
+          margin-block: 28px;
         }
+      }
+
+      @include desktop {
+        width: 65%;
+        margin-bottom: 120px;
       }
     }
   }
@@ -30,8 +50,12 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
+    margin-block: 40px;
+    @include tablet {
+      margin-block: 80px 120px;
+    }
     @include desktop {
-      margin-bottom: 120px;
+      margin-block: 120px;
     }
   }
 
@@ -68,6 +92,13 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    margin-block: 40px;
+    @include tablet {
+      margin-block: 80px 120px;
+    }
+    @include desktop {
+      margin-block: 120px;
+    }
 
     &-grid {
       display: grid;
@@ -80,6 +111,39 @@
       }
       @include desktop {
         grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+
+  &__history {
+    margin-block: 40px;
+    @include tablet {
+      margin-block: 120px;
+    }
+  }
+
+  &__slider {
+    margin-top: 40px;
+
+    @include tablet {
+      margin-inline: calc(50% - 50vw);
+    }
+
+    @media screen and (min-width: 1200px) {
+      margin-inline: 0;
+    }
+
+    &-timeline {
+      margin-top: 20px;
+      height: 32px;
+      background-image: url("/images/about/timeline.svg");
+      background-position-x: 0;
+      background-size: cover;
+      transition: var(--about-slider-delay);
+
+      @include tablet {
+        height: 48px;
+        margin-top: 40px;
       }
     }
   }

@@ -1,0 +1,146 @@
+// slide and slider customization
+
+.slide-history {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &__content {
+    transition: var(--about-slider-delay);
+    will-change: transform, opacity;
+    transform: translateZ(0);
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    will-change: opacity;
+    transition: filter var(--about-slider-delay);
+    margin-inline: 0;
+    @include tablet {
+      margin-inline: -100px;
+    }
+    @include desktop {
+      margin-inline: 0;
+    }
+  }
+
+  &__year {
+    font: 16px/24px "Roboto", sans-serif;
+    color: var(--black-70);
+  }
+
+  &__title {
+    font: 700 16px/24px "Roboto", sans-serif;
+    @include tablet {
+        font: 24px/32px "Roboto", sans-serif;
+    }
+  }
+
+  &__description {
+    font: 14px/20px "Roboto", sans-serif;
+    text-align: center;
+    @include tablet {
+      font: 16px/24px "Roboto", sans-serif;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 212 / 121;
+    overflow: hidden;
+    border-radius: 8px;
+    display: block;
+    margin-top: 40px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.page.about-company {
+
+  .splide__slide {
+    transition: var(--about-slider-delay);
+    flex-shrink: 0;
+
+    .slide-history {
+      z-index: 10;
+      @include tablet {
+        max-width: 464px;
+        min-width: 464px;
+      }
+      @include desktop {
+        max-width: 632px;
+        min-width: 632px;
+      }
+    }
+
+    &.is-active {
+      z-index: 20;
+    }
+
+    &:not(.is-active) {
+      .slide-history__content {
+        @include tablet {
+          filter: blur(8px);
+          transform: scale(0);
+        }
+      }
+
+      .slide-history {
+        &__header {
+          @include tablet {
+            opacity: 0;
+          }
+        }
+      }
+
+      &.is-prev {
+        .slide-history__content {
+          @include tablet {
+            transform: translateZ(0) translate(-90px, 70px) scale(.33) !important;
+          }
+          @include desktop {
+            transform: translateZ(0) translate(-60px, 60px) scale(.35) !important;
+          }
+        }
+      }
+
+      &.is-next {
+        .slide-history__content {
+          @include tablet {
+            transform: translateZ(0) translate(90px, 70px) scale(.33) !important;
+          }
+          @include desktop {
+            transform: translateZ(0) translate(60px, 60px) scale(.35) !important;
+          }
+        }
+      }
+    }
+  }
+
+  .splide {
+    &__arrow {
+      display: none;
+      width: 48px;
+      height: 48px;
+      background: var(--white);
+      border: 1px solid var(--black-20);
+      top: 67%;
+
+      @include desktop {
+        display: flex;
+      }
+
+      &:disabled {
+        display: none;
+      }
+    }
+  }
+}
