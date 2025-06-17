@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    @@include('html/head.html', {
+    'title': 'Избранное'
+    })
+</head>
+<body>
+@@include('html/header.html')
+<main class="page favorites">
+    @@include('html/components/breadcrumbs.html',{
+    "links":[
+    {"href": "/pages/favorites.html", "title" : "Избранное"}
+    ]})
+    <div class="_container favorites__heading">
+        <h1>Избранное</h1>
+    </div>
+
+    <section class="favorites__content mx-bd-catalog mx-bd-catalog--last-lvl">
+        <div class="mx-bd-catalog__container _container">
+            <div class="mx-bd-catalog__wrapper">
+                <div class="favorites__buttons-wrp">
+                    <button class="btn-blue"><i class="icon" style="background-image: url(/images/icons/ic_tocart-sm.svg)"></i>Купить все товары</button>
+                    <button class="btn-custom" data-action="clear"><i class="icon" style="background-image: url(/images/icons/ic_trash_000.svg)"></i>Очистить список</button>
+                </div>
+                <div class="mx-bd-catalog__catalog">
+                    <div class="mx-bd-catalog__catalog-heading">
+                        @@include('html/components/dropdown.html')
+                        <div class="mx-bd-catalog__catalog-heading-views catalog-views">
+                            <div class="catalog-views__btn" data-view="list">
+                                <i class="icon"
+                                   style="background-image: url('/images/icons/ic_catalog-views-list.svg')"></i>
+                            </div>
+                            <div class="catalog-views__btn" data-view="grid">
+                                <i class="icon"
+                                   style="background-image: url('/images/icons/ic_catalog-views-grid.svg')"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mx-bd-catalog__catalog-list grid--view">
+                        @@include('html/components/mx-goods/mx-goods-item-1.html')
+                        @@include('html/components/mx-goods/mx-goods-item-2.html')
+                        @@include('html/components/mx-goods/mx-goods-item-3.html')
+                        @@include('html/components/mx-goods/mx-goods-item-1.html')
+                        @@include('html/components/mx-goods/mx-goods-item-2.html')
+                        @@include('html/components/mx-goods/mx-goods-item-3.html')
+                        @@include('html/components/mx-goods/mx-goods-item-1.html')
+                        @@include('html/components/mx-goods/mx-goods-item-2.html')
+                        @@include('html/components/mx-goods/mx-goods-item-3.html')
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+@@include('html/footer.html')
+@@include('html/components/action-panel.html')
+<script src="/js/pages/favorites.js"></script>
+</body>
+</html>
