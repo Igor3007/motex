@@ -230,6 +230,15 @@
             width: 50%;
         }
     }
+
+    &__submit{
+
+        display: none;
+
+        & button {
+            width: 100%;
+        }
+    }
 }
 
 .star-rating {
