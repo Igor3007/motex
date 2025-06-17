@@ -21,7 +21,7 @@
             <div class="mx-bd-catalog__wrapper">
                 <div class="favorites__buttons-wrp">
                     <button class="btn-blue"><i class="icon" style="background-image: url(/images/icons/ic_tocart-sm.svg)"></i>Купить все товары</button>
-                    <button class="btn-custom"><i class="icon" style="background-image: url(/images/icons/ic_trash_000.svg)"></i>Очистить список</button>
+                    <button class="btn-custom" data-action="clear"><i class="icon" style="background-image: url(/images/icons/ic_trash_000.svg)"></i>Очистить список</button>
                 </div>
                 <div class="mx-bd-catalog__catalog">
                     <div class="mx-bd-catalog__catalog-heading">
@@ -55,5 +55,6 @@
 </main>
 @@include('html/footer.html')
 @@include('html/components/action-panel.html')
+<script src="/js/pages/favorites.js"></script>
 </body>
 </html>

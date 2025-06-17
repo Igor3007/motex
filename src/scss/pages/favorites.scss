@@ -4,7 +4,7 @@
   //* {outline: 1px solid rgba(0,0,0,.1);background-color: rgba(0,0,0,.05);}
 
   .breadcrumbs {
-    margin-bottom: 9px;
+    margin-bottom: 10px;
   }
 
   &__heading {
@@ -18,7 +18,7 @@
   }
 
   .mx-bd-catalog__wrapper {
-    padding-bottom: 24px;
+    padding-bottom: 23px;
     border-bottom: 1px solid var(--black-20);
     @include tablet {
       border: none;
