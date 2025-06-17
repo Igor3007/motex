@@ -105,16 +105,13 @@
     }
 
     details {
-      &[open] {
-        outline: none
-      }
+        outline: none;
       &:hover {
-        outline: 1px solid var(--accent);
+        @include desktop {
+          outline: 1px solid var(--accent);
+        }
       }
-
-    ;
     }
-
 
     &-grid {
       display: grid;
