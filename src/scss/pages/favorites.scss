@@ -10,10 +10,29 @@
     @include tablet {
       margin-block: 20px 40px;
     }
+    h1 {
+      font: 700 24px/32px $fontFamily;
+      @include tablet {
+        font: 500 32px/40px $fontFamily;
+      }
+    }
   }
 
   &__content {
     margin-block: 30px 80px;
+  }
+
+  .mx-bd-catalog__catalog-heading {
+    .catalog-views {
+      @include tablet {
+        padding: 3px;
+      }
+    }
+    .dropdown__toggle {
+      @include tablet {
+        padding-block: 11px;
+      }
+    }
   }
 
   .mx-bd-catalog__wrapper {

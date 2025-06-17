@@ -31,6 +31,10 @@
       color: #FFF;
       background: #19BEFF;
       border-color: transparent;
+
+      .icon {
+        filter: invert(1);
+      }
     }
   }
 }
