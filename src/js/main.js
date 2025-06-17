@@ -990,7 +990,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll('[name="rating-shop"], [name="rating-selected"]').forEach(item => {
         item.addEventListener('change', e => {
-            window.STATUS.msg('Спасибо за обратную связь!')
+            document.querySelector('.os-review__submit').style.setProperty('display', 'block')
+        })
+    })
+
+    /* =======================================
+    rating submit
+    =======================================*/
+
+    document.querySelectorAll('.os-review form').forEach(form => {
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            const formData = new FormData(form)
+
+            const config = {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            };
+
+            /* fetch('/endpoint', config)
+                .then((response) => response.json())
+                .then((data) => {
+                    window.STATUS.msg('Спасибо за обратную связь!')
+                    form.reset()
+                    document.querySelector('.os-review__submit').style.removeProperty('display')
+                })  */
+
+            setTimeout(() => {
+                form.reset();
+                window.STATUS.msg('Спасибо за обратную связь!')
+                document.querySelector('.os-review__submit').style.removeProperty('display')
+            }, 100)
+
+            
+
+            
         })
     })
 
