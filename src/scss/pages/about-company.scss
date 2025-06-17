@@ -103,9 +103,18 @@
     summary {
       font: 700 20px/1.4 $fontFamily;
     }
-    details[open] {
-      outline: none;
+
+    details {
+      &[open] {
+        outline: none
+      }
+      &:hover {
+        outline: 1px solid var(--accent);
+      }
+
+    ;
     }
+
 
     &-grid {
       display: grid;
