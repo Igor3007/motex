@@ -50,9 +50,10 @@
 
   &__job {
     color: var(--black-50);
-    font: normal 400 10px/20px "Roboto", sans-serif;
+    font: normal 400 12px/18px "Roboto", sans-serif;
     @include tablet {
-      font-size: 12px;
+      font-size: 14px;
+      line-height: 20px;
       margin-top: 4px;
     }
   }
@@ -67,9 +68,10 @@
   }
 
   &__subtitle {
-    font: normal 400 10px/20px "Roboto", sans-serif;
+    font: normal 400 12px/18px "Roboto", sans-serif;
     @include tablet {
-      font-size: 12px;
+      font-size: 14px;
+      line-height: 20px;
     }
   }
 
