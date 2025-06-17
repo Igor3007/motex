@@ -1,0 +1,18 @@
+.blog {
+  &__filter {
+      display: flex;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+
+    & > * {
+      &:nth-child(13n + 2),
+      &:nth-child(13n + 8),
+      &:nth-child(13n + 9){
+        grid-column: span 2;
+      }
+    }
+  }
+}

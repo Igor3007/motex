@@ -1,6 +1,6 @@
 @import "../config";
 
-$fontFamily: "Roboto";
+$fontDefault: "Roboto";
 
 $fontSize: "";
 $mainColor: #15181A;
@@ -14,7 +14,7 @@ html {
 
 body {
   color: $mainColor;
-  font-family: $fontFamily;
+  font-family: $fontDefault;
   font-size: $fontSize;
   display: flex;
   flex-direction: column;

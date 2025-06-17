@@ -124,9 +124,6 @@
          font-size: 14px;
      }
 
-
-
-
      & div {
          display: flex;
          align-items: center;
@@ -194,5 +191,79 @@
          display: none;
          color: var(--black-20);
 
+     }
+ }
+
+ /* like a switch but with two visually identical states */
+.switch {
+     display: inline-flex;
+     align-items: center;
+     cursor: pointer;
+
+     input {
+         display: none;
+     }
+
+     &__slider {
+         width: 64px;
+         height: 32px;
+         border-radius: 16px;
+         background: var(--black-10);
+         position: relative;
+         margin-inline: 12px;
+
+         &:before {
+             content: '';
+             position: absolute;
+             top: 4px;
+             left: 4px;
+             bottom: 4px;
+             width: 24px;
+             border-radius: 50%;
+             background: var(--accent);
+             transition: 0.3s;
+         }
+     }
+
+     &__state {
+         transition: opacity .3s;
+         &.on {
+             opacity: .5;
+         }
+         &.off {
+             opacity: 1;
+         }
+     }
+
+     &:has(input:checked) {
+         .switch {
+             &__state {
+                 &.on {
+                     opacity: 1;
+                 }
+                 &.off {
+                     opacity: 0.5;
+                 }
+             }
+             &__slider {
+                 &:before {
+                     left: 36px;
+                 }
+             }
+         }
+     }
+
+     &.disabled, &:disabled, &:has(input:disabled) {
+         pointer-events: none;
+         .switch {
+             &__slider {
+                 &:before {
+                   background: var(--black-5);
+                 }
+             }
+           &__state {
+             opacity: .5;
+           }
+         }
      }
  }

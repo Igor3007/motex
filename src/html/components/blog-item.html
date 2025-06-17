@@ -1,0 +1,17 @@
+<div class="blog-item__wrapper">
+  <div class="blog-item">
+    <div class="blog-item__image">
+      <picture>
+        <img src="@@image" alt="@@title">
+      </picture>
+      @@if (badge) {
+        <div class="blog-item__badge">@@badge</div>
+      }
+      <div class="blog-item__date">@@date</div>
+      <div class="blog-item__title wide">@@title</div>
+      <div class="blog-item__time">@@time</div>
+    </div>
+    <div class="blog-item__title single">@@title</div>
+    <button class="btn-blue">Читать</button>
+  </div>
+</div>
