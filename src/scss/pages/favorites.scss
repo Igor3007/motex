@@ -1,0 +1,66 @@
+@import "../config";
+
+.favorites {
+  //* {outline: 1px solid rgba(0,0,0,.1);background-color: rgba(0,0,0,.05);}
+
+  .breadcrumbs {
+    margin-bottom: 9px;
+  }
+
+  &__heading {
+    @include tablet {
+      margin-block: 20px 40px;
+    }
+  }
+
+  &__content {
+    margin-block: 30px 80px;
+  }
+
+  .mx-bd-catalog__wrapper {
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--black-20);
+    @include tablet {
+      border: none;
+      padding-bottom: 40px;
+    }
+    @include desktop {
+      gap: 16px;
+    }
+  }
+
+  &__buttons-wrp {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 28px;
+
+    @include tablet {
+      gap: 17px;
+      margin-bottom: 40px;
+    }
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 0 0 416px;
+    }
+
+    button {
+      width: 100%;
+      font: 12px/16px $fontFamily;
+
+      @include tablet {
+        font: 16px/1.5 $fontFamily;
+      }
+
+      i {
+        margin-right: 2px;
+        @include tablet {
+          margin-right: 8px;
+        }
+      }
+    }
+
+  }
+}
