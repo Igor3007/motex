@@ -1,14 +1,6 @@
-@import 'config/fonts';
-@import 'config/vars';
-@import 'config/mixins';
-@import 'config/css-vars.scss';
+@import 'app';
 
-@import 'base';
-@import 'UI';
-
-@import 'components/libs';
-@import "components/common";
-
+//about
 @import "./components/cards/card-person.scss";
 @import "./components/cards/card-achieve.scss";
 @import "./components/slide-history.scss";

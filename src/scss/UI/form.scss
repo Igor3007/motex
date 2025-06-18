@@ -1,4 +1,6 @@
- .form {
+$main: var(--accent) ;
+
+.form {
 
      & input[type="text"],
      & input[type="date"],

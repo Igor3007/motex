@@ -1,13 +1,5 @@
-@import 'config/fonts';
-@import 'config/vars';
-@import 'config/mixins';
-@import 'config/css-vars.scss';
+@import 'app';
 
-@import 'base';
-@import 'UI';
-
-@import 'components/libs';
-@import "components/common";
 
 @import './components/single-product';
 

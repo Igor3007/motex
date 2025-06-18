@@ -1,7 +1,6 @@
 @import "../config";
 
 $fontDefault: "Roboto";
-
 $fontSize: "";
 $mainColor: #15181A;
 
@@ -77,5 +76,13 @@ main {
 .block-mobile {
   @media screen and (max-width: $w360) {
     display: block !important;
+  }
+}
+
+section {
+  margin: 60px 0;
+
+  @media screen and (min-width: 767.98px) {
+      margin: 80px 0;
   }
 }

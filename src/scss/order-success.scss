@@ -1,13 +1,4 @@
-@import "config/fonts";
-@import "config/vars";
-@import "config/mixins";
-@import "config/css-vars.scss";
-
-@import "base";
-@import "UI";
-
-@import "components/libs";
-@import "components/common";
+@import 'app';
 
 //catalog
 @import "components/catalog/mx-goods-item.scss";
