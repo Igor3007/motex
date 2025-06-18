@@ -1,5 +1,4 @@
 const redirectors = document.querySelectorAll('[data-redirect]');
-console.log(redirectors);
 const redirectTo = (url) => {
   setTimeout(() => {
     window.location.href = url;
