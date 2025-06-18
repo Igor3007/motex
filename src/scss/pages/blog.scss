@@ -3,6 +3,12 @@
 .blog {
   &__heading {
     margin-bottom: 20px;
+    @include tablet {
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-weight: 500;
+    }
   }
 
   &__filter {
@@ -14,9 +20,10 @@
     padding-bottom: 8px;
     margin-inline: calc( -1 * var(--container-padding));
     padding-inline: var(--container-padding) ;
-
-    button {
-      white-space: nowrap;
+    @include tablet {
+      gap: 8px;
+      margin-bottom: 10px;
+      padding-bottom: 9px;
     }
   }
 
@@ -24,6 +31,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+
+    @include tablet {
+      gap: 16px;
+    }
 
     & > * {
       @include mobile {
@@ -44,11 +55,28 @@
         }
       }
     }
-
     @include desktop {
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
+      margin-bottom: 60px;
     }
+  }
 
+  &__section {
+    @include desktop {
+      margin-bottom: 120px;
+    }
+  }
+
+  .mx-bd-catalog__catalog-pagination {
+    @include tablet {
+      margin-bottom: 120px;
+    }
+  }
+
+  .mx-goods--viewed {
+    @include tablet {
+      margin-bottom: 120px;
+    }
   }
 }

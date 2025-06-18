@@ -14,7 +14,7 @@
     ]})
     <div class="_container blog__heading">
         <label class="switch">
-            <input type="checkbox">
+            <input type="checkbox" data-redirect="pages/news.html">
             <div class="switch__state off"><h1>Статьи</h1></div>
             <div class="switch__slider"></div>
             <div class="switch__state on"><h1>Новости</h1></div>
@@ -23,19 +23,19 @@
     <section class="blog__section _container">
         <ul class="blog__filter">
             <li>
-                <button class="btn-custom_i">Все статьи</button>
+                <button class="btn-outlined">Все статьи</button>
             </li>
             <li>
-                <button class="btn-custom_i">Обзор</button>
+                <button class="btn-outlined">Обзор</button>
             </li>
             <li>
-                <button class="btn-custom_i">Ремонт</button>
+                <button class="btn-outlined">Ремонт</button>
             </li>
             <li>
-                <button class="btn-custom_i">Строительство</button>
+                <button class="btn-outlined">Строительство</button>
             </li>
             <li>
-                <button class="btn-custom_i">Новинки</button>
+                <button class="btn-outlined">Новинки</button>
             </li>
         </ul>
         <div class="blog__grid">
@@ -136,5 +136,6 @@
 </main>
 @@include('html/footer.html')
 @@include('html/components/action-panel.html')
+<script src="/js/pages/blog.js"></script>
 </body>
 </html>

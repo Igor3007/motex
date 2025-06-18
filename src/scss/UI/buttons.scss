@@ -208,3 +208,33 @@
 .btn-inline {
   display: inline-flex;
 }
+
+.btn-outlined {
+  white-space: nowrap;
+  font: 400 14px/20px $fontDefault;
+  padding: 5px 11px;
+  background: transparent;
+  border: 1px solid var(--black-20);
+  border-radius: 8px;
+  cursor: pointer;
+
+  @include tablet {
+    font: 400 16px/1.5 $fontDefault;
+    padding: 11px;
+  }
+
+  &:hover {
+    border-color: var(--black-base);
+  }
+
+  &.disabled, &:disabled {
+    pointer-events: none;
+    color: var(--black-20);
+  }
+
+  &.active {
+    background: var(--black-base);
+    border-color: var(--black-base);
+    color: var(--white);
+  }
+}

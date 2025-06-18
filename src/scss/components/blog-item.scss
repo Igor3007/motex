@@ -48,6 +48,13 @@
         object-fit: cover;
       }
     }
+
+    .btn-blue {
+      padding: 8px 23px;
+      @include tablet {
+        padding: 12px 20px;
+      }
+    }
   }
 
   &__title {
@@ -146,6 +153,7 @@
 
       @include tablet {
         font: 700 24px/32px $fontDefault;
+        margin-block: 12px;
       }
 
       a {

@@ -215,10 +215,16 @@
          margin-inline: 8px;
 
         @include tablet {
+          width: 62px;
+          height: 30px;
+          border-radius: 15px;
+          margin-inline: 12px;
+        }
+
+        @include desktop {
           width: 64px;
           height: 32px;
           border-radius: 16px;
-          margin-inline: 12px;
         }
 
          &:before {
@@ -232,6 +238,9 @@
              background: var(--accent);
              transition: 0.3s;
              @include tablet {
+               top: 3px;
+               bottom: 3px;
+               left: 5px;
                width: 24px;
             }
          }
