@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import rename from 'gulp-rename';
-import cleanCss from 'gulp-clean-css';
+import cssNano from "gulp-cssnano";
 import webpCss from 'gulp-webpcss';
 import groupMediaQueries from 'gulp-group-css-media-queries';
 import autoprefixer from 'autoprefixer';
@@ -38,7 +38,7 @@ const scss = (isBuild) => {
 		/** Раскомментировать если нужен не сжатый дубль файла стилей */
 		// .pipe(gulp.dest(filePaths.build.css))
 
-		.pipe(plugins.if(isBuild, cleanCss()))
+		.pipe(plugins.if(isBuild, cssNano()))
 		.pipe(rename({ extname: '.min.css' }))
 		.pipe(plugins.if(!isBuild, sourcemaps.write('.')))
 		.pipe(gulp.dest(filePaths.build.css))
