@@ -1,3 +1,5 @@
+@import "../../config";
+
 .main-goods-item {
 
   display: flex;
@@ -190,6 +192,16 @@
     @media screen and (min-width: 767.98px) {
       top: 8px;
       right: 8px;
+    }
+
+    &.active {
+      .mx-like {
+        opacity: 1;
+        i {
+          animation: heartBeat 0.3s ease forwards;
+          background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEyLjM5NCAwYTQuNjk0IDQuNjk0IDAgMDAtMi4yNi42MTZBNC40MjQgNC40MjQgMCAwMDguNSAyLjIzIDQuNDI0IDQuNDI0IDAgMDA2Ljg2Ny42MTYgNC42OTQgNC42OTQgMCAwMDQuNjA2IDBhNC45MTQgNC45MTQgMCAwMC0zLjMzMSAxLjQ3NkE0LjQ3NiA0LjQ3NiAwIDAwLjAwMyA0Ljc2NWMwIDMuMDczIDMuMzkgNi40MyA2LjIzMSA4LjcwNUM2Ljg3IDEzLjk3OSA4LjUgMTUgOC41IDE1czEuNjMxLTEuMDIxIDIuMjY2LTEuNTNjMi44NDItMi4yNzYgNi4yMy01LjYzMiA2LjIzLTguNzA1YTQuNDc3IDQuNDc3IDAgMDAtMS4yNy0zLjI4OUE0LjkxNCA0LjkxNCAwIDAwMTIuMzkzIDB6IiBmaWxsPSIjRTQzQTI4Ii8+PC9zdmc+") !important;
+        }
+      }
     }
 
 
