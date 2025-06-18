@@ -9,5 +9,8 @@
 @import 'components/libs';
 @import "components/common";
 
+@import './components/single-product';
 
-@import 'pages';
+//catalog
+@import "components/catalog/mx-goods-item.scss";
+

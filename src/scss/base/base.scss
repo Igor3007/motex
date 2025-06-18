@@ -5,6 +5,7 @@ $fontDefault: "Roboto";
 $fontSize: "";
 $mainColor: #15181A;
 
+
 :root {
   --container-padding: 18px;
 }
@@ -12,6 +13,7 @@ $mainColor: #15181A;
 html {
   height: 100%;
   scrollbar-gutter: stable;
+  @include scrollbar();
 }
 
 
@@ -34,7 +36,9 @@ body {
   bottom: 0;
 }
 
-
+main {
+  flex: 1 0 auto;
+}
 
 ._container {
   padding: 0 var(--container-padding);
