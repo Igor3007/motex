@@ -1,7 +1,10 @@
 @import "../config";
 
 :root {
-  --block-item-padding: 20px;
+  --blog-item-padding: 12px;
+  @include tablet {
+    --blog-item-padding: 20px;
+  }
 }
 
 .blog-item {
@@ -9,14 +12,28 @@
   overflow: hidden;
   border-radius: 8px;
   height: 100%;
+  min-height: 223px;
+  border: 1px solid var(--black-10);
+
+  @include tablet {
+    min-height: 424px;
+  }
 
   &__wrapper {
     container-type: inline-size;
   }
 
+  a:not([class]) {
+    color: inherit;
+  }
+
   &__image {
     position: relative;
-    aspect-ratio: 308 / 244;
+    height: 111px;
+
+    @include tablet {
+      height: 244px;
+    }
 
     picture {
       display: block;
@@ -34,67 +51,119 @@
   }
 
   &__title {
-    color: var(--blue-light);
-    font: 700 16px/1.5 $fontDefault;
+    color: var(--black-base);
+    font: 500 12px/16px $fontDefault;
+    margin-block: 12px 8px;
 
-    &.wide {
-      display: none;
+    @include tablet {
+      font: 700 16px/1.5 $fontDefault;
+      margin-block: 20px;
+    }
+
+    &:hover {
+      color: var(--blue-light);
+    }
+    &-wrapper {
+      position: absolute;
+      top: 100%;
+      left: var(--blog-item-padding);
     }
   }
 
   &__badge {
     position: absolute;
-    top: var(--block-item-padding);
-    left: var(--block-item-padding);
+    top: var(--blog-item-padding);
+    left: var(--blog-item-padding);
     background: var(--white);
+    font: 500 8px/1.5 $fontDefault;
+    padding-inline: 4px;
+    border-radius: 4px;
+    @include tablet {
+      font-size: 12px;
+    }
   }
 
   &__date {
     position: absolute;
-    left: var(--block-item-padding);
-    bottom: var(--block-item-padding);
+    left: var(--blog-item-padding);
+    bottom: var(--blog-item-padding);
     color: var(--white);
+    font: 400 10px/1.6 $fontDefault;
+
+    @include tablet {
+      font: 400 14px/20px $fontDefault;
+    }
   }
 
   &__time {
     position: absolute;
-    right: var(--block-item-padding);
-    bottom: var(--block-item-padding);
+    right: var(--blog-item-padding);
+    bottom: var(--blog-item-padding);
     color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font: 400 10px/1.6 $fontDefault;
+    @include tablet {
+      font: 400 14px/20px $fontDefault;
+    }
   }
+}
 
-  @container (width > 500px) {
-    .blog-item {
-      &__image {
-        position: static;
-        aspect-ratio: auto;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding-inline: var(--block-item-padding);
-        padding-block: var(--block-item-padding) 80px;
+/*
+  Two-columns blog item
+ */
+
+@container (width > 500px) or (width > 50vw) {
+  .blog-item {
+    border: none;
+    min-height: 195px;
+    @include tablet {
+      min-height: 424px;
+    }
+
+    &__image {
+      position: static;
+      aspect-ratio: auto;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: var(--blog-item-padding);
+      padding-bottom: 52px;
+      @include tablet {
+        padding-bottom: 80px;
+      }
+    }
+
+    &__time, &__date {
+      position: static;
+    }
+
+    &__title {
+      color: var(--white);
+      font: 700 16px/20px $fontDefault;
+
+      @include tablet {
+        font: 700 24px/32px $fontDefault;
       }
 
-      &__time, &__date {
-        position: static;
-      }
-
-      &__title {
+      a {
         color: var(--white);
-        &.wide {
-          display: block;
-        }
-        &.single {
-          display: none;
+        &:hover {
+          color: var(--white);
         }
       }
-    }
-    button {
-      position: absolute;
-      bottom: var(--block-item-padding);
-      left: var(--block-item-padding);
+
+      &-wrapper {
+        position: static;
+      }
     }
   }
 
+  .button {
+    position: absolute;
+    bottom: var(--blog-item-padding);
+    left: var(--blog-item-padding);
+  }
 }

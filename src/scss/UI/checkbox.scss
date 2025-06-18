@@ -1,4 +1,6 @@
- /* radio */
+@import "../config";
+
+/* radio */
 
  .radio {
      display: inline-flex;
@@ -205,12 +207,19 @@
      }
 
      &__slider {
-         width: 64px;
-         height: 32px;
-         border-radius: 16px;
+         width: 44px;
+         height: 24px;
+         border-radius: 12px;
          background: var(--black-10);
          position: relative;
-         margin-inline: 12px;
+         margin-inline: 8px;
+
+        @include tablet {
+          width: 64px;
+          height: 32px;
+          border-radius: 16px;
+          margin-inline: 12px;
+        }
 
          &:before {
              content: '';
@@ -218,10 +227,13 @@
              top: 4px;
              left: 4px;
              bottom: 4px;
-             width: 24px;
+             width: 16px;
              border-radius: 50%;
              background: var(--accent);
              transition: 0.3s;
+             @include tablet {
+               width: 24px;
+            }
          }
      }
 
@@ -247,7 +259,10 @@
              }
              &__slider {
                  &:before {
+                     left: 24px;
+                   @include tablet {
                      left: 36px;
+                   }
                  }
              }
          }
