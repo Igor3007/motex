@@ -1,10 +1,14 @@
 @import "../config";
 
-$fontFamily: "Roboto";
+$fontDefault: "Roboto";
+
 $fontSize: "";
 $mainColor: #15181A;
 
 
+:root {
+  --container-padding: 18px;
+}
 
 html {
   height: 100%;
@@ -15,7 +19,7 @@ html {
 
 body {
   color: $mainColor;
-  font-family: $fontFamily;
+  font-family: $fontDefault;
   font-size: $fontSize;
   display: flex;
   flex-direction: column;
@@ -37,7 +41,7 @@ main {
 }
 
 ._container {
-  padding: 0 18px;
+  padding: 0 var(--container-padding);
   margin: 0 auto;
 
   @media screen and (min-width: 479.98px) {
@@ -49,7 +53,7 @@ main {
   }
 
   @media screen and (min-width: 767.98px) {
-    padding: 0 32px;
+    --container-padding: 32px;
     max-width: 768px;
   }
 
@@ -58,8 +62,8 @@ main {
   }
 
   @media screen and (min-width: 1199.98px) {
+    --container-padding: 40px;
     max-width: 1360px;
-    padding: 0 40px;
   }
 
 }
@@ -73,13 +77,5 @@ main {
 .block-mobile {
   @media screen and (max-width: $w360) {
     display: block !important;
-  }
-}
-
-section {
-  margin: 60px 0;
-
-  @media screen and (min-width: 767.98px) {
-    margin: 80px 0;
   }
 }

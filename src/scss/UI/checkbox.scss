@@ -1,4 +1,6 @@
- /* radio */
+@import "../config";
+
+/* radio */
 
  .radio {
      display: inline-flex;
@@ -124,9 +126,6 @@
          font-size: 14px;
      }
 
-
-
-
      & div {
          display: flex;
          align-items: center;
@@ -194,5 +193,101 @@
          display: none;
          color: var(--black-20);
 
+     }
+ }
+
+ /* like a switch but with two visually identical states */
+.switch {
+     display: inline-flex;
+     align-items: center;
+     cursor: pointer;
+
+     input {
+         display: none;
+     }
+
+     &__slider {
+         width: 44px;
+         height: 24px;
+         border-radius: 12px;
+         background: var(--black-10);
+         position: relative;
+         margin-inline: 8px;
+
+        @include tablet {
+          width: 62px;
+          height: 30px;
+          border-radius: 15px;
+          margin-inline: 12px;
+        }
+
+        @include desktop {
+          width: 64px;
+          height: 32px;
+          border-radius: 16px;
+        }
+
+         &:before {
+             content: '';
+             position: absolute;
+             top: 4px;
+             left: 4px;
+             bottom: 4px;
+             width: 16px;
+             border-radius: 50%;
+             background: var(--accent);
+             transition: 0.3s;
+             @include tablet {
+               top: 3px;
+               bottom: 3px;
+               left: 5px;
+               width: 24px;
+            }
+         }
+     }
+
+     &__state {
+         transition: opacity .3s;
+         &.on {
+             opacity: .5;
+         }
+         &.off {
+             opacity: 1;
+         }
+     }
+
+     &:has(input:checked) {
+         .switch {
+             &__state {
+                 &.on {
+                     opacity: 1;
+                 }
+                 &.off {
+                     opacity: 0.5;
+                 }
+             }
+             &__slider {
+                 &:before {
+                     left: 24px;
+                   @include tablet {
+                     left: 36px;
+                   }
+                 }
+             }
+         }
+     }
+
+     &.disabled, &:disabled, &:has(input:disabled) {
+         pointer-events: none;
+         .switch {
+             &__slider {
+                 &:before {
+                   background: var(--black-5);
+                 }
+             }
+           &__state {
+             opacity: .5;
+           }
+         }
      }
  }

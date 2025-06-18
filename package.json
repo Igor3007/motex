@@ -13,7 +13,8 @@
     "deploy": "gh-pages -d dist",
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,json,html,css,md,yaml,yml}\"",
     "predeploy": "npm run build",
-    "sftp-deploy": "gulp build --build && node --env-file=./.env ./scripts/sftp_deploy.js"
+    "sftp-deploy": "gulp build --build && node --env-file=./.env ./scripts/sftp_deploy.js",
+    "icons-preview": "node ./scripts/icpage-generate.js"
   },
   "repository": {
     "type": "git",
@@ -41,7 +42,7 @@
     "esbuild-loader": "^4.0.2",
     "gh-pages": "^4.0.0",
     "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.3.0",
+    "gulp-cssnano": "2.1.3",
     "gulp-esbuild": "^0.11.2",
     "gulp-file-include": "^2.3.0",
     "gulp-fonter-fix": "^0.0.1",

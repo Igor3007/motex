@@ -1,0 +1,82 @@
+@import "../config";
+
+.blog {
+  &__heading {
+    margin-bottom: 20px;
+    @include tablet {
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-weight: 500;
+    }
+  }
+
+  &__filter {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 4px;
+    overflow-x: auto;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    margin-inline: calc( -1 * var(--container-padding));
+    padding-inline: var(--container-padding) ;
+    @include tablet {
+      gap: 8px;
+      margin-bottom: 10px;
+      padding-bottom: 9px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+
+    @include tablet {
+      gap: 16px;
+    }
+
+    & > * {
+      @include mobile {
+        &:nth-child(5n + 3) {
+          grid-column: span 2;
+        }
+      }
+      @include tablet-only {
+        &:nth-child(5n + 3) {
+          grid-column: span 2;
+        }
+      }
+      @include desktop {
+        &:nth-child(13n + 2),
+        &:nth-child(13n + 8),
+        &:nth-child(13n + 9) {
+          grid-column: span 2;
+        }
+      }
+    }
+    @include desktop {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__section {
+    @include desktop {
+      margin-bottom: 120px;
+    }
+  }
+
+  .mx-bd-catalog__catalog-pagination {
+    @include tablet {
+      margin-bottom: 120px;
+    }
+  }
+
+  .mx-goods--viewed {
+    @include tablet {
+      margin-bottom: 120px;
+    }
+  }
+}
