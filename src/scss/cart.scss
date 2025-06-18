@@ -1,0 +1,24 @@
+@import "config/fonts";
+@import "config/vars";
+@import "config/mixins";
+@import "config/css-vars.scss";
+
+@import "base";
+@import "UI";
+
+@import "components/libs";
+@import "components/common";
+
+//catalog
+@import "components/catalog/mx-goods-item.scss";
+
+//cart
+@import "components/cart/cart.scss";
+@import "components/cart/cart-aside.scss";
+@import "components/cart/cart-cutter.scss";
+@import "components/cart/cart-checkout.scss";
+@import "components/cart/cart-receipt.scss";
+@import "components/cart/cart-customer.scss";
+@import "components/cart/cart-order.scss";
+@import "components/cart/order-success.scss";
+

@@ -1,0 +1,17 @@
+@import 'config/fonts';
+@import 'config/vars';
+@import 'config/mixins';
+@import 'config/css-vars.scss';
+
+@import 'base';
+@import 'UI';
+
+@import 'components/libs';
+@import "components/common";
+
+//collections
+@import "components/catalog/mx-all-collections";
+@import "components/catalog/mx-collection-details";
+@import "components/catalog/mx-simple-collections";
+@import "components/catalog/mx-goods-item";
+@import "components/catalog/mx-simple-collections-item.scss";
