@@ -142,3 +142,15 @@
         @content;
     }
 }
+
+@mixin tablet-only {
+  @media screen and (min-width: $w576) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+    @media screen and (max-width: 575px) {
+        @content;
+    }
+}
