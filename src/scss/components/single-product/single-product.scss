@@ -110,17 +110,11 @@
     margin: 0 -12px;
   }
 
-  &__details,
-  &__aside,
-  &__gallery {
-    @media screen and (min-width: $w1200) {
-      width: 33.33%;
-      padding: 0 16px;
-    }
-  }
+
 
   &__gallery {
     max-width: 432px;
+    padding-bottom: 30px;
 
     @media screen and (min-width: $w760) {
       width: 50%;
@@ -131,6 +125,7 @@
 
   &__details {
     max-width: 432px;
+    padding-bottom: 30px;
 
     @media screen and (min-width: $w760) {
       width: 50%;
@@ -148,10 +143,18 @@
     }
   }
 
+  &__details,
+  &__aside,
+  &__gallery {
 
+    width: 100%;
+    max-width: 100%;
 
-
-
+    @media screen and (min-width: $w1200) {
+      width: 33.33%;
+      padding: 0 16px;
+    }
+  }
 
   &__stickers {
 
@@ -254,8 +257,16 @@
     padding-bottom: 9px;
 
     & h1 {
-      font-size: 32px;
+      font-size: 24px;
       font-weight: 500;
+
+      @media screen and (min-width: $w1440) {
+        font-size: 32px;
+      }
+
+      @media screen and (min-width: $w992) {
+        font-size: 28px;
+      }
 
       @include line-clamp(2);
     }
@@ -265,6 +276,7 @@
     display: flex;
     gap: 8px;
     padding-bottom: 30px;
+    flex-wrap: wrap;
   }
 
   &__tofav {
@@ -441,7 +453,11 @@
   }
 
   &__cutter {
-    padding-bottom: 30px;
+    padding-bottom: 16px;
+
+    @media screen and (min-width: $w1440) {
+      padding-bottom: 30px;
+    }
   }
 
   &__brand {
@@ -481,7 +497,7 @@
     padding-bottom: 31px;
     padding-top: 13px;
 
-    @media screen and (min-width: $w576) and (max-width: $w1200) {
+    @media screen and (min-width: $w576) and (max-width: 1199.99px) {
       display: flex;
       gap: 24px;
       flex-wrap: wrap;
@@ -650,12 +666,18 @@
   display: flex;
   align-items: center;
   border: 1px solid var(--black-10);
-  padding: 11px 26px;
+  padding: 11px 20px;
   border-radius: 8px;
+
+  @media screen and (min-width: $w1440) {
+    padding: 11px 26px;
+  }
 
   &__image {
 
     width: 44px;
+    min-width: 40px;
+    align-self: flex-start;
 
     & picture {
       @include picture(100%, contain);
@@ -665,15 +687,24 @@
   &__main {
     padding-left: 14px;
     flex-grow: 1;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: $w992) {
+      display: block;
+    }
   }
 
   &__title {
     font-weight: 600;
-    padding-bottom: 6px;
+
+
   }
 
   &__desc {
     font-size: 14px;
+    line-height: 155%;
 
     & span {
       background-color: var(--green);
@@ -686,8 +717,14 @@
 
 .sp-configurate {
   box-shadow: 0 0 20px 0 #0000002b;
-  padding: 26px 26px;
+  padding: 20px;
   border-radius: 8px;
+  font-size: 14px;
+
+  @media screen and (min-width: $w1440) {
+    font-size: 16px;
+    padding: 26px;
+  }
 
   & .counter {
 
@@ -734,9 +771,13 @@
       display: inline-flex;
       color: #fff;
       font-weight: 700;
-      font-size: 32px;
+      font-size: 28px;
       padding: 8px 9px;
       border-radius: 8px;
+
+      @media screen and (min-width: $w1440) {
+        font-size: 32px;
+      }
     }
 
     &-old {
@@ -779,7 +820,6 @@
     & span {
       border: 1px solid var(--black-20);
       border-radius: 30px;
-      font-size: 16px;
       display: inline-block;
       padding: 8px 40px 8px 20px;
       position: relative;
@@ -943,6 +983,7 @@
   opacity: 0;
   visibility: hidden;
   transition: 0.3s ease;
+  z-index: 10;
 
   & ul {
     padding: 8px 0;

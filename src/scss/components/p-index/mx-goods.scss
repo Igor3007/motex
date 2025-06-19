@@ -1,14 +1,17 @@
 .mx-goods {
   overflow: hidden;
+
   @media screen and (min-width: 991.98px) {
     margin-bottom: 60px;
   }
 
   h2 {
     margin-bottom: 20px;
+
     @media screen and (min-width: 767.98px) {
       margin-bottom: 28px;
     }
+
     @media screen and (min-width: 991.98px) {
       margin-bottom: 8px;
     }
@@ -17,6 +20,7 @@
   .splide {
     &__track {
       overflow: initial;
+
       @media screen and (min-width: 1199.98px) {
         overflow: hidden;
       }
@@ -28,9 +32,7 @@
       }
     }
 
-    &__slide {
 
-    }
 
     &__arrow {
       opacity: 1;
@@ -43,6 +45,7 @@
       background-repeat: no-repeat;
       background-position: center;
       transition: .1s ease;
+
       @media screen and (min-width: 991.98px) {
         &:hover {
           border-color: #19BEFF;
