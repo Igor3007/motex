@@ -5,6 +5,7 @@ const redirectTo = (url) => {
   }, 500);
 }
 redirectors.forEach(redirect => {
+  redirect.checked = false;
   redirect.addEventListener('change', (e) => {
     const destination = e.target.getAttribute('data-redirect');
     const {origin} = window.location;

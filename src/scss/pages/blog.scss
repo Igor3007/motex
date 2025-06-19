@@ -8,6 +8,12 @@
     }
     h1 {
       font-weight: 500;
+      a {
+        color: inherit;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 
@@ -77,6 +83,12 @@
   .mx-goods--viewed {
     @include tablet {
       margin-bottom: 120px;
+    }
+
+    .splide__arrows {
+      @include not-desktop {
+        display: none;
+      }
     }
   }
 }

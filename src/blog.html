@@ -4,21 +4,24 @@
     @@include('html/head.html', {
     'title': 'Статьи'
     })
+    <link rel="stylesheet" href="/css/blog.min.css">
 </head>
 <body>
 @@include('html/header.html')
-<main class="page blog-page">
+<main class="page blog">
     @@include('html/components/breadcrumbs.html',{
     "links":[
     {"href": "/pages/news", "title" : "Статьи"}
     ]})
     <div class="_container blog__heading">
-        <label class="switch">
-            <input type="checkbox" data-redirect="pages/news.html">
+        <div class="switch">
             <div class="switch__state off"><h1>Статьи</h1></div>
-            <div class="switch__slider"></div>
-            <div class="switch__state on"><h1>Новости</h1></div>
-        </label>
+            <label class="switch__wrapper">
+              <input type="checkbox" data-redirect="pages/news.html">
+              <div class="switch__slider"></div>
+            </label>
+            <div class="switch__state on"><h1><a href="/pages/news">Новости</a></h1></div>
+        </div>
     </div>
     <section class="blog__section _container">
         <ul class="blog__filter">

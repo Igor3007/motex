@@ -8,12 +8,18 @@
 }
 
 .blog-item {
+  display: block;
   position: relative;
   overflow: hidden;
   border-radius: 8px;
   height: 100%;
   min-height: 223px;
   border: 1px solid var(--black-10);
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 16px 0 #13131326;
+  }
 
   @include tablet {
     min-height: 424px;
@@ -30,6 +36,7 @@
   &__image {
     position: relative;
     height: 111px;
+    display: block;
 
     @include tablet {
       height: 244px;
@@ -40,6 +47,11 @@
       position: absolute;
       inset: 0;
       z-index: -1;
+      transition: opacity .3s;
+
+      .hoverable:hover & {
+        opacity: 0.85;
+      }
 
       img {
         display: block;
@@ -67,9 +79,10 @@
       margin-block: 20px;
     }
 
-    &:hover {
+    .hoverable:hover & {
       color: var(--blue-light);
     }
+
     &-wrapper {
       position: absolute;
       top: 100%;
@@ -154,13 +167,6 @@
       @include tablet {
         font: 700 24px/32px $fontDefault;
         margin-block: 12px;
-      }
-
-      a {
-        color: var(--white);
-        &:hover {
-          color: var(--white);
-        }
       }
 
       &-wrapper {

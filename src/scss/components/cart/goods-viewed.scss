@@ -1,0 +1,8 @@
+.mx-goods.mx-goods--viewed .main-goods-item {
+  opacity: 0.5;
+  transition: 0.3s ease;
+}
+
+.mx-goods.mx-goods--viewed .main-goods-item:hover {
+  opacity: 1;
+}

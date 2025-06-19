@@ -164,7 +164,7 @@
   }
 
   @media screen and (min-width: 991.98px) {
-    &:hover {
+    &:hover, .hoverable:hover & {
       background: linear-gradient(90deg, #19BEFF 0%, #3C82D2 100%);
     }
   }

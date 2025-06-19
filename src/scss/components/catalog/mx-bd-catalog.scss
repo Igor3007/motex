@@ -395,27 +395,6 @@
         grid-template-columns: repeat(4, 1fr);
       }
     }
-
-    &-pagination {
-      &-more {
-        margin-top: 28px;
-
-        @media screen and (min-width: 767.98px) {
-          margin-top: 40px;
-        }
-
-        button.btn-gray {
-          width: 100%;
-        }
-      }
-
-      &-page {
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
-      }
-    }
-
   }
 
 }

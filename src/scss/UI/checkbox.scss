@@ -2,292 +2,311 @@
 
 /* radio */
 
- .radio {
-     display: inline-flex;
-     position: relative;
-     cursor: pointer;
-     font-size: 14px;
-     line-height: 140%;
-     -webkit-user-select: none;
-     -moz-user-select: none;
-     -ms-user-select: none;
-     user-select: none;
-     align-items: flex-start;
+.radio {
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 140%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  align-items: flex-start;
 
-     &__title,
-     &__desc {
-         display: block;
-     }
+  &__title,
+  &__desc {
+    display: block;
+  }
 
-     &__title {
-         color: #000;
-         font-size: 14px;
-     }
+  &__title {
+    color: #000;
+    font-size: 14px;
+  }
 
-     &__desc {
-         font-size: 12px;
-         color: #959595;
-     }
+  &__desc {
+    font-size: 12px;
+    color: #959595;
+  }
 
-     & input {
-         position: absolute;
-         opacity: 0;
-         cursor: pointer;
-         height: 0;
-         width: 0;
-         display: none;
-     }
+  & input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    display: none;
+  }
 
-     &__text {
-         line-height: 140%;
-         font-size: 15px;
-         color: #222;
-         font-weight: 500;
-         padding-top: 1px;
-         transition: 0.3s ease;
-     }
+  &__text {
+    line-height: 140%;
+    font-size: 15px;
+    color: #222;
+    font-weight: 500;
+    padding-top: 1px;
+    transition: 0.3s ease;
+  }
 
-     &__elem {
-         top: 1px;
-         position: relative;
-         height: 20px;
-         width: 20px;
-         min-width: 20px;
-         background-color: transparent;
-         display: inline-block;
-         margin-right: 10px;
-         border-radius: 50%;
-         transition: 0.15s linear;
-         border: 1px solid #2F3030;
+  &__elem {
+    top: 1px;
+    position: relative;
+    height: 20px;
+    width: 20px;
+    min-width: 20px;
+    background-color: transparent;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 50%;
+    transition: 0.15s linear;
+    border: 1px solid #2F3030;
 
-         &::after {
-             content: '';
-             width: 12px;
-             height: 12px;
-             background-color: transparent;
-             border-radius: 50%;
-             display: inline-block;
-             position: absolute;
-             left: calc(50% - 6px);
-             top: calc(50% - 6px);
-             transition: 0.3s ease;
-             transform: scale(0);
-         }
-     }
+    &::after {
+      content: '';
+      width: 12px;
+      height: 12px;
+      background-color: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      position: absolute;
+      left: calc(50% - 6px);
+      top: calc(50% - 6px);
+      transition: 0.3s ease;
+      transform: scale(0);
+    }
+  }
 
-     & input {
-         &:hover~.radio__elem {
-             border-color: var(--accent);
-         }
+  & input {
+    &:hover ~ .radio__elem {
+      border-color: var(--accent);
+    }
 
-         &:checked~.radio__elem {
+    &:checked ~ .radio__elem {
 
-             background-color: #fff;
+      background-color: #fff;
 
-             &::after {
-                 content: '';
-                 transform: scale(1);
-                 background-color: var(--accent);
+      &::after {
+        content: '';
+        transform: scale(1);
+        background-color: var(--accent);
 
-             }
+      }
 
-             &:hover {
-                 border-color: var(--accent);
-             }
-         }
+      &:hover {
+        border-color: var(--accent);
+      }
+    }
 
-     }
+  }
 
-     &:hover {
-         & .radio {
-             &__elem {
-                 border-color: var(--accent);
-             }
+  &:hover {
+    & .radio {
+      &__elem {
+        border-color: var(--accent);
+      }
 
-             &__text {
-                 color: var(--accent);
+      &__text {
+        color: var(--accent);
 
-             }
-         }
-     }
+      }
+    }
+  }
 
- }
-
-
-
- .toggle {
-     display: flex;
-     align-items: center;
-     cursor: pointer;
-     font-size: 13px;
-     font-weight: 400;
-
-     @media screen and (min-width: $w992) {
-         font-size: 14px;
-     }
-
-     & div {
-         display: flex;
-         align-items: center;
-
-         & .toggle-slide {
-             width: 60px;
-             height: 32px;
-             display: inline-block;
-             background: #ccc;
-             border-radius: 50px 50px;
-             position: relative;
-             margin-right: 10px;
-             transition: 0.3s ease;
-
-             &:hover {
-                 background: #ADADAD;
-             }
-
-             &::before {
-                 content: '';
-                 width: 24px;
-                 height: 24px;
-                 background: #fff;
-                 border-radius: 50%;
-                 position: absolute;
-                 left: 4px;
-                 top: 4px;
-                 display: block;
-                 transition: 0.3s ease;
-
-             }
-         }
-     }
-
-     & input {
-         display: none;
-
-         &:checked~div .toggle-slide {
-             background: var(--accent);
-
-             &:hover {
-                 background: var(--accent);
-             }
+}
 
 
-             &::before {
-                 left: calc(100% - 28px);
+.toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 400;
 
-             }
-         }
+  @media screen and (min-width: $w992) {
+    font-size: 14px;
+  }
 
-     }
+  & div {
+    display: flex;
+    align-items: center;
 
-     & .toggle-active {
-         display: none;
-     }
+    & .toggle-slide {
+      width: 60px;
+      height: 32px;
+      display: inline-block;
+      background: #ccc;
+      border-radius: 50px 50px;
+      position: relative;
+      margin-right: 10px;
+      transition: 0.3s ease;
 
-     & input:checked~div .toggle-active {
-         display: block;
-         color: var(--accent);
+      &:hover {
+        background: #ADADAD;
+      }
 
-     }
+      &::before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        background: #fff;
+        border-radius: 50%;
+        position: absolute;
+        left: 4px;
+        top: 4px;
+        display: block;
+        transition: 0.3s ease;
 
-     & input:checked~div .toggle-deactive {
-         display: none;
-         color: var(--black-20);
+      }
+    }
+  }
 
-     }
- }
+  & input {
+    display: none;
 
- /* like a switch but with two visually identical states */
+    &:checked ~ div .toggle-slide {
+      background: var(--accent);
+
+      &:hover {
+        background: var(--accent);
+      }
+
+
+      &::before {
+        left: calc(100% - 28px);
+
+      }
+    }
+
+  }
+
+  & .toggle-active {
+    display: none;
+  }
+
+  & input:checked ~ div .toggle-active {
+    display: block;
+    color: var(--accent);
+
+  }
+
+  & input:checked ~ div .toggle-deactive {
+    display: none;
+    color: var(--black-20);
+
+  }
+}
+
+/* like a switch but with two visually identical states */
 .switch {
-     display: inline-flex;
-     align-items: center;
-     cursor: pointer;
+  display: inline-flex;
+  align-items: center;
 
-     input {
-         display: none;
-     }
+  input {
+    display: none;
+  }
 
-     &__slider {
-         width: 44px;
-         height: 24px;
-         border-radius: 12px;
-         background: var(--black-10);
-         position: relative;
-         margin-inline: 8px;
+  &__wrapper {
+    cursor: pointer;
+    &:hover {
+      .switch__slider {
+        background: var(--black-50);
+      }
+    }
+  }
 
-        @include tablet {
-          width: 62px;
-          height: 30px;
-          border-radius: 15px;
-          margin-inline: 12px;
+  &__slider {
+    width: 44px;
+    height: 24px;
+    border-radius: 12px;
+    background: var(--black-10);
+    position: relative;
+    margin-inline: 8px;
+    transition: background-color .3s;
+
+    @include tablet {
+      width: 62px;
+      height: 30px;
+      border-radius: 15px;
+      margin-inline: 12px;
+    }
+
+    @include desktop {
+      width: 64px;
+      height: 32px;
+      border-radius: 16px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      bottom: 4px;
+      width: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      transition: 0.3s;
+      @include tablet {
+        top: 3px;
+        bottom: 3px;
+        left: 5px;
+        width: 24px;
+      }
+      @include desktop {
+        top: 4px;
+        bottom: 4px;
+        left: 4px;
+      }
+    }
+  }
+
+  &__state {
+    transition: opacity .3s;
+
+    &.on {
+      opacity: .5;
+    }
+
+    &.off {
+      opacity: 1;
+    }
+  }
+
+  &:has(input:checked) {
+    .switch {
+      &__state {
+        &.on {
+          opacity: 1;
         }
 
-        @include desktop {
-          width: 64px;
-          height: 32px;
-          border-radius: 16px;
+        &.off {
+          opacity: 0.5;
         }
+      }
 
-         &:before {
-             content: '';
-             position: absolute;
-             top: 4px;
-             left: 4px;
-             bottom: 4px;
-             width: 16px;
-             border-radius: 50%;
-             background: var(--accent);
-             transition: 0.3s;
-             @include tablet {
-               top: 3px;
-               bottom: 3px;
-               left: 5px;
-               width: 24px;
-            }
-         }
-     }
+      &__slider {
+        &:before {
+          left: 24px;
+          @include tablet {
+            left: 36px;
+          }
+        }
+      }
+    }
+  }
 
-     &__state {
-         transition: opacity .3s;
-         &.on {
-             opacity: .5;
-         }
-         &.off {
-             opacity: 1;
-         }
-     }
+  &.disabled, &:disabled, &:has(input:disabled) {
+    pointer-events: none;
 
-     &:has(input:checked) {
-         .switch {
-             &__state {
-                 &.on {
-                     opacity: 1;
-                 }
-                 &.off {
-                     opacity: 0.5;
-                 }
-             }
-             &__slider {
-                 &:before {
-                     left: 24px;
-                   @include tablet {
-                     left: 36px;
-                   }
-                 }
-             }
-         }
-     }
+    .switch {
+      &__slider {
+        &:before {
+          background: var(--black-5);
+        }
+      }
 
-     &.disabled, &:disabled, &:has(input:disabled) {
-         pointer-events: none;
-         .switch {
-             &__slider {
-                 &:before {
-                   background: var(--black-5);
-                 }
-             }
-           &__state {
-             opacity: .5;
-           }
-         }
-     }
- }
+      &__state {
+        opacity: .5;
+      }
+    }
+  }
+}
