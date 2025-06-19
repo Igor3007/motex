@@ -17,29 +17,37 @@
   <section class="services__heading">
     <div class="_container formated-text">
       <h1>Услуги</h1>
-      <p>Мы предлагаем комплексные решения любых задач: от проектирования и производства товаров на заказ до услуг по установке, ремонту и обустройству вашей квартиры, дома и сада.</p>
+      <p>Мы предлагаем комплексные решения любых задач: от проектирования и производства товаров на заказ до услуг
+        по установке, ремонту и обустройству вашей квартиры, дома и сада.</p>
     </div>
   </section>
 
   <section class="services__advantages">
     <div class="_container">
-      <ul>
-        <li>@@include('html/components/cards/card-advantage.html',{
-          "number": "01",
-          "image": "/images/services/service-adv-01.png",
-          "text": "Проверенные партнёры и гарантия на оказываемые услуги"
-          })</li>
-        <li>@@include('html/components/cards/card-advantage.html',{
-          "number": "02",
-          "image": "/images/services/service-adv-02.png",
-          "text": "Фиксированные цены на каждую работу"
-          })</li>
-        <li>@@include('html/components/cards/card-advantage.html',{
-          "number": "03",
-          "image": "/images/services/service-adv-03.png",
-          "text": "Пробретение товаров и заказ услуг в одном месте"
-          })</li>
-      </ul>
+      <div class="splide" data-slider="advantages">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">@@include('html/components/cards/card-advantage.html',{
+              "number": "01",
+              "image": "/images/services/service-adv-01.png",
+              "text": "Проверенные партнёры и гарантия на оказываемые услуги"
+              })
+            </li>
+            <li class="splide__slide">@@include('html/components/cards/card-advantage.html',{
+              "number": "02",
+              "image": "/images/services/service-adv-02.png",
+              "text": "Фиксированные цены на каждую работу"
+              })
+            </li>
+            <li class="splide__slide">@@include('html/components/cards/card-advantage.html',{
+              "number": "03",
+              "image": "/images/services/service-adv-03.png",
+              "text": "Пробретение товаров и заказ услуг в одном месте"
+              })
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -97,10 +105,9 @@
   </section>
 
 
-
-
 </main>
 @@include('html/footer.html')
 @@include('html/components/action-panel.html')
+<script src="/js/pages/services.js"></script>
 </body>
 </html>
