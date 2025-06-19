@@ -1,3 +1,5 @@
+@import "../../config";
+
 .search-index {
 
     &__form {
@@ -34,7 +36,6 @@
 
     &__suggest {
         background: #fff;
-        position: relative;
         z-index: 21;
         position: absolute;
         top: calc(100% + 10px);

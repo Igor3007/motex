@@ -1,3 +1,5 @@
+@import "../../config";
+
 .section-select-region {
     position: fixed;
     left: 0;
@@ -131,7 +133,6 @@
     &__find {
 
         padding-bottom: 13px;
-        position: relative;
         background-color: #fff;
         padding-top: 10px;
         margin-top: -10px;

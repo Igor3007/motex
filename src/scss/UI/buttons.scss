@@ -210,6 +210,7 @@
 }
 
 .btn-outlined {
+  display: block;
   white-space: nowrap;
   font: 400 14px/20px $fontDefault;
   padding: 5px 11px;
@@ -217,6 +218,7 @@
   border: 1px solid var(--black-20);
   border-radius: 8px;
   cursor: pointer;
+  color: var(--black-base);
 
   @include tablet {
     font: 400 16px/1.5 $fontDefault;

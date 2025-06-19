@@ -1,3 +1,4 @@
+@import "../../config";
 .cart-aside {
 
     display: flex;
@@ -18,7 +19,7 @@
         }
     }
 
-    
+
 
     &__cutter,
     &__details,

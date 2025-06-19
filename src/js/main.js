@@ -350,6 +350,7 @@ document.addEventListener("DOMContentLoaded", () => {
             type: 'slide',
             rewind: true,
             arrows: false,
+            arrowPath: 'm24.381 3.9208-3.0832 3.0417 10.292 10.292h-31.292v4.3333h31.292l-10.292 10.292 3.0832 3.0416 15.5-15.5z',
             pagination: false,
             gap: 12,
             fixedWidth: '156px',
@@ -728,7 +729,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // document.addEventListener("click", () => {
         //     buttons.forEach((btn) => btn.classList.remove(activeClass));
         //     windows.forEach((win) => win.classList.remove(activeClass));
-        // }); 
+        // });
 
         windows.forEach((win) => {
             win.addEventListener("click", (event) => {
@@ -1025,9 +1026,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.querySelector('.os-review__submit').style.removeProperty('display')
             }, 100)
 
-            
 
-            
+
+
         })
     })
 

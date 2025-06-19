@@ -1,3 +1,5 @@
+@import "../../config";
+
 .section-single-product {
     margin: 30px 0;
 }
@@ -647,7 +649,6 @@
 
         &__inc,
         &__dec {
-            height: 38px;
             width: 22px;
             min-width: 22px;
             height: 22px;
@@ -729,13 +730,12 @@
         padding-bottom: 24px;
 
         & span {
-            padding: 8px 20px;
-            border: 1px solid var(--black-20);
-            border-radius: 30px;
-            font-size: 16px;
-            display: inline-block;
-            padding-right: 40px;
-            position: relative;
+          border: 1px solid var(--black-20);
+          border-radius: 30px;
+          font-size: 16px;
+          display: inline-block;
+          padding: 8px 40px 8px 20px;
+          position: relative;
 
             &::before {
                 content: '';
