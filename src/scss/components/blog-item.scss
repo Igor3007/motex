@@ -96,6 +96,7 @@
     left: var(--blog-item-padding);
     background: var(--white);
     font: 500 8px/1.5 $fontDefault;
+    color: var(--black-base);
     padding-inline: 4px;
     border-radius: 4px;
     @include tablet {
