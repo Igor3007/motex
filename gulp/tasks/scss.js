@@ -23,9 +23,9 @@ const scss = (isBuild) => {
 	};
 
 	return gulp.src(filePaths.src.scss)
-    .pipe(logger.handleError('SCSS'))
+		.pipe(logger.handleError('SCSS'))
 
-		.pipe(plugins.if(!isBuild, sourcemaps.init()))
+		//.pipe(plugins.if(!isBuild, sourcemaps.init()))
 		.pipe(sass({ outputStyle: 'expanded' }, null))
 		.pipe(plugins.replace(/@img\//g, '../images/'))
 
@@ -40,7 +40,7 @@ const scss = (isBuild) => {
 
 		.pipe(plugins.if(isBuild, cssNano()))
 		.pipe(rename({ extname: '.min.css' }))
-		.pipe(plugins.if(!isBuild, sourcemaps.write('.')))
+		//.pipe(plugins.if(!isBuild, sourcemaps.write('.')))
 		.pipe(gulp.dest(filePaths.build.css))
 		.pipe(plugins.browserSync.stream());
 };
