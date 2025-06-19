@@ -58,21 +58,96 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
     });
 
-
-
     main.mount();
     thumbnails.mount();
     main.sync(thumbnails);
 
+    /* ========================================
+    counter
+    ========================================*/
 
+    class Counter {
+        constructor(containerElement) {
+            this.container = containerElement;
+            this.input = this.container.querySelector('.counter__input input');
+            this.incBtn = this.container.querySelector('.counter__inc');
+            this.decBtn = this.container.querySelector('.counter__dec');
+
+            // Инициализация значения
+            this.value = parseInt(this.input.value) || 0;
+            this._validateAndUpdate();
+
+            // Инициализация обработчиков событий
+            this._initEvents();
+        }
+
+        // Инициализация обработчиков событий
+        _initEvents() {
+            this.incBtn.addEventListener('click', () => this.plus());
+            this.decBtn.addEventListener('click', () => this.minus());
+            this.input.addEventListener('change', () => this.setValue(this.input.value));
+            this.input.addEventListener('input', () => this._handleInput());
+        }
+
+        plus() {
+            if (this.value < 999) {
+                this.value++;
+                this._updateDisplay();
+            }
+            return this.value;
+        }
+
+        minus() {
+            if (this.value > 0) {
+                this.value--;
+                this._updateDisplay();
+            }
+            return this.value;
+        }
+
+        setValue(newValue) {
+            const num = parseInt(newValue);
+            if (!isNaN(num)) {
+                this.value = Math.max(0, Math.min(999, num));
+                this._updateDisplay();
+            }
+            return this.value;
+        }
+
+        _updateDisplay() {
+            this.input.value = this.value;
+            this.container.dispatchEvent(new Event('change'));
+        }
+
+        _validateAndUpdate() {
+            this.value = Math.max(0, Math.min(999, this.value));
+            this._updateDisplay();
+        }
+
+        _handleInput() {
+            const num = parseInt(this.input.value);
+            if (!isNaN(num)) {
+                this.value = num;
+                this._validateAndUpdate();
+            } else if (this.input.value === '') {
+                this.value = 0;
+            }
+        }
+    }
+
+    // Инициализация всех счетчиков на странице
+    document.querySelectorAll('[data-counter="duplicate"]').forEach(container => {
+        var counter = new Counter(container);
+    });
 
     /* ========================================
     product Calculator
     ========================================*/
 
     class ProductCalculator {
-        constructor(container) {
-            this.container = container;
+        constructor(params) {
+            this.params = params;
+            this.container = params.container;
             this.countInput = this.container.querySelector('input[data-total]');
             this.areaInput = this.container.querySelector('input[data-area]');
             this.volumeInput = this.container.querySelector('input[data-volume]');
@@ -165,6 +240,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
             if (changedField !== 'volume') {
                 this.volumeInput.value = volume.toFixed(2);
             }
+
+            if (this.params.on.changeInputCount) {
+                this.params.on.changeInputCount(count)
+            }
         }
 
         setupCounterButtons(input, step) {
@@ -220,7 +299,16 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
     }
 
-    document.querySelectorAll('.sp-configurate__calc').forEach(container => new ProductCalculator(container))
+    document.querySelectorAll('.sp-configurate__calc').forEach(container => {
+        let instance = new ProductCalculator({
+            container,
+            on: {
+                changeInputCount: (total) => {
+                    console.log(total)
+                }
+            }
+        });
+    })
 
     /* =======================================
     copy-field
