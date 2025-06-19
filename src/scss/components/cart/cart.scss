@@ -1,3 +1,5 @@
+@import "../../config";
+
 section.cart {
     margin-top: 0;
 
@@ -10,7 +12,7 @@ section.cart {
     &--checkout {
         margin-top: 16px;
 
-        
+
 
         & .cart-order {
             margin-bottom: 12px;
@@ -120,7 +122,6 @@ section.cart {
     }
 
     &__load {
-        display: flex;
         justify-content: center;
         align-items: center;
         height: 40vh;
@@ -358,20 +359,6 @@ section.cart {
 
         position: relative;
 
-        @keyframes to-fav-animate {
-            0% {
-                transform: scale(.7)
-            }
-
-            50% {
-                transform: scale(1.4)
-            }
-
-            100% {
-                transform: scale(1)
-            }
-        }
-
         &.is-active {
             &::before {
                 content: '';
@@ -384,10 +371,8 @@ section.cart {
                 position: absolute;
                 left: 0;
                 top: 0;
-                width: 100%;
-                height: 100%;
                 z-index: 2;
-                animation: to-fav-animate .3s ease forwards;
+                animation: heartBeat .3s ease forwards;
             }
 
             & i {
@@ -679,15 +664,6 @@ section.cart {
         }
     }
 
-}
-
-.mx-goods.mx-goods--viewed .main-goods-item {
-    opacity: 0.5;
-    transition: 0.3s ease;
-}
-
-.mx-goods.mx-goods--viewed .main-goods-item:hover {
-    opacity: 1;
 }
 
 .cart-empty {

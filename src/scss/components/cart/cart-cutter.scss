@@ -1,3 +1,4 @@
+@import "../../config";
 .cart-cut {
     padding: 15px 16px;
     background: var(--black-5);
@@ -18,7 +19,6 @@
             display: block;
             resize: vertical;
             border-radius: 8px;
-            font-size: 16px;
             font-family: inherit;
             min-height: 180px;
             font-size: 14px;

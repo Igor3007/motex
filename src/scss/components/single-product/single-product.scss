@@ -1,5 +1,99 @@
+@import "../../config";
+
 .section-single-product {
     margin: 30px 0;
+}
+
+.counter {
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+    border: 1px solid var(--black-10);
+    border-radius: 8px;
+
+    @media screen and (min-width: $w760) {
+        height: 48px;
+    }
+
+    &__input {
+        height: 100%;
+
+        & input {
+            height: 100%;
+            width: 54px;
+            text-align: center;
+            padding: 0;
+            border: none;
+            font-size: 12px;
+
+            @media screen and (min-width: $w760) {
+                width: 40px;
+            }
+
+            @media screen and (min-width: $w480) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    &__dec {
+        font-size: 0;
+
+        &::before {
+
+            content: '';
+            width: 12px;
+            height: 12px;
+            background-position: center;
+            background-size: contain;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTUuMzMzIDUuMzMzSDB2MS4zMzRoMTJWNS4zMzNINS4zMzN6IiBmaWxsPSIjOEE4QzhEIi8+PC9zdmc+);
+        }
+    }
+
+    &__inc {
+        font-size: 0;
+
+        &::before {
+
+            content: '';
+            width: 12px;
+            height: 12px;
+            background-position: center;
+            background-size: contain;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTUuMzMzIDB2NS4zMzNIMHYxLjMzNGg1LjMzM1YxMmgxLjMzNFY2LjY2N0gxMlY1LjMzM0g2LjY2N1YwSDUuMzMzeiIgZmlsbD0iIzhBOEM4RCIvPjwvc3ZnPg==);
+        }
+    }
+
+    &__dec,
+    &__inc {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border-radius: 8px;
+        transition: 0.3s ease;
+        cursor: pointer;
+
+        @media screen and (min-width: $w760) {
+            height: 38px;
+            width: 38px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        &:hover {
+            @media screen and (min-width: $w480) {
+                background-color: var(--accent);
+
+                &::before {
+                    filter: grayscale(1) contrast(100) brightness(300);
+                }
+            }
+        }
+    }
+
 }
 
 .single-product {
@@ -562,7 +656,6 @@
 
         &__inc,
         &__dec {
-            height: 38px;
             width: 22px;
             min-width: 22px;
             height: 22px;
@@ -644,13 +737,12 @@
         padding-bottom: 24px;
 
         & span {
-            padding: 8px 20px;
-            border: 1px solid var(--black-20);
-            border-radius: 30px;
-            font-size: 16px;
-            display: inline-block;
-            padding-right: 40px;
-            position: relative;
+          border: 1px solid var(--black-20);
+          border-radius: 30px;
+          font-size: 16px;
+          display: inline-block;
+          padding: 8px 40px 8px 20px;
+          position: relative;
 
             &::before {
                 content: '';

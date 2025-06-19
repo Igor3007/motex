@@ -1,0 +1,46 @@
+@import "../../config";
+
+.mx-goods.mx-goods--viewed {
+  .main-goods-item {
+    opacity: 0.5;
+    transition: 0.3s ease;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  h2 {
+    font: 700 20px/1.4 $fontDefault;
+    margin-bottom: 16px;
+    @include tablet {
+      font: 500 28px/36px $fontDefault;
+      margin-bottom: 28px;
+    }
+  }
+
+  .splide {
+    &__arrow {
+      display: none;
+      width: 48px;
+      height: 48px;
+      background: var(--white);
+      border: 1px solid var(--black-20);
+      top: 50%;
+
+      @include desktop {
+        display: flex;
+      }
+
+      &:disabled {
+        display: none;
+      }
+
+      &--prev {
+        left: -24px;
+      }
+      &--next {
+        right: -24px;
+      }
+    }
+  }
+}

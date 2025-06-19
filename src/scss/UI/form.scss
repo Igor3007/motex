@@ -1,4 +1,8 @@
- .form {
+@import "../config";
+
+$main: var(--accent) ;
+
+.form {
 
      & input[type="text"],
      & input[type="date"],
@@ -9,12 +13,8 @@
 
          font-size: 14px;
          line-height: 15px;
-         padding-left: 12px;
-         padding-right: 12px;
-         padding-top: 10px;
-         padding-bottom: 10px;
+         padding: 10px 12px;
          box-sizing: border-box;
-         width: auto;
          flex-grow: 1;
          border-radius: 8px;
          border: 1px solid var(--black-20);
@@ -279,7 +279,6 @@
          font-weight: 600;
          font-size: 16px;
          width: 100%;
-         color: var(--accent);
          color: var(--black-50);
          padding-bottom: 10px;
 
@@ -390,7 +389,6 @@
              width: 100%;
              border: none;
              background: transparent;
-             color: $main;
              height: 20px !important;
              transform: translateY(15px);
              color: #2F3030;
@@ -423,7 +421,6 @@
              font-weight: normal !important;
              font-size: 16px;
              font-family: var(--font-montserrat);
-             font-weight: 500;
              position: absolute;
              pointer-events: none;
              left: 0;
@@ -444,8 +441,6 @@
              top: 3px;
              font-size: 12px;
              height: 15px;
-             font-size: 12px;
-
          }
 
          & textarea[area-valid=false]~.bar,
@@ -548,7 +543,6 @@
                  color: #000;
                  min-width: 100%;
                  width: auto;
-                 max-height: 300px;
 
                  & li {
                      margin: 0;
@@ -652,7 +646,7 @@
          height: 100%;
          display: flex;
          align-items: center;
-         min-width: 50;
+         min-width: 50px;
          padding-left: 10px;
          justify-content: center;
          border-radius: 3px;
@@ -719,7 +713,6 @@
      color: #000;
      min-width: 100%;
      width: 100%;
-     max-height: 300px;
      scrollbar-color: var(--accent) #e2e6e8;
      scrollbar-width: thin !important;
  }

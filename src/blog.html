@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    @@include('html/head.html', {
+    'title': 'Статьи'
+    })
+    <link rel="stylesheet" href="/css/blog.min.css">
+</head>
+<body>
+@@include('html/header.html')
+<main class="page blog">
+    @@include('html/components/breadcrumbs.html',{
+    "links":[
+    {"href": "/pages/news", "title" : "Статьи"}
+    ]})
+    <div class="_container blog__heading">
+        <div class="switch">
+            <div class="switch__state off"><h1>Статьи</h1></div>
+            <label class="switch__wrapper">
+              <input type="checkbox" data-redirect="pages/news.html">
+              <div class="switch__slider"></div>
+            </label>
+            <div class="switch__state on"><h1><a href="/pages/news.html">Новости</a></h1></div>
+        </div>
+    </div>
+    <section class="blog__section _container">
+        <ul class="blog__filter">
+            <li>
+                <a class="btn-outlined active" href="#">Все статьи</a>
+            </li>
+            <li>
+                <a class="btn-outlined" href="#">Обзор</a>
+            </li>
+            <li>
+              <a class="btn-outlined" href="#">Ремонт</a>
+            </li>
+            <li>
+              <a class="btn-outlined" href="#">Строительство</a>
+            </li>
+            <li>
+              <a class="btn-outlined" href="#">Новинки</a>
+            </li>
+        </ul>
+        <div class="blog__grid">
+            @@include('html/components/blog-item.html', {
+                "image": "/images/blog/img01.jpg", "badge": "Обзор",
+                "date": "17.08.2024", "time": "10 минут",
+                "title": "Виды и размеры профилей для гипсокартона", "url": "#"
+            })
+            @@include('html/components/blog-item.html', {
+            "image": "/images/blog/img02.jpg", "badge": "",
+            "date": "17.08.2024", "time": "7 минут",
+            "title": "Технологии строительства каркасного дома", "url": "#"
+            })
+            @@include('html/components/blog-item.html', {
+            "image": "/images/blog/img01.jpg", "badge": "Обзор",
+            "date": "17.08.2024", "time": "3 минуты",
+            "title": "Виды и размеры профилей для гипсокартона", "url": "#"
+            })
+            @@include('html/components/blog-item.html', {
+            "image": "/images/blog/img01.jpg", "badge": "Обзор",
+            "date": "17.08.2024", "time": "10 минут",
+            "title": "Виды и размеры профилей для гипсокартона", "url": "#"
+            })
+            @@include('html/components/blog-item.html', {
+            "image": "/images/blog/img02.jpg", "badge": "",
+            "date": "17.08.2024", "time": "7 минут",
+            "title": "Технологии строительства каркасного дома", "url": "#"
+            })
+            @@include('html/components/blog-item.html', {
+            "image": "/images/blog/img01.jpg", "badge": "Обзор",
+            "date": "17.08.2024", "time": "3 минуты",
+            "title": "Виды и размеры профилей для гипсокартона", "url": "#"
+            })
+            @@include('html/components/blog-item.html', {
+            "image": "/images/blog/img01.jpg", "badge": "Обзор",
+            "date": "17.08.2024", "time": "10 минут",
+            "title": "Виды и размеры профилей для гипсокартона", "url": "#"
+            })
+            @@include('html/components/blog-item.html', {
+            "image": "/images/blog/img02.jpg", "badge": "",
+            "date": "17.08.2024", "time": "7 минут",
+            "title": "Технологии строительства каркасного дома", "url": "#"
+            })
+            @@include('html/components/blog-item.html', {
+            "image": "/images/blog/img01.jpg", "badge": "Обзор",
+            "date": "17.08.2024", "time": "3 минуты",
+            "title": "Виды и размеры профилей для гипсокартона", "url": "#"
+            })
+            @@include('html/components/blog-item.html', {
+            "image": "/images/blog/img01.jpg", "badge": "Обзор",
+            "date": "17.08.2024", "time": "10 минут",
+            "title": "Виды и размеры профилей для гипсокартона", "url": "#"
+            })
+            @@include('html/components/blog-item.html', {
+            "image": "/images/blog/img02.jpg", "badge": "",
+            "date": "17.08.2024", "time": "7 минут",
+            "title": "Технологии строительства каркасного дома", "url": "#"
+            })
+            @@include('html/components/blog-item.html', {
+            "image": "/images/blog/img01.jpg", "badge": "Обзор",
+            "date": "17.08.2024", "time": "3 минуты",
+            "title": "Виды и размеры профилей для гипсокартона", "url": "#"
+            })
+            @@include('html/components/blog-item.html', {
+            "image": "/images/blog/img01.jpg", "badge": "Обзор",
+            "date": "17.08.2024", "time": "10 минут",
+            "title": "Виды и размеры профилей для гипсокартона", "url": "#"
+            })
+            @@include('html/components/blog-item.html', {
+            "image": "/images/blog/img02.jpg", "badge": "",
+            "date": "17.08.2024", "time": "7 минут",
+            "title": "Технологии строительства каркасного дома", "url": "#"
+            })
+            @@include('html/components/blog-item.html', {
+            "image": "/images/blog/img01.jpg", "badge": "Обзор",
+            "date": "17.08.2024", "time": "3 минуты",
+            "title": "Виды и размеры профилей для гипсокартона", "url": "#"
+            })
+            @@include('html/components/blog-item.html', {
+            "image": "/images/blog/img01.jpg", "badge": "Обзор",
+            "date": "17.08.2024", "time": "10 минут",
+            "title": "Виды и размеры профилей для гипсокартона", "url": "#"
+            })
+            @@include('html/components/blog-item.html', {
+            "image": "/images/blog/img02.jpg", "badge": "",
+            "date": "17.08.2024", "time": "7 минут",
+            "title": "Технологии строительства каркасного дома", "url": "#"
+            })
+            @@include('html/components/blog-item.html', {
+            "image": "/images/blog/img01.jpg", "badge": "Обзор",
+            "date": "17.08.2024", "time": "3 минуты",
+            "title": "Виды и размеры профилей для гипсокартона", "url": "#"
+            })
+        </div>
+      @@include('html/components/paginator.html')
+    </section>
+  @@include('html/components/goods-viewed.html')
+</main>
+@@include('html/footer.html')
+@@include('html/components/action-panel.html')
+<script src="/js/pages/blog.js"></script>
+</body>
+</html>
