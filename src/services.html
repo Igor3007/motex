@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  @@include('html/head.html', {
+  'title': 'Услуги'
+  })
+  <link rel="stylesheet" href="/css/services.min.css">
+</head>
+<body>
+@@include('html/header.html')
+<main class="page services">
+  @@include('html/components/breadcrumbs.html',{
+  "links":[
+  {"href": "/pages/service.html", "title" : "Услуги"}
+  ]})
+
+  <section class="services__heading">
+    <div class="_container formated-text">
+      <h1>Услуги</h1>
+      <p>Мы предлагаем комплексные решения любых задач: от проектирования и производства товаров на заказ до услуг по установке, ремонту и обустройству вашей квартиры, дома и сада.</p>
+    </div>
+  </section>
+
+  <section class="services__advantages">
+    <div class="_container">
+      <ul>
+        <li>@@include('html/components/cards/card-advantage.html',{
+          "number": "01",
+          "image": "/images/services/service-adv-01.png",
+          "text": "Проверенные партнёры и гарантия на оказываемые услуги"
+          })</li>
+        <li>@@include('html/components/cards/card-advantage.html',{
+          "number": "02",
+          "image": "/images/services/service-adv-02.png",
+          "text": "Фиксированные цены на каждую работу"
+          })</li>
+        <li>@@include('html/components/cards/card-advantage.html',{
+          "number": "03",
+          "image": "/images/services/service-adv-03.png",
+          "text": "Пробретение товаров и заказ услуг в одном месте"
+          })</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="services__list">
+    <div class="_container">
+      <div class="splide" data-slider="splide-services">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              @@include('html/components/mx-services-item/mx-services-item.html', {
+              "image": "/images/services/service01.jpg",
+              "title": "Распил материалов",
+              "description": "Выполняем распил плитных материалов с высокой точностью реза"
+              })
+            </li>
+            <li class="splide__slide">
+              @@include('html/components/mx-services-item/mx-services-item.html', {
+              "image": "/images/services/service02.jpg",
+              "title": "Отделочные работы",
+              "description": "Мы осуществим качественный ремонт с гарантией"
+              })
+            </li>
+            <li class="splide__slide">
+              @@include('html/components/mx-services-item/mx-services-item.html', {
+              "image": "/images/services/service03.jpg",
+              "title": "Строительство",
+              "description": "Строим каркасные дома от 1 месяца под ключ "
+              })
+            </li>
+            <li class="splide__slide">
+              @@include('html/components/mx-services-item/mx-services-item.html', {
+              "image": "/images/services/service04.jpg",
+              "title": "Доставка",
+              "description": "Доставим ваш заказ в любую точку мира со скоростью света"
+              })
+            </li>
+            <li class="splide__slide">
+              @@include('html/components/mx-services-item/mx-services-item.html', {
+              "image": "/images/services/service05.jpg",
+              "title": "Колеровка",
+              "description": "Разнообразие цветов и высокая точность подбора"
+              })
+            </li>
+            <li class="splide__slide">
+              @@include('html/components/mx-services-item/mx-services-item.html', {
+              "image": "/images/services/service06.jpg",
+              "title": "Резка стекла",
+              "description": "Прямой и фигурный рез, обработка граней"
+              })
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+</main>
+@@include('html/footer.html')
+@@include('html/components/action-panel.html')
+</body>
+</html>

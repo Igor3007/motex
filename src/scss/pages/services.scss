@@ -1,0 +1,19 @@
+@import "../config";
+.services {
+
+  .breadcrumbs {
+    margin-bottom: 9px;
+  }
+
+  &__heading {
+    margin-top: 0;
+    h1 {
+      font: 700 24px/32px $fontDefault;
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+    p {
+      font: 400 12px/16px $fontDefault;
+    }
+  }
+}

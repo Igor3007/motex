@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  @@include('html/head.html', {
+  'title': '~~~'
+  })
+  <link rel="stylesheet" href="/css/~~~.min.css">
+</head>
+<body>
+@@include('html/header.html')
+<main class="page ~~~">
+  @@include('html/components/breadcrumbs.html',{
+  "links":[
+  {"href": "/pages/~~~.html", "title" : "~~~"}
+  ]})
+
+
+
+</main>
+@@include('html/footer.html')
+@@include('html/components/action-panel.html')
+</body>
+</html>
