@@ -1,0 +1,62 @@
+@import "../config";
+
+.services {
+
+  .breadcrumbs {
+    margin-bottom: 9px;
+  }
+
+  &__heading {
+    margin-block: 0 20px;
+    @include tablet {
+      margin-block: 20px 30px;
+    }
+
+    h1 {
+      font: 700 24px/32px $fontDefault;
+      margin-block: 0 30px;
+      @include tablet {
+        font-size: 28px;
+        line-height: 36px;
+        margin-block: 0 40px;
+      }
+      @include desktop {
+        width: 50%;
+      }
+    }
+
+    p {
+      font: 400 12px/16px $fontDefault;
+      @include tablet {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      @include desktop {
+        width: 50%;
+      }
+    }
+  }
+
+  &__advantages {
+    margin-block: 0 20px;
+  }
+
+  &__list {
+    margin-block: 40px 80px;
+    @include tablet {
+      margin-block: 60px 120px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    @include tablet {
+      gap: 16px;
+    }
+    @include desktop {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
