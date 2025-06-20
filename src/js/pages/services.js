@@ -1,4 +1,4 @@
-const applyAnimation = (el) => {
+const applyServiceCardAnimation = (el) => {
   const video = el.querySelector('video');
 
   el.addEventListener('mouseenter', (e) => {
@@ -17,7 +17,7 @@ const applyAnimation = (el) => {
 
 const initAnimatedCards = () => {
   document.querySelectorAll('.card-service-a').forEach((el) => {
-    applyAnimation(el);
+    applyServiceCardAnimation(el);
   })
 };
 
