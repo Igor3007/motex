@@ -5,10 +5,18 @@
   overflow: hidden;
   border-radius: 8px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 
   &__media {
     position: relative;
     aspect-ratio: 4 / 3;
+    @include tablet {
+      aspect-ratio: 1.44;
+    }
+    @include desktop {
+      aspect-ratio: 1.289;
+    }
   }
 
   &__picture {
@@ -41,11 +49,12 @@
   }
 
   &__content {
-    padding: 9px 12px 12px;
+    padding: 12px;
     background: var(--black-5);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex-grow: 1;
     @include tablet {
       padding: 20px;
     }
@@ -72,6 +81,13 @@
       font-size: 14px;
       line-height: 20px;
       margin-bottom: 12px;
+    }
+  }
+
+  .btn-blue {
+    padding: 4px 8px;
+    @include tablet {
+      padding: 12px;
     }
   }
 }

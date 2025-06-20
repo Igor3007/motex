@@ -8,7 +8,10 @@ const applyAnimation = (el) => {
 
   el.addEventListener('mouseleave', (e) => {
     el.classList.remove('playing');
-    video.pause();video.currentTime = 0;
+    // остановим видео после появления картинки (css transition)
+    setTimeout(() => {
+      video.pause();video.currentTime = 0;
+    }, 500);
   })
 }
 
