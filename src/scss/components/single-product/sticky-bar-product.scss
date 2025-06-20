@@ -1,80 +1,86 @@
 .sticky-bar-product {
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+
+
+  &__detail {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 100%;
+    gap: 16px;
+  }
 
+  &__image {
+    width: 48px;
 
+    & picture {
+      @include picture(100%, contain);
 
-    &__detail {
-        display: flex;
-        align-items: center;
-        gap: 16px;
+      & img {
+        border-radius: 8px;
+      }
     }
+  }
 
-    &__image {
-        width: 48px;
+  &__name {
+    max-width: 250px;
+    line-height: 140%;
 
-        & picture {
-            @include picture(100%, contain);
+    & span {
+      @include line-clamp(3);
+    }
+  }
 
-            & img {
-                border-radius: 8px;
-            }
+  &__nav {
+    flex-grow: 1;
+
+    & ul {
+      display: flex;
+      justify-content: center;
+
+      & li {
+        padding: 0 12px;
+
+        & a {
+          color: var(--black-base);
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+          &.is-active {
+            color: var(--accent);
+          }
+
         }
+
+
+      }
     }
+  }
 
-    &__name {
-        max-width: 250px;
-        line-height: 140%;
+  &__action {
+    display: flex;
+    gap: 12px;
+  }
 
-        & span {
-            @include line-clamp(3);
-        }
+  &__tocart {
+    & .icon-btn {
+      width: 48px;
+      height: 48px;
+      background-color: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.9;
+      }
     }
-
-    &__nav {
-        flex-grow: 1;
-
-        & ul {
-            display: flex;
-            justify-content: center;
-
-            & li {
-                padding: 0 12px;
-
-                & a {
-                    color: var(--black-base);
-
-                    &:hover {
-                        text-decoration: underline;
-                    }
-
-                }
-            }
-        }
-    }
-
-    &__action {
-        display: flex;
-        gap: 12px;
-    }
-
-    &__tocart {
-        & .icon-btn {
-            width: 48px;
-            height: 48px;
-            background-color: var(--accent);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-
-            &:hover {
-                opacity: 0.9;
-            }
-        }
-    }
+  }
 }

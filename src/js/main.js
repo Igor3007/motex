@@ -10,15 +10,24 @@ document.addEventListener("DOMContentLoaded", () => {
     function css_variable() {
         let vh = window.innerHeight * 0.01;
         let hgtheader = document.querySelector('.header') ? document.querySelector('.header').clientHeight : 64
+        let hgtheaderTop = document.querySelector('.top-header') ? document.querySelector('.top-header').clientHeight : 54
+        let hgtheaderMain = document.querySelector('.main-header') ? document.querySelector('.main-header').clientHeight : 103
 
         document.documentElement.style.setProperty('--vh', vh + 'px');
         document.documentElement.style.setProperty('--hgt-header', hgtheader + 'px');
+        document.documentElement.style.setProperty('--hgt-header-top', hgtheaderTop + 'px');
+        document.documentElement.style.setProperty('--hgt-header-main', hgtheaderMain + 'px');
 
         window.globalConfig = {
             vh,
-            hgtheader
+            hgtheader,
+            hgtheaderTop,
+            hgtheaderMain
         }
     }
+
+    window.addEventListener('load', css_variable)
+    window.addEventListener('resize', css_variable)
 
     /* ========================================
     ymaps api
@@ -40,8 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    window.addEventListener('load', css_variable)
-    window.addEventListener('resize', css_variable)
+
 
     /* ==============================================
     Status
@@ -616,7 +624,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeVideoBlocks([{
         wrapperClass: '.demo-stories__item',
         controlClass: '.demo-stories__item video',
-    }, ]);
+    },]);
 
     /* =========================================
     email validator

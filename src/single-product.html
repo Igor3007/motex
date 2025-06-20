@@ -203,7 +203,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="single-product__more">Все характеристики</div>
+              <div class="single-product__more" data-scroll="#characteristics">Все характеристики</div>
             </div>
 
             <div class="single-product__cutter">
@@ -268,7 +268,8 @@
                   </div>
                 </div>
                 <div class="sp-profit__tooltip">
-                  <i class="ic_16" style="background-image: url(/images/icons/ic_about-dark.svg)"></i>
+                  <i class="ic_16" style="background-image: url(/images/icons/ic_about-dark.svg)" data-tooltip=""
+                    data-ajax="_tooltip-price-compare.html"></i>
                 </div>
               </div>
             </div>
@@ -307,7 +308,7 @@
                     <div class="counter">
                       <div class="counter__dec">-</div>
                       <div class="counter__input">
-                        <input data-area="0.75" type="text" value="0.75">
+                        <input data-area="1.75" type="text" value="1.75">
                       </div>
                       <div class="counter__inc">+</div>
                     </div>
@@ -402,9 +403,9 @@
             <div class="sticky-bar-product__nav">
               <nav>
                 <ul>
-                  <li><a href="">Описание</a></li>
-                  <li><a href="">Характеристики</a></li>
-                  <li><a href="">Документация</a></li>
+                  <li><a href="#description">Описание</a></li>
+                  <li><a href="#characteristics">Характеристики</a></li>
+                  <li><a href="#documentation">Документация</a></li>
                 </ul>
               </nav>
             </div>
@@ -433,7 +434,7 @@
       <div class="_container">
         <div class="details-product">
 
-          <div class="details-product__group">
+          <div id="description" class="details-product__group">
             <div class="details-product__label">Описание</div>
             <div class="details-product__content">
               <div class="formated-text">
@@ -454,7 +455,7 @@
             </div>
           </div>
 
-          <div class="details-product__group">
+          <div id="characteristics" class="details-product__group">
             <div class="details-product__label">Характеристики</div>
             <div class="details-product__content">
               <div class="details-product__table">
@@ -588,7 +589,7 @@
             </div>
           </div>
 
-          <div class="details-product__group">
+          <div id="documentation" class="details-product__group">
             <div class="details-product__label">Документация</div>
             <div class="details-product__content">
               <div class="details-product__filelist">

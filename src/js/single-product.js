@@ -66,9 +66,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
     counter
     ========================================*/
 
+    let counter, calculator;
+
     class Counter {
-        constructor(containerElement) {
-            this.container = containerElement;
+        constructor(params) {
+            this.params = params;
+            this.container = params.container;
             this.input = this.container.querySelector('.counter__input input');
             this.incBtn = this.container.querySelector('.counter__inc');
             this.decBtn = this.container.querySelector('.counter__dec');
@@ -109,14 +112,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
             const num = parseInt(newValue);
             if (!isNaN(num)) {
                 this.value = Math.max(0, Math.min(999, num));
-                this._updateDisplay();
+                //this._updateDisplay();
+                this.input.value = this.value;
             }
             return this.value;
         }
 
         _updateDisplay() {
             this.input.value = this.value;
-            this.container.dispatchEvent(new Event('change'));
+            let event = new Event('change')
+            event.count = this.value
+            this.container.dispatchEvent(event);
         }
 
         _validateAndUpdate() {
@@ -137,7 +143,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     // Инициализация всех счетчиков на странице
     document.querySelectorAll('[data-counter="duplicate"]').forEach(container => {
-        var counter = new Counter(container);
+        counter = new Counter({
+            container,
+        });
+
+
+
     });
 
     /* ========================================
@@ -288,6 +299,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
             }
         }
 
+        setCount(num) {
+            this.countInput.value = num;
+            this.updateValues('count');
+        }
+
         setupEventListeners() {
             this.countInput.addEventListener('input', () => this.handleInputChange(this.countInput));
             this.areaInput.addEventListener('input', () => this.handleInputChange(this.areaInput));
@@ -300,15 +316,20 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
 
     document.querySelectorAll('.sp-configurate__calc').forEach(container => {
-        let instance = new ProductCalculator({
+        window.calculator = new ProductCalculator({
             container,
             on: {
                 changeInputCount: (total) => {
-                    console.log(total)
+                    counter.setValue(total)
                 }
             }
         });
     })
+
+    document.querySelector('[data-counter="duplicate"]').addEventListener('change', e => {
+        window.calculator.setCount(e.count)
+    })
+
 
     /* =======================================
     copy-field
@@ -329,6 +350,257 @@ document.addEventListener('DOMContentLoaded', function (event) {
         })
     })
 
+    /* ======================================
+    scrollNavigation
+    ======================================*/
+
+    class ScrollNavigation {
+        constructor(options) {
+            this.navSelector = options.navSelector;
+            this.sectionSelector = options.sectionSelector;
+            this.activeClass = options.activeClass || 'active';
+            this.offset = options.offset || 100;
+            this.navLinks = null;
+            this.sections = null;
+
+            this.init();
+        }
+
+        init() {
+            this.navLinks = document.querySelectorAll(`${this.navSelector} a`);
+            this.sections = document.querySelectorAll(this.sectionSelector);
+
+            if (this.navLinks.length && this.sections.length) {
+                this.setupClickHandlers();
+                this.setupScrollHandler();
+                // Проверить активный раздел при загрузке
+                this.checkActiveSection();
+            }
+        }
+
+        setupClickHandlers() {
+            this.navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - this.offset,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        setupScrollHandler() {
+            window.addEventListener('scroll', () => {
+                this.checkActiveSection();
+            });
+        }
+
+        checkActiveSection() {
+            let current = '';
+            const scrollPosition = window.pageYOffset;
+
+            this.sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (scrollPosition >= sectionTop - this.offset) {
+                    current = '#' + section.getAttribute('id');
+                }
+            });
+
+            this.navLinks.forEach(link => {
+                link.classList.remove(this.activeClass);
+                if (link.getAttribute('href') === current) {
+                    link.classList.add(this.activeClass);
+                }
+            });
+        }
+    }
+
+    // Использование
+
+    setTimeout(() => {
+        new ScrollNavigation({
+            navSelector: '.sticky-bar-product__nav',
+            sectionSelector: '.details-product__group',
+            activeClass: 'is-active',
+            offset: window.globalConfig.hgtheader + 36
+        });
+    }, 1000)
+
+
+    /* =======================================
+    scroll
+    =======================================*/
+
+    document.querySelectorAll('[data-scroll]').forEach(item => {
+        item.addEventListener('click', (e) => {
+
+            if (document.querySelector(e.target.dataset.scroll)) {
+                window.scrollToTargetAdjusted({
+                    elem: document.querySelector(e.target.dataset.scroll),
+                    offset: window.globalConfig.hgtheader + 36
+                })
+            }
+
+        })
+    })
+
+    /* =======================================
+    Tooltip
+    =======================================*/
+
+    class TooltipAjax {
+
+        constructor(params) {
+            this.$items = document.querySelectorAll(params.el)
+            this.tooltip = null;
+
+            this.addEvents()
+        }
+
+        LoadTooltip(e, callback) {
+
+            if (e.target.dataset.ajax) {
+                this.ajaxLoadHtml(e, (text) => {
+                    callback({ text })
+                })
+            } else if (e.target.dataset.el) {
+                if (document.querySelector(e.target.dataset.el)) {
+                    callback({
+                        text: document.querySelector(e.target.dataset.el).outerHTML
+                    })
+                }
+            } else {
+                callback({
+                    text: e.target.dataset.tooltip
+                })
+            }
+        }
+
+        ajaxLoadHtml(e, onload) {
+            fetch(e.target.dataset.ajax)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Ошибка сети');
+                    }
+                    return response.text();
+                })
+                .then(text => {
+                    onload(text)
+                })
+                .catch(error => {
+                    console.error('Ошибка TooltipAjax:', error);
+                });
+        }
+
+        getTemplate(data) {
+            let html = ` <div class="tooltip-box" ><div class="af-spiner" ></div></div> `;
+            if (data) html = `<div class="tooltip-box" >${data.text}</div> `;
+            return html;
+        }
+
+        positionTooltip(e) {
+            const DomRect = e.target.getBoundingClientRect()
+            const tooltipW = this.tooltip.clientWidth;
+            const tooltipH = this.tooltip.clientHeight;
+            const offset = 8;
+            const bounds = 20;
+
+            this.tooltip.style.left = (DomRect.x - (tooltipW / 2) + (bounds / 2)) + 'px'
+            this.tooltip.style.top = (DomRect.y - tooltipH - (bounds / 2)) - offset + 'px'
+
+
+            if (this.tooltip.getBoundingClientRect().left < bounds) {
+                this.tooltip.classList.add('tooltip-box-item--left')
+                this.tooltip.style.left = (DomRect.x - (DomRect.x / 2) + (bounds / 2)) + offset + 'px'
+            }
+
+            if (this.tooltip.getBoundingClientRect().top < bounds) {
+                this.tooltip.classList.add('tooltip-box-item--top')
+                this.tooltip.style.top = (DomRect.y + (bounds)) + offset + 'px'
+            }
+        }
+
+        tooltipDesctop(e) {
+
+            this.tooltipRemove()
+            this.tooltip = document.createElement('div')
+            this.tooltip.innerHTML = this.getTemplate(false)
+            this.tooltip.classList.add('tooltip-box-item')
+
+            document.body.append(this.tooltip)
+            this.positionTooltip(e)
+
+            //load data
+
+            this.LoadTooltip(e, (response) => {
+                this.tooltip.innerHTML = this.getTemplate(response)
+                this.positionTooltip(e)
+            })
+        }
+
+        tooltipPopup(e) {
+            const tooltipPopup = new afLightbox({
+                mobileInBottom: true
+            })
+
+            tooltipPopup.open(`<div class="popup-tooltip-box" >${this.getTemplate(false)}</div>`, () => {
+                this.LoadTooltip(e, (response) => {
+                    let html = `<div class="popup-tooltip-box" >${this.getTemplate(response)}</div>`
+                    tooltipPopup.changeContent(html)
+                })
+            })
+        }
+
+        tooltipRemove() {
+            !this.tooltip || this.tooltip.remove()
+        }
+
+        addEvents() {
+            this.$items.forEach(item => {
+
+                //for desctop
+                if (document.body.clientWidth > 576) {
+
+                    item.addEventListener('mouseenter', e => {
+                        this.tooltipDesctop(e)
+
+                        //add event close on scroll
+                        window.addEventListener('scroll', e => {
+                            this.tooltipRemove()
+                        })
+
+                    })
+
+                    //add event close on outher click 
+                    item.addEventListener('mouseleave', e => {
+                        //this.tooltipRemove()
+                    })
+
+                } else {
+                    item.addEventListener('click', e => {
+                        //for mobile
+                        this.tooltipPopup(e)
+                    })
+                }
+
+
+
+            })
+        }
+
+    }
+
+    new TooltipAjax({
+        el: '[data-tooltip]'
+    })
 
 });
 
