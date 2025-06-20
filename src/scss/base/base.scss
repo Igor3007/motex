@@ -73,6 +73,12 @@ main {
   }
 }
 
+.visible-desktop {
+  @media screen and (max-width: $w1024) {
+    display: none !important;
+  }
+}
+
 .block-mobile {
   @media screen and (max-width: $w360) {
     display: block !important;
