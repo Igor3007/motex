@@ -425,14 +425,14 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     // Использование
 
-    setTimeout(() => {
+    window.addEventListener('load', () => {
         new ScrollNavigation({
             navSelector: '.sticky-bar-product__nav',
             sectionSelector: '.details-product__group',
             activeClass: 'is-active',
             offset: window.globalConfig.hgtheader + 36
         });
-    }, 1000)
+    })
 
 
     /* =======================================

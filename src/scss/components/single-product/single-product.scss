@@ -141,6 +141,29 @@
       width: 100%;
       padding: 12px;
     }
+
+    &--outstock {
+      @media screen and (min-width: $w1440) {
+
+        & .single-product {
+          &__sku {
+            margin-top: -57px;
+            padding-bottom: 30px;
+          }
+        }
+
+        & .sp-configurate {
+          padding-top: 30px;
+          padding-bottom: 30px;
+
+          &__desc {
+            padding-bottom: 18px;
+          }
+        }
+
+
+      }
+    }
   }
 
   &__details,
@@ -255,20 +278,46 @@
   &__h1 {
 
     padding-bottom: 9px;
+    display: flex;
+
+    & span {
+      font-size: 14px;
+      color: var(--black-50);
+      cursor: pointer;
+      align-self: flex-end;
+      margin-bottom: 0.5em;
+
+      &:hover {
+        color: var(--accent);
+      }
+    }
 
     & h1 {
       font-size: 24px;
       font-weight: 500;
 
-      @media screen and (min-width: $w1440) {
-        font-size: 32px;
-      }
-
       @media screen and (min-width: $w992) {
         font-size: 28px;
       }
 
+      @media screen and (min-width: $w1440) {
+        font-size: 32px;
+      }
+
+
+
       @include line-clamp(2);
+    }
+
+    &.is-disabled-lineclamp {
+      & h1 {
+        display: block;
+        -webkit-line-clamp: unset;
+      }
+
+      & span {
+        display: none;
+      }
     }
   }
 
@@ -752,7 +801,18 @@
     }
   }
 
+  &__title {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--blue-light);
+    padding-bottom: 12px;
+  }
 
+  &__desc {
+    padding-bottom: 24px;
+    font-size: 14px;
+    line-height: 142%;
+  }
 
   &__field {
     color: var(--black-50);
@@ -859,6 +919,31 @@
 
   }
 
+  &__out-of-stock {
+
+    padding-bottom: 24px;
+    color: var(--blue-light);
+
+    & span {
+      border: 1px solid var(--black-20);
+      border-radius: 30px;
+      display: inline-block;
+      padding: 8px 40px 8px 20px;
+      position: relative;
+
+      &::before {
+        content: '';
+        width: 16px;
+        height: 16px;
+        display: block;
+        position: absolute;
+        right: 16px;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEuMjEyIDMuNzA5YS44MTUuODE1IDAgMDAtLjQxMS43MXY3LjE2YzAgLjI5NS4xNTcuNTY2LjQxMS43MDlsNi40MDQgMy42MWEuNzk3Ljc5NyAwIDAwLjc3MS4wMDRsNi4zOTUtMy41MjdhLjgxMS44MTEgMCAwMC40MTktLjcxM1Y0LjQxOGEuODE0LjgxNCAwIDAwLS40MTItLjcxTDguMzg5LjEwM2EuNzk0Ljc5NCAwIDAwLS43NzcgMGwtNi40IDMuNjA3ek0xNC4wMDEgNS40djYuMDJsLTUuNCAyLjk3N1Y4LjMzNkwxNCA1LjQwMXpNMiAxMS4zNFY1LjM3NGw1LjQgM3Y2LjAxTDIgMTEuMzR6bS41ODktNy4wMTVMOCAxLjI3Nmw1LjQ0MiAzLjA2Nkw4IDcuMzE1bC01LjQxLTIuOTl6IiBmaWxsPSIjMDlmIi8+PC9zdmc+);
+      }
+
+    }
+  }
+
   &__calc {
     display: flex;
     gap: 9px;
@@ -888,6 +973,7 @@
     display: inline-flex;
     padding: 8px 12px;
     gap: 8px;
+    cursor: pointer;
   }
 
 }
@@ -1007,5 +1093,57 @@
     min-width: 24px;
   }
 }
+
+
+.pp-found-cheap {
+  max-width: 470px;
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 16px;
+  }
+
+  &__desc {
+    padding-bottom: 24px;
+    line-height: 150%;
+    max-width: 390px;
+  }
+
+  &__form .btn {
+    width: 100%;
+  }
+
+  &__note {
+    text-align: center;
+    line-height: 142%;
+    font-size: 14px;
+    color: var(--black-50);
+  }
+
+  & .form {
+    &__rules {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: 16px;
+
+      & a {
+        color: var(--accent);
+        font-size: 14px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
 
 @import './sticky-bar-product.scss';

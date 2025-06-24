@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
             hgtheaderTop,
             hgtheaderMain
         }
+
+        return window.globalConfig
     }
 
     window.addEventListener('load', css_variable)
@@ -847,6 +849,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         popup.changeContent(html)
                         new MaskInput("[data-maska]")
                     })
+                    .catch((e) => {
+                        window.STATUS.err(e)
+                    })
             })
         })
     })
@@ -1038,6 +1043,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         })
+    })
+
+    /* ======================================
+    show title h1
+    ======================================*/
+
+    function isLineClamped(element) {
+        // Проверяем, установлен ли line-clamp
+        const lineClamp = window.getComputedStyle(element).webkitLineClamp;
+        if (lineClamp === 'none') return false;
+
+        // Проверяем, обрезан ли текст
+        return element.scrollHeight > element.clientHeight;
+    }
+
+    document.querySelectorAll('.single-product__h1 h1').forEach(el => {
+        if (isLineClamped(el)) {
+
+            let btn = document.createElement('span')
+            btn.innerText = 'еще'
+
+            const showAllText = () => {
+                el.parentNode.classList.add('is-disabled-lineclamp')
+            }
+
+            btn.addEventListener('click', showAllText)
+
+            el.parentNode.append(btn)
+        }
     })
 
 
