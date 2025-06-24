@@ -41,27 +41,7 @@
     </div>
   </section>
   <section class="_container article__hero-footer">
-    <ul class="article__share-list">
-      <div class="article__share-list-title">Поделиться</div>
-      <li><a href="#" class="article__share-item">
-        <i class="icon" style="background-image: url(/images/icons/ic_tg_000.svg)"></i>
-      </a></li>
-      <li><a href="#" class="article__share-item">
-        <i class="icon" style="background-image: url(/images/icons/ic_vk_000.svg)"></i>
-      </a></li>
-      <li><a href="#" class="article__share-item">
-        <i class="icon" style="background-image: url(/images/icons/ic_mail_000.svg)"></i>
-      </a></li>
-      <li><a href="#" class="article__share-item">
-        <i class="icon" style="background-image: url(/images/icons/ic_whatsapp.svg)"></i>
-      </a></li>
-      <li><a href="#" class="article__share-item">
-        <i class="icon" style="background-image: url(/images/icons/ic_viber.svg)"></i>
-      </a></li>
-      <li><a href="#" class="article__share-item">
-        <i class="icon" style="background-image: url(/images/icons/ic_chain.svg)"></i>
-      </a></li>
-    </ul>
+    @@include('html/components/article/article-share.html')
     <div class="article__footer-info">
       <div class="article__footer-info-item visible-desktop">
         <i class="icon" style="background-image: url(/images/icons/ic_star.svg)"></i>4.87
@@ -114,7 +94,7 @@
 
 
   <section class="article__content">
-    <h2>Профиль для гипсокартона: размеры и виды</h2>
+    <h2 class="_container">Профиль для гипсокартона: размеры и виды</h2>
     <section class="_container" id="article__anchor_profile">
       <h2>Направляющие</h2>
       <div class="article__image-text">
@@ -240,13 +220,13 @@
     </section>
 
     <section class="_container" style="--play-button-icon:url(/images/article/play_btn.svg)">
-        @@include('html/components/video.html',{
-        "sources":[
-        {"link": "/static/free-video.mp4", "type": "video/mp4"}
-        ],
-        "preview":"/images/article/video.jpg",
-        "duration": "7мин 38сек"
-        })
+      @@include('html/components/video.html',{
+      "sources":[
+      {"link": "/static/free-video.mp4", "type": "video/mp4"}
+      ],
+      "preview":"/images/article/video.jpg",
+      "duration": "7мин 38сек"
+      })
     </section>
 
     <section class="_container" id="article__howto">
@@ -310,8 +290,36 @@
     </section>
 
   </section>
+  <section class="article__footer _container">
+    <div class="article__author">
+      <picture class="article__author-image">
+        <img src="/images/article/author.jpg" alt="">
+      </picture>
+      <div class="article__author-description">
+        <div class="article__author-name">Андрей Блащук</div>
+        <div class="article__author-job">Торговый представитель</div>
+      </div>
+    </div>
+    <div class="article__footer-header">
+      Оценить статью
+    </div>
+    <div class="article__rating">
+      @@include('html/components/common/rating-stars.html',{
+      "name": "rating"
+      })
+    </div>
+    <div class="article__footer-header">
+      Увидели опечатку или есть что добавить?
+    </div>
+    <div class="article__send-info">
+      <div>Выделите фрагмент и нажмите Ctrl + Enter</div>
+      <div>или нажмите <button data-action="send-error">сюда</button></div>
+    </div>
+    @@include('html/components/article/article-share.html')
+  </section>
 </main>
 @@include('html/footer.html')
 @@include('html/components/action-panel.html')
+<script src="/js/pages/article.js"></script>
 </body>
 </html>
