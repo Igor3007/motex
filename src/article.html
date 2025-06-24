@@ -308,14 +308,46 @@
       "name": "rating"
       })
     </div>
-    <div class="article__footer-header">
-      Увидели опечатку или есть что добавить?
-    </div>
     <div class="article__send-info">
+      <div class="article__footer-header">Увидели опечатку или есть что добавить?</div>
       <div>Выделите фрагмент и нажмите Ctrl + Enter</div>
       <div>или нажмите <button data-action="send-error">сюда</button></div>
     </div>
     @@include('html/components/article/article-share.html')
+    <div class="article__footer-info">
+      <div class="article__footer-info-item">
+        <i class="icon" style="background-image: url(/images/icons/ic_star.svg)"></i>4.87
+      </div>
+      <div class="article__footer-info-item">
+        <i class="icon" style="background-image: url(/images/icons/ic_viewed.svg)"></i>1296
+      </div>
+    </div>
+  </section>
+  <section class="article__read-more">
+    <h2 class="_container">Так же читайте</h2>
+
+    <div class="article__read-more-slider">
+      <div class="splide" data-slider="splide-goods">
+        <div class="splide__track">
+          <ul class="splide__list">
+            @@for (var i = 0; i < 7; i++) {
+            <li class="splide__slide">
+              @@include('html/components/blog-item.html', {
+              "image": "/images/blog/img01.jpg", "badge": "Обзор",
+              "date": "17.08.2024", "time": "10 минут",
+              "title": "Виды и размеры профилей для гипсокартона", "url": "#"
+              })
+            </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="article__goods-viewed">
+      @@include('html/components/goods-viewed.html')
+    </div>
+
   </section>
 </main>
 @@include('html/footer.html')
