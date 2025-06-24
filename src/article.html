@@ -76,11 +76,12 @@
       <ul class="article__toc-items">
         <li class="article__toc-item"><a href="#article__anchor_why">Зачем нужен?</a></li>
         <li class="article__toc-item"><a href="#article__anchor_profile">Размеры и виды</a></li>
-        <li class="article__toc-item"><a href="">Как выбрать нужный профиль?</a></li>
+        <li class="article__toc-item"><a href="#article__howto">Как выбрать нужный профиль?</a></li>
         <li class="article__toc-item"><a href="">Виды соединительных элементов</a></li>
       </ul>
     </div>
   </section>
+
   <section class="article__content">
     <div class="_container">
       <div class="article__announce">
@@ -91,6 +92,8 @@
       </div>
     </div>
   </section>
+
+
   <section class="article__content" id="article__anchor_why">
     <section class="_container">
       <h2>Зачем нужен профиль для гипсокартона?</h2>
@@ -108,9 +111,11 @@
       </picture>
     </section>
   </section>
+
+
   <section class="article__content">
+    <h2>Профиль для гипсокартона: размеры и виды</h2>
     <section class="_container" id="article__anchor_profile">
-      <h2>Профиль для гипсокартона: размеры и виды</h2>
       <h2>Направляющие</h2>
       <div class="article__image-text">
         <picture>
@@ -127,6 +132,7 @@
       </div>
       @@include('html/components/mx-goods/mx-goods-list.html')
     </section>
+
     <section id="article__anchor_3">
       <div class="_container">
         <h2>Направляющие потолочные</h2>
@@ -141,9 +147,39 @@
           </div>
         </div>
       </div>
-    </section>
-    <section id="article__anchor_4">
       <div class="_container">
+        @@include('html/components/mx-goods/mx-goods-list.html')
+      </div>
+    </section>
+
+    <section>
+      <div class="_container">
+        <h2>Потолочные стоечные</h2>
+        <div class="article__image-text">
+          <picture>
+            <img src="/images/article/image04.jpg" alt="">
+          </picture>
+          <div class="article__text">
+            <p>Потолочные профили ПП или CD служат для создания опорной плоскости для крепления гипсокартона в простых
+              и фигурных потолках. У стен потолочные профили вставляются в направляющий профиль ПНП, а на пересечениях
+              соединяются друг с другом с помощью одно — или двухуровневых соединителей.</p>
+            <p>
+              Кроме того, в промежутках
+              потолочные профили присоединяются к подвесам, которые, в свою очередь, закреплены на капитальном
+              перекрытии. На стенках потолочных профилей сделаны канавки под саморезы для более удобного и надёжного
+              крепления гипсокартона. Размеры 60 × 27 мм, толщина 0,6–0,8 мм.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="_container">
+        @@include('html/components/mx-goods/mx-goods-list.html')
+      </div>
+    </section>
+
+    <section id="article__table">
+      <div class="_container">
+        <h3>Арочные</h3>
         <table>
           <thead>
           <tr>
@@ -202,6 +238,77 @@
         </table>
       </div>
     </section>
+
+    <section class="_container" style="--play-button-icon:url(/images/article/play_btn.svg)">
+        @@include('html/components/video.html',{
+        "sources":[
+        {"link": "/static/free-video.mp4", "type": "video/mp4"}
+        ],
+        "preview":"/images/article/video.jpg",
+        "duration": "7мин 38сек"
+        })
+    </section>
+
+    <section class="_container" id="article__howto">
+      <h2>Как выбрать нужный профиль?</h2>
+      <div class="article__announce">
+        <p>Профили одного вида могут иметь разную стоимость у разных производителей. Это зависит от использованного
+          материала и его толщины. Чем толще стенки профиля, тем жёстче будет сделанный из него каркас.</p>
+      </div>
+    </section>
+
+    <section class="_container">
+      <h3>Совместимость элементов</h3>
+      <picture class="article__img">
+        <img src="/images/article/image08.jpg" alt="">
+      </picture>
+      <p>Всегда лучше подбирать профили и соединители разных видов от одного производителя. Это обеспечит полную
+        совместимость, и вам не придётся прибегать к разным хитростям, чтобы собрать каркас.</p>
+    </section>
+
+    <section class="_container">
+      <h3>Качество материалов</h3>
+      <picture class="article__img">
+        <img src="/images/article/image09.jpg" alt="">
+      </picture>
+      <p>Старайтесь не брать профили с зазубринами, дефектами проката или ржавчиной. Проверяйте толщину материала
+        и следите, чтобы профили были ровными. При неправильном изготовлении или хранении профили могут деформироваться,
+        а во время стройки это доставит немало проблем. По возможности лучше брать профили с фабричной насечкой
+        или канавками: саморезы вкручиваются в них намного проще и точнее.</p>
+    </section>
+
+    <section class="_container">
+      <h2>Виды соединительных элементов</h2>
+      <div class="article__announce">
+        <p>Рассмотрим самые распространённые соединительные элементы для профилей.</p>
+      </div>
+    </section>
+
+    <section class="_container">
+      <h2>Двухуровневый соединитель для профилей CD</h2>
+      <div class="article__image-text">
+        <picture>
+          <img src="/images/article/image10.jpg" alt="">
+        </picture>
+        <div class="article__text">
+          <p>Служит для соединения двух CD профилей внакладку под прямым углом друг к другу. Исходная форма
+            этого соединителя плоская, перед использованием ему придают форму буквы П и крепят к профилям
+            на два самореза.</p>
+        </div>
+      </div>
+      @@include('html/components/mx-goods/mx-goods-list.html')
+    </section>
+
+    <section class="_container" style="--play-button-icon:url(/images/article/play_btn.svg)">
+      @@include('html/components/video.html',{
+      "sources":[
+      {"link": "/static/free-video.mp4", "type": "video/mp4"}
+      ],
+      "preview":"/images/article/image11.jpg",
+      "duration": "3мин 17сек"
+      })
+    </section>
+
   </section>
 </main>
 @@include('html/footer.html')
