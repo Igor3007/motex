@@ -20,6 +20,22 @@
     <section class="section-single-product">
       <div class="_container">
         <div class="single-product">
+          <div class="single-product__mobile">
+
+            <div class="single-product__sku">
+              <div class="sp-sku">
+                <div class="sp-sku__icon">
+                  <i data-copy="УТ-00010464" class="ic_28" style="background-image: url(/images/icons/ic_copy.svg)"></i>
+                </div>
+                <div class="sp-sku__text">Арт: <span>УТ-00010464</span></div>
+              </div>
+            </div>
+
+            <div class="single-product__h1">
+              <div data-clamp>Фанера берёзовая ФК 6мм сорт IV/IV Свеза 1525 × 1525 мм</div>
+            </div>
+
+          </div>
           <div class="single-product__gallery">
             <div class="single-product__stickers">
               <ul>
@@ -117,7 +133,7 @@
 
           <div class="single-product__details">
             <div class="single-product__h1">
-              <h1>Фанера берёзовая ФК 6мм сорт IV/IV Свеза 1525 × 1525 мм</h1>
+              <h1 data-clamp>Фанера берёзовая ФК 6мм сорт IV/IV Свеза 1525 × 1525 мм</h1>
             </div>
 
             <div class="single-product__actions">
@@ -588,6 +604,9 @@
                   </tr>
                 </table>
               </div>
+
+              <div class="single-product__more single-product__more--all">Все характеристики</div>
+
             </div>
           </div>
 
@@ -626,7 +645,11 @@
         </div>
       </div>
     </section>
+
+    @@include('html/components/goods-analog.html')
     @@include('html/components/goods-viewed.html')
+
+
   </main>
 
   @@include('html/footer.html')

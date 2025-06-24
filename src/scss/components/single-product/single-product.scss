@@ -1,7 +1,12 @@
 @import "../../config";
 
 .section-single-product {
-  margin: 30px 0;
+
+  margin: 20px 0;
+
+  @media screen and (min-width: $w992) {
+    margin: 30px 0;
+  }
 }
 
 .counter {
@@ -106,40 +111,124 @@
     flex-wrap: nowrap;
   }
 
-  @media screen and (min-width: $w760) {
+  @media screen and (min-width: $w992) {
     margin: 0 -12px;
   }
 
+  @media screen and (min-width: $w760) {
+    margin: 0 -8px;
+  }
 
+
+  &__mobile {
+    display: block;
+    width: 100%;
+
+    padding-bottom: 5px;
+
+    @media screen and (min-width: $w992) {
+      display: none;
+    }
+
+    @media screen and (min-width: $w760) {
+      padding: 0 12px;
+    }
+
+    & .single-product {
+      &__sku {
+
+        padding-bottom: 12px;
+
+        @media screen and (min-width: $w760) {
+          padding-bottom: 0;
+        }
+
+        & .sp-sku {
+          justify-content: flex-start;
+        }
+      }
+
+      &__h1 {
+
+        font-size: 20px;
+        line-height: 128%;
+        font-weight: 500;
+        color: var(--black-base);
+
+        @media screen and (min-width: $w760) {
+          display: none;
+        }
+      }
+    }
+
+  }
 
   &__gallery {
-    max-width: 432px;
+
     padding-bottom: 30px;
+    width: 100%;
+
+    @media screen and (min-width: $w1200) {
+      max-width: 432px;
+    }
+
+    @media screen and (min-width: $w992) {
+      padding: 12px;
+    }
 
     @media screen and (min-width: $w760) {
       width: 50%;
       max-width: 100%;
-      padding: 12px;
+      padding: 8px;
     }
   }
 
   &__details {
-    max-width: 432px;
+
     padding-bottom: 30px;
+    width: 100%;
+
+    @media screen and (min-width: $w1200) {
+      max-width: 432px;
+    }
+
+    @media screen and (min-width: $w992) {
+      padding: 12px;
+    }
 
     @media screen and (min-width: $w760) {
       width: 50%;
       max-width: 100%;
-      padding: 12px;
+      padding: 8px;
     }
+
+    & .single-product {
+      &__h1 {
+        display: none;
+
+        @media screen and (min-width: $w760) {
+          display: block;
+        }
+      }
+    }
+
   }
 
   &__aside {
-    width: 34%;
+
+    width: 100%;
+
+    @media screen and (min-width: $w1200) {
+      width: 34%;
+    }
+
+    @media screen and (min-width: $w992) {
+      padding: 12px;
+    }
 
     @media screen and (min-width: $w760) {
       width: 100%;
-      padding: 12px;
+      padding: 12px 8px;
     }
 
     &--outstock {
@@ -164,18 +253,27 @@
 
       }
     }
+
+    & .single-product {
+      &__sku {
+        display: none;
+
+        @media screen and (min-width: $w992) {
+          display: block;
+        }
+      }
+    }
   }
 
   &__details,
   &__aside,
   &__gallery {
 
-    width: 100%;
-    max-width: 100%;
 
     @media screen and (min-width: $w1200) {
       width: 33.33%;
       padding: 0 16px;
+      max-width: 100%;
     }
   }
 
@@ -279,6 +377,16 @@
 
     padding-bottom: 9px;
     display: flex;
+    padding-top: 0;
+
+    @media screen and (min-width: $w576) {
+      padding-top: 30px;
+      padding-bottom: 16px;
+    }
+
+    @media screen and (min-width: $w992) {
+      padding-top: 0;
+    }
 
     & span {
       font-size: 14px;
@@ -295,8 +403,9 @@
     & h1 {
       font-size: 24px;
       font-weight: 500;
+      line-height: 128%;
 
-      @media screen and (min-width: $w992) {
+      @media screen and (min-width: $w576) {
         font-size: 28px;
       }
 
@@ -324,8 +433,16 @@
   &__actions {
     display: flex;
     gap: 8px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     flex-wrap: wrap;
+
+    @media screen and (min-width: $w992) {
+      padding-bottom: 30px;
+    }
+
+    @media screen and (min-width: $w760) {
+      padding-bottom: 20px;
+    }
   }
 
   &__tofav {
@@ -342,10 +459,20 @@
     align-items: center;
     gap: 10px;
 
+    @media screen and (max-width: $w375) {
+      font-size: 12px;
+    }
+
 
     & .ic_28 {
       background-size: 16px auto;
       background-color: var(--black-5);
+
+      @media screen and (max-width: $w375) {
+        width: 20px;
+        height: 20px;
+        background-size: 10px;
+      }
     }
   }
 
@@ -369,7 +496,11 @@
   }
 
   &__variations {
-    padding-bottom: 18px;
+    padding-bottom: 12px;
+
+    @media screen and (min-width: $w992) {
+      padding-bottom: 18px;
+    }
   }
 
   &__list {
@@ -385,15 +516,21 @@
 
         & a {
           display: flex;
-          min-width: 33px;
-          height: 48px;
+          min-width: 32px;
+          height: 32px;
           padding: 10px 8px;
           border: 1px solid #ccc;
           align-items: center;
           justify-content: center;
-          font-size: 16px;
+          font-size: 14px;
           border-radius: 8px;
           color: var(--black-base);
+
+          @media screen and (min-width: $w760) {
+            min-width: 33px;
+            height: 48px;
+            font-size: 16px;
+          }
 
           &:hover {
             border-color: var(--accent);
@@ -425,6 +562,10 @@
       cursor: pointer;
       transition: 0.3s ease;
 
+      @media screen and (max-width: $w480) {
+        font-size: 12px;
+      }
+
       &:hover {
         background-color: var(--black-base);
         color: #fff;
@@ -455,6 +596,10 @@
           width: 50%;
           padding: 11px 8px;
           border-bottom: 1px solid var(--black-10);
+
+          @media screen and (max-width: $w480) {
+            font-size: 12px;
+          }
         }
 
         & small {
@@ -473,6 +618,16 @@
     cursor: pointer;
     color: var(--black-base);
     font-size: 16px;
+
+    &--all {
+      display: none;
+      padding-top: 20px;
+      padding-bottom: 44px;
+
+      @media screen and (max-width: $w992) {
+        display: flex;
+      }
+    }
 
 
 
@@ -498,14 +653,22 @@
   }
 
   &__props {
-    padding-bottom: 29px;
+    padding-bottom: 20px;
+
+    @media screen and (min-width: $w992) {
+      padding-bottom: 29px;
+    }
   }
 
   &__cutter {
-    padding-bottom: 16px;
+    padding-bottom: 22px;
 
     @media screen and (min-width: $w1440) {
       padding-bottom: 30px;
+    }
+
+    @media screen and (min-width: $w992) {
+      padding-bottom: 22px;
     }
   }
 
@@ -521,6 +684,7 @@
 
   &__sku {
     padding-bottom: 12px;
+
   }
 
   &__info {
@@ -543,8 +707,12 @@
   }
 
   &__shiping {
-    padding-bottom: 31px;
+    padding-bottom: 20px;
     padding-top: 13px;
+
+    @media screen and (min-width: $w1440) {
+      padding-bottom: 31px;
+    }
 
     @media screen and (min-width: $w576) and (max-width: 1199.99px) {
       display: flex;
@@ -655,12 +823,22 @@
     font-weight: 600;
     padding-bottom: 9px;
 
+    @media screen and (max-width: $w375) {
+      font-size: 12px;
+    }
+
 
     & span {
       width: 16px;
       height: 16px;
       @include bgimage-contain;
       display: inline-block;
+    }
+  }
+
+  &__desc {
+    @media screen and (max-width: $w375) {
+      font-size: 10px;
     }
   }
 
@@ -736,7 +914,7 @@
   &__main {
     padding-left: 14px;
     flex-grow: 1;
-
+    gap: 6px;
     display: flex;
     flex-wrap: wrap;
 
@@ -748,6 +926,9 @@
   &__title {
     font-weight: 600;
 
+    @media screen and (max-width: $w992) {
+      align-self: center;
+    }
 
   }
 
@@ -769,10 +950,19 @@
   padding: 20px;
   border-radius: 8px;
   font-size: 14px;
+  position: relative;
 
   @media screen and (min-width: $w1440) {
     font-size: 16px;
     padding: 26px;
+  }
+
+  @media screen and (min-width: $w992) {
+    padding: 20px;
+  }
+
+  @media screen and (min-width: $w760) {
+    padding: 27px 27px;
   }
 
   & .counter {
@@ -838,6 +1028,14 @@
       @media screen and (min-width: $w1440) {
         font-size: 32px;
       }
+
+      @media screen and (min-width: $w992) {
+        font-size: 28px;
+      }
+
+      @media screen and (min-width: $w760) {
+        font-size: 32px;
+      }
     }
 
     &-old {
@@ -859,6 +1057,15 @@
 
   &__tags {
     padding-bottom: 19px;
+    font-size: 16px;
+
+    @media screen and (min-width: $w992) {
+      padding-bottom: 19px;
+    }
+
+    @media screen and (min-width: $w760) {
+      padding-bottom: 24px;
+    }
 
     & ul {
       display: flex;
@@ -876,6 +1083,12 @@
 
   &__instock {
     padding-bottom: 24px;
+
+    @media screen and (min-width: $w576) and (max-width: $w992) {
+      position: absolute;
+      right: 27px;
+      top: 27px;
+    }
 
     & span {
       border: 1px solid var(--black-20);
@@ -999,15 +1212,26 @@
   &__main {
     padding-left: 12px;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   &__title {
     padding-bottom: 5px;
     padding-top: 3px;
+
+    @media screen and (max-width: $w375) {
+      font-size: 12px;
+    }
   }
 
   &__desc {
     color: var(--black-50);
+
+    @media screen and (max-width: $w375) {
+      font-size: 10px;
+    }
   }
 }
 
@@ -1030,6 +1254,7 @@
   }
 
   &__icon {
+    min-width: 48px;
     width: 48px;
     height: 48px;
     background-color: var(--white);
@@ -1045,6 +1270,10 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+
+    @media screen and (max-width: $w992) {
+      gap: 6px 4px;
+    }
   }
 
   &__title {

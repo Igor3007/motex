@@ -1,3 +1,13 @@
+.section-details-product {
+  @media screen and (min-width: $w992) {
+    margin: 80px 0;
+  }
+
+  @media screen and (min-width: $w760) {
+    margin: 0px 0;
+  }
+}
+
 .details-product {
 
   padding-top: 50px;
@@ -11,18 +21,42 @@
     top: calc(var(--hgt-header-top) + var(--hgt-header-main));
     background-color: #fff;
     z-index: 6;
+
+    @media screen and (max-width: $w992) {
+      display: none;
+    }
   }
 
   &__group {
     max-width: 850px;
     margin: 0 auto;
     padding-bottom: 30px;
+
+    @media screen and (min-width: $w992) {
+      padding-bottom: 30px;
+    }
+
+    @media screen and (min-width: $w760) {
+      padding-bottom: 50px;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
 
   &__label {
     font-size: 20px;
     font-weight: bold;
     padding-bottom: 24px;
+
+    @media screen and (min-width: $w992) {
+      padding-bottom: 24px;
+    }
+
+    @media screen and (min-width: $w760) {
+      padding-bottom: 34px;
+    }
   }
 
   &__content {
@@ -33,11 +67,32 @@
       & tr {
         display: table-row;
 
+        @media screen and (max-width: $w992) {
+          display: none;
+
+          &:nth-child(-n+7) {
+            display: table-row;
+          }
+        }
+
         & td {
           display: table-cell;
           width: 50%;
           padding: 10px 8px;
           border-bottom: 1px solid var(--black-10);
+
+          @media screen and (min-width: $w992) {
+            padding: 10px 8px;
+          }
+
+          @media screen and (min-width: $w760) {
+            padding: 13px 8px 14px;
+          }
+
+          &:first-child {
+            padding-left: 0;
+          }
+
         }
 
         & td:first-child {
@@ -48,6 +103,13 @@
 
     & .formated-text {
       font-size: 16px;
+
+      & p:not(:first-child) {
+        @media screen and (min-width: $w576) and (max-width: $w992) {
+          padding: 12px 0;
+
+        }
+      }
 
       &>:first-child {
         margin-top: 0;
@@ -72,7 +134,7 @@
   }
 
   &__file {
-    padding-bottom: 12px;
+    padding-bottom: 16px;
     max-width: 416px;
 
     &:last-child {
