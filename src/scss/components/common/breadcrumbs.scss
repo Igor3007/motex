@@ -1,12 +1,28 @@
+@import "../../config";
+
 .breadcrumbs {
   margin: 28px 0 12px;
   @media screen and (min-width: 767.98px) {
     margin: 40px 0 20px;
   }
 
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__post {
+    display: none;
+    font: 400 16px/1.5 $fontDefault;
+    @include desktop {
+      display: block;
+    }
+  }
+
   ul {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 
     overflow: auto;
     scrollbar-width: none;

@@ -8,6 +8,11 @@
   <div class="video__action">
     <div class="video__button"></div>
   </div>
+  @@if (context.duration) {
+  <div class="video__duration">
+    <span class="video__duration-text">@@duration</span>
+  </div>
+  }
   <div class="video__source">
     <video preload="true">
       @@for (var i = 0; i< sources.length; i=i+1) {

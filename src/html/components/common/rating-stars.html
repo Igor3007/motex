@@ -1,0 +1,11 @@
+<!--
+  @@name - inputs name and id's prefix
+-->
+<div class="rating-stars">
+  @@for (var i = 5; i>0; i=i-1) {
+  <label for="`+name+-+i+`" class="rating-stars__label" title="оценка «`+i+`»">
+    <input type="radio" id="`+name+-+i+`" name="`+name+`" value="`+i+`">
+    <i class="icon-m rating-stars__star" style="mask-image: url(/images/icons/im_star.svg)" data-rating="`+i+`"></i>
+  </label>
+  }
+</div>

@@ -344,36 +344,38 @@ document.addEventListener("DOMContentLoaded", () => {
     /* =========================================
     Splide top products
     =========================================*/
+    document
+      .querySelectorAll('[data-slider="splide-goods"]')
+      .forEach(slider => {
+      let sliderGoods = new Splide(slider, {
+        type: 'slide',
+        rewind: true,
+        arrows: false,
+        arrowPath: 'm24.381 3.9208-3.0832 3.0417 10.292 10.292h-31.292v4.3333h31.292l-10.292 10.292 3.0832 3.0416 15.5-15.5z',
+        pagination: false,
+        gap: 12,
+        fixedWidth: '156px',
+        autoHeight: false,
+        updateOnMove: true,
+        mediaQuery: 'min',
+        breakpoints: {
 
-    if (document.querySelector('[data-slider="splide-goods"]')) {
-        let sliderGoods = new Splide('[data-slider="splide-goods"]', {
-            type: 'slide',
-            rewind: true,
-            arrows: false,
-            arrowPath: 'm24.381 3.9208-3.0832 3.0417 10.292 10.292h-31.292v4.3333h31.292l-10.292 10.292 3.0832 3.0416 15.5-15.5z',
-            pagination: false,
-            gap: 12,
-            fixedWidth: '156px',
-            autoHeight: false,
-            updateOnMove: true,
-            mediaQuery: 'min',
-            breakpoints: {
+          767.98: {
+            gap: 16,
+            fixedWidth: '200px',
+          },
+          1024: {
+            arrows: true
+          },
+          1439.98: {
+            perPage: 6,
+            perMove: 1,
+          },
+        }
+      });
 
-                767.98: {
-                    gap: 16,
-                    fixedWidth: '200px',
-                    arrows: true,
-                },
-                1439.98: {
-
-                    perPage: 6,
-                    perMove: 1,
-                },
-            }
-        });
-
-        sliderGoods.mount();
-    }
+      sliderGoods.mount();
+    });
 
     /* =========================================
     Splide collections
