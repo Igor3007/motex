@@ -8,6 +8,7 @@
 }
 
 .blog-item {
+  $root: &;
   display: block;
   position: relative;
   overflow: hidden;
@@ -49,7 +50,7 @@
       z-index: -1;
       transition: opacity .3s;
 
-      .blog-item:hover & {
+      #{$root}:hover & {
         opacity: 0.85;
       }
 
@@ -79,7 +80,7 @@
       margin-block: 20px;
     }
 
-    .blog-item:hover & {
+    #{$root}:hover & {
       color: var(--blue-light);
     }
 
