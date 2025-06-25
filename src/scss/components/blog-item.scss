@@ -49,7 +49,7 @@
       z-index: -1;
       transition: opacity .3s;
 
-      .hoverable:hover & {
+      .blog-item:hover & {
         opacity: 0.85;
       }
 
@@ -79,7 +79,7 @@
       margin-block: 20px;
     }
 
-    .hoverable:hover & {
+    .blog-item:hover & {
       color: var(--blue-light);
     }
 
@@ -162,7 +162,7 @@
     }
 
     &__title {
-      color: var(--white);
+      color: var(--white) !important;
       font: 700 16px/20px $fontDefault;
 
       @include tablet {
