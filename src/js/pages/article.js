@@ -13,7 +13,7 @@ const sendSelectedText = () => {
         if (selectedText) {
           out = html.replace(
             '{{text}}',
-            `<fieldset><legend>Текст</legend><div class="selected-text">${selectedText}</div></fieldset>`);
+            `<fieldset><legend>Текст</legend><textarea readonly class="selected-text">${selectedText}</textarea></fieldset>`);
         } else {
           out = html.replace('{{text}}','');
         }
