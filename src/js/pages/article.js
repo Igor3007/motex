@@ -1,11 +1,27 @@
 const sendSelectedText = () => {
   const selectedText = window.getSelection().toString().trim();
 
-  if (selectedText) {
-    alert('Выделенный текст: ' + selectedText);
-  } else {
-    alert('Текст не выделен');
-  }
+  let popup = new afLightbox({
+    mobileInBottom: true,
+  });
+
+  popup.open('<div class="af-loading" ></div>', () => {
+    fetch('/pages/_popup-article-feedback.html')
+      .then(res => res.text())
+      .then(html => {
+        let out;
+        if (selectedText) {
+          out = html.replace(
+            '{{text}}',
+            `<fieldset><legend>Текст</legend><div class="selected-text">${selectedText}</div></fieldset>`);
+        } else {
+          out = html.replace('{{text}}','');
+        }
+        popup.changeContent(out);
+      })
+      .catch(err => console.error(err));
+  });
+
 }
 
 document

@@ -1,0 +1,31 @@
+<div class="modal-article-feedback">
+  <form>
+    <h3>Нашли ошибку или хотите дополнить?</h3>
+    {{text}}
+    <fieldset>
+      <legend>Тип правки</legend>
+
+      <label class="checkbox" for="typo">
+        <input id="typo" type="checkbox" name="typo" value="Грамматическая ошибка">
+        Грамматическая ошибка
+      </label>
+
+      <label class="checkbox" for="fact">
+        <input id="fact" type="checkbox" name="fact" value="Фактологическая ошибка">
+        Фактологическая ошибка
+      </label>
+
+      <label class="checkbox" for="add">
+        <input id="add" type="checkbox" name="add" value="Дополнение к статье">
+        Дополнение к статье
+      </label>
+
+    </fieldset>
+
+    <textarea placeholder="Текст сообщения"></textarea>
+
+    <button class="btn-blue" type="submit">Отправить</button>
+    <div class="subtitle">Нажимая кнопку «Отправить», я даю согласие на обработку персональных данных и условий использования.</div>
+  </form>
+
+</div>
