@@ -29,7 +29,12 @@ fs.readdir(imagesDir, (err, files) => {
                 <meta charset="UTF-8" />
                 <title>Icons</title>
                 <style>
-                input[type='checkbox']:checked + div {
+                .wrapper {
+                    display:flex;
+                    flex-wrap:wrap;
+                    background: antiquewhite;
+                }
+                input[type='checkbox']:checked + .wrapper {
                     background: #000;
                 }
                 </style>
@@ -38,7 +43,7 @@ fs.readdir(imagesDir, (err, files) => {
                 <h1>Icons</h1>
                 <label for="invert">Invert</label>
                 <input type="checkbox" id="invert"/>
-                <div style="display:flex; flex-wrap:wrap;">
+                <div class="wrapper">
                     ${imagesHtml}
                 </div>
             </body>

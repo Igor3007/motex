@@ -1,10 +1,10 @@
 <div class="blog-item__wrapper">
-  <a class="blog-item hoverable" href="#">
+  <a class="blog-item" href="#">
     <div class="blog-item__image">
       <picture>
         <img src="@@image" alt="@@title">
       </picture>
-      @@if (badge) {
+      @@if (context.badge) {
         <div class="blog-item__badge">@@badge</div>
       }
       <div class="blog-item__date">@@date</div>

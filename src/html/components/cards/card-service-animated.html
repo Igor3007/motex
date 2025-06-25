@@ -1,0 +1,21 @@
+<div class="card-service-a hoverable">
+  <div class="card-service-a__media">
+    <picture class="card-service-a__picture">
+      <img src="@@image" alt="">
+    </picture>
+    <div class="card-service-a__video">
+      <video muted loop>
+        @@for (var i = 0; i< video.length; i=i+1) {
+        <source src="`+video[i].url+`" type="`+video[i].type+`">
+        }
+      </video>
+    </div>
+  </div>
+  <div class="card-service-a__content">
+    <div class="card-service-a__text">
+      <div class="card-service-a__title">@@title</div>
+      <div class="card-service-a__description">@@description</div>
+    </div>
+    <button class="btn-blue">Смотреть прайс</button>
+  </div>
+</div>

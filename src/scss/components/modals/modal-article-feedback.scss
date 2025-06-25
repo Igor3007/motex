@@ -1,0 +1,55 @@
+@import "../../config";
+
+.modal-article-feedback {
+
+  max-width: 524px;
+
+  h3 {
+    font: 700 24px/32px $fontDefault;
+    max-width: 60%;
+    margin-bottom: 28px;
+  }
+
+  legend {
+    font: 700 16px/1.5 $fontDefault;
+    color: var(--black-50);
+    margin-bottom: 12px;
+  }
+
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  textarea {
+    width: 100%;
+    resize: vertical;
+    font: 400 16px/1.5 $fontDefault;
+    padding: .5em;
+    min-height: 4lh;
+    max-height: 16lh;
+  }
+
+  button {
+    width: 100%;
+    margin-block: 18px 12px;
+  }
+
+  .selected-text {
+    background-color: var(--accent-30);
+    max-height: 6lh;
+    padding: .5lh .5em;
+    overflow: auto;
+    border: none;
+    resize: none;
+  }
+
+  .subtitle {
+    text-align: center;
+    font: 400 14px/20px $fontDefault;
+    color: var(--black-50);
+  }
+
+}

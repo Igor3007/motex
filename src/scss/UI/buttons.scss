@@ -1,4 +1,4 @@
-@import "../config/vars";
+@import "../config";
 
 .btn-custom {
   font-size: 14px;
@@ -86,12 +86,26 @@
   transition: 0.1s ease;
 
   @media screen and (min-width: 767.98px) {
-
     min-width: 20px;
     width: 20px;
     height: 20px;
+  }
+}
 
+.icon-m {
+  display: block;
+  min-width: 12px;
+  width: 12px;
+  height: 12px;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  transition: 0.1s ease;
 
+  @include tablet {
+    min-width: 20px;
+    width: 20px;
+    height: 20px;
   }
 }
 

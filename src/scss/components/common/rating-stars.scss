@@ -1,0 +1,26 @@
+.rating-stars {
+  display: flex;
+  flex-direction: row-reverse;
+
+  &__star {
+    background-color: var(--black-20);
+  }
+
+  &__label {
+    cursor: pointer;
+
+    &:hover,
+    &:hover ~ &,
+    &:has(input:checked),
+    &:has(input:checked) ~ &
+    {
+      .icon-m {
+        background-color: var(--accent);
+      }
+    }
+  }
+
+  input {
+    display: none;
+  }
+}

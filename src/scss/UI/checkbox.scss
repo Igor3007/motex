@@ -195,7 +195,7 @@
   }
 }
 
-/* like a switch but with two visually identical states */
+/* like a toggle but with two visually identical states */
 .switch {
   display: inline-flex;
   align-items: center;
@@ -309,4 +309,36 @@
       }
     }
   }
+}
+
+label.checkbox {
+  display: flex;
+  width: max-content;
+  align-items: center;
+
+  input[type="checkbox"] {
+    display: none !important;
+  }
+
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--black-20);
+    border-radius: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+  }
+
+  &:has(input:checked) {
+    &:before {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNy41IDUuMjM2ODVMOC4yIDE1Ljg0NzdMMi41IDEwLjgzMjdMMy41OTkxNyA5LjU5MTAyTDguMDUgMTMuNDk2TDE2LjI3MDggNC4xNjYwMkwxNy41IDUuMjM2ODVaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4=);
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
 }
