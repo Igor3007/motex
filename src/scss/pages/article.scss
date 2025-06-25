@@ -10,6 +10,11 @@
     }
   }
 
+  &__body {
+    max-width: 928px;
+    margin-inline: auto;
+  }
+
   &__heading {
     background: var(--black-5);
     margin: 0;
@@ -218,6 +223,9 @@
     @include tablet {
       margin-block: 40px;
     }
+    @include desktop {
+      margin-bottom: 60px;
+    }
 
     &-items {
       display: flex;
@@ -227,6 +235,9 @@
       @include tablet {
         padding-inline: 27px;
         gap: 29px;
+      }
+      @include desktop {
+        padding-inline: 58px;
       }
     }
 
@@ -311,6 +322,9 @@
       font: 700 28px/36px $fontDefault;
       margin-block: 40px;
     }
+    @include desktop {
+      margin-top: 60px;
+    }
 
     + h2 {
       margin-top: 32px;
@@ -329,6 +343,11 @@
     @include tablet {
       font: 700 20px/1.4 $fontDefault;
       margin-block: 27px;
+    }
+    & + .article__img {
+      @include desktop {
+        margin-block: 20px 28px;
+      }
     }
   }
 
@@ -551,6 +570,9 @@
     @include tablet {
       margin-block: 120px;
     }
+    @include desktop {
+      margin-top: 72px;
+    }
 
     h2 {
       margin-bottom: 16px;
@@ -560,15 +582,33 @@
     }
 
     &-slider {
-      .splide__track {
-        overflow: visible;
-        padding-inline: var(--container-padding) !important;
+      @include desktop {
+        margin-inline: auto;
+      }
+
+      &._container {
+        @include not-desktop {
+          padding: 0;
+        }
+      }
+
+      .splide {
+        &__track {
+          overflow: visible;
+          padding-inline: var(--container-padding) !important;
+          @include desktop {
+            overflow: hidden;
+            padding-inline: 0 !important;
+          }
+        }
       }
     }
   }
 
   .mx-goods__container {
-    padding: 0;
+    @include not-desktop {
+      padding: 0;
+    }
 
     h2 {
       padding-inline: var(--container-padding);
@@ -576,8 +616,36 @@
 
     .splide {
       &__track {
-        overflow: visible;
-        padding-inline: var(--container-padding) !important;
+        @include not-desktop {
+          overflow: visible;
+          padding-inline: var(--container-padding) !important;
+        }
+      }
+    }
+  }
+
+  .splide {
+    &__arrow {
+      display: none;
+      width: 48px;
+      height: 48px;
+      background: var(--white);
+      border: 1px solid var(--black-20);
+      top: 50%;
+
+      @include desktop {
+        display: flex;
+      }
+
+      &:disabled {
+        display: none;
+      }
+
+      &--prev {
+        left: -24px;
+      }
+      &--next {
+        right: -24px;
       }
     }
   }

@@ -40,11 +40,11 @@ document
           gap: 16,
           fixedWidth: '308px',
         },
-        1024: {
+        1023: {
           arrows: true
         },
         1439.98: {
-          perPage: 6,
+          perPage: 4,
           perMove: 1,
         },
       }
