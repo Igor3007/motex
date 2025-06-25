@@ -344,8 +344,9 @@ document.addEventListener("DOMContentLoaded", () => {
     /* =========================================
     Splide top products
     =========================================*/
-    const goodsSliders = document.querySelectorAll('[data-slider="splide-goods"]');
-    goodsSliders.forEach(slider => {
+    document
+      .querySelectorAll('[data-slider="splide-goods"]')
+      .forEach(slider => {
       let sliderGoods = new Splide(slider, {
         type: 'slide',
         rewind: true,
@@ -362,10 +363,11 @@ document.addEventListener("DOMContentLoaded", () => {
           767.98: {
             gap: 16,
             fixedWidth: '200px',
-            arrows: true,
+          },
+          1024: {
+            arrows: true
           },
           1439.98: {
-
             perPage: 6,
             perMove: 1,
           },
