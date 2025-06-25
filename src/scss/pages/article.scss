@@ -1,6 +1,8 @@
 @import "../config";
 
 .article {
+  padding-bottom: 20px;
+
   .breadcrumbs {
     margin-bottom: 14px;
   }
@@ -342,6 +344,7 @@
 
     .article__footer-header {
       margin-bottom: 20px;
+      color: var(--black-base);
     }
 
     button {
@@ -367,11 +370,30 @@
 
   &__read-more {
 
+    margin-block: 80px;
+
+    h2 {
+      margin-bottom: 16px;
+    }
+
     &-slider {
       .splide__track {
         overflow: visible;
         padding-inline: var(--container-padding) !important;
       }
+    }
+  }
+
+  .mx-goods__container {
+    padding: 0;
+
+    h2 {
+      padding-inline: var(--container-padding);
+    }
+
+    .splide__track {
+      overflow: visible;
+      padding-inline: var(--container-padding) !important;
     }
   }
 
