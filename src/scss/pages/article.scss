@@ -5,17 +5,26 @@
 
   .breadcrumbs {
     margin-bottom: 14px;
+    @include tablet {
+      margin-bottom: 20px;
+    }
   }
 
   &__heading {
     background: var(--black-5);
     margin: 0;
     padding-top: 40px;
+    @include tablet {
+      padding-top: 84px;
+    }
 
     h1 {
       font: 700 20px/1.4 $fontDefault;
       text-align: center;
       margin-bottom: 17px;
+      @include tablet {
+        font: 500 32px/1.25 $fontDefault;
+      }
     }
   }
 
@@ -23,6 +32,9 @@
     display: flex;
     justify-content: center;
     padding-bottom: 40px;
+    @include tablet {
+      padding-bottom: 80px;
+    }
   }
 
   &__info-item {
@@ -31,10 +43,17 @@
     align-items: center;
     position: relative;
     font: 400 12px/16px $fontDefault;
+    @include tablet {
+      font: 400 16px/1.25 $fontDefault;
+    }
 
     &:not(:first-child) {
       padding-left: 10px;
       margin-left: 10px;
+      @include tablet {
+        padding-left: 13px;
+        margin-left: 13px;
+      }
 
       &:before {
         content: "";
@@ -70,17 +89,29 @@
     flex-direction: column;
     margin-top: 11px;
     gap: 12px;
+    @include tablet {
+      margin-top: 21px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__share-list {
     display: flex;
     align-items: center;
     gap: 4px;
+    @include tablet {
+      gap: 8px;
+    }
 
     &-title {
       margin-right: 5px;
       font: 700 12px/16px $fontDefault;
       color: var(--black-50);
+      @include tablet {
+        font-size: 16px;
+        line-height: 20px;
+      }
     }
   }
 
@@ -89,11 +120,18 @@
     padding: 7px;
     border: 1px solid var(--black-50);
     border-radius: 8px;
+    @include tablet {
+      padding: 11px;
+    }
 
     i {
       width: 16px;
       height: 16px;
       background: var(--black-50);
+      @include tablet {
+        width: 24px;
+        height: 24px;
+      }
     }
 
     &:hover {
@@ -137,6 +175,10 @@
       display: flex;
       align-items: center;
       gap: 4px;
+      @include tablet {
+        font: 400 16px/20px $fontDefault;
+        gap: 8px;
+      }
     }
   }
 
