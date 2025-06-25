@@ -226,9 +226,10 @@
       "duration": "7мин 38сек"
       })
     </section>
-
+  </section>
+  <section class="article__content">
     <section class="_container" id="article__howto">
-      <h3>Как выбрать нужный профиль?</h3>
+      <h2>Как выбрать нужный профиль?</h2>
       <div class="article__announce">
         <p>Профили одного вида могут иметь разную стоимость у разных производителей. Это зависит от использованного
           материала и его толщины. Чем толще стенки профиля, тем жёстче будет сделанный из него каркас.</p>
@@ -263,7 +264,7 @@
     </section>
 
     <section class="_container">
-      <h2>Двухуровневый соединитель для профилей CD</h2>
+      <h3>Двухуровневый соединитель для профилей CD</h3>
       <div class="article__image-text">
         <picture>
           <img src="/images/article/image10.jpg" alt="">
@@ -298,18 +299,22 @@
         <div class="article__author-job">Торговый представитель</div>
       </div>
     </div>
-    <div class="article__footer-header">
-      Оценить статью
-    </div>
-    <div class="article__rating">
-      @@include('html/components/common/rating-stars.html',{
-      "name": "rating"
-      })
-    </div>
-    <div class="article__send-info">
-      <div class="article__footer-header">Увидели опечатку или есть что добавить?</div>
-      <div>Выделите фрагмент и нажмите Ctrl + Enter</div>
-      <div>или нажмите <button data-action="send-error">сюда</button></div>
+    <div class="article__feedback">
+      <div class="article__feedback-rating">
+        <div class="article__footer-header">
+          Оценить статью
+        </div>
+        <div class="article__rating">
+          @@include('html/components/common/rating-stars.html',{
+          "name": "rating"
+          })
+        </div>
+      </div>
+      <div class="article__send-info">
+        <div class="article__footer-header">Увидели опечатку или есть что добавить?</div>
+        <div>Выделите фрагмент и нажмите Ctrl + Enter</div>
+        <div>или нажмите <button data-action="send-error">сюда</button></div>
+      </div>
     </div>
     @@include('html/components/article/article-share.html')
     <div class="article__footer-info">
@@ -325,7 +330,7 @@
     <h2 class="_container">Так же читайте</h2>
 
     <div class="article__read-more-slider">
-      <div class="splide" data-slider="splide-goods">
+      <div class="splide" data-slider="splide-read-more">
         <div class="splide__track">
           <ul class="splide__list">
             @@for (var i = 0; i < 7; i++) {
