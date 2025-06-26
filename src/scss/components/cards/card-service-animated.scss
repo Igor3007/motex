@@ -7,6 +7,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  color: inherit;
 
   &__media {
     position: relative;
@@ -33,7 +34,9 @@
     }
 
     .playing & {
-      opacity: 0;
+      @include desktop {
+        opacity: 0;
+      }
     }
   }
 
@@ -70,7 +73,9 @@
     }
 
     .hoverable:hover & {
-      color: var(--blue-link);
+      @include desktop {
+        color: var(--blue-link);
+      }
     }
   }
 
