@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     let thumbnails = new Splide('[data-slider="preview-product-thumb"]', {
 
         isNavigation: true,
-        gap: 2,
+        gap: 6,
         focus: 'left',
         pagination: false,
         mediaQuery: 'min',
@@ -38,9 +38,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
         breakpoints: {
 
             992.9: {
-                gap: 12,
+
                 fixedWidth: '80px',
             },
+
+            375: {
+                gap: 12,
+            },
+
+
 
         }
     });

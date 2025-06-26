@@ -2,7 +2,12 @@
 
 .section-single-product {
 
-  margin: 20px 0;
+  margin-top: -7px;
+  margin-bottom: -20px;
+
+  @media screen and (min-width: $w375) {
+    margin: 20px 0;
+  }
 
   @media screen and (min-width: $w992) {
     margin: 30px 0;
@@ -150,10 +155,12 @@
 
       &__h1 {
 
-        font-size: 20px;
-        line-height: 128%;
-        font-weight: 500;
-        color: var(--black-base);
+        & div {
+          font-size: 20px;
+          line-height: 135%;
+          font-weight: 500;
+          color: var(--black-base);
+        }
 
         @media screen and (min-width: $w760) {
           display: none;
@@ -185,7 +192,7 @@
 
   &__details {
 
-    padding-bottom: 30px;
+    padding-bottom: 22px;
     width: 100%;
 
     @media screen and (min-width: $w1200) {
@@ -200,6 +207,7 @@
       width: 50%;
       max-width: 100%;
       padding: 8px;
+      padding-bottom: 30px;
     }
 
     & .single-product {
@@ -287,18 +295,27 @@
       gap: 6px;
 
       & li {
-        font-size: 14px;
+        font-size: 10px;
         color: #fff;
         font-weight: 500;
 
+        @media screen and (min-width: $w375) {
+          font-size: 14px;
+        }
+
         & span {
           background-color: #ccc;
-          height: 24px;
+          height: 17px;
           display: inline-flex;
           align-items: center;
-          padding: 5px 8px;
+          padding: 3px 8px;
           border-radius: 4px;
           cursor: default;
+
+          @media screen and (min-width: $w375) {
+            padding: 5px 8px;
+            height: 24px;
+          }
         }
       }
     }
@@ -491,8 +508,12 @@
   &__h2 {
     color: var(--black-base);
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     padding-bottom: 12px;
+
+    @media screen and (min-width: $w480) {
+      font-size: 16px;
+    }
   }
 
   &__variations {
@@ -610,6 +631,54 @@
     }
   }
 
+  &__instock {
+    padding-bottom: 24px;
+
+
+
+    & span {
+      border: 1px solid var(--black-20);
+      border-radius: 30px;
+      display: inline-block;
+      padding: 6px 26px 6px 12px;
+      position: relative;
+      font-size: 12px;
+
+      &::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        background-color: #ccc;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: calc(50% - 3px);
+      }
+
+      &.status {
+        &--green {
+          &::before {
+            background-color: var(--green);
+          }
+        }
+
+        &--red {
+          &::before {
+            background-color: var(--red);
+          }
+        }
+
+        &--orange {
+          &::before {
+            background-color: var(--orange);
+          }
+        }
+      }
+    }
+
+  }
+
   &__more {
 
     display: inline-flex;
@@ -617,12 +686,21 @@
     gap: 8px;
     cursor: pointer;
     color: var(--black-base);
-    font-size: 16px;
+    font-size: 14px;
+
+
+
+    @media screen and (min-width: $w1440) {
+      font-size: 16px;
+    }
 
     &--all {
       display: none;
       padding-top: 20px;
-      padding-bottom: 44px;
+
+      @media screen and (min-width: $w375) {
+        padding-bottom: 44px;
+      }
 
       @media screen and (max-width: $w992) {
         display: flex;
@@ -633,14 +711,22 @@
 
     &::after {
       content: '';
-      width: 28px;
-      height: 28px;
+      width: 20px;
+      height: 20px;
       display: inline-block;
       background-color: var(--black-5);
       border-radius: 8px;
       background-image: var(--arrow-icon);
       background-position: center;
       background-repeat: no-repeat;
+      background-size: 10px auto;
+
+      @media screen and (min-width: $w1440) {
+        width: 28px;
+        height: 28px;
+      }
+
+
 
       &:hover {
         background-color: #eee;
@@ -661,15 +747,17 @@
   }
 
   &__cutter {
-    padding-bottom: 22px;
+    padding-bottom: 15px;
 
     @media screen and (min-width: $w1440) {
       padding-bottom: 30px;
     }
 
-    @media screen and (min-width: $w992) {
+    @media screen and (min-width: $w480) {
       padding-bottom: 22px;
     }
+
+
   }
 
   &__brand {
@@ -688,16 +776,30 @@
   }
 
   &__info {
-    padding-bottom: 14px;
+    padding-bottom: 30px;
+
+    @media screen and (min-width: $w760) {
+      padding-bottom: 14px;
+    }
   }
 
   &__configurate {
     padding-bottom: 20px;
+    display: none;
+
+    @media screen and (min-width: $w760) {
+      display: block;
+    }
   }
 
   &__oneclick {
 
     padding-bottom: 32px;
+    display: none;
+
+    @media screen and (min-width: $w760) {
+      display: block;
+    }
 
     & button {
       width: 100%;
@@ -792,13 +894,17 @@
 }
 
 .block-addition {
-  padding: 18px;
+  padding: 10px;
   border: 1px solid var(--black-5);
   border-radius: 8px;
   display: flex;
   align-items: center;
   font-size: 16px;
   transition: 0.3s ease;
+
+  @media screen and (min-width: $w480) {
+    padding: 18px;
+  }
 
   &:hover {
     border-color: var(--accent);
@@ -814,8 +920,12 @@
   }
 
   &__main {
-    padding-left: 14px;
+    padding-left: 8px;
     flex-grow: 1;
+
+    @media screen and (min-width: $w480) {
+      padding-left: 14px;
+    }
   }
 
   &__title {
@@ -824,7 +934,7 @@
     padding-bottom: 9px;
 
     @media screen and (max-width: $w375) {
-      font-size: 12px;
+      font-size: 14px;
     }
 
 
@@ -838,20 +948,26 @@
 
   &__desc {
     @media screen and (max-width: $w375) {
-      font-size: 10px;
+      font-size: 12px;
     }
   }
 
   &__icon {
     & i {
-      width: 32px;
-      height: 32px;
+      width: 24px;
+      height: 24px;
+      background-size: 12px;
       border: 1px solid var(--black-20);
       border-radius: 8px;
       background-size: auto 16px;
       display: block;
       background-position: center;
       background-repeat: no-repeat;
+
+      @media screen and (min-width: $w480) {
+        width: 32px;
+        height: 32px;
+      }
     }
   }
 
@@ -866,13 +982,26 @@
   justify-content: flex-end;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: 12px;
+
+  @media screen and (min-width: $w375) {
+    font-size: 14px;
+  }
 
   &__icon {
     & i {
-      background-size: 13px;
+      background-size: 10px auto;
       background-color: var(--black-5);
       cursor: pointer;
+
+      width: 20px;
+      height: 20px;
+
+      @media screen and (min-width: $w375) {
+        background-size: 13px auto;
+        width: 28px;
+        height: 28px;
+      }
 
       &:hover {
         background-color: var(--black-10);
@@ -893,8 +1022,12 @@
   display: flex;
   align-items: center;
   border: 1px solid var(--black-10);
-  padding: 11px 20px;
+  padding: 12px 10px;
   border-radius: 8px;
+
+  @media screen and (min-width: $w480) {
+    padding: 11px 20px;
+  }
 
   @media screen and (min-width: $w1440) {
     padding: 11px 26px;
@@ -902,21 +1035,35 @@
 
   &__image {
 
-    width: 44px;
-    min-width: 40px;
+    width: 34px;
+    min-width: 28px;
     align-self: flex-start;
+
+    @media screen and (min-width: $w480) {
+      width: 44px;
+      min-width: 40px;
+    }
 
     & picture {
       @include picture(100%, contain);
+
+      & img {
+        border-radius: 8px;
+      }
     }
   }
 
   &__main {
-    padding-left: 14px;
+    padding-left: 11px;
     flex-grow: 1;
-    gap: 6px;
+    gap: 3px;
     display: flex;
     flex-wrap: wrap;
+
+    @media screen and (min-width: $w480) {
+      padding-left: 14px;
+      gap: 6px;
+    }
 
     @media screen and (min-width: $w992) {
       display: block;
@@ -926,6 +1073,10 @@
   &__title {
     font-weight: 600;
 
+    @media screen and (max-width: $w480) {
+      font-size: 14px;
+    }
+
     @media screen and (max-width: $w992) {
       align-self: center;
     }
@@ -933,8 +1084,12 @@
   }
 
   &__desc {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 155%;
+
+    @media screen and (min-width: $w480) {
+      font-size: 14px;
+    }
 
     & span {
       background-color: var(--green);
@@ -1200,13 +1355,18 @@
   }
 
   &__icon {
-    width: 48px;
-    height: 48px;
+    width: 38px;
+    height: 38px;
     background-color: var(--black-5);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
+
+    @media screen and (min-width: $w375) {
+      width: 48px;
+      height: 48px;
+    }
   }
 
   &__main {
@@ -1222,7 +1382,7 @@
     padding-top: 3px;
 
     @media screen and (max-width: $w375) {
-      font-size: 12px;
+      font-size: 14px;
     }
   }
 
@@ -1230,7 +1390,7 @@
     color: var(--black-50);
 
     @media screen and (max-width: $w375) {
-      font-size: 10px;
+      font-size: 12px;
     }
   }
 }
@@ -1241,8 +1401,12 @@
   background-color: var(--black-5);
   border: 1px solid var(--black-20);
   border-radius: 8px;
-  padding: 11px;
+  padding: 6px;
   transition: 0.3s ease;
+
+  @media screen and (min-width: $w375) {
+    padding: 11px;
+  }
 
   &:hover {
     border-color: var(--accent);
@@ -1254,14 +1418,21 @@
   }
 
   &__icon {
-    min-width: 48px;
-    width: 48px;
-    height: 48px;
+    min-width: 32px;
+    width: 32px;
+    height: 32px;
     background-color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
+    border: 1px solid var(--black-20);
+
+    @media screen and (min-width: $w375) {
+      min-width: 48px;
+      width: 48px;
+      height: 48px;
+    }
   }
 
   &__main {
@@ -1270,14 +1441,30 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    font-size: 12px;
+    line-height: 130%;
+
+    @media screen and (min-width: $w576) {
+      font-size: 14px;
+    }
+
+    @media screen and (min-width: $w1440) {
+      font-size: 16px;
+    }
 
     @media screen and (max-width: $w992) {
       gap: 6px 4px;
     }
+
+    @media screen and (max-width: $w375) {
+      gap: 3px;
+    }
+
   }
 
   &__title {
     color: var(--black-base);
+
   }
 
   &__ext {
