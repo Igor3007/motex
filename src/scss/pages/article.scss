@@ -2,6 +2,9 @@
 
 .article {
   padding-bottom: 20px;
+  @include desktop {
+    padding-bottom: 40px;
+  }
 
   .breadcrumbs {
     margin-bottom: 14px;
@@ -38,7 +41,8 @@
     justify-content: center;
     padding-bottom: 40px;
     @include tablet {
-      padding-bottom: 80px;
+      padding-bottom: 77px;
+      padding-top: 2px;
     }
   }
 
@@ -125,6 +129,8 @@
     padding: 7px;
     border: 1px solid var(--black-50);
     border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
     @include tablet {
       padding: 11px;
     }
@@ -253,6 +259,9 @@
         color: inherit;
         padding: 15px 0;
         display: block;
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
 
@@ -538,6 +547,7 @@
       color: var(--black-base);
       padding: 4px 8px;
       border-radius: 8px;
+      cursor: pointer;
       @include tablet {
         font-size: 14px;
       }
@@ -571,13 +581,15 @@
       margin-block: 120px;
     }
     @include desktop {
-      margin-top: 72px;
+      margin-top: 84px;
     }
-
     h2 {
       margin-bottom: 16px;
       @include tablet {
         margin-bottom: 27px;
+      }
+      @include desktop {
+        font-weight: 500;
       }
     }
 
@@ -611,7 +623,9 @@
     }
 
     h2 {
-      padding-inline: var(--container-padding);
+      @include not-desktop {
+        padding-inline: var(--container-padding);
+      }
     }
 
     .splide {
@@ -647,6 +661,13 @@
       &--next {
         right: -24px;
       }
+    }
+  }
+
+  &__share-info {
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
     }
   }
 }

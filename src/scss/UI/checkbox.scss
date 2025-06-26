@@ -316,6 +316,14 @@ label.checkbox {
   width: max-content;
   align-items: center;
 
+  @include desktop {
+    &:hover {
+      &:before {
+        border-color: var(--accent);
+      }
+    }
+  }
+
   input[type="checkbox"] {
     display: none !important;
   }

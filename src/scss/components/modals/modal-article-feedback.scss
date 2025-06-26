@@ -2,7 +2,21 @@
 
 .modal-article-feedback {
 
-  max-width: 524px;
+  max-width: 284px;
+  @include tablet {
+    max-width: 360px;
+  }
+  @include desktop {
+    max-width: 468px;
+  }
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  p {
+    line-height: 1.5;
+  }
 
   h3 {
     font: 700 24px/32px $fontDefault;
@@ -28,8 +42,11 @@
     resize: vertical;
     font: 400 16px/1.5 $fontDefault;
     padding: .5em;
-    min-height: 4lh;
+    min-height: 5lh;
     max-height: 16lh;
+    outline: none;
+    border:1px solid var(--black-20);
+    border-radius: 8px;
   }
 
   button {
@@ -50,6 +67,13 @@
     text-align: center;
     font: 400 14px/20px $fontDefault;
     color: var(--black-50);
+  }
+
+  a {
+    color: inherit;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
 }

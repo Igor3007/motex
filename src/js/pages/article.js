@@ -1,6 +1,9 @@
 const sendSelectedText = () => {
   const selectedText = window.getSelection().toString().trim();
+  openPopup(selectedText);
+}
 
+const openPopup = (text) => {
   let popup = new afLightbox({
     mobileInBottom: true,
   });
@@ -10,19 +13,47 @@ const sendSelectedText = () => {
       .then(res => res.text())
       .then(html => {
         let out;
-        if (selectedText) {
+        if (text) {
           out = html.replace(
             '{{text}}',
-            `<fieldset><legend>Текст</legend><textarea readonly class="selected-text">${selectedText}</textarea></fieldset>`);
+            `<fieldset><legend>Текст</legend><textarea readonly class="selected-text">${text}</textarea></fieldset>`);
         } else {
-          out = html.replace('{{text}}','');
+          out = html.replace('{{text}}', '');
         }
         popup.changeContent(out);
       })
       .catch(err => console.error(err));
   });
-
 }
+
+const openThanx = () => {
+  let popup = new afLightbox({
+    mobileInBottom: true,
+  });
+
+  popup.open('<div class="af-loading" ></div>', () => {
+    fetch('/pages/_popup-article-thanks.html')
+      .then(res => res.text())
+      .then(html => {
+        popup.changeContent(html);
+      })
+      .catch(err => console.error(err));
+  });
+}
+
+document
+  .querySelectorAll('[data-action="copy-url"]')
+  .forEach((item) => {
+    item.addEventListener('click', async () => {
+      try {
+        const url = window.location.href;
+        await navigator.clipboard.writeText(url);
+        window.STATUS.msg('Ссылка скопирована в буфер обмена');
+      } catch (err) {
+        console.error(err);
+      }
+    })
+  });
 
 document
   .addEventListener('keydown', function (event) {
@@ -35,6 +66,19 @@ document
   .querySelectorAll('[data-action="send-error"]')
   .forEach(element => {
     element.addEventListener('click', sendSelectedText);
+  });
+
+document
+  .querySelectorAll('input[name="rating"]')
+  .forEach(element => {
+    element.addEventListener('change', (e) => {
+      const rating = parseInt(e.target.value);
+      if (rating < 5) {
+        openPopup('');
+      } else {
+        openThanx();
+      }
+    });
   });
 
 document

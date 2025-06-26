@@ -9,12 +9,12 @@
 <body>
 @@include('html/header.html')
 <main class="page article">
-  @@include('html/components/breadcrumbs-article.html',{
+  @@include('html/components/breadcrumbs.html',{
   "links":[
   {"href": "/pages/blog.html", "title" : "Статьи"},
   {"href": "/pages/article.html", "title" : "Виды и размеры профилей для гипсокартона"}
   ],
-  "date": "Дата публикации: 17.08.2024"
+  "date": "17.08.2024"
   })
   <section class="article__heading">
     <div class="_container">
@@ -52,17 +52,18 @@
         </div>
       </div>
     </section>
+  </div>
     <section class="article__toc">
-      <div class="_container">
+      <div class="_container article__body">
         <ul class="article__toc-items">
-          <li class="article__toc-item"><a href="#article__anchor_why">Зачем нужен?</a></li>
-          <li class="article__toc-item"><a href="#article__anchor_profile">Размеры и виды</a></li>
-          <li class="article__toc-item"><a href="#article__howto">Как выбрать нужный профиль?</a></li>
-          <li class="article__toc-item"><a href="">Виды соединительных элементов</a></li>
+          <li class="article__toc-item"><a href="#article__anchor_why" data-scroll>Зачем нужен?</a></li>
+          <li class="article__toc-item"><a href="#article__anchor_profile"  data-scroll>Размеры и виды</a></li>
+          <li class="article__toc-item"><a href="#article__howto" data-scroll>Как выбрать нужный профиль?</a></li>
+          <li class="article__toc-item"><a href="#article__connect" data-scroll>Виды соединительных элементов</a></li>
         </ul>
       </div>
     </section>
-
+  <div class="article__body">
     <section class="article__content">
       <div class="_container">
         <div class="article__announce">
@@ -360,7 +361,7 @@
           или канавками: саморезы вкручиваются в них намного проще и точнее.</p>
       </section>
 
-      <section class="_container">
+      <section class="_container" id="article__connect">
         <h2>Виды соединительных элементов</h2>
         <div class="article__announce">
           <p>Рассмотрим самые распространённые соединительные элементы для профилей.</p>
@@ -481,13 +482,15 @@
           </div>
         </div>
       </div>
-      @@include('html/components/article/article-share.html')
-      <div class="article__footer-info">
-        <div class="article__footer-info-item">
-          <i class="icon" style="background-image: url(/images/icons/ic_star.svg)"></i>4.87
-        </div>
-        <div class="article__footer-info-item">
-          <i class="icon" style="background-image: url(/images/icons/ic_viewed.svg)"></i>1296
+      <div class="article__share-info">
+        @@include('html/components/article/article-share.html')
+        <div class="article__footer-info">
+          <div class="article__footer-info-item">
+            <i class="icon" style="background-image: url(/images/icons/ic_star.svg)"></i>4.87
+          </div>
+          <div class="article__footer-info-item">
+            <i class="icon" style="background-image: url(/images/icons/ic_viewed.svg)"></i>1296
+          </div>
         </div>
       </div>
     </section>
@@ -499,7 +502,7 @@
       <div class="splide" data-slider="splide-read-more">
         <div class="splide__track">
           <ul class="splide__list">
-            @@for (var i = 0; i < 5; i++) {
+            @@for (var i = 0; i < 4; i++) {
             <li class="splide__slide">
               @@include('html/components/blog-item.html', {
               "image": "/images/blog/img01.jpg", "badge": "Обзор",

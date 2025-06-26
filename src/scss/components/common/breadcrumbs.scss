@@ -17,6 +17,10 @@
     @include desktop {
       display: block;
     }
+
+    span {
+      color: var(--black-70);
+    }
   }
 
   ul {

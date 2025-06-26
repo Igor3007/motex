@@ -434,24 +434,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
         });
     })
 
-
-    /* =======================================
-    scroll
-    =======================================*/
-
-    document.querySelectorAll('[data-scroll]').forEach(item => {
-        item.addEventListener('click', (e) => {
-
-            if (document.querySelector(e.target.dataset.scroll)) {
-                window.scrollToTargetAdjusted({
-                    elem: document.querySelector(e.target.dataset.scroll),
-                    offset: window.globalConfig.hgtheader + 36
-                })
-            }
-
-        })
-    })
-
     /* =======================================
     Tooltip
     =======================================*/
@@ -579,7 +561,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
                     })
 
-                    //add event close on outher click 
+                    //add event close on outher click
                     item.addEventListener('mouseleave', e => {
                         //this.tooltipRemove()
                     })
