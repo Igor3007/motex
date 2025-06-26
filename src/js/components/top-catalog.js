@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', function (event) {
+import Vue from "vue/dist/vue.esm.js";
 
-    class TopCatalog {
+export class TopCatalog {
         constructor(params) {
             this.html = params.html;
             this.button = params.button
@@ -132,30 +132,4 @@ document.addEventListener('DOMContentLoaded', function (event) {
             });
         }
     }
-
-    document.querySelectorAll('[data-target="topcatalog"]').forEach(item => {
-        item.addEventListener('click', () => {
-            if (!window.TopCatalog) {
-                let query = fetch('/pages/_popup-top-catalog.html', {
-                    method: 'GET',
-                });
-
-                query
-                    .then((response) => response.text())
-                    .then((html) => {
-                        window.TopCatalog = new TopCatalog({
-                            html,
-                            button: item
-                        });
-                        window.TopCatalog.vueApp.openPopup();
-                    });
-            } else {
-                window.TopCatalog.vueApp.buttonOpen = item
-                window.TopCatalog.vueApp.openPopup();
-            }
-
-            //document.querySelectorAll('[data-target="menu"], [data-window="menu"]').forEach(el => el.classList.toggle('is-active', false))
-
-        });
-    });
-});
+ 

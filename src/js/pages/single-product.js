@@ -1,72 +1,78 @@
+import Splide from "@splidejs/splide";
+
 document.addEventListener('DOMContentLoaded', function (event) {
     /* =================================================
     popup product preview
     =================================================*/
 
-    let main = new Splide('[data-slider="preview-product-main"]', {
+    if(document.querySelector('[data-slider="preview-product-main"]')) {
 
-        pagination: true,
-        arrows: true,
-        cover: true,
-        perPage: 1,
-        perMove: 1,
-        arrows: false,
+        let main = new Splide('[data-slider="preview-product-main"]', {
 
-    });
+            pagination: true,
+            arrows: true,
+            cover: true,
+            perPage: 1,
+            perMove: 1,
+            arrows: false,
 
-    let thumbnails = new Splide('[data-slider="preview-product-thumb"]', {
+        });
 
-        isNavigation: true,
-        gap: 6,
-        focus: 'left',
-        pagination: false,
-        mediaQuery: 'min',
-        perPage: 4,
-        wheel: true,
-        wheelSleep: 100,
-        wheelMinThreshold: 50,
-        perMove: 1,
-        drag: 'free',
-        updateOnMove: true,
-        arrows: false,
-        fixedWidth: '72px',
+        let thumbnails = new Splide('[data-slider="preview-product-thumb"]', {
 
-        dragMinThreshold: {
-            mouse: 4,
-            touch: 15,
-        },
-        breakpoints: {
+            isNavigation: true,
+            gap: 6,
+            focus: 'left',
+            pagination: false,
+            mediaQuery: 'min',
+            perPage: 4,
+            wheel: true,
+            wheelSleep: 100,
+            wheelMinThreshold: 50,
+            perMove: 1,
+            drag: 'free',
+            updateOnMove: true,
+            arrows: false,
+            fixedWidth: '72px',
 
-            992.9: {
-
-                fixedWidth: '80px',
+            dragMinThreshold: {
+                mouse: 4,
+                touch: 15,
             },
+            breakpoints: {
 
-            375: {
-                gap: 12,
-            },
+                992.9: {
+
+                    fixedWidth: '80px',
+                },
+
+                375: {
+                    gap: 12,
+                },
 
 
 
-        }
-    });
+            }
+        });
 
-    main.on('active', function (slide) {
-        let event = new Event("click");
-        if (slide.slide.querySelector('.video__button')) {
-            slide.slide.querySelector('.video__button').dispatchEvent(event);
-        }
-    });
+        main.on('active', function (slide) {
+            let event = new Event("click");
+            if (slide.slide.querySelector('.video__button')) {
+                slide.slide.querySelector('.video__button').dispatchEvent(event);
+            }
+        });
 
-    main.on('inactive', function (slide) {
-        if (slide.slide.querySelector('.video video')) {
-            slide.slide.querySelector('.video video').pause()
-        }
-    });
+        main.on('inactive', function (slide) {
+            if (slide.slide.querySelector('.video video')) {
+                slide.slide.querySelector('.video video').pause()
+            }
+        });
 
-    main.mount();
-    thumbnails.mount();
-    main.sync(thumbnails);
+        main.mount();
+        thumbnails.mount();
+        main.sync(thumbnails);
+
+    }
 
     /* ========================================
     counter
@@ -332,9 +338,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
         });
     })
 
-    document.querySelector('[data-counter="duplicate"]').addEventListener('change', e => {
-        window.calculator.setCount(e.count)
-    })
+    if(document.querySelector('[data-counter="duplicate"]')) {
+            document.querySelector('[data-counter="duplicate"]').addEventListener('change', e => {
+                window.calculator.setCount(e.count)
+            })
+    }
+
+
 
 
     /* =======================================
