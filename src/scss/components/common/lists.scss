@@ -1,0 +1,13 @@
+ol.ordered {
+  counter-reset: o-list;
+
+  & > li {
+    display: flex;
+
+    &:before {
+      content: counter(o-list) ".";
+      counter-increment: o-list;
+      margin-inline: .25em;
+    }
+  }
+}

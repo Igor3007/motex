@@ -1,0 +1,25 @@
+@import "../config";
+
+.single-service {
+
+  h1 {
+    font: 700 24px/32px $fontDefault;
+    margin-bottom: 28px;
+  }
+
+  &__hero {
+    aspect-ratio: 324 / 182;
+    margin-block: 20px;
+  }
+
+  &__text {
+    font: 400 12px/16px $fontDefault;
+    margin-block: 20px;
+    hyphens: auto;
+  }
+
+  &__description {
+
+  }
+}
+

@@ -1,0 +1,43 @@
+@import "../../config";
+
+.service-description {
+  border: 1px solid var(--black-10);
+  padding: 24px 16px;
+  border-radius: 8px;
+
+  &__title {
+    font: 700 14px/20px $fontDefault;
+    margin-bottom: 16px;
+  }
+
+  &__list {
+    counter-reset: s-list;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font: 400 12px/16px $fontDefault;
+    margin-block: 16px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &:before {
+      content: counter(s-list);
+      counter-increment: s-list;
+      margin-inline: .25em;
+      font: 400 12px/16px $fontDefault;
+      color: var(--white);
+      background: var(--black-base);
+      width: 24px;
+      height: 24px;
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      margin-right: 12px;
+    }
+  }
+}
