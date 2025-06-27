@@ -548,8 +548,14 @@
       padding: 4px 8px;
       border-radius: 8px;
       cursor: pointer;
+      background: var(--black-5);
       @include tablet {
         font-size: 14px;
+      }
+      @include desktop {
+        &:hover {
+          background: var(--black-10);
+        }
       }
     }
   }
@@ -565,10 +571,18 @@
     }
 
     .article {
+      &__share-info {
+        @include tablet {
+          margin-block: 28px;
+        }
+      }
       &__share-list {
         margin-block: 20px;
         @include tablet {
-          margin-block: 28px;
+          margin-block: 0 28px;
+        }
+        @include desktop {
+          margin-block: 0;
         }
       }
     }
@@ -579,9 +593,6 @@
     margin-block: 80px;
     @include tablet {
       margin-block: 120px;
-    }
-    @include desktop {
-      margin-top: 84px;
     }
     h2 {
       margin-bottom: 16px;
