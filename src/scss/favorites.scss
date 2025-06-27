@@ -1,0 +1,8 @@
+@import 'app';
+
+//catalog
+@import "components/catalog/mx-bd-catalog";
+@import "components/catalog/mx-goods-item";
+
+//favorites
+@import "./pages/favorites.scss";
