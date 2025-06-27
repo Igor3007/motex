@@ -1,0 +1,25 @@
+@import "../../config";
+
+.service-services {
+  &.mx-services {
+
+    .mx-services {
+      &__heading {
+        margin-bottom: 16px;
+      }
+    }
+
+    .item-services__content {
+      padding: 12px;
+    }
+
+    h2 {
+      font: 700 14px/20px $fontDefault;
+    }
+
+    .btn-blue {
+      padding: 4px 8px;
+    }
+
+  }
+}
