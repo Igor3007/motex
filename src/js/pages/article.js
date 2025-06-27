@@ -9,7 +9,7 @@ const openPopup = (text) => {
   });
 
   popup.open('<div class="af-loading" ></div>', () => {
-    fetch('/pages/_popup-article-feedback.html')
+    fetch('/pages/_popup-article-send-error.html')
       .then(res => res.text())
       .then(html => {
         let out;
@@ -26,19 +26,23 @@ const openPopup = (text) => {
   });
 }
 
-const openThanx = () => {
+const openFeedback = () => {
   let popup = new afLightbox({
     mobileInBottom: true,
   });
 
   popup.open('<div class="af-loading" ></div>', () => {
-    fetch('/pages/_popup-article-thanks.html')
+    fetch('/pages/_popup-article-feedback.html')
       .then(res => res.text())
       .then(html => {
         popup.changeContent(html);
       })
       .catch(err => console.error(err));
   });
+}
+
+const openThanx = () => {
+  window.STATUS.msg('Спасибо за обратную связь!');
 }
 
 document
@@ -74,7 +78,7 @@ document
     element.addEventListener('change', (e) => {
       const rating = parseInt(e.target.value);
       if (rating < 5) {
-        openPopup('');
+        openFeedback();
       } else {
         openThanx();
       }
