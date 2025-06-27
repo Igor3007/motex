@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  @@include('html/head.html', {
-  'title': 'Распил материалов в Челябинске'
-  })
-  <link rel="stylesheet" href="/css/single-service.min.css">
+    @@include('html/head.html', {
+    'title': 'Распил материалов в Челябинске'
+    })
+    <link rel="stylesheet" href="/css/single-service.min.css">
 </head>
 <body>
 @@include('html/header.html')
 <main class="page single-service">
-  @@include('html/components/breadcrumbs.html',{
-  "links":[
-  {"href": "/pages/services.html", "title" : "Услуги"},
-  {"href": "/pages/single-service.html", "title" : "Распил материалов в Челябинске"}
-  ]})
+    @@include('html/components/breadcrumbs.html',{
+    "links":[
+    {"href": "/pages/services.html", "title" : "Услуги"},
+    {"href": "/pages/single-service.html", "title" : "Распил материалов в Челябинске"}
+    ]})
 
-  <section class="single-service__header _container">
-    <h1>Распил материалов в Челябинске</h1>
-  </section>
+    <section class="single-service__header _container">
+        <h1>Распил материалов в Челябинске</h1>
+    </section>
 
-  <section class="single-service__hero _container">
-    @@include('html/components/single-service/single-image.html')
-  </section>
+    <div class="single-service__content _container">
+        <section class="single-service__hero">
+            @@include('html/components/single-service/single-image.html')
+        </section>
 
-  <section class="single-service__text _container">
-    <p>У нас вы можете заказать качественный распил стройматериалов, деревянных и пластиковых изделий, а также листового
-      материала. Работаем на современном оборудовании с высокой точностью.</p>
-  </section>
+        <section class="single-service__text">
+            <p>У нас вы можете заказать качественный распил стройматериалов, деревянных и пластиковых изделий,
+                а также листового
+                материала. Работаем на современном оборудовании с высокой точностью.</p>
+        </section>
 
-  <section class="single-service__description _container">
-    @@include('html/components/single-service/service-description.html')
-  </section>
+        <section class="single-service__description">
+            @@include('html/components/single-service/service-description.html')
+        </section>
 
-  <section class="single-service__price _container">
-    @@include('html/components/single-service/service-price.html')
-  </section>
+        <section class="single-service__price">
+            @@include('html/components/single-service/service-price.html')
+        </section>
 
-  <section class="single-service__warning _container">
-    @@include('html/components/single-service/warning-text.html')
-  </section>
+        <section class="single-service__warning">
+            @@include('html/components/single-service/warning-text.html')
+        </section>
 
-  <section class="single-service__success">
-    @@include('html/components/single-service/service-success.html')
-  </section>
+    </div>
+
+    <section class="single-service__success">
+        @@include('html/components/single-service/service-success.html')
+    </section>
+
+    <section class="single-service__annotations _container">
+        @@include('html/components/single-service/service-annotation.html')
+    </section>
 
 </main>
 @@include('html/footer.html')

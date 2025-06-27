@@ -8,8 +8,8 @@
   &__group {
     background: var(--black-5);
     border-radius: 8px;
-    padding: 16px;
-    margin-top: 12px;
+    padding: 15px;
+    margin-top: 15px;
 
     &-title {
       font: 700 12px/16px $fontDefault;
@@ -20,6 +20,10 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+
+      &.wide {
+        gap: 12px;
+      }
     }
 
     &-item {
@@ -58,7 +62,7 @@
     &-subtitle {
       font: 400 12px/16px $fontDefault;
       color: var(--black-50);
-      margin-top: 8px;
+      margin-top: 10px;
     }
   }
 }

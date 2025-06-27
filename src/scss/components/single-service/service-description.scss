@@ -2,7 +2,7 @@
 
 .service-description {
   border: 1px solid var(--black-10);
-  padding: 24px 16px;
+  padding: 23px 15px;
   border-radius: 8px;
 
   &__title {
@@ -38,6 +38,12 @@
       justify-content: center;
       border-radius: 4px;
       margin-right: 12px;
+      margin-left: 0;
     }
+  }
+
+  .btn-blue {
+    font: 500 14px/20px $fontDefault;
+    padding: 6px 12px ;
   }
 }

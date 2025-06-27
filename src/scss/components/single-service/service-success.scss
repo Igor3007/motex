@@ -2,7 +2,7 @@
 
 .service-success {
   background: var(--black-5);
-  padding-block: 32px;
+  padding-block: 46px;
   @include tablet {
     padding-block: 60px;
   }
@@ -11,8 +11,8 @@
   }
 
   h2 {
-    font: normal 700 20px/1.4 "Roboto", sans-serif;
-    margin-bottom: 20px;
+    font: normal 700 16px/1.5 "Roboto", sans-serif;
+    margin-bottom: 29px;
     @include tablet {
       font-size: 28px;
       line-height: 36px;

@@ -1,0 +1,10 @@
+@import "../../config";
+
+.service-annotation {
+  color: var(--black-70);
+  font: 400 10px/1.6 $fontDefault;
+
+  p {
+    margin: 0;
+  }
+}
