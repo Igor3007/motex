@@ -1,0 +1,64 @@
+@import "../../config";
+
+.service-price {
+  &__title {
+    font: 700 14px/20px $fontDefault;
+  }
+
+  &__group {
+    background: var(--black-5);
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 12px;
+
+    &-title {
+      font: 700 12px/16px $fontDefault;
+      margin-bottom: 12px;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &-item {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+
+      .article {
+        font: 400 12px/16px $fontDefault;
+      }
+
+      .price {
+        background: var(--green);
+        color: var(--white);
+        flex-shrink: 0;
+        display: flex;
+        gap: 6px;
+        padding: 4px 8px;
+        border-radius: 8px;
+        align-items: center;
+      }
+
+      .value {
+        font: 700 14px/20px $fontDefault;
+      }
+
+      .units {
+        font: 400 12px/16px $fontDefault;
+      }
+    }
+
+    &-subtitle {
+      font: 400 12px/16px $fontDefault;
+      color: var(--black-50);
+      margin-top: 8px;
+    }
+  }
+}

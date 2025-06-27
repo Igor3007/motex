@@ -1,0 +1,35 @@
+@import "../cards/card-achieve";
+
+.service-success {
+  background: var(--black-5);
+  padding-block: 32px;
+  @include tablet {
+    padding-block: 60px;
+  }
+  @include desktop {
+    padding-block: 80px 76px;
+  }
+
+  h2 {
+    font: normal 700 20px/1.4 "Roboto", sans-serif;
+    margin-bottom: 20px;
+    @include tablet {
+      font-size: 28px;
+      line-height: 36px;
+      margin-bottom: 40px;
+    }
+
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+
+    &-item {
+      width: calc(50% - 6px);
+      container-type: inline-size;
+    }
+  }
+}

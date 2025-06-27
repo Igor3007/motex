@@ -32,9 +32,17 @@
     @@include('html/components/single-service/service-description.html')
   </section>
 
-  <section class="single-service__price"></section>
+  <section class="single-service__price _container">
+    @@include('html/components/single-service/service-price.html')
+  </section>
 
-  @@include('html/components/single-service/warning-text.html')
+  <section class="single-service__warning _container">
+    @@include('html/components/single-service/warning-text.html')
+  </section>
+
+  <section class="single-service__success">
+    @@include('html/components/single-service/service-success.html')
+  </section>
 
 </main>
 @@include('html/footer.html')

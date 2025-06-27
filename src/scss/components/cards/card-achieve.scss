@@ -8,15 +8,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex-basis: 100%;
-  flex-grow: 0;
-  flex-shrink: 0;
-  @include tablet {
-    flex-basis: calc((100% - 16px) / 2);
-  }
-  @include desktop {
-    flex-basis: calc((100% - 32px) / 3);
-  }
+  width: 100%;
+  $root: &;
 
   &__icon {
     width: 36px;
@@ -34,5 +27,29 @@
     font: normal 400 14px/20px "Roboto", sans-serif;
     padding-top: 20px;
     border-top: 1px solid var(--black-5);
+  }
+
+  @container (width < 280px) {
+    min-height: 157px;
+    padding: 16px;
+
+    #{$root} {
+
+      &__icon {
+        width: 24px;
+        height: 24px;
+        background-size: 12px;
+      }
+
+      &__title {
+        font: 400 32px/1.25 $fontDefault;
+        margin-bottom: 4px;
+      }
+
+      &__subtitle {
+        font: 400 10px/1.6 $fontDefault;
+        padding-top: 4px;
+      }
+    }
   }
 }
