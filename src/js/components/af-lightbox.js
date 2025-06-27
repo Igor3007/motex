@@ -1,4 +1,4 @@
-class afLightbox {
+export class afLightbox {
     constructor(opion) {
         this.modal = '';
         if (opion) {

@@ -76,7 +76,9 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "aos": "^2.3.4",
-    "swiper": "^8.4.5"
+    "@splidejs/splide": "^4.1.4",
+    "fslightbox": "^3.6.1",
+    "maska": "2.1.9",
+    "vue": "^2.7.0"
   }
 }

@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', function (event) {
+import Vue from "vue/dist/vue.esm.js";
 
-    class SelectRegion {
+export class SelectRegion {
         constructor(params) {
             this.html = params.html
             this.vueApp = null;
@@ -139,28 +139,3 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 
     }
-
-    document.querySelectorAll('[data-region-select="open"]').forEach(item => {
-        item.addEventListener('click', () => {
-
-            if (!window.SelectRegion) {
-                let query = fetch('/pages/_popup-select-region.html', {
-                    method: 'GET',
-                })
-
-                query
-                    .then((response) => response.text())
-                    .then((html) => {
-                        window.SelectRegion = new SelectRegion({
-                            html
-                        })
-                    })
-            } else {
-                window.SelectRegion.vueApp.openPopup()
-            }
-
-
-
-        })
-    })
-});

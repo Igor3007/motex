@@ -1,3 +1,7 @@
+import "../components/video";
+import Splide from "@splidejs/splide";
+
+
 if (document.querySelector('.about-company__slider.splide')) {
   const splide_about = new Splide('.about-company__slider.splide', {
     trimSpace: false,

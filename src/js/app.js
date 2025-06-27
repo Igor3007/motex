@@ -1,0 +1,10 @@
+import './pages/main';
+import './pages/about-page.js';
+import './pages/article.js';
+import './pages/blog.js';
+import './pages/favorites.js';
+import './pages/news.js';
+import './pages/services.js';
+import './pages/single-product.js';
+
+

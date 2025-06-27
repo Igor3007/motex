@@ -1,4 +1,6 @@
- const vueAflightbox = Vue.component('afLightbox', {
+import Vue from "vue/dist/vue.esm.js";
+
+const vueAflightbox = Vue.component('afLightbox', {
 
      template: `
             <div class = "af-popup"
@@ -45,3 +47,5 @@
          }
      }
  })
+
+ export {vueAflightbox}
