@@ -947,9 +947,20 @@
   }
 
   &__desc {
-    @media screen and (max-width: $w375) {
-      font-size: 12px;
+
+
+    font-size: 12px;
+
+    @media screen and (min-width: $w375) {
+      font-size: 14px;
     }
+
+    @media screen and (min-width: $w760) {
+      font-size: 16px;
+    }
+
+
+
   }
 
   &__icon {
@@ -959,7 +970,7 @@
       background-size: 12px;
       border: 1px solid var(--black-20);
       border-radius: 8px;
-      background-size: auto 16px;
+      background-size: auto 12px;
       display: block;
       background-position: center;
       background-repeat: no-repeat;
@@ -967,6 +978,7 @@
       @media screen and (min-width: $w480) {
         width: 32px;
         height: 32px;
+        background-size: auto 16px;
       }
     }
   }
@@ -1380,17 +1392,24 @@
   &__title {
     padding-bottom: 5px;
     padding-top: 3px;
+    font-size: 14px;
 
-    @media screen and (max-width: $w375) {
-      font-size: 14px;
+    @media screen and (min-width: $w760) {
+      font-size: 16px;
     }
   }
 
   &__desc {
     color: var(--black-50);
+    font-size: 12px;
+    line-height: 140%;
 
-    @media screen and (max-width: $w375) {
-      font-size: 12px;
+    @media screen and (min-width: $w375) {
+      font-size: 14px;
+    }
+
+    @media screen and (min-width: $w1200) {
+      font-size: 16px;
     }
   }
 }

@@ -1,3 +1,5 @@
+import Splide from "@splidejs/splide";
+
 const sendSelectedText = () => {
   const selectedText = window.getSelection().toString().trim();
   openPopup(selectedText);

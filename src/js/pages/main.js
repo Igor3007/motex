@@ -1,5 +1,4 @@
 import "../components/css-variable"
-import "../components/load-ymaps-api"
 import "../components/scroll-smooth"
 import "fslightbox";
 
@@ -11,6 +10,7 @@ import { TopCatalog } from "../components/top-catalog";
 import { afLightbox } from "../components/af-lightbox";
 import { afSelect } from "../components/af-select.min";
 import { Status } from "../components/status";
+import { loadYmapsApi } from "../components/load-ymaps-api"
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -872,10 +872,14 @@ Time toggle card
 
   if (document.querySelector('#map-container-contacts')) {
 
-    window.loadYmapsApi((ymaps) => {
+    let container = document.querySelector('#map-container-contacts')
+    let coordinares = container.dataset.coordinates || '55.76, 37.64'
+    coordinares = coordinares.split(',')
+
+    loadYmapsApi((ymaps) => {
       ymaps.ready(() => {
         const myMap = new ymaps.Map('map-container-contacts', {
-          center: [55.76, 37.64],
+          center: coordinares,
           zoom: 16,
           type: 'yandex#map',
           controls: [],
@@ -889,7 +893,7 @@ Time toggle card
         });
 
         myMap.geoObjects
-          .add(new ymaps.Placemark([55.76, 37.64], {
+          .add(new ymaps.Placemark(coordinares, {
             balloonContent: 'Челябинск, Троицкий Тракт, д. 17'
           }, {
             preset: 'islands#blueShoppingIcon',

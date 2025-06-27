@@ -43,7 +43,6 @@ let vueCheckout = new Vue({
     },
     created: function () {
         this.fetchData();
-
     },
 
     mounted: function () {
