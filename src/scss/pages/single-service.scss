@@ -5,12 +5,25 @@
   h1 {
     font: 700 24px/32px $fontDefault;
     margin-bottom: 28px;
+    @include desktop {
+      font: 700 28px/32px $fontDefault;
+      margin-bottom: 42px;
+      margin-top: 22px;
+    }
   }
 
   &__content {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+    @include desktop {
+      grid-template-columns: 1fr 416px;
+      gap: 0 16px;
+
+      & > * {
+        grid-column: 1;
+      }
+    }
   }
 
   &__hero {
@@ -26,6 +39,11 @@
 
   &__description {
     margin-block: 10px;
+    grid-column: 2;
+    grid-row: 1 / 5;
+    @include desktop {
+      margin: 0;
+    }
   }
 
   &__price {

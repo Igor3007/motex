@@ -4,6 +4,11 @@
   border: 1px solid var(--black-10);
   padding: 23px 15px;
   border-radius: 8px;
+  @include desktop {
+    position: sticky;
+    top: calc(var(--hgt-header-main) + var(--hgt-header-top) + 16px);
+    margin-bottom: 10px;
+  }
 
   &__title {
     font: 700 14px/20px $fontDefault;
