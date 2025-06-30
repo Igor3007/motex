@@ -85,6 +85,18 @@
       flex-wrap: wrap;
       gap: 16px;
       justify-content: center;
+
+      &-item {
+        flex-basis: 100%;
+        flex-grow: 0;
+        flex-shrink: 0;
+        @include tablet {
+          flex-basis: calc((100% - 16px) / 2);
+        }
+        @include desktop {
+          flex-basis: calc((100% - 32px) / 3);
+        }
+      }
     }
   }
 

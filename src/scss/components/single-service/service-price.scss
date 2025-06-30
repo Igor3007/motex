@@ -1,0 +1,96 @@
+@import "../../config";
+
+.service-price {
+  &__title {
+    font: 700 14px/20px $fontDefault;
+    @include tablet {
+      font: 700 20px/1.4 $fontDefault;
+      margin-bottom: 28px;
+    }
+  }
+
+  &__group {
+    background: var(--black-5);
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+    @include tablet {
+      margin-top: 16px;
+      padding: 28px;
+    }
+
+    &-title {
+      font: 700 12px/16px $fontDefault;
+      margin-bottom: 12px;
+      @include tablet {
+        font: 700 16px/1.5 $fontDefault;
+        margin-bottom: 20px;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &-item {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      @include tablet {
+        padding: 4px 4px 4px 12px;
+      }
+
+      .article {
+        font: 400 12px/16px $fontDefault;
+        @include tablet {
+          font: 400 16px/1.5 $fontDefault;
+        }
+      }
+
+      .price {
+        background: var(--green);
+        color: var(--white);
+        flex-shrink: 0;
+        display: flex;
+        gap: 6px;
+        padding: 4px 8px;
+        border-radius: 8px;
+        align-items: center;
+        @include tablet {
+          padding: 4px 8px;
+          gap: 7px;
+        }
+      }
+
+      .value {
+        font: 700 14px/20px $fontDefault;
+        @include tablet {
+          font: 700 24px/32px $fontDefault;
+        }
+      }
+
+      .units {
+        font: 400 12px/16px $fontDefault;
+        @include tablet {
+          font: 400 16px/1.5 $fontDefault;
+        }
+      }
+    }
+
+    &-subtitle {
+      font: 400 12px/16px $fontDefault;
+      color: var(--black-50);
+      margin-top: 10px;
+      @include tablet {
+        font: 400 16px/1.5 $fontDefault;
+        margin-top: 20px;
+      }
+    }
+  }
+}

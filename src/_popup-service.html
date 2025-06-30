@@ -1,0 +1,46 @@
+<div class="popup-service">
+  <div class="popup-service__modal" id="modal-call">
+    <div class="popup__wrapper">
+      <div class="popup__body">
+        <div class="popup__heading">
+          <h2>Заказ распила</h2>
+        </div>
+        <form action="#" method="POST" class="form">
+
+          <div class="popup__form-field">
+            <input type="text" id="NAME" required placeholder="Имя" maxlength="60">
+            <label for="NAME"></label>
+          </div>
+
+          <div class="popup__form-field">
+            <input type="tel" id="tel" required placeholder="Телефон" maxlength="10">
+            <label for="еуд"></label>
+          </div>
+
+          <div class="popup__form-field">
+                        <textarea name="" id="TEXT" maxlength="300" required
+                                  placeholder="Комментарий"></textarea>
+            <label for="TEXT"></label>
+          </div>
+
+          <label for="files" class="files">
+            <input type="file" id="files" name="files" multiple>
+            <div class="btn-gray" type="button">
+              <i class="icon-m"
+                 style="mask-image: url('/images/icons/ic_chain.svg')"></i>
+              Прикрепить чертёж
+            </div>
+            <span class="files-note">Фотографии и файлы не более 10</span>
+          </label>
+
+          <button class="btn-blue" type="submit">Отправить</button>
+
+          <div class="popup__policy"> Нажимая кнопку «Отправить», я даю согласие на <a
+            href="#">получение
+            рекламной рассылки</a> и <a href="#">обработку персональных данных</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

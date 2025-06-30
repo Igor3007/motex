@@ -1,0 +1,86 @@
+@import "../config";
+
+.single-service {
+
+  h1 {
+    font: 700 24px/32px $fontDefault;
+    margin-bottom: 28px;
+    @include desktop {
+      font: 700 28px/32px $fontDefault;
+      margin-bottom: 42px;
+      margin-top: 22px;
+    }
+  }
+
+  &__content {
+    counter-reset: rows;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    --content-rows: 6;
+    @include desktop {
+      grid-template-columns: 1fr 416px;
+      gap: 60px 16px;
+
+      & > * {
+        grid-column: 1;
+      }
+    }
+  }
+
+  &__hero {
+    aspect-ratio: 324 / 182;
+    margin: 0;
+  }
+
+  &__text {
+    font: 400 12px/16px $fontDefault;
+    hyphens: auto;
+    margin: 0;
+    @include desktop {
+      font: 16px/1.5 $fontDefault;
+    }
+  }
+
+  &__description {
+    margin-block: 10px;
+    @include desktop {
+      margin: 0;
+      grid-column: 2;
+      grid-row: 1 / var(--content-rows);
+    }
+  }
+
+  &__price {
+    margin: 10px 0;
+    @include desktop {
+      margin: 0;
+    }
+  }
+
+  &__warning {
+    margin: 10px 0;
+    @include desktop {
+      margin: 0;
+    }
+  }
+
+  &__success {
+    margin: 70px 0 80px;
+  }
+
+  &__annotations {
+    margin: 20px 0;
+    @include desktop {
+      margin-inline: auto;
+    }
+  }
+
+  &__services {
+    margin: 40px 0 80px;
+    @include desktop {
+      margin-block: 60px 100px;
+    }
+  }
+}
+

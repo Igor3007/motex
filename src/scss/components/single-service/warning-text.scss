@@ -1,0 +1,51 @@
+@import "../../config";
+
+.w-text {
+  background: var(--black-5);
+  padding: 16px;
+  border-radius: 8px;
+  @include tablet {
+    padding: 20px;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    background: var(--black-base);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    @include tablet {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 12px;
+    }
+
+    .icon-m {
+      background-color: var(--black-5);
+      width: 18px;
+      height: 18px;
+      @include tablet {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &__header {
+    font: 700 14px/20px $fontDefault;
+    margin-bottom: 14px;
+    @include tablet {
+      font: 700 20px/1.4 $fontDefault;
+    }
+  }
+
+  &__content {
+    font: 400 12px/16px $fontDefault;
+    @include tablet {
+      font: 400 16px/1.5 $fontDefault;
+    }
+  }
+}

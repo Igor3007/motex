@@ -1,0 +1,97 @@
+@import "../../config";
+
+.popup-service {
+  max-width: 284px;
+  @include tablet {
+    max-width: 360px;
+  }
+
+  h2 {
+    font: 700 16px/1.5 $fontDefault;
+    margin-bottom: 18px;
+    @include desktop {
+      font: 700 24px/32px $fontDefault;
+      margin-bottom: 30px;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    @include desktop {
+      gap: 16px;
+    }
+  }
+
+  label.files {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+
+    input {
+      display: none;
+    }
+
+    .btn-gray {
+      white-space: nowrap;
+      gap: 8px;
+      font: 40 12px/16px $fontDefault;
+      background-color: transparent;
+      @include desktop {
+        font: 400 16px/1.5 $fontDefault;
+      }
+
+      &:hover {
+        background-color: var(--accent);
+        border-color: var(--accent);
+        color: var(--white);
+
+        .icon-m {
+          background-color: var(--white);
+        }
+      }
+
+      .icon-m {
+        background-color: var(--black-base);
+      }
+    }
+
+    .files-note {
+      font: 400 10px/1.6 $fontDefault;
+      color: var(--black-50);
+      @include desktop {
+        font: 400 14px/20px $fontDefault;
+      }
+    }
+  }
+
+  textarea {
+    min-height: 6lh;
+    @include desktop {
+      min-height: 10lh;
+    }
+  }
+
+  .btn-blue {
+    width: 100%;
+  };
+
+  .popup {
+    &__policy {
+      font: 400 10px/1.6 $fontDefault;
+      color: var(--black-50);
+      @include desktop {
+        font: 400 14px/20px $fontDefault;
+      }
+
+      a {
+        color: var(--black-base);
+        &:hover {
+          color: var(--blue-link);
+        }
+      }
+    }
+
+  }
+}

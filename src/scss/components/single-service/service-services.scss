@@ -1,0 +1,40 @@
+@import "../../config";
+
+.service-services {
+  &.mx-services {
+
+    .mx-services {
+      &__heading {
+        margin-bottom: 16px;
+      }
+    }
+
+    .item-services__content {
+      padding: 12px;
+      @include desktop {
+        padding: 20px;
+      }
+    }
+
+    h2 {
+      font: 700 14px/20px $fontDefault;
+      @include tablet {
+        font: 700 20px/28px $fontDefault;
+        margin-bottom: 13px;
+      }
+    }
+
+    .btn-blue {
+      padding: 4px 8px;
+      @include desktop {
+        padding: 12px;
+      }
+    }
+  }
+  @include desktop {
+    .item-services__img picture {
+      padding-bottom: 77.5%;
+    }
+  }
+
+}
