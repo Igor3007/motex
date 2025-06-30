@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', function (event) {
+import Vue from "vue/dist/vue.esm.js";
 
-    class SearchIndex {
+export class SearchIndex {
         constructor(el) {
             this.vueApp = null;
             this.$el = el
@@ -127,9 +127,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
 
 
+
     }
 
-    document.querySelectorAll('[data-find="container"]').forEach(item => {
-        window.SearchIndex = new SearchIndex(item)
-    })
-});
+

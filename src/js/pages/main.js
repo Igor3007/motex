@@ -1,174 +1,119 @@
+import "../components/css-variable"
+import "../components/scroll-smooth"
+import "fslightbox";
+
+import { MaskInput } from "maska"
+import Splide from "@splidejs/splide";
+import { SearchIndex } from "../components/search-index";
+import { SelectRegion } from "../components/select-region";
+import { TopCatalog } from "../components/top-catalog";
+import { afLightbox } from "../components/af-lightbox";
+import { afSelect } from "../components/af-select.min";
+import { Status } from "../components/status";
+import { loadYmapsApi } from "../components/load-ymaps-api"
+
+
 document.addEventListener("DOMContentLoaded", () => {
 
-  const API_YMAPS = 'https://api-maps.yandex.ru/2.1/?apikey=0e2d85e0-7f40-4425-aab6-ff6d922bb371&suggest_apikey=ad5015b5-5f39-4ba3-9731-a83afcecb740&lang=ru_RU&mode=debug';
+/* =========================================
+  SearchIndex init
+=========================================*/
+
+  document.querySelectorAll('[data-find="container"]').forEach(item => {
+    window.SearchIndex = new SearchIndex(item)
+})
+
+/* =========================================
+  SelectRegion init
+=========================================*/
+
+  document.querySelectorAll('[data-region-select="open"]').forEach(item => {
+    item.addEventListener('click', () => {
+
+        if (!window.SelectRegion) {
+            let query = fetch('/pages/_popup-select-region.html', {
+                method: 'GET',
+            })
+
+            query
+                .then((response) => response.text())
+                .then((html) => {
+                    window.SelectRegion = new SelectRegion({
+                        html
+                    })
+                })
+        } else {
+            window.SelectRegion.vueApp.openPopup()
+        }
 
 
-  /* =================================================
-  css variable
-  =================================================*/
 
-  function css_variable() {
-    let vh = window.innerHeight * 0.01;
-    let hgtheader = document.querySelector('.header') ? document.querySelector('.header').clientHeight : 64
-    let hgtheaderTop = document.querySelector('.top-header') ? document.querySelector('.top-header').clientHeight : 54
-    let hgtheaderMain = document.querySelector('.main-header') ? document.querySelector('.main-header').clientHeight : 103
-
-    document.documentElement.style.setProperty('--vh', vh + 'px');
-    document.documentElement.style.setProperty('--hgt-header', hgtheader + 'px');
-    document.documentElement.style.setProperty('--hgt-header-top', hgtheaderTop + 'px');
-    document.documentElement.style.setProperty('--hgt-header-main', hgtheaderMain + 'px');
-
-    window.globalConfig = {
-      vh,
-      hgtheader,
-      hgtheaderTop,
-      hgtheaderMain
-    }
-
-    return window.globalConfig
-  }
-
-  window.addEventListener('load', css_variable)
-  window.addEventListener('resize', css_variable)
-
-  /* ========================================
-  ymaps api
-  ========================================*/
-
-  window.loadYmapsApi = function (callback) {
-
-    if (window.ymaps == undefined) {
-      const script = document.createElement('script')
-      script.src = API_YMAPS
-      script.onload = () => {
-        callback(window.ymaps)
-      }
-      document.head.append(script)
-    } else {
-      callback(window.ymaps)
-    }
-
-  }
-
-
-  /* =======================================
-    scroll
-    =======================================*/
-  document.querySelectorAll('[data-scroll]').forEach(item => {
-    item.addEventListener('click', (e) => {
-      e.preventDefault();
-      const href = e.target?.attributes?.href?.value;
-
-      if (href && document.querySelector(href)) {
-        window.scrollToTargetAdjusted({
-          elem: document.querySelector(href),
-          offset: window.globalConfig.hgtheader + 36
-        })
-      } else if (document.querySelector(e.target.dataset.scroll)) {
-        window.scrollToTargetAdjusted({
-          elem: document.querySelector(e.target.dataset.scroll),
-          offset: window.globalConfig.hgtheader + 36
-        })
-      }
     })
-  })
+})
 
-  /* ==============================================
-  Status
-  ============================================== */
+/* =========================================
+  TopCatalog init
+=========================================*/
 
-  function Status() {
+document.querySelectorAll('[data-target="topcatalog"]').forEach(item => {
+  item.addEventListener('click', () => {
+      if (!window.TopCatalog) {
+          let query = fetch('/pages/_popup-top-catalog.html', {
+              method: 'GET',
+          });
 
-    this.containerElem = '#status'
-    this.headerElem = '#status_header'
-    this.msgElem = '#status_msg'
-    this.btnElem = '#status_btn'
-    this.timeOut = 10000,
-      this.autoHide = true
-
-    this.init = function () {
-      let elem = document.createElement('div')
-      elem.setAttribute('id', 'status')
-      elem.innerHTML = '<div id="status_header"></div> <div id="status_msg"></div><div id="status_btn"></div>'
-      document.body.append(elem)
-
-      document.querySelector(this.btnElem).addEventListener('click', function () {
-        this.parentNode.setAttribute('class', '')
-      })
-    }
-
-    this.msg = function (_msg, _header) {
-      _header = (_header ? _header : '')
-      this.onShow('complete', _header, _msg)
-      if (this.autoHide) {
-        this.onHide();
+          query
+              .then((response) => response.text())
+              .then((html) => {
+                  window.TopCatalog = new TopCatalog({
+                      html,
+                      button: item
+                  });
+                  window.TopCatalog.vueApp.openPopup();
+              });
+      } else {
+          window.TopCatalog.vueApp.buttonOpen = item
+          window.TopCatalog.vueApp.openPopup();
       }
-    }
-    this.err = function (_msg, _header) {
-      _header = (_header ? _header : '')
-      this.onShow('error', _header, _msg)
-      if (this.autoHide) {
-        this.onHide();
-      }
-    }
-    this.wrn = function (_msg, _header) {
-      _header = (_header ? _header : '')
-      this.onShow('warning', _header, _msg)
-      if (this.autoHide) {
-        this.onHide();
-      }
-    }
 
-    this.onShow = function (_type, _header, _msg) {
-      document.querySelector(this.headerElem).innerText = _header
-      document.querySelector(this.msgElem).innerText = _msg
-      document.querySelector(this.containerElem).classList.add(_type)
-    }
+      //document.querySelectorAll('[data-target="menu"], [data-window="menu"]').forEach(el => el.classList.toggle('is-active', false))
 
-    this.onHide = function () {
-      setTimeout(() => {
-        document.querySelector(this.containerElem).setAttribute('class', '')
-      }, this.timeOut);
-    }
+  });
+});
 
-  }
+/* =========================================
+Status
+========================================= */
 
-  window.STATUS = new Status();
-  const STATUS = window.STATUS;
-  STATUS.init();
+window.STATUS = new Status()
 
+/* =========================================
+init mask
+=========================================*/
 
-  /* ===================================
-  init mask
-  ===================================*/
+new MaskInput("[data-maska]")
 
-  const {
-    MaskInput,
-  } = Maska
+/* =========================================
+smooth scroll
+========================================= */
 
-  new MaskInput("[data-maska]")
+window.scrollToTargetAdjusted = function (params) {
 
-  /* =================================================
-  smooth scroll
-  ================================================= */
+  let element = typeof params.elem == 'string' ? document.querySelector(params.elem) : params.elem
+  let elementPosition = element.getBoundingClientRect().top + window.scrollY
 
-  window.scrollToTargetAdjusted = function (params) {
+  let offsetPosition = elementPosition
+  offsetPosition -= (params.offset ? params.offset : 0)
 
-    let element = typeof params.elem == 'string' ? document.querySelector(params.elem) : params.elem
-    let elementPosition = element.getBoundingClientRect().top + window.scrollY
+  window.scrollTo({
+    top: Number(offsetPosition),
+    behavior: "smooth"
+  });
+}
 
-    let offsetPosition = elementPosition
-    offsetPosition -= (params.offset ? params.offset : 0)
-
-    window.scrollTo({
-      top: Number(offsetPosition),
-      behavior: "smooth"
-    });
-  }
-
-  /* =========================================
-  Time toggle tooltip
-  =========================================*/
+/* =========================================
+Time toggle tooltip
+=========================================*/
 
   function toggleTime(triggerSelector, targetSelector, className, closeOnOutsideClick = false) {
     const triggerElements = document.querySelectorAll(triggerSelector);
@@ -215,13 +160,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-
   toggleTime('.modal-time__action', '.modal-time__modal', 'is-active', true);
   toggleTime('.top-header__time', '.modal-time__modal', 'is-active', true);
 
-  /* =========================================
-  Time toggle card
-  =========================================*/
+/* =========================================
+Time toggle card
+=========================================*/
 
   function setupCardToggle(containerSelector, cardSelector, toggleButtonSelector) {
     const container = document.querySelector(containerSelector);
@@ -648,7 +592,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeVideoBlocks([{
     wrapperClass: '.demo-stories__item',
     controlClass: '.demo-stories__item video',
-  },]);
+  }, ]);
 
   /* =========================================
   email validator
@@ -928,10 +872,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (document.querySelector('#map-container-contacts')) {
 
-    window.loadYmapsApi((ymaps) => {
+    let container = document.querySelector('#map-container-contacts')
+    let coordinares = container.dataset.coordinates || '55.76, 37.64'
+    coordinares = coordinares.split(',')
+
+    loadYmapsApi((ymaps) => {
       ymaps.ready(() => {
         const myMap = new ymaps.Map('map-container-contacts', {
-          center: [55.76, 37.64],
+          center: coordinares,
           zoom: 16,
           type: 'yandex#map',
           controls: [],
@@ -945,7 +893,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         myMap.geoObjects
-          .add(new ymaps.Placemark([55.76, 37.64], {
+          .add(new ymaps.Placemark(coordinares, {
             balloonContent: 'Челябинск, Троицкий Тракт, д. 17'
           }, {
             preset: 'islands#blueShoppingIcon',

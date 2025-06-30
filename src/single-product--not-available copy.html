@@ -13,6 +13,8 @@
   @@include('html/header.html')
 
   <main class="page">
+    <div data-observ></div>
+
     @@include('html/components/breadcrumbs.html',{
     "links":[
 
@@ -25,22 +27,6 @@
     <section class="section-single-product">
       <div class="_container">
         <div class="single-product">
-          <div class="single-product__mobile">
-
-            <div class="single-product__sku">
-              <div class="sp-sku">
-                <div class="sp-sku__icon">
-                  <i data-copy="УТ-00010464" class="ic_28" style="background-image: url(/images/icons/ic_copy.svg)"></i>
-                </div>
-                <div class="sp-sku__text">Арт: <span>УТ-00010464</span></div>
-              </div>
-            </div>
-
-            <div class="single-product__h1">
-              <div data-clamp>Фанера берёзовая ФК 6мм сорт IV/IV Свеза 1525 × 1525 мм</div>
-            </div>
-
-          </div>
           <div class="single-product__gallery">
             <div class="single-product__stickers">
               <ul>
@@ -138,7 +124,7 @@
 
           <div class="single-product__details">
             <div class="single-product__h1">
-              <h1 data-clamp>Фанера берёзовая ФК 6мм сорт IV/IV Свеза 1525 × 1525 мм</h1>
+              <h1>Фанера берёзовая ФК 6мм сорт IV/IV Свеза 1525 × 1525 мм</h1>
             </div>
 
             <div class="single-product__actions">
@@ -180,10 +166,6 @@
                 </div>
 
               </div>
-            </div>
-
-            <div class="single-product__instock is-mobile">
-              <span class="status--green">В наличии, 589 шт.</span>
             </div>
 
             <div class="single-product__variations">
@@ -271,7 +253,7 @@
 
           </div>
 
-          <div class="single-product__aside">
+          <div class="single-product__aside single-product__aside--outstock">
             <div class="single-product__sku">
               <div class="sp-sku">
                 <div class="sp-sku__icon">
@@ -281,44 +263,21 @@
               </div>
             </div>
 
-            <div class="single-product__info">
-              <div class="sp-profit">
-                <div class="sp-profit__image">
-                  <picture>
-                    <img src="/images/other/profit.jpg" alt="">
-                  </picture>
-                </div>
-                <div class="sp-profit__main">
-                  <div class="sp-profit__title">X-Выгодно!</div>
-                  <div class="sp-profit__desc">
-                    Цена ниже средней рыночной на <span>34 ₽</span>
-                  </div>
-                </div>
-                <div class="sp-profit__tooltip">
-                  <i class="ic_16" style="background-image: url(/images/icons/ic_about-dark.svg)" data-tooltip=""
-                    data-ajax="_tooltip-price-compare.html"></i>
-                </div>
-              </div>
-            </div>
+
 
             <div class="single-product__configurate">
               <div class="sp-configurate">
-                <div class="sp-configurate__price">
-                  <div class="sp-configurate__price-current">741 ₽/шт</div>
-                  <div class="sp-configurate__price-right">
-                    <div class="sp-configurate__price-old">880 ₽</div>
-                    <div class="sp-configurate__price-desc">цена без скидки</div>
+
+                <div class="sp-configurate__head">
+                  <div class="sp-configurate__title">Под заказ</div>
+                  <div class="sp-configurate__desc">Товара временно нет на нашем складе. Укажите необходимое количество.
+                     После оформления заказа с вами свяжется менеджер, уточнит цену и ожидаемую дату поставки.</div>
+
+                  <div class="sp-configurate__out-of-stock">
+                    <span>Онлайн-заказ</span>
                   </div>
                 </div>
-                <div class="sp-configurate__tags">
-                  <ul>
-                    <li>108 ₽/м2</li>
-                    <li>3 705 ₽/м3</li>
-                  </ul>
-                </div>
-                <div class="sp-configurate__instock">
-                  <span class="status--green">В наличии, 589 шт.</span>
-                </div>
+
                 <div class="sp-configurate__calc">
                   <div class="sp-configurate__field">
                     <label>Кол-во, шт</label>
@@ -416,20 +375,6 @@
         <div class="_container">
           <div class="sticky-bar-product">
 
-            <div class="sticky-bar-product__info">
-              <div class="sp-configurate__price">
-                <div class="sp-configurate__price-current">741 ₽/шт</div>
-                <div class="sp-configurate__price-right">
-                  <div class="sp-configurate__price-old">880 ₽</div>
-                  <div class="sp-configurate__price-desc">до скидки</div>
-                </div>
-              </div>
-
-              <div class="sp-configurate__instock">
-                <span class="status--green">В наличии, 589 шт.</span>
-              </div>
-            </div>
-
             <div class="sticky-bar-product__detail">
               <div class="sticky-bar-product__image">
                 <picture>
@@ -464,12 +409,9 @@
               <div class="sticky-bar-product__tocart">
                 <button class="icon-btn">
                   <i class="ic_24" style="background-image: url(/images/icons/ic_tocart-sm.svg);"></i>
-                  <span>В корзину</span>
                 </button>
               </div>
             </div>
-
-
 
           </div>
         </div>
@@ -630,14 +572,11 @@
                   </tr>
                 </table>
               </div>
-
-              <div class="single-product__more single-product__more--all">Все характеристики</div>
-
             </div>
           </div>
 
           <div id="documentation" class="details-product__group">
-            <div class="details-product__label details-product__label--docs">Документация</div>
+            <div class="details-product__label">Документация</div>
             <div class="details-product__content">
               <div class="details-product__filelist">
                 <div class="details-product__file">
@@ -671,11 +610,7 @@
         </div>
       </div>
     </section>
-
-    @@include('html/components/goods-analog.html')
     @@include('html/components/goods-viewed.html')
-
-
   </main>
 
   @@include('html/footer.html')
