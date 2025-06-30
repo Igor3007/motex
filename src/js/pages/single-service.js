@@ -1,3 +1,6 @@
+import Splide from "@splidejs/splide";
+import { afLightbox } from "../components/af-lightbox";
+
 document
   .querySelectorAll('[data-slider="splide-services"]')
   .forEach((el) => {
@@ -33,3 +36,31 @@ document
     });
     sliderServices.mount();
   });
+
+document
+  .querySelectorAll('[data-action="modal"]')
+  .forEach((el) => {
+    el.addEventListener('click', () => {
+      let popup = new afLightbox({
+        mobileInBottom: true,
+      });
+
+      popup.open('<div class="af-loading" ></div>', () => {
+        fetch('/pages/_popup-service.html')
+          .then(res => res.text())
+          .then(html => {
+            popup.changeContent(html);
+          })
+          .catch(err => console.error(err));
+      });
+
+    });
+  });
+
+/* set count of children to spawn right column whole grid height */
+document
+.querySelectorAll('.single-service__content')
+.forEach((el) => {
+  const {childElementCount} = el;
+  el.style.setProperty('--content-rows',childElementCount);
+});

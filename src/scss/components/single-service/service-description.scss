@@ -13,7 +13,7 @@
   &__title {
     font: 700 14px/20px $fontDefault;
     margin-bottom: 16px;
-    @include desktop {
+    @include tablet {
       font: 700 20px/1.4 $fontDefault;
       margin-top: 7px;
       margin-bottom: 20px;
@@ -27,7 +27,7 @@
     gap: 12px;
     font: 400 12px/16px $fontDefault;
     margin-block: 16px;
-    @include desktop {
+    @include tablet {
       font: 16px/1.5 $fontDefault;
       margin-bottom: 60px;
     }
@@ -53,7 +53,7 @@
       border-radius: 4px;
       margin-right: 12px;
       margin-left: 0;
-      @include desktop {
+      @include tablet {
         width: 27px;
         height: 28px;
         border-radius: 8px;
@@ -66,7 +66,7 @@
   .btn-blue {
     font: 500 14px/20px $fontDefault;
     padding: 6px 12px ;
-    @include desktop {
+    @include tablet {
       font: 500 16px/1.5 $fontDefault;
       padding: 13px;
     }

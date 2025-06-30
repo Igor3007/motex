@@ -3,8 +3,10 @@
 .service-annotation {
   color: var(--black-70);
   font: 400 10px/1.6 $fontDefault;
-  @include desktop {
+  @include tablet {
     font: 400 14px/20px $fontDefault;
+  }
+  @include desktop {
     max-width: 70%;
   }
 
