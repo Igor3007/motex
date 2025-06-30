@@ -20,8 +20,11 @@
 
   h3 {
     font: 700 24px/32px $fontDefault;
-    max-width: 60%;
+    max-width: 80%;
     margin-bottom: 28px;
+    @include tablet {
+      max-width: 60%;
+    }
   }
 
   legend {

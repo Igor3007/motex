@@ -1,4 +1,5 @@
 import Splide from "@splidejs/splide";
+import { afLightbox } from "../components/af-lightbox";
 
 const sendSelectedText = () => {
   const selectedText = window.getSelection().toString().trim();
