@@ -17,7 +17,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    --content-rows: 6;
+    --content-rows: 1;
     @include desktop {
       grid-template-columns: 1fr 416px;
       gap: 60px 16px;
