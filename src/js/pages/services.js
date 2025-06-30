@@ -1,3 +1,5 @@
+import Splide from "@splidejs/splide";
+
 const applyServiceCardAnimation = (el) => {
   const video = el.querySelector('video');
 
@@ -10,7 +12,7 @@ const applyServiceCardAnimation = (el) => {
     el.classList.remove('playing');
     // остановим видео после появления картинки (css transition)
     setTimeout(() => {
-      video.pause();video.currentTime = 0;
+      video.pause(); video.currentTime = 0;
     }, 500);
   })
 }
