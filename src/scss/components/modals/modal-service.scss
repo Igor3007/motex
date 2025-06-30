@@ -5,9 +5,6 @@
   @include tablet {
     max-width: 360px;
   }
-  @include desktop {
-    max-width: 468px;
-  }
 
   h2 {
     font: 700 16px/1.5 $fontDefault;
