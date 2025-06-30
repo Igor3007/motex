@@ -3,6 +3,10 @@
 .service-price {
   &__title {
     font: 700 14px/20px $fontDefault;
+    @include desktop {
+      font: 700 20px/1.4 $fontDefault;
+      margin-bottom: 28px;
+    }
   }
 
   &__group {
@@ -10,20 +14,24 @@
     border-radius: 8px;
     padding: 15px;
     margin-top: 15px;
+    @include desktop {
+      margin-top: 16px;
+      padding: 28px;
+    }
 
     &-title {
       font: 700 12px/16px $fontDefault;
       margin-bottom: 12px;
+      @include desktop {
+        font: 700 16px/1.5 $fontDefault;
+        margin-bottom: 20px;
+      }
     }
 
     &-list {
       display: flex;
       flex-direction: column;
       gap: 8px;
-
-      &.wide {
-        gap: 12px;
-      }
     }
 
     &-item {
@@ -34,9 +42,15 @@
       align-items: center;
       justify-content: space-between;
       gap: 8px;
+      @include desktop {
+        padding: 4px 4px 4px 12px;
+      }
 
       .article {
         font: 400 12px/16px $fontDefault;
+        @include desktop {
+          font: 400 16px/1.5 $fontDefault;
+        }
       }
 
       .price {
@@ -48,14 +62,24 @@
         padding: 4px 8px;
         border-radius: 8px;
         align-items: center;
+        @include desktop {
+          padding: 4px 8px;
+          gap: 7px;
+        }
       }
 
       .value {
         font: 700 14px/20px $fontDefault;
+        @include desktop {
+          font: 700 24px/32px $fontDefault;
+        }
       }
 
       .units {
         font: 400 12px/16px $fontDefault;
+        @include desktop {
+          font: 400 16px/1.5 $fontDefault;
+        }
       }
     }
 
@@ -63,6 +87,10 @@
       font: 400 12px/16px $fontDefault;
       color: var(--black-50);
       margin-top: 10px;
+      @include desktop {
+        font: 400 16px/1.5 $fontDefault;
+        margin-top: 20px;
+      }
     }
   }
 }

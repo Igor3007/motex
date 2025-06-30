@@ -8,6 +8,7 @@
   }
   @include desktop {
     padding-block: 80px 76px;
+    margin-block: 120px;
   }
 
   h2 {
@@ -26,10 +27,16 @@
     flex-wrap: wrap;
     gap: 12px;
     justify-content: center;
+    @include desktop {
+      gap: 16px;
+    }
 
     &-item {
       width: calc(50% - 6px);
       container-type: inline-size;
+      @include tablet {
+        width: calc(33.333% - 10.667px);
+      }
     }
   }
 }

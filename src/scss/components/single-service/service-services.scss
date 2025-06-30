@@ -11,15 +11,30 @@
 
     .item-services__content {
       padding: 12px;
+      @include desktop {
+        padding: 20px;
+      }
     }
 
     h2 {
       font: 700 14px/20px $fontDefault;
+      @include desktop {
+        font: 700 20px/28px $fontDefault;
+        margin-bottom: 13px;
+      }
     }
 
     .btn-blue {
       padding: 4px 8px;
+      @include desktop {
+        padding: 12px;
+      }
     }
-
   }
+  @include desktop {
+    .item-services__img picture {
+      padding-bottom: 77.5%;
+    }
+  }
+
 }
