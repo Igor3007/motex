@@ -3,7 +3,9 @@
 footer {
   flex: 0 0 auto;
   background: #F3F3F3;
-
+  @media print {
+    display: none;
+  }
 }
 
 .footer {
