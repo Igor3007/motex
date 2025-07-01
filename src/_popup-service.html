@@ -22,16 +22,18 @@
                                   placeholder="Комментарий"></textarea>
             <label for="TEXT"></label>
           </div>
-
-          <label for="files" class="files">
-            <input type="file" id="files" name="files" multiple>
-            <div class="btn-gray" type="button">
-              <i class="icon-m"
-                 style="mask-image: url('/images/icons/ic_chain.svg')"></i>
-              Прикрепить чертёж
-            </div>
+          <div class="file-formbar" id="files-list"></div>
+          <div class="files-wrapper">
+            <label for="files" class="files">
+              <input type="file" id="files" name="files" multiple>
+              <div class="btn-gray" type="button">
+                <i class="icon-m"
+                   style="mask-image: url('/images/icons/ic_chain.svg')"></i>
+                Прикрепить чертёж
+              </div>
+            </label>
             <span class="files-note">Фотографии и файлы не более 10</span>
-          </label>
+          </div>
 
           <button class="btn-blue" type="submit">Отправить</button>
 

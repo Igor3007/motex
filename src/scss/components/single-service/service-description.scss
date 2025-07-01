@@ -29,6 +29,9 @@
     margin-block: 16px;
     @include tablet {
       font: 16px/1.5 $fontDefault;
+      margin-block: 20px 32px;
+    }
+    @include desktop {
       margin-bottom: 60px;
     }
   }
