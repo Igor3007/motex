@@ -32,11 +32,21 @@
   h2 {
     font: 400 20px/1.4 $fontDefault;
     margin-block: 12px 28px;
+    @include mobile {
+      text-align: center;
+    }
   }
 
   &__links {
     display: flex;
-    gap: 12px
+    gap: 12px;
+    justify-content: center;
+
+    a {
+      @include mobile {
+        font-size: 14px;
+      }
+    }
   }
 }
 
