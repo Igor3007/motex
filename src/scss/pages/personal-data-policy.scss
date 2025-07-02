@@ -1,0 +1,21 @@
+@import "../config";
+
+.personal-data-policy {
+  margin-bottom: 16px;
+  @include tablet {
+    margin-bottom: 56px;
+  }
+
+  .breadcrumbs {
+    margin-bottom: 10px;
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  .rich-text {
+    @include desktop {
+      max-width: 848px;
+    }
+  }
+}

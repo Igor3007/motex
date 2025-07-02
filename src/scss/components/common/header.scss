@@ -2,6 +2,9 @@
 
 header {
   flex: 0 0 auto;
+  @media print {
+    display: none;
+  }
 }
 
 .header {

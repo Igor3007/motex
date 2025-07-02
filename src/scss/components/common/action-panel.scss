@@ -16,6 +16,10 @@
     display: none;
   }
 
+  @media print {
+    display: none;
+  }
+
 
   .config-action {
     display: flex;

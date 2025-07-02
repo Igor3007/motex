@@ -1,0 +1,21 @@
+@import "../config";
+
+.user-agreement {
+  margin-bottom: 32px;
+  @include tablet {
+    margin-bottom: 80px;
+  }
+
+  .breadcrumbs {
+    margin-bottom: 10px;
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  .rich-text {
+    @include desktop {
+      max-width: 848px;
+    }
+  }
+}
