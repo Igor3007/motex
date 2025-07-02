@@ -15,105 +15,105 @@ import { loadYmapsApi } from "../components/load-ymaps-api"
 
 document.addEventListener("DOMContentLoaded", () => {
 
-/* =========================================
-  SearchIndex init
-=========================================*/
+  /* =========================================
+    SearchIndex init
+  =========================================*/
 
   document.querySelectorAll('[data-find="container"]').forEach(item => {
     window.SearchIndex = new SearchIndex(item)
-})
+  })
 
-/* =========================================
-  SelectRegion init
-=========================================*/
+  /* =========================================
+    SelectRegion init
+  =========================================*/
 
   document.querySelectorAll('[data-region-select="open"]').forEach(item => {
     item.addEventListener('click', () => {
 
-        if (!window.SelectRegion) {
-            let query = fetch('/pages/_popup-select-region.html', {
-                method: 'GET',
-            })
+      if (!window.SelectRegion) {
+        let query = fetch('/pages/_popup-select-region.html', {
+          method: 'GET',
+        })
 
-            query
-                .then((response) => response.text())
-                .then((html) => {
-                    window.SelectRegion = new SelectRegion({
-                        html
-                    })
-                })
-        } else {
-            window.SelectRegion.vueApp.openPopup()
-        }
+        query
+          .then((response) => response.text())
+          .then((html) => {
+            window.SelectRegion = new SelectRegion({
+              html
+            })
+          })
+      } else {
+        window.SelectRegion.vueApp.openPopup()
+      }
 
 
 
     })
-})
+  })
 
-/* =========================================
-  TopCatalog init
-=========================================*/
+  /* =========================================
+    TopCatalog init
+  =========================================*/
 
-document.querySelectorAll('[data-target="topcatalog"]').forEach(item => {
-  item.addEventListener('click', () => {
+  document.querySelectorAll('[data-target="topcatalog"]').forEach(item => {
+    item.addEventListener('click', () => {
       if (!window.TopCatalog) {
-          let query = fetch('/pages/_popup-top-catalog.html', {
-              method: 'GET',
-          });
+        let query = fetch('/pages/_popup-top-catalog.html', {
+          method: 'GET',
+        });
 
-          query
-              .then((response) => response.text())
-              .then((html) => {
-                  window.TopCatalog = new TopCatalog({
-                      html,
-                      button: item
-                  });
-                  window.TopCatalog.vueApp.openPopup();
-              });
+        query
+          .then((response) => response.text())
+          .then((html) => {
+            window.TopCatalog = new TopCatalog({
+              html,
+              button: item
+            });
+            window.TopCatalog.vueApp.openPopup();
+          });
       } else {
-          window.TopCatalog.vueApp.buttonOpen = item
-          window.TopCatalog.vueApp.openPopup();
+        window.TopCatalog.vueApp.buttonOpen = item
+        window.TopCatalog.vueApp.openPopup();
       }
 
       //document.querySelectorAll('[data-target="menu"], [data-window="menu"]').forEach(el => el.classList.toggle('is-active', false))
 
+    });
   });
-});
 
-/* =========================================
-Status
-========================================= */
+  /* =========================================
+  Status
+  ========================================= */
 
-window.STATUS = new Status()
+  window.STATUS = new Status()
 
-/* =========================================
-init mask
-=========================================*/
+  /* =========================================
+  init mask
+  =========================================*/
 
-new MaskInput("[data-maska]")
+  new MaskInput("[data-maska]")
 
-/* =========================================
-smooth scroll
-========================================= */
+  /* =========================================
+  smooth scroll
+  ========================================= */
 
-window.scrollToTargetAdjusted = function (params) {
+  window.scrollToTargetAdjusted = function (params) {
 
-  let element = typeof params.elem == 'string' ? document.querySelector(params.elem) : params.elem
-  let elementPosition = element.getBoundingClientRect().top + window.scrollY
+    let element = typeof params.elem == 'string' ? document.querySelector(params.elem) : params.elem
+    let elementPosition = element.getBoundingClientRect().top + window.scrollY
 
-  let offsetPosition = elementPosition
-  offsetPosition -= (params.offset ? params.offset : 0)
+    let offsetPosition = elementPosition
+    offsetPosition -= (params.offset ? params.offset : 0)
 
-  window.scrollTo({
-    top: Number(offsetPosition),
-    behavior: "smooth"
-  });
-}
+    window.scrollTo({
+      top: Number(offsetPosition),
+      behavior: "smooth"
+    });
+  }
 
-/* =========================================
-Time toggle tooltip
-=========================================*/
+  /* =========================================
+  Time toggle tooltip
+  =========================================*/
 
   function toggleTime(triggerSelector, targetSelector, className, closeOnOutsideClick = false) {
     const triggerElements = document.querySelectorAll(triggerSelector);
@@ -163,9 +163,9 @@ Time toggle tooltip
   toggleTime('.modal-time__action', '.modal-time__modal', 'is-active', true);
   toggleTime('.top-header__time', '.modal-time__modal', 'is-active', true);
 
-/* =========================================
-Time toggle card
-=========================================*/
+  /* =========================================
+  Time toggle card
+  =========================================*/
 
   function setupCardToggle(containerSelector, cardSelector, toggleButtonSelector) {
     const container = document.querySelector(containerSelector);
@@ -592,7 +592,7 @@ Time toggle card
   initializeVideoBlocks([{
     wrapperClass: '.demo-stories__item',
     controlClass: '.demo-stories__item video',
-  }, ]);
+  },]);
 
   /* =========================================
   email validator
@@ -813,7 +813,7 @@ Time toggle card
           .then((response => response.text()))
           .then((html) => {
             popup.changeContent(html)
-            new MaskInput("[data-maska]")
+              new MaskInput("[data-maska]")
           })
           .catch((e) => {
             window.STATUS.err(e)
@@ -1015,34 +1015,7 @@ Time toggle card
     })
   })
 
-  /* ======================================
-  show title h1
-  ======================================*/
 
-  function isLineClamped(element) {
-    // Проверяем, установлен ли line-clamp
-    const lineClamp = window.getComputedStyle(element).webkitLineClamp;
-    if (lineClamp === 'none') return false;
-
-    // Проверяем, обрезан ли текст
-    return element.scrollHeight > element.clientHeight;
-  }
-
-  document.querySelectorAll('[data-clamp]').forEach(el => {
-    if (isLineClamped(el)) {
-
-      let btn = document.createElement('span')
-      btn.innerText = 'еще'
-
-      const showAllText = () => {
-        el.parentNode.classList.add('is-disabled-lineclamp')
-      }
-
-      btn.addEventListener('click', showAllText)
-
-      el.parentNode.append(btn)
-    }
-  })
 
 
 

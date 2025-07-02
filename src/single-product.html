@@ -171,7 +171,7 @@
                         <span>Вконтакте</span>
                       </a>
                     </li>
-                    <li><a href="https://mottex.ru/p/УТ-00010464">
+                    <li><a href="https://mottex.ru/p/00010464">
                         <i data-copy class="ic_24" style="background-image: url(/images/icons/ic_chain-sm.svg);"></i>
                         <span data-copy>Скопировать ссылку</span>
                       </a>
@@ -365,7 +365,7 @@
             </div>
 
             <div class="single-product__oneclick">
-              <button class="btn-gray">Купить в 1 клик</button>
+              <button class="btn-gray" data-modal="popup" data-url="/pages/_popup-one-click.html" data-type="form-one-click">Купить в 1 клик</button>
             </div>
 
             <div class="single-product__h2">Способ получения</div>
@@ -672,8 +672,13 @@
       </div>
     </section>
 
-    @@include('html/components/goods-analog.html')
-    @@include('html/components/goods-viewed.html')
+    @@include('html/components/goods-analog.html', {
+    "classes": "sipds"
+    })
+
+    @@include('html/components/goods-viewed.html', {
+      "classes": "sipds"
+    })
 
 
   </main>

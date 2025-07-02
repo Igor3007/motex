@@ -123,7 +123,7 @@ export class TooltipAjax {
 
                 //add event close on outher click
                 item.addEventListener('mouseleave', e => {
-                    this.tooltipRemove()
+                    //this.tooltipRemove()
                 })
 
             } else {

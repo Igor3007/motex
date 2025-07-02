@@ -215,7 +215,7 @@
         display: none;
 
         @media screen and (min-width: $w760) {
-          display: block;
+          display: flex;
         }
       }
     }
@@ -491,6 +491,13 @@
         background-size: 10px;
       }
     }
+
+    &:hover {
+      @media screen and (min-width: $w576) {
+        color: var(--accent);
+        cursor: pointer;
+      }
+    }
   }
 
   &__share {
@@ -674,6 +681,12 @@
             background-color: var(--orange);
           }
         }
+      }
+    }
+
+    &.is-mobile {
+      @media screen and (min-width: $w480) {
+        display: none;
       }
     }
 
@@ -1044,6 +1057,16 @@
   @media screen and (min-width: $w1440) {
     padding: 11px 26px;
   }
+  
+  &__tooltip{
+  & i {
+    &:hover {
+      @media screen and (min-width: $w576) {
+      filter: grayscale(1) brightness(0.3);
+      }
+    }
+  }
+  }
 
   &__image {
 
@@ -1169,6 +1192,7 @@
     padding-bottom: 24px;
     font-size: 14px;
     line-height: 142%;
+    color: var(--black-base);
   }
 
   &__field {
@@ -1295,7 +1319,11 @@
           }
         }
       }
+
+      
     }
+
+     
 
   }
 
@@ -1354,6 +1382,7 @@
     padding: 8px 12px;
     gap: 8px;
     cursor: pointer;
+    line-height: 125%;
   }
 
 }
@@ -1554,6 +1583,12 @@
     line-height: 142%;
     font-size: 14px;
     color: var(--black-50);
+
+    & a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   & .form {
