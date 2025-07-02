@@ -79,6 +79,7 @@
     "@splidejs/splide": "^4.1.4",
     "fslightbox": "^3.6.1",
     "maska": "2.1.9",
+    "matter-js": "0.18.0",
     "vue": "^2.7.0"
   }
 }
