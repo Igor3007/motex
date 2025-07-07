@@ -1,9 +1,12 @@
+import { FormHelper } from "./FormHelper";
+
 export class afLightbox {
     constructor(opion) {
         this.modal = '';
         if (opion) {
             this.mobileBottom = (opion.mobileInBottom ? opion.mobileInBottom : false)
             this.beforeClose = (opion.beforeClose ? opion.beforeClose : false)
+            this.classes = (opion.classes ? opion.classes : '')
         }
     }
 
@@ -14,7 +17,7 @@ export class afLightbox {
     createTemplate() {
         let template = document.createElement('div')
         template.innerHTML = `
-            <div class="af-popup">
+            <div class="af-popup ${this.classes} ">
                 <div class="af-popup__bg"></div>
                 <div class="af-popup__wrp">
                     <div class="af-popup__container">
@@ -72,6 +75,12 @@ export class afLightbox {
 
     changeContent(content) {
         this.modal.querySelector('.af-popup__content').innerHTML = content
+        new FormHelper({
+            el: this.modal,
+            onSubmit: (form) => {
+                this.close()
+            }
+        });
     }
 
     createEvent() {
@@ -99,6 +108,8 @@ export class afLightbox {
                 if (container.classList.contains('is-moving')) container.classList.remove('is-moving')
             }, 100)
         })
+
+
 
     }
 

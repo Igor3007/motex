@@ -47,6 +47,24 @@
   transition: 0.25s ease;
 }
 
+.af-popup--mobile {
+  & .af-popup {
+    &__container {
+      @media screen and (max-width: 480px) {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        width: 100%;
+        animation: 0.2s ease 0.2s both fade-drop-filter;
+      }
+    }
+
+    &__content {
+      border-radius: 15px 15px 0 0;
+    }
+
+  }
+}
+
 .af-popup.is-moving .af-popup__bg {
   pointer-events: none;
 }

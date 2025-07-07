@@ -1,3 +1,5 @@
+import { afLightbox } from "./af-lightbox";
+
 export class TooltipAjax {
 
     constructor(params) {
@@ -64,6 +66,11 @@ export class TooltipAjax {
             this.tooltip.style.left = (DomRect.x - (DomRect.x / 2) + (bounds / 2)) + offset + 'px'
         }
 
+        if (this.tooltip.getBoundingClientRect().right > (document.body.clientWidth - bounds)) {
+            this.tooltip.classList.add('tooltip-box-item--right')
+            this.tooltip.style.left = (DomRect.x - (tooltipW) + (bounds / 2)) + offset + 'px'
+        }
+
         if (this.tooltip.getBoundingClientRect().top < bounds) {
             this.tooltip.classList.add('tooltip-box-item--top')
             this.tooltip.style.top = (DomRect.y + (bounds)) + offset + 'px'
@@ -123,12 +130,13 @@ export class TooltipAjax {
 
                 //add event close on outher click
                 item.addEventListener('mouseleave', e => {
-                    //this.tooltipRemove()
+                    this.tooltipRemove()
                 })
 
             } else {
                 item.addEventListener('click', e => {
-                    //for mobile
+                    e.preventDefault()
+                    e.stopPropagation()
                     this.tooltipPopup(e)
                 })
             }
