@@ -334,7 +334,8 @@
 
         &__slide {
           border-radius: 8px;
-          overflow: hidden
+          overflow: hidden;
+          cursor: pointer;
         }
 
         &__arrows {
@@ -483,6 +484,7 @@
     gap: 8px;
     padding-bottom: 20px;
     flex-wrap: wrap;
+    overflow: hidden;
 
     @media screen and (min-width: $w992) {
       padding-bottom: 30px;
@@ -947,6 +949,7 @@
   font-size: 16px;
   transition: 0.3s ease;
   color: var(--black-base);
+  cursor: pointer;
 
   @media screen and (min-width: $w480) {
     padding: 18px;

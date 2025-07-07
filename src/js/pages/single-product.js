@@ -195,11 +195,18 @@ view all photo
 if (document.querySelector('[data-slider="preview-product-main"]')) {
 
     function openGalleryProduct(index) {
-        const img = document.querySelectorAll('[data-slider="preview-product-main"] img')
+        const img = document.querySelectorAll('[data-slider="preview-product-main"] .splide__slide')
         const arrImage = [];
 
-        img.forEach(image => {
-            arrImage.push(image.getAttribute('src'))
+        img.forEach(slide => {
+
+            if (slide.querySelector('.video-slide')) {
+                //arrImage.push(slide.querySelector('video').getAttribute('src'))
+            } else {
+                arrImage.push(slide.querySelector('img').getAttribute('src'))
+            }
+
+
         })
 
         const instance = new FsLightbox();
@@ -207,7 +214,7 @@ if (document.querySelector('[data-slider="preview-product-main"]')) {
         instance.props.type = "image";
         instance.props.sources = arrImage;
         instance.open(index)
-        
+
     }
 
     document.querySelectorAll('[data-slider="preview-product-main"] .splide__slide').forEach((item, index) => {
@@ -218,9 +225,27 @@ if (document.querySelector('[data-slider="preview-product-main"]')) {
 
 }
 
-if(document.querySelector('.sp-configurate__tocart')) {
+if (document.querySelector('.sp-configurate__tocart')) {
     document.querySelector('.sp-configurate__tocart').addEventListener('click', () => {
         window
     })
 }
+
+/* ============================================
+add to cart
+============================================*/
+
+document.querySelectorAll('[data-to-cart]').forEach(btn => {
+    btn.addEventListener('click', e => {
+        e.preventDefault()
+
+        btn.classList.toggle('is-active')
+
+        if (btn.classList.contains('is-active')) {
+            window.STATUS.msg('Товар добавлен в корзину')
+        } else {
+            window.STATUS.msg('Вы удалили товар из корзины')
+        }
+    })
+})
 

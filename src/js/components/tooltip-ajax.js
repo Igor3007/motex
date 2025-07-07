@@ -133,6 +133,11 @@ export class TooltipAjax {
                     this.tooltipRemove()
                 })
 
+                item.addEventListener('click', e => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                })
+
             } else {
                 item.addEventListener('click', e => {
                     e.preventDefault()
