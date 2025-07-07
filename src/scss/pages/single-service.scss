@@ -82,11 +82,5 @@
       margin-block: 60px 100px;
     }
   }
-
-  .splide__slide {
-    @include desktop {
-    margin-right: 0 !important;
-    }
-  }
 }
 

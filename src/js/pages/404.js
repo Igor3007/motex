@@ -1,6 +1,7 @@
 import Matter from "matter-js";
 
 document.addEventListener('DOMContentLoaded', () => {
+  if (!document.getElementById('matter-canvas')) {return false}
 
   if(document.querySelector('.matter-tag')) {
 
@@ -61,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Массив для хранения HTML-блоков и их физических тел
   const htmlBlocks = [];
 
- 
+
     document
       .querySelectorAll('.matter-tag')
       .forEach(element => {
@@ -79,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         htmlBlocks.push({body, element});
         World.add(engine.world, body);
       });
-  
+
 
   function teleportBlockUp(block) {
     // Останавливаем текущее движение

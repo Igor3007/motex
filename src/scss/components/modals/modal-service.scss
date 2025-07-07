@@ -104,7 +104,10 @@
   display: flex;
   gap: 8px;
   width: 100%;
-  overflow-y: auto
+  overflow-y: auto;
+  &:empty {
+    display: none;
+  }
 }
 
 .file-preview {

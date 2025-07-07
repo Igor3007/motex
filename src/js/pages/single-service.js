@@ -1,44 +1,50 @@
 import Splide from "@splidejs/splide";
-import { afLightbox } from "../components/af-lightbox";
+import {afLightbox} from "../components/af-lightbox";
 
-document
-  .querySelectorAll('[data-slider="splide-services"]')
-  .forEach((el) => {
-    let sliderServices = new Splide('[data-slider="splide-services"]', {
-      type: 'slide',
-      rewind: true,
-      arrows: false,
-      pagination: false,
-      gap: 12,
-      fixedWidth: '156px',
-      autoHeight: false,
-      start: 0,
-      updateOnMove: true,
-      drag: true,
-      flickPower: 300,
-      snap: true,
-      focus: 'left',
-      easing: 'ease-out',
-      speed: 400,
-      mediaQuery: 'min',
-      breakpoints: {
+const initSlider = () => {
+  document
+    .querySelectorAll('[data-slider="splide-services"]')
+    .forEach((el) => {
+      let sliderServices = new Splide(el, {
+        type: 'slide',
+        rewind: true,
+        arrows: false,
+        arrowPath: 'm24.381 3.9208-3.0832 3.0417 10.292 10.292h-31.292v4.3333h31.292l-10.292 10.292 3.0832 3.0416 15.5-15.5z',
+        pagination: false,
+        gap: 12,
+        fixedWidth: '156px',
+        autoHeight: false,
+        start: 0,
+        updateOnMove: true,
+        drag: true,
+        flickPower: 300,
+        snap: true,
+        focus: 'left',
+        easing: 'ease-out',
+        speed: 400,
+        mediaQuery: 'min',
+        breakpoints: {
 
-        575.98: {
-          gap: 16,
-        },
-        767.98: {
-          fixedWidth: '308px',
-        },
-        1439.98: {
-          destroy: true,
+          575.98: {
+            gap: 16,
+          },
+          767.98: {
+            fixedWidth: '308px',
+          },
+          1439.98: {
+            trimSpace: true,
+            drag: false,
+            rewind: false,
+            arrows: true,
+          }
         }
-      }
+      });
+      sliderServices.on('resize', () => {
+        sliderServices.refresh();
+      })
+      sliderServices.mount();
     });
-    sliderServices.on('resize', () => {
-      sliderServices.refresh();
-    })
-    sliderServices.mount();
-  });
+}
 
 const initForm = () => {
   const formFiles = [];
@@ -67,7 +73,7 @@ const initForm = () => {
     e.preventDefault();
     e.stopPropagation();
     const {i} = e.target.parentElement.dataset;
-    formFiles.splice(parseInt(i),1);
+    formFiles.splice(parseInt(i), 1);
     wrapper.innerHTML = getPreviewList();
     document
       .querySelectorAll('.file-preview__remove')
@@ -110,7 +116,7 @@ const initForm = () => {
     document
       .querySelectorAll('.file-preview__remove')
       .forEach((el) => {
-          el.addEventListener('click', removeHandler);
+        el.addEventListener('click', removeHandler);
       })
   })
 }
@@ -137,10 +143,16 @@ document
     });
   });
 
-/* set count of children to spawn right column whole grid height */
-document
-.querySelectorAll('.single-service__content')
-.forEach((el) => {
-  const {childElementCount} = el;
-  el.style.setProperty('--content-rows',childElementCount);
+document.addEventListener("DOMContentLoaded", () => {
+
+  initSlider();
+
+  /* set count of children to spawn right column whole grid height */
+  document
+    .querySelectorAll('.single-service__content')
+    .forEach((el) => {
+      const {childElementCount} = el;
+      el.style.setProperty('--content-rows', childElementCount);
+    });
+
 });
