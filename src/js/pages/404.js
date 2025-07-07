@@ -2,6 +2,8 @@ import Matter from "matter-js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  if(document.querySelector('.matter-tag')) {
+
   // Инициализация Matter.js
   const Engine = Matter.Engine,
     Render = Matter.Render,
@@ -59,23 +61,25 @@ document.addEventListener('DOMContentLoaded', () => {
   // Массив для хранения HTML-блоков и их физических тел
   const htmlBlocks = [];
 
-  document
-    .querySelectorAll('.matter-tag')
-    .forEach(element => {
-      const body = Bodies.rectangle(500, -200, element.offsetWidth, element.offsetHeight, {
-        chamfer: 8,
-        restitution: 0.5,
-        friction: 0.3,
-        angle: Math.random() * Math.PI,
-        frictionAir: Math.random() * 0.02,
-        render: {
-          fillStyle: 'transparent',
-          strokeStyle: 'transparent'
-        }
-      })
-      htmlBlocks.push({body, element});
-      World.add(engine.world, body);
-    });
+ 
+    document
+      .querySelectorAll('.matter-tag')
+      .forEach(element => {
+        const body = Bodies.rectangle(500, -200, element.offsetWidth, element.offsetHeight, {
+          chamfer: 8,
+          restitution: 0.5,
+          friction: 0.3,
+          angle: Math.random() * Math.PI,
+          frictionAir: Math.random() * 0.02,
+          render: {
+            fillStyle: 'transparent',
+            strokeStyle: 'transparent'
+          }
+        })
+        htmlBlocks.push({body, element});
+        World.add(engine.world, body);
+      });
+  
 
   function teleportBlockUp(block) {
     // Останавливаем текущее движение
@@ -114,6 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
     updateHtmlElements();
     requestAnimationFrame(update);
   })();
+
+}
 
 });
 

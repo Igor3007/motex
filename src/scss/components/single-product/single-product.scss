@@ -331,9 +331,32 @@
       }
 
       & .splide {
+
         &__slide {
           border-radius: 8px;
           overflow: hidden
+        }
+
+        &__arrows {
+          opacity: 0;
+          transition: 0.3s ease;
+        }
+
+        &__arrow {
+          background-color: #fff;
+          opacity: 1;
+
+          & svg {
+            opacity: 0.7;
+          }
+
+          &:hover {
+            @media screen and (min-width: $w576) {
+              & svg {
+                opacity: 1;
+              }
+            }
+          }
         }
 
         &__pagination {
@@ -352,6 +375,14 @@
               transform: scale(1);
               border-color: var(--accent);
               background-color: var(--accent-30)
+            }
+          }
+        }
+
+        &:hover {
+          & .splide {
+            &__arrows {
+              opacity: 1
             }
           }
         }
@@ -1057,15 +1088,15 @@
   @media screen and (min-width: $w1440) {
     padding: 11px 26px;
   }
-  
-  &__tooltip{
-  & i {
-    &:hover {
-      @media screen and (min-width: $w576) {
-      filter: grayscale(1) brightness(0.3);
+
+  &__tooltip {
+    & i {
+      &:hover {
+        @media screen and (min-width: $w576) {
+          filter: grayscale(1) brightness(0.3);
+        }
       }
     }
-  }
   }
 
   &__image {
@@ -1320,10 +1351,10 @@
         }
       }
 
-      
+
     }
 
-     
+
 
   }
 

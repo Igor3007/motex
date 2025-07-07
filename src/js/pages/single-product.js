@@ -20,7 +20,8 @@ if (document.querySelector('[data-slider="preview-product-main"]')) {
         cover: true,
         perPage: 1,
         perMove: 1,
-        arrows: false,
+        arrows: true,
+        arrowPath: 'm24.381 3.9208-3.0832 3.0417 10.292 10.292h-31.292v4.3333h31.292l-10.292 10.292 3.0832 3.0416 15.5-15.5z',
 
     });
 
@@ -206,10 +207,13 @@ if (document.querySelector('[data-slider="preview-product-main"]')) {
         instance.props.type = "image";
         instance.props.sources = arrImage;
         instance.open(index)
+        
     }
 
-    document.querySelectorAll('[data-slider="main-project"] .splide__slide').forEach((item, index) => {
-        item.addEventListener('click', e => openGalleryProduct(index))
+    document.querySelectorAll('[data-slider="preview-product-main"] .splide__slide').forEach((item, index) => {
+        item.addEventListener('click', e => {
+            openGalleryProduct(index);
+        })
     })
 
 }
