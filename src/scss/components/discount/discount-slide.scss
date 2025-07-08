@@ -1,0 +1,27 @@
+@import "../../config";
+
+.discount-slide {
+  picture {
+    display: block;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font: 500 14px/20px $fontDefault;
+  }
+
+  &__term {
+    font: 400 10px/1.6 $fontDefault;
+    color: var(--black-50);
+  }
+}
+
+.discount-other {
+  .splide__track {
+    overflow: visible;
+  }
+}

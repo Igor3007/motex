@@ -1,1 +1,13 @@
 @import "../config";
+
+.discount {
+
+  &__description {
+    max-width: 960px;
+  }
+
+  &__advantages {
+    max-width: 960px;
+  }
+
+}

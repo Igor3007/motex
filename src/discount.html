@@ -1,60 +1,70 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  @@include('html/head.html', {
-  'title': 'Акция'
-  })
-  <link rel="stylesheet" href="/css/discount.min.css">
+    @@include('html/head.html', {
+    'title': 'Акция'
+    })
+    <link rel="stylesheet" href="/css/discount.min.css">
 </head>
 <body>
 @@include('html/header.html')
 <main class="page discount-page">
-  @@include('html/components/breadcrumbs.html',{
-  "links":[
-  {"href": "/pages/discount.html", "title" : "Акция"}
-  ]})
+    @@include('html/components/breadcrumbs.html',{
+    "links":[
+    {"href": "/pages/discount.html", "title" : "Акция"}
+    ]})
 
-  <div><br><br></div>
+    <div><br><br></div>
 
-  <div class="_container discount__banner">
-    @@include('html/components/discount/discount-banner.html')
-  </div>
+    <div class="_container discount__banner">
+        @@include('html/components/discount/discount-banner.html')
+    </div>
 
-  <div><br><br></div>
+    <div><br><br></div>
 
-  <div class="_container discount__data">
-    @@include('html/components/discount/discount-data.html')
-  </div>
+    <div class="_container discount__data">
+        @@include('html/components/discount/discount-data.html')
+    </div>
 
-  <div><br><br></div>
+    <div><br><br></div>
 
-  <div class="_container discount__goods">
-    @@include('html/components/discount/discount-goods.html')
-  </div>
+    <div class="_container discount__goods">
+        @@include('html/components/discount/discount-goods.html')
+    </div>
 
-  <div><br><br></div>
+    <div><br><br></div>
 
-  <div class="_container discount__tags">
-      @@include('html/components/discount/discount-tags.html')
-  </div>
+    <div class="_container discount__tags">
+        @@include('html/components/discount/discount-tags.html')
+    </div>
 
-  <div><br><br></div>
+    <div><br><br></div>
 
-  <div class="_container discount__description">
-      @@include('html/components/discount/discount-description.html')
-  </div>
+    <div class="_container discount__description">
+        @@include('html/components/discount/discount-description.html')
+    </div>
 
-  <div><br><br></div>
+    <div><br><br></div>
 
-  <div class="_container">преимущества</div>
+    <div class="_container discount__advantages">
+        @@include('html/components/discount/discount-advantages.html')
+    </div>
 
-  <div><br><br></div>
+    <div><br><br></div>
 
-  <div class="_container">CTA</div>
+    <div class="_container discount__cta">
+        @@include('html/components/discount/discount-cta.html')
+    </div>
 
-  <div><br><br></div>
+    <div><br><br></div>
 
-  <div class="_container">Другие акции</div>
+    <div class="_container discount__goods">
+        @@include('html/components/discount/discount-goods.html')
+    </div>
+
+    <div class="_container discount__other">
+        @@include('html/components/discount/discount-other.html')
+    </div>
 
 </main>
 @@include('html/footer.html')
