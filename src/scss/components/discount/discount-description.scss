@@ -1,0 +1,22 @@
+@import "../../config";
+
+.discount-description {
+  text-align: center;
+
+  h3 {
+    font: 500 16px/20px $fontDefault;
+    margin-block: 20px;
+    @include tablet {
+      font: 500 24px/32px $fontDefault;
+      margin-block: 28px;
+    }
+  }
+
+  p {
+    font: 400 14px/20px $fontDefault;
+    @include tablet {
+      font: 400 16px/24px $fontDefault;
+    }
+  }
+
+}

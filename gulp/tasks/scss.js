@@ -29,7 +29,7 @@ const scss = (isBuild) => {
   };
 
   return gulp.src(filePaths.src.scss)
-    .pipe(logger.handleError('SCSS'))
+    // .pipe(logger.handleError('SCSS'))
 
     .pipe(plugins.if(!isBuild, sourcemaps.init()))
     .pipe(sass({
