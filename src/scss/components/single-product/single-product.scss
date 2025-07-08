@@ -483,8 +483,8 @@
     display: flex;
     gap: 8px;
     padding-bottom: 20px;
-    flex-wrap: wrap;
-    overflow: hidden;
+
+
 
     @media screen and (min-width: $w992) {
       padding-bottom: 30px;
@@ -1579,6 +1579,11 @@
   visibility: hidden;
   transition: 0.3s ease;
   z-index: 10;
+  right: 0;
+
+  @media screen and (min-width: $w992) {
+    right: auto;
+  }
 
   & ul {
     padding: 8px 0;
