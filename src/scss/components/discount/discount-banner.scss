@@ -1,0 +1,110 @@
+@import "../../config";
+
+.discount-banner {
+  aspect-ratio: 323 / 200;
+  background-size: contain;
+  background-position: right;
+  position: relative;
+  @include tablet {
+    aspect-ratio: 16 / 5;
+  }
+
+  &__text {
+    width: 78%;
+    height: 100%;
+    padding: 16px 12px;
+    background-image: linear-gradient(110deg, var(--crimson) 65%, transparent 65%);
+    @include tablet {
+      width: 86%;
+      background-image: linear-gradient(110deg, var(--crimson) 65%, #7BA81C 65.2%, #7BA81C 65.5%, transparent 65.6%);
+      padding: 17px 28px;
+    }
+    @include desktop {
+      padding: 30px 50px;
+    }
+
+    &-main {
+      font: normal 700 12px/16px $fontDefault;
+      text-transform: uppercase;
+      color: var(--white);
+      @include tablet {
+        font: 700 13px/17px $fontDefault;
+      }
+      @include desktop {
+        font: 700 24px/32px $fontDefault;
+      }
+
+      strong {
+        background: var(--white);
+        color: var(--crimson);
+        padding-inline: 4px;
+        border-radius: 4px;
+      }
+    }
+
+    &-title {
+      background-image: linear-gradient(90deg, #7BA81C 0%, #6C9318 233.81%);
+      padding: 4px 8px;
+      border-radius: 8px;
+      font: 700 14px/16px $fontDefault;
+      color: var(--white);
+      width: 65%;
+      margin-top: 20px;
+      @include tablet {
+        padding: 10px;
+        font: 700 18px/1 $fontDefault;
+        margin-top: 22px;
+      }
+      @include desktop {
+        padding: 14px 20px;
+        font: 700 32px/40px $fontDefault;
+        margin-top: 38px;
+      }
+
+      strong {
+        color: var(--black-base);
+        background: var(--white);
+        padding-inline: 4px;
+        border-radius: 4px;
+      }
+    }
+
+    &-subtitle {
+      font: 400 8px/12px $fontDefault;
+      color: var(--white);
+      position: absolute;
+      bottom: 12px;
+      left: 16px;
+      @include tablet {
+        font: 400 9px/13px $fontDefault;
+        bottom: 17px;
+        left: 28px;
+      }
+      @include desktop {
+        font: 500 16px/24px $fontDefault;
+        bottom: 30px;
+        left: 50px;
+      }
+    }
+  }
+
+  &__good {
+    display: block;
+    position: absolute;
+    width: 140px;
+    left: 44%;
+    top: 25%;
+    @include tablet {
+      width: 169px;
+      left: 47%;
+      top: 16%;
+    }
+    @include desktop {
+      width: 307px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}

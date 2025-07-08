@@ -35,7 +35,7 @@ const scss = (isBuild) => {
     .pipe(sass({
       outputStyle: 'expanded'
     }, null))
-    .pipe(plugins.replace(/@img\//g, '../images/'))
+    // .pipe(plugins.replace(/@img\//g, '../images/'))
     .pipe(plugins.if(isBuild, webpCss(webpConfig)))
     .pipe(plugins.if(isBuild, postcss([
       autoprefixer(),
