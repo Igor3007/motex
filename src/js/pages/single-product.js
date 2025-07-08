@@ -201,7 +201,7 @@ if (document.querySelector('[data-slider="preview-product-main"]')) {
         img.forEach(slide => {
 
             if (slide.querySelector('.video-slide')) {
-                //arrImage.push(slide.querySelector('video').getAttribute('src'))
+                arrImage.push(slide.querySelector('video').getAttribute('src'))
             } else {
                 arrImage.push(slide.querySelector('img').getAttribute('src'))
             }
@@ -211,7 +211,7 @@ if (document.querySelector('[data-slider="preview-product-main"]')) {
 
         const instance = new FsLightbox();
         instance.props.dots = true;
-        instance.props.type = "image";
+        //instance.props.type = "image";
         instance.props.sources = arrImage;
         instance.open(index)
 
