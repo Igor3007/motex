@@ -12,6 +12,7 @@
 
   &__title {
     font: 500 14px/20px $fontDefault;
+    margin-block: 9px 3px;
   }
 
   &__term {
@@ -21,6 +22,10 @@
 }
 
 .discount-other {
+  h3 {
+    font: 700 16px/20px $fontDefault;
+    margin-bottom: 12px;
+  }
   .splide__track {
     overflow: visible;
   }
