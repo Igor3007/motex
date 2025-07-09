@@ -1,4 +1,4 @@
-import {pluralForm} from "../helpers/plural-form.js";
+import {pluralForm} from "../../helpers/plural-form.js";
 import Splide from "@splidejs/splide";
 
 const initTimer = () => {

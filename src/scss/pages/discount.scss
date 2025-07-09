@@ -15,6 +15,9 @@
 
   &__goods {
     margin-block: 40px 30px;
+    @include tablet {
+      margin-top: 58px;
+    }
   }
 
   &__tags {

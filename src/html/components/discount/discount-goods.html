@@ -1,3 +1,7 @@
-<div class="discount-goods">
-  @@include('./discount-good.html')
+<div class="discount-goods" id="discount-goods-vue">
+  <div v-if="products?.length ">
+    <div v-for="(item, index) in products" :key="index">
+      @@include('./discount-good.html')
+    </div>
+  </div>
 </div>

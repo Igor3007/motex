@@ -1,45 +1,31 @@
 <div class="discount-good">
   <div class="discount-good__image">
     <picture>
-      <img src="/images/discount/image02.webp" alt="Rockwool Лайт Баттс Скандик 37">
+      <img :src="item.image" :alt="item.title">
     </picture>
     <span class="badge">Скидка</span>
   </div>
 
   <div class="discount-good__description">
-    <div class="discount-good__title">Rockwool Лайт Баттс Скандик 37</div>
-    <div class="discount-good__parameter">
-      <div class="discount-good__measure">Размеры (мм):</div>
-      <div class="discount-good__value">800 × 600 × 100</div>
-    </div>
-    <div class="discount-good__parameter">
-      <div class="discount-good__measure">Толщина (мм):</div>
-      <div class="discount-good__value">100</div>
-    </div>
-    <div class="discount-good__parameter">
-      <div class="discount-good__measure">Плотность (кг/м³):</div>
-      <div class="discount-good__value">35</div>
-    </div>
-    <div class="discount-good__parameter">
-      <div class="discount-good__measure">Площадь (м²):</div>
-      <div class="discount-good__value">2,88</div>
-    </div>
-    <div class="discount-good__parameter">
-      <div class="discount-good__measure">Объём (м³):</div>
-      <div class="discount-good__value">0,288</div>
-    </div>
+    <div class="discount-good__title">{{item.title}}</div>
+    <template v-for="(parameter, index) in item.parameters">
+      <div class="discount-good__parameter" :key="index">
+        <div class="discount-good__measure">{{parameter.measure}}:</div>
+        <div class="discount-good__value">{{parameter.value}}</div>
+      </div>
+    </template>
   </div>
 
   <div class="discount-good__price">
-      <div class="discount-good__price-group">
+      <div class="discount-good__price-group group-1">
           <div class="discount-good__price-date">
-              <span class="badge">&minus;25%</span>
-              <span class="discount-good__price-date-end hidden-mobile">дo 15 ноября</span>
+              <span class="badge">&minus;{{item.price.discount}}%</span>
+              <span class="discount-good__price-date-end hidden-mobile">{{item.price.term}}</span>
           </div>
           <div class="discount-good__price-value">
-              <span class="new">940 ₽</span>
-              <span class="old">1 240 ₽</span>
-              <span class="unit">за 1 уп.</span>
+              <span class="new">{{item.price.new}} ₽</span>
+              <span class="old">{{item.price.old}}₽</span>
+              <span class="unit">{{item.price.unit}}</span>
           </div>
       </div>
       <div class="discount-good__price-group group-2">
@@ -49,10 +35,10 @@
           <button class="discount-good__price-btn btn-blue">
               В корзину
           </button>
-          <button class="btn-custom_i">
+          <button class="btn-custom_i visible-mobile">
               <i class="icon-m" style="mask-image: url(/images/icons/im_heart-empty.svg)"></i>
           </button>
-          <button class="btn-custom_i">
+          <button class="btn-custom_i visible-mobile">
               <i class="icon-m" style="mask-image: url(/images/icons/im_compare.svg)"></i>
           </button>
       </div>
