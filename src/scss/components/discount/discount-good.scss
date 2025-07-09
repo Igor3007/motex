@@ -4,6 +4,8 @@
   display: grid;
   grid-template-columns: 80px 1fr;
   gap: 8px;
+  padding-block: 20px;
+  background: var(--white);
 
   &__image {
     position: relative;
@@ -36,7 +38,7 @@
   &__parameter {
     font: 400 10px/1.6 $fontDefault;
     display: flex;
-    gap: .5em;
+    gap: .4em;
   }
 
   &__measure {
@@ -48,7 +50,6 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    //align-items: flex-end;
     font: 400 10px/1.6 $fontDefault;
     @include tablet {
       font: 400 14px/20px $fontDefault;
@@ -74,7 +75,7 @@
         font-weight: 500;
         color: var(--white);
         background: var(--black-base);
-        padding: 2px 4px;
+        padding: 4px 6px;
         border-radius: 4px;
       }
 
@@ -105,9 +106,17 @@
       }
     }
 
+    &-btn {
+      padding: 6px 12px;
+      border-radius: 8px;
+      font: 500 14px/20px $fontDefault;
+    }
+
     .btn-custom_i {
       .icon-m {
         background: var(--black-70);
+        width: 14px;
+        height: 14px;
       }
     }
   }

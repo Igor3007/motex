@@ -2,6 +2,14 @@
 
 .discount {
 
+  &__banner {
+    margin-block: 20px 15px;
+  }
+
+  &__goods {
+    margin-block: 40px 30px;
+  }
+
   &__description {
     max-width: 960px;
   }
