@@ -11,8 +11,7 @@
 
   &__title {
     font: 700 16px/1.5 $fontDefault;
-    margin-bottom: 8px;
-    padding-bottom: 8px;
+    margin-block: 10px;
     @include tablet {
       font: 700 24px/32px $fontDefault;
     }
