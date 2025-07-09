@@ -4,6 +4,13 @@
 
   &__banner {
     margin-block: 20px 15px;
+    @include tablet {
+      margin-bottom: 28px;
+    }
+  }
+
+  &__data {
+    margin-block: 15px;
   }
 
   &__goods {
