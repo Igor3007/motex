@@ -6,6 +6,7 @@
   overflow: auto;
   margin-inline: calc(-1 * var(--container-padding));
   padding-inline: var(--container-padding);
+  padding-bottom: 10px;
   @include tablet {
     margin: 0;
     padding: 0;
