@@ -15,6 +15,11 @@
   h4 {
     font: 500 14px/20px $fontDefault;
     margin-block: 60px 28px ;
+    @include tablet {
+      font: 400 24px/32px $fontDefault;
+      margin-top: 80px;
+      margin-bottom: 40px;
+    }
   }
 
   p {
@@ -32,6 +37,7 @@
     @include tablet {
       grid-template-columns: repeat(3, 1fr);
       gap: 40px 16px;
+      padding-bottom: 50px;
     }
     @include desktop {
       grid-template-columns: repeat(4, 1fr);
@@ -51,6 +57,7 @@
       @include tablet {
         width: 60px;
         height: 60px;
+        margin-bottom: 5px;
       }
     }
   }
@@ -60,6 +67,10 @@
     display: block;
     border-radius: 8px;
     margin-block: 40px 20px;
+    @include tablet {
+      margin-top: 60px;
+    }
+
     img {
       width: 100%;
       display: block;

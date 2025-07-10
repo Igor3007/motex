@@ -25,8 +25,8 @@
             <span class="discount-good__price-date-end hidden-mobile">{{ item.price.discount_description }}</span>
           </div>
           <div class="discount-good__price-value">
-            <span class="new">{{ item.price.new }} ₽</span>
-            <span class="old">{{ item.price.old }}₽</span>
+            <span class="new">{{ item.price.new | separate }} ₽</span>
+            <span class="old">{{ item.price.old | separate }}₽</span>
             <span class="unit">{{ item.price.unit }}</span>
           </div>
         </div>
@@ -69,8 +69,8 @@
   </div>
   <div class="discount-goods__totals" v-if="products?.length > 1">
     <div class="total-discount">{{ totalDiscount }}%</div>
-    <div class="total-price">{{ totalPrice }}&nbsp;₽</div>
-    <div class="total-old">{{ totalOld }}&nbsp;₽</div>
+    <div class="total-price">{{ totalPrice | separate }}₽</div>
+    <div class="total-old">{{ totalOld | separate }}₽</div>
   </div>
   <div class="btn-wrapper"  v-if="products?.length > 1">
     <button class="btn-blue"><i class="icon" style="background-image: url(/images/icons/ic_tocart-sm.svg)"></i>&nbsp;

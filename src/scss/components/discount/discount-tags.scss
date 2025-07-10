@@ -32,7 +32,8 @@
     @include tablet {
       background-size: 28px 28px;
       font: 400 16px/28px $fontDefault;
-      padding: 18px 18px 18px 60px;
+      padding: 15px 15px 15px 60px;
+      background-position: 19px center;
     }
 
     &.warning {

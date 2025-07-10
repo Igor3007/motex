@@ -6,7 +6,7 @@
   counter-reset: adv_number;
   @include tablet {
     grid-template-columns: 1fr 1fr;
-
+    row-gap: 26px;
   }
 
   &__title {
@@ -14,6 +14,7 @@
     margin-block: 10px;
     @include tablet {
       font: 700 24px/32px $fontDefault;
+      margin-block: 12px;
     }
   }
   &__description {
@@ -34,6 +35,7 @@
       padding-bottom: 8px;
       @include tablet {
         font: 400 16px/24px $fontDefault;
+        padding-bottom: 10px;
       }
     }
   }

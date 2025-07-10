@@ -22,6 +22,11 @@ const discountGoodsExt = Vue.extend({
       return Math.round(100 * ((1 - (this.totalPrice / this.totalOld)) || 0));
     }
   },
+  filters: {
+    separate: function (x) {
+      return parseInt(x).toLocaleString("ru");
+    }
+  },
 
   methods: {
     fetchData() {

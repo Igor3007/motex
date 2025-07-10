@@ -22,20 +22,32 @@
 
   &__tags {
     margin-block: 30px;
+    @include tablet {
+      margin-block: 40px;
+    }
   }
 
   &__description {
     max-width: 960px;
     margin-block: 50px 40px;
+    @include tablet {
+      margin-top: 80px;
+    }
   }
 
   &__advantages {
     max-width: 960px;
     margin-block: 40px;
+    @include tablet {
+      margin-top: 92px;
+    }
   }
 
   &__cta {
     margin-block: 60px 30px;
+    @include tablet {
+      margin-top: 80px;
+    }
   }
 
   &__other {
