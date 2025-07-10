@@ -12,6 +12,11 @@
     gap: 20px;
     padding-bottom: 29px;
   }
+  @include desktop {
+    grid-template-columns: 200px 1fr 200px;
+    gap: 16px;
+    padding-bottom: 19px;
+  }
 
   .multiple & {
     &:after {

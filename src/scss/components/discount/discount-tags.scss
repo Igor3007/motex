@@ -35,6 +35,9 @@
       padding: 15px 15px 15px 60px;
       background-position: 19px center;
     }
+    @include desktop {
+      text-align: center;
+    }
 
     &.warning {
       background-image: url(/images/icons/ic_warning-circle.svg);

@@ -8,6 +8,9 @@
     grid-template-columns: 1fr 1fr;
     row-gap: 26px;
   }
+  @include desktop {
+    column-gap: 40px;
+  }
 
   &__title {
     font: 700 16px/1.5 $fontDefault;

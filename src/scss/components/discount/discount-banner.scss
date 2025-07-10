@@ -40,6 +40,10 @@
         padding-inline: 4px;
         border-radius: 4px;
         margin-left: .05em;
+        @include desktop {
+          padding: 2px 8px;
+          margin-left: .15em;
+        }
       }
     }
 
@@ -67,6 +71,11 @@
         background: var(--white);
         padding-inline: 2px;
         border-radius: 4px;
+        @include desktop {
+          margin-left: .35em;
+          border-radius: 8px;
+          padding: 5px 10px;
+        }
       }
     }
 
