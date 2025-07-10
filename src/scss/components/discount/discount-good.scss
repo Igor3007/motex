@@ -127,7 +127,7 @@
     &-date {
       @include mobile {
         order: 2;
-        margin-left: 4px;
+        margin-left: 8px;
       }
       @include tablet {
         display: flex;
@@ -237,6 +237,12 @@
 
   &__combo-btn {
     position: relative;
+
+    .btn-blue {
+      font: 500 14px/20px $fontDefault;
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
 
     &.active {
       .btn-blue {

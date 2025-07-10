@@ -72,7 +72,7 @@
     <div class="total-price">{{ totalPrice }}&nbsp;₽</div>
     <div class="total-old">{{ totalOld }}&nbsp;₽</div>
   </div>
-  <div class="btn-wrapper">
+  <div class="btn-wrapper"  v-if="products?.length > 1">
     <button class="btn-blue"><i class="icon" style="background-image: url(/images/icons/ic_tocart-sm.svg)"></i>&nbsp;
       Добавить в корзину
     </button>

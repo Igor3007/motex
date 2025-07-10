@@ -17,24 +17,6 @@
         "old": "1240",
         "unit": "за 1 уп."
       }
-    },
-    {
-      "title":"Гипсокартон влагостойкий KNAUF",
-      "image": "/images/discount/image05.webp",
-      "parameters": [
-        {"measure": "Размеры (мм)", "value": "2500 × 1200"},
-        {"measure": "Толщина (мм)", "value": "9,5"},
-        {"measure": "Вид", "value": "влагостойкий"},
-        {"measure": "Площадь (м²)", "value": "2,88"},
-        {"measure": "Вес брутто (кг)", "value": "20,16"}
-      ],
-      "price": {
-        "discount": "20",
-        "discount_description": "дo 30 августа",
-        "new": "660",
-        "old": "744",
-        "unit": "за 1 лист"
-      }
     }
   ]
 }

@@ -2,10 +2,10 @@
   "products": [
     {
       "title":"Rockwool Лайт Баттс Скандик 37",
-      "image": "/images/discount/image05.webp",
+      "image": "/images/discount/image02.webp",
       "parameters": [
         {"measure": "Размеры (мм)", "value": "800 × 600 × 100"},
-        {"measure": "Толщина (мм)", "value": "200"},
+        {"measure": "Толщина (мм)", "value": "100"},
         {"measure": "Плотность (кг/м³)", "value": "35"},
         {"measure": "Площадь (м²)", "value": "2,88"},
         {"measure": "Объём (м³)", "value": "0,288"}
@@ -20,7 +20,7 @@
     },
     {
       "title":"Гипсокартон влагостойкий KNAUF",
-      "image": "/images/discount/image02.webp",
+      "image": "/images/discount/image05.webp",
       "parameters": [
         {"measure": "Размеры (мм)", "value": "2500 × 1200"},
         {"measure": "Толщина (мм)", "value": "9,5"},
