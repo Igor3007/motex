@@ -6,9 +6,43 @@
   gap: 8px;
   padding-block: 20px;
   background: var(--white);
+  position: relative;
   @include tablet {
     grid-template-columns: 140px 1fr 200px;
     gap: 20px;
+  }
+
+  .multiple & {
+    &:after {
+      content: "";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 50%);
+      z-index: 2;
+      pointer-events: none;
+      background-image: url(/images/icons/ic_plus.svg);
+      background-color: var(--black-10);
+      background-size: 12px 12px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      @include tablet {
+        width: 44px;
+        height: 44px;
+        background-size: 20px 20px;
+      }
+    }
+    &:last-child {
+      &:after {
+        background-image: url(/images/icons/im_equal.svg);
+      }
+    }
   }
 
   &__image {
@@ -157,6 +191,30 @@
       }
     }
 
+    &-qty {
+      border: 1px solid var(--black-20);
+      border-radius: 8px;
+      display: flex;
+      margin-bottom: 8px;
+
+      input {
+        border: none;
+        text-align: center;
+      }
+
+      button {
+        padding-inline: 8px;
+        background: transparent;
+        &:hover {
+          background: var(--black-5);
+        }
+        .icon {
+          min-width: 12px;
+          width: 12px;
+        }
+      }
+    }
+
     &-btn {
       padding: 6px 12px;
       border-radius: 8px;
@@ -175,5 +233,45 @@
         height: 14px;
       }
     }
+  }
+
+  &__combo-btn {
+    position: relative;
+
+    &.active {
+      .btn-blue {
+        opacity: 0;
+        z-index: -1;
+      }
+      .price-qty {
+        z-index: 2;
+      }
+    }
+
+    .price-qty {
+      border: 1px solid var(--black-20);
+      border-radius: 8px;
+      display: flex;
+      position: absolute;
+      inset:0;
+      z-index: -1;
+
+      input {
+        border: none;
+        text-align: center;
+        height: 30px;
+      }
+
+      button {
+        padding-inline: 4px;
+        background: transparent;
+        .icon {
+          min-width: 8px;
+          width: 8px;
+        }
+      }
+
+    }
+
   }
 }
