@@ -28,5 +28,29 @@
   }
   .splide__track {
     overflow: visible;
+    @include desktop {
+      overflow: hidden;
+    }
+  }
+
+  .splide {
+    &__arrow {
+      width: 48px;
+      height: 48px;
+      background: var(--white);
+      border: 1px solid var(--black-20);
+      top: 50%;
+
+      &:disabled {
+        display: none;
+      }
+
+      &--prev {
+        left: -24px;
+      }
+      &--next {
+        right: -24px;
+      }
+    }
   }
 }

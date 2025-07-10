@@ -63,7 +63,17 @@ const initSlider = () => {
         pagination: false,
         drag: true,
         mediaQuery: 'min',
-        breakpoints: {}
+        rewind: true,
+        trimSpace: "move",
+        breakpoints: {
+          767: {
+            fixedWidth: '416x',
+            gap: 16,
+          },
+          1023: {
+            arrows: true,
+          }
+        }
       });
       slider.mount();
     });

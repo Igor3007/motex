@@ -1,10 +1,10 @@
 import Vue from "vue/dist/vue.esm.js";
 
-const discountGoods = new Vue({
-  el: "#discount-goods-vue",
-  data: {
+const discountGoodsExt = Vue.extend({
+  data: () => ({
     json: {}
-  },
+  }),
+  props: ['dataUrl'],
   created: function () {
     this.fetchData();
   },
@@ -19,13 +19,13 @@ const discountGoods = new Vue({
       return this.products.reduce((total, product) => (total + product.price.old * product.qty), 0);
     },
     totalDiscount: function () {
-      return Math.round(100 * ((1 - (this.totalPrice / this.totalOld))||0));
+      return Math.round(100 * ((1 - (this.totalPrice / this.totalOld)) || 0));
     }
   },
 
   methods: {
     fetchData() {
-      fetch('/static/discount.json')
+      fetch(this.dataUrl)
         .then(res => res.json())
         .then(data => {
           this.json = {
@@ -51,8 +51,12 @@ const discountGoods = new Vue({
     },
     changeQty(index, event) {
       let x = +event.target.value.replace(/\D/g, '');
-      if (x > 999) { x = 999}
-      if (x < 0) { x = 0 }
+      if (x > 999) {
+        x = 999
+      }
+      if (x < 0) {
+        x = 0
+      }
       event.target.value = x;
       this.json.products[index].qty = x;
     },
@@ -63,5 +67,5 @@ const discountGoods = new Vue({
     }
   }
 });
-
-export {discountGoods};
+new discountGoodsExt({propsData: {dataUrl: '/static/discount.json'}}).$mount('#discount-goods-1');
+new discountGoodsExt({propsData: {dataUrl: '/static/discount-2.json'}}).$mount('#discount-goods-2');
