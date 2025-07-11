@@ -6,5 +6,5 @@
 export const redirectTo = (url, timeout = 0) => {
   setTimeout(() => {
     window.location.href = url;
-  }, 500);
+  }, timeout);
 }
