@@ -1,0 +1,75 @@
+@import "../config";
+
+.discount {
+
+  &__banner {
+    margin-block: 20px 15px;
+    @include tablet {
+      margin-bottom: 28px;
+    }
+    @include desktop {
+      margin-top: 40px;
+    }
+  }
+
+  &__data {
+    margin-block: 15px;
+  }
+
+  &__goods {
+    margin-block: 40px 30px;
+    @include tablet {
+      margin-top: 58px;
+    }
+    @include desktop {
+      margin-top: 78px;
+    }
+  }
+
+  &__tags {
+    margin-block: 30px;
+    @include tablet {
+      margin-block: 40px;
+    }
+  }
+
+  &__description {
+    max-width: 960px;
+    margin-block: 50px 40px;
+    @include tablet {
+      margin-top: 80px;
+    }
+    @include desktop {
+      margin-block: 120px 40px;
+      max-width: 928px;
+    }
+  }
+
+  &__advantages {
+    max-width: 960px;
+    margin-block: 40px;
+    @include tablet {
+      margin-top: 92px;
+    }
+    @include desktop {
+      max-width: 928px;
+      margin-top: 58px;
+    }
+  }
+
+  &__cta {
+    margin-block: 60px 30px;
+    @include tablet {
+      margin-top: 80px;
+    }
+    @include desktop {
+      margin-top: 120px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__other {
+    margin-block: 80px;
+  }
+
+}

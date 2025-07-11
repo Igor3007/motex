@@ -1,0 +1,80 @@
+<div class="discount-goods" id="@@id">
+  <div class="discount-goods__wrapper" :class="{ multiple: products?.length > 1}">
+    <div class="discount-good" v-for="(item, index) in products" :key="index">
+      <div class="discount-good__image">
+        <picture>
+          <img :src="item.image" :alt="item.title">
+        </picture>
+        <span class="badge">Скидка</span>
+      </div>
+
+      <div class="discount-good__description">
+        <div class="discount-good__title">{{ item.title }}</div>
+        <template v-for="(parameter, index) in item.parameters">
+          <div class="discount-good__parameter" :key="index">
+            <div class="discount-good__measure">{{ parameter.measure }}:</div>
+            <div class="discount-good__value">{{ parameter.value }}</div>
+          </div>
+        </template>
+      </div>
+
+      <div class="discount-good__price">
+        <div class="discount-good__price-group group-1">
+          <div class="discount-good__price-date">
+            <span class="badge">&minus;{{ item.price.discount }}%</span>
+            <span class="discount-good__price-date-end hidden-mobile">{{ item.price.discount_description }}</span>
+          </div>
+          <div class="discount-good__price-value">
+            <span class="new">{{ item.price.new | currency }} ₽</span>
+            <span class="old">{{ item.price.old | currency }}₽</span>
+            <span class="unit">{{ item.price.unit }}</span>
+          </div>
+        </div>
+        <div class="discount-good__price-group group-2">
+          <div class="discount-good__price-qty hidden-mobile">
+            <button @click="decreaseQty(index)" class="btn-qty"><i class="icon"
+                                                                   style="background-image: url(/images/icons/ic_minus_000.svg)"></i>
+            </button>
+            <input type="text" :value="item.qty" @input="inputQty(index, $event)">
+            <button @click="increaseQty(index)" class="btn-qty"><i class="icon"
+                                                                   style="background-image: url(/images/icons/ic_plus.svg)"></i>
+            </button>
+          </div>
+          <button class="discount-good__price-btn btn-blue hidden-mobile" @click="sendSingleItem(index)">
+            В корзину
+          </button>
+
+          <div class="discount-good__combo-btn visible-mobile">
+            <div class="price-qty">
+              <button @click="decreaseQty(index)" class="btn-qty"><i class="icon"
+                                                                     style="background-image: url(/images/icons/ic_minus_000.svg)"></i>
+              </button>
+              <input type="text" :value="item.qty" @input="inputQty(index, $event)" @change="changeQty(index, $event)">
+              <button @click="increaseQty(index)" class="btn-qty"><i class="icon"
+                                                                     style="background-image: url(/images/icons/ic_plus.svg)"></i>
+              </button>
+            </div>
+            <button class="btn-blue" @click="buttonOff">В корзину</button>
+          </div>
+
+          <button class="btn-custom_i visible-mobile">
+            <i class="icon-m" style="mask-image: url(/images/icons/im_heart-empty.svg)"></i>
+          </button>
+          <button class="btn-custom_i visible-mobile">
+            <i class="icon-m" style="mask-image: url(/images/icons/im_compare.svg)"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="discount-goods__totals" v-if="products?.length > 1">
+    <div class="total-discount">{{ totalDiscount }}%</div>
+    <div class="total-price">{{ totalPrice | currency }}₽</div>
+    <div class="total-old">{{ totalOld | currency }}₽</div>
+  </div>
+  <div class="btn-wrapper"  v-if="products?.length > 1">
+    <button class="btn-blue" @click="sendCollection"><i class="icon" style="background-image: url(/images/icons/ic_tocart-sm.svg)"></i>&nbsp;
+      Добавить в корзину
+    </button>
+  </div>
+</div>

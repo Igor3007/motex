@@ -17,7 +17,7 @@
     <div class="switch">
       <div class="switch__state off"><h1><a href="/pages/blog.html">Статьи</a></h1></div>
       <label class="switch__wrapper">
-        <input type="checkbox" checked data-redirect="pages/blog.html">
+        <input type="checkbox" checked data-redirect="/pages/news.html" data-redirect-off="/pages/blog.html" />
         <div class="switch__slider"></div>
       </label>
       <div class="switch__state on"><h1>Новости</h1></div>
@@ -139,6 +139,6 @@
 </main>
 @@include('html/footer.html')
 @@include('html/components/action-panel.html')
- 
+
 </body>
 </html>

@@ -1,10 +1,10 @@
 import './pages/main';
+import './helpers/elements.js';
 import './pages/about-page.js';
 import './pages/article.js';
-import './pages/blog.js';
 import './pages/favorites.js';
-import './pages/news.js';
 import './pages/services.js';
 import './pages/single-product.js';
 import './pages/single-service.js';
 import './pages/404.js';
+import './pages/discount';

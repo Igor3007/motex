@@ -1,0 +1,83 @@
+@import "../../config";
+
+.discount-description {
+  text-align: center;
+
+  h3 {
+    font: 500 16px/20px $fontDefault;
+    margin-block: 50px 20px;
+    @include tablet {
+      font: 500 24px/32px $fontDefault;
+      margin-block: 28px;
+    }
+  }
+
+  h4 {
+    font: 500 14px/20px $fontDefault;
+    margin-block: 60px 28px ;
+    @include tablet {
+      font: 400 24px/32px $fontDefault;
+      margin-top: 80px;
+      margin-bottom: 40px;
+    }
+    @include desktop {
+      margin-bottom: 28px;
+    }
+  }
+
+  p {
+    font: 400 14px/20px $fontDefault;
+    @include tablet {
+      font: 400 16px/24px $fontDefault;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 12px;
+    padding-bottom: 10px;
+    @include tablet {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px 16px;
+      padding-bottom: 50px;
+    }
+    @include desktop {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px 16px;
+    }
+  }
+
+  &__item {
+    font: 400 12px/16px $fontDefault;
+    @include tablet {
+     font: 400 16px/1.5 $fontDefault;
+    }
+    img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 8px;
+      @include tablet {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  picture {
+    overflow: hidden;
+    display: block;
+    border-radius: 8px;
+    margin-block: 40px 20px;
+    @include tablet {
+      margin-top: 60px;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+}

@@ -171,7 +171,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(containerSelector);
 
     if (!container) {
-      console.error(`Container not found`);
       return;
     }
 
