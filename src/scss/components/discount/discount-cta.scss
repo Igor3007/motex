@@ -28,5 +28,14 @@
     background: var(--red);
     padding: 12px 16px;
     border-radius: 12px;
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__timer {
+    &:empty {
+      display: none;
+    }
   }
 }

@@ -2,6 +2,7 @@ import {pluralForm} from "../../helpers/plural-form.js";
 import Splide from "@splidejs/splide";
 
 const initTimer = () => {
+  const endTitle = "Акция завершилась";
   const timeEl = document.getElementById("cta-time");
   const slots = {
     days: document.querySelector("#cta-days"),
@@ -28,8 +29,8 @@ const initTimer = () => {
 
   const placeDHMS = (DHMS) => {
     const {days, hours, minutes, seconds} = DHMS;
-    slots.days.innerHTML = `${days.toString()} ${pluralForm(days,['день', 'дня', 'дней'])}`;
-    slots.timer.innerHTML = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    slots.days.innerHTML = (days >= 0) ? `${days.toString()} ${pluralForm(days,['день', 'дня', 'дней'])}` : endTitle;
+    slots.timer.innerHTML = (days >= 0) ? `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}` : null;
   }
 
   const now = Date.now();
