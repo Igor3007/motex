@@ -1,0 +1,56 @@
+@import "../../config";
+
+.discount-slide {
+  picture {
+    display: block;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font: 500 14px/20px $fontDefault;
+    margin-block: 9px 3px;
+  }
+
+  &__term {
+    font: 400 10px/1.6 $fontDefault;
+    color: var(--black-50);
+  }
+}
+
+.discount-other {
+  h3 {
+    font: 700 16px/20px $fontDefault;
+    margin-bottom: 12px;
+  }
+  .splide__track {
+    overflow: visible;
+    @include desktop {
+      overflow: hidden;
+    }
+  }
+
+  .splide {
+    &__arrow {
+      width: 48px;
+      height: 48px;
+      background: var(--white);
+      border: 1px solid var(--black-20);
+      top: 50%;
+
+      &:disabled {
+        display: none;
+      }
+
+      &--prev {
+        left: -24px;
+      }
+      &--next {
+        right: -24px;
+      }
+    }
+  }
+}

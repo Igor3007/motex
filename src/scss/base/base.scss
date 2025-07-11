@@ -81,6 +81,12 @@ main {
   }
 }
 
+.visible-mobile {
+  @include tablet {
+    display: none !important;
+  }
+}
+
 .visible-desktop {
   @media screen and (max-width: $w1024) {
     display: none !important;

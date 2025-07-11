@@ -8,3 +8,4 @@ import './pages/services.js';
 import './pages/single-product.js';
 import './pages/single-service.js';
 import './pages/404.js';
+import './pages/discount';

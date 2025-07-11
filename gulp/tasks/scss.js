@@ -29,13 +29,13 @@ const scss = (isBuild) => {
   };
 
   return gulp.src(filePaths.src.scss)
-    .pipe(logger.handleError('SCSS'))
+    // .pipe(logger.handleError('SCSS'))
 
     .pipe(plugins.if(!isBuild, sourcemaps.init()))
     .pipe(sass({
       outputStyle: 'expanded'
     }, null))
-    .pipe(plugins.replace(/@img\//g, '../images/'))
+    // .pipe(plugins.replace(/@img\//g, '../images/'))
     .pipe(plugins.if(isBuild, webpCss(webpConfig)))
     .pipe(plugins.if(isBuild, postcss([
       autoprefixer(),

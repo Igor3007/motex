@@ -1,0 +1,45 @@
+@import "../../config";
+
+.discount-advantages {
+  display: grid;
+  gap: 28px 16px;
+  counter-reset: adv_number;
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 26px;
+  }
+  @include desktop {
+    column-gap: 40px;
+  }
+
+  &__title {
+    font: 700 16px/1.5 $fontDefault;
+    margin-block: 10px;
+    @include tablet {
+      font: 700 24px/32px $fontDefault;
+      margin-block: 12px;
+    }
+  }
+  &__description {
+    font: 400 12px/16px $fontDefault;
+    @include tablet {
+      font: 400 16px/24px $fontDefault;
+    }
+  }
+
+  &>li {
+    &:before {
+      counter-increment: adv_number;
+      content: counter(adv_number, decimal-leading-zero);
+      display: block;
+      color: var(--black-50);
+      border-bottom: 1px solid var(--black-10);
+      font: 400 12px/16px $fontDefault;
+      padding-bottom: 8px;
+      @include tablet {
+        font: 400 16px/24px $fontDefault;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
