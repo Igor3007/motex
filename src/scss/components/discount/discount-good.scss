@@ -81,6 +81,10 @@
         font: 500 14px/20px $fontDefault;
         padding: 2px 8px;
       }
+
+      &.badge-set {
+        background: var(--accent);
+      }
     }
   }
 

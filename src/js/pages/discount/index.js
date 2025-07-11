@@ -1,2 +1,3 @@
 import './discount-common.js';
-import "./discount-goods.js";
+import "./discount-item.js";
+import "./discount-set.js";

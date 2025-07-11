@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  @@include('html/head.html', {
+  'title': 'Акция'
+  })
+  <link rel="stylesheet" href="/css/discount.min.css">
+</head>
+<body>
+@@include('html/header.html')
+<main class="page discount-page">
+  @@include('html/components/breadcrumbs.html',{
+  "links":[
+  {"href": "/pages/discount.html", "title" : "Акция"},
+  {"href": "#", "title" : "Rockwool Лайт Баттс Скандик 100мм"}
+  ]})
+
+  <section class="_container discount__banner">
+    @@include('html/components/discount/discount-banner.html')
+  </section>
+
+  <section class="_container discount__data">
+    @@include('html/components/discount/discount-data.html')
+  </section>
+
+  <section class="_container discount__goods">
+    @@include('html/components/discount/discount-set.html', {"id": "discount-set-1"})
+  </section>
+
+  <section class="_container discount__tags">
+    @@include('html/components/discount/discount-tags.html')
+  </section>
+
+  <section class="_container discount__description">
+    @@include('html/components/discount/discount-description.html')
+  </section>
+
+  <section class="_container discount__advantages">
+    @@include('html/components/discount/discount-advantages.html')
+  </section>
+
+  <section class="_container discount__cta">
+    @@include('html/components/discount/discount-cta.html')
+  </section>
+
+  <section class="_container discount__goods">
+    @@include('html/components/discount/discount-set.html', {"id": "discount-set-2"})
+  </section>
+
+  <section class="_container discount__other">
+    @@include('html/components/discount/discount-other.html')
+  </section>
+
+</main>
+@@include('html/footer.html')
+@@include('html/components/action-panel.html')
+</body>
+</html>
