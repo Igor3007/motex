@@ -1629,7 +1629,7 @@
   }
 
   &__note {
-    text-align: center;
+
     line-height: 142%;
     font-size: 14px;
     color: var(--black-50);
@@ -1640,6 +1640,8 @@
       }
     }
   }
+
+
 
   & .form {
     &__rules {

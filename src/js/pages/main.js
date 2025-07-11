@@ -11,6 +11,7 @@ import { afLightbox } from "../components/af-lightbox";
 import { afSelect } from "../components/af-select.min";
 import { Status } from "../components/status";
 import { loadYmapsApi } from "../components/load-ymaps-api"
+import { ZBRangeSlider } from "../components/range-slider";
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -797,8 +798,38 @@ document.addEventListener("DOMContentLoaded", () => {
   Popup ajax
   =========================================*/
 
+  function selectOffersHelper(popup_html) {
+
+    if (!document.querySelector('.pp-product-offers')) {
+      return false
+    }
+
+    let selected, links;
+    links = popup_html.querySelectorAll('.pp-product-offers__ul a');
+
+    links.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+
+        links.forEach(a => {
+          a.parentNode.classList.toggle('is-active', false)
+        })
+        item.parentNode.classList.add('is-active')
+        selected = item.getAttribute('href')
+      })
+    })
+
+    popup_html
+      .querySelector('.btn.btn-blue')
+      .addEventListener('click', e => {
+        window.location.href = selected
+      })
+
+  }
+
   document.querySelectorAll('[data-modal]').forEach(item => {
     item.addEventListener('click', (e) => {
+
       let popup = new afLightbox({
         mobileInBottom: true,
       })
@@ -813,6 +844,7 @@ document.addEventListener("DOMContentLoaded", () => {
           .then((html) => {
             popup.changeContent(html)
             new MaskInput("[data-maska]")
+            selectOffersHelper(popup.modal)
           })
           .catch((e) => {
             window.STATUS.err(e)

@@ -1,5 +1,5 @@
 // THIS IS THE RANGE SLIDER LOGIC DO NOT CHANGE !!
-var ZBRangeSlider = function (id) {
+export function ZBRangeSlider(id) {
     var self = this;
     var startX = 0,
         x = 0;
