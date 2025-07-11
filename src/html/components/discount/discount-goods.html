@@ -25,8 +25,8 @@
             <span class="discount-good__price-date-end hidden-mobile">{{ item.price.discount_description }}</span>
           </div>
           <div class="discount-good__price-value">
-            <span class="new">{{ item.price.new | separate }} ₽</span>
-            <span class="old">{{ item.price.old | separate }}₽</span>
+            <span class="new">{{ item.price.new | currency }} ₽</span>
+            <span class="old">{{ item.price.old | currency }}₽</span>
             <span class="unit">{{ item.price.unit }}</span>
           </div>
         </div>
@@ -35,12 +35,12 @@
             <button @click="decreaseQty(index)" class="btn-qty"><i class="icon"
                                                                    style="background-image: url(/images/icons/ic_minus_000.svg)"></i>
             </button>
-            <input type="text" :value="item.qty" @input="changeQty(index, $event)">
+            <input type="text" :value="item.qty" @input="inputQty(index, $event)">
             <button @click="increaseQty(index)" class="btn-qty"><i class="icon"
                                                                    style="background-image: url(/images/icons/ic_plus.svg)"></i>
             </button>
           </div>
-          <button class="discount-good__price-btn btn-blue hidden-mobile">
+          <button class="discount-good__price-btn btn-blue hidden-mobile" @click="sendSingleItem(index)">
             В корзину
           </button>
 
@@ -49,7 +49,7 @@
               <button @click="decreaseQty(index)" class="btn-qty"><i class="icon"
                                                                      style="background-image: url(/images/icons/ic_minus_000.svg)"></i>
               </button>
-              <input type="text" :value="item.qty" @input="changeQty(index, $event)">
+              <input type="text" :value="item.qty" @input="inputQty(index, $event)" @change="changeQty(index, $event)">
               <button @click="increaseQty(index)" class="btn-qty"><i class="icon"
                                                                      style="background-image: url(/images/icons/ic_plus.svg)"></i>
               </button>
@@ -69,11 +69,11 @@
   </div>
   <div class="discount-goods__totals" v-if="products?.length > 1">
     <div class="total-discount">{{ totalDiscount }}%</div>
-    <div class="total-price">{{ totalPrice | separate }}₽</div>
-    <div class="total-old">{{ totalOld | separate }}₽</div>
+    <div class="total-price">{{ totalPrice | currency }}₽</div>
+    <div class="total-old">{{ totalOld | currency }}₽</div>
   </div>
   <div class="btn-wrapper"  v-if="products?.length > 1">
-    <button class="btn-blue"><i class="icon" style="background-image: url(/images/icons/ic_tocart-sm.svg)"></i>&nbsp;
+    <button class="btn-blue" @click="sendCollection"><i class="icon" style="background-image: url(/images/icons/ic_tocart-sm.svg)"></i>&nbsp;
       Добавить в корзину
     </button>
   </div>

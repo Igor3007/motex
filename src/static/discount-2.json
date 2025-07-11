@@ -1,6 +1,7 @@
 {
   "products": [
     {
+      "id": 1,
       "title":"Rockwool Лайт Баттс Скандик 37",
       "image": "/images/discount/image02.webp",
       "parameters": [
@@ -19,6 +20,7 @@
       }
     },
     {
+      "id": 2,
       "title":"Гипсокартон влагостойкий KNAUF",
       "image": "/images/discount/image05.webp",
       "parameters": [

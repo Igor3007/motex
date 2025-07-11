@@ -1,6 +1,7 @@
 {
   "products": [
     {
+      "id": 1,
       "title":"Rockwool Лайт Баттс Скандик 37",
       "image": "/images/discount/image02.webp",
       "parameters": [
