@@ -120,5 +120,12 @@ const discountGoodsExt = Vue.extend({
     }
   }
 });
-new discountGoodsExt({propsData: {dataUrl: '/static/discount.json'}}).$mount('#discount-goods-1');
-new discountGoodsExt({propsData: {dataUrl: '/static/discount-2.json'}}).$mount('#discount-goods-2');
+const el1 = document.querySelector('#discount-goods-1');
+if (el1) {
+  new discountGoodsExt({propsData: {dataUrl: '/static/discount.json'}}).$mount(el1);
+}
+
+const el2 = document.querySelector('#discount-goods-2');
+if (el2) {
+  new discountGoodsExt({propsData: {dataUrl: '/static/discount-2.json'}}).$mount(el2);
+}

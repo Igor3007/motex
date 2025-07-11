@@ -1,6 +1,7 @@
 @import "../../config";
 
 .card-service-a {
+  $ancestor: &;
   cursor: pointer;
   overflow: hidden;
   border-radius: 8px;
@@ -72,7 +73,7 @@
       margin-bottom: 12px;
     }
 
-    .hoverable:hover & {
+    #{$ancestor}:hover & {
       @include desktop {
         color: var(--blue-link);
       }
