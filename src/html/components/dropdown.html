@@ -1,12 +1,11 @@
 <div class="dropdown">
-    <button class="dropdown__toggle"><span>По популярности</span>
-        <i class="icon"
-           style="background-image: url('/images/icons/ic_arrow-dd.svg')"></i>
-    </button>
-    <ul class="dropdown__menu">
-        <li class="dropdown__item">Сначала дешевле</li>
-        <li class="dropdown__item">Сначала дороже</li>
-        <li class="dropdown__item">По популярности</li>
-        <li class="dropdown__item">По размеру скидки</li>
-    </ul>
+  <button class="dropdown__toggle"><span>По популярности</span>
+    <i class="icon" style="background-image: url('/images/icons/ic_arrow-dd.svg')"></i>
+  </button>
+  <ul class="dropdown__menu">
+    <li class="dropdown__item" data-url="?sort=min">Сначала дешевле</li>
+    <li class="dropdown__item" data-url="?sort=max">Сначала дороже</li>
+    <li class="dropdown__item" data-url="?sort=hit">По популярности</li>
+    <li class="dropdown__item" data-url="?sort=sale">По размеру скидки</li>
+  </ul>
 </div>

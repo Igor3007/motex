@@ -813,7 +813,7 @@ document.addEventListener("DOMContentLoaded", () => {
           .then((response => response.text()))
           .then((html) => {
             popup.changeContent(html)
-              new MaskInput("[data-maska]")
+            new MaskInput("[data-maska]")
           })
           .catch((e) => {
             window.STATUS.err(e)
@@ -1015,6 +1015,11 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
+  /* =====================================
+  dropdown
+  =====================================*/
+
+
 
 
 
@@ -1051,13 +1056,28 @@ if (document.querySelector('.dropdown')) {
       const menu = dropdown.querySelector('.dropdown__menu');
       const items = menu.querySelectorAll('.dropdown__item');
 
+      //init
+
       function setActiveItem(selectedText) {
         items.forEach((item) => {
           item.classList.toggle('is-active', item.textContent.trim() === selectedText.trim());
         });
       }
 
-      setActiveItem(toggleText.textContent);
+      if (dropdown.querySelector('[data-url]')) {
+        items.forEach(item => {
+          if (window.location.href.indexOf(item.dataset.url) !== -1) {
+            setActiveItem(item.textContent);
+            toggleText.textContent = item.textContent
+          }
+        })
+      } else {
+        setActiveItem(toggleText.textContent);
+      }
+
+
+
+
 
       toggle.addEventListener('click', (event) => {
         event.stopPropagation();
@@ -1078,6 +1098,11 @@ if (document.querySelector('.dropdown')) {
         item.addEventListener('click', () => {
           toggleText.textContent = item.textContent;
           setActiveItem(item.textContent);
+
+          if (item.dataset.url) {
+            window.location.href = item.dataset.url
+          }
+
           dropdown.classList.remove('is-open');
         });
       });
