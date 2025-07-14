@@ -1,8 +1,10 @@
 import Vue from "vue/dist/vue.esm.js";
 import { loadYmapsApi } from "../../components/load-ymaps-api";
+import { mask } from "vue-the-mask";
 
 let vueCheckout = new Vue({
     el: '#vuecheckout',
+    directives: { mask },
     data: {
 
         products: [],
@@ -59,8 +61,8 @@ let vueCheckout = new Vue({
 
         fetchData() {
             fetch('/static/checkout.json', {
-                    method: 'GET',
-                })
+                method: 'GET',
+            })
                 .then((response) => response.json())
                 .then((data) => {
                     this.products = data.products
@@ -471,5 +473,5 @@ let vueCheckout = new Vue({
 })
 
 
-export {vueCheckout}
+export { vueCheckout }
 
