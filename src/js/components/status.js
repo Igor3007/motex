@@ -19,7 +19,6 @@ export function Status() {
     }
 
     this.msg = function (_msg, _header) {
-      _header = (_header ? _header : '')
       this.onShow('complete', _header, _msg)
       if (this.autoHide) {
         this.onHide();
@@ -41,9 +40,9 @@ export function Status() {
     }
 
     this.onShow = function (_type, _header, _msg) {
-      document.querySelector(this.headerElem).innerText = _header
-      document.querySelector(this.msgElem).innerText = _msg
-      document.querySelector(this.containerElem).classList.add(_type)
+      document.querySelector(this.headerElem).innerText = _header;
+      document.querySelector(this.msgElem).innerText = _msg;
+      document.querySelector(this.containerElem).className = _type;
     }
 
     this.onHide = function () {

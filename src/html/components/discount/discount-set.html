@@ -69,8 +69,8 @@
   </div>
   <div class="discount-goods__totals" v-if="products?.length > 1">
     <div class="total-discount">{{ totalDiscount }}%</div>
-    <div class="total-price">{{ totalPrice | currency }}₽</div>
-    <div class="total-old">{{ totalOld | currency }}₽</div>
+    <div class="total-price">{{ totalPrice | currency }} ₽</div>
+    <div class="total-old">{{ totalOld | currency }} ₽</div>
   </div>
   <div class="btn-wrapper"  v-if="products?.length > 1">
     <button class="btn-blue" @click="sendCollection"><i class="icon" style="background-image: url(/images/icons/ic_tocart-sm.svg)"></i>&nbsp;

@@ -16,9 +16,6 @@ import {
 import {
   plugins
 } from '../config/plugins.js';
-import {
-  logger
-} from "../config/logger.js";
 
 const sass = gulpSass(dartSass);
 
@@ -29,24 +26,17 @@ const scss = (isBuild) => {
   };
 
   return gulp.src(filePaths.src.scss)
-    // .pipe(logger.handleError('SCSS'))
-
     .pipe(plugins.if(!isBuild, sourcemaps.init()))
     .pipe(sass({
       outputStyle: 'expanded'
     }, null))
-    // .pipe(plugins.replace(/@img\//g, '../images/'))
     .pipe(plugins.if(isBuild, webpCss(webpConfig)))
-    .pipe(plugins.if(isBuild, postcss([
+    .pipe(postcss([
       autoprefixer(),
       postcssPresetEnv(),
       sortMediaQueries({sort:'mobile-first'})
-    ])))
-
-    /** Раскомментировать если нужен не сжатый дубль файла стилей */
-    // .pipe(gulp.dest(filePaths.build.css))
-
-    .pipe(plugins.if(isBuild, cssNano()))
+    ]))
+    .pipe(cssNano())
     .pipe(rename({
       extname: '.min.css'
     }))

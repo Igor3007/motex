@@ -22,7 +22,7 @@
       margin-top: 58px;
     }
     @include desktop {
-      margin-top: 78px;
+      margin-top: 60px;
     }
   }
 
@@ -31,9 +31,18 @@
     @include tablet {
       margin-block: 40px;
     }
+    .discount-set & {
+      margin-top: 50px;
+      @include tablet {
+        margin-top: 80px;
+      }
+      @include desktop {
+        margin-top: 120px;
+      }
+    }
   }
 
-  &__description {
+  &__description._container {
     max-width: 960px;
     margin-block: 50px 40px;
     @include tablet {
@@ -45,7 +54,7 @@
     }
   }
 
-  &__advantages {
+  &__advantages._container {
     max-width: 960px;
     margin-block: 40px;
     @include tablet {
@@ -69,7 +78,7 @@
   }
 
   &__other {
-    margin-block: 80px;
+    margin-block: 120px;
   }
 
 }

@@ -9,13 +9,18 @@
     padding-block: 1px;
   }
   &__totals {
-    margin-block: 42px 8px ;
+    margin-block: 42px 12px ;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    margin-left: 8px;
     @include tablet {
-      gap: 12px;
+      margin-top: 62px;
+      margin-left: 0;
+      margin-bottom: 20px;
+    }
+    @include desktop {
+      margin-top: 71px;
     }
 
     .total-discount {
@@ -24,11 +29,23 @@
       color: var(--white);
       padding-inline: 8px;
       border-radius: 8px;
+      @include tablet {
+        font-size: 32px;
+        line-height: 40px;
+        padding-inline: 13px;
+      }
     }
 
     .total-price {
       font: 700 24px/32px $fontDefault;
       color: var(--red);
+      margin-left: 8px;
+      margin-right: 12px;
+      @include tablet {
+        font-size: 32px;
+        line-height: 40px;
+        margin-left: 13px;
+      }
     }
 
     .total-old {
