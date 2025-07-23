@@ -64,7 +64,10 @@
     .btn-blue {
       width: 100%;
       max-width: 334px;
-      padding-block: 16px;
+      border-radius: 8px;
+      @include tablet {
+        padding-block: 16px;
+      }
     }
   }
 }

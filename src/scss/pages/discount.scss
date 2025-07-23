@@ -78,7 +78,10 @@
   }
 
   &__other {
-    margin-block: 120px;
+    margin-block: 80px 76px;
+    @include tablet {
+      margin-block: 120px;
+    }
   }
 
 }
