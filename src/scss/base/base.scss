@@ -76,7 +76,7 @@ main {
 }
 
 .hidden-mobile {
-  @media screen and (max-width: $w360) {
+  @media screen and (max-width: 575px) {
     display: none !important;
   }
 }

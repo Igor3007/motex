@@ -40,8 +40,8 @@ export function Status() {
     }
 
     this.onShow = function (_type, _header, _msg) {
-      document.querySelector(this.headerElem).innerText = _header;
-      document.querySelector(this.msgElem).innerText = _msg;
+      document.querySelector(this.headerElem).innerText = _header || null;
+      document.querySelector(this.msgElem).innerText = _msg || null;
       document.querySelector(this.containerElem).className = _type;
     }
 

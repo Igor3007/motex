@@ -6,6 +6,9 @@
   background-position: right;
   position: relative;
   @include tablet {
+    aspect-ratio: 16 / 8;
+  }
+  @media screen and (min-width: 768px) {
     aspect-ratio: 16 / 5;
   }
 
@@ -60,7 +63,7 @@
         font: 700 18px/1 $fontDefault;
         margin-top: 22px;
       }
-      @include desktop {
+      @media screen and (min-width: 1200px) {
         padding: 14px 20px;
         font: 700 32px/40px $fontDefault;
         margin-top: 38px;

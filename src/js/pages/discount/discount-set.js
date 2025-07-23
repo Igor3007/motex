@@ -107,7 +107,7 @@ const discountGoodsExt = Vue.extend({
         }
       })
         .then(res => {
-          if (res.status === 200) {
+          if (res.status !== 200) {
             window.STATUS.msg(successMsg);
           } else {
             window.STATUS.err(res.statusText);

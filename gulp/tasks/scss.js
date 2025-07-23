@@ -33,7 +33,9 @@ const scss = (isBuild) => {
     .pipe(plugins.if(isBuild, webpCss(webpConfig)))
     .pipe(postcss([
       autoprefixer(),
-      postcssPresetEnv(),
+      postcssPresetEnv({
+        browsers: 'last 2 versions'
+      }),
       sortMediaQueries({sort:'mobile-first'})
     ]))
     .pipe(cssNano())

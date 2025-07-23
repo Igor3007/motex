@@ -68,7 +68,7 @@ const initSlider = () => {
         trimSpace: "move",
         breakpoints: {
           767: {
-            fixedWidth: '416x',
+            fixedWidth: '416px',
             gap: 16,
           },
           1023: {
@@ -77,6 +77,10 @@ const initSlider = () => {
         }
       });
       slider.mount();
+
+      window.onresize = () => {
+        slider.refresh();
+      }
     });
 };
 
