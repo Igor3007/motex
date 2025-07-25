@@ -79,6 +79,7 @@
 
   &__other {
     margin-block: 80px 76px;
+    overflow: hidden;
     @include tablet {
       margin-block: 120px;
     }
