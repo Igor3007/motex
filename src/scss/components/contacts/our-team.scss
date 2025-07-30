@@ -1,416 +1,428 @@
 @import "../../config";
 
 .section-mx-our-team {
-    margin: 64px 0;
+  margin: 64px 0;
 
-    @media screen and (min-width: $w760) {
-        margin: 85px 0;
-    }
+  @media screen and (min-width: $w760) {
+    margin: 85px 0;
+  }
 
-    @media screen and (min-width: $w992) {
-        margin: 85px 0 45px;
-    }
+  @media screen and (min-width: $w992) {
+    margin: 85px 0 45px;
+  }
 }
 
 .mx-our-team {
-    &__title {
-        font-size: 20px;
-        font-weight: 700;
-        padding-bottom: 24px;
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: 24px;
 
-        @media screen and (min-width: $w760) {
-            font-size: 28px;
-            padding-bottom: 34px;
-        }
+    @media screen and (min-width: $w760) {
+      font-size: 28px;
+      padding-bottom: 34px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -16px -6px;
+
+    @media screen and (min-width: $w992) {
+      margin: -16px -8px;
     }
 
-    &__list {
-        display: flex;
-        flex-wrap: wrap;
-        margin: -16px -6px;
 
-        @media screen and (min-width: $w992) {
-            margin: -16px -8px;
-        }
+  }
 
+  &__item {
+    padding: 16px 6px;
+    width: 50%;
 
+    @media screen and (min-width: $w576) {
+      width: 33.33%;
     }
 
-    &__item {
-        padding: 16px 6px;
-        width: 50%;
-
-        @media screen and (min-width: $w576) {
-            width: 33.33%;
-        }
 
 
-
-        @media screen and (min-width: $w992) {
-            width: 25%;
-            padding: 16px 8px;
-        }
+    @media screen and (min-width: $w992) {
+      width: 25%;
+      padding: 16px 8px;
     }
+  }
 }
 
 .mx-cart-member {
 
+  font-size: 12px;
+  line-height: 140%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+
+  &__wrp {
+    @media screen and (min-width: $w760) {
+      display: flex;
+    }
+  }
+
+  &__image {
+
+    position: relative;
+
+
+    & picture {
+      @include picture(100%, cover);
+      background-color: #eee;
+
+      @media screen and (min-width: $w760) {
+        padding-top: 107%;
+      }
+
+      @media screen and (min-width: $w992) {
+        padding-top: 104%;
+      }
+    }
+
+    & a {
+
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      z-index: 2;
+      transition: 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      & i {
+        width: 20px;
+        height: 20px;
+        @include bgimage-contain;
+
+        @media screen and (min-width: $w760) {
+          width: 28px;
+          height: 28px;
+        }
+
+        @media screen and (min-width: $w992) {
+          width: 38px;
+          height: 38px;
+        }
+      }
+    }
+
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+  }
+
+  &__main {
+    padding: 10px;
+    border: 1px solid var(--black-20);
+    border-radius: 0 0 8px 8px;
+    background: var(--white);
+    flex-grow: 1;
+
+    @media screen and (min-width: $w760) {
+      padding: 20px 20px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
     font-size: 12px;
     line-height: 140%;
 
-    &__wrp {
-        @media screen and (min-width: $w760) {
-            display: flex;
-        }
+    @media screen and (min-width: $w760) {
+      font-size: 16px;
+      padding-bottom: 5px;
     }
 
-    &__image {
+  }
 
-        position: relative;
+  &__post {
+    color: var(--black-50);
+    padding-bottom: 5px;
 
-
-        & picture {
-            @include picture(100%, cover);
-
-            @media screen and (min-width: $w760) {
-                padding-top: 107%;
-            }
-
-            @media screen and (min-width: $w992) {
-                padding-top: 104%;
-            }
-        }
-
-        & a {
-
-            position: absolute;
-            left: 10px;
-            top: 10px;
-            z-index: 2;
-            transition: 0.3s ease;
-            cursor: pointer;
-
-            &:hover {
-                opacity: 0.8;
-            }
-
-            & i {
-                width: 20px;
-                height: 20px;
-                @include bgimage-contain;
-
-                @media screen and (min-width: $w760) {
-                    width: 28px;
-                    height: 28px;
-                }
-
-                @media screen and (min-width: $w992) {
-                    width: 38px;
-                    height: 38px;
-                }
-            }
-        }
-
-        border-radius: 8px 8px 0 0;
-        overflow: hidden;
+    @media screen and (min-width: $w760) {
+      font-size: 14px;
+      padding-bottom: 8px;
     }
+  }
 
-    &__main {
-        padding: 10px;
-        border: 1px solid var(--black-20);
-        border-radius: 0 0 8px 8px;
-        background: var(--white);
+  &__contact {
+    & a {
+      color: var(--black-base);
 
-        @media screen and (min-width: $w760) {
-            padding: 20px 20px;
-        }
+      @media screen and (min-width: $w760) {
+        font-size: 16px;
+      }
+
+      &:hover {
+        color: var(--blue-link);
+      }
     }
-
-    &__title {
-        font-weight: 600;
-        font-size: 12px;
-
-        @media screen and (min-width: $w760) {
-            font-size: 16px;
-            padding-bottom: 5px;
-        }
-
-    }
-
-    &__post {
-        color: var(--black-50);
-        padding-bottom: 5px;
-
-        @media screen and (min-width: $w760) {
-            font-size: 14px;
-            padding-bottom: 8px;
-        }
-    }
-
-    &__contact {
-        & a {
-            color: var(--black-base);
-
-            @media screen and (min-width: $w760) {
-                font-size: 16px;
-            }
-
-            &:hover {
-                color: var(--blue-link);
-            }
-        }
-    }
+  }
 }
 
 
 .member-details {
 
-    color: var(--black-base);
+  color: var(--black-base);
 
-    max-width: 400px;
+  max-width: 400px;
 
+  @media screen and (min-width: $w760) {
+    max-width: 680px;
+  }
+
+  @media screen and (min-width: $w992) {
+    max-width: 705px;
+  }
+
+  @media screen and (min-width: $w1200) {
+    max-width: 790px;
+  }
+
+  &__wrp {
     @media screen and (min-width: $w760) {
-        max-width: 680px;
+      display: flex;
+      gap: 30px;
     }
+  }
+
+
+
+  &__image {
+    width: 62%;
+    padding-bottom: 20px;
+    max-width: 196px;
 
     @media screen and (min-width: $w992) {
-        max-width: 705px;
+      max-width: 280px;
+      min-width: 280px;
+    }
+
+    & picture {
+      @include picture(128%, cover);
+      background-color: #eee;
+    }
+
+    & img {
+      border-radius: 8px;
+    }
+  }
+
+  &__name {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 142%;
+    padding-bottom: 2px;
+
+    @media screen and (min-width: $w760) {
+      font-size: 32px;
+      font-weight: 500;
+      padding-right: 38px;
+      line-height: 120%;
+      padding-bottom: 20px;
+    }
+  }
+
+  &__post {
+    font-size: 12px;
+    padding-bottom: 10px;
+
+    @media screen and (min-width: $w760) {
+      font-size: 16px;
+    }
+  }
+
+  &__experience {
+    padding-bottom: 12px;
+
+    & span {
+      background-color: var(--accent);
+      color: #fff;
+      border-radius: 32px;
+      height: 20px;
+      padding: 0 10px;
+      display: inline-flex;
+      align-items: center;
+      font-size: 12px;
+
+      @media screen and (min-width: $w760) {
+        font-size: 16px;
+        height: 32px;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  &__desc {
+    font-size: 12px;
+    padding-bottom: 20px;
+    max-width: 280px;
+    line-height: 143%;
+
+    @media screen and (min-width: $w760) {
+      font-size: 16px;
+
     }
 
     @media screen and (min-width: $w1200) {
-        max-width: 790px;
+      max-width: 400px;
     }
 
-    &__wrp {
-        @media screen and (min-width: $w760) {
-            display: flex;
-            gap: 30px;
-        }
-    }
+    & p {
+      margin-top: 13px;
+      line-height: 142%;
 
-
-
-    &__image {
-        width: 62%;
-        padding-bottom: 20px;
-        max-width: 196px;
-
-        @media screen and (min-width: $w992) {
-            max-width: 280px;
-            min-width: 280px;
-        }
-
-        & picture {
-            @include picture(128%, cover);
-        }
-
-        & img {
-            border-radius: 8px;
-        }
-    }
-
-    &__name {
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 142%;
-        padding-bottom: 2px;
-
-        @media screen and (min-width: $w760) {
-            font-size: 32px;
-            font-weight: 500;
-        }
-    }
-
-    &__post {
-        font-size: 12px;
+      @media screen and (min-width: $w1200) {
+        margin-top: 20px;
         padding-bottom: 10px;
+      }
+    }
+  }
 
-        @media screen and (min-width: $w760) {
-            font-size: 16px;
-        }
+  &__contacts {
+
+    font-size: 12px;
+    padding-bottom: 16px;
+
+    @media screen and (min-width: $w760) {
+      font-size: 16px;
+
     }
 
-    &__experience {
+    @media screen and (min-width: $w1200) {
+      padding-bottom: 22px;
+    }
+
+    & i {
+      width: 12px;
+      height: 12px;
+      @include bgimage-contain;
+
+      @media screen and (min-width: $w760) {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  &__email {
+    & a {
+      text-decoration: underline;
+    }
+  }
+
+  &__email,
+  &__phone {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-bottom: 8px;
+
+    @media screen and (min-width: $w992) {
+      padding-bottom: 12px;
+      gap: 12px;
+    }
+
+    & a {
+      color: var(--black-base);
+
+      &:hover {
+        color: var(--accent);
+      }
+    }
+  }
+
+  &__phone {
+    & a {
+      color: var(--black-50);
+    }
+
+    & span {
+      background-color: var(--black-5);
+      padding: 5px 10px;
+      border-radius: 10px;
+    }
+  }
+
+  &__awards {
+
+    font-size: 12px;
+    line-height: 142%;
+    padding-bottom: 20px;
+
+    @media screen and (min-width: $w760) {
+      font-size: 16px;
+    }
+
+    & h3 {
+      font-size: 14px;
+      font-weight: 600;
+      padding-bottom: 6px;
+
+      @media screen and (min-width: $w760) {
+        font-size: 20px;
         padding-bottom: 12px;
-
-        & span {
-            background-color: var(--accent);
-            color: #fff;
-            border-radius: 32px;
-            height: 20px;
-            padding: 0 10px;
-            display: inline-flex;
-            align-items: center;
-            font-size: 12px;
-
-            @media screen and (min-width: $w760) {
-                font-size: 16px;
-                height: 32px;
-                border-radius: 8px;
-            }
-        }
+      }
     }
 
-    &__desc {
-        font-size: 12px;
-        padding-bottom: 20px;
-        max-width: 280px;
+    & ul {
+      padding-left: 6px;
+
+      & li {
+        margin-bottom: 2px;
+        padding-left: 10px;
+        position: relative;
+        font-size: 10px;
+        line-height: 150%;
 
         @media screen and (min-width: $w760) {
-            font-size: 16px;
-
+          font-size: 16px;
         }
-
-        @media screen and (min-width: $w1200) {
-            max-width: 400px;
-        }
-
-        & p {
-            margin-top: 13px;
-            line-height: 142%;
-
-            @media screen and (min-width: $w1200) {
-                margin-top: 20px;
-                padding-bottom: 10px;
-            }
-        }
-    }
-
-    &__contacts {
-
-        font-size: 12px;
-        padding-bottom: 16px;
-
-        @media screen and (min-width: $w760) {
-            font-size: 16px;
-
-        }
-
-        @media screen and (min-width: $w1200) {
-            padding-bottom: 22px;
-        }
-
-        & i {
-            width: 12px;
-            height: 12px;
-            @include bgimage-contain;
-
-            @media screen and (min-width: $w760) {
-                width: 16px;
-                height: 16px;
-            }
-        }
-    }
-
-    &__email {
-        & a {
-            text-decoration: underline;
-        }
-    }
-
-    &__email,
-    &__phone {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        padding-bottom: 8px;
 
         @media screen and (min-width: $w992) {
-            padding-bottom: 12px;
-            gap: 12px;
+          padding-top: 0px;
         }
 
-        & a {
-            color: var(--black-base);
+        &::before {
+          content: '';
+          width: 2px;
+          height: 2px;
+          border-radius: 50%;
+          background-color: var(--black-base);
+          display: inline-block;
+          left: 0;
+          top: 7px;
+          position: absolute;
 
-            &:hover {
-                color: var(--accent);
-            }
+          @media screen and (min-width: $w760) {
+            min-width: 3px;
+            width: 3px;
+            height: 3px;
+            top: 10px;
+          }
         }
+      }
+    }
+  }
+
+  &__close {
+
+    @media screen and (min-width: $w760) {
+      display: none;
     }
 
-    &__phone {
-        & a {
-            color: var(--black-50);
-        }
-
-        & span {
-            background-color: var(--black-5);
-            padding: 5px 10px;
-            border-radius: 10px;
-        }
+    & .btn {
+      width: 100%;
+      border: none;
     }
-
-    &__awards {
-
-        font-size: 12px;
-        line-height: 142%;
-        padding-bottom: 20px;
-
-        @media screen and (min-width: $w760) {
-            font-size: 16px;
-        }
-
-        & h3 {
-            font-size: 14px;
-            font-weight: 600;
-            padding-bottom: 6px;
-
-            @media screen and (min-width: $w760) {
-                font-size: 20px;
-                padding-bottom: 12px;
-            }
-        }
-
-        & ul {
-            padding-left: 6px;
-
-            & li {
-                margin-bottom: 2px;
-                padding-left: 10px;
-                position: relative;
-                font-size: 10px;
-                line-height: 150%;
-
-                @media screen and (min-width: $w760) {
-                    font-size: 16px;
-                }
-
-                @media screen and (min-width: $w992) {
-                    padding-top: 0px;
-                }
-
-                &::before {
-                    content: '';
-                    width: 2px;
-                    height: 2px;
-                    border-radius: 50%;
-                    background-color: var(--black-base);
-                    display: inline-block;
-                    left: 0;
-                    top: 7px;
-                    position: absolute;
-
-                    @media screen and (min-width: $w760) {
-                        min-width: 3px;
-                        width: 3px;
-                        height: 3px;
-                        top: 10px;
-                    }
-                }
-            }
-        }
-    }
-
-    &__close {
-
-        @media screen and (min-width: $w760) {
-            display: none;
-        }
-
-        & .btn {
-            width: 100%;
-            border: none;
-        }
-    }
+  }
 }

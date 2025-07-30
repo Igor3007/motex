@@ -47,8 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
         window.SelectRegion.vueApp.openPopup()
       }
 
-
-
     })
   })
 

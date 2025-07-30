@@ -383,3 +383,31 @@
     transform: translateY(0);
   }
 }
+
+.af-loading {
+
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 105;
+  background-color: #fff;
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    border: 3px solid var(--accent);
+    border-radius: 50%;
+    border-left-color: transparent !important;
+    transition: transform 0.5s linear;
+    animation: 0.5s linear rotation infinite;
+    display: inline-block;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    position: relative;
+  }
+}

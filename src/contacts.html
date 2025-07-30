@@ -1,262 +1,261 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        @@include('html/head.html', {
-        'title': 'Mottex - Контакты'
-        })
 
-        <link rel="stylesheet" href="/css/contacts.min.css">
-    </head>
+<head>
+  @@include('html/head.html', {
+  'title': 'Mottex - Контакты'
+  })
+
+  <link rel="stylesheet" href="/css/contacts.min.css">
+</head>
 
 <body>
-    @@include('html/header.html')
+  @@include('html/header.html')
 
-    <main class="page">
-        <div data-observ></div>
+  <main class="page">
+    <div data-observ></div>
 
-        @@include('html/components/breadcrumbs/breadcrumbs-contacts.html')
+    @@include('html/components/breadcrumbs/breadcrumbs-contacts.html')
 
-        <section class="section-mx-contacts">
-            <div class="_container">
-                <div class="mx-contacts">
-                    <div class="mx-contacts__h1">
-                        <h1>Контакты</h1>
+    <section class="section-mx-contacts">
+      <div class="_container">
+        <div class="mx-contacts">
+          <div class="mx-contacts__h1">
+            <h1>Контакты</h1>
+          </div>
+
+          <div class="mx-contacts__row mx-contacts__row--map">
+            <div class="mx-contacts__left mx-contacts__left--no-border">
+              <div class="mx-contacts__map">
+                <div id="map-container-contacts" data-coordinates="55.098485, 61.386617"></div>
+              </div>
+            </div>
+
+            <div class="mx-contacts__right">
+              <div class="mx-contacts__requisite">
+                <div class="mx-contacts__label">Наши реквизиты</div>
+                <div class="mx-contacts__text">
+                  <p>ООО «Моттекс»</p>
+                  <p><strong>Юридический адрес:</strong> 454000, Челябинская область, город
+                    Челябинск, Троицкий тракт,
+                    д. 17, помещение 2 офис 202</p>
+                  <p>ИНН 7449096910</p>
+                  <p>КПП 745101001</p>
+                  <p>ОГРН 1107449002935</p>
+                  <p><a href="#map">На карте</a></p>
+                </div>
+                <div class="mx-contacts__dl">
+                  <a href="#dl">
+                    <button class="btn-custom_i">
+                      <i style="background-image: url('/images/icons/ic_file-dl.svg')"></i>
+                      Скачать реквизиты, <span>PDF (0.226mb)</span></button></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mx-contacts__row">
+            <div class="mx-contacts__left mx-contacts__left--city">
+              <div class="mx-contacts__label">г. Челябинск, троицкий Тракт 17</div>
+              <div class="mx-contacts__wrp-select">
+                <div class="mx-contacts__select">
+                  <div class="af-select" data-region-select="open">
+                    <div class="select-styled">
+                      <span> Челябинск</span>
                     </div>
+                  </div>
+                </div>
+                <div class="mx-contacts__onmap">
+                  <i style="background-image: url('/images/icons/ic_loc.svg')"></i>
+                </div>
+              </div>
+            </div>
+            <div class="mx-contacts__right">
+              <div class="mx-contacts__we-socials">
+                <div class="mx-contacts__label">Мы в соцсетях</div>
+                <div class="mx-contacts__socials">
+                  <ul>
+                    <li><a href="#"><i style="background-image: url('/images/icons/ic_vk.svg')"></i></a>
+                    </li>
+                    <li><a href="#"><i style="background-image: url('/images/icons/ic_inst.svg')"></i></a>
+                    </li>
+                    <li><a href="#"><i style="background-image: url('/images/icons/ic_youtube.svg')"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
 
-                    <div class="mx-contacts__row mx-contacts__row--map">
-                        <div class="mx-contacts__left mx-contacts__left--no-border">
-                            <div class="mx-contacts__map">
-                                <div id="map-container-contacts" data-coordinates="55.098485, 61.386617"></div>
-                            </div>
-                        </div>
+          <div class="mx-contacts__row">
 
-                        <div class="mx-contacts__right">
-                            <div class="mx-contacts__requisite">
-                                <div class="mx-contacts__label">Наши реквизиты</div>
-                                <div class="mx-contacts__text">
-                                    <p>ООО «Моттекс»</p>
-                                    <p>Юридический адрес: 454000, Челябинская область, город Челябинск, Троицкий тракт,
-                                        д. 17, помещение 2 офис 202</p>
-                                    <p>ИНН 7449096910</p>
-                                    <p>КПП 745101001</p>
-                                    <p>ОГРН 1107449002935</p>
-                                </div>
-                                <div class="mx-contacts__dl">
-                                    <a href="#dl">
-                                        <button class="btn-custom_i">
-                                            <i style="background-image: url('/images/icons/ic_file-dl.svg')"></i>
-                                            Скачать реквизиты, <span>PDF (0.226mb)</span></button></a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="mx-contacts__row">
-                        <div class="mx-contacts__left mx-contacts__left--city">
-                            <div class="mx-contacts__label">г. Челябинск, троицкий Тракт 17</div>
-                            <div class="mx-contacts__wrp-select">
-                                <div class="mx-contacts__select">
-                                    <div class="af-select" data-region-select="open">
-                                        <div class="select-styled">
-                                            <span> Челябинск</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mx-contacts__onmap">
-                                    <i style="background-image: url('/images/icons/ic_loc.svg')"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mx-contacts__right">
-                            <div class="mx-contacts__we-socials">
-                                <div class="mx-contacts__label">Мы в соцсетях</div>
-                                <div class="mx-contacts__socials">
-                                    <ul>
-                                        <li><a href="#"><i
-                                                    style="background-image: url('/images/icons/ic_vk.svg')"></i></a>
-                                        </li>
-                                        <li><a href="#"><i
-                                                    style="background-image: url('/images/icons/ic_inst.svg')"></i></a>
-                                        </li>
-                                        <li><a href="#"><i
-                                                    style="background-image: url('/images/icons/ic_youtube.svg')"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mx-contacts__row">
-
-                        <div class="mx-contacts__item">
-                            <div class="mx-contacts-card">
-                                <div class="mx-contacts-card__head">
-                                    <div class="mx-contacts-card__label">Звоните нам</div>
-                                    <div class="mx-contacts-card__link">
-                                        <a href="tel:+73512170000">+7 351 217-00-00</a>
-                                        <a href="tel:2207286">220–72–86</a>
-                                    </div>
-
-                                </div>
-                                <div class="mx-contacts-card__bottom">
-                                    <div class="mx-contacts-card__bottom-left">
-                                        <button data-modal="popup" data-url="/pages/_popup-callback.html"
-                                            class="btn btn-custom">Перезвоните мне</button>
-                                    </div>
-                                    <div class="mx-contacts-card__bottom-icon">
-                                        <i style="background-image: url('/images/icons/ic_phone.svg')"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mx-contacts__item">
-                            <div class="mx-contacts-card">
-                                <div class="mx-contacts-card__head">
-                                    <div class="mx-contacts-card__label">Пишите нам</div>
-                                    <div class="mx-contacts-card__link">
-                                        <a href="mailto:info@mottex.ru">info@mottex.ru</a>
-                                    </div>
-                                </div>
-                                <div class="mx-contacts-card__bottom">
-                                    <div class="mx-contacts-card__bottom-left">
-                                        <button class="btn btn-custom get-modal--call">Написать</button>
-                                    </div>
-                                    <div class="mx-contacts-card__bottom-icon">
-                                        <i style="background-image: url('/images/icons/ic_mail.svg')"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mx-contacts__item">
-                            <div class="mx-contacts-card">
-                                <div class="mx-contacts-card__head">
-                                    <div class="mx-contacts-card__label">Время работы</div>
-                                    <div class="mx-contacts-card__link">
-                                        <span class="worktime-status worktime-status--open">Мы открыты</span>
-                                    </div>
-                                </div>
-                                <div class="mx-contacts-card__bottom">
-                                    <div class="mx-contacts-card__bottom-left">
-
-                                        <div class="worktime-by-days">
-                                            <ul>
-                                                <li>Пн-Пт с 8:30 до 18:00</li>
-                                                <li>Сб-Вс с 9:00 до 15:00</li>
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                    <div class="mx-contacts-card__bottom-icon">
-                                        <i style="background-image: url('/images/icons/ic_time.svg')"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-
+            <div class="mx-contacts__item">
+              <div class="mx-contacts-card">
+                <div class="mx-contacts-card__head">
+                  <div class="mx-contacts-card__label">Звоните нам</div>
+                  <div class="mx-contacts-card__link">
+                    <a href="tel:+73512170000">+7 351 217-00-00</a>
+                    <a href="tel:2207286">220–72–86</a>
+                  </div>
 
                 </div>
-            </div>
-        </section>
-
-        <section class="section-mx-our-team">
-            <div class="_container">
-                <div class="mx-our-team">
-                    <div class="mx-our-team__title">
-                        Наша команда
-                    </div>
-                    <div class="mx-our-team__list">
-                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
-                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
-                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
-                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
-                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
-                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
-                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
-                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
-                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
-                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
-                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
-                        <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
-                    </div>
+                <div class="mx-contacts-card__bottom">
+                  <div class="mx-contacts-card__bottom-left">
+                    <button data-modal="popup" data-url="/pages/_popup-callback.html"
+                      class="btn btn-custom">Перезвоните мне</button>
+                  </div>
+                  <div class="mx-contacts-card__bottom-icon">
+                    <i style="background-image: url('/images/icons/ic_phone.svg')"></i>
+                  </div>
                 </div>
+              </div>
             </div>
-        </section>
 
-        <section class="section-mx-form-image">
-            <div class="_container">
-                <div class="mx-form-image">
-                    <div class="mx-form-image__picture">
-                        <picture>
-                            <img src="/images/other/image-form.jpg" alt="">
-                        </picture>
-                    </div>
-                    <div class="mx-form-image__form">
-                        <div class="mx-form-image__title">Нужна помощь или консультация?</div>
-                        <div class="mx-form-image__desc">Напиши свой вопрос в свободной форме и мы свяжемся с вами
-                            в самое ближайшее время</div>
-                        <div class="mx-form-image__fields">
-                            <form action="">
-                                <div class="form">
-                                    <div class="form__item">
-                                        <div class="form__subitem">
-                                            <div class="input-material">
-                                                <input type="text" placeholder="Ваше имя" maxlength="60">
-                                                <label>Ваше имя</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="form__subitem">
-                                            <div class="input-material">
-                                                <input type="tel" data-maska="+7(###)###-##-##" required
-                                                    placeholder="Телефон" maxlength="60">
-                                                <label>Телефон</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form__item">
-                                        <div class="form__subitem">
-                                            <div class="input-material input-material--textarea">
-                                                <textarea name="" placeholder="Ваш вопрос" maxlength="300"></textarea>
-                                                <label>Ваш вопрос</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form__item">
-                                        <div class="form__subitem form__subitem--submit">
-                                            <button class="btn btn-blue">Отправить</button>
-                                        </div>
-
-                                        <div class="form__subitem form__subitem--note">
-                                            <div class="form__note">
-                                                Нажимая кнопку «Отправить», я даю согласие на <a href="#">получение
-                                                    рекламной рассылки</a> и <a href="#">обработку персональных
-                                                    данных</a>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+            <div class="mx-contacts__item">
+              <div class="mx-contacts-card">
+                <div class="mx-contacts-card__head">
+                  <div class="mx-contacts-card__label">Пишите нам</div>
+                  <div class="mx-contacts-card__link">
+                    <a href="mailto:info@mottex.ru">info@mottex.ru</a>
+                  </div>
                 </div>
+                <div class="mx-contacts-card__bottom">
+                  <div class="mx-contacts-card__bottom-left">
+                    <button class="btn btn-custom get-modal--call">Написать</button>
+                  </div>
+                  <div class="mx-contacts-card__bottom-icon">
+                    <i style="background-image: url('/images/icons/ic_mail.svg')"></i>
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
-      @@include('html/components/goods-viewed.html')
-    </main>
 
-    @@include('html/footer.html')
-    @@include('html/components/action-panel.html')
+            <div class="mx-contacts__item">
+              <div class="mx-contacts-card">
+                <div class="mx-contacts-card__head">
+                  <div class="mx-contacts-card__label">Время работы</div>
+                  <div class="mx-contacts-card__link">
+                    <span class="worktime-status worktime-status--open">Мы открыты</span>
+                  </div>
+                </div>
+                <div class="mx-contacts-card__bottom">
+                  <div class="mx-contacts-card__bottom-left">
+
+                    <div class="worktime-by-days">
+                      <ul>
+                        <li>Пн-Пт с 8:30 до 18:00</li>
+                        <li>Сб-Вс с 9:00 до 15:00</li>
+                      </ul>
+                    </div>
+
+                  </div>
+                  <div class="mx-contacts-card__bottom-icon">
+                    <i style="background-image: url('/images/icons/ic_time.svg')"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section-mx-our-team">
+      <div class="_container">
+        <div class="mx-our-team">
+          <div class="mx-our-team__title">
+            Наша команда
+          </div>
+          <div class="mx-our-team__list">
+            <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+            <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+            <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+            <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+            <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+            <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+            <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+            <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+            <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+            <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+            <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+            <div class="mx-our-team__item"> @@include('html/components/mx-card-member.html') </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-mx-form-image">
+      <div class="_container">
+        <div class="mx-form-image">
+          <div class="mx-form-image__picture">
+            <picture>
+              <img src="/images/other/image-form.jpg" alt="">
+            </picture>
+          </div>
+          <div class="mx-form-image__form">
+            <div class="mx-form-image__title">Нужна помощь или консультация?</div>
+            <div class="mx-form-image__desc">Напиши свой вопрос в свободной форме и мы свяжемся с вами
+              в самое ближайшее время</div>
+            <div class="mx-form-image__fields">
+              <form action="">
+                <div class="form">
+                  <div class="form__item">
+                    <div class="form__subitem">
+                      <div class="input-material">
+                        <input type="text" placeholder="Ваше имя" maxlength="60">
+                        <label>Ваше имя</label>
+                      </div>
+                    </div>
+
+                    <div class="form__subitem">
+                      <div class="input-material">
+                        <input type="tel" data-maska="+7(###)###-##-##" required placeholder="Телефон" maxlength="60">
+                        <label>Телефон</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form__item">
+                    <div class="form__subitem">
+                      <div class="input-material input-material--textarea">
+                        <textarea name="" placeholder="Ваш вопрос" maxlength="300"></textarea>
+                        <label>Ваш вопрос</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__item">
+                    <div class="form__subitem form__subitem--submit">
+                      <button class="btn btn-blue">Отправить</button>
+                    </div>
+
+                    <div class="form__subitem form__subitem--note">
+                      <div class="form__note">
+                        Нажимая кнопку «Отправить», я даю согласие на <a href="#">получение
+                          рекламной рассылки</a> и <a href="#">обработку персональных
+                          данных</a>
+                      </div>
+                    </div>
+
+
+                  </div>
+
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    @@include('html/components/goods-viewed.html')
+  </main>
+
+  @@include('html/footer.html')
+  @@include('html/components/action-panel.html')
 
 
 </body>
