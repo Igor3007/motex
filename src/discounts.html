@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  @@include('html/head.html', {
+  'title': 'Акции'
+  })
+
+  <link rel="stylesheet" href="/css/collcections.min.css">
+</head>
+<body>
+@@include('html/header.html')
+<main class="page">
+  @@include('html/components/breadcrumbs.html',{
+  "links":[
+  {"href": "/pages/discount.html", "title" : "Акции"}
+  ]})
+  <section class="mx-all-collections">
+    <div class="_container">
+      <div class="mx-all-collections__heading">
+        <h1>Акции</h1>
+      </div>
+      <div class="mx-all-collections__cards">
+        @@include('html/components/mx-all-collections/discount-card.html')
+        @@include('html/components/mx-all-collections/discount-card.html')
+        @@include('html/components/mx-all-collections/discount-card.html')
+        @@include('html/components/mx-all-collections/discount-card.html')
+        @@include('html/components/mx-all-collections/discount-card.html')
+        @@include('html/components/mx-all-collections/discount-card.html')
+      </div>
+      <div class="mx-all-collections__seo">
+        <div class="seo formated-text">
+          <h1>СЕО заголовок 1</h1>
+          <p>это текст-"рыба», часто используемый в печати и вэб-дизайне. Lorem Ipsum является
+            стандартной «рыбой»
+            для текстов на латинице с начала XVI века. В то время некий безымянный печатник
+            создал
+            большую коллекцию
+            размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum
+            не только успешно
+            пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.
+            Его популяризации
+            в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х
+            годах
+            и, в более
+            недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах
+            которых
+            используется
+            Lorem Ipsum.</p>
+          <h2>СЕО заголовок 2</h2>
+          <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
+            сосредоточиться. Lorem Ipsum
+            используют потому, что тот обеспечивает более или менее стандартное заполнение
+            шаблона,
+            а также реальное
+            распределение букв и пробелов в абзацах, которое не получается при простой
+            дубликации
+            «Здесь
+            ваш текст.</p>
+          <p>Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
+            сосредоточиться;
+            lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное
+            заполнение шаблона,
+            а также реальное распределение букв и пробелов в абзацах, которое не получается
+            при простой дубликации
+            „Здесь ваш текст;
+            здесь ваш текст. Здесь ваш текст“. Многие программы электронной вёрстки и редакторы
+            HTML
+            используют
+            Lorem Ipsum в качестве текста по умолчанию.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+@@include('html/footer.html')
+@@include('html/components/action-panel.html')
+</body>
+</html>
