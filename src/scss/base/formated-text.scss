@@ -227,7 +227,26 @@
       }
 
 
+      &[data-list="bullet"] {
+        &::before {
+          content: '';
+          min-width: auto;
+          width: 6px;
+          height: 6px;
+          display: block;
+          position: absolute;
+          left: 4px;
+          top: 0.5em;
+          transform: rotate(45deg);
+          border-radius: 1px;
+          background-color: var(--accent);
 
+          @media screen and (min-width: $w1440) {
+            width: 7.5px;
+            height: 7.5px;
+          }
+        }
+      }
       &::before {
         content: counter(number-list)"/";
         color: var(--accent);
