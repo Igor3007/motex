@@ -1,166 +1,227 @@
 @import "../../config";
+
 section.cart--checkout {
 
-    @media screen and (min-width: $w1440) {
-        margin-top: 22px;
-    }
+  @media screen and (min-width: $w1440) {
+    margin-top: 22px;
+  }
 
-    & .cart-aside {
-        margin-top: 0;
-    }
+  & .cart-aside {
+    margin-top: 0;
+  }
 
-    & .cart {
-        &__cutter {
-            margin-top: 12px;
-        }
+  & .cart {
+    &__cutter {
+      margin-top: 12px;
     }
+  }
 }
 
 .store-item {
-    border: 2px solid var(--black-20);
-    padding: 12px 12px;
-    background-color: #fff;
-    border-radius: 8px;
+  border: 2px solid var(--black-20);
+  padding: 12px 12px;
+  background-color: #fff;
+  border-radius: 8px;
 
+  @media screen and (min-width: $w576) {
+    padding: 16px 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media screen and (min-width: $w992) {
+    gap: 12px;
+  }
+
+  &__left {
     @media screen and (min-width: $w576) {
-        padding: 16px 16px;
-        display: flex;
-        justify-content: space-between;
+      width: 63%;
+      padding-right: 24px;
     }
 
     @media screen and (min-width: $w992) {
-        gap: 12px;
+      width: 50%;
+      padding-right: 0;
+    }
+  }
+
+  &__right {
+    @media screen and (min-width: $w576) {
+      width: 37%;
     }
 
-    &__left {
-        @media screen and (min-width: $w576) {
-            width: 63%;
-            padding-right: 24px;
-        }
+    @media screen and (min-width: $w992) {
+      width: 50%;
+    }
+  }
 
-        @media screen and (min-width: $w992) {
-            width: 50%;
-            padding-right: 0;
-        }
+  &__label {
+    padding-bottom: 10px;
+    display: flex;
+
+    @media screen and (min-width: $w576) {
+      padding-bottom: 15px;
     }
 
-    &__right {
-        @media screen and (min-width: $w576) {
-            width: 37%;
-        }
+    & span {
+      background-color: var(--green);
+      color: #fff;
+      font-size: 8px;
+      font-weight: 500;
+      height: 12px;
+      padding: 0 4px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      letter-spacing: 0;
 
-        @media screen and (min-width: $w992) {
-            width: 50%;
-        }
+      @media screen and (min-width: $w576) {
+        font-size: 12px;
+        height: 16px;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 10px;
+    font-weight: 700;
+    padding-bottom: 12px;
+
+    @media screen and (min-width: $w576) {
+      font-size: 14px;
+      padding-bottom: 18px;
+    }
+  }
+
+  &__prop {
+    font-size: 10px;
+    padding-bottom: 14px;
+
+    @media screen and (min-width: $w576) {
+      padding-bottom: 17px;
     }
 
-    &__label {
-        padding-bottom: 10px;
-        display: flex;
+    & small {
+      color: var(--black-50);
+      display: block;
+      padding-bottom: 6px;
 
-        @media screen and (min-width: $w576) {
-            padding-bottom: 15px;
-        }
-
-        & span {
-            background-color: var(--green);
-            color: #fff;
-            font-size: 8px;
-            font-weight: 500;
-            height: 12px;
-            padding: 0 4px;
-            border-radius: 4px;
-            display: inline-flex;
-            align-items: center;
-            letter-spacing: 0;
-
-            @media screen and (min-width: $w576) {
-                font-size: 12px;
-                height: 16px;
-            }
-        }
+      @media screen and (min-width: $w576) {
+        font-size: 12px;
+        padding-bottom: 8px;
+      }
     }
 
-    &__title {
-        font-size: 10px;
-        font-weight: 700;
-        padding-bottom: 12px;
+    & p {
+      color: var(--black-base);
 
-        @media screen and (min-width: $w576) {
-            font-size: 14px;
-            padding-bottom: 18px;
-        }
+      @media screen and (min-width: $w576) {
+        font-size: 14px;
+      }
     }
+  }
 
-    &__prop {
-        font-size: 10px;
-        padding-bottom: 14px;
+  &__change {
+    & .btn-custom {
 
-        @media screen and (min-width: $w576) {
-            padding-bottom: 17px;
-        }
+      @media screen and (min-width: 320px) {
+        font-size: 12px;
+        padding: 1px 6px;
+      }
 
-        & small {
-            color: var(--black-50);
-            display: block;
-            padding-bottom: 6px;
+      @media screen and (min-width: $w576) {
+        font-size: 14px;
+        padding: 3px 12px;
+      }
 
-            @media screen and (min-width: $w576) {
-                font-size: 12px;
-                padding-bottom: 8px;
-            }
-        }
-
-        & p {
-            color: var(--black-base);
-
-            @media screen and (min-width: $w576) {
-                font-size: 14px;
-            }
-        }
     }
+  }
 
-    &__change {
-        & .btn-custom {
+  &__mapcontainer {
+    padding-top: 60%;
+    background-color: #eee;
+    border-radius: 6px;
+    margin-top: 8px;
+    position: relative;
 
-            @media screen and (min-width: 320px) {
-                font-size: 12px;
-                padding: 1px 6px;
-            }
-
-            @media screen and (min-width: $w576) {
-                font-size: 14px;
-                padding: 3px 12px;
-            }
-
-        }
+    @media screen and (min-width: $w576) {
+      padding: unset;
+      height: 100%;
+      margin-top: 0;
     }
-
-    &__mapcontainer {
-        padding-top: 60%;
-        background-color: #eee;
-        border-radius: 6px;
-        margin-top: 8px;
-        position: relative;
-
-        @media screen and (min-width: $w576) {
-            padding: unset;
-            height: 100%;
-            margin-top: 0;
-        }
-    }
+  }
 }
 
 .store-in-map {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 8px;
-    overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .input--suggest {
+  width: 100%;
+}
+
+/* ======================= */
+
+.warehouse {
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid #eee;
     width: 100%;
+    padding: 6px;
+    border-radius: 11px;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+      border-color: #A9B4B8;
+    }
+
+    &.is-active {
+      border-color: var(--accent);
+    }
+  }
+
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  &__icon {
+    width: 50px;
+    height: 50px;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-color: #eee;
+      border-radius: 8px;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJwcmVmaXhfX3ByZWZpeF9fSWNvbnMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDQ4NC4zIDQ4NC4zIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cGF0aCBkPSJNMjQyLjEgNDQ2Yy0zLjggMC02LjktMy4xLTYuOS02LjlWMjUwLjRjMC0zLjggMy4xLTYuOSA2LjktNi45czYuOSAzLjEgNi45IDYuOXYxNzkuM2wxNjYuNy01M3YtMTE4YzAtMy44IDMuMS02LjkgNi45LTYuOSAzLjggMCA2LjkgMy4xIDYuOSA2Ljl2MTIzLjFjMCAzLTIgNS43LTQuOCA2LjZsLTE4MC41IDU3LjRjLS43LjEtMS40LjItMi4xLjJ6Ii8+PHBhdGggZD0iTTI5OS42IDMxNC43Yy0xLjggMC0zLjYtLjctNC45LTJsLTU3LjQtNTcuNGMtMi43LTIuNy0yLjctNy4xIDAtOS44LjctLjcgMS40LTEuMiAyLjMtMS41bDE4MC41LTczLjljMi43LTEuMSA1LjgtLjQgNy43IDEuOGw1NC43IDYwLjJjMi42IDIuOCAyLjQgNy4yLS41IDkuOC0uNi42LTEuMyAxLTIuMSAxLjNsLTE3Ny44IDcxLjFjLS44LjMtMS42LjQtMi41LjR6bS00NS4yLTYxLjlsNDYuOSA0Ni45TDQ2NS42IDIzNGwtNDQuNy00OS4yLTE2Ni41IDY4eiIvPjxwYXRoIGQ9Ik0xODQuNyAzMTQuN2MtLjkgMC0xLjgtLjItMi42LS41TDQuMyAyNDMuMWMtMy41LTEuNC01LjMtNS41LTMuOC05IC4zLS44LjctMS41IDEuMy0yLjFsNTQuNy02MC4yYzItMi4yIDUtMi44IDcuNy0xLjhsMTgwLjYgNzRjMy41IDEuNCA1LjIgNS41IDMuOCA5LS4zLjktLjkgMS42LTEuNSAyLjNsLTU3LjQgNTcuNGMtMS40IDEuMy0zLjEgMi01IDJ6bS0xNjYtODAuOEwxODMgMjk5LjZsNDYuOS00Ni44LTE2Ni40LTY4LjEtNDQuOCA0OS4yeiIvPjxwYXRoIGQ9Ik0yNDIuMSA0NDZjLS43IDAtMS40LS4xLTIuMS0uM0w1OS41IDM4OC4zYy0yLjktLjktNC44LTMuNi00LjgtNi42VjI1OC42YzAtMy44IDMuMS02LjkgNi45LTYuOXM2LjkgMy4xIDYuOSA2Ljl2MTE4bDE2Ni43IDUzVjI1MC40YzAtMy44IDMuMS02LjkgNi45LTYuOXM2LjkgMy4xIDYuOSA2Ljl2MTg4LjdjLjEgMy44LTMgNi45LTYuOSA2Ljl6bTE4MC42LTI2Mi42Yy0uOSAwLTEuOC0uMi0yLjYtLjVMMjM5LjUgMTA5Yy0zLjUtMS40LTUuMi01LjUtMy44LTkgLjMtLjkuOS0xLjYgMS41LTIuM2w1Ny40LTU3LjRjMi0yIDQuOS0yLjYgNy41LTEuNUw0ODAgMTA5LjljMy41IDEuNCA1LjMgNS41IDMuOCA5LS4zLjgtLjcgMS41LTEuMyAyLjFsLTU0LjcgNjAuMmMtMS4zIDEuNC0zLjIgMi4yLTUuMSAyLjJ6bS0xNjguMy04My4ybDE2Ni40IDY4LjEgNDQuNy00OS4yLTE2NC4yLTY1LjgtNDYuOSA0Ni45eiIvPjxwYXRoIGQ9Ik02MS42IDE4My40Yy0xLjkgMC0zLjgtLjgtNS4xLTIuM0wxLjggMTIxYy0yLjYtMi44LTIuNC03LjIuNS05LjguNi0uNiAxLjMtMSAyLjEtMS4zbDE3Ny44LTcxLjFjMi42LTEgNS41LS40IDcuNSAxLjVsNTcuNCA1Ny40YzIuNyAyLjcgMi43IDcuMSAwIDkuOC0uNy43LTEuNCAxLjItMi4zIDEuNUw2NC4zIDE4Mi45Yy0uOS4zLTEuOC41LTIuNy41em0tNDIuOS02NC4zbDQ0LjcgNDkuMiAxNjYuNC02OC4xTDE4MyA1My4zIDE4LjcgMTE5LjF6Ii8+PHNjcmlwdC8+PHN0eWxlIHR5cGU9InRleHQvY3NzIiBpZD0iY3VzdG9tLWNzcy1pbmplY3RvciIvPjwvc3ZnPg==);
+      background-size: 36px auto;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &__name {
+    font-weight: 600;
+    padding-bottom: 10px;
+  }
+
+  &__address {
+    color: #666;
+    font-size: 14px;
+  }
 }
