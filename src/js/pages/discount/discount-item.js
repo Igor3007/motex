@@ -95,7 +95,7 @@ const discountGoodsExt = Vue.extend({
           if (res.status === 200) {
             window.STATUS.msg(successMsg);
           } else {
-            window.STATUS.err(res.statusText);
+            window.STATUS.err(res.statusText || "Ошибка при добавлении товара в корзину");
           }
         })
         .catch(err => {

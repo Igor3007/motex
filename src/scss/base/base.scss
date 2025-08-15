@@ -75,6 +75,10 @@ main {
 
 }
 
+.hidden {
+  display: none;
+}
+
 .hidden-mobile {
   @media screen and (max-width: 575px) {
     display: none !important;

@@ -26,6 +26,27 @@
       font: 400 14px/20px $fontDefault;
     }
   }
+
+  @media (any-hover: hover) {
+    picture {
+      opacity: .85;
+      transition: .3s opacity;
+    }
+
+    cursor: pointer;
+
+    &:hover {
+      picture {
+        opacity: 1;
+      }
+
+      .discount-slide {
+        &__title {
+          color: var(--blue-link);
+        }
+      }
+    }
+  }
 }
 
 .discount-other {

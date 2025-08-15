@@ -1,5 +1,6 @@
 import Splide from "@splidejs/splide";
 import {afLightbox} from "../components/af-lightbox";
+import {MaskInput} from "maska";
 
 const initSlider = () => {
   document
@@ -50,6 +51,7 @@ const initForm = () => {
   const formFiles = [];
   const inputEl = document.querySelector('#files');
   const wrapper = document.querySelector('#files-list');
+  new MaskInput('#tel');
 
   let mimeType = [
     'image/jpeg',

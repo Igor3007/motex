@@ -4,7 +4,7 @@ export function Status() {
     this.headerElem = '#status_header'
     this.msgElem = '#status_msg'
     this.btnElem = '#status_btn'
-    this.timeOut = 10000,
+    this.timeOut = 3000,
       this.autoHide = true
 
     this.init = function () {
