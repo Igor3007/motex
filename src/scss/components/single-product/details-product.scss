@@ -50,6 +50,8 @@
 
   }
 
+
+
   &__group {
     max-width: 850px;
     margin: 0 auto;
@@ -212,6 +214,10 @@
 
     &.is-open .single-product__more--all {
       display: none;
+    }
+
+    & .formated-text {
+      line-height: 155%;
     }
 
   }

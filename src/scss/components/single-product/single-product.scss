@@ -327,7 +327,7 @@
       padding-bottom: 12px;
 
       & picture {
-        @include picture(100%, contain);
+        @include picture(100%, cover);
       }
 
       & .splide {
@@ -392,7 +392,7 @@
 
     &-thumb {
       & picture {
-        @include picture(100%, contain);
+        @include picture(100%, cover);
       }
 
       & .splide {
@@ -1122,7 +1122,7 @@
     }
 
     & picture {
-      @include picture(100%, contain);
+      @include picture(100%, cover);
 
       & img {
         border-radius: 8px;
@@ -1587,21 +1587,28 @@
 
   & ul {
     padding: 8px 0;
-  }
 
-  & a {
-    display: flex;
-    align-items: center;
-    padding: 8px 16px;
-    gap: 12px;
-    white-space: nowrap;
-    color: var(--black-base);
-    transition: background 0.2s ease;
+    & li {
 
-    &:hover {
-      background-color: var(--black-5);
+      &>span,
+      & a {
+        display: flex;
+        align-items: center;
+        padding: 8px 16px;
+        gap: 12px;
+        white-space: nowrap;
+        color: var(--black-base);
+        transition: background 0.2s ease;
+
+        &:hover {
+          background-color: var(--black-5);
+        }
+      }
     }
+
   }
+
+
 
   & .ic_24 {
     min-width: 24px;
