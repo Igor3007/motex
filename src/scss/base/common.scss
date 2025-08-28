@@ -3,3 +3,25 @@
   text-align: center;
   color: #777;
 }
+
+.err-input {
+	border-color: var(--red) !important;
+	box-shadow: 0 0 6px 0px #ff000042;
+}
+
+.err-input-log {
+	color: var(--red);
+	font-size: 13px;
+}
+
+.cart__wrp.is-hide {
+	display: none;
+}
+
+.block-plug {
+  padding: 20px 12px;
+
+  &__title {
+      font-size: 24px;
+  }
+}
