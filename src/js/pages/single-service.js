@@ -4,7 +4,7 @@ import {MaskInput} from "maska";
 
 const initSlider = () => {
   document
-    .querySelectorAll('[data-slider="splide-services"]')
+    .querySelectorAll('[data-slider="splide-services-single"]')
     .forEach((el) => {
       let sliderServices = new Splide(el, {
         type: 'slide',
@@ -22,10 +22,10 @@ const initSlider = () => {
         snap: true,
         focus: 'left',
         easing: 'ease-out',
+        omitEnd: true,
         speed: 400,
         mediaQuery: 'min',
         breakpoints: {
-
           575.98: {
             gap: 16,
           },
