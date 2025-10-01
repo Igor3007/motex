@@ -1,32 +1,38 @@
 <div class="popup-call">
-    <div class="popup-call__modal" id="modal-call">
-        <div class="popup__wrapper">
-            <div class="popup__body">
-                <div class="popup__heading">
-                    <h2>Задайте вопрос</h2>
-                </div>
-                <form action="#" method="POST">
-                    <div class="popup__form-field">
-                        <input type="text" id="NAME" required placeholder="Имя" maxlength="60">
-                        <label for="NAME"></label>
-                    </div>
-                    <div class="popup__form-field">
-                        <input type="email" id="MAIL" placeholder="Email" maxlength="60">
-                        <label for="MAIL"></label>
-                    </div>
-                    <div class="popup__form-field">
-                        <textarea name="" id="TEXT" maxlength="300" required
-                            placeholder="Введите свой вопрос"></textarea>
-                        <label for="TEXT"></label>
-                    </div>
-                    <button class="btn-blue">Отправить</button>
-
-                    <div class="popup__form-field--policy"> Нажимая кнопку «Отправить», я даю согласие на <a
-                            href="#">получение
-                            рекламной рассылки</a> и <a href="#">обработку персональных данных</a>
-                    </div>
-                </form>
-            </div>
+  <div class="popup-call__modal" id="modal-call">
+    <div class="popup__wrapper">
+      <div class="popup__body">
+        <div class="popup__heading">
+          <h2>Задайте вопрос</h2>
         </div>
+        <form action="#" method="POST">
+          <div class="popup__form-field">
+            <input type="text" id="NAME" required placeholder="Имя" maxlength="60">
+            <label for="NAME"></label>
+          </div>
+          <div class="popup__form-field">
+            <input type="email" id="MAIL" placeholder="Email" maxlength="60">
+            <label for="MAIL"></label>
+          </div>
+          <div class="popup__form-field">
+                        <textarea name="" id="TEXT" maxlength="300" required
+                                  placeholder="Введите свой вопрос"></textarea>
+            <label for="TEXT"></label>
+          </div>
+          <button class="btn-blue">Отправить</button>
+
+          <div class="popup__form-field--policy">
+            <label class="checkbox">
+              <input type="checkbox" name="" value="0" required>
+              <span class="checkbox__elem"></span>
+              <span class="checkbox__text">Нажимая кнопку «Отправить», я даю согласие на <a
+                href="/pages/user-agreement.html">получение рекламной рассылки</a> и
+                <a href="/pages/personal-data-policy.html">обработку персональных данных</a></span>
+            </label>
+          </div>
+
+        </form>
+      </div>
     </div>
+  </div>
 </div>
