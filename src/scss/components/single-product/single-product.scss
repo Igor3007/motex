@@ -940,6 +940,14 @@
   }
 }
 
+a.block-addition {
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--accent);
+  }
+}
+
 .block-addition {
   padding: 10px;
   border: 1px solid var(--black-5);
@@ -949,15 +957,13 @@
   font-size: 16px;
   transition: 0.3s ease;
   color: var(--black-base);
-  cursor: pointer;
+
 
   @media screen and (min-width: $w480) {
     padding: 18px;
   }
 
-  &:hover {
-    border-color: var(--accent);
-  }
+
 
   &__image {
     width: 60px;
