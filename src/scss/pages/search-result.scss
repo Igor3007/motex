@@ -85,6 +85,10 @@
     margin-right: -16px;
   }
 
+  @media screen and (min-width: 760px) and (max-width: 790px) {
+    margin-right: -32px;
+  }
+
   &__item {
     display: flex;
     align-items: center;
@@ -157,11 +161,16 @@
 .mx-bd-catalog {
   &--search {
     margin-top: 24px;
+    margin-bottom: 80px;
 
     @media screen and (min-width: $w992) {
       & .dropdown {
         max-width: 200px;
       }
+    }
+
+    @media screen and (min-width: $w576) {
+      margin-bottom: 120px;
     }
   }
 }

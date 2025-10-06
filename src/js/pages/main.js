@@ -872,14 +872,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       timerOnHover = setTimeout(() => {
         video.play();
-      }, 500);
+      }, 0);
     });
 
     thumbnail.addEventListener('mouseleave', () => {
       clearTimeout(timerOnHover);
       clearTimeout(timeout);
       video.pause();
-      video.src = video.src;
+      //video.src = video.src;
       video.currentTime = 0;
     });
 
