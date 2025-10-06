@@ -85,15 +85,15 @@
       transition: 0.1s ease;
       cursor: pointer;
 
-      min-width: 20px;
-      width: 20px;
-      height: 20px;
+      min-width: 22px;
+      width: 22px;
+      height: 21px;
 
       border-radius: 6px;
       background: #FFF;
 
       span {
-        width: 12px;
+        width: 14px;
         height: 1.5px;
         margin: -.5px -1px -1px -1px;
         background: #000;
@@ -565,6 +565,16 @@
         .icon-cross {
           filter: brightness(255);
         }
+      }
+    }
+  }
+}
+
+.filter-properties {
+  &__one {
+    @media screen and (max-width: $w480) {
+      & .checkbox__text {
+        font-size: 12px;
       }
     }
   }

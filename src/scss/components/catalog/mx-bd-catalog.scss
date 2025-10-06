@@ -208,6 +208,10 @@
             height: 40px;
           }
 
+          &:hover {
+            background-color: var(--black-5);
+          }
+
           &.active {
             background: #19BEFF;
 
@@ -215,6 +219,8 @@
               filter: invert(1);
             }
           }
+
+
 
           .icon {
             display: block;
