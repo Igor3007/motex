@@ -12,6 +12,7 @@ import { afSelect } from "../components/af-select.min";
 import { Status } from "../components/status";
 import { loadYmapsApi } from "../components/load-ymaps-api"
 import { ZBRangeSlider } from "../components/range-slider";
+import { ScrollTags } from "../components/scroll-tags";
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -1044,9 +1045,17 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  /* =====================================
-  dropdown
-  =====================================*/
+  /* =======================================
+  rating submit
+  =======================================*/
+
+  document.querySelectorAll('[data-scrolltags]').forEach(el => {
+    new ScrollTags({
+      el
+    })
+  })
+
+
 
 
 
