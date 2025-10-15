@@ -12,6 +12,7 @@
     font: normal 700 24px/32px "Roboto", sans-serif;
     color: var(--black-base);
     margin-block: 40px 28px;
+
     @media screen and (max-width: $w576) {
       font-size: 16px !important;
       line-height: 24px !important;
@@ -38,7 +39,7 @@
       height: 360px;
       margin-bottom: 46px;
     }
-    
+
     @media (max-width: $w576) {
       height: auto;
       aspect-ratio: 324 /184;
@@ -162,10 +163,12 @@
 
       h2 {
         font: normal 700 20px/1.4 "Roboto", sans-serif;
-        margin-top: 48px ;
+        margin-top: 48px;
+
         @media screen and (max-width: $w992) {
           margin-top: 28px;
         }
+
         @media screen and (max-width: $w760) {
           font-size: 14px;
           line-height: 20px;
@@ -183,6 +186,17 @@
           line-height: 1.6;
         }
       }
+
+      & ul,
+      & ol {
+        & li {
+          font-size: 10px;
+
+          @media screen and (min-width: $w760) {
+            font-size: 14px;
+          }
+        }
+      }
     }
   }
 }
@@ -190,6 +204,7 @@
 .page-collection-details {
   .mx-simple-collections {
     margin-block: 40px 60px;
+
     @include tablet {
       margin-block: 120px;
     }
