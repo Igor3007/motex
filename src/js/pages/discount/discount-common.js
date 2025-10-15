@@ -1,4 +1,4 @@
-import {pluralForm} from "../../helpers/plural-form.js";
+import { pluralForm } from "../../helpers/plural-form.js";
 import Splide from "@splidejs/splide";
 
 const initTimer = () => {
@@ -12,9 +12,9 @@ const initTimer = () => {
     return;
   }
 
-  const {deadline} = timeEl.dataset || '0/0/0';
-  const [d, m, Y] =deadline.split('/');
-  const timeTo = new Date(+Y, +m-1, +d);
+  const { deadline } = timeEl.dataset || '0/0/0';
+  const [d, m, Y] = deadline.split('/');
+  const timeTo = new Date(+Y, +m - 1, +d);
 
   const getDHMS = (time) => {
     const secondsFull = Math.floor(time / 1000);
@@ -24,12 +24,12 @@ const initTimer = () => {
     const minutes = minutesFull - hoursFull * 60;
     const days = Math.floor(hoursFull / 24);
     const hours = hoursFull - days * 24;
-    return {days, hours, minutes, seconds}
+    return { days, hours, minutes, seconds }
   }
 
   const placeDHMS = (DHMS) => {
-    const {days, hours, minutes, seconds} = DHMS;
-    slots.days.innerHTML = (days >= 0) ? `${days.toString()} ${pluralForm(days,['день', 'дня', 'дней'])}` : endTitle;
+    const { days, hours, minutes, seconds } = DHMS;
+    slots.days.innerHTML = (days >= 0) ? `${days.toString()} ${pluralForm(days, ['день', 'дня', 'дней'])}` : endTitle;
     slots.timer.innerHTML = (days >= 0) ? `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}` : null;
   }
 
@@ -87,4 +87,6 @@ const initSlider = () => {
 document.addEventListener("DOMContentLoaded", () => {
   initTimer();
   initSlider();
+
+
 });

@@ -856,45 +856,74 @@ document.addEventListener("DOMContentLoaded", () => {
   play video on hover
   ====================================*/
 
-  document.querySelectorAll('.demo-stories__item').forEach(thumbnail => {
-    const video = thumbnail.querySelector('video');
+  const isElementInViewport = (element, offset = 0) => {
+    const rect = element.getBoundingClientRect();
 
-    let timeout;
-    let timerOnHover;
+    return (
+      rect.top - offset <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom + offset >= 0 &&
+      rect.left - offset <= (window.innerWidth || document.documentElement.clientWidth) &&
+      rect.right + offset >= 0
+    );
+  }
 
-    thumbnail.addEventListener('mouseenter', () => {
+  const initVideoStories = () => {
+    document.querySelectorAll('.demo-stories__item').forEach(thumbnail => {
+      const video = thumbnail.querySelector('video');
 
+      let timeout;
+      let timerOnHover;
       video.src = video.dataset.src
 
-      timeout = setTimeout(() => {
+      thumbnail.addEventListener('mouseenter', () => {
+
+        //video.src = video.dataset.src
+
+        timeout = setTimeout(() => {
+          video.pause();
+        }, 5000);
+
+        timerOnHover = setTimeout(() => {
+          video.play();
+        }, 0);
+      });
+
+      thumbnail.addEventListener('mouseleave', () => {
+        clearTimeout(timerOnHover);
+        clearTimeout(timeout);
         video.pause();
-      }, 5000);
+        //video.src = video.src;
+        video.currentTime = 0;
+      });
 
-      timerOnHover = setTimeout(() => {
-        video.play();
-      }, 0);
-    });
+      thumbnail.addEventListener('click', (e) => {
+        e.preventDefault()
+        const lightbox = new FsLightbox();
+        lightbox.props.sources.push(video.src);
 
-    thumbnail.addEventListener('mouseleave', () => {
-      clearTimeout(timerOnHover);
-      clearTimeout(timeout);
-      video.pause();
-      //video.src = video.src;
-      video.currentTime = 0;
-    });
+        lightbox.props.onOpen = function () {
+          lightbox.elements.container.querySelector('video').play()
+        }
 
-    thumbnail.addEventListener('click', (e) => {
-      e.preventDefault()
-      const lightbox = new FsLightbox();
-      lightbox.props.sources.push(video.src);
-
-      lightbox.props.onOpen = function () {
-        lightbox.elements.container.querySelector('video').play()
-      }
-
-      lightbox.open();
+        lightbox.open();
+      })
     })
-  })
+  }
+
+  const scrollHandler = () => {
+    if (isElementInViewport(document.querySelector('.mx-stories'), 200)) {
+      initVideoStories()
+      window.removeEventListener('scroll', scrollHandler)
+    }
+  }
+
+  if (document.querySelector('.mx-stories')) {
+    window.addEventListener('scroll', scrollHandler)
+  }
+
+
+
+
 
   /* ===================================
   map-container-contacts

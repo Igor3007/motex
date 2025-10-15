@@ -1,88 +1,97 @@
 @import "../../config";
 
 .discount-slide {
-  picture {
-    display: block;
-
-    img {
-      display: block;
-      width: 100%;
-    }
-  }
-
-  &__title {
-    font: 500 14px/20px $fontDefault;
-    margin-block: 11px 5px;
-    @include tablet {
-      font-size: 16px;
-      line-height: 24px;
-    }
-  }
-
-  &__term {
-    font: 400 10px/1.6 $fontDefault;
-    color: var(--black-50);
-    @include tablet {
-      font: 400 14px/20px $fontDefault;
-    }
-  }
-
-  @media (any-hover: hover) {
     picture {
-      opacity: .85;
-      transition: .3s opacity;
-    }
+        display: block;
+        background-color: #eee;
 
-    cursor: pointer;
-
-    &:hover {
-      picture {
-        opacity: 1;
-      }
-
-      .discount-slide {
-        &__title {
-          color: var(--blue-link);
+        img {
+            display: block;
+            width: 100%;
         }
-      }
+
+        @include picture(60%, cover);
     }
-  }
+
+    &__title {
+        font: 500 14px/20px $fontDefault;
+        margin-block: 11px 5px;
+
+        @include tablet {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+
+    &__term {
+        font: 400 10px/1.6 $fontDefault;
+        color: var(--black-50);
+
+        @include tablet {
+            font: 400 14px/20px $fontDefault;
+        }
+    }
+
+    @media (any-hover: hover) {
+        picture {
+            opacity: .85;
+            transition: .3s opacity;
+        }
+
+        cursor: pointer;
+
+        &:hover {
+            picture {
+                opacity: 1;
+            }
+
+            .discount-slide {
+                &__title {
+                    color: var(--blue-link);
+                }
+            }
+        }
+    }
 }
 
 .discount-other {
-  h3 {
-    font: 700 16px/20px $fontDefault;
-    margin-bottom: 12px;
-    @include tablet {
-      font: 500 28px/36px $fontDefault;
-      margin-bottom: 20px;
-    }
-  }
-  .splide__track {
-    overflow: visible;
-    @include desktop {
-      overflow: hidden;
-    }
-  }
+    h3 {
+        font: 700 16px/20px $fontDefault;
+        margin-bottom: 12px;
 
-  .splide {
-    &__arrow {
-      width: 48px;
-      height: 48px;
-      background: var(--white);
-      border: 1px solid var(--black-20);
-      top: 50%;
-
-      &:disabled {
-        display: none;
-      }
-
-      &--prev {
-        left: -24px;
-      }
-      &--next {
-        right: -24px;
-      }
+        @include tablet {
+            font: 500 28px/36px $fontDefault;
+            margin-bottom: 20px;
+        }
     }
-  }
+
+    .splide__track {
+        overflow: visible;
+
+        @include desktop {
+            overflow: hidden;
+        }
+    }
+
+    .splide {
+        &__arrow {
+            width: 48px;
+            height: 48px;
+            background: var(--white);
+            border: 1px solid var(--black-20);
+            top: 39%;
+
+            &:disabled {
+                display: none;
+            }
+
+            &--prev {
+                left: -24px;
+            }
+
+            &--next {
+                right: -24px;
+            }
+        }
+    }
 }

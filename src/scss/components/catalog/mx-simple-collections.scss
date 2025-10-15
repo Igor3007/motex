@@ -1,86 +1,98 @@
 @import "../../config/vars";
 @import "../../config/mixins";
 
+section.mx-simple-collections {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    @media screen and (min-width: $w760) {
+        margin-bottom: 50px;
+    }
+}
+
 .mx-simple-collections {
-  overflow: hidden;
+    overflow: hidden;
 
-  &__heading {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 12px;
+    &__heading {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 12px;
 
-    @media screen and (min-width: 767.98px) {
-      flex-direction: row;
-      align-items: flex-end;
-      justify-content: space-between;
+        @media screen and (min-width: 767.98px) {
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-between;
 
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      font: normal 700 16px/1.5 "Roboto", sans-serif;
-      @include tablet {
-        font-size: 24px;
-        line-height: 32px;
-      }
-    }
-
-    a {
-      font: normal 700 12px/16px "Roboto", sans-serif;
-      color: var(--black-base);
-      text-decoration: underline;
-
-      @include tablet {
-        font-size: 16px;
-        line-height: 24px;
-      }
-
-      @include desktop {
-        color: var(--blue-link);
-        text-decoration: none;
-        font-weight: 400;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-
-  .splide {
-    &__track {
-      overflow: initial;
-      @media screen and (min-width: 1439.98px) {
-        overflow: hidden;
-      }
-    }
-
-    @media screen and (min-width: 1439.98px) {
-      &__list {
-        display: flex !important;
-        gap: 16px;
-      }
-      &__slide {
-        flex: 1;
-        transition: flex 0.5s ease-in-out;
-        min-height: 360px;
-
-
-        &:first-child {
-          flex: 2;
+            margin-bottom: 20px;
         }
 
-        &.is--hover {
-          flex: 1;
+        h2 {
+            font: normal 700 16px/1.5 "Roboto", sans-serif;
+
+            @include tablet {
+                font-size: 24px;
+                line-height: 32px;
+            }
         }
 
-        &.is--active {
-          flex: 2;
+        a {
+            font: normal 700 12px/16px "Roboto", sans-serif;
+            color: var(--black-base);
+            text-decoration: underline;
+
+            @include tablet {
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            @include desktop {
+                color: var(--blue-link);
+                text-decoration: none;
+                font-weight: 400;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
         }
-      }
     }
 
+    .splide {
+        &__track {
+            overflow: initial;
 
-  }
+            @media screen and (min-width: 1439.98px) {
+                overflow: hidden;
+            }
+        }
+
+        @media screen and (min-width: 1439.98px) {
+            &__list {
+                display: flex !important;
+                gap: 16px;
+            }
+
+            &__slide {
+                flex: 1;
+                transition: flex 0.5s ease-in-out;
+                min-height: 360px;
+
+
+                &:first-child {
+                    flex: 2;
+                }
+
+                &.is--hover {
+                    flex: 1;
+                }
+
+                &.is--active {
+                    flex: 2;
+                }
+            }
+        }
+
+
+    }
 }

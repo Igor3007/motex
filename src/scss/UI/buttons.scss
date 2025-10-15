@@ -1,256 +1,297 @@
 @import "../config";
 
 .btn-custom {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
-  color: #15181A;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #15181A;
 
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
 
-  padding: 6px 12px;
-  max-height: 48px;
-  background: #FFF;
-  border: 1px solid #D0D1D1;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: .1s ease;
+    padding: 6px 12px;
+    max-height: 48px;
+    background: #FFF;
+    border: 1px solid #D0D1D1;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .1s ease;
 
-  @media screen and (min-width: 767.98px) {
-    font-size: 16px;
-    line-height: 24px;
+    @media screen and (min-width: 767.98px) {
+        font-size: 16px;
+        line-height: 24px;
 
-    padding: 12px;
-  }
-
-  @media screen and (min-width: 991.98px) {
-    &:hover {
-      color: #FFF;
-      background: #19BEFF;
-      border-color: transparent;
-
-      .icon {
-        filter: invert(1);
-      }
+        padding: 12px;
     }
-  }
+
+    @media screen and (min-width: 991.98px) {
+        &:hover {
+            color: #FFF;
+            background: #19BEFF;
+            border-color: transparent;
+
+            .icon {
+                filter: invert(1);
+            }
+        }
+    }
 }
 
 .btn-gray {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
-  color: #15181A;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #15181A;
 
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
 
-  padding: 6px 12px;
-  max-height: 48px;
-  background: #F3F3F3;
-  border: 1px solid #D0D1D1;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: .1s ease;
+    padding: 6px 12px;
+    max-height: 48px;
+    background: #F3F3F3;
+    border: 1px solid #D0D1D1;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .1s ease;
 
-  @media screen and (min-width: 767.98px) {
-    font-size: 16px;
-    line-height: 24px;
+    @media screen and (min-width: 767.98px) {
+        font-size: 16px;
+        line-height: 24px;
 
-    padding: 12px;
-  }
-
-  @media screen and (min-width: 991.98px) {
-    &:hover {
-      color: #FFF;
-      background: #19BEFF;
-      border-color: transparent;
+        padding: 12px;
     }
-  }
+
+    @media screen and (min-width: 991.98px) {
+        &:hover {
+            color: #FFF;
+            background: #19BEFF;
+            border-color: transparent;
+        }
+    }
 
 }
 
 .icon {
-  display: block;
-  min-width: 12px;
-  width: 12px;
-  height: 12px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: 0.1s ease;
+    display: block;
+    min-width: 12px;
+    width: 12px;
+    height: 12px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.1s ease;
 
-  @media screen and (min-width: 767.98px) {
-    min-width: 20px;
-    width: 20px;
-    height: 20px;
-  }
+    @media screen and (min-width: 767.98px) {
+        min-width: 20px;
+        width: 20px;
+        height: 20px;
+    }
 }
 
 .icon-m {
-  display: block;
-  min-width: 12px;
-  width: 12px;
-  height: 12px;
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  transition: 0.1s ease;
+    display: block;
+    min-width: 12px;
+    width: 12px;
+    height: 12px;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    transition: 0.1s ease;
 
-  @include tablet {
-    min-width: 20px;
-    width: 20px;
-    height: 20px;
-  }
+    @include tablet {
+        min-width: 20px;
+        width: 20px;
+        height: 20px;
+    }
 }
 
 .btn-custom_i {
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 16px;
-  color: #15181A;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #15181A;
 
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
 
-  padding: 8px;
-  max-height: 48px;
-  background: none;
-  border: 1px solid #D0D1D1;
-  border-radius: 8px;
-  cursor: pointer;
-  background: var(--white);
+    padding: 8px;
+    max-height: 48px;
+    background: none;
+    border: 1px solid #D0D1D1;
+    border-radius: 8px;
+    cursor: pointer;
+    background: var(--white);
 
-  @media screen and (min-width: 767.98px) {
-    font-size: 16px;
-    line-height: 24px;
+    @media screen and (min-width: 767.98px) {
+        font-size: 16px;
+        line-height: 24px;
 
-    gap: 8px;
-    padding: 12px;
+        gap: 8px;
+        padding: 12px;
 
-    .icon {
-      min-width: 20px;
-      width: 20px;
-      height: 20px;
+        .icon {
+            min-width: 20px;
+            width: 20px;
+            height: 20px;
+        }
+
     }
 
-  }
-
-  @media screen and (min-width: 991.98px) {
-    &:hover {
-      border-color: #19BEFF;
+    @media screen and (min-width: 991.98px) {
+        &:hover {
+            border-color: #19BEFF;
+        }
     }
-  }
 }
 
 .btn-blue {
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 16px;
-  color: #FFF;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #FFF;
 
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
 
-  padding: 8px;
-  max-height: 48px;
-  width: fit-content;
-  background: #19BEFF;
-  border-radius: 6px;
-  cursor: pointer;
+    padding: 8px;
+    max-height: 48px;
+    width: fit-content;
+    background: #19BEFF;
+    border-radius: 6px;
+    cursor: pointer;
 
-  @media screen and (min-width: 767.98px) {
-    font-size: 16px;
-    line-height: 24px;
+    @media screen and (min-width: 767.98px) {
+        font-size: 16px;
+        line-height: 24px;
 
-    padding: 12px;
-    border-radius: 8px;
-  }
-
-  @media screen and (min-width: 991.98px) {
-    &:hover, .hoverable:hover & {
-      background: linear-gradient(90deg, #19BEFF 0%, #3C82D2 100%);
+        padding: 12px;
+        border-radius: 8px;
     }
-  }
 
-  &[disabled] {
+    @media screen and (min-width: 991.98px) {
+
+        &:hover,
+        .hoverable:hover & {
+            background: linear-gradient(90deg, #19BEFF 0%, #3C82D2 100%);
+        }
+    }
+
+    &[disabled] {
+        color: #D0D1D1;
+        background: #8A8C8D;
+        border-color: transparent;
+
+        &:hover {
+            color: #D0D1D1;
+            background: #8A8C8D;
+            border-color: transparent;
+            cursor: not-allowed;
+        }
+    }
+
+    &.btn-small {
+        padding: 6px 12px;
+        font: normal 500 14px/20px "Roboto", sans-serif;
+
+        @media screen and (max-width: $w360) {
+            padding: 4px 8px;
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+}
+
+.btn-disabled {
     color: #D0D1D1;
     background: #8A8C8D;
     border-color: transparent;
 
     &:hover {
-      color: #D0D1D1;
-      background: #8A8C8D;
-      border-color: transparent;
-      cursor: not-allowed;
+        color: #D0D1D1;
+        background: #8A8C8D;
+        border-color: transparent;
     }
-  }
-
-  &.btn-small {
-    padding: 6px 12px;
-    font: normal 500 14px/20px "Roboto", sans-serif;
-    @media screen and (max-width: $w360) {
-      padding: 4px 8px;
-      font-size: 12px;
-      line-height: 16px;
-    }
-  }
-}
-
-.btn-disabled {
-  color: #D0D1D1;
-  background: #8A8C8D;
-  border-color: transparent;
-
-  &:hover {
-    color: #D0D1D1;
-    background: #8A8C8D;
-    border-color: transparent;
-  }
 }
 
 .btn-inline {
-  display: inline-flex;
+    display: inline-flex;
 }
 
 .btn-outlined {
-  display: block;
-  white-space: nowrap;
-  font: 400 14px/20px $fontDefault;
-  padding: 5px 11px;
-  background: transparent;
-  border: 1px solid var(--black-20);
-  border-radius: 8px;
-  cursor: pointer;
-  color: var(--black-base);
+    display: block;
+    white-space: nowrap;
+    font: 400 14px/20px $fontDefault;
+    padding: 5px 11px;
+    background: transparent;
+    border: 1px solid var(--black-20);
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--black-base);
 
-  @include tablet {
-    font: 400 16px/1.5 $fontDefault;
-    padding: 11px;
-  }
+    @include tablet {
+        font: 400 16px/1.5 $fontDefault;
+        padding: 11px;
+    }
 
-  &:hover {
-    border-color: var(--black-base);
-  }
+    &:hover {
+        border-color: var(--black-base);
+    }
 
-  &.disabled, &:disabled {
+    &.disabled,
+    &:disabled {
+        pointer-events: none;
+        color: var(--black-20);
+    }
+
+    &.active {
+        background: var(--black-base);
+        border-color: var(--black-base);
+        color: var(--white);
+    }
+}
+
+.btn-loading {
+    cursor: not-allowed;
+    background-color: #acacac;
     pointer-events: none;
-    color: var(--black-20);
-  }
+    color: #fff;
+    border: transparent;
 
-  &.active {
-    background: var(--black-base);
-    border-color: var(--black-base);
-    color: var(--white);
-  }
+    &::after {
+        content: '';
+        width: 16px;
+        min-width: 16px;
+        height: 16px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        border-left-color: transparent !important;
+        margin-left: 10px;
+        transition: transform 0.5s linear;
+        animation: 0.5s linear loadingrotate infinite;
+        display: inline-block;
+        white-space: nowrap;
+        flex-wrap: nowrap;
+        position: relative;
+
+    }
+}
+
+
+@keyframes loadingrotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

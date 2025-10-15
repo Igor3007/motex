@@ -1,294 +1,354 @@
 @import "../../config";
 
 .discount-good {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 8px;
-  padding-block: 20px;
-  background: var(--white);
-  position: relative;
-  @include tablet {
-    grid-template-columns: 140px 1fr 200px;
-    gap: 20px;
-    padding-bottom: 29px;
-  }
-  @include desktop {
-    grid-template-columns: 200px 1fr 200px;
-    gap: 16px;
-    padding-bottom: 19px;
-  }
-
-  .multiple & {
-    &:after {
-      content: "";
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      transform: translate(-50%, 50%);
-      z-index: 2;
-      pointer-events: none;
-      background-image: url(/images/icons/ic_plus.svg);
-      background-color: var(--black-10);
-      background-size: 12px 12px;
-      background-repeat: no-repeat;
-      background-position: center center;
-      @include tablet {
-        width: 44px;
-        height: 44px;
-        background-size: 20px 20px;
-      }
-    }
-    &:last-child {
-      &:after {
-        background-image: url(/images/icons/im_equal.svg);
-      }
-    }
-  }
-
-  &__image {
-    position: relative;
-
-    picture {
-      display: block;
-      background: var(--black-4);
-      border-radius: 8px;
-      aspect-ratio: 1;
-      overflow: hidden;
-      padding: 12px;
-      img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-    }
-
-    .badge {
-      background: var(--red);
-      color: var(--white);
-      font: 500 8px/1.5 $fontDefault;
-      padding-inline: 4px;
-      border-radius: 4px;
-      @include tablet {
-        position: absolute;
-        left: 4px;
-        top: 4px;
-        font: 500 14px/20px $fontDefault;
-        padding: 2px 8px;
-      }
-
-      &.badge-set {
-        background: var(--accent);
-      }
-    }
-  }
-
-  &__title {
-    font: 400 12px/16px $fontDefault;
-    margin-bottom: 8px;
-    @include tablet {
-      font: 400 20px/1.4 $fontDefault;
-    }
-  }
-
-  &__parameter {
-    font: 400 10px/1.6 $fontDefault;
-    display: flex;
-    gap: .4em;
-    @include tablet {
-      font: 400 16px/1.75 $fontDefault;
-    }
-  }
-
-  &__measure {
-    color: var(--black-50);
-  }
-
-  &__price {
-
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 80px 1fr;
     gap: 8px;
-    font: 400 10px/1.6 $fontDefault;
-    @include mobile {
-      grid-column: 2;
-    }
-    @include tablet {
-      font: 400 14px/20px $fontDefault;
-      margin-top: 10px;
-    }
-
-    &-group {
-      @include mobile {
-        display: flex;
-        align-items: center;
-      }
-
-      &.group-2 {
-        gap: 4px;
-      }
-    }
-
-    &-date {
-      @include mobile {
-        order: 2;
-        margin-left: 8px;
-      }
-      @include tablet {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        margin-bottom: 6px;
-      }
-      .badge {
-        font-weight: 500;
-        color: var(--white);
-        background: var(--black-base);
-        padding: 4px 6px;
-        border-radius: 4px;
-        @include tablet {
-          padding: 6px 8px;
-        }
-      }
-
-      &-end {
-        background: var(--black-5);
-        @include tablet {
-          padding: 6px 8px;
-        }
-      }
-    }
-
-    &-value {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      @include tablet {
-        justify-content: flex-end;
-        gap: 12px;
-      }
-
-      .new {
-        font: 700 16px/24px $fontDefault;
-        color: var(--red);
-        @include tablet {
-          font-size: 24px;
-          line-height: 32px;
-        }
-      }
-
-      .old {
-        text-decoration: line-through;
-        color: var(--black-70)
-      }
-
-      .unit {
-        @include mobile {
-          display: none;
-        }
-        @include tablet {
-          font: 400 14px/20px $fontDefault;
-          border-radius: 4px;
-          padding: 2px 4px;
-          background: var(--black-5);
-          color: var(--black-70);
-        }
-      }
-    }
-
-    &-qty {
-      border: 1px solid var(--black-20);
-      border-radius: 8px;
-      display: flex;
-      margin-bottom: 4px;
-
-      input {
-        border: none;
-        text-align: center;
-      }
-
-      button {
-        padding-inline: 8px;
-        background: transparent;
-        &:hover {
-          background: var(--black-5);
-        }
-        .icon {
-          min-width: 12px;
-          width: 12px;
-        }
-      }
-    }
-
-    &-btn {
-      padding: 6px 12px;
-      border-radius: 8px;
-      font: 500 14px/20px $fontDefault;
-      @include tablet {
-        width: 100%;
-        font: 500 16px/1.5 $fontDefault;
-        padding-block: 12px;
-      }
-    }
-
-    .btn-custom_i {
-      .icon-m {
-        background: var(--black-70);
-        width: 14px;
-        height: 14px;
-      }
-    }
-  }
-
-  &__combo-btn {
+    padding-block: 20px;
+    background: var(--white);
     position: relative;
 
-    .btn-blue {
-      font: 500 14px/20px $fontDefault;
-      padding: 6px 12px;
-      border-radius: 8px;
+    @include tablet {
+        grid-template-columns: 140px 1fr 200px;
+        gap: 20px;
+        padding-bottom: 29px;
     }
 
-    &.active {
-      .btn-blue {
-        opacity: 0;
-        z-index: -1;
-      }
-      .price-qty {
-        z-index: 2;
-      }
+    @include desktop {
+        grid-template-columns: 200px 1fr 200px;
+        gap: 16px;
+        padding-bottom: 19px;
     }
 
-    .price-qty {
-      border: 1px solid var(--black-20);
-      border-radius: 8px;
-      display: flex;
-      position: absolute;
-      inset:0;
-      z-index: -1;
+    .multiple & {
+        &:after {
+            content: "";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, 50%);
+            z-index: 2;
+            pointer-events: none;
+            background-image: url(/images/icons/ic_plus.svg);
+            background-color: var(--black-10);
+            background-size: 12px 12px;
+            background-repeat: no-repeat;
+            background-position: center center;
 
-      input {
-        border: none;
-        text-align: center;
-        height: 30px;
-      }
-
-      button {
-        padding-inline: 4px;
-        background: transparent;
-        .icon {
-          min-width: 8px;
-          width: 8px;
+            @include tablet {
+                width: 44px;
+                height: 44px;
+                background-size: 20px 20px;
+            }
         }
-      }
+
+        &:last-child {
+            &:after {
+                background-image: url(/images/icons/im_equal.svg);
+            }
+        }
+    }
+
+    &__image {
+        position: relative;
+
+        picture {
+            display: block;
+            background: var(--black-4);
+            border-radius: 8px;
+            aspect-ratio: 1;
+            overflow: hidden;
+            padding: 12px;
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .badge {
+            background: var(--red);
+            color: var(--white);
+            font: 500 8px/1.5 $fontDefault;
+            padding-inline: 4px;
+            border-radius: 4px;
+
+            @include tablet {
+                position: absolute;
+                left: 4px;
+                top: 4px;
+                font: 500 14px/20px $fontDefault;
+                padding: 2px 8px;
+            }
+
+            &.badge-set {
+                background: var(--accent);
+            }
+        }
+    }
+
+    &__title {
+        font: 400 12px/16px $fontDefault;
+        margin-bottom: 8px;
+
+        @include tablet {
+            font: 400 20px/1.4 $fontDefault;
+        }
+    }
+
+    &__parameter {
+        font: 400 10px/1.6 $fontDefault;
+        display: flex;
+        gap: .4em;
+
+        @include tablet {
+            font: 400 16px/1.75 $fontDefault;
+        }
+    }
+
+    &__measure {
+        color: var(--black-50);
+    }
+
+    &__price {
+
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font: 400 10px/1.6 $fontDefault;
+
+        @include mobile {
+            grid-column: 2;
+        }
+
+        @include tablet {
+            font: 400 14px/20px $fontDefault;
+            margin-top: 10px;
+        }
+
+        &-group {
+            @include mobile {
+                display: flex;
+                align-items: center;
+            }
+
+            &.group-2 {
+                gap: 4px;
+            }
+        }
+
+        &-date {
+            @include mobile {
+                order: 2;
+                margin-left: 8px;
+            }
+
+            @include tablet {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                margin-bottom: 6px;
+            }
+
+            .badge {
+                font-weight: 500;
+                color: var(--white);
+                background: var(--black-base);
+                padding: 4px 6px;
+                border-radius: 4px;
+
+                @include tablet {
+                    padding: 6px 8px;
+                }
+            }
+
+            &-end {
+                background: var(--black-5);
+
+                @include tablet {
+                    padding: 6px 8px;
+                }
+            }
+        }
+
+        &-value {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            @include tablet {
+                justify-content: flex-end;
+                gap: 12px;
+            }
+
+            .new {
+                font: 700 16px/24px $fontDefault;
+                color: var(--red);
+
+                @include tablet {
+                    font-size: 24px;
+                    line-height: 32px;
+                }
+            }
+
+            .old {
+                text-decoration: line-through;
+                color: var(--black-70)
+            }
+
+            .unit {
+                @include mobile {
+                    display: none;
+                }
+
+                @include tablet {
+                    font: 400 14px/20px $fontDefault;
+                    border-radius: 4px;
+                    padding: 2px 4px;
+                    background: var(--black-5);
+                    color: var(--black-70);
+                }
+            }
+        }
+
+        &-qty {
+            border: 1px solid var(--black-20);
+            border-radius: 8px;
+            display: flex;
+            margin-bottom: 4px;
+
+            input {
+                border: none;
+                text-align: center;
+            }
+
+            button {
+                padding-inline: 8px;
+                background: transparent;
+
+                &:hover {
+                    background: var(--black-5);
+                }
+
+                .icon {
+                    min-width: 12px;
+                    width: 12px;
+                }
+            }
+        }
+
+        &-btn {
+            padding: 6px 12px;
+            border-radius: 8px;
+            font: 500 14px/20px $fontDefault;
+
+            @include tablet {
+                width: 100%;
+                font: 500 16px/1.5 $fontDefault;
+                padding-block: 12px;
+            }
+        }
+
+        .btn-custom_i {
+            .icon-m {
+                background: var(--black-70);
+                width: 14px;
+                height: 14px;
+            }
+        }
+
+        .btn-custom_i[data-favorites] {
+            position: relative;
+        }
+
+        .btn-custom_i[data-favorites].active i {
+            mask-image: unset !important;
+            background-color: transparent;
+            transition: none;
+        }
+
+        .btn-custom_i[data-favorites].active i::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEyLjM5NCAwYTQuNjk0IDQuNjk0IDAgMDAtMi4yNi42MTZBNC40MjQgNC40MjQgMCAwMDguNSAyLjIzIDQuNDI0IDQuNDI0IDAgMDA2Ljg2Ny42MTYgNC42OTQgNC42OTQgMCAwMDQuNjA2IDBhNC45MTQgNC45MTQgMCAwMC0zLjMzMSAxLjQ3NkE0LjQ3NiA0LjQ3NiAwIDAwLjAwMyA0Ljc2NWMwIDMuMDczIDMuMzkgNi40MyA2LjIzMSA4LjcwNUM2Ljg3IDEzLjk3OSA4LjUgMTUgOC41IDE1czEuNjMxLTEuMDIxIDIuMjY2LTEuNTNjMi44NDItMi4yNzYgNi4yMy01LjYzMiA2LjIzLTguNzA1YTQuNDc3IDQuNDc3IDAgMDAtMS4yNy0zLjI4OUE0LjkxNCA0LjkxNCAwIDAwMTIuMzkzIDB6IiBmaWxsPSIjRTQzQTI4Ii8+PC9zdmc+);
+            background-size: 55% auto;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 30;
+            animation: heartBeat .3s ease forwards;
+
+        }
+    }
+
+    &__combo-btn {
+        position: relative;
+
+        .btn-blue {
+            font: 500 14px/20px $fontDefault;
+            padding: 6px 12px;
+            border-radius: 8px;
+
+            &.is-active {
+                background-color: var(--green);
+            }
+        }
+
+        &.is-active {
+            .btn-blue {
+                opacity: 0;
+                z-index: -1;
+            }
+
+            .price-qty {
+                z-index: 2;
+            }
+        }
+
+        .price-qty {
+            border: 1px solid var(--black-20);
+            border-radius: 8px;
+            display: flex;
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+
+            input {
+                border: none;
+                text-align: center;
+                height: 30px;
+            }
+
+            button {
+                padding-inline: 4px;
+                background: transparent;
+
+                .icon {
+                    min-width: 8px;
+                    width: 8px;
+                }
+            }
+
+        }
 
     }
 
-  }
+    &__price-btn.is-active {
+        background-color: var(--green);
+    }
+
+    &__price-btn.is-active:hover {
+        background-color: var(--green) !important;
+    }
 }
