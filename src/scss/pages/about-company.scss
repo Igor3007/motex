@@ -39,7 +39,7 @@
       }
 
       @include desktop {
-        width: 65%;
+         
         margin-bottom: 120px;
       }
     }
@@ -191,6 +191,25 @@
           height: 100%;
         }
       }
+    }
+  }
+}
+
+.text-col-2 {
+	@media screen and (min-width: $w992) {
+    column-count: 2;
+    column-gap: 40px;
+
+    & > p {
+      break-inside: avoid;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    & strong:first-child {
+      font-size: 28px;
     }
   }
 }
