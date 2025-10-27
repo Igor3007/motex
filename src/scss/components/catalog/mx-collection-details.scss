@@ -170,13 +170,25 @@
           font-size: 14px;
           line-height: 20px;
         }
-
       }
 
+       
+     
       p {
         font: normal 400 14px/20px "Roboto", sans-serif;
         color: var(--black-70);
         margin-block: 20px;
+
+        @media screen and (max-width: $w760) {
+          font-size: 10px;
+          line-height: 1.6;
+        }
+      }
+
+      li {
+        font: normal 400 14px/20px "Roboto", sans-serif;
+        color: var(--black-70);
+      
 
         @media screen and (max-width: $w760) {
           font-size: 10px;

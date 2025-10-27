@@ -18,7 +18,7 @@
       margin-block: 80px;
     }
     @include desktop {
-      margin-block: 120px;
+      margin-block: 60px;
     }
 
     .formated-text {
@@ -38,10 +38,7 @@
         }
       }
 
-      @include desktop {
-         
-        margin-bottom: 120px;
-      }
+       
     }
   }
 
@@ -55,7 +52,7 @@
       margin-block: 80px 120px;
     }
     @include desktop {
-      margin-block: 120px;
+      margin-block: 60px;
     }
   }
 
@@ -208,8 +205,6 @@
       }
     }
 
-    & strong:first-child {
-      font-size: 28px;
-    }
+     
   }
 }
