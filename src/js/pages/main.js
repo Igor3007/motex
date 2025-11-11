@@ -2,20 +2,59 @@ import "../components/css-variable"
 import "../components/scroll-smooth"
 import "fslightbox";
 
-import { MaskInput } from "maska"
+import {
+  MaskInput
+} from "maska"
 import Splide from "@splidejs/splide";
-import { SearchIndex } from "../components/search-index";
-import { SelectRegion } from "../components/select-region";
-import { TopCatalog } from "../components/top-catalog";
-import { afLightbox } from "../components/af-lightbox";
-import { afSelect } from "../components/af-select.min";
-import { Status } from "../components/status";
-import { loadYmapsApi } from "../components/load-ymaps-api"
-import { ZBRangeSlider } from "../components/range-slider";
-import { ScrollTags } from "../components/scroll-tags";
+import {
+  SearchIndex
+} from "../components/search-index";
+import {
+  SelectRegion
+} from "../components/select-region";
+import {
+  TopCatalog
+} from "../components/top-catalog";
+import {
+  afLightbox
+} from "../components/af-lightbox";
+import {
+  afSelect
+} from "../components/af-select.min";
+import {
+  Status
+} from "../components/status";
+import {
+  loadYmapsApi
+} from "../components/load-ymaps-api"
+import {
+  ZBRangeSlider
+} from "../components/range-slider";
+import {
+  ScrollTags
+} from "../components/scroll-tags";
+import {
+  floatBar
+} from "../components/float-bar";
+import {
+  PersonalDataPopup
+} from "../components/cookie";
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  /* =========================================
+  PersonalDataPopup
+  =========================================*/
+
+  new PersonalDataPopup();
+
+  /* =========================================
+    float bar init
+  =========================================*/
+
+  floatBar()
 
   /* =========================================
     SearchIndex init
@@ -591,7 +630,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeVideoBlocks([{
     wrapperClass: '.demo-stories__item',
     controlClass: '.demo-stories__item video',
-  },]);
+  }, ]);
 
   /* =========================================
   email validator
@@ -1299,65 +1338,163 @@ if (document.querySelector('.category-filter')) {
   document.addEventListener('DOMContentLoaded', () => {
     let newRangeSlider = null;
 
-    const initPriceRange = () => {
-      const slider = document.getElementById('price-slider');
-      if (!slider) {
-        console.error('Слайдер не найден');
-        return;
+    // const initPriceRange = () => {
+    //   const slider = document.getElementById('price-slider');
+    //   if (!slider) {
+    //     console.error('Слайдер не найден');
+    //     return;
+    //   }
+
+    //   if (newRangeSlider) {
+    //     newRangeSlider = null;
+    //   }
+
+    //   newRangeSlider = new ZBRangeSlider('price-slider');
+
+    //   const inputMax = document.querySelector('[data-price-range="max"]');
+    //   const inputMin = document.querySelector('[data-price-range="min"]');
+
+    //   const priceMax = slider.getAttribute('se-max') || 10000;
+    //   const priceMin = slider.getAttribute('se-min') || 0;
+
+    //   const form = inputMax.closest('form');
+    //   const entity = form ? form.dataset.filter : '';
+
+    //   newRangeSlider.didChanged = (min, max) => {
+    //     inputMax.value = max;
+    //     inputMin.value = min;
+
+    //     if (entity && window.Filter ? window.Filter[entity] : '') {
+    //       window.Filter[entity].submit();
+    //     }
+    //   };
+
+    //   inputMax.addEventListener('keyup', (e) => {
+    //     let int = e.target.value.replace(/\D/g, '');
+    //     int = Math.min(Number(int), Number(priceMax));
+    //     e.target.value = int;
+    //     newRangeSlider.setMaxValue(int);
+    //   });
+
+    //   inputMin.addEventListener('keyup', (e) => {
+    //     let int = e.target.value.replace(/\D/g, '');
+    //     int = Math.max(Number(int), Number(priceMin));
+    //     e.target.value = int;
+    //     newRangeSlider.setMinValue(int);
+    //   });
+    // };
+
+
+    /* =========================================
+    range price slider
+    =========================================*/
+
+    function initPriceRange(el) {
+      let newRangeSlider = new ZBRangeSlider('price-slider');
+
+      let inputMax = el.querySelector('[data-price-range="max"]');
+      let inputMin = el.querySelector('[data-price-range="min"]');
+
+      let priceMax = Number(newRangeSlider.slider.getAttribute('se-max'))
+      let priceMin = Number(newRangeSlider.slider.getAttribute('se-min'))
+
+      let delimiter = (num) => {
+        return String(num).replace(/(\d)(?=(\d{3})+([^\d]|$))/g, '$1 ')
       }
 
-      if (newRangeSlider) {
-        newRangeSlider = null;
+      inputMax.value = delimiter(inputMax.value)
+      inputMin.value = delimiter(inputMin.value)
+
+      newRangeSlider.onChange = function (min, max) {
+        inputMax.value = delimiter(max)
+        inputMin.value = delimiter(min)
       }
 
-      newRangeSlider = new ZBRangeSlider('price-slider');
+      newRangeSlider.didChanged = function (min, max) {
 
-      const inputMax = document.querySelector('[data-price-range="max"]');
-      const inputMin = document.querySelector('[data-price-range="min"]');
+        console.log('didChanged')
+      }
 
-      const priceMax = slider.getAttribute('se-max') || 10000;
-      const priceMin = slider.getAttribute('se-min') || 0;
+      inputMin.addEventListener('input', e => {
+        e.target.value = e.target.value.replace(/\D/g, '')
+      })
 
-      const form = inputMax.closest('form');
-      const entity = form ? form.dataset.filter : '';
+      inputMax.addEventListener('input', e => {
+        e.target.value = e.target.value.replace(/\D/g, '')
+      })
 
-      newRangeSlider.didChanged = (min, max) => {
-        inputMax.value = max;
-        inputMin.value = min;
+      inputMin.addEventListener('blur', e => {
 
-        if (entity && window.Filter ? window.Filter[entity] : '') {
-          window.Filter[entity].submit();
+        let int = Number(e.target.value.replace(/[^\+\d]/g, ''));
+        let maxInputValue = Number(inputMax.value.replace(/[^\+\d]/g, ''));
+
+        if (int < priceMin) {
+          int = priceMin
         }
-      };
 
-      inputMax.addEventListener('keyup', (e) => {
-        let int = e.target.value.replace(/\D/g, '');
-        int = Math.min(Number(int), Number(priceMax));
-        e.target.value = int;
-        newRangeSlider.setMaxValue(int);
-      });
+        if (int > priceMax) {
+          int = priceMax
+        }
 
-      inputMin.addEventListener('keyup', (e) => {
-        let int = e.target.value.replace(/\D/g, '');
-        int = Math.max(Number(int), Number(priceMin));
-        e.target.value = int;
-        newRangeSlider.setMinValue(int);
-      });
-    };
+        if (int > maxInputValue) {
+          int = maxInputValue
+        }
+
+        if (int >= 0) {
+          e.target.value = delimiter(int)
+          newRangeSlider.setMinValue(int)
+        }
+      })
+
+      inputMax.addEventListener('blur', e => {
+
+        let int = Number(e.target.value.replace(/[^\+\d]/g, ''));
+        let minInputValue = Number(inputMin.value.replace(/[^\+\d]/g, ''));
+
+        if (int < priceMin) {
+          int = priceMin
+        }
+
+        if (int > priceMax) {
+          int = priceMax
+        }
+
+        if (int < minInputValue) {
+          int = minInputValue
+        }
+
+        e.target.value = delimiter(int)
+        newRangeSlider.setMaxValue(int)
+      })
+
+      inputMax.addEventListener('keyup', event => {
+        if (event.key === 'Enter') {
+          event.preventDefault(); // Предотвращаем стандартное поведение
+          console.log('Нажата клавиша Enter');
+
+          inputMax.dispatchEvent(new Event('blur'))
+
+        }
+      })
+
+    }
+
+
+
 
     const filterTrigger = document.querySelector('[data-filter-trigger="filter"]');
     const filterContainer = document.querySelector('[data-filter-container="filter"]');
     const closeButton = document.querySelector('[data-filter-close="close"]');
 
     if (document.querySelector('.filter-properties__range')) {
-      initPriceRange();
+      initPriceRange(document.querySelector('[data-filter-container="filter"]'));
     }
 
     if (filterTrigger && filterContainer && closeButton) {
       filterTrigger.addEventListener('click', () => {
         filterContainer.classList.add('fixed');
         document.body.classList.add('page-hidden');
-        setTimeout(initPriceRange, 100);
+        setTimeout(initPriceRange(document), 100);
       });
 
       closeButton.addEventListener('click', () => {
@@ -1367,7 +1504,7 @@ if (document.querySelector('.category-filter')) {
     }
 
     window.addEventListener('resize', () => {
-      setTimeout(initPriceRange, 200);
+      setTimeout(initPriceRange(document), 200);
     });
 
     const clearButton = document.querySelector('[data-filter="clear"]');

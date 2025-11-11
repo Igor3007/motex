@@ -2,6 +2,7 @@
 
 :root {
   --blog-item-padding: 12px;
+
   @include tablet {
     --blog-item-padding: 20px;
   }
@@ -64,6 +65,7 @@
 
     .btn-blue {
       padding: 8px 23px;
+
       @include tablet {
         padding: 12px 20px;
       }
@@ -100,6 +102,7 @@
     color: var(--black-base);
     padding-inline: 4px;
     border-radius: 4px;
+
     @include tablet {
       font-size: 12px;
     }
@@ -126,6 +129,7 @@
     align-items: center;
     gap: 4px;
     font: 400 10px/1.6 $fontDefault;
+
     @include tablet {
       font: 400 14px/20px $fontDefault;
     }
@@ -140,6 +144,7 @@
   .blog-item {
     border: none;
     min-height: 195px;
+
     @include tablet {
       min-height: 424px;
     }
@@ -153,12 +158,14 @@
       justify-content: flex-end;
       padding: var(--blog-item-padding);
       padding-bottom: 52px;
+
       @include tablet {
         padding-bottom: 80px;
       }
     }
 
-    &__time, &__date {
+    &__time,
+    &__date {
       position: static;
     }
 
