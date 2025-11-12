@@ -353,8 +353,6 @@ section.cart {
 
   }
 
-
-
   &__wishlist {
 
     position: relative;
@@ -410,6 +408,12 @@ section.cart {
     @media screen and (min-width: $w760) {
       font-size: 16px;
       line-height: 146%;
+    } 
+
+    &:hover {
+      text-decoration: underline;
+      color: var(--accent);
+      cursor: pointer;
     }
   }
 
@@ -871,7 +875,7 @@ section.cart {
 .lh-gauge-arc {
   fill: none;
   transform-origin: 50% 50%;
-  animation: load-gauge 10s linear both;
+  animation: load-gauge 5s linear both;
   animation-delay: 250ms;
   transform: rotate(-87.9537deg);
   stroke-dasharray: 250.154px, 352px;

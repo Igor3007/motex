@@ -1,18 +1,21 @@
 .float-bar {
-  display: flex;
-  position: fixed;
-  bottom: 0;
-  left: auto;
-  right: 15px;
-  cursor: pointer;
-  z-index: 50;
-  transition: 0.3s ease;
-  bottom: 15px;
-  opacity: 0;
-  transform: translateY(50px);
+ 
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 16px;
+    right: auto;
+    cursor: pointer;
+    z-index: 50;
+    transition: .3s ease;
+    bottom: 15px;
+    opacity: 0;
+    transform: translateY(50px);
+ 
 
   @media screen and (min-width: $w760) {
     bottom: 60px;
+    left: 56px;
   }
 
   &.is-active {
