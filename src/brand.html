@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  @@include('html/head.html', {
+  'title': 'Rockwool'
+  })
+  <link rel="stylesheet" href="/css/brands.min.css">
+</head>
+<body>
+@@include('html/header.html')
+<main class="page brands">
+  @@include('html/components/breadcrumbs.html',{
+  "links":[
+  {"href": "/pages", "title": "Каталог"},
+  {"href": "/pages/brands.html", "title" : "Бренды"},
+  {"href": "/pages/brand.html", "title" : "Rockwool"}
+  ]})
+
+  @@include('html/components/brand/brand-title.html')
+
+  @@include('html/components/brand/brand-slider.html')
+
+  @@include('html/components/brand/brand-categories.html')
+
+  @@include('html/components/brand/brand-catalogue.html')
+
+  @@include('html/components/brands/brands-seo.html')
+</main>
+@@include('html/footer.html')
+@@include('html/components/action-panel.html')
+</body>
+</html>
