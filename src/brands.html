@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  @@include('html/head.html', {
+  'title': 'Статьи'
+  })
+  <link rel="stylesheet" href="/css/brands.min.css">
+</head>
+<body>
+@@include('html/header.html')
+<main class="page brands">
+  @@include('html/components/breadcrumbs.html',{
+  "links":[
+  {"href": "/pages", "title": "Каталог"},
+  {"href": "/pages/brands.html", "title" : "Бренды"}
+  ]})
+
+  @@include('html/components/brands/brands-popular.html', {
+    "brands": [
+      {"title": "Rockwool", "src": "/images/brands/rockwool.webp", "url": "#"},
+      {"title": "Knauf", "src": "/images/brands/knauf.webp", "url": "#"},
+      {"title": "Свеза", "src": "/images/brands/sveza.webp", "url": "#"},
+      {"title": "Segezha", "src": "/images/brands/segezha.webp", "url": "#"},
+      {"title": "Rockwool", "src": "/images/brands/rockwool.webp", "url": "#"},
+      {"title": "Knauf", "src": "/images/brands/knauf.webp", "url": "#"},
+      {"title": "Свеза", "src": "/images/brands/sveza.webp", "url": "#"},
+      {"title": "Segezha", "src": "/images/brands/segezha.webp", "url": "#"}
+    ]
+  })
+
+  @@include('html/components/brands/brands-all.html')
+
+  @@include('html/components/brands/brands-seo.html')
+
+</main>
+@@include('html/footer.html')
+@@include('html/components/action-panel.html')
+</body>
+</html>
