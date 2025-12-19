@@ -15,7 +15,7 @@ const filePaths = {
     js: `${srcFolder}/js/**/*.js`,
     images: `${srcFolder}/images/**/*.{jpg,jpeg,png,gif,webp}`,
     svg: `${srcFolder}/images/**/*.svg`,
-    scss: [`${srcFolder}/scss/*.scss`],
+    scss: [`${srcFolder}/scss/brands.scss`],
     html: `${srcFolder}/*.html`,
     static: `${srcFolder}/static/**/*.*`,
     svgIcons: `${srcFolder}/icons/*.svg`,

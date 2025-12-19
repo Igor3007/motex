@@ -1,16 +1,31 @@
-<section id="brand-title">
+<section class="brand-title">
   <div class="_container">
 
-    <div class="flex">
+    <div class="flex brand-title__name">
       <h1>Производитель ROCKWOOL</h1>
-      <div class="items">756 товаров</div>
+      <div class="brand-title__goods">756 товаров</div>
     </div>
 
-    <div class="flex">
+    <div class="flex brand-title__guarantee">
       @@include('../brands/brand-item.html',{"title": "Rockwool", "src": "/images/brands/rockwool.webp", "url": "#"})
-      Выбор профессионалов и гарантированная надежность качества
-      <button>Сертификат дилера</button>
+      <div class="guarantee flex">
+        <img src="/images/icons/ic_guarantee.svg" alt="Гарантия" class="guarantee__icon">
+        <div class="guarantee__text">Выбор профессионалов и гарантированная надежность качества</div>
+      </div>
+      <button class="btn-custom">
+        <img class="icon" src="/images/icons/ic_eye_.svg" alt="">
+        <span>Сертификат дилера</span>
+      </button>
+    </div>
 
+    <div class="brand-title__description">
+      Продукция бренда поможет сэкономить время и деньги. Компания-производитель внедряет современные технологические решения, чтобы при наименьшей цене товаров качество результата было максимальным.
+    </div>
+
+    <div class="flex brand-title__features">
+      @@include("./brand-feature.html", {"icon":"/images/icons/ic_star2.svg","description":"Эффективные решения, подтверждённые испытаниями."})
+      @@include("./brand-feature.html", {"icon":"/images/icons/ic_branches.svg","description":"Различные вариации решений  под любые проекты."})
+      @@include("./brand-feature.html", {"icon":"/images/icons/ic_like2.svg","description":"Уверенность в результате  по доступной цене."})
     </div>
 
   </div>

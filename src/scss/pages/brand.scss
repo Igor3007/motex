@@ -1,0 +1,77 @@
+@import "../config";
+
+.brand {
+
+}
+
+.brand-title {
+  margin-top: 20px;
+
+  &__name {
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  &__goods {
+    font: 500 16px/1.5 $fontDefault;
+    color: var(--black-50);
+  }
+
+  &__guarantee {
+    outline: 1px solid var(--black-20);
+    justify-content: space-between;
+    border-radius: 8px;
+    padding-right: 40px;
+
+    .brand-item {
+      border: none;
+      outline: 1px solid var(--black-20);
+    }
+
+    .icon {
+      margin-right: 8px;
+    }
+  }
+
+  &__description {
+    max-width: 640px;
+    margin-block: 32px;
+    font: 400 16px/1.5 $fontDefault;
+  }
+
+  .guarantee {
+    &__icon {
+      margin-right: 8px;
+
+    }
+  }
+
+  &__features {
+    gap: 16px;
+    margin-block: 32px;
+  }
+}
+
+.brand-feature {
+  &__icon {
+    width: 120px;
+    height: 120px;
+    border: 1px solid var(--black-20);
+    border-radius: 8px;
+    flex: 0 0 120px;
+    margin-right: 12px;
+
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      display: block;
+      margin: 30px;
+    }
+  }
+
+  &__description {
+    font: 400 16px/1.5 $fontDefault;
+    text-wrap: balance;
+  }
+}
