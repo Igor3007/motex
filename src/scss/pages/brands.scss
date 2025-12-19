@@ -37,8 +37,7 @@
   @media (width < 768px) {}
 }
 
-.brands {
-
+.page-brands {
   h3 {
     font: 700 24px/32px $fontDefault;
     margin-bottom: 20px;
@@ -48,6 +47,9 @@
       margin-bottom: 13px;
     }
   }
+}
+
+.brands {
 
   &__grid {
     display: grid;
