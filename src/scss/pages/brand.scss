@@ -1,11 +1,36 @@
 @import "../config";
 
 .brand {
+  &__slider {
+    .splide {
+      &__arrow {
+        --size: 48px;
+        --offset: -24px;
+        background: var(--white);
+        border: 1px solid var(--black-20);
+        width: var(--size);
+        height: var(--size);
+        opacity: 1;
 
+        @media (width < 768px) {
+          --size: 32px;
+          --offset: -16px;
+        }
+
+        &--prev {
+          left: var(--offset);
+        }
+        &--next {
+          right: var(--offset);
+        }
+      }
+    }
+  }
 }
 
 .brand-title {
   margin-top: 20px;
+  margin-bottom: 40px;
 
   &__name {
     gap: 16px;
@@ -23,13 +48,44 @@
     border-radius: 8px;
     padding-right: 40px;
 
+    @media (width < 1024px) {
+      flex-direction: column;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    @media (width < 768px) {
+      padding: 12px;
+      gap: 12px;
+    }
+
     .brand-item {
       border: none;
       outline: 1px solid var(--black-20);
+
+
+      @media (width < 1024px) {
+        margin-top: -20px;
+        margin-inline: -20px;
+        align-self: stretch;
+        width: auto !important;
+      }
+
+      @media (width < 768px) {
+        margin-top: -12px;
+        margin-inline: -12px;
+      }
     }
 
     .icon {
       margin-right: 8px;
+    }
+
+    button {
+      @media (width < 1024px) {
+        width: 100%;
+        max-width: 464px;
+      }
     }
   }
 
@@ -37,22 +93,62 @@
     max-width: 640px;
     margin-block: 32px;
     font: 400 16px/1.5 $fontDefault;
+
+    @media (width < 768px) {
+      font: 400 12px/16px $fontDefault;
+    }
   }
 
   .guarantee {
     &__icon {
       margin-right: 8px;
-
+      @media (width < 768px) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    &__text {
+      @media (width < 1024px) {
+        max-width: 374px;
+      }
+      @media (width < 768px) {
+        font: 400 12px/16px $fontDefault;
+        max-width: 263px;
+      }
     }
   }
 
   &__features {
     gap: 16px;
     margin-block: 32px;
+
+    @media (width < 1024px) {
+      overflow: auto;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+    }
+
+    @media (width < 768px) {
+      overflow: visible;
+      gap: 12px;
+      flex-direction: column;
+      padding-bottom: 0;
+    }
+
   }
 }
 
 .brand-feature {
+
+  @media (width < 1024px) {
+    width: 416px;
+    flex-shrink: 0;
+  }
+
+  @media (width < 768px) {
+    width: 100%;
+  }
+
   &__icon {
     width: 120px;
     height: 120px;
@@ -61,17 +157,77 @@
     flex: 0 0 120px;
     margin-right: 12px;
 
+    @media (width < 768px) {
+      width: 72px;
+      height: 72px;
+      flex-basis: 72px;
+    }
+
     img {
       width: 60px;
       height: 60px;
       object-fit: contain;
       display: block;
       margin: 30px;
+
+      @media (width < 768px) {
+        width: 40px;
+        height: 40px;
+        margin: 16px;
+      }
     }
   }
 
   &__description {
     font: 400 16px/1.5 $fontDefault;
     text-wrap: balance;
+
+    @media (width < 768px) {
+      font: 400 12px/16px $fontDefault;
+    }
+  }
+}
+
+.brand-slider {
+  margin-top: 40px;
+}
+
+.brand-slide {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+
+  picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 5;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__link {
+    display: block;
+    position: absolute;
+    left: 60px;
+    bottom: 60px;
+    font: 700 24px/32px $fontDefault;
+    color: var(--white);
+    max-width: 45%;
+
+    @media (width < 1024px) {
+      left: 32px;
+      bottom: 32px;
+    }
+
+    @media (width < 768px) {
+      left: 20px;
+      bottom: 20px;
+      font: 400 12px/16px $fontDefault;
+    }
   }
 }

@@ -20,7 +20,18 @@ import Splide from "@splidejs/splide";
       }
     }
   });
-
   splide.mount();
+}());
 
+(function(){
+  if (!document.querySelector('.splide.brand__slider')) return;
+
+  const splide = new Splide('.splide.brand__slider', {
+    arrowPath: 'm24.381 3.9208-3.0832 3.0417 10.292 10.292h-31.292v4.3333h31.292l-10.292 10.292 3.0832 3.0416 15.5-15.5z',
+    type: "loop",
+    pagination: false,
+    perPage: 1,
+    perMove: 1
+  });
+  splide.mount();
 }());
