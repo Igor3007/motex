@@ -47,7 +47,17 @@ import Splide from "@splidejs/splide";
     pagination: false,
     perPage: 6,
     perMove: 1,
-    gap: 16
+    gap: 16,
+    breakpoints: {
+      1024: {
+        perPage: 3
+      },
+      767: {
+        perPage: 2,
+        gap: 12,
+        arrows: false
+      }
+    }
   });
   splide.mount();
 }());

@@ -1,5 +1,41 @@
-<section id="brand-title">
+<section class="brand-catalogue">
   <div class="_container">
-    <h3>Brand catalogue</h3>
+    <div class="mx-collection-details__goods">
+
+      <div class="mx-bd-catalog__catalog-heading">
+        <div class="mx-bd-catalog__catalog-heading-filter" data-filter-trigger="filter">
+          <i class="icon" style="background-image: url('/images/icons/ic_filter.svg')"></i>
+          Фильтры
+        </div>
+        @@include('../../../html/components/dropdown.html')
+        <div class="mx-bd-catalog__catalog-heading-views catalog-views">
+          <div class="catalog-views__btn" data-view="list">
+            <i class="icon"
+               style="background-image: url('/images/icons/ic_catalog-views-list.svg')"></i>
+          </div>
+          <div class="catalog-views__btn active" data-view="grid">
+            <i class="icon"
+               style="background-image: url('/images/icons/ic_catalog-views-grid.svg')"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="mx-collection-details__goods-grid">
+        @@include('../../../html/components/mx-goods/mx-goods-item-1.html')
+        @@include('../../../html/components/mx-goods/mx-goods-item-3.html')
+        @@include('../../../html/components/mx-goods/mx-goods-item-3.html')
+        @@include('../../../html/components/mx-goods/mx-goods-item-3.html')
+        @@include('../../../html/components/mx-goods/mx-goods-item-1.html')
+        @@include('../../../html/components/mx-goods/mx-goods-item-3.html')
+        @@include('../../../html/components/mx-goods/mx-goods-item-1.html')
+        @@include('../../../html/components/mx-goods/mx-goods-item-3.html')
+        @@include('../../../html/components/mx-goods/mx-goods-item-3.html')
+        @@include('../../../html/components/mx-goods/mx-goods-item-3.html')
+        @@include('../../../html/components/mx-goods/mx-goods-item-1.html')
+      </div>
+
+      @@include('../../../html/components/paginator.html')
+    </div>
   </div>
 </section>
+

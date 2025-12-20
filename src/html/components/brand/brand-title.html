@@ -12,7 +12,7 @@
         <img src="/images/icons/ic_guarantee.svg" alt="Гарантия" class="guarantee__icon">
         <div class="guarantee__text">Выбор профессионалов и гарантированная надежность качества</div>
       </div>
-      <button class="btn-custom">
+      <button class="btn-custom" popovertarget="atestilo">
         <img class="icon" src="/images/icons/ic_eye_.svg" alt="">
         <span>Сертификат дилера</span>
       </button>
@@ -28,5 +28,18 @@
       @@include("./brand-feature.html", {"icon":"/images/icons/ic_like2.svg","description":"Уверенность в результате  по доступной цене."})
     </div>
 
+  </div>
+  <div popover id="atestilo" class="popover">
+    <div class="popover-wrapper v-flex">
+      <div class="popover-header flex">
+        <h3>Сертификат дилера</h3>
+        <button popovertarget="atestilo"></button>
+      </div>
+      <div class="popover-image">
+        <picture>
+          <img src="/images/brand/atestilo.webp" alt="Сертификат" loading="lazy">
+        </picture>
+      </div>
+    </div>
   </div>
 </section>
