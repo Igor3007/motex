@@ -30,7 +30,7 @@ const scss = (isBuild) => {
     .pipe(sass({
       outputStyle: 'expanded'
     }, null))
-    // .pipe(plugins.if(isBuild, webpCss(webpConfig)))
+    .pipe(plugins.if(isBuild, webpCss(webpConfig)))
     .pipe(postcss([
       autoprefixer(),
       postcssPresetEnv(),
