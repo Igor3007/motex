@@ -1,78 +1,72 @@
 .mx-goods {
-    overflow: hidden;
+  overflow: hidden;
+
+  @media screen and (min-width: 991.98px) {
+    margin-bottom: 60px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+
+    @media screen and (min-width: 767.98px) {
+      margin-bottom: 28px;
+    }
 
     @media screen and (min-width: 991.98px) {
-        margin-bottom: 60px;
+      margin-bottom: 8px;
+    }
+  }
+
+  .splide {
+    &__track {
+      overflow: initial;
+
+      @media screen and (min-width: 1199.98px) {
+        overflow: hidden;
+      }
     }
 
-    h2 {
-        margin-bottom: 20px;
-
-        @media screen and (min-width: 767.98px) {
-            margin-bottom: 28px;
-        }
-
-        @media screen and (min-width: 991.98px) {
-            margin-bottom: 8px;
-        }
+    &__list {
+      @media screen and (min-width: 991.98px) {
+        padding: 20px 0 !important;
+      }
     }
 
-    .splide {
-        &__track {
-            overflow: initial;
 
-            @media screen and (min-width: 1199.98px) {
-                overflow: hidden;
-            }
+
+    &__arrow {
+      opacity: 1;
+      min-width: 48px;
+      width: 48px;
+      height: 48px;
+      border: 1px solid #D0D1D1;
+
+      background-color: #FFF;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: .1s ease;
+
+      @media screen and (min-width: 991.98px) {
+        &:hover {
+          border-color: #19BEFF;
         }
+      }
 
-        &__arrow {
-            opacity: 1;
-            min-width: 48px;
-            width: 48px;
-            height: 48px;
-            border: 1px solid #D0D1D1;
+      svg {
+        display: none;
+      }
+    }
 
-            background-color: #FFF;
-            background-repeat: no-repeat;
-            background-position: center;
-            transition: .1s ease;
-
-            @media screen and (min-width: 991.98px) {
-                &:hover {
-                    border-color: #19BEFF;
-                }
-            }
-
-            svg {
-                display: none;
-            }
-        }
-
-        &__arrow--prev {
-            left: -24px;
-            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyMCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuODU0MTMgMTUuNzVMOS4zOTU3OSAxNC4yMjkyTDQuMjQ5OTYgOS4wODMzM0gxOS44OTU4VjYuOTE2NjdINC4yNDk5Nkw5LjM5NTc5IDEuNzcwODNMNy44NTQxMyAwLjI1TDAuMTA0MTI2IDhMNy44NTQxMyAxNS43NVoiIGZpbGw9IiMxNTE4MUEiLz4KPC9zdmc+Cg==);
-
-        }
-
-        &__arrow--next {
-            right: -24px;
-            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyMCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyLjE0NTkgMC4yNUwxMC42MDQyIDEuNzcwODNMMTUuNzUwMSA2LjkxNjY3SDAuMTA0MjQ4VjkuMDgzMzNIMTUuNzUwMUwxMC42MDQyIDE0LjIyOTJMMTIuMTQ1OSAxNS43NUwxOS44OTU5IDhMMTIuMTQ1OSAwLjI1WiIgZmlsbD0iIzE1MTgxQSIvPgo8L3N2Zz4K);
-        }
-
+    &__arrow--prev {
+      left: -24px;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyMCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuODU0MTMgMTUuNzVMOS4zOTU3OSAxNC4yMjkyTDQuMjQ5OTYgOS4wODMzM0gxOS44OTU4VjYuOTE2NjdINC4yNDk5Nkw5LjM5NTc5IDEuNzcwODNMNy44NTQxMyAwLjI1TDAuMTA0MTI2IDhMNy44NTQxMyAxNS43NVoiIGZpbGw9IiMxNTE4MUEiLz4KPC9zdmc+Cg==);
 
     }
 
-    &__goods {
-
-        &>.splide {
-            &__list {
-                @media screen and (min-width: 991.98px) {
-                    padding: 20px 0 !important;
-                }
-            }
-        }
-
+    &__arrow--next {
+      right: -24px;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyMCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyLjE0NTkgMC4yNUwxMC42MDQyIDEuNzcwODNMMTUuNzUwMSA2LjkxNjY3SDAuMTA0MjQ4VjkuMDgzMzNIMTUuNzUwMUwxMC42MDQyIDE0LjIyOTJMMTIuMTQ1OSAxNS43NUwxOS44OTU5IDhMMTIuMTQ1OSAwLjI1WiIgZmlsbD0iIzE1MTgxQSIvPgo8L3N2Zz4K);
     }
+  }
 
 }

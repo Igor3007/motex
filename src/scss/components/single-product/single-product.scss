@@ -131,7 +131,7 @@
 
         padding-bottom: 5px;
 
-        @media screen and (min-width: $w1200) {
+        @media screen and (min-width: $w992) {
             display: none;
         }
 
@@ -160,13 +160,9 @@
                     line-height: 135%;
                     font-weight: 500;
                     color: var(--black-base);
-
-                    @media screen and (min-width: $w760) {
-                        font-size: 28px;
-                    }
                 }
 
-                @media screen and (min-width: $w1200) {
+                @media screen and (min-width: $w760) {
                     display: none;
                 }
             }
@@ -218,7 +214,7 @@
             &__h1 {
                 display: none;
 
-                @media screen and (min-width: $w1200) {
+                @media screen and (min-width: $w760) {
                     display: flex;
                 }
             }
@@ -556,10 +552,6 @@
                 height: 20px;
                 background-size: 10px;
             }
-        }
-
-        & span {
-            white-space: nowrap;
         }
 
         &:hover {

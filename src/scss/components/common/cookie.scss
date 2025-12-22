@@ -1,8 +1,8 @@
 .bottom-popup {
   position: fixed;
   z-index: 10000000000000;
-  left: 0px;
-  right: 0px;
+  left: 0;
+  right: 0;
   bottom: 10px;
   display: flex;
   justify-content: center;
@@ -10,11 +10,6 @@
   display: none;
   animation: slide-up 0.3s ease forwards;
   text-align: left;
-
-  @media screen and (min-width: 1200px) {
-    left: 150px;
-    right: 150px;
-  }
 }
 
 .bottom-popup__wrp {
@@ -95,15 +90,15 @@
   .bottom-popup__btn {
     padding-top: 10px;
     width: 100%;
-  }
+  } 
 
   .bottom-popup__btn .btn-blue {
     width: 100%;
     color: #fff;
     font-size: 14px;
   }
-}
-
+} 
+  
 @media screen and (max-width: 480px) {
   .bottom-popup__wrp {
     padding: 16px 16px;

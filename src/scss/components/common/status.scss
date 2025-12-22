@@ -8,7 +8,7 @@
     background: transparent;
     min-width: 300px;
     transform: translateY(50%);
-    transition: opacity 0.3s ease;
+    transition: 0.3s ease;
     color: #fff;
     z-index: 100000;
     max-width: 300px;
@@ -17,10 +17,6 @@
     flex-wrap: wrap;
     opacity: 0;
     right: 20px;
-
-    @media screen and (min-width: $w576) {
-      transition: 0.3s ease;
-    }
   
   
     &:hover {
@@ -52,8 +48,6 @@
     line-height: 140%;
     padding: 2px 4px;
     font-size: 14px;
-
-    
   }
   
   #status.error {
@@ -80,27 +74,6 @@
     visibility: visible;
     background-color: rgb(16, 17, 16);
     opacity: 1;
-  }
-
-  @media screen and (max-width: 576px) {
-    #status.complete {
-      border-radius: 40px;
-      background-size: 24px;
-      padding-left: 46px;
-      padding: 8px;
-        padding-right: 8px;
-        padding-left: 8px;
-      min-width: auto;
-      right: auto;
-      left: 50%;
-      white-space: nowrap;
-      padding-left: 43px;
-      top: 13%;
-      bottom: auto;
-      transform: translateX(-50%);
-      background-position: 13px;
-      padding-right: 10px;
-    }
   }
   
   #status.error #status_header {

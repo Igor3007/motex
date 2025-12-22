@@ -10,6 +10,7 @@ section.mx-bd-catalog {
 }
 
 .mx-bd-catalog {
+
     &__wrapper {
         @media screen and (min-width: 991.98px) {
             display: flex;
@@ -132,12 +133,6 @@ section.mx-bd-catalog {
                         }
                     }
                 }
-            }
-        }
-
-        @media screen and (min-width: 991.98px) {
-            .category-filter__submit[data-filter-close="close"] {
-                display: none;
             }
         }
     }
