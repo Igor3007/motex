@@ -239,8 +239,12 @@
     }
 
     & .counter {
-        height: 48px;
+        height: 40px;
         width: 100%;
+
+        @media screen and (min-width: $w480) {
+            height: 48px;
+        }
 
 
         &__input {
@@ -267,11 +271,34 @@
 
         &__dec,
         &__inc {
-            height: 38px;
-            width: 38px;
+            height: 30px;
+            width: 30px;
             min-width: 38px;
             margin: 5px;
             border-radius: 5px;
+
+            @media screen and (min-width: $w480) {
+                height: 38px;
+                width: 38px;
+            }
         }
     }
+
+    &.is-add-to-cart {
+        & .sticky-bar-product {
+            &__count {
+                display: block;
+                width: 100%;
+            }
+
+            &__tocart {
+                @media screen and (max-width: $w480) {
+                    display: none
+                }
+            }
+        }
+    }
+
+
+
 }
