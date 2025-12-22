@@ -22,10 +22,11 @@
     }
 
     &__heading {
-        display: inline-flex;
+        display: inline;
         align-items: center;
         gap: 12px;
         margin-bottom: 28px;
+        width: 100%;
 
         @media screen and (min-width: 767.98px) {
             gap: 16px;
@@ -33,7 +34,8 @@
         }
 
         h1 {
-            max-width: 140px;
+            max-width: calc(100% - 95px);
+            display: inline;
 
             @media screen and (min-width: 479.98px) {
                 max-width: initial;
@@ -41,11 +43,19 @@
         }
 
         &-count {
+
+            display: inline;
+            margin-left: 5px;
+            position: relative;
+            top: -2px;
+            line-height: 140%;
+
             span {
                 font-weight: 400;
                 font-size: 12px;
                 line-height: 16px;
                 color: #8A8C8D;
+                white-space: nowrap;
 
                 @media screen and (min-width: 767.98px) {
                     font-weight: 500;
