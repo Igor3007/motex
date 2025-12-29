@@ -38,7 +38,7 @@
       height: 360px;
       margin-bottom: 46px;
     }
-    
+
     @media (max-width: $w576) {
       height: auto;
       aspect-ratio: 324 /184;
@@ -140,7 +140,7 @@
     &-grid {
       display: grid;
       gap: 16px;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); //
 
       @media (max-width: $w576) {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -172,8 +172,8 @@
         }
       }
 
-       
-     
+
+
       p {
         font: normal 400 14px/20px "Roboto", sans-serif;
         color: var(--black-70);
@@ -188,7 +188,7 @@
       li {
         font: normal 400 14px/20px "Roboto", sans-serif;
         color: var(--black-70);
-      
+
 
         @media screen and (max-width: $w760) {
           font-size: 10px;

@@ -5,6 +5,7 @@
   border: 1px solid var(--black-20);
   border-radius: 8px;
   padding: 24px 48px;
+  overflow: hidden;
 
   @media (width < 1024px) {
     padding: 16px 32px;
@@ -14,9 +15,18 @@
     padding: 8px 16px;
   }
 
+  @include hover {
+    border-color: var(--accent);
+
+    picture {
+      transform: scale(1.1);
+    }
+  }
+
   picture {
     display: block;
     height: 50px;
+    transition: .3s transform;
 
     @media (width < 1024px) {
       height: 46px;
@@ -88,6 +98,10 @@
 
   &__seo {
     margin-block: 120px;
+
+    @media (width < 768px) {
+      margin-block: 60px 80px;
+    }
 
     &-wrp {
       max-width: 848px;

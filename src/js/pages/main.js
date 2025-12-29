@@ -1216,9 +1216,8 @@ if (document.querySelector('.dropdown')) {
   });
 }
 
-
-if (document.querySelector('.mx-bd-catalog')) {
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.querySelector('.mx-bd-catalog')) {
     const container = document.querySelector('.mx-bd-catalog__catalog-list');
     const buttons = document.querySelectorAll('.catalog-views__btn');
 
@@ -1237,8 +1236,9 @@ if (document.querySelector('.mx-bd-catalog')) {
     buttons.forEach(button => {
       button.addEventListener('click', () => setView(button.dataset.view));
     });
-  });
-}
+  }
+});
+
 
 if (document.querySelector('.mx-bd-catalog__aside-dropdown')) {
   document.addEventListener("DOMContentLoaded", function () {
