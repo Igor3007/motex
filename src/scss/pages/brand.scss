@@ -297,14 +297,13 @@
 }
 
 .category-slide {
-  display: flex;
-  flex-direction: column;
-  gap:20px;
+  display: block;
   background: #f6f6f6;
   padding: 18px;
   border-radius: 8px;
   border: 1px solid transparent;
   transition: .3s;
+  margin: 1px;
 
   @include hover {
     border-color: var(--accent);
@@ -322,6 +321,7 @@
 
   .title {
     height: 1lh;
+    margin-bottom: 20px;
     font: 500 16px/1 $fontDefault;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -331,6 +331,7 @@
     @media (width < 1024px) {
       padding: 18px;
       height: 72px;
+      margin-bottom: 0;
     }
 
     @media (width < 768px) {
@@ -372,8 +373,14 @@
   }
 
   .dropdown {
+
     @media (width >= 1024px) {
       width: auto;
+    }
+
+    &__toggle {
+      padding: 11px;
+      gap: 3px;
     }
   }
 }
