@@ -2,38 +2,39 @@
 
 .page-brand,
 .page-brands {
-    .splide {
-      &__arrow {
-        --size: 48px;
-        --offset: -24px;
-        background: var(--white);
-        border: 1px solid var(--black-20);
-        width: var(--size);
-        height: var(--size);
-        opacity: 1;
-        transition: .3s;
+  .splide {
+    &__arrow {
+      --size: 48px;
+      --offset: -24px;
+      background: var(--white);
+      border: 1px solid var(--black-20);
+      width: var(--size);
+      height: var(--size);
+      opacity: 1;
+      transition: .3s;
 
-        &:disabled {
-          opacity: .3;
-        }
+      &:disabled {
+        opacity: .3;
+      }
 
-        &:not(:disabled):hover {
-          border-color: var(--accent);
-        }
+      &:not(:disabled):hover {
+        border-color: var(--accent);
+      }
 
-        @media (width < 768px) {
-          --size: 32px;
-          --offset: -16px;
-        }
+      @media (width < 768px) {
+        --size: 32px;
+        --offset: -16px;
+      }
 
-        &--prev {
-          left: var(--offset);
-        }
-        &--next {
-          right: var(--offset);
-        }
+      &--prev {
+        left: var(--offset);
+      }
+
+      &--next {
+        right: var(--offset);
       }
     }
+  }
 }
 
 .page-brand {
@@ -132,6 +133,7 @@
         height: 20px;
       }
     }
+
     &__text {
       @media (width < 1024px) {
         max-width: 374px;
@@ -345,6 +347,7 @@
     display: block;
     aspect-ratio: 4 / 3;
     transition: .3s transform;
+    padding: 15px;
 
     @media (width < 1024px) {
       aspect-ratio: 222 / 151;
@@ -372,16 +375,8 @@
     display: none;
   }
 
-  .dropdown {
-
-    @media (width >= 1024px) {
-      width: auto;
-    }
-
-    &__toggle {
-      padding: 11px;
-      gap: 3px;
-    }
+  .dropdown__toggle {
+    padding: 11px;
   }
 }
 
@@ -391,7 +386,7 @@
   border-radius: 8px;
 
   &::backdrop {
-    background: rgba(0,0,0,.1);
+    background: rgba(0, 0, 0, .1);
   }
 
   &-wrapper {
@@ -400,10 +395,10 @@
     padding: 28px;
     background: var(--white);
 
-    @media (width < 1344px ) {
+    @media (width < 1344px) {
       max-width: calc(100vw - 64px);
     }
-    @media (width < 768px ) {
+    @media (width < 768px) {
       max-width: calc(100vw - 36px);
       padding: 20px;
     }
@@ -413,7 +408,7 @@
     justify-content: space-between;
     margin-bottom: 28px;
 
-    @media (width < 768px ) {
+    @media (width < 768px) {
       margin-bottom: 20px;
     }
 
@@ -450,6 +445,7 @@
 
     }
   }
+
   picture {
     display: block;
     max-height: calc(100vh - 240px);
