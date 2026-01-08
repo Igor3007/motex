@@ -366,3 +366,8 @@
     right: .5em;
     top: 0
 }
+
+
+.splide:not(.is-overflow) .splide__arrow {
+    display: none
+  }
