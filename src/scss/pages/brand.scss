@@ -221,7 +221,12 @@
   @media (width < 768px) {
     margin-bottom: 40px;
   }
-}
+
+  & .splide:not(.is-overflow) {
+    pointer-events: none;
+    touch-action: none;
+  }
+} 
 
 .brand-slide {
   position: relative;
