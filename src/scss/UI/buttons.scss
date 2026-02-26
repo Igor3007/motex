@@ -208,6 +208,12 @@
             line-height: 16px;
         }
     }
+
+    &.is-active {
+        background-color: var(--green) !important;
+    }
+
+    
 }
 
 .btn-disabled {

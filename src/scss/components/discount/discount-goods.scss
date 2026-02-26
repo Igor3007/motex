@@ -8,12 +8,14 @@
     gap: 1px;
     padding-block: 1px;
   }
+
   &__totals {
     margin-block: 42px 12px ;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 8px;
+    flex-wrap: wrap;
     @include tablet {
       margin-top: 62px;
       margin-left: 0;
@@ -29,6 +31,7 @@
       color: var(--white);
       padding-inline: 8px;
       border-radius: 8px;
+      white-space: nowrap;
       @include tablet {
         font-size: 32px;
         line-height: 40px;
@@ -41,6 +44,7 @@
       color: var(--red);
       margin-left: 8px;
       margin-right: 12px;
+      white-space: nowrap;
       @include tablet {
         font-size: 32px;
         line-height: 40px;
@@ -52,6 +56,7 @@
       text-decoration: line-through;
       color: var(--black-50);
       font: 400 14px/20px $fontDefault;
+      white-space: nowrap;
       @include tablet {
         font: 400 20px/28px $fontDefault;
       }

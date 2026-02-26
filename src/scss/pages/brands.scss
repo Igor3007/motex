@@ -107,18 +107,18 @@
       max-width: 848px;
     }
 
-    h3 {
-      margin-block: 28px 20px;
-    }
+    // h3 {
+    //   margin-block: 28px 20px;
+    // }
 
-    p {
-      font: 400 14px/20px $fontDefault;
-      color: var(--black-70);
+    // p {
+    //   font: 400 14px/20px $fontDefault;
+    //   color: var(--black-70);
 
-      @media (width < 768px) {
-        font: 400 10px/1.6 $fontDefault;
-      }
-    }
+    //   @media (width < 768px) {
+    //     font: 400 10px/1.6 $fontDefault;
+    //   }
+    // }
   }
 }
 

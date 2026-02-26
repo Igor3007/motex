@@ -226,7 +226,7 @@
     pointer-events: none;
     touch-action: none;
   }
-} 
+}
 
 .brand-slide {
   position: relative;
@@ -374,6 +374,11 @@
   .mx-collection-details__goods-grid {
     margin-top: 16px;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+    @media (max-width: $w576) {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
+    }
   }
 
   .mx-bd-catalog__catalog-heading-filter {
@@ -381,7 +386,9 @@
   }
 
   .dropdown__toggle {
-    padding: 11px;
+    @media screen and (min-width: $w760) {
+      padding: 11px;
+    }
   }
 }
 

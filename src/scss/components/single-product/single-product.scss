@@ -467,9 +467,6 @@
                 font-size: 32px;
             }
 
-
-
-            @include line-clamp(2);
         }
 
         &.is-disabled-lineclamp {
@@ -846,9 +843,21 @@
 
     &__brand {
         & .block-addition {
+            &__desc {
+                color: var(--black-base);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
             &__icon {
                 & i {
                     background-size: 10px 12px !important;
+
+                    &:hover {
+                        border-color: #19beff;
+                    }
                 }
             }
         }
