@@ -60,6 +60,18 @@
   }
 
 
+  &__fullname {
+	padding: 7px 8px;
+	background-color: #0000009c;
+	margin: 6px;
+	border-radius: 6px;
+	font-size: 14px;
+	color: #fff;
+	position: absolute;
+	bottom: 0;
+	z-index: 2;
+}
+
   &__heading {
     padding: 12px 12px 0 12px;
     display: flex;

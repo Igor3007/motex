@@ -1,0 +1,10 @@
+.banner-on-grid {
+	width: 100%;
+	grid-column: 1 / -1;
+  grid-row: 4;
+
+  &__image img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+}

@@ -556,6 +556,41 @@ document.addEventListener("DOMContentLoaded", () => {
       button.addEventListener('click', () => {
         card.classList.toggle('active');
       });
+
+      let slider = card.querySelector('.splide');
+
+      if (slider && document.body.clientWidth > 576) {
+          card['splide'] = new Splide(slider, {
+              arrows: false,
+          })
+
+          card['splide'].on('ready', function () {
+
+              let hoverWrapper = document.createElement('ul')
+              hoverWrapper.classList.add('splide__navhover')
+
+              for (let i = 0; i < card['splide'].length; i++) {
+
+                  let hoverItem = document.createElement('li');
+                  hoverItem.addEventListener('mouseenter', () => {
+                      card['splide'].go(i)
+                  })
+
+                  hoverWrapper.append(hoverItem)
+              }
+
+              //event leave
+
+              hoverWrapper.addEventListener('mouseleave', () => {
+                  card['splide'].go(0)
+              })
+
+              card['splide'].root.append(hoverWrapper)
+
+          });
+
+          card['splide'].mount();
+      }
     });
   }
 
@@ -1072,7 +1107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll('[name="rating-shop"], [name="rating-selected"]').forEach(item => {
     item.addEventListener('change', e => {
-      document.querySelector('.os-review__submit').style.setProperty('display', 'block')
+      document.querySelector('.os-review__submit').classList.add('is-active')
     })
   })
 
@@ -1104,7 +1139,12 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         form.reset();
         window.STATUS.msg('Спасибо за обратную связь!')
-        document.querySelector('.os-review__submit').style.removeProperty('display')
+        document.querySelector('[type="submit"]').classList.add('is-active')
+        document.querySelector('[type="submit"]').innerHTML = 'Отправлено'
+
+        let message = document.createElement('div')
+        message.innerHTML = '<span class="os-review-success" >Спасибо за обратную связь!</span>';
+        document.querySelector('.os-review form').append(message)
       }, 100)
 
 
@@ -1338,51 +1378,6 @@ if (document.querySelector('.category-filter')) {
   document.addEventListener('DOMContentLoaded', () => {
     let newRangeSlider = null;
 
-    // const initPriceRange = () => {
-    //   const slider = document.getElementById('price-slider');
-    //   if (!slider) {
-    //     console.error('Слайдер не найден');
-    //     return;
-    //   }
-
-    //   if (newRangeSlider) {
-    //     newRangeSlider = null;
-    //   }
-
-    //   newRangeSlider = new ZBRangeSlider('price-slider');
-
-    //   const inputMax = document.querySelector('[data-price-range="max"]');
-    //   const inputMin = document.querySelector('[data-price-range="min"]');
-
-    //   const priceMax = slider.getAttribute('se-max') || 10000;
-    //   const priceMin = slider.getAttribute('se-min') || 0;
-
-    //   const form = inputMax.closest('form');
-    //   const entity = form ? form.dataset.filter : '';
-
-    //   newRangeSlider.didChanged = (min, max) => {
-    //     inputMax.value = max;
-    //     inputMin.value = min;
-
-    //     if (entity && window.Filter ? window.Filter[entity] : '') {
-    //       window.Filter[entity].submit();
-    //     }
-    //   };
-
-    //   inputMax.addEventListener('keyup', (e) => {
-    //     let int = e.target.value.replace(/\D/g, '');
-    //     int = Math.min(Number(int), Number(priceMax));
-    //     e.target.value = int;
-    //     newRangeSlider.setMaxValue(int);
-    //   });
-
-    //   inputMin.addEventListener('keyup', (e) => {
-    //     let int = e.target.value.replace(/\D/g, '');
-    //     int = Math.max(Number(int), Number(priceMin));
-    //     e.target.value = int;
-    //     newRangeSlider.setMinValue(int);
-    //   });
-    // };
 
 
     /* =========================================
@@ -1531,5 +1526,72 @@ if (document.querySelector('.category-filter')) {
         }
       });
     }
+
+
+
+
+
+
+
+
+
   });
+
+
 }
+
+document.addEventListener('DOMContentLoaded', function(event) {
+      /* ========================================
+    video in minicard
+    ========================================*/
+
+    // Получаем нужный элемент
+
+    const Visible = function (target) {
+      let targetPosition = {
+              top: window.scrollY + target.getBoundingClientRect().top,
+              left: window.scrollX + target.getBoundingClientRect().left,
+              right: window.scrollX + target.getBoundingClientRect().right,
+              bottom: window.scrollY + target.getBoundingClientRect().bottom
+          },
+
+          windowPosition = {
+              top: window.scrollY,
+              left: window.scrollX,
+              right: window.scrollX + document.documentElement.clientWidth,
+              bottom: window.scrollY + document.documentElement.clientHeight - 100
+          };
+
+      if (targetPosition.bottom > windowPosition.top &&
+          targetPosition.top < windowPosition.bottom &&
+          targetPosition.right > windowPosition.left &&
+          targetPosition.left < windowPosition.right) {
+
+            if(!target.querySelector('video').getAttribute('src')) {
+              target.querySelector('video').src = target.querySelector('video').dataset.src
+            }
+
+            target.querySelector('video').play()
+
+
+      } else {
+        target.querySelector('video').pause()
+      };
+  };
+
+  if (document.querySelector('.main-goods-item__item-video')) {
+
+
+      const items = document.querySelectorAll('.main-goods-item__item-video');
+      const checkVisible = (items) => {
+          items.forEach(item => Visible(item))
+      }
+
+      window.addEventListener('scroll', function () {
+          checkVisible(items);
+      });
+
+      checkVisible(items);
+  }
+
+});

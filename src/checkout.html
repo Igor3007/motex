@@ -172,8 +172,6 @@
               </div>
             </div>
 
-
-
             <div class="cart__cutter">
               <div class="cart-cut">
                 <div class="cart-cut__head">
@@ -250,6 +248,37 @@
               </div>
             </div>
 
+            <div class="cart__payment">
+              <div class="cart-payment">
+                <div class="cart-payment__head">
+                  <div class="cart-payment__title">Выберите способ оплаты 
+                  </div>
+                </div>
+                <div class="cart-payment__content">
+                  <div class="cart-payment__list">
+                    <div v-for="item in getPaymentMethods" class="cart-payment__item">
+                      <div class="pay-method-card" :class="{'is-active': isActivePayMethod(item)}" @click="selectPaymentMethod(item)">
+                        <div class="pay-method-card__main">
+                          <div class="pay-method-card__title">
+                            {{item.title}}
+                            <ul class="pay-method-card__stickers" v-if="item.stickers" >
+                              <li v-for="st in item.stickers" >{{st}}</li>
+                            </ul>
+                          </div>
+                          <div class="pay-method-card__desc">{{item.desc}}</div>
+                        </div>
+                        <div class="pay-method-card__image" v-if="item.icon">
+                          <picture>
+                            <img :src="item.icon" alt="">
+                          </picture>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="cart__order">
               <div class="cart-order">
                 <div class="cart-order__wrp">
@@ -279,7 +308,7 @@
               <div class="cart-aside__make cart-aside__make--checkout">
                 <div class="cart-aside__btn">
                   <button @click="sendOrder()" type="button" :disabled="isValidationOrder"
-                    :class="{'is-loading': isLoadOrder}" class="btn-blue">Оформить заказ</button>
+                    :class="{'is-loading': isLoadOrder}" class="btn-blue" v-html="getTextMakeOrderBotton()" ></button>
                 </div>
                 <div class="cart-aside__text" v-if="isValidationOrder">
                   <div v-html="errorLog"></div>
@@ -292,8 +321,8 @@
                     {{ declination(products.length, ['товар','товара','товаров']) }}
                     •
                     {{getTotalWeight|convertWeight}}</div>
-                  <div class="mobile-make-checkout" :class="{'is-loading': isLoadOrder}" @click="sendOrder()">
-                    Оформить заказ</div>
+                  <div class="mobile-make-checkout" :class="{'is-loading': isLoadOrder}" v-html="getTextMakeOrderBotton()" @click="sendOrder()">
+                    </div>
                   <div class="mobile-make-cost">
                     <strong>{{getTotalPriceOrder|numberWithSpaces}} ₽</strong>
                     <span>{{getCostProducts|numberWithSpaces}} ₽</span> </div>

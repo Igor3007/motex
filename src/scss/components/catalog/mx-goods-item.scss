@@ -128,6 +128,23 @@
 
     }
 
+    &__item-video{
+      padding-top: 100%;
+      position: relative;
+
+      & video {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 8px;
+
+      }
+    }
+
     &__item-additions-top {
         display: flex;
         flex-direction: column;

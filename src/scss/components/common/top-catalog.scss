@@ -399,7 +399,6 @@
     border-radius: 8px;
     padding: 16px;
     height: 100%;
-
     transition: 0.2s ease;
     transition-property: border;
 
@@ -492,6 +491,25 @@
         }
     }
 
+   @media screen and (max-width:  $w576) {
+    &__row{
+        display: flex;
+        align-items: center;
+    }
+
+    &__title{
+    margin-left: 12px;
+    }
+
+    &__preview {
+        padding-bottom: 0;
+    }
+
+    &__list {
+        padding-top: 15px;
+    }
+
+   }
 
 }
 

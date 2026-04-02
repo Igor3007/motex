@@ -35,30 +35,28 @@ let vueCheckout = new Vue({
         recipient_name: '',
         recipient_phone: '',
         recipient_email: '',
-
         addressDelivery: null,
         entranceDelivery: null,
         officeDelivery: null,
         floorDelivery: null,
         intercomDelivery: null,
+        activePayMethod: null
 
     },
+
     created: function () {
         this.fetchData();
     },
 
     mounted: function () {
-
         loadYmapsApi(() => {
             if (this.receipt_type == 'pickup') {
                 this.initStroreInMap()
             }
         })
-
     },
 
     methods: {
-
         fetchData() {
             fetch('/static/checkout.json', {
                 method: 'GET',
@@ -345,6 +343,34 @@ let vueCheckout = new Vue({
         sendOrder() {
             console.log('send order')
             window.location.href = '/pages/order-success.html'
+        },
+
+        selectPaymentMethod(item) {
+            this.activePayMethod = item
+        },
+
+        isActivePayMethod(item) {
+            if(!this.activePayMethod){
+                return false
+            }
+
+            return item.title == this.activePayMethod.title
+        },
+
+        getTextMakeOrderBotton() {
+            if(!this.activePayMethod || !this.activePayMethod.is_pay_online) {
+                return 'Оформить заказ'
+            }
+
+            if(this.activePayMethod) {
+                let html = 'Оплатить';
+
+                if(this.activePayMethod.icon) {
+                    html += '<span class="pay-icon" style="background-image: url('+this.activePayMethod.icon+')" ></span>'
+                }
+
+                return html
+            }
         }
     },
 
@@ -392,7 +418,46 @@ let vueCheckout = new Vue({
 
             return false
 
-        }
+        },
+
+        getPaymentMethods() {
+            return [
+                {
+                    icon: '/images/icons/ic_sbp.svg',
+                    title: 'Оплата через СБП',
+                    desc: 'Оплата через СБП',
+                    stickers: ['Рекомендуем'],
+                    is_pay_online: true              },
+                {
+                    icon: false,
+                    title: 'Онлайн-оплата картой',
+                    desc: 'Онлайн оплата по реквизитам карты вашего банка',
+                    stickers: false,
+                    is_pay_online: true
+                },
+                {
+                    icon: false,
+                    title: 'SberPay',
+                    desc: 'Авторизуйтесь по Сбер ID и платите разными картами',
+                    stickers: false,
+                    is_pay_online: true
+                },
+                {
+                    icon: false,
+                    title: 'Оплатить частями',
+                    desc: '4 платежа по 1378 р. картой любого банка',
+                    stickers: false,
+                    is_pay_online: true
+                },
+                {
+                    icon: false,
+                    title: 'Наличными или картой',
+                    desc: 'При получении',
+                    stickers: false,
+                    is_pay_online: false
+                },
+            ]
+        },
     },
 
     watch: {

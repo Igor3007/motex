@@ -233,7 +233,13 @@
 
     &__submit{
 
-        display: none;
+      margin-top: 12px;
+
+
+      &:not(.is-active) {
+        pointer-events: none;
+        filter: grayscale(1);
+      }
 
         & button {
             width: 100%;
@@ -326,7 +332,16 @@
 
 }
 
-
+.os-review-success {
+	text-align: center;
+	color: #222;
+	background: #fff;
+	display: block;
+	padding: 15px 12px;
+	border-top: 2px solid var(--green);
+	font-size: 14px;
+	color: var(--green);
+}
 
 
 .rate-area>label:active {

@@ -210,10 +210,12 @@
     }
 
     &.is-active {
-        background-color: var(--green) !important;
+        background-image: none;
+        background-color: var(--green) ;
+        background-image: none;
     }
 
-    
+
 }
 
 .btn-disabled {
