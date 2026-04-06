@@ -40,6 +40,8 @@ import {
   PersonalDataPopup
 } from "../components/cookie";
 
+import { widgetVideo } from "../../../../../../OSPanel2/domains/mottex.ru/resources/js/components/widjet-video";
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -1541,7 +1543,7 @@ if (document.querySelector('.category-filter')) {
 }
 
 document.addEventListener('DOMContentLoaded', function(event) {
-      /* ========================================
+    /* ========================================
     video in minicard
     ========================================*/
 
@@ -1580,8 +1582,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
   };
 
   if (document.querySelector('.main-goods-item__item-video')) {
-
-
       const items = document.querySelectorAll('.main-goods-item__item-video');
       const checkVisible = (items) => {
           items.forEach(item => Visible(item))
