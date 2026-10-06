@@ -78,6 +78,7 @@
     letter-spacing: normal;
     display: -webkit-box;
     -webkit-line-clamp: $number;
+    /*! autoprefixer: ignore next */
     -webkit-box-orient: vertical;
     overflow: hidden;
 }

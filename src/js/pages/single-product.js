@@ -5,7 +5,13 @@ import { Counter } from "../components/counter";
 import { ProductCalculator } from "../components/product-calculator";
 import { copyToClipboard } from "../components/copy-to-clipboard";
 import { ScrollNavigation } from "../components/scroll-navigation";
+import { AfStories } from '../components/af-stories';
 
+/* =================================================
+AfStories
+=================================================*/
+
+new AfStories();
 
 /* =================================================
 Product preview gallery

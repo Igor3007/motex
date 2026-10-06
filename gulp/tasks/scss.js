@@ -32,11 +32,11 @@ const scss = (isBuild) => {
     }, null))
     .pipe(plugins.if(isBuild, webpCss(webpConfig)))
     .pipe(postcss([
-      autoprefixer(),
+      autoprefixer({ remove: false }),
       postcssPresetEnv(),
       sortMediaQueries({sort:'mobile-first'})
     ]))
-    .pipe(cssNano())
+    .pipe(plugins.if(isBuild, cssNano({ preset: 'default' })))
     .pipe(rename({
       extname: '.min.css'
     }))
