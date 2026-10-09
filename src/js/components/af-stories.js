@@ -22,6 +22,7 @@ export class AfStories {
     this._pointerMoved = false
     this._isTransitioning = false
     this._data = null
+    this.isMuted = true
 
     this.init()
   }
@@ -62,9 +63,22 @@ export class AfStories {
     list.innerHTML = ''
 
     this._data.forEach((element) => {
-      const slide = new AfLayoutSlide({ data: element })
+      const slide = new AfLayoutSlide({
+        data: element,
+        muted: this.isMuted
+      })
+      slide.onMuteChange = (muted) => this.setGlobalMute(muted)
       this.slides.push(slide)
       list.append(slide.getHtml())
+    })
+  }
+
+  setGlobalMute(muted) {
+    this.isMuted = muted
+    this.slides.forEach((slide) => {
+      slide.stories.forEach((story) => {
+        if (story instanceof AfLayoutVideo) story.setMuted(muted)
+      })
     })
   }
 
@@ -97,19 +111,17 @@ export class AfStories {
       fixedWidth: 'calc(92vh * 50 / 89)',
       focus: 'center',
       padding: { left: '50%', right: '50%' },
-      wheel: false,
-      wheelMinThreshold: 200,
-      wheelSleep: 50,
       updateOnMove: true,
       start: this.currentSlideIndex,
-      isNavigation: true, // делает слайды кликабельны
-      dragMinThreshold: 300, // срабатывание после 20px
+      isNavigation: false, // делает слайды кликабельны
+      dragMinThreshold: 5,
       drag: true,
       mediaQuery: 'min',
       breakpoints: {
         576: {
           gap: 0,
           drag: false,
+          isNavigation: true,
         },
 
       }

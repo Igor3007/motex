@@ -1,0 +1,17 @@
+@import 'app';
+
+
+//index page start
+@import "components/p-index/b-data-search";
+@import "components/p-index/mx-main-catalog";
+@import "components/p-index/mx-numbers";
+@import "components/p-index/mx-services";
+@import "components/p-index/mx-collections";
+@import "components/p-index/mx-stories";
+
+@import "components/catalog/mx-goods";
+@import 'components/catalog/mx-catalog-card';
+@import 'components/mx-services-item';
+@import 'components/catalog/mx-goods-item';
+
+//index page end

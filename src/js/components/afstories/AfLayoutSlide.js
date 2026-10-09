@@ -9,6 +9,7 @@ export class AfLayoutSlide {
     this.stories = []
     this.currentStoryIndex = 0
     this.rendered = false
+    this.muted = params.muted
     this.init()
   }
 
@@ -27,9 +28,16 @@ export class AfLayoutSlide {
         case 'image':
           instance = new AfLayoutImage({ ...data, slideIndex: index })
           break
-        case 'video':
-          instance = new AfLayoutVideo({ ...data, slideIndex: index })
-          break
+          case 'video':
+            instance = new AfLayoutVideo({
+              ...data,
+              slideIndex: index,
+              muted: this.muted
+            })
+            instance.onMuteChange = (muted) => {
+              if (typeof this.onMuteChange === 'function') this.onMuteChange(muted)
+            }
+            break
         default:
           return
       }

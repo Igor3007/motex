@@ -5,7 +5,8 @@ export class AfLayoutVideo {
     this.$el = document.createElement('div')
     this.data = params
     this.video = null
-    this.isMuted = true // звук выключен по умолчанию
+    this.isMuted = params.muted !== undefined ? params.muted : true
+    this.onMuteChange = null
     this.onEnded = null
   }
 
@@ -23,6 +24,7 @@ export class AfLayoutVideo {
 
     this.video = this.$el.querySelector('video')
     this.video.muted = this.isMuted
+    this.$el.classList.toggle('is-muted', this.isMuted)
     this.bindEvents()
   }
 
@@ -67,9 +69,15 @@ export class AfLayoutVideo {
   }
 
   toggleMute() {
-    this.isMuted = !this.isMuted
-    this.video.muted = this.isMuted
-    this.$el.classList.toggle('is-muted', this.isMuted)
+    if (typeof this.onMuteChange === 'function') {
+      this.onMuteChange(!this.isMuted)
+    }
+  }
+
+  setMuted(muted) {
+    this.isMuted = muted
+    if (this.video) this.video.muted = muted
+    this.$el.classList.toggle('is-muted', muted)
   }
 
   play() {
